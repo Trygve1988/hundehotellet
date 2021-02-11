@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Meny-->
+    <div class="grid-container">
+        <header class="item1">
+            <img src="bilder/bø_hundehotell_logo.png" alt="Bø Hundehotell Logo" style="width: auto">
+        </header>
+
+        <nav class="topnav">
+            <ul>
+                <li><a class="home" href="">Hjem</a></li>
+                <li><a href="">Nav 2</a></li>
+                <li><a href="">Nav 3</a></li>
+                <li><a class="Logginn" href="#about">Logg inn</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div id="page-wrap">
+
+    </div>
+
+
+    <!--Main section-->
+    <div class="Bestilling">
+        <div class="bestilling-info">
+            <article>
+                <h1>Åpningstider</h1>
+                <h1>Info om innsjekk</h1>
+                <h1>Pris</h1>
+                <h1>Regler for opphold</h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Similique fugit aliquid tempore quisquam consequatur accusantium,
+                    suscipit voluptas laudantium enim alias possimus ipsam praesentium ex?
+                    Quis aliquam quam temporibus quas a!
+                </p>
+            </article>
+        </div>
+
+
+
+        <!-- Bestillings skjemaet-->
+        <div class="bestillingskjema">
+            <div class="logginn-skjema" id="myForm">
+                <form action="/action_page.php class" class="form-container">
+                    <h1>Bestill</h1>
+
+                    <label for="name"><b>Fornavn</b></label>
+                    <input type="text" placeholder="Skriv inn fornavnet ditt" name="name">
+
+                    <label for="lastname"><b>Etternavn</b></label>
+                    <input type="text" placeholder="Skriv inn etternavnet ditt" name="lastname" >
+
+                    <label for="adress"><b>Adresse</b></label>
+                    <input type="text" placeholder="Skriv inn adressen din" name="adresse" >
+
+                    <label for="sted"><b>Sted</b></label>
+                    <input type="text" placeholder="Skriv inn adressen din" name="sted" >
+
+                    <!-- Dato for innsjekk-->
+                    <label for="meeting-time">Dato for innsjekking og tidspunkt:</label>
+
+                    <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30"
+                        min="2018-06-07T00:00" max="2018-06-14T00:00">
+
+                    <!-- innsjekk-->
+                    <label for="name"><b>Hundens navn</b></label>
+                    <input type="text" placeholder="Skriv inn hundens navn" name="hundename" >
+
+                    <label for="start">Hundens fødselsdato:</label>
+
+                    <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
+                        max="2018-12-31">
+
+
+                    <label for="rasenavn"><b>Rase</b></label>
+                    <input type="text" placeholder="Skriv inn hundens rase" name="rasenavn" >
+
+                    <!-- <label for="myBrowser"><b>Kjønn</b></label>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Hannhund">
+                        <option value="Hunnhund">
+
+                    </datalist>
+-->
+                    <label for="start">Sist vaksinert:</label>
+
+                    <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
+                        max="2018-12-31">
+
+                    <label for="name"><b>Bruker medisiner</b></label>
+                    <b>Skriv info om dette i neste punkt.</b>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Ja">
+                        <option value="Nei">
+
+                    </datalist>
+
+                    <label for="story">Har hunden spesielle behov?</label>
+
+                    <!--Lage en grense på hvor mye man kan skrive???-->
+                    <textarea id="story" name="story" rows="5" cols="33">
+Hvis hunden trenger medisiner, skriv det her.
+</textarea>
+
+
+                    <label for="myBrowser"><b>Kastrert/Sterlisert</b></label>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Ja">
+                        <option value="Nei">
+
+                    </datalist>
+
+
+                    <label for="myBrowser"><b>Løpe med andre hunder?</b></label>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Ja">
+                        <option value="Nei">
+
+                    </datalist>
+
+
+                    <label for="myBrowser"><b>Gå løs på tur?</b></label>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Ja">
+                        <option value="Nei">
+
+                    </datalist>
+
+
+                    <label for="myBrowser"><b>Mat morgen</b></label>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Ja">
+                        <option value="Nei">
+
+                    </datalist>
+
+
+                    <label for="myBrowser"><b>Mat kveld</b></label>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Ja">
+                        <option value="Nei">
+
+                    </datalist>
+
+
+                    <label for="myBrowser"><b>Bading før hjemreise?</b></label>
+                    <input list="browsers" id="myBrowser" name="myBrowser" />
+                    <datalist id="browsers">
+                        <option value="Ja">
+                        <option value="Nei">
+
+                    </datalist>
+
+                    <label for="kortnavn"><b>Navn på kort</b></label>
+                    <input type="text" placeholder="Kari Nordmann" name="kortnavn" >
+
+                    <label for="kortnummer"><b>Kortnummer</b></label>
+                    <input type="text" placeholder="Skriv inn kortnummer" name="kortnummer" >
+
+                    <label for="utgåttkort"><b>Expiration</b></label>
+                    <input type="text" placeholder=" f.eks. 01/01" name="utgåttkort" >
+
+
+ 
+                  <!-- Trigger som Åpner cvc modalen -->
+                    <label for="cvv"><b>CVV</b></label>  
+                    <button id="cvcModalKnapp">?</button> 
+                
+                    <!--CVC modalen -->
+                    <div id="cvcModal" class="modal">
+
+                        <!-- Modal innhold -->
+                        <div class="modal-innhold">
+                            <span class="lukkModal">&times;</span>
+                            <h1>Hvor finner jeg CVC koden?</h1>
+                            <img class="cvvkode" src="/bilder/cvv_cvc.png" alt="Bilde av hvor du finner CVC koden på visakortet" width="auto" height="auto">
+                            <p>De tre siste sifrene på baksiden av kortet.</p>
+                        </div>
+
+                    </div>
+                
+
+                    <input type="text" placeholder="De tre siste sifrene på cvv nummeret" name="cvv" required value>
+                
+
+
+
+                    <button type="submit" class="btn">Send inn</button>
+                    <button type="submit" class="btn cancel" onclick="closeForm()">Avbryt</button>
+                    <!--Bli sendt tilbake til forsiden?-->
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="toppknappen.js"></script>
+    <script src="modulpopup.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bø Hundehotell</title>
+	<link rel="stylesheet" type="text/css" href="forms.css">
+</head>
+
+<body>
+<div class="hovedBakgrunn"> 
+	<!-- Form-->	
+	<form method="POST">
+
+	<!-- Overskrift -->
+	<h2>Registrer ny bruker</h2>
+
+	<div class="regForm">
+		<div class="regFormKol1">
+			<!-- Labels og input i kolonne 1 -->
+			<label for="epost">E-post:</label>
+			<input type="text" name="epost">
+		
+			<label for="passord">Ønsket passord:</label>
+			<input type="password" name="passord">
+
+			<!-- Vis passord radio knapp! -->
+			<div class="visPassord">
+				<label>Vis passord</label>
+				<input type="radio" name="visPassord" value="visPassord">
+			</div>
+
+			<label for="tlf">Telefonnummer:</label>
+			<input type="text" name="tlf">
+			
+			<!--Registrer knapp-->
+			<input type="submit" name="registrerKnapp" value="Registrer deg">
+
+			<!-- Logg inn link -->
+			<p class="ekstraLink"> <a href="registrering.i">Har du allerede en bruker? Logg inn her</a></p>
+		</div>
+		<div>
+			<!-- Labels og input i kolonne 2-->
+			<label for="fornavn">Fornavn:</label>
+			<input type="text" name="fornavn">
+	
+			<label for="etternavn">Etternavn:</label>
+			<input type="text" name="etternavn">
+		
+			<label for="adresse">Adresse:</label>
+			<input type="text" name="adresse">
+		</div>
+	</div>
+</div>
+
+</form>
+</body>
+</html>

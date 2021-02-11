@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Stylesheet.css">
+    <script src="JavaScript.JS" defer ></script>
+    <title>Home</title>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="Index.html"> <img  class="logo" src="logo.png"> Bø Hundehotell </a>
+    <a href="Index.html">Hjem</a>
+    <a href="Aktuelt.html">Aktuelt</a>
+    <a href="Om Oss.html">Om Oss</a>
+    <a href="Pris.php">Pris</a
+    <a href="Kontakt Oss.html">Kontakt Oss</a>
+    <a href="Opphold.html">Opphold</a>
+    <a href="Admin.html">Anmeldelser</a>
+    <a href="Anmelderlser.html">Admin</a>
+    <a href="Log Inn.html" class="right">Log inn</a>
+    <a href="Min side.html" class="right">Min Side</a>
+  </div>
+
+  <div>
+        <div>
+          <label for="uname"><b>Brukernavn</b></label>
+          <input type="text" placeholder="Skriv inn Brukernavn" name="uname" required>
+    
+          <label for="psw"><b>Passord</b></label>
+          <input type="password" placeholder="Skriv inn et Passord" name="psw" required id="passord">
+          
+          <button type="submit">Login</button>
+          <input type="checkbox" onclick="visPassord()">Vis Passord
+          
+          <p id="status" melding()></p>
+      </div>
+  </div>
+  
+</body>
+</html>

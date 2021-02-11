@@ -1,0 +1,122 @@
+@media only screen and (min-width: 600px) {
+	body {
+	margin: 0px;
+	font-family: Arial, Times New Roman, Calibri, serif;
+	font-size: 19px;
+	text-align:center;	
+	background-image: url("bakgrunn.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.hovedBakgrunn {
+	display: inline-block;
+	width: 60%;
+	height: auto;
+	padding: 40px 8px 25px 8px;
+	background-color: white;
+}
+
+form {
+	display: inline-block;
+	width: 85%;
+	height: auto;
+	border-radius: 20px;
+	padding: 15px 10px 15px 30px;
+	background-color: #e7e4e4;
+	text-align: left;
+}
+
+h2 {
+	font-size: 35px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+.regForm {
+	display:flex;
+	margin: 10px 0;
+	border: 1px;
+	padding: 5px;
+} 
+
+.regForm div {
+	max-width: 45%;
+}
+
+.regFormKol1 {
+	margin-right: 5%;
+}
+
+input[type=text], input[type=password], input[type=date], input[type=month], textarea, select {
+	display: inline-block;
+  	box-sizing: border-box;
+	width: 100%;
+  	margin: 8px 0 20px 0;
+  	border: 1px solid #b7aeae;
+  	border-radius: 4px;
+  	padding: 10px;
+  	background-color: white;	
+  	font-family: Arial, Times New Roman, Calibri, serif;
+	font-size: 19px;}
+}
+
+textarea {
+	height: 200px; /*Denne må sjekkes!*/
+	resize: none;
+	padding: 10px;	
+}
+
+.visPassord {
+    position: absolute;
+    margin-top: -20px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+ /*Registrer-knapp!*/
+ input[type=submit] {
+	width: 100%;
+	margin: 8px 0;
+	border-radius: 4px;
+	border-color: #394f79;
+	padding: 10px 10px;
+	background-color: #394f79; 
+	color: #ffffff;
+ }
+ /*Legg til (hund)-knapp!
+ .leggTilKnapp {
+ 	width: 50%;
+	border-color: #394f79;
+	background-color: #ffffff; 
+	color: #000000;
+ }*/
+ 
+ /* Link-tekst */
+ .ekstraLink {
+ 	margin-top: 0px;
+ 	font-size: 11px;
+ }
+
+/*Link i normal tilstand*/
+a {
+	color: #404040;
+}
+/*Når man holder over linken */
+a:hover {
+  color: #000000;
+}
+/* Når linken trykkes på*/
+a:active {
+  color: #49116f;
+}
+/*
+Mobilversjon?
+@media only screen and (max-width: 600px) {
+	
+body {
+	background-image: url("bakgrunn.jpg");
+}
+*/
