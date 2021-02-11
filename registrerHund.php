@@ -25,7 +25,7 @@
 			<form method="POST">
 
 				<!-- Overskrift -->
-				<h2>Registrer ny hund</h2>
+				<h2>Registrer ny hund AAAAAAAAAAAAAAAAAAAAAA</h2>
 
 				<div class="regForm">
 					<div class="regFormKol1">
