@@ -31,9 +31,9 @@
 			<h3>Betaling</h3>
 			<!-- Valg av betalingsmetode: -->
 			<label for="kort">Betalingskort:</label>
-			<input type="checkbox" name="kort">
+			<input type="radio" name="kort">
 			<label for="vipps">VIPPS:</label>
-			<input type="checkbox" name="vipps">
+			<input type="radio" name="vipps">
 
 			<div class="regForm">
 				<div class="regFormKol1">
