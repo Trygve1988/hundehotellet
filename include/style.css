@@ -120,10 +120,10 @@ textarea {
     font-style: italic;
 }
 
- /*Registrer-knapp!*/
+ /*Generelt knappedesing!*/
  input[type=submit] {
 	width: 100%;
-	margin: 8px 0;
+	margin:25px 0;
 	border-radius: 4px;
 	border-color: #394f79;
 	padding: 10px 10px;
