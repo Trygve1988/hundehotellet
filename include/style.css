@@ -131,11 +131,18 @@ textarea {
 	color: #ffffff;
  }
 
- /* Link-tekst */
- .ekstraLink {
+ /* To linker på en rad */
+ .ekstraLinker {
  	margin-top: 0px;
- 	font-size: 11px;
+ 	font-size: 15px;
  }
+
+ /* En link på en rad*/
+ .ekstralink {
+	font-size: 15px;
+	text-decoration: none; 
+ }
+
 
 /*Link i normal tilstand*/
 a {
