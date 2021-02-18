@@ -37,10 +37,10 @@
 						<input id="passord" type="text" name="passord" value="passord123">
 						<p id="status" melding()></p>
 
-						<!-- Vis passord radio knapp! -->
+						<!-- Vis passord checkbox! -->
 						<div class="visPassord">
 							<label>Vis passord</label>
-							<input id="visPassordKnapp" type="radio" name="visPassord" value="visPassord">
+							<input id="visPassordKnapp" type="checkbox" name="visPassord" value="visPassord">
 						</div>
 
 						<!-- Vis passord status (Even) -->
