@@ -22,6 +22,7 @@ function melding(){
     return true;
   } else{
     status.innerHTML="Passord er ikke godkjent, passordet må være mellom 8-15 tegn inkludert speseiel tegn.";
+    return false;
   } 
 }
 
