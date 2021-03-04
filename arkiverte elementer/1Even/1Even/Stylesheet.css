@@ -62,19 +62,6 @@ body{
 	width: 100%
 }
 
-.bildeSlider{
-  width: 1024px;
-  height: 350px;
-}
-
-.bildeSlider img{
-  display: none;
-}
-
-.slider img.activ {
-  display: block;
-}
-
 .sliderknapp{
   background-color: #323336;
   color: #ddd;
@@ -90,6 +77,19 @@ body{
 .sliderknapp:hover {
   background-color: #777A80;
   color: black;
+}
+
+.bildeSlider{
+  width: 1024px;
+  height: 350px;
+}
+
+.bildeSlider img{
+  display: none;
+}
+
+.slider img.activ {
+  display: block;
 }
 
 .miniBilde{
