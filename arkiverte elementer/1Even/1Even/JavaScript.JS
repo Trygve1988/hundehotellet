@@ -16,7 +16,8 @@ const status = document.querySelector("#status");
 passord.addEventListener('keyup', melding, false);
 
 function melding(){
-  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;  //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;  
+  //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
   if(passord.value.match(paso)){
     status.innerHTML="Passord er godkjent";
     return true;
@@ -26,8 +27,37 @@ function melding(){
   } 
 }
 
-
 //Under utvikling!!!!!!
+
+//Bilde slider og anmeldelse slider
+function bildeSL(caller) {
+  var interval = setInterval(function(){
+    changeSlide('next');
+  }, 3000);
+}
+
+function endreSL(direction){
+  var currentImg = $('.active');
+  var nextImg = currentImg.nextImg();
+  var prevImg = currentImg.prev();
+
+  if(direction == 'next') {
+    if(nextImg.length){
+      nextImg.addClas('active');
+    } else {
+      $('.slider img').first().addClas('active');
+    }
+  } else {
+    if(prevImg.length) {
+      prevImg.addClas('active');
+    } else {
+      $('slider img').last().addClas('active');
+    }
+  }
+
+  currentImg.removeClass('active');
+
+}
 
 // Setter til dato 1 dag mer en fra dato
 function tilDato(){

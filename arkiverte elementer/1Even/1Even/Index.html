@@ -31,7 +31,16 @@
 
     <div class="front">
 
-      <img class="bildeSlider" src="hunder1.jpg">
+      <div class="bildeSlider">
+        <img class="bildeSlider" src="hundSlider1.jpg" class="active">
+        <img class="bildeSlider" src="hundSlider2.jpg">
+        <img class="bildeSlider" src="hundSlider3.jpg">
+      </div>
+      <div class="cpanel">
+          <input type = "button" onclick="changeSlid('prev')"  value="Tilbake" class="bslide">
+          <input type = "button" onclick="bildeSL(this)"  value="Auto" class="bslide">
+          <input type = "button" onclick="changeSlid('next')"  value="Neste" class="bslide">
+      </div>
 
       <p>Velkommen til Bø Hundehotell</p>
       <p>Norges BESTE Hundehotell for dine firbente venner</p>
