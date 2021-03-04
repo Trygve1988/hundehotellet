@@ -39,8 +39,8 @@
 			<!--Overskrift over hundeinformasjonen-->
 			<h3>Hundeinformasjon</h3>
 			
-			<div class="regForm">
-				<div class="regFormKol1">
+			<div class="skjemaKolonner">
+				<div class="kolonne1">
 					<!-- Labels og input i kolonne 1 -->
 					<label for="hNavn">Hundens navn:</label>
 					<input type="text" name="hNavn">

@@ -26,8 +26,8 @@
 				<!-- Overskrift -->
 				<h2>Logg inn</h2>
 
-				<div class="regForm">
-					<div class="regFormKol1">
+				<div class="skjemaKolonner">
+					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="epost">E-post:</label>
 						<input type="text" name="epost" value="eks@gmail.com">

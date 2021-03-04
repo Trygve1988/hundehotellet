@@ -79,18 +79,18 @@ h3 {
 	font-size: 25px;
 }
 
-.regForm {
+.skjemaKolonner {
 	display:flex;
 	margin: 10px 0;
 	border: 1px;
 	padding: 5px;
 } 
 
-.regForm div {
+.skjemaKolonner div {
 	max-width: 45%;
 }
 
-.regFormKol1 {
+.kolonne1 {
 	margin-right: 5%;
 }
 

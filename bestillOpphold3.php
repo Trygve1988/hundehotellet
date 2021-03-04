@@ -35,8 +35,8 @@
 			<label for="vipps">VIPPS:</label>
 			<input type="radio" name="vipps">
 
-			<div class="regForm">
-				<div class="regFormKol1">
+			<div class="skjemaKolonner">
+				<div class="kolonne1">
 					<!-- Labels og input i kolonne 1-->			
 					<label for="kortholder">Kortholder:</label>
 					<input type="text" name="kortholder">

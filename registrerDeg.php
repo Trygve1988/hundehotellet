@@ -27,8 +27,8 @@
 				<!-- Overskrift -->
 				<h2>Registrer ny bruker</h2>
 
-				<div class="regForm">
-					<div class="regFormKol1">
+				<div class="skjemaKolonner">
+					<div class="kolonne 1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="epost">E-post:</label>
 						<input type="text" name="epost" value="eks@gmail.com">
@@ -55,7 +55,7 @@
 						<!-- Logg inn link -->
 						<p class="ekstraLink"> <a href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 					</div>
-					<div>
+					<div class="kolonne2">
 						<!-- Labels og input i kolonne 2-->
 						<label for="fornavn">Fornavn:</label>
 						<input type="text" name="fornavn" value="eksFornavn">

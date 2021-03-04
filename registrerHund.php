@@ -25,10 +25,10 @@
 			<form method="POST">
 
 				<!-- Overskrift -->
-				<h2>Registrer ny hund AAAAAAAAAAAAAAAAAAAAAA</h2>
+				<h2>Registrer ny hund</h2>
 
-				<div class="regForm">
-					<div class="regFormKol1">
+				<div class="skjemaKolonner">
+					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="navn">Hundens navn:</label>
 						<input type="text" name="navn" value="pluto">
@@ -62,7 +62,7 @@
 						<input type="submit" name="registrerHund" value="Registrer hund">
 
 					</div>
-					<div>
+					<div class="kolonne2">
 						<!-- Labels og input i kolonne 2-->
 						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select name="løpeMedAndre">

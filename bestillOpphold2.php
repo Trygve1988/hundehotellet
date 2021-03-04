@@ -26,8 +26,8 @@
 
 				<h2>Bestill opphold</h2>
 				<h3>Tidsperiode</h3>
-				<div class="regForm">
-					<div class="regFormKol1">
+				<div class="skjemaKolonner">
+					<div class="kolonne1">
 						
 						<!-- Inputen her er date -->
 						<label for="fra">Fra:</label>
