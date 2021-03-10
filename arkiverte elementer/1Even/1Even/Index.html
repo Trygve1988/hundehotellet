@@ -10,7 +10,7 @@
 <body>
 
 <div class="navbar">
-    <a href="Index.html"> <img  class="logo" src="logo.png"> Bø Hundehotell </a>
+    <a href="Index.html"> <img  class="logo" src="logo.png"> <img  class="logotext" src="Hundehotell.png"></a>
     <a href="Index.html">Hjem</a>
     <a href="Aktuelt.html">Aktuelt</a>
     <a href="Om Oss.html">Om Oss</a>
@@ -23,39 +23,50 @@
     <a href="Log Inn.html" class="right">Log inn</a>
     <a href="Min side.html" class="right">Min Side</a>
   </div>
+
   </div>
 
-  <div class="slideshow-container"> 
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="picture1.png" style="width: 100%;">
-      <div class="text">Caption text</div>
-    </div>
+  <div class="body">
+    <img  class="background" src="bakgrund.jpg">
 
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="picture2.png" style="width: 100%;">
-      <div class="text">Caption tow</div>
-    </div>
+    <div class="front">
 
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="picture3.png" style="width: 100%;">
-      <div class="text">Caption three</div>
-    </div>
+      <div class="bildeSlider">
+        <img src="bilder\hundSlider1.jpg" class="active">
+        <img src="bilder\hundSlider2.jpg" class="active">
+        <img src="bilder\hundSlider3.jpg" class="active">
+      </div>
+      <div class="knapper">
+          <input type = "button" onclick="changeSlid('prev')"  value="Tilbake" class="sliderknapp">
+          <input type = "button" onclick="bildeSL(this)"  value="Auto" class="sliderknapp">
+          <input type = "button" onclick="changeSlid('next')"  value="Neste" class="sliderknapp">
+      </div>
 
-    <a class="prev" onclick="plussSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plussSlides(1)">&#10095;</a>
+      <p>Velkommen til Bø Hundehotell</p>
+      <p>Norges BESTE Hundehotell for dine firbente venner</p>
+      <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
+
+      <div>
+        
+        <a href="Opphold.html"> <img  class="miniBilde" src="hunder1.jpg"></a>
+        <h1>Bestill</h1>
+        <p>Du kan bestille opphold til din hund her</p>
+        <a href="Om Oss.html"><img  class="miniBilde" src="hunder2.jpg"></a>
+        <h1>Om Hundehotellet</h1>
+        <p>Her kan du få mer info om hundehotell</p>
+        <a href="Pris.php"><img  class="miniBilde" src="hunder3.jpg"> </a
+            <brk></brk>
+        <h1>Priser</h1>
+        <p>Her kan du se oversikt over priser</p>  
+
+      </div>
+
+    </div>
   </div>
-  <br>
 
-  <div style="text-align: center;">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+  <div class="footer">
+    
   </div>
-
-  
 
 </body>
 </html>
