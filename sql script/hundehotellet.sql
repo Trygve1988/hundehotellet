@@ -85,9 +85,11 @@ CREATE TABLE opphold (
 	skalBade		boolean,
   	hundID 			smallInt,
   	burID 			smallint,
+  	bestillingID 	smallint,
   	PRIMARY KEY (oppholdID),
-  	FOREIGN KEY (hundID) 	REFERENCES hund (hundID),
-  	FOREIGN KEY (burID) 	REFERENCES bur (burID)
+  	FOREIGN KEY (hundID) 		REFERENCES hund (hundID),
+  	FOREIGN KEY (burID) 		REFERENCES bur (burID),
+  	FOREIGN KEY (bestillingID) 	REFERENCES bestilling (bestillingID)
 );
 
 CREATE TABLE pris (
@@ -167,7 +169,7 @@ CREATE TABLE bading (
 CREATE TABLE innlegg (
   	innleggID 		smallint AUTO_INCREMENT,
   	navn 			varchar (30),
-  	tekst 			varchar (500),
+  	tekst 			varchar (2000),
   	brukerID		smallint,
     PRIMARY KEY (innleggID),
     FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID)
@@ -175,7 +177,7 @@ CREATE TABLE innlegg (
 
 CREATE TABLE anmeldelse (
   	anmeldelseID 	smallint AUTO_INCREMENT,
-  	tekst 			varchar (500),
+  	tekst 			varchar (2000),
   	brukerID		smallint,
     PRIMARY KEY (anmeldelseID),
     FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID)
@@ -186,13 +188,19 @@ VALUES
 (1, "Normal-for"),
 (2, "Allergi-for");
 
+INSERT INTO  bruker (brukerID,epost,passord,brukerType)
+VALUES
+(1, "admin", "123", "admin");
+
+INSERT INTO hund (hundID,navn,rase,brukerID,forID)
+VALUES
+(1, "adminhund", "adminrase",1,1);
+
 INSERT INTO bur(burID, lengdeCm, breddeCm, hoydeCm)
 VALUES
 (1, 124, 76 ,  84),
 (2, 124, 76 ,  84),
-(3, 124, 76 ,  84),
-(4, 124, 76 ,  84),
-(5, 124, 76 ,  84);
+(3, 124, 76 ,  84);
 
 INSERT INTO pris(prisID, beskrivelse, beløp)
 VALUES
@@ -204,3 +212,14 @@ VALUES
 (1, "toHunder", 0.2),  
 (2, "treHunder", 0.3),
 (3, "ansatt", 0.2);
+
+INSERT INTO innlegg(navn, tekst)
+VALUES
+("kontaktOss", "innlegg Test Tekst");
+
+
+INSERT INTO anmeldelse (tekst, brukerID)	
+VALUES
+("<p>Veldig bra hundekennel. Engasjerte ansatte som tok godt vare på hunden min og sørget for at den hadde det bra på oppholdet sitt.</p><p>- Espen Sivertsen</p>", 1),
+("<p>Takk til alle på Bø Hundekennel for nok et koselig opphold for hunden min. Selv om Pluto var litt redd i starten har han begynt å loggre når han forstår at han skal på hundehotellet'</p><p>- Sofie Pedersen</p>", 1),
+("<p>Bra hundehotell. Profesjonelle folk som vet hva de driver med og er optatte av at hundene skal ha det godt.'</p><p>- Ole Monsen</p>", 1);
