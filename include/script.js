@@ -1,3 +1,47 @@
+// ************************** 1) index: anmeldelseSlider (Trygve) ************************** 
+var anmeldelseTekst = document.getElementById("anmeldelseTekst");
+var nesteAnmeldelseKnapp = document.getElementById("nesteAnmeldelseKnapp");
+var tilbakeAnmeldelseKnapp = document.getElementById("tilbakeAnmeldelseKnapp");
+var anmeldelsePos = 0;
+
+//er vi på index siden ? 
+if (anmeldelseTekst !== null) {
+    nesteAnmeldelseKnapp.addEventListener('click',neste,false);
+    tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
+}
+
+function neste() {
+    anmeldelsePos++;
+    oppdaterAnmeldelseSlider();
+}
+
+function tilbake() {
+    anmeldelsePos--;
+    oppdaterAnmeldelseSlider();
+}
+
+function oppdaterAnmeldelseSlider() { 
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/hentUtAnmeldelse.php?q="+anmeldelsePos, true);
+    ajaxRequest.send(null); 
+    ajaxRequest.onreadystatechange = function() {
+        var svar = ajaxRequest.responseText;
+        console.log(svar);
+        if (svar == -1) {
+            anmeldelsePos = 0;
+            neste();        
+        }
+        else {
+            anmeldelseTekst.innerHTML = svar;
+        }
+    }
+}
+
+neste();
+
+
+
+
 // Hvis skjul passord funksjon (Even)
 const visPassordKnapp = document.querySelector("#visPassordKnapp");
 
