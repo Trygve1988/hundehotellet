@@ -30,7 +30,7 @@
         <img src="bilder/hundSlider1.jpg" id="slider">
         
         <ul class="navigation">
-          <li onclick="imgSlider('bilder/hundSlider1.')"><img src="bilder/hundSlider1.jpg"></li>
+          <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg"></li>
           <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
           <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
         </ul>
