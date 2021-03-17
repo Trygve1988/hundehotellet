@@ -1,5 +1,5 @@
 <?php
-$dblink = mysqli_connect("itfag.usn.no", "pw5", "", "h20APP2000grdb5");
+$dblink = mysqli_connect("itfag.usn.no", "h20APP2000gr5", "pw5", "h20APP2000grdb5");
 
 $anmeldelseID = $_GET['q'];
 $sql = "SELECT * FROM anmeldelse WHERE anmeldelseID = '$anmeldelseID';"; 
