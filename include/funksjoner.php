@@ -44,6 +44,12 @@ function lukk($dblink) {
 }
 
 /* ************************** 0) Alle: d) topp ************************** */ 
+function visBildeBakgrunn() { 
+    ?> <div class="bildeBakgrunn">
+     </div><?php
+}
+
+
 function visNav() { 
     ?> <div class="navbar">
         <a href="index.php"> <img  class="logo" src="bilder/logo.png"> Bø Hundehotell </a>
