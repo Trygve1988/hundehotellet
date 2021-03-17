@@ -10,12 +10,11 @@
 <body>
 
 <div class="navbar">
-    <a href="Index.html"> <img  class="logo" src="logo.png"> <img  class="logotext" src="Hundehotell.png"></a>
+    <a href="Index.html"> <img  class="logo" src="logo.png"> <img  class="logotext" src="teksthvit.png"></a>
     <a href="Index.html">Hjem</a>
     <a href="Aktuelt.html">Aktuelt</a>
     <a href="Om Oss.html">Om Oss</a>
-    <a href="Pris.php">Pris</a
-  <div>
+    <a href="Pris.php">Pris</a>
     <a href="Kontakt Oss.html">Kontakt Oss</a>
     <a href="Opphold.html">Opphold</a>
     <a href="Admin.html">Anmeldelser</a>
@@ -24,32 +23,31 @@
     <a href="Min side.html" class="right">Min Side</a>
   </div>
 
-  </div>
-
   <div class="body">
     <img  class="background" src="bakgrund.jpg">
 
     <div class="front">
 
-      <img class="bildeSlider" src="picture1.png">
-
-      <p>Velkommen til Bø Hundehotell</p>
-      <p>Norges BESTE Hundehotell for dine firbente venner</p>
-      <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
-
-      <div>
+      <section>
+        <img src="hundSlider1.jpg" id="slider">
         
-        <a href="Opphold.html"> <img  class="miniBilde" src="picture2.png"></a>
-        <h1>Bestill</h1>
-        <p>Du kan bestille opphold til din hund her</p>
-        <a href="Om Oss.html"><img  class="miniBilde" src="picture2.png"></a>
-        <h1>Om Hundehotellet</h1>
-        <p>Her kan du få mer info om hundehotell</p>
-        <a href="Pris.php"><img  class="miniBilde" src="picture2.png"> </a
-            <brk></brk>
-        <h1>Priser</h1>
-        <p>Her kan du se oversikt over priser</p>  
+        <ul class="navigation">
+          <li onclick="imgSlider('hundSlider1.jpg')"><img src="hundSlider1.jpg"></li>
+          <li onclick="imgSlider('hundSlider2.jpg')"><img src="hundSlider2.jpg"></li>
+          <li onclick="imgSlider('hundSlider3.jpg')"><img src="hundSlider3.jpg"></li>
+        </ul>
+      </section>
+      
+      <div class="text">
+        <p>Velkommen til Bø Hundehotell</p>
+        <p>Norges BESTE Hundehotell for dine firbente venner</p>
+        <p >Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
+      </div>
 
+      <div class="miniBilde">  
+        <a href="Opphold.html"> <img src="hunder1.jpg" class="bilder"></a>
+        <a href="Om Oss.html"><img src="hunder2.jpg" class="bilder"></a>
+        <a href="Pris.php"><img  src="hunder3.jpg" class="bilder"></a>
       </div>
 
     </div>

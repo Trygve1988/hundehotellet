@@ -1,12 +1,12 @@
 
 // Hvis skjul passord funksjon
 function visPassord() {
-    var x = document.getElementById("passord");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
+  var x = document.getElementById("passord");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
 } 
 
 //Passord validation
@@ -16,31 +16,64 @@ const status = document.querySelector("#status");
 passord.addEventListener('keyup', melding, false);
 
 function melding(){
-  if(passord.value.length >= 8){
+  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;  
+  //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  if(passord.value.match(paso)){
     status.innerHTML="Passord er godkjent";
     return true;
   } else{
-    status.innerHTML="Passord er ikke godkjent lite";
+    status.innerHTML="Passord er ikke godkjent, passordet må være mellom 8-15 tegn inkludert speseiel tegn.";
+    return false;
   } 
 }
-
 
 //Under utvikling!!!!!!
 
-if(passord.includes(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)){
-  status.innerHTML="Passord er godkjent";
+//Bilde slider og anmeldelse slider
+var stopSlideShow = flase;
+function slideShow(caller) {
+  var interval = setInterval(function(){
+    changeSlide('next');
+  }, 3000);
 }
-else{
-  status.innerHTML="Passord er ikke godkjent";
+
+function changeSlide(direction){
+  var currentImg = $('.active');
+  var nextImg = currentImg.next();
+  var prevImg = currentImg.prev();
+
+  if(direction == 'next') {
+    if(nextImg.length){
+      nextImg.addClas('active');
+    } else {
+      $('.slider img').first().addClas('active');
+    }
+  } else {
+    if(prevImg.length) {
+      prevImg.addClas('active');
+    } else {
+      $('slider img').last().addClas('active');
+    }
+  }
+
+  currentImg.removeClass('active');
+
 }
+
+//Bildeslider v2
+function imgSlider(anything){
+  document.getElementById("slider").src = anything;
+}
+
+//hentet fra https://www.youtube.com/watch?v=y0XHdEeEevs
 
 // Setter til dato 1 dag mer en fra dato
 function tilDato(){
-  var x = document.getElementById("fraDato");
-  var y= document.getElementById("tilDato");
-  if(x.Value<=y.Value){
-    y.Value = date.setDate(date.getDate() + 1);
-  } 
+var x = document.getElementById("fraDato");
+var y= document.getElementById("tilDato");
+if(x.Value<=y.Value){
+  y.Value = date.setDate(date.getDate() + 1);
+} 
 }
 
 

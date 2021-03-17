@@ -48,23 +48,75 @@ body{
   vertical-align: middle;
 }
 
-.front{
-  background-color: white; 
+.text{
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 580px;
-  margin-right: 580px;
+  font-family: Arial;
+  font-size: 25px;
+  font-weight: bold;
+  border: solid black;
 }
 
-.bildeSlider{
-  width: 500px;
+.front{
+  background-color: white; 
+  margin-left: 380px;
+  margin-right: 380px;
+}
+
+section{
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section #slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section .navigation {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .navigation li {
+  list-style-type: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+section .navigation li img {
+    width: 150px;
+    border: 4px solid #fff;
+    border-radius: 4px;
 }
 
 .miniBilde{
-  display: flex;
-  flex-direction: row;
-  width: 150px;
-  height: 150px;
-  padding: 25px;
+  display: inline-block;
 }
 
+.bilder{
+  border: 5px solid black;
+  margin: 100px;
+  width: 300px;
+  height: 200px;
+  padding: 0px 0px 150px 0px;
+  align-items: center;
+}
+
+@media screen and (max-width: 641px) {
+}
+@media screen and (max-width: 1024px){
+}
