@@ -92,7 +92,7 @@
         <div class="høyre kart">
             <h1>Besøk oss</h1>
             <iframe width="350" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=350&amp;height=200&amp;hl=en&amp;q=Lektorvegen%2091%20B%C3%B8%20i%20Telemark+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-            <a href='https://addmap.net/'>google maps directions embed</a>
+            <a href='https://addmap.net/'></a>
             <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=83957d2396c89fcb76438cfa7afc7c07aeee769a'></script>
 
         </div>
