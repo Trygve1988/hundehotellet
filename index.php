@@ -22,7 +22,7 @@
     <main>
 
   <div class="body">
-    <img  class="background" src="bakgrund.jpg">
+    <img  class="background" src="bilder/bakgrunn.jpg"> 
 
     <div class="front">
 
@@ -30,9 +30,9 @@
         <img src="hundSlider1.jpg" id="slider">
         
         <ul class="navigation">
-          <li onclick="imgSlider('hundSlider1.jpg')"><img src="hundSlider1.jpg"></li>
-          <li onclick="imgSlider('hundSlider2.jpg')"><img src="hundSlider2.jpg"></li>
-          <li onclick="imgSlider('hundSlider3.jpg')"><img src="hundSlider3.jpg"></li>
+          <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="Bilder/hundSlider1.jpg"></li>
+          <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
+          <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
         </ul>
       </section>
       
@@ -43,9 +43,9 @@
       </div>
 
       <div class="miniBilde">  
-        <a href="Opphold.html"> <img src="hunder1.jpg" class="bilder"></a>
-        <a href="Om Oss.html"><img src="hunder2.jpg" class="bilder"></a>
-        <a href="Pris.php"><img  src="hunder3.jpg" class="bilder"></a>
+        <a href="Opphold.html"> <img src="bilder/hunder1.jpg" class="bilder"></a>
+        <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
+        <a href="Pris.php"><img  src="bilder/hunder3.jpg" class="bilder"></a>
       </div>
     </main>
 
