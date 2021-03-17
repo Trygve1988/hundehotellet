@@ -1,4 +1,76 @@
-// Hvis skjul passord funksjon (Even)
+/*
+// ********************* 0) Felles: tilToppenKnapp (Kristina) ********************* 
+//https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+//Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 
+//Var har blitt gjort om til let (fikk streng beskjed av foreleser på NTNU om om å bare bruke let istenfor var og const).
+
+// Henter topp knappen ved hentet elmentet id kalt Knappen
+let minKnapp = document.getElementById("Knappen");
+
+// Når brukeren ruller 20 px fra toppen av dokumentet, viser knappen  
+window.onscroll = function() {scrolleFunksjon()};
+
+function scrolleFunksjon() {
+    // Topp knappen dukker opp når brukeren scroller ned
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    minKnapp.style.display = "block";
+} else {
+    minKnapp.style.display = "none";
+}
+}
+
+// Når brukeren klikker på knappen, scrolles det til toppen av dokumentet 
+function toppKnappFunksjon() {
+document.body.scrollTop = 0; // Denne koden brukes hvis nettleseren er Safari
+document.documentElement.scrollTop = 0; // Denne koden brukes hvis nettleseren er Chrome, Firefox, Opera og IE.
+}
+*/
+
+
+// ************************** 1) index: anmeldelseSlider (Trygve) ************************** 
+var anmeldelseTekst = document.getElementById("anmeldelseTekst");
+var nesteAnmeldelseKnapp = document.getElementById("nesteAnmeldelseKnapp");
+var tilbakeAnmeldelseKnapp = document.getElementById("tilbakeAnmeldelseKnapp");
+var anmeldelsePos = 0;
+
+//er vi på index siden ? 
+if (anmeldelseTekst !== null) {
+    nesteAnmeldelseKnapp.addEventListener('click',neste,false);
+    tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
+}
+
+function neste() {
+    anmeldelsePos++;
+    oppdaterAnmeldelseSlider();
+}
+
+function tilbake() {
+    anmeldelsePos--;
+    oppdaterAnmeldelseSlider();
+}
+
+function oppdaterAnmeldelseSlider() { 
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/hentUtAnmeldelse.php?q="+anmeldelsePos, true);
+    ajaxRequest.send(null); 
+    ajaxRequest.onreadystatechange = function() {
+        var svar = ajaxRequest.responseText;
+        console.log(svar);
+        if (svar == -1) {
+            anmeldelsePos = 0;
+            neste();        
+        }
+        else {
+            anmeldelseTekst.innerHTML = svar;
+        }
+    }
+}
+
+neste();
+
+
+
+// ************************** 11) Registrer deg: Hvis skjul passord funksjon (Even) **************************
 const visPassordKnapp = document.querySelector("#visPassordKnapp");
 
 if (visPassordKnapp !== null) {
@@ -14,8 +86,7 @@ function visPassord() {
     }
 } 
 
-
-// Passord validation (Even)
+// ************************** 11) Registrer deg: Passord validation (Even) **************************
 const passord = document.querySelector("#passord");
 const status = document.querySelector("#status");
 
@@ -33,10 +104,7 @@ function melding(){
 }
 
 
-
-
-
-// CCV modal (Kristina)
+// ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp
 //Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 
 //Var har blitt gjort om til let (fikk streng beskjed av foreleser på NTNU om om å bare bruke let istenfor var og const).
@@ -72,31 +140,3 @@ window.onclick = function(hendelse) { //Endret fra e til hendelse.
   }
 
 }
-
-
-// Til toppen knapp (Kristina)
-//https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
-//Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 
-//Var har blitt gjort om til let (fikk streng beskjed av foreleser på NTNU om om å bare bruke let istenfor var og const).
-
-// Henter topp knappen ved hentet elmentet id kalt Knappen
-let minKnapp = document.getElementById("Knappen");
-
-// Når brukeren ruller 20 px fra toppen av dokumentet, viser knappen  
-window.onscroll = function() {scrolleFunksjon()};
-
-function scrolleFunksjon() {
-    // Topp knappen dukker opp når brukeren scroller ned
-if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    minKnapp.style.display = "block";
-} else {
-    minKnapp.style.display = "none";
-}
-}
-
-// Når brukeren klikker på knappen, scrolles det til toppen av dokumentet 
-function toppKnappFunksjon() {
-document.body.scrollTop = 0; // Denne koden brukes hvis nettleseren er Safari
-document.documentElement.scrollTop = 0; // Denne koden brukes hvis nettleseren er Chrome, Firefox, Opera og IE.
-}
-
