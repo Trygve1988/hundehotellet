@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 // ********************* 0) Felles: tilToppenKnapp (Kristina) ********************* 
 //https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
@@ -77,32 +78,44 @@ if (visPassordKnapp !== null) {
     visPassordKnapp.addEventListener('click', visPassord, false);
 } 
 
+=======
+// Hvis skjul passord funksjon (Even)
+>>>>>>> d297ced4c792e8221c95b326911d67e3946c1323
 function visPassord() {
-    var x = document.getElementById("passord");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
+  var x = document.getElementById("passord");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
 } 
 
+<<<<<<< HEAD
 // ************************** 11) Registrer deg: Passord validation (Even) **************************
+=======
+//Passord validation (Even)
+>>>>>>> d297ced4c792e8221c95b326911d67e3946c1323
 const passord = document.querySelector("#passord");
 const status = document.querySelector("#status");
 
-if (passord !== null) {
-    passord.addEventListener('keyup', melding, false);
-}  
+passord.addEventListener('keyup', melding, false);
 
 function melding(){
-  if(passord.value.length >= 8){
+  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;  
+  //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  if(passord.value.match(paso)){
     status.innerHTML="Passord er godkjent";
     return true;
   } else{
-    status.innerHTML="Passord er ikke godkjent lite";
+    status.innerHTML="Passordet må være mellom 8-15 tegn inkludert speseiel tegn.";
+    return false;
   } 
 }
 
+//Bildeslider v2 (Even)
+function imgSlider(anything){
+  document.getElementById("slider").src = anything;
+}
 
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp

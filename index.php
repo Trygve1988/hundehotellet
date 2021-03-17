@@ -21,6 +21,7 @@
     <!-- ************************** 2) main **************************-->
     <main>
 
+<<<<<<< HEAD
       <div class="body">
         <img  class="background" src="bakgrund.jpg">
 
@@ -58,6 +59,34 @@
         </div>
 
 
+=======
+  <div class="body">
+    <img  class="background" src="bilder/bakgrunn.jpg"> 
+
+    <div class="front">
+
+      <section>
+        <img src="bilder/hundSlider1.jpg" id="slider">
+        
+        <ul class="navigation">
+          <li onclick="imgSlider('bilder/hundSlider1.')"><img src="bilder/hundSlider1.jpg"></li>
+          <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
+          <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
+        </ul>
+      </section>
+      
+      <div class="text">
+        <p>Velkommen til Bø Hundehotell</p>
+        <p>Norges BESTE Hundehotell for dine firbente venner</p>
+        <p >Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
+      </div>
+
+      <div class="miniBilde">  
+        <a href="Opphold.html"> <img src="bilder/hunder1.jpg" class="bilder"></a>
+        <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
+        <a href="Pris.php"><img  src="bilder/hunder3.jpg" class="bilder"></a>
+      </div>
+>>>>>>> d297ced4c792e8221c95b326911d67e3946c1323
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->
