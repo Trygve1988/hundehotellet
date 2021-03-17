@@ -48,6 +48,9 @@ color: black;
 	font-family: Arial, Times New Roman, Calibri, serif;
 	font-size: 19px;
 	text-align:center;	
+
+}
+.bildeBakgrunn {
 	background-image: url("bakgrunn.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
