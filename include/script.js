@@ -86,11 +86,8 @@ function visPassord() {
   }
 } 
 
-<<<<<<< HEAD
 // ************************** 11) Registrer deg: Passord validation (Even) **************************
-=======
 //Passord validation (Even)
->>>>>>> d297ced4c792e8221c95b326911d67e3946c1323
 const passord = document.querySelector("#passord");
 const status = document.querySelector("#status");
 
