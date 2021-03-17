@@ -1,9 +1,11 @@
 <?php
 /* ************************** 0) Alle: a) konstanter ************************** */
-define("TJENER",  "localhost");
-define("BRUKER",  "root");
-define("PASSORD", "");
-define("DB",      "hundehotellet");
+// øverst i include/funksjoner.php
+//koble på itfag databasen
+define("TJENER",  "itfag.usn.no");
+define("BRUKER",  "h20APP2000gr5");
+define("PASSORD", "pw5");
+define("DB",      "h20APP2000grdb5");
 
 /* ************************** 0) Alle: b) SESSION ************************** */
 function opprettBrukerSession($brukerID,$epost,$passord,$brukerType) {
