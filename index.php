@@ -44,7 +44,7 @@
 
           <div class="miniBilde">  
             <a href="Opphold.html"> <img src="bilder/hunder1.jpg" class="bilder"></a>
-            <a href="Om Oss.html"><img src="bilder/bilder/hunder2.jpg" class="bilder"></a>
+            <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
             <a href="Pris.php"><img  src="bilder/hunder3.jpg" class="bilder"></a>
           </div>
 
