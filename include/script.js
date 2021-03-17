@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
 // ********************* 0) Felles: tilToppenKnapp (Kristina) ********************* 
 //https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
@@ -78,9 +77,6 @@ if (visPassordKnapp !== null) {
     visPassordKnapp.addEventListener('click', visPassord, false);
 } 
 
-=======
-// Hvis skjul passord funksjon (Even)
->>>>>>> d297ced4c792e8221c95b326911d67e3946c1323
 function visPassord() {
   var x = document.getElementById("passord");
   if (x.type === "password") {
