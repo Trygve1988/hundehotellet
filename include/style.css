@@ -9,7 +9,7 @@ table, th, td {
   .navbar {
 	  overflow: hidden; 
 	  background-color: #333;
-	  position: absolute;
+	  position: relative;
 	}
 	
 	.navbar a {
