@@ -32,6 +32,16 @@
         <div class="body">
             <img class="background" src="bilder/bakgrund.jpg">
 
+            <section>
+                <img src="hundSlider1.jpg" id="slider">
+        
+                <ul class="navigation">
+                    <li onclick="imgSlider('hundSlider1.jpg')"><img src="hundSlider1.jpg"></li>
+                    <li onclick="imgSlider('hundSlider2.jpg')"><img src="hundSlider2.jpg"></li>
+                    <li onclick="imgSlider('hundSlider3.jpg')"><img src="hundSlider3.jpg"></li>
+                </ul>
+            </section>
+
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
