@@ -32,15 +32,17 @@
         <div class="body">
             <img class="background" src="bilder/bakgrund.jpg">
 
-            <section>
-                <img src="bilder/hundSlider1.jpg" id="slider">
+            <div class="front">
+
+                <section>
+                    <img src="bilder/hundSlider1.jpg" id="slider">
         
-                <ul class="navigation">
-                    <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg"></li>
-                    <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
-                    <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
-                </ul>
-            </section>
+                    <ul class="navigation">
+                        <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg"></li>
+                        <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
+                        <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
+                    </ul>
+                </section>
 
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
@@ -62,6 +64,8 @@
                     </div>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a>
                 </div>
+            </div>
+        </div>
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->
