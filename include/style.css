@@ -6,10 +6,6 @@ table, th, td {
 
 
 /* **************************** navbar (Even) ***************************** */
-body{
-	margin: 0px;
-   }
-  
   .navbar {
 	  overflow: hidden; 
 	  background-color: #333;

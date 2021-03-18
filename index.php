@@ -33,7 +33,7 @@
             <img class="background" src="bilder/bakgrund.jpg">
 
             <section>
-                <img src="hundSlider1.jpg" id="slider">
+                <img src="bilder/hundSlider1.jpg" id="slider">
         
                 <ul class="navigation">
                     <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg"></li>
