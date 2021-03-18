@@ -367,6 +367,15 @@ footer a {
     margin-bottom: 40px;
     margin: 0;
  }
+ /*Responsiv footer ved mobil-versjon*/
+ @media (max-width: 1200px) { /*Endre størrelsen på nettsiden*/
+    footer,
+    .footer-bottom{
+      flex-direction: column;  
+      width: auto; 
+    }
+  }
+
 
 /*info til footeren til venstre*/
    .venstre p {
