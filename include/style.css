@@ -48,6 +48,7 @@ table, th, td {
 	top: 0px;
 	z-index: -1;
 	background-size: 100%;
+	background-image: url("bakgrund.jpg");
 	background-repeat: no-repeat;
 	vertical-align: middle;
   }
