@@ -32,7 +32,7 @@
         <div class="body">
             <img class="background" src="bilder/bakgrund.jpg">
 
-            <div class="front">
+            <section>
 
                 <div class="bdSlider">
                     <img src="bilder/hundSlider1.jpg" id="slider">
@@ -42,7 +42,7 @@
                         <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
                         <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
                     </ul>
-                </div>
+                </section>
 
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
@@ -67,56 +67,7 @@
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->
-<<<<<<< Updated upstream
     <?php visFooter(); ?>
-=======
-    <?php visFooter(); ?> 
-  <!-- Footer -->
-  <footer class="main-footer">
-    <div class="left">
-        <h1>Kontakinformsjon</h1>
-        <p>Bø Hundehotell</p>
-        <p><strong>Tlf:</strong> 12345678</p>
-        <p><strong>E-post:</strong><a href="bøhundehotell@gmail.com">bøhundehotell@gmail.com</a></p>
-        <p> <strong>Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
-    </div>
-
-    <div class="centered social-media">
-        <h1>Sosiale medier</h1>
-
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="bilder/Logo/facebook.xcf" alt="Instagram Logo" class="instagram-icon"></a>
-
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="bilder/Logo/facebook.png" alt="Facebook Logo" class="facebook-icon"></a>
-
-        <a href="https://twitter.com/twitter" target="_blank">
-            <img src="bilder/Logo/twitter.png" alt="Twitter Logo" class="twitter-icon"></a>
-    </div>
-
-    <!-- Gratis google kart fra https://maps-website.com-->
-    <div class="right map">
-        <h1>Besøk oss</h1>
-        <iframe width="350" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?width=350&amp;height=200&amp;hl=en&amp;q=Lektorvegen%2091%20B%C3%B8%20i%20Telemark+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-        <a href='https://addmap.net/'>google maps directions embed</a>
-        <script type='text/javascript'
-            src='https://embedmaps.com/google-maps-authorization/script.js?id=83957d2396c89fcb76438cfa7afc7c07aeee769a'></script>
-
-    </div>
-
-    <div class="right">
-        <h1>Samarbeidspartnere</h1>
-        <p>Royal Canin</p>
-    </div>
-
-</footer>
-
-
-    <?php visToppKnapp(); ?> 
-    <script src="toppknappen.js"></script>
->>>>>>> Stashed changes
 
     <!-- Footer lagt til-->
     <footer class="main-footer">

@@ -48,7 +48,6 @@ table, th, td {
 	top: 0px;
 	z-index: -1;
 	background-size: 100%;
-	background-image: url("bakgrund.jpg");
 	background-repeat: no-repeat;
 	vertical-align: middle;
   }
@@ -76,7 +75,7 @@ table, th, td {
 	align-items: center;
   }
   
-  .bdSlider #slider{
+  #slider{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -85,7 +84,7 @@ table, th, td {
 	object-fit: cover;
   }
   
-  .bdSlider .navigation {
+  .navigation {
 	  position: absolute;
 	  bottom: 40px;
 	  left: 50%;
@@ -96,13 +95,13 @@ table, th, td {
 	  align-items: center;
   }
   
-   .bdSlider .navigation li {
+  .navigation li {
 	list-style-type: none;
 	cursor: pointer;
 	margin: 10px;
   }
   
-  .bdSlider .navigation li img {
+  .navigation li img {
 	  width: 100px;
 	  border: 4px solid #fff;
 	  border-radius: 4px;
