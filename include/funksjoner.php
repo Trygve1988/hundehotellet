@@ -113,11 +113,19 @@ function erAdmin() {
 
 /* ************************** 0) Alle: e) bunn ************************** */ 
 function visToppKnapp() { 
-    ?> <?php 
+    ?> 
+
+    <!--sett tilToppKnappen din inn her kristina -->
+
+    <?php 
 }
 
 function visFooter() { 
-    ?><?php 
+    ?>
+ 
+    <!--sett footeren din inn her kristina -->
+
+    <?php 
 }
 
 // ************************** 1) Index **************************
