@@ -47,8 +47,8 @@ table, th, td {
 	left: 0px;
 	top: 0px;
 	z-index: -1;
-	background-image: url("bakgrunn.jpg");
 	background-size: 100%;
+	background-image: url("bakgrund.jpg");
 	background-repeat: no-repeat;
 	vertical-align: middle;
   }
@@ -67,7 +67,7 @@ table, th, td {
 	margin-right: 380px;
   }
   
-  section{
+  .bdSlider{
 	position: relative;
 	width: 100%;
 	height: 500px;
@@ -76,7 +76,7 @@ table, th, td {
 	align-items: center;
   }
   
-  section #slider{
+  .bdSlider #slider{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -85,7 +85,7 @@ table, th, td {
 	object-fit: cover;
   }
   
-  section .navigation {
+  .bdSlider .navigation {
 	  position: absolute;
 	  bottom: 40px;
 	  left: 50%;
@@ -96,14 +96,14 @@ table, th, td {
 	  align-items: center;
   }
   
-  section .navigation li {
+   .bdSlider .navigation li {
 	list-style-type: none;
 	cursor: pointer;
 	margin: 10px;
   }
   
-  section .navigation li img {
-	  width: 150px;
+  .bdSlider .navigation li img {
+	  width: 100px;
 	  border: 4px solid #fff;
 	  border-radius: 4px;
   }

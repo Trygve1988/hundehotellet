@@ -30,7 +30,7 @@
 
             <div class="front">
 
-                <section>
+                <div class="bdSlider">
                     <img src="bilder/hundSlider1.jpg" id="slider">
 
                     <ul class="navigation">
@@ -38,7 +38,7 @@
                         <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
                         <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
                     </ul>
-                </section>
+                </div>
 
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
