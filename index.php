@@ -36,9 +36,9 @@
                 <img src="hundSlider1.jpg" id="slider">
         
                 <ul class="navigation">
-                    <li onclick="imgSlider('hundSlider1.jpg')"><img src="hundSlider1.jpg"></li>
-                    <li onclick="imgSlider('hundSlider2.jpg')"><img src="hundSlider2.jpg"></li>
-                    <li onclick="imgSlider('hundSlider3.jpg')"><img src="hundSlider3.jpg"></li>
+                    <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg"></li>
+                    <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
+                    <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
                 </ul>
             </section>
 
