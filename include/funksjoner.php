@@ -125,10 +125,7 @@ function visToppKnapp() {
 
 function visFooter() { 
     ?>
- 
     <!--sett footeren din inn her kristina -->
-    <?php visFooter(); ?> 
-
     <footer class="main-footer">
         <div class="venstre">
             <h1>Kontakinformsjon</h1>
