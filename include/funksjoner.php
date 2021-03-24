@@ -142,13 +142,13 @@ function visFooter() {
             <h1>Sosiale medier</h1>
 
             <a href="https://www.instagram.com" target="_blank">
-                <img src="bilder/logoer/" alt="Instagram Logo" class="instagram-ikon"></a>
+                <img src="bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
 
             <a href="https://www.facebook.com" target="_blank">
-                <img src="bilder/Logo/facebook.png" alt="Facebook Logo" class="facebook-ikon"></a>
+                <img src="bilder/facebookIkon.png" alt="Facebook Logo" class="facebook-ikon"></a>
 
             <a href="https://twitter.com/twitter" target="_blank">
-                <img src="bilder/Logo/twitter.png" alt="Twitter Logo" class="twitter-ikon"></a>
+                <img src="bilder/twitterIkon.png" alt="Twitter Logo" class="twitter-ikon"></a>
         </div>
 
         <!-- Gratis google kart fra https://maps-website.com-->
