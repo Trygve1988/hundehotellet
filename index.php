@@ -28,7 +28,7 @@
             <img class="background" src="bilder/bakgrund.jpg">
 
             <div class="front">
-<!--
+
                 <section id="#bdSlider">
                     <img src="bilder/hundSlider1.jpg" id="slider">
         
@@ -38,7 +38,7 @@
                         <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
                     </ul>
                 </section>
--->
+
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
