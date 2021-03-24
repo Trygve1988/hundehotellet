@@ -30,7 +30,7 @@
 
             <div class="front">
 
-                <section id="bdSlider">
+                <section>
                     <img src="bilder/hundSlider1.jpg" id="slider">
         
                     <ul class="navigation">
