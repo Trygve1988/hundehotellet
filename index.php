@@ -1,4 +1,4 @@
-||<?php
+<?php
     include_once "include/funksjoner.php";
     session_start();
     $dblink = kobleOpp();
