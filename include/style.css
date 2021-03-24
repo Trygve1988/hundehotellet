@@ -90,7 +90,7 @@ table, th, td {
 	text-align:center;	
 
 }
-/*
+
 .bildeBakgrunn {
 	background-image: url("bakgrunn.jpg");
 	background-repeat: no-repeat;
@@ -104,7 +104,7 @@ table, th, td {
 	padding: 40px 8px 25px 8px;
 	background-color: white;
 }
-*/
+
 
 /*Beskjed til Gunni, alle kompontene i form krasjer med mine komponenter kontakt formen på "kontakt oss" siden, skriv istedet form *navn på div* {
 	Hvis det ikke går an, ta de inn på en egen css fil :) */
@@ -407,4 +407,5 @@ footer a {
 #anmeldelseBoks a {
     cursor: pointer;
     padding: 18px 15px 18px 15px; 
+	position: center;
 }
