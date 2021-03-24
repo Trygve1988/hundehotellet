@@ -25,9 +25,6 @@
     <main>
 
         <div class="body">
-            <img class="background" src="bilder/bakgrund.jpg">
-
-            <div class="front">
 
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
