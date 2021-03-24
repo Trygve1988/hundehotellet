@@ -25,9 +25,9 @@
     <main>
 
         <div class="body">
-            <img class="bildeBakgrunn" src="bilder/bakgrund.jpg">
+            <img class="background" src="bilder/bakgrund.jpg">
 
-            <div class="hovedBakgrunn">
+            <div class="front">
 
                 <section id="#bdSlider">
                     <img src="bilder/hundSlider1.jpg" id="slider">

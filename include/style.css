@@ -39,8 +39,8 @@ table, th, td {
 	  background-color: #ddd; 
 	  color: black; 
 	}
-/*
-  .even{ skal kanskje fjernes IKKE RØR !
+
+  .background{ 
 	position: absolute;
 	width: 100%;
 	left: 0px;
@@ -51,7 +51,7 @@ table, th, td {
 	background-repeat: no-repeat;
 	vertical-align: middle;
   }
-*/
+
   .text{
 	text-align: center;
 	font-family: Arial;
@@ -130,6 +130,7 @@ table, th, td {
 	text-align:center;	
 
 }
+/*
 .bildeBakgrunn {
 	background-image: url("bakgrunn.jpg");
 	background-repeat: no-repeat;
@@ -143,6 +144,7 @@ table, th, td {
 	padding: 40px 8px 25px 8px;
 	background-color: white;
 }
+*/
 
 /*Beskjed til Gunni, alle kompontene i form krasjer med mine komponenter kontakt formen på "kontakt oss" siden, skriv istedet form *navn på div* {
 	Hvis det ikke går an, ta de inn på en egen css fil :) */
