@@ -39,8 +39,8 @@ table, th, td {
 	  background-color: #ddd; 
 	  color: black; 
 	}
-
-  .even{
+/*
+  .even{ skal kanskje fjernes IKKE RØR !
 	position: absolute;
 	width: 100%;
 	left: 0px;
@@ -51,6 +51,7 @@ table, th, td {
 	background-repeat: no-repeat;
 	vertical-align: middle;
   }
+*/
   .text{
 	text-align: center;
 	font-family: Arial;
