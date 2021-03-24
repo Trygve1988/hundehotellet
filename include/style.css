@@ -66,7 +66,8 @@ table, th, td {
 	margin-right: 380px;
   }
   
-  section #bdSlider{
+ 
+section #bdSlider{
 	position: relative;
 	width: 100%;
 	height: 500px;
@@ -75,7 +76,7 @@ table, th, td {
 	align-items: center;
   }
   
-  section #bdSlider{
+  section #slider{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -83,7 +84,6 @@ table, th, td {
 	height: 100%;
 	object-fit: cover;
   }
-  
   section .navigation {
 	  position: absolute;
 	  bottom: 40px;
