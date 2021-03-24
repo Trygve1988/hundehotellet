@@ -68,13 +68,14 @@ table, th, td {
   
   
   .miniBilde{
-	display: inline-block;
+	display:flex;
+	display:center;
   }
   
   .bilder{
 	border: 5px solid black;
-	margin: 100px;
-	width: 250px;
+	margin: 50px;
+	width: 200px;
 	height: 200px;
 	padding: 0px 0px 150px 0px;
 	align-items: center;
@@ -407,5 +408,4 @@ footer a {
 #anmeldelseBoks a {
     cursor: pointer;
     padding: 18px 15px 18px 15px; 
-	position: center;
 }
