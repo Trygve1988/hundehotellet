@@ -26,11 +26,11 @@
     <main>
 
         <div class="body">
-            <img class="background" src="bilder/bakgrund.jpg">
+            <img class="even" src="bilder/bakgrund.jpg">
 
             <div class="front">
 
-                <section id="">
+                <section id="bdSlider">
                     <img src="bilder/hundSlider1.jpg" id="slider">
         
                     <ul class="navigation">
