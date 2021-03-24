@@ -43,12 +43,13 @@
 
                 <!-- Trygve anmeldelseslider -->
                 <div id="anmeldelseBoks">
-                    <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
                     <div id="anmeldelseTekstBoks">
                         <p id="anmeldelseTekst"></p>
                     </div>
+                    <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a>
                 </div>
+                
             </div>
         </div>
     </main>

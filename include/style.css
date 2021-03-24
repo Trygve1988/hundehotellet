@@ -386,26 +386,19 @@ footer a {
 
 
 /* **************************** Trygve ***************************** */
+#anmeldelseBoks a {
+  cursor: pointer;
+  padding: 18px 15px 18px 15px; 
+}
+
 #anmeldelseTekstBoks {  
     width: 700px;
     height: 150px;
     border: 1px solid black;
     padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 28px;
     position: relative;
     font-style: italic;
-}
-
-#anmeldelseSignatur {
-   text-align: right;
-   margin-right: 20px;
-   position: absolute;
-   bottom: 0;
-   right: 0;
-   font-style: italic;
-}
-
-#anmeldelseBoks a {
-    cursor: pointer;
-    padding: 18px 15px 18px 15px; 
 }
