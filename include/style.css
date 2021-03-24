@@ -40,8 +40,7 @@ table, th, td {
 	  color: black; 
 	}
 
-  /* Gunni 
-  .background{
+  .even{
 	position: absolute;
 	width: 100%;
 	left: 0px;
@@ -52,7 +51,6 @@ table, th, td {
 	background-repeat: no-repeat;
 	vertical-align: middle;
   }
-  */
   .text{
 	text-align: center;
 	font-family: Arial;
@@ -67,7 +65,7 @@ table, th, td {
 	margin-right: 380px;
   }
   
-  section{
+  section #bdSlider{
 	position: relative;
 	width: 100%;
 	height: 500px;
