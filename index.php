@@ -26,6 +26,8 @@
 
         <div class="body">
 
+            <div class="front">
+
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
