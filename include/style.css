@@ -39,7 +39,8 @@ table, th, td {
 	  background-color: #ddd; 
 	  color: black; 
 	}
-  
+
+  /* Gunni 
   .background{
 	position: absolute;
 	width: 100%;
@@ -51,7 +52,7 @@ table, th, td {
 	background-repeat: no-repeat;
 	vertical-align: middle;
   }
-  
+  */
   .text{
 	text-align: center;
 	font-family: Arial;
