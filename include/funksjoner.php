@@ -116,7 +116,7 @@ function visToppKnapp() {
     ?> 
 
     <!--sett tilToppKnappen din inn her kristina -->
-    <script src=""></script>
+    <script src="toppknappen.js"></script>
 
     <?php 
 }
