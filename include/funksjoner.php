@@ -56,9 +56,9 @@ function visNav() {
     ?> <div class="navbar">
         <a href="index.php"> <img  class="logo" src="bilder/logo.png"> Bø Hundehotell </a>
         <a href="index.php">Hjem</a>
-        <a href="index.php">Aktuelt</a>
-        <a href="index.php">Om Oss</a>
-        <a href="index.php">Priser</a>
+        <a href="aktuelt.php">Aktuelt</a>
+        <a href="omOss.php">Om Oss</a>
+        <a href="priser.php">Priser</a>
         <a href="KontaktOss.html">Kontakt Oss</a>
         
          <?php
