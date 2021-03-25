@@ -118,7 +118,7 @@ table, th, td {
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-
+/*
 .hovedBakgrunn {
 	display: inline-block;
 	width: 60%;
@@ -127,7 +127,6 @@ table, th, td {
 	background-color: white;
 }
 
-/*
 form {
 	display: inline-block;
 	width: 85%;
