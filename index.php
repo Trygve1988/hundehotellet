@@ -34,13 +34,27 @@
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
                     <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
                 </div>
+                
+                <div id="KontrollerBD">
 
-                <div class="miniBilde">
-                    <a href="Opphold.html"> <img src="bilder/hunder1.jpg" class="bilder"></a>
-                    <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
-                    <a href="Pris.php"><img src="bilder/hunder3.jpg" class="bilder"></a>
+                    <div class="bildeKontroller">
+                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder"></a>
+                        <h1> Bestill Opphold </h1>
+                        <p>Her kan du bestille opphold til hunden(ene) dine</p>
+                    </div>
+
+                    <div class="bildeKontroller">
+                        <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
+                        <h1>Om Hundehotellet</h1>
+                        <p>Her kan du lese om hundehotellet.</p>
+                    </div>
+
+                    <div class="bildeKontroller">
+                        <a href="Pris.php"><img src="bilder/hunder3.jpg" class="bilder"></a>
+                        <h1>Priser</h1>
+                        <p>Her kan du se en oversikt over priser.</p>
+                    </div>
                 </div>
-
                 <!-- Trygve anmeldelseslider -->
                 <div id="anmeldelseBoks">
                     <div id="anmeldelseTekstBoks">
