@@ -23,7 +23,7 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main **************************-->
 	<main>
-		<div class="body">
+		<div class="hovedBakgrunn">
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 			<!-- Form-->
 			<form method="POST">

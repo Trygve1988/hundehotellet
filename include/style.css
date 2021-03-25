@@ -110,7 +110,8 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.hovedBakgrunn { Denne koden har de andre i body? Test ut
+*/
+.hovedBakgrunn {
 	display: inline-block;
 	width: 60%;
 	height: auto;
@@ -127,7 +128,7 @@ form {
 	background-color: #e7e4e4;
 	text-align: left;
 }
-
+/*
 h2 {
 	font-size: 35px;
 }

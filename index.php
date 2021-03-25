@@ -24,10 +24,10 @@ $dblink = kobleOpp();
     <!-- ************************** 2) main **************************-->
     <main>
 
-        <div class="body">
+        <div class="hovedBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
-            <div class="front">
+            <!--<div class="front"> -->
 
                 <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
