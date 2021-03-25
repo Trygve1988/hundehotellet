@@ -59,7 +59,7 @@ function visNav() {
         <a href="aktuelt.php">Aktuelt</a>
         <a href="omOss.php">Om Oss</a>
         <a href="priser.php">Priser</a>
-        <a href="KontaktOss.html">Kontakt Oss</a>
+        <a href="KontaktOss.php">Kontakt Oss</a>
         
          <?php
         // bestill Opphold
