@@ -1,9 +1,3 @@
-/* **************************** tabell (Trygve) ***************************** */
-table, th, td {
-    background-color: rgb(231, 230, 230);
-    border: 1px solid black;
-}
-
 
 /* **************************** navbar (Even) ***************************** */
 .navbar {
@@ -40,15 +34,15 @@ table, th, td {
     color: black; 
   }
 
-.background{
+.bildeBakgrunn {
   position: absolute;
   width: 100%;
   left: 0px;
   top: 0px;
   z-index: -1;
-  /* background-image: url("bakgrund.jpg"); // La være, tester!
+  background-image: url("bakgrunn.jpg");
   background-size: 100%;
-  background-repeat: no-repeat;*/
+  background-repeat: no-repeat;
   vertical-align: middle;
 }
 
@@ -70,7 +64,6 @@ table, th, td {
     display:flex;
   }
   
-  
   .bildeKontroller{
     border: 2px solid black;
     margin: 30px;
@@ -81,6 +74,10 @@ table, th, td {
     text-align: justify;
     font-family: Arial;
     padding: 0px 0px 0px 5px;
+  }
+
+  .bildeKontroller h1 {
+    font-size: 30px;
   }
   
   .bilder{
@@ -98,14 +95,22 @@ table, th, td {
 	text-align:center;	
 
 }
-
-.bildeBakgrunn {
-	background-image: url("bakgrunn.jpg");
-	background-repeat: no-repeat;
-	background-size: 100%;
-}
 /*
-.hovedBakgrunn {
+.bildeBakgrunn {
+	/*background-image: url("bakgrunn.jpg"); 
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  background-image: url("bakgrunn.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.hovedBakgrunn { Denne koden har de andre i body? Test ut
 	display: inline-block;
 	width: 60%;
 	height: auto;
@@ -395,14 +400,15 @@ footer a {
   padding: 18px 15px 18px 15px; 
 }
 
-#anmeldelseTekstBoks {  
-    width: 700px;
-    height: 150px;
-    border: 1px solid black;
-    padding: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 28px;
-    position: relative;
-    font-style: italic;
+#anmeldelseTekstBoks{
+  width: 700px;
+  height: 150px;
+  border: 1px solid black;
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 28px;
+  position: relative;
+  font-style: italic;
+}
 }

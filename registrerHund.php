@@ -22,10 +22,10 @@ $dblink = kobleOpp();
 	<?php visNav(); ?>
 
 	<!-- ************************** 2) main **************************-->
-	<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+	
 	<main>
-		<div class="hovedBakgrunn">
-
+		<div class="body">
+		<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 			<!-- Form-->
 			<form method="POST">
 
