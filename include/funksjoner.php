@@ -58,8 +58,8 @@ function visNav() {
         <a href="index.php">Hjem</a>
         <a href="index.php">Aktuelt</a>
         <a href="index.php">Om Oss</a>
-        <a href="index.php">Pris</a>
-        <a href="index.php">Kontakt Oss</a>
+        <a href="index.php">Priser</a>
+        <a href="KontaktOss.html">Kontakt Oss</a>
         
          <?php
         // bestill Opphold
@@ -127,10 +127,7 @@ function visToppKnapp() {
 
 function visFooter() { 
     ?>
- 
     <!--sett footeren din inn her kristina -->
-    <?php visFooter(); ?> 
-
     <footer class="main-footer">
         <div class="venstre">
             <h1>Kontakinformsjon</h1>

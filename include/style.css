@@ -84,7 +84,8 @@ table, th, td {
 
 /* **************************** Gunni ***************************** */
 @media only screen and (min-width: 720px) {
-	body {
+/*
+  body {
 	margin: 0px;
 	font-family: Arial, Times New Roman, Calibri, serif;
 	font-size: 19px;
@@ -106,9 +107,6 @@ table, th, td {
 	background-color: white;
 }
 
-
-/*Beskjed til Gunni, alle kompontene i form krasjer med mine komponenter kontakt formen på "kontakt oss" siden, skriv istedet form *navn på div* {
-	Hvis det ikke går an, ta de inn på en egen css fil :) */
 form {
 	display: inline-block;
 	width: 85%;
@@ -118,7 +116,7 @@ form {
 	background-color: #e7e4e4;
 	text-align: left;
 }
-/* skriv istedet h2 *navn på div* {*/
+
 h2 {
 	font-size: 35px;
 }
@@ -156,7 +154,7 @@ input[type=text], input[type=password], input[type=date], input[type=month], tex
 }
 
 textarea {
-	height: 200px; /*Denne må sjekkes!*/
+	height: 200px; /*Denne må sjekkes!
 	resize: none;
 	padding: 10px;	
 }
@@ -168,7 +166,7 @@ textarea {
     font-style: italic;
 }
 
- /*Generelt knappedesing!*/
+ /*Generelt knappedesing!
  input[type=submit] {
 	width: 100%;
 	margin:25px 0;
@@ -179,33 +177,33 @@ textarea {
 	color: #ffffff;
  }
 
- /* To linker på en rad */
+ /* To linker på en rad 
  .ekstraLinker {
  	margin-top: 0px;
  	font-size: 15px;
  }
 
- /* En link på en rad*/
+ /* En link på en rad
  .ekstralink {
 	font-size: 15px;
 	text-decoration: none; 
  }
 
 
-/*Link i normal tilstand*/
+/*Link i normal tilstand
 a {
 	color: #404040;
 }
-/*Når man holder over linken */
+/*Når man holder over linken 
 a:hover {
   color: #000000;
 }
-/* Når linken trykkes på*/
+/* Når linken trykkes på
 a:active {
   color: #49116f;
 }
 
-
+*/
 
 /* **************************** Kristina ***************************** */
 body .modal {
@@ -386,26 +384,19 @@ footer a {
 
 
 /* **************************** Trygve ***************************** */
+#anmeldelseBoks a {
+  cursor: pointer;
+  padding: 18px 15px 18px 15px; 
+}
+
 #anmeldelseTekstBoks {  
     width: 700px;
     height: 150px;
     border: 1px solid black;
     padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 28px;
     position: relative;
     font-style: italic;
-}
-
-#anmeldelseSignatur {
-   text-align: right;
-   margin-right: 20px;
-   position: absolute;
-   bottom: 0;
-   right: 0;
-   font-style: italic;
-}
-
-#anmeldelseBoks a {
-    cursor: pointer;
-    padding: 18px 15px 18px 15px; 
 }
