@@ -1,9 +1,3 @@
-/* **************************** tabell (Trygve) ***************************** */
-table, th, td {
-    background-color: rgb(231, 230, 230);
-    border: 1px solid black;
-}
-
 
 /* **************************** navbar (Even) ***************************** */
 .navbar {
