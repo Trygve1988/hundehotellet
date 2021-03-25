@@ -118,6 +118,8 @@ function visToppKnapp() {
     ?> 
 
     <!--sett tilToppKnappen din inn her kristina -->
+    <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
+    <button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button>  
     <script src="toppknappen.js"></script>
 
     <?php 
