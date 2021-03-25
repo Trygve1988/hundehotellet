@@ -34,18 +34,17 @@
     color: black; 
   }
 
-/*.background{
+.bildeBakgrunn {
   position: absolute;
   width: 100%;
   left: 0px;
   top: 0px;
   z-index: -1;
-  /* background-image: url("bakgrunn.jpg"); // La være, tester!
+  background-image: url("bakgrunn.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-*/
 
 .text{
   text-align: center;
@@ -97,11 +96,11 @@
 	text-align:center;	
 
 }
-
+/*
 .bildeBakgrunn {
 	/*background-image: url("bakgrunn.jpg"); 
   background-size: 100%;
-  background-repeat: no-repeat;*/
+  background-repeat: no-repeat;
   position: absolute;
   width: 100%;
   left: 0px;
@@ -112,8 +111,7 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-/*
-.hovedBakgrunn {
+.hovedBakgrunn { Denne koden har de andre i body? Test ut
 	display: inline-block;
 	width: 60%;
 	height: auto;
