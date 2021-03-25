@@ -64,7 +64,6 @@
     display:flex;
   }
   
-  
   .bildeKontroller{
     border: 2px solid black;
     margin: 30px;
@@ -403,4 +402,5 @@ footer a {
   border-radius: 28px;
   position: relative;
   font-style: italic;
+}
 }
