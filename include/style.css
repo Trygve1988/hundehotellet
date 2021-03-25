@@ -46,9 +46,9 @@ table, th, td {
   left: 0px;
   top: 0px;
   z-index: -1;
-  background-image: url("bakgrund.jpg");
+  /* background-image: url("bakgrund.jpg"); // La være, tester!
   background-size: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
   vertical-align: middle;
 }
 
@@ -84,7 +84,7 @@ table, th, td {
 
 /* **************************** Gunni ***************************** */
 @media only screen and (min-width: 720px) {
-/*
+
   body {
 	margin: 0px;
 	font-family: Arial, Times New Roman, Calibri, serif;
@@ -98,7 +98,7 @@ table, th, td {
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-
+/*
 .hovedBakgrunn {
 	display: inline-block;
 	width: 60%;

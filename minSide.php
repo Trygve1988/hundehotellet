@@ -18,6 +18,7 @@
     <?php visNav(); ?>
 
     <!-- ************************** 2) main (Trygve) **************************-->
+    <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
     <main> 
         <div class="hovedBakgrunn"> 
             <!-- 2a omOss -->

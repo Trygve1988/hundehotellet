@@ -18,6 +18,7 @@
 	<?php visNav(); ?>
 
     <!-- ************************** 2) main (gunni) **************************-->
+	<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
     <main>
 		<div class="hovedBakgrunn"> 
 			<!-- Form-->	
