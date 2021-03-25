@@ -59,22 +59,32 @@
   margin-left: 380px;
   margin-right: 380px;
 }
+
+  #KontrollerBD{
+    display:flex;
+  }
   
   
-  .miniBilde{
-	display:flex;
-	display:center;
+  .bildeKontroller{
+    border: 2px solid black;
+    margin: 30px;
+  }
+
+  .bildeKontroller p, h1{
+    width: 280px;
+    text-align: justify;
+    font-family: Arial;
+    padding: 0px 0px 0px 5px;
+  }
+
+  .bildeKontroller h1 {
+    font-size: 30px;
   }
   
   .bilder{
-	border: 5px solid black;
-	margin: 80px;
-	width: 230px;
-	height: 200px;
-	padding: 0px 0px 150px 0px;
-	align-items: center;
+	width: 300px;
+	height: 250px;
   }
-
 
 /* **************************** Gunni ***************************** */
 @media only screen and (min-width: 720px) {
@@ -383,14 +393,14 @@ footer a {
   padding: 18px 15px 18px 15px; 
 }
 
-#anmeldelseTekstBoks {  
-    width: 700px;
-    height: 150px;
-    border: 1px solid black;
-    padding: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 28px;
-    position: relative;
-    font-style: italic;
+#anmeldelseTekstBoks{
+  width: 700px;
+  height: 150px;
+  border: 1px solid black;
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 28px;
+  position: relative;
+  font-style: italic;
 }

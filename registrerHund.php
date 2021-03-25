@@ -1,28 +1,32 @@
 <?php
-    include_once "include/funksjoner.php";
-    session_start();
-    $dblink = kobleOpp();
-?> 
+include_once "include/funksjoner.php";
+session_start();
+$dblink = kobleOpp();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="include/style.css" rel="stylesheet" type="text/css">
-    <script src="include/script.js" defer> </script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="include/style.css" rel="stylesheet" type="text/css">
+	<!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
+	<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
+	<script src="include/script.js" defer> </script>
 </head>
+
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** 1) fellesTop ************************** -->
 	<?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
-    <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+	<!-- ************************** 2) main **************************-->
+	<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	<main>
-		<div class="hovedBakgrunn"> 
+		<div class="hovedBakgrunn">
 
-			<!-- Form-->	
+			<!-- Form-->
 			<form method="POST">
 
 				<!-- Overskrift -->
@@ -33,7 +37,7 @@
 						<!-- Labels og input i kolonne 1 -->
 						<label for="navn">Hundens navn:</label>
 						<input type="text" name="navn" value="pluto">
-					
+
 						<label for="rase">Rase:</label>
 						<input type="text" name="rase" value="labrador">
 
@@ -53,7 +57,7 @@
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
 						</select>
-						
+
 						<label for="vaksniert">Vaksinert:</label>
 						<select name="vaksniert">
 							<option value="1">Ja</option>
@@ -70,7 +74,7 @@
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
 						</select>
-						
+
 						<label for="løsPåTur">Kan hunden gå løs på tur:</label>
 						<select name="løsPåTur">
 							<option value="1">Ja</option>
@@ -84,19 +88,20 @@
 						</select>
 
 						<label for="info">Ekstra informasjon:</label>
-						<textarea name="info" >
+						<textarea name="info">
 						</textarea>
 					</div>
 				</div>
 				<!-- 2b) registrerHund (Trygve) -->
-				<?php registrerHund($dblink); ?> 
+				<?php registrerHund($dblink); ?>
 			</form>
 		</div>
-    </main>
+	</main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
-    <?php visFooter(); ?> 
-    <?php visToppKnapp(); ?> 
+	<!-- ************************** 3) fellesBunn **************************-->
+	<?php visFooter(); ?>
+	<?php visToppKnapp(); ?>
 
 </body>
+
 </html>
