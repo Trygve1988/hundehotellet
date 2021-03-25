@@ -1,8 +1,8 @@
 <?php
-    include_once "include/funksjoner.php";
-    session_start();
-    $dblink = kobleOpp();
-    ?>
+include_once "include/funksjoner.php";
+session_start();
+$dblink = kobleOpp();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="include/style.css" rel="stylesheet" type="text/css">
-        <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
+    <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
     <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
     <script src="include/script.js" defer> </script>
 </head>
@@ -49,7 +49,7 @@
                     <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a>
                 </div>
-                
+
             </div>
         </div>
     </main>
