@@ -18,9 +18,11 @@
     <?php visNav(); ?>
 
     <!-- ************************** 2) main (Trygve) **************************-->
-    <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+    
     <main> 
-        <div class="hovedBakgrunn"> 
+        <div class="body"> 
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+            
             <!-- 2a omOss -->
             <form class="skjema"> 
                 <?php visInnloggetInfo($dblink); ?>
