@@ -59,7 +59,7 @@ function visNav() {
         <a href="aktuelt.php">Aktuelt</a>
         <a href="omOss.php">Om Oss</a>
         <a href="priser.php">Priser</a>
-        <a href="KontaktOss.html">Kontakt Oss</a>
+        <a href="KontaktOss.php">Kontakt Oss</a>
         
          <?php
         // bestill Opphold
@@ -120,7 +120,7 @@ function visToppKnapp() {
     <!--sett tilToppKnappen din inn her kristina -->
     <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
     <button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button>  
-    <script src="toppknappen.js"></script>
+    <script src="./include/toppknappen.js"></script>
 
     <?php 
 }
@@ -141,13 +141,13 @@ function visFooter() {
             <h1>Sosiale medier</h1>
 
             <a href="https://www.instagram.com" target="_blank">
-                <img src="/bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
+                <img src="./bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
 
             <a href="https://www.facebook.com" target="_blank">
-                <img src="/bilder/facebookIkon.png" alt="Facebook Logo" class="facebook-ikon"></a>
+                <img src="./bilder/facebookIkon.png" alt="Facebook Logo" class="facebook-ikon"></a>
 
             <a href="https://twitter.com/twitter" target="_blank">
-                <img src="/bilder/twitterIkon.png" alt="Twitter Logo" class="twitter-ikon"></a>
+                <img src="./bilder/twitterIkon.png" alt="Twitter Logo" class="twitter-ikon"></a>
         </div>
 
         <!-- Gratis google kart fra https://maps-website.com-->
@@ -158,7 +158,7 @@ function visFooter() {
                 src="https://maps.google.com/maps?width=350&amp;height=200&amp;hl=en&amp;q=Lektorvegen%2091%20B%C3%B8%20i%20Telemark+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
            
                 <a target="_blank" href="https://www.google.com/maps/place/Lektorvegen+91,+3802+Bø,+Norway/@59.412934,9.078556,12z/data=!4m2!3m1!1s0x46474940ffa6344f:0x913038103500cc71?hl=en&gl=US" title="Trykk her for å åpne kartet">
-                    <i class="fas fa-map-marker-alt"></i> Klikk her for å se kart</a>
+                  <br>  <i class="fas fa-map-marker-alt"></i> Klikk her for å se kartet</a>
 
         </div>
 

@@ -19,7 +19,6 @@
 <body>
 
     <!-- ************************** 1) fellesTop ************************** -->
-    <?php visHeader(); ?>
     <?php visNav(); ?>
 
     <!-- ************************** 2) main **************************-->
@@ -27,7 +26,7 @@
 
         <!-- 2a aktuelt -->
         <form method="POST">
-            <?php visPriser($dblink); ?>
+            <h2>priser</h2>
         </form>
 
     </main>

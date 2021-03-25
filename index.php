@@ -25,7 +25,7 @@
     <main>
 
         <div class="body">
-            <img class="background" src="bilder/bakgrund.jpg">
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
             <div class="front">
 
