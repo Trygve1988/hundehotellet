@@ -18,7 +18,8 @@
 	<?php visNav(); ?>
 
     <!-- ************************** 2) main **************************-->
-    <main>
+    <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+	<main>
 		<div class="hovedBakgrunn"> 
 		
 			<!-- Form-->	
