@@ -141,7 +141,7 @@ function visFooter() {
             <h1>Sosiale medier</h1>
 
             <a href="https://www.instagram.com" target="_blank">
-                <img src="/bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
+                <img src="./bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
 
             <a href="https://www.facebook.com" target="_blank">
                 <img src="/bilder/facebookIkon.png" alt="Facebook Logo" class="facebook-ikon"></a>
