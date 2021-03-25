@@ -56,9 +56,9 @@ function visNav() {
     ?> <div class="navbar">
         <a href="index.php"> <img  class="logo" src="bilder/logo.png"> Bø Hundehotell </a>
         <a href="index.php">Hjem</a>
-        <a href="index.php">Aktuelt</a>
-        <a href="index.php">Om Oss</a>
-        <a href="index.php">Priser</a>
+        <a href="aktuelt.php">Aktuelt</a>
+        <a href="omOss.php">Om Oss</a>
+        <a href="priser.php">Priser</a>
         <a href="KontaktOss.html">Kontakt Oss</a>
         
          <?php
@@ -118,6 +118,8 @@ function visToppKnapp() {
     ?> 
 
     <!--sett tilToppKnappen din inn her kristina -->
+    <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
+    <button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button>  
     <script src="toppknappen.js"></script>
 
     <?php 
@@ -139,7 +141,7 @@ function visFooter() {
             <h1>Sosiale medier</h1>
 
             <a href="https://www.instagram.com" target="_blank">
-                <img src="/bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
+                <img src="./bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
 
             <a href="https://www.facebook.com" target="_blank">
                 <img src="/bilder/facebookIkon.png" alt="Facebook Logo" class="facebook-ikon"></a>
