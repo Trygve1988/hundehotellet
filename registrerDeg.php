@@ -1,28 +1,32 @@
 <?php
-    include_once "include/funksjoner.php";
-    session_start();
-    $dblink = kobleOpp();
-?> 
+include_once "include/funksjoner.php";
+session_start();
+$dblink = kobleOpp();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="include/style.css" rel="stylesheet" type="text/css">
-    <script src="include/script.js" defer> </script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="include/style.css" rel="stylesheet" type="text/css">
+	<!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
+	<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
+	<script src="include/script.js" defer> </script>
 </head>
+
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** 1) fellesTop ************************** -->
 	<?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
-    <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+	<!-- ************************** 2) main **************************-->
+	<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	<main>
-		<div class="hovedBakgrunn"> 
-		
-			<!-- Form-->	
+		<div class="hovedBakgrunn">
+
+			<!-- Form-->
 			<form method="POST">
 
 				<!-- Overskrift -->
@@ -33,7 +37,7 @@
 						<!-- Labels og input i kolonne 1 -->
 						<label for="epost">E-post:</label>
 						<input type="text" name="epost" value="eks@gmail.com">
-					
+
 						<label for="passord">Ønsket passord:</label>
 						<input id="passord" type="text" name="passord" value="passord123">
 						<p id="status" melding()></p>
@@ -49,7 +53,7 @@
 
 						<label for="tlf">Telefonnummer:</label>
 						<input type="text" name="tlf" value="11199333">
-						
+
 						<!--Registrer knapp-->
 						<input type="submit" name="registrer" value="registrer">
 
@@ -60,29 +64,24 @@
 						<!-- Labels og input i kolonne 2-->
 						<label for="fornavn">Fornavn:</label>
 						<input type="text" name="fornavn" value="eksFornavn">
-				
+
 						<label for="etternavn">Etternavn:</label>
 						<input type="text" name="etternavn" value="eksEtternavn">
-					
+
 						<label for="adresse">Adresse:</label>
 						<input type="text" name="adresse" value="eksAdresse">
 					</div>
 				</div>
 				<!-- 2b) registrerDeg (Trygve) -->
-				<?php registrerDeg($dblink); ?> 
+				<?php registrerDeg($dblink); ?>
 			</form>
 		</div>
-    </main>
+	</main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
-    <?php visFooter(); ?> 
-    <?php visToppKnapp(); ?> 
+	<!-- ************************** 3) fellesBunn **************************-->
+	<?php visFooter(); ?>
+	<?php visToppKnapp(); ?>
 
 </body>
+
 </html>
-
-
-
-
-
-
