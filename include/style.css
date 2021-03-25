@@ -82,6 +82,10 @@ table, th, td {
     font-family: Arial;
     padding: 0px 0px 0px 5px;
   }
+
+  .bildeKontroller h1 {
+    font-size: 30px;
+  }
   
   .bilder{
 	width: 300px;
@@ -395,14 +399,14 @@ footer a {
   padding: 18px 15px 18px 15px; 
 }
 
-#anmeldelseTekstBoks {  
-    width: 700px;
-    height: 150px;
-    border: 1px solid black;
-    padding: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 28px;
-    position: relative;
-    font-style: italic;
+#anmeldelseTekstBoks{
+  width: 700px;
+  height: 150px;
+  border: 1px solid black;
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 28px;
+  position: relative;
+  font-style: italic;
 }
