@@ -17,7 +17,7 @@ $dblink = kobleOpp();
 </head>
 
 <body>
-    <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+
     <!-- ************************** 1) fellesTop ************************** -->
     <?php visNav(); ?>
 
@@ -25,7 +25,7 @@ $dblink = kobleOpp();
     <main>
 
         <div class="body">
-            
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
             <div class="front">
 
