@@ -26,7 +26,7 @@
 
         <!-- 2a aktuelt -->
         <form method="POST">
-            <?php visPriser($dblink); ?>
+            <h2>priser</h2>
         </form>
 
     </main>
