@@ -320,6 +320,7 @@ footer a {
     color: white;
     font-size: 1em;
     list-style-type: none;
+    text-decoration: none;
     text-align:end;
     padding: 3px;
  }
