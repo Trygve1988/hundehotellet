@@ -24,40 +24,63 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main **************************-->
 	<main>
-		<div class="hovedBakgrunn">
-			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-			<!-- Form-->
-			<form method="POST">
+	<div class="bildeBakgrunn">
+		<div class="hovedBakgrunn"> 
 
-				<h2>Bestill opphold</h2>
-				<h3>Tidsperiode</h3>
-				<div class="skjemaKolonner">
-					<div class="kolonne1">
+			<!-- Form-->	
+			<form class="skjemaBakgrunn" method="POST">
+			
+			<!-- Avbryt knapp -->
+			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+			
+			<h2>Bestill opphold</h2>	
 
-						<!-- Inputen her er date -->
-						<label for="fra">Fra:</label>
-						<input type="date" name="fra">
-
-						<p>Jeg ønsker bading til hunden(e) mine under oppholdet (200kr per hund)</p>
-						<input type="checkbox" name="bading">
-						<input type="text" name="hund">
+			<div>
+				<div class="soloKolonne">
+					<label for="sammeBur">Skal hundene være i samme buret:</label>
+					<select name="sammeBur">
+						<option value="velg">--Velg--</option>
+						<option value="hannhund">Ja</option>
+						<option value="tispe">Nei</option>
+					</select>
 					</div>
-					<div>
-						<!-- Labels og input i kolonne 2-->
-						<label for="til">Til:</label>
-						<input type="date" name="til">
+					
+					<h3>Tidsperiode</h3>
+					<div class="enKolonneRad">
+						<div class="kolonne1">		
+							<label for="fra">Fra:</label>
+							<input type="date" name="fra">		
+						</div>
+						<div class="kolonne2">
+							<!-- Labels og input i kolonne 2-->
+							<label for="til">Til:</label>
+							<input type="date" name="til">	
+						</div>
+					</div>	
+					<h3>Tillegstjenester</h3>
+					<p>Vi tilbyr bading til hunden(e). Prisen for bading pr. hund pr. bad er 200kr</p>
+					<div class="soloKolonne">
+						<div class="skjemaKolonner">
+							<input class="storChecbox" type="checkbox" name="hund1">
+							<input type="text" name="hund1" value="Hund 1">
+						</div>
+						<div class="skjemaKolonner">
+							<input class="storChecbox" type="checkbox" name="hund2">
+							<input type="text" name="hund1" value="Hund 1">
 					</div>
 				</div>
-				<p>Sum å betale:</p>
-				<!--Denne må endres i CSS'en!-->
-				<div class="leggTillKnapp">
-					<input type="submit" name="tilbake" value="Tilbake">
-					<input type="submit" name="neste" value="Neste">
-					<a href="bestillOpphold.php">tilbake</a>
-					<a href="bestillOpphold3.php">neste</a>
+				<!-- Knapperad -->
+				<div class="knapperad">	
+					<input class="hovedKnapp" type="submit" name="tilbake" value="Tilbake">
+					<div class="nesteKnapp2">
+						<input class="hovedKnapp" type="submit" name="neste" value="Neste">
+					</div>
 				</div>
+				</div>
+			</div>		
+			</form>
 		</div>
-		</form>
+		</div>
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->

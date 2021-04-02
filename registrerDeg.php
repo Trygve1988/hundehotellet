@@ -25,57 +25,78 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
-		<div class="hovedBakgrunn">
-			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-			<!-- Form-->
-			<form method="POST">
+		<div class="bildeBakgrunn">
+		<div class="hovedBakgrunn"> 	
 
-				<!-- Overskrift -->
-				<h2>Registrer ny bruker</h2>
+			<!-- Form-->	
+			<form class="skjemaBakgrunn" method="POST">
+			
+			<!-- Avbryt knapp -->
+			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
 
-				<div class="skjemaKolonner">
-					<div class="kolonne 1">
-						<!-- Labels og input i kolonne 1 -->
-						<label for="epost">E-post:</label>
-						<input type="text" name="epost" value="eks@gmail.com">
+			<!-- Overskrift -->
+			<h1>Registrer ny bruker</h1>	
 
-						<label for="passord">Ønsket passord:</label>
-						<input id="passord" type="text" name="passord" value="passord123">
-						<p id="status" melding()></p>
+			<div class="skjemaKolonner">
+				<div class="kolonne1">
+					<!-- Labels og input i kolonne 1 -->
+					<label for="fornavn">Fornavn:</label>
+					<input type="text" name="fornavn">	
 
-						<!-- Vis passord checkbox! -->
-						<div class="visPassord">
-							<label>Vis passord</label>
-							<input id="visPassordKnapp" type="checkbox" name="visPassord" value="visPassord">
-						</div>
+					<label for="fDato">Fødselsdato:</label>
+					<input type="date" name="fDato">		
 
-						<!-- Vis passord status (Even) -->
-						<p id="status" melding()></p>
+					<label for="tlf">Telefonnummer:</label>
+					<input type="text" name="tlf">	
 
-						<label for="tlf">Telefonnummer:</label>
-						<input type="text" name="tlf" value="11199333">
-
-						<!--Registrer knapp-->
-						<input type="submit" name="registrer" value="registrer">
-
-						<!-- Logg inn link -->
-						<p class="ekstraLink"> <a href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
-					</div>
-					<div class="kolonne2">
-						<!-- Labels og input i kolonne 2-->
-						<label for="fornavn">Fornavn:</label>
-						<input type="text" name="fornavn" value="eksFornavn">
-
-						<label for="etternavn">Etternavn:</label>
-						<input type="text" name="etternavn" value="eksEtternavn">
-
-						<label for="adresse">Adresse:</label>
-						<input type="text" name="adresse" value="eksAdresse">
-					</div>
+					<label for="adresse">Adresse:</label>
+					<input type="text" name="adresse">
+					
+					<label for="postNr">Postnummer:</label>
+					<input type="text" name="postNr">
 				</div>
-				<!-- 2b) registrerDeg (Trygve) -->
-				<?php registrerDeg($dblink); ?>
-			</form>
+			<div>
+			
+			<!-- Labels og input i kolonne 2 -->
+
+			<label for="etternavn">Etternavn:</label>
+				<input type="text" name="etternavn">
+				<label for="epost">E-post:</label>
+				<input type="text" name="epost">
+			
+				<label for="passord">Ønsket passord:</label>
+				<input type="password" name="passord">		
+
+				<!-- Vis passord checkbox! -->
+				<div class="visPassord">
+					<label>Vis passord</label>
+					<input type="checkbox" name="visPassord" value="visPassord">
+				</div>
+				<!-- SKRIV INN PASSORDTILBAKEMELDING-->
+				<div class="visPassord2">
+					<p>Passord krav:</p>
+					<p> - SETT INN PASSORD TILBAKEMELDING</p>
+				</div>
+				
+				<div class="gjentaPKolonne">
+					<label for="passordSjekk">Gjenta passord:</label>
+					<input type="password" name="passordSjekk">	
+				</div>	
+
+			</div>
+			</div>	
+
+			<div class="knappeKlynge">
+				<!--Registrer knapp-->
+				<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
+				<!-- Logg inn link -->
+				<p class="ekstraLink2"> <a href="registrering.i">Har du allerede en bruker? Logg inn her</a></p>
+			</div>
+			</div>
+			</div> <!-- Her kan det være noe feil!-->
+			<!-- 2b) registrerDeg (Trygve) -->
+			<?php registrerDeg($dblink); ?>
+		</form>
 		</div>
 	</main>
 

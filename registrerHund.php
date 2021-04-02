@@ -25,74 +25,95 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
-		<div class="hovedBakgrunn">
-		<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-			<!-- Form-->
-			<form method="POST">
+	<div class="bildeBakgrunn">
+		<div class="hovedBakgrunn"> 	
 
-				<!-- Overskrift -->
-				<h2>Registrer ny hund</h2>
+			<!-- Form-->	
+			<form class="skjemaBakgrunn" method="POST">
+			
+			<!-- Avbryt knapp -->
+			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
 
-				<div class="skjemaKolonner">
-					<div class="kolonne1">
-						<!-- Labels og input i kolonne 1 -->
-						<label for="navn">Hundens navn:</label>
-						<input type="text" name="navn" value="pluto">
+			<!-- Overskrift -->
+			<h1>Registrer ny hund</h1>	
 
-						<label for="rase">Rase:</label>
-						<input type="text" name="rase" value="labrador">
+		<div class="skjemaKolonner">
+			<div class="kolonne1">
+				<!-- Labels og input i kolonne 1 -->
+				<label for="hNavn">Hundens navn:</label>
+				<input type="text" name="hNavn">
+			
+				<label for="rase">Rase:</label>
+				<input type="text" name="rase">	
 
-						<!-- Inputen for fødselsdato er date -->
-						<label for="fdato">Fødselsdato:</label>
-						<input type="date" name="fdato" value="2015-01-01">
+				<!-- Inputen for fødselsdato er date -->
+				<label for="fDato">Fødselsdato:</label>
+				<input type="date" name="fDato">	
 
-						<!-- Nedtrekkslister! -->
-						<label for="kjønn">Kjønn:</label>
-						<select name="kjønn">
-							<option value="gutt">gutt</option>
-							<option value="jente">jente</option>
-						</select>
+				<!-- Nedtrekkslister! -->
+				<label for="kjonn">Kjønn:</label>
+				<select name="kjonn">
+					<option value="velg">--Velg--</option>
+					<option value="hannhund">Hannhund</option>
+					<option value="tispe">Tispe</option>
+				</select>	
 
-						<label for="sterilisert">Sterilisert:</label>
-						<select name="sterilisert">
-							<option value="1">Ja</option>
-							<option value="0">Nei</option>
-						</select>
+				<label for="steril">Sterilisert:</label>
+				<select name="steril">
+					<option value="velg">--Velg--</option>
+					<option value="ja">Ja</option>
+					<option value="nei">Nei</option>
+				</select>
+		
+				<label for="vaksinert">Vaksinert:</label>
+				<select name="vaksinert">
+					<option value="velg">--Velg--</option>
+					<option value="ja">Ja</option>
+					<option value="nei">Nei</option>
+				</select>
+			<div class="visPassord3">
+				<a href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+				
+			</div>	
 
-						<label for="vaksniert">Vaksinert:</label>
-						<select name="vaksniert">
-							<option value="1">Ja</option>
-							<option value="0">Nei</option>
-						</select>
-						<!--Registrer knapp-->
-						<input type="submit" name="registrerHund" value="Registrer hund">
+			</div>
+			<div>
+				<!-- Labels og input i kolonne 2-->
+				<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
+				<select name="lopeMedAndre">
+					<option value="velg">--Velg--</option>
+					<option value="ja">Ja</option>
+					<option value="nei">Nei</option>
+				</select>
+				
+			
+				<label for="losPaaTur">Kan hunden gå løs på tur:</label>
+				<select name="losPaaTur">
+					<option value="velg">--Velg--</option>
+					<option value="ja">Ja</option>
+					<option value="nei">Nei</option>
+				</select>	
+	
 
-					</div>
-					<div class="kolonne2">
-						<!-- Labels og input i kolonne 2-->
-						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
-						<select name="løpeMedAndre">
-							<option value="1">Ja</option>
-							<option value="0">Nei</option>
-						</select>
+				<label for="fortype">Fòrtype:</label>
+				<select name="fortype">
+					<option value="velg">--Velg--</option>
+					<option value="inkludert">Det som er inkludert i oppholdet</option>
+					<option value="medbrakt">Medbrakt</option>
+				</select>	
 
-						<label for="løsPåTur">Kan hunden gå løs på tur:</label>
-						<select name="løsPåTur">
-							<option value="1">Ja</option>
-							<option value="0">Nei</option>
-						</select>
-
-						<label for="forID">Fòrtype:</label>
-						<select name="forID">
-							<option value="1">vanlig</option>
-							<option value="2">allergi</option>
-						</select>
-
-						<label for="info">Ekstra informasjon:</label>
-						<textarea name="info">
-						</textarea>
-					</div>
+				<label for="ekstraInfo">Ekstra informasjon:</label>
+				<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
+				
+				<!--Registrer knapp-->
+				<div class="knappIKolonne">
+					<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund">
 				</div>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Dette må rettes opp! -->
 				<!-- 2b) registrerHund (Trygve) -->
 				<?php registrerHund($dblink); ?>
 			</form>
