@@ -9,7 +9,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bø Hundehotell</title>
     <link href="include/style.css" rel="stylesheet" type="text/css">
     <script src="include/script.js" defer> </script>
 </head>
@@ -18,28 +17,20 @@
     <!-- ************************** 1) fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main (Trygve) **************************-->
-    
-    <main> 
-        <div class="body"> 
-            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-            
-            <!-- 2a omOss -->
-            <form class="skjema"> 
-                <?php visInnloggetInfo($dblink); ?>
-                <?php visMineHunder($dblink) ?>
+    <!-- ************************** 2) main **************************-->
+    <main>
 
-                <!-- registrerHund -->
-                <a href="registrerHund.php">registrerHund</a>
+        <!-- 2a admin -->
+        <form method="POST">
+            <h2>Admin</h2>
+            <p>under arbeid....</p> 
+        </form> 
 
-                <?php //visBestillinger($dblink); UNDER ARBEID!!!!!?> 
-            </form> 
-        <div> 
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
-   
+
 </body>
 </html>

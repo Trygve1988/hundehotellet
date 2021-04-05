@@ -1,9 +1,11 @@
 <?php
 /* ************************** 0) Alle: a) konstanter ************************** */
-define("TJENER",  "localhost");
-define("BRUKER",  "root");
-define("PASSORD", "");
-define("DB",      "hundehotellet");
+// øverst i include/funksjoner.php
+//koble på itfag databasen
+define("TJENER",  "itfag.usn.no");
+define("BRUKER",  "h20APP2000gr5");
+define("PASSORD", "pw5");
+define("DB",      "h20APP2000grdb5");
 
 /* ************************** 0) Alle: b) SESSION ************************** */
 function opprettBrukerSession($brukerID,$epost,$passord,$brukerType) {
@@ -44,14 +46,22 @@ function lukk($dblink) {
 }
 
 /* ************************** 0) Alle: d) topp ************************** */ 
+function visBildeBakgrunn() { 
+    ?> <div class="bildeBakgrunn">
+     </div><?php
+}
+
+
 function visNav() { 
     ?> <div class="navbar">
         <a href="index.php"> <img  class="logo" src="bilder/logo.png"> Bø Hundehotell </a>
         <a href="index.php">Hjem</a>
-        <a href="index.php">Aktuelt</a>
-        <a href="index.php">Om Oss</a>
-        <a href="index.php">Pris</a>
-        <a href="index.php">Kontakt Oss</a> <?php
+        <a href="aktuelt.php">Aktuelt</a>
+        <a href="omOss.php">Om Oss</a>
+        <a href="priser.php">Priser</a>
+        <a href="KontaktOss.php">Kontakt Oss</a>
+        
+         <?php
         // bestill Opphold
         if (erLoggetInn()) {
             ?> <a href="bestillOpphold.php">Bestill Opphold</a> <?php 
@@ -105,11 +115,63 @@ function erAdmin() {
 
 /* ************************** 0) Alle: e) bunn ************************** */ 
 function visToppKnapp() { 
-    ?> <?php 
+    ?> 
+
+    <!--sett tilToppKnappen din inn her kristina -->
+    <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
+    <button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button>  
+    <script src="./include/toppknappen.js"></script>
+
+    <?php 
 }
 
 function visFooter() { 
-    ?><?php 
+    ?>
+    <!--sett footeren din inn her kristina -->
+    <footer class="main-footer">
+        <div class="venstre">
+            <h1>Kontakinformsjon</h1>
+            <p>Bø Hundehotell</p>
+            <p><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
+            <address>
+                <strong> Epost:</strong><a href="mailto:bohundehotell@example.com">bohundehotell.@example.com</a><br>    
+                   </address>
+            <p> <strong>Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
+        </div>
+
+        <div class="midten sosiale-medier">
+            <h1>Sosiale medier</h1>
+
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="./bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
+
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="./bilder/facebookIkon.png" alt="Facebook Logo" class="facebook-ikon"></a>
+
+            <a href="https://twitter.com/twitter" target="_blank">
+                <img src="./bilder/twitterIkon.png" alt="Twitter Logo" class="twitter-ikon"></a>
+        </div>
+
+        <!-- Gratis google kart fra https://maps-website.com-->
+        <div class="høyre kart">
+            <h1>Besøk oss</h1>
+            <iframe width="350" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            id="gmap_canvas"
+                src="https://maps.google.com/maps?width=350&amp;height=200&amp;hl=en&amp;q=Lektorvegen%2091%20B%C3%B8%20i%20Telemark+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+           
+                <a target="_blank" href="https://www.google.com/maps/place/Lektorvegen+91,+3802+Bø,+Norway/@59.412934,9.078556,12z/data=!4m2!3m1!1s0x46474940ffa6344f:0x913038103500cc71?hl=en&gl=US" title="Trykk her for å åpne kartet">
+                  <br>  <i class="fas fa-map-marker-alt"></i> Klikk her for å se kartet</a>
+
+        </div>
+
+        <div class="høyre">
+            <h1>Samarbeidspartnere</h1>
+            <p>Royal Canin</p>
+        </div>
+
+    </footer>
+
+    <?php 
 }
 
 // ************************** 1) Index **************************

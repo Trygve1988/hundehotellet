@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="skriveprogram.css">
+    <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script> <!--Henter gratis fonter fra denne nettsiden-->
+    
+    <title>Nytt innlegg</title>
+</head>
+
+<!-- Skriveprogram til Min side -->
+
+<!--Skriveprogram hentet fra 
+https://www.youtube.com/watch?v=Z_xN5oo_hqY
+https://www.youtube.com/watch?v=me8Ry7dJCFc
+ https://www.youtube.com/watch?v=7ymnoz8bBqQ   
+
+* Rekkefølgen på programmet er endret av meg og har fjernet copy, cut,code (funket ikke) siden det ikke er noe bruk for i vårt prosjekt.
+* orginalen hadde ikke CSS så jeg har laget min egen CSS design.
+* Hele programmet henter ett bibliotek (skrifttype,  skriftstørelse, undo og redo osv) fra den gratis versjonen av fontawesome.com -->
+
+
+<body onload="aktiverRedigeringsmodus();"> <!--Må være body, går ikke an å bruke div-->
+
+<!-- Kan legge inn navigasjons meny her hvis det trengs-->
+
+    <div class="skriveprogram"> <!--Lagt til av meg-->
+
+         <!--TekstType  -->
+         <select onchange="execCommandWithArg('fontName', this.value);"> <!--Dette gjør at skrifttypen kan endres -->
+            <option value="Arial">Arial</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Courier">Courier</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdena">Verdena</option>       
+        </select>
+
+           <!--Teksktstørrelse-->
+           <select onchange="execCommandWithArg('fontSize', this.value);"> <!--Dette gjør at skriftstørrelsen kan endres -->
+                    
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>        
+        </select>
+       
+        <!--tykk og tynn tekst osv. -->
+                <button onclick="execCmd('bold');"><i class="fa fa-bold" ></i></button>
+                <button onclick="execCmd('italic');"><i class="fa fa-italic" ></i></button>
+                <button onclick="execCmd('underline');"><i class="fa fa-underline" ></i></button>
+                <button onclick="execCmd('strikeThrough');"><i class="fa fa-strikethrough" ></i></button>
+                <button onclick="execCmd('justifyLeft');"><i class="fa fa-align-left" ></i></button>
+                <button onclick="execCmd('JustifyCenter');"><i class="fa fa-align-center" ></i></button>
+                <button onclick="execCmd('justifyRight');"><i class="fa fa-align-right" ></i></button>
+                <button onclick="execCmd('justifyFull');"><i class="fa fa-align-justify" ></i></button>
+                <button onclick="execCmd('indent');"><i class="fa fa-indent" ></i></button>
+                <button onclick="execCmd('outdent');"><i class="fa fa-outdent" ></i></button>
+                <button onclick="execCmd('subscript');"><i class="fa fa-subscript" ></i></button>
+                <button onclick="execCmd('uperscript');"><i class="fa fa-superscript" ></i></button>
+                <button onclick="execCmd('insertUnorderedList');"><i class="fa fa-list-ul" ></i></button>
+                <button onclick="execCmd('insertOrderedList');"><i class="fa fa-list-ol" ></i></button>
+                <button onclick="execCmd('insertParagraph');"><i class="fa fa-paragraph" ></i></button>
+                
+                <!-- Overskrift-->
+                <select onclick="execCommandWithArg('formatBlock', this.value);">
+                
+                    <option value="H1">H1</option>
+                    <option value="H2">H2</option>
+                    <option value="H3">H3</option>
+                    <option value="H4">H4</option>
+                    <option value="H5">H5</option>
+                    <option value="H6">H6</option>       
+                </select>
+
+                
+                <button onclick="execCmd('insertHorizontalRule');">HR</button><!--Linje-->
+                <button onclick="execCommandWithArg('createLink', prompt('Enter a URL', 'http://'));"> <i class="fa fa-link" ></i></button> <!-- Lager link-->
+                <button onclick="execCmd('unlink');"><i class="fa fa-unlink" ></i></button> <!-- un linker linken-->
+
+                <!-- Usikker om vi trenger dette kan evt fjernes uten at det påvirker resten av programmet  -->
+                <button onclick="toggleEdit();">Toggle Edit</button>  
+
+                <br>  <!--Hopper et hakk ned -->
+                
+                <div class="luft"> <!-- Lager luft i skriveprogram menyen -->
+                <button onclick="execCmd('undo');"><i class="fa fa-undo" ></i></button>
+                <button onclick="execCmd('redo');"><i class="fa fa-redo" ></i></button>
+                Skriftfarge: <input type="color" onchange="execCommandWithArg('foreColor', this.value);"> 
+                Bakgrunnsfarge: <input type="color" onchange="execCommandWithArg('hiliteColor', this.value);">
+                <button onclick="execCommandWithArg('insertImage', prompt('Legg til bilde URL', ''));"><i class="fa fa-file-image-o"></i></button>
+                <button onclick="execCmd('selectAll');">Velg alt</button>
+
+        </div> <!--Lager luft ferdig -->
+
+<iframe name="richTextFelt" style=" background-color: white; width: 1000px; height: 500px;"></iframe>
+
+<!-- Dette er lagt til av meg-->
+<div class="PostInnlegget">
+    <button onclick="slett">Slett</button>  <!-- Tanke: må kunne slette andre innleggene i tilegg-->
+<button onclick="lagre"> Lagre</button> <!-- Må lage noe luft mellom knappene og rullegardin link -->
+<button onclick="post">Publiser</button>
+
+
+<!-- Demo - Man velger hvilken side som innlegget skal postet i -->
+<p>Post i</p> <!--Må fikeses ser rart ut på siden-->
+<select>    
+
+    <option Value="hjem">Hjem</option>
+    <option Value="aktuelt">Aktuelt</option>
+    <option Value="om oss">Om oss</option>
+    <option Value="kontakt oss">Kontakt oss</option>
+    <option Value="bestill">Bestill</option>
+    <option Value="pris">Pris</option>
+    <option Value="anmeldelser">Anmeldelser</option>    
+</select>
+
+</div> <!-- Dette er laget av meg-->
+
+</div>
+
+<script src="skriveprogram.js"></script>
+
+
+</body>
+
+</html>

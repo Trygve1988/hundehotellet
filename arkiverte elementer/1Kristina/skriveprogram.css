@@ -1,0 +1,35 @@
+/*All CSS er laget av meg til selve skriveprogrammet*/
+
+body iframe {
+    background-color: white; /*Farge til skriveboks*/
+    padding: 20px;
+    margin: 20px; /*Lager avstand til skriveprogram menyen*/
+
+  
+  }
+  /*Skriveprogram meny*/
+  .skriveprogram {
+  background-color: white;   
+  color: black; /*Gir farge til skriften "skriftype og bakgrunnsfarge"*/
+  padding: 30px;
+  
+  
+  }
+  /*Laget en div mellom andre seksjon i menyen for å lage luft mellom dem*/
+  .luft {
+    padding: 5px;
+  }
+  
+  /*Lager luft mellom alle knappene og inputfeltet i skriveprogram menyen*/
+  .skriveprogram > button, input {
+    margin: 2px;
+  }
+  
+.PostInnlegget {
+  display: flex;
+  flex-direction: row;
+  align-items:flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 10px;
+}

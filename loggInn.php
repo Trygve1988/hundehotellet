@@ -1,70 +1,79 @@
 <?php
-    include_once "include/funksjoner.php";
-    session_start();
-    $dblink = kobleOpp();
-?> 
+include_once "include/funksjoner.php";
+session_start();
+$dblink = kobleOpp();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="include/style.css" rel="stylesheet" type="text/css">
-    <script src="include/script.js" defer> </script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bø Hundehotell</title>
+	<link href="include/style.css" rel="stylesheet" type="text/css">
+	<!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
+	<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
+	<script src="include/script.js" defer> </script>
 </head>
+
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
-    <?php visNav(); ?>
+	<!-- ************************** 1) fellesTop ************************** -->
+	<?php visNav(); ?>
 
-    <!-- ************************** 2) main (gunni) **************************-->
-    <main>
-		<div class="hovedBakgrunn"> 
-			<!-- Form-->	
-			<form method="POST">
+	<!-- ************************** 2) main (gunni) **************************-->
+	
+	<main>
+	<div class="bildeBakgrunn">
+		<div class="hovedBakgrunn"> 	
 
-				<!-- Overskrift -->
-				<h2>Logg inn</h2>
+		<!-- Form-->	
+		<form class="skjemaBakgrunn" method="POST">	
 
-				<div class="regForm">
-					<div class="regFormKol1">
-						<!-- Labels og input i kolonne 1 -->
-						<label for="epost">E-post:</label>
-						<input type="text" name="epost" value="eks@gmail.com">
-					
-						<label for="passord">Passord:</label>
-						<input id="passord" type="text" name="passord" value="passord123">
+		<!-- Avbryt knapp -->
+		<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
 
-						<!-- Vis passord radio knapp! -->
-						<div class="visPassord">
-							<label>Vis passord</label>
-							<input id="visPassordKnapp" type="radio" name="visPassord" value="visPassord">
-						</div>
-						
-						<!-- Vis passord status (Even) -->
-						<p id="status" melding()></p>
+		<!-- Overskrift -->
+		<h1>Logg inn</h1>	
 
-						<!--Logg inn knapp-->
-						<input type="submit" name="loggInn" value="loggInn">
-						
+		<div class="skjemaKolonner">
+			<div>
+				<!-- Labels og input i kolonne 1 -->
+				<label for="epost">E-post:</label>
+				<input type="text" name="epost">
+			
+				<label for="passord">Passord:</label>
+				<input type="password" name="passord">	
 
-						<!-- Glemt passord og Registrer deg linker -->
-						<div class="ekstraLink"> 
-							<a href="loggInn.php">Glemt passord</a>
-							<a href="registrerDeg.php">Registrer deg</a>
-						</div>
-					</div>
-				</div>
-				<!-- 2b) loggInn (Trygve) -->
-				<?php loggInn($dblink); ?> 
-			</form>
+				<!-- Vis passord checkbox! -->
+				<div class="visPassord">
+					<label>Vis passord</label>
+					<input type="checkbox" name="visPassord" value="visPassord">
+				</div>	
+
+			</div>
 		</div>
-    </main>
+		
+		<!--Logg inn knapp-->
+		<div class="knappeKlynge">
+			<div class="loggInnKnapp">
+				<input class="hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
+			</div>	
+			<!-- Glemt passord og Registrer deg linker -->
+			<div class="ekstraLinker"> 
+				<a class="link1" href="#">Glemt passord</a>
+				<a href="#">Registrer deg</a>
+			</div>
+		</div>	
+		</form>
+	</main>
 
 
-    <!-- ************************** 3) fellesBunn **************************-->
-    <?php visFooter(); ?> 
-    <?php visToppKnapp(); ?> 
+	<!-- ************************** 3) fellesBunn **************************-->
+	<?php visFooter(); ?>
+	<?php visToppKnapp(); ?>
 
 </body>
+
 </html>

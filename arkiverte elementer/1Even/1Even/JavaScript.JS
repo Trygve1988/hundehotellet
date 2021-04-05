@@ -22,7 +22,7 @@ function melding(){
     status.innerHTML="Passord er godkjent";
     return true;
   } else{
-    status.innerHTML="Passord er ikke godkjent, passordet må være mellom 8-15 tegn inkludert speseiel tegn.";
+    status.innerHTML="Passordet må være mellom 8-15 tegn inkludert speseiel tegn.";
     return false;
   } 
 }
@@ -30,15 +30,16 @@ function melding(){
 //Under utvikling!!!!!!
 
 //Bilde slider og anmeldelse slider
-function bildeSL(caller) {
+var stopSlideShow = flase;
+function slideShow(caller) {
   var interval = setInterval(function(){
     changeSlide('next');
   }, 3000);
 }
 
-function endreSL(direction){
+function changeSlide(direction){
   var currentImg = $('.active');
-  var nextImg = currentImg.nextImg();
+  var nextImg = currentImg.next();
   var prevImg = currentImg.prev();
 
   if(direction == 'next') {
@@ -58,6 +59,13 @@ function endreSL(direction){
   currentImg.removeClass('active');
 
 }
+
+//Bildeslider v2
+function imgSlider(anything){
+  document.getElementById("slider").src = anything;
+}
+
+//hentet fra https://www.youtube.com/watch?v=y0XHdEeEevs
 
 // Setter til dato 1 dag mer en fra dato
 function tilDato(){
