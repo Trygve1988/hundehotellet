@@ -110,6 +110,8 @@ function imgSlider(anything){
   document.getElementById("slider").src = anything;
 }
 
+//hentet fra https://www.youtube.com/watch?v=y0XHdEeEevs
+
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp
 //Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 
