@@ -69,13 +69,13 @@ body {
   font-weight: bold;
   border: solid black;
 }
-
+/*
 .front{
   background-color: white; 
   margin-left: 380px;
   margin-right: 380px;
 }
-
+*/
   #KontrollerBD{
     display:flex;
   }
