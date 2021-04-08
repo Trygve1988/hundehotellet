@@ -76,7 +76,6 @@ $dblink = kobleOpp();
 				
 			</div>	
 
-			</div>
 			<div>
 				<!-- Labels og input i kolonne 2-->
 				<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
@@ -118,6 +117,7 @@ $dblink = kobleOpp();
 				<?php registrerHund($dblink); ?>
 			</form>
 		</div>
+		</div>	 
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->

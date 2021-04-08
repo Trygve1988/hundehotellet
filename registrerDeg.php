@@ -82,21 +82,19 @@ $dblink = kobleOpp();
 					<label for="passordSjekk">Gjenta passord:</label>
 					<input type="password" name="passordSjekk">	
 				</div>	
-
-			</div>
 			</div>	
-
 			<div class="knappeKlynge">
 				<!--Registrer knapp-->
 				<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
 				<!-- Logg inn link -->
 				<p class="ekstraLink2"> <a href="registrering.i">Har du allerede en bruker? Logg inn her</a></p>
 			</div>
-			</div>
+			
 			</div> <!-- Her kan det være noe feil!-->
 			<!-- 2b) registrerDeg (Trygve) -->
 			<?php registrerDeg($dblink); ?>
 		</form>
+		</div>
 		</div>
 	</main>
 
