@@ -24,7 +24,7 @@ $dblink = kobleOpp();
 
     <!-- ************************** 2) main **************************-->
     <main>
-
+        <div class="hvitBakgrunn">
         <div class="hovedBakgrunn">
             <!-- <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg" alt=""> -->
 
@@ -97,6 +97,7 @@ $dblink = kobleOpp();
                     <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a>
                 </div>
+        </div>
         </div>
     </main>
 
