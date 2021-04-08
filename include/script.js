@@ -109,6 +109,18 @@ function melding(){
 function imgSlider(anything){
   document.getElementById("slider").src = anything;
 }
+//hentet fra https://www.youtube.com/watch?v=y0XHdEeEevs
+
+//Bileslider V3
+var slideIndex = 0;
+showSlide();
+
+function showSlide(){
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dots");
+}
+
 
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp

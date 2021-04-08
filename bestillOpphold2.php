@@ -24,7 +24,6 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main **************************-->
 	<main>
-	<div class="bildeBakgrunn">
 		<div class="hovedBakgrunn"> 
 
 			<!-- Form-->	
@@ -76,10 +75,8 @@ $dblink = kobleOpp();
 						<input class="hovedKnapp" type="submit" name="neste" value="Neste">
 					</div>
 				</div>
-				</div>
-			</div>		
+			</div>	
 			</form>
-		</div>
 		</div>
 	</main>
 

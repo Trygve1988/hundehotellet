@@ -1,3 +1,18 @@
+body {
+	margin: 0px;
+	font-family: Arial, Times New Roman, Calibri, serif;
+	font-size: 19px;
+	text-align:center;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	background-image: url("bilder/bakgrunn.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
 
 /* **************************** navbar (Even) ***************************** */
 .navbar {
@@ -34,17 +49,18 @@
     color: black; 
   }
 
-.bildeBakgrunn {
+/*.bildeBakgrunn { Ikke slett just in case 
   position: absolute;
   width: 100%;
   left: 0px;
   top: 0px;
   z-index: -1;
-  background-image: url("bakgrunn.jpg");
+  background-image: url("bilder/bakgrunn.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   vertical-align: middle;
 }
+*/
 
 .text{
   text-align: center;
@@ -85,16 +101,50 @@
 	height: 250px;
   }
 
+  section{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  section #slider{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+  
+  section .navigation {
+	  position: absolute;
+	  bottom: 40px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  z-index: 100;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  }
+  
+  section .navigation li {
+	list-style-type: none;
+	cursor: pointer;
+	margin: 10px;
+  }
+  
+  section .navigation li img {
+	  width: 150px;
+	  border: 4px solid #fff;
+	  border-radius: 4px;
+  }
+
 /* **************************** Gunni ***************************** */
-@media only screen and (min-width: 720px) {
+/*@media only screen and (min-width: 720px) { */
 
-  body {
-	margin: 0px;
-	font-family: Arial, Times New Roman, Calibri, serif;
-	font-size: 19px;
-	text-align:center;	
-
-}
 /* Denne fungerer på Gunni sin kode, noe må være galt?*/ /*
 .bildeBakgrunn {
   	width: 100%;
@@ -164,7 +214,7 @@ div .gjentaPKolonne {
 
 .vanligTekst {
 	padding-bottom: -5px;
-}
+} /* Error: padding-bottom: -5px negative values are not allowed. */
 
 .visPassord {
   position: absolute;
@@ -539,4 +589,4 @@ footer a {
   position: relative;
   font-style: italic;
 }
-}
+ /*}*/
