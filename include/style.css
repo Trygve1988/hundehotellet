@@ -1,12 +1,17 @@
-
 body {
 	margin: 0px;
 	font-family: Arial, Times New Roman, Calibri, serif;
 	font-size: 19px;
 	text-align:center;
-	background-image: url("bakgrunn.jpg");
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	background-image: url("bilder/bakgrunn.jpg");
 	background-size: 100%;
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
+	vertical-align: middle;
 }
 
 /* **************************** navbar (Even) ***************************** */
