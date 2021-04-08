@@ -26,17 +26,17 @@ $dblink = kobleOpp();
     <main>
 
         <div class="hovedBakgrunn">
-            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg" alt="">
 
             <!--<div class="front"> -->
 
             <section>
-                <img src="bilder/hundSlider1.jpg" id="slider">
+                <img src="bilder/hundSlider1.jpg" alt="" id="slider">
         
                 <ul class="navigation">
-                    <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg"></li>
-                    <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg"></li>
-                    <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg"></li>
+                    <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg" alt=""></li>
+                    <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg" alt=""></li>
+                    <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg" alt=""></li>
                 </ul>
             </section>                
 
@@ -49,19 +49,19 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD">
 
                     <div class="bildeKontroller">
-                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder"></a>
+                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" alt="" class="bilder"></a>
                         <h1> Bestill</h1>
                         <p>Her kan du bestille opphold til hunden(ene) dine.</p>
                     </div>
 
                     <div class="bildeKontroller">
-                        <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
+                        <a href="omOss.php"><img src="bilder/hunder2.jpg" alt="" class="bilder"></a>
                         <h1>Om Hundehotellet</h1>
                         <p>Her kan du få mer info om Hundehotellet.</p>
                     </div>
 
                     <div class="bildeKontroller">
-                        <a href="Pris.php"><img src="bilder/hunder3.jpg" class="bilder"></a>
+                        <a href="Pris.php"><img src="bilder/hunder3.jpg" alt="" class="bilder"></a>
                         <h1>Priser</h1>
                         <p>Her kan du se en oversikt over priser.</p>
                     </div>
@@ -74,8 +74,6 @@ $dblink = kobleOpp();
                     <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a>
                 </div>
-
-            </div>
         </div>
     </main>
 
