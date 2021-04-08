@@ -25,7 +25,7 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main (gunni) **************************-->
 	
 	<main>
-	<div class="bildeBakgrunn">
+		<div class="bildeBakgrunn">
 		<div class="hovedBakgrunn"> 	
 
 		<!-- Form-->	
@@ -67,6 +67,8 @@ $dblink = kobleOpp();
 			</div>
 		</div>	
 		</form>
+		</div>
+		</div>
 	</main>
 
 

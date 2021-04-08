@@ -25,7 +25,6 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 
 	<main>
-	<div class="bildeBakgrunn">
 		<div class="hovedBakgrunn">
 	
 			<!-- Form-->	
@@ -81,20 +80,21 @@ $dblink = kobleOpp();
 						</div>
 					</div>
 
-					<label for="vilkaar">Kryss av for å <a href="#" class="blaaTekst">godta vilkår:</label> 
+					<label for="vilkaar">Kryss av for å <a href="#" class="blaaTekst">godta vilkår:</a></label> 
 					<input class="litenCheckbox" type="checkbox" name="til">		
 
 				</div>			
 
-			</div>
-			<div class="knapperad">	
-				<input class="hovedKnapp" type="submit" name="tilbake" value="Tilbake">
-				<div class="nesteKnapp3">
-					<input class="hovedKnapp" type="submit" name="bestill" value="Bekreft bestilling">
+				</div>
+				<div class="knapperad">	
+					<input class="hovedKnapp" type="submit" name="tilbake" value="Tilbake">
+					<div class="nesteKnapp3">
+						<input class="hovedKnapp" type="submit" name="bestill" value="Bekreft bestilling">
+					</div>
 				</div>
 			</div>
+			</form>
 		</div>
-		</form>
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->
