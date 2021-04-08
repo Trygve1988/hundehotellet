@@ -25,7 +25,6 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 
 	<main>
-	<div class="bildeBakgrunn">
 		<div class="hovedBakgrunn">
 	
 			<!-- Form-->	

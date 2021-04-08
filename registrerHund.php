@@ -25,7 +25,6 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
-	<div class="bildeBakgrunn">
 		<div class="hovedBakgrunn"> 	
 
 			<!-- Form-->	
@@ -109,15 +108,14 @@ $dblink = kobleOpp();
 					<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund">
 				</div>
 			</div>
-		</div>
-	</div>	
+			</div>
+		</div>	
 
 	<!-- Dette må rettes opp! -->
 				<!-- 2b) registrerHund (Trygve) -->
 				<?php registrerHund($dblink); ?>
 			</form>
 		</div>
-		</div>	 
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->

@@ -25,7 +25,6 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
-	<div class="bildeBakgrunn">
 		<div class="hovedBakgrunn">
 	
 			<!-- Form-->	
@@ -56,9 +55,7 @@ $dblink = kobleOpp();
 				<input class="hovedKnapp" type="submit" name="neste" value="Neste">
 			</div>
 		</form>
-	</div>
-	</div> 	
-			
+	</div>	
 	</main>
 
 	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
