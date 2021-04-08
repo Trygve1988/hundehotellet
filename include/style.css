@@ -1,3 +1,14 @@
+
+body {
+	margin: 0px;
+	font-family: Arial, Times New Roman, Calibri, serif;
+	font-size: 19px;
+	text-align:center;
+	background-image: url("bakgrunn.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;	
+}
+
 /* **************************** navbar (Even) ***************************** */
 .navbar {
     overflow: hidden; 
@@ -33,17 +44,18 @@
     color: black; 
   }
 
-.bildeBakgrunn {
+/*.bildeBakgrunn { Ikke slett just in case 
   position: absolute;
   width: 100%;
   left: 0px;
   top: 0px;
   z-index: -1;
-  background-image: url("bakgrunn.jpg");
+  background-image: url("bilder/bakgrunn.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   vertical-align: middle;
 }
+*/
 
 .text{
   text-align: center;
@@ -126,15 +138,8 @@
   }
 
 /* **************************** Gunni ***************************** */
-@media only screen and (min-width: 720px) {
+/*@media only screen and (min-width: 720px) { */
 
-  body {
-	margin: 0px;
-	font-family: Arial, Times New Roman, Calibri, serif;
-	font-size: 19px;
-	text-align:center;	
-
-}
 /* Denne fungerer på Gunni sin kode, noe må være galt?*/ /*
 .bildeBakgrunn {
   	width: 100%;
@@ -579,4 +584,4 @@ footer a {
   position: relative;
   font-style: italic;
 }
-}
+ /*}*/
