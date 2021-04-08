@@ -1,4 +1,3 @@
-
 /* **************************** navbar (Even) ***************************** */
 .navbar {
     overflow: hidden; 
@@ -205,7 +204,7 @@ div .gjentaPKolonne {
 
 .vanligTekst {
 	padding-bottom: -5px;
-}
+} /* Error: padding-bottom: -5px negative values are not allowed. */
 
 .visPassord {
   position: absolute;
