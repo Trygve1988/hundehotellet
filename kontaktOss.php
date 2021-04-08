@@ -44,24 +44,25 @@ $dblink = kobleOpp();
 
                 </div>
 
-                <!-- Demo, funker ikke må kobles med php-->
+                <!-- Blir send til hundehotell mailen gjennom tredjepart formsubmit.co som er gratis-->
                 <div class="kontaktskjema-info ">
-                    <form>
-                        <label for="fnavn">Fornavn</label>
-                        <input type="text" id="fnavn" name="fornavn" placeholder="Ditt navn">
+            <form action="https://formsubmit.co/bohundehotell@outlook.com" method="POST">
+                <input type="hidden" name="_subject" value="Ny melding!">
+                <label for="fnavn">Fornavn</label>
+                <input type="text" id="navn" name="fornavn" placeholder="Ditt navn">
 
-                        <label for="epost">Epost</label>
-                        <input type="text" id="epost" name="brukerepost" placeholder="epost adresse">
+                <label for="epost">Epost</label>
+                <input type="email" id="email" name="email" placeholder=" Skriv inn din epost adresse" required>
 
-                        <label for="emne">Emne</label>
-                        <input type="text" id="emne" name="brukeremne" placeholder="Emne">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5502/takk.html"> <!--Link til takk siden fra nettsiden-->
 
-                        <label for="melding">Melding</label>
-                        <textarea id="melding" name="melding" placeholder="Hva lurer du på?"></textarea>
-                        <input type="submit" value="Send">
-                    </form>
-                </div>
 
+                <label for="melding">Melding</label>
+                <textarea id="message" name="message" placeholder="Hva lurer du på?"> </textarea>
+                <button type="submit">Send</button>
+           
+            </form>
+        </div>
 
             </section>
 
