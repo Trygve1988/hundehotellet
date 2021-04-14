@@ -25,7 +25,7 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
-		<div class="hovedBakgrunn"> 	
+		<div class="hvitBakgrunn"> 	
 
 			<!-- Form-->	
 			<form class="skjemaBakgrunn" method="POST">
@@ -54,6 +54,7 @@ $dblink = kobleOpp();
 					<label for="postNr">Postnummer:</label>
 					<input type="text" name="postNr">
 				</div>
+			</div>
 			<div>
 			
 			<!-- Labels og input i kolonne 2 -->

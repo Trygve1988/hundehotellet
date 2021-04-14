@@ -69,13 +69,13 @@ body {
   font-weight: bold;
   border: solid black;
 }
-
+/*
 .front{
   background-color: white; 
   margin-left: 380px;
   margin-right: 380px;
 }
-
+*/
   #KontrollerBD{
     display:flex;
   }
@@ -155,7 +155,7 @@ body {
   	background-size: 100%;
 }
 */
-.hovedBakgrunn {
+.hvitBakgrunn {
 	display: inline-block;
 	width: 60%;
 	height: auto;
@@ -428,6 +428,11 @@ body .modal {
 	max-width: 400px;
 	height: auto;
  }
+img .cvvkode {
+	width:auto;
+	height:auto;
+}
+
 
 .modal-innhold p{
 	padding: 20px;
@@ -529,7 +534,7 @@ footer a {
   .venstre {
     display: inline-block;
     text-align: left;
-	width:  30%; /*lager luft mellom boksene*/
+	width:  30%; /* lager luft mellom boksene */
     margin-bottom: 10px;  	
  }
 
@@ -538,7 +543,7 @@ footer a {
     width:  30%;
  }
 
-/*Sosiale medier ikoner*/
+/*Sosiale medier ikoner */
 .midten .sosiale-medier{
 	text-align: center;  
 	padding: 0;
@@ -547,8 +552,8 @@ footer a {
 .twitter-ikon,
 .facebook-ikon,
 .instagram-ikon{
-	width: 40px; /*bredden på ikonene*/
-	height: 40px; /*Høyden på ikonene*/
+	width: 40px;/*bredden på ikonene*/
+ 	height: 40px; /*Høyden på ikonene*/
 	margin-top: .625em;
  }
 
@@ -557,7 +562,7 @@ footer a {
 .instagram-ikon:hover {
  opacity: 1.0;
  opacity: .6;
- filter: alpha(opacity=60);/* For IE8 and earlier */
+ filter: alpha(opacity=60); /* For IE8 og tidligere */
  }
 
   .høyre .kart{
@@ -571,6 +576,7 @@ footer a {
     width:  30%;
  }
 
+ 
 
 /* **************************** Trygve ***************************** */
 #anmeldelseBoks a {

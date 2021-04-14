@@ -25,7 +25,7 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 
 	<main>
-		<div class="hovedBakgrunn">
+		<div class="hvitBakgrunn">
 	
 			<!-- Form-->	
 			<form class="skjemaBakgrunn" method="POST">
@@ -76,7 +76,7 @@ $dblink = kobleOpp();
 						<div class="modal-innhold">
 							<span class="lukkModal">&times;</span>
 							<h1>Hvor finner jeg CVC koden?</h1>
-							<img class="cvvkode" src="/bilder/ccv.png" alt="Bilde av hvor du finner CVC koden på visakortet" width="auto" height="auto">
+							<img class="cvvkode" src="/bilder/ccv.png" alt="Bilde av hvor du finner CVC koden på visakortet">
 						</div>
 					</div>
 
