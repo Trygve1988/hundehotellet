@@ -5,6 +5,7 @@ body {
 	text-align:center;
 	position: absolute;
 	width: 100%;
+	/*bakgrunnsbildet*/
 	left: 0px;
 	top: 0px;
 	z-index: -1;
@@ -188,7 +189,7 @@ body {
 	max-width: 45%;
 }
 
-.soloKolonne {
+.soloKolonne { /*SJEKK DENNE MOT enKolonneRad*/
 	max-width: 52%;
 }
 
@@ -196,7 +197,7 @@ body {
 	margin-right: 5%;
 }
 
-div .gjentaPKolonne {
+div .gjentaPKolonne { /*DENNE MÅ SJEKKES*/
 	max-width: 100%;
 	margin-top: 104px;
 }
@@ -242,8 +243,8 @@ input[type=text], input[type=password], input[type=date], input[type=month], tex
 	border: 1px solid #b7aeae; /* Burde denne droppes? Rammefarge rundt input!*/
 	border-radius: 4px;
 	padding: 10px;
-  background-color: white;	
-  font-family: Arial, Times New Roman, Calibri, serif;
+  	background-color: white;	
+  	font-family: Arial, Times New Roman, Calibri, serif;
 	font-size: 19px;}
 
 
@@ -283,7 +284,7 @@ input[type=text], input[type=password], input[type=date], input[type=month], tex
 	color: #ffffff;
  }
 
- input[type=submit].hovedKnapp2 {
+ input[type=submit].hovedKnapp2 { /*HUSK AT DU KAN BRUKE TO KLASSER, se over!*/
 	width: 270px;
 	margin-bottom: 10px;
 	background-color: #394f79;
