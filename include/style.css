@@ -399,7 +399,7 @@ body .modal {
  }
 
 /* Modal (bakgrunn) */
-.modal {
+.modal { /*Brukes som felles element på flere plasser f.eks hund lagt til, bekreftet bestilling*/
 	display: none; 
 	position: fixed;
 	z-index: 1; 
@@ -440,7 +440,7 @@ img .cvvkode {
  }
 
 /* Lukke knappen til modal */
-.lukkModal {
+.lukkModal { /*Test med Gunn Inger sin avbryt knapp*/
 	color: black;
 	float: right;
 	font-size: 28px;
@@ -454,7 +454,7 @@ img .cvvkode {
   }
 
 /*Til topp knappen*/
-#Knappen {
+#Knappen { /*Endre til tilToppknapp*/
     display: none;
     position: fixed;
     bottom: 20px;
@@ -491,7 +491,7 @@ img .cvvkode {
 	padding: 20px;
  }
 
-footer h1 {
+footer h1 { /*kan Samkjøres med andre overskrifter*/
 	font-size: 24px;
 	margin: 0;
 	margin-top: 30px;

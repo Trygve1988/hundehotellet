@@ -7,7 +7,7 @@
 *  {box-sizing:border-box}
 
 /*Gjør at kontakt info og kontakt-skjema sidestilles */
-section {
+section {  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -35,7 +35,7 @@ section .kontakt-info, .kontaktskjema-info {
   border-radius: 4px;
    
 }
-
+/*Legge til grå bakgrunn på kontaktskjema*/
 /* Kontakt Tekstboksen*/
 .kontaktskjema-info textarea {
   font-family: Arial, Helvetica, sans-serif;
@@ -66,7 +66,7 @@ section .kontakt-info, .kontaktskjema-info {
 }
     
 .kontaktskjema-info input[type=submit]:hover {
-  background-color: grey;
+  background-color: grey; /*samkjøre hover effekt på knappene*/
     
 }
     
