@@ -63,9 +63,8 @@ body {
 }
 */
 
-.text{
+.text{ /* Stor tekst, Velkomen */
   text-align: center;
-  font-family: Arial;
   font-size: 25px;
   font-weight: bold;
   border: solid black;
@@ -97,7 +96,7 @@ body {
     font-size: 30px;
   }
   
-  .bilder{
+  .bilder{ /*Bestill, Om Hundhotellet, Pris, BILDER*/
 	width: 300px;
 	height: 250px;
   }
