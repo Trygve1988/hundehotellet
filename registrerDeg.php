@@ -88,7 +88,11 @@ $dblink = kobleOpp();
 	</div>
 	</div>
 	</form>
-</div>
+	</div>
+
+	<!-- 2b) registrerDeg -->
+	<?php registrerDeg($dblink); ?> 
+
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->
