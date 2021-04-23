@@ -61,7 +61,7 @@ function visNav() {
         <a href="priser.php">Priser</a>
         <a href="KontaktOss.php">Kontakt Oss</a>
         
-         <?php
+        <?php
         // bestill Opphold
         if (erLoggetInn()) {
             ?> <a href="bestillOpphold.php">Bestill Opphold</a> <?php 
