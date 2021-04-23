@@ -84,7 +84,7 @@ $dblink = kobleOpp();
 		<!--Registrer knapp-->
 		<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
 		<!-- Logg inn link -->
-		<p class="ekstraLink2"> <a href="registrering.i">Har du allerede en bruker? Logg inn her</a></p>
+		<p class="ekstraLink2"> <a href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 	</div>
 	</div>
 	</form>
