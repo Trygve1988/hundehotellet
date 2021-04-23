@@ -61,7 +61,7 @@ function visNav() {
         <a href="priser.php">Priser</a>
         <a href="KontaktOss.php">Kontakt Oss</a>
         
-         <?php
+        <?php
         // bestill Opphold
         if (erLoggetInn()) {
             ?> <a href="bestillOpphold.php">Bestill Opphold</a> <?php 
@@ -198,7 +198,7 @@ function lagOption($hund) {
 }
 
 function velgHund($dblink) {
-    if (isset($_POST['velgHund'])) { 
+    if (isset($_POST['neste'])) { 
         //får tak i hundID ut ifra $brukerID og $navn  IKKE PERFEKT LØSNING!
         $navn = $_POST['hund']; 
         $brukerID = $_SESSION['brukerID'];
@@ -319,7 +319,7 @@ function datoOmEttAar() {
 
 // c) bekreftHundInfo
 function bekreftHundInfo($dblink) {
-    if (isset($_POST['bekreftHundInfo'])) { 
+    if (isset($_POST['neste'])) { 
         //registrer eller oppdater hund
         /*
         if ( erNyHund() ) {
@@ -405,7 +405,7 @@ function erNyHund() {
 
 // ************************** 5) Bestill Opphold 3 - velg Datoer og bading ************************** /**//
 function bekreftDatoer($dblink) {
-    if (isset($_POST['bekreftDatoer'])) { 
+    if (isset($_POST['bestill'])) { 
         $startDato = $_POST['startDato']; 
         $sluttDato = $_POST['sluttDato'];
         $sumÅBetale = sumÅBetale($dblink,$startDato,$sluttDato);
