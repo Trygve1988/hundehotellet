@@ -63,7 +63,7 @@ $dblink = kobleOpp();
                     </div>
                 </div>
 --> 
-                <div class="text">
+                <div class="velkommenTekst">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
                     <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
@@ -104,7 +104,7 @@ $dblink = kobleOpp();
     <!-- ************************** 3) fellesBunn **************************-->
     <?php visFooter(); ?>
 
-    <button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button> <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
+    <button onclick="toppKnappFunksjon()" id="tilToppKnapp" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button> <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
 
     <script src="./include/javascriptKode/toppknappen.js"></script>
 

@@ -4,7 +4,7 @@
 
 
 // Henter topp knappen ved hentet elmentet id kalt Knappen
-let minKnapp = document.getElementById("Knappen");
+let minKnapp = document.getElementById("tilToppKnapp");
 
 // Når brukeren ruller 20 px fra toppen av dokumentet, viser knappen  
 window.onscroll = function() {scrolleFunksjon()};
