@@ -32,6 +32,7 @@ $dblink = kobleOpp();
         <!-- 2a aktuelt -->
         <form method="POST">
             <h2>priser</h2>
+            <?php visPriser($dblink); ?>
         </form>
 
     </main>

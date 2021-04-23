@@ -178,6 +178,38 @@ function visFooter() {
 // ************************** 2) Aktuelt  **************************
 // ************************** 3) Om Oss  **************************
 // ************************** 4) Priser  **************************
+function visPriser($dblink) {
+    echo "<h2> Priser </h2>";
+    echo "<table>";
+
+    //overskrifter
+    echo "<tr>";
+    echo    "<th>prisID</th>";
+    echo    "<th>beskrivelse</th>";
+    echo    "<th>kr</th>";
+    echo "</tr>";
+
+    //rader
+    $sql = "SELECT * FROM pris;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>";
+        echo "<td>" . $rad['prisID'] . "</td>"; 
+        echo "<td>" . $rad['beskrivelse'] . "</td>";
+        echo "<td>" . $rad['beløp'] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>" . "<br>";
+}
+
+function visDagPris($dblink) {
+    $beskrivelse = "dagPris";
+    $sql = "SELECT * FROM pris WHERE beskrivelse = '$beskrivelse' ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    $rad = mysqli_fetch_assoc($resultat);
+    echo $rad['beløp']; 
+}
+
 // ************************** 5) Bestill Opphold 1 - velg hund ************************** /**//
 function laghunderTab($dblink) {
     $brukerID = $_SESSION['brukerID'];
