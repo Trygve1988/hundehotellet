@@ -8,7 +8,7 @@ body {
 	/*bakgrunnsbildet*/
 	left: 0px;
 	top: 0px;
-	z-index: -1;
+	z-index: -1; /*Denne må sjekkes opp*/
 	background-image: url("bilder/bakgrunn.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -63,7 +63,7 @@ body {
 }
 */
 
-.text{ /* Stor tekst, Velkomen */
+.velkommenTekst { /* Stor tekst, Velkommen */
   text-align: center;
   font-size: 25px;
   font-weight: bold;
@@ -153,6 +153,17 @@ body {
   	background-image: url("bakgrunn.jpg");
   	background-repeat: no-repeat;
   	background-size: 100%;
+}
+*/
+/* KLADD
+.hvitBakgrunn {
+	display: block; display: inline-block;
+	width: 60%;
+	height: auto;
+	padding: 40px 8px 25px 8px;
+	background-color: white;
+	text-align:center;
+	z-index: 1;
 }
 */
 .hvitBakgrunn {
