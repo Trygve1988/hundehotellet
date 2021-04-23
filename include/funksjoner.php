@@ -319,7 +319,7 @@ function datoOmEttAar() {
 
 // c) bekreftHundInfo
 function bekreftHundInfo($dblink) {
-    if (isset($_POST['bekreftHundInfo'])) { 
+    if (isset($_POST['neste'])) { 
         //registrer eller oppdater hund
         /*
         if ( erNyHund() ) {

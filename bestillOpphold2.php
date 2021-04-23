@@ -78,6 +78,10 @@ $dblink = kobleOpp();
 			</div>	
 			</form>
 		</div>
+
+		<!-- 2g bestillOpphold -->
+		<?php bekreftHundInfo($dblink); ?> 
+		
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->
