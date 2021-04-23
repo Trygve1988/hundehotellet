@@ -54,46 +54,43 @@ $dblink = kobleOpp();
 					<label for="postNr">Postnummer:</label>
 					<input type="text" name="postNr">
 				</div>
-			</div>
-			<div>
+						
+				<div>
+					<!-- Labels og input i kolonne 2 -->
+					<label for="etternavn">Etternavn:</label>
+					<input type="text" name="etternavn">
+					<label for="epost">E-post:</label>
+					<input type="text" name="epost">
 			
-			<!-- Labels og input i kolonne 2 -->
+					<label for="passord">Ønsket passord:</label>
+					<input type="password" name="passord">		
 
-			<label for="etternavn">Etternavn:</label>
-				<input type="text" name="etternavn">
-				<label for="epost">E-post:</label>
-				<input type="text" name="epost">
-			
-				<label for="passord">Ønsket passord:</label>
-				<input type="password" name="passord">		
-
-				<!-- Vis passord checkbox! -->
-				<div class="visPassord">
-					<label>Vis passord</label>
-					<input type="checkbox" name="visPassord" value="visPassord">
-				</div>
-				<!-- SKRIV INN PASSORDTILBAKEMELDING-->
-				<div class="visPassord2">
-					<p>Passord krav:</p>
-					<p> - SETT INN PASSORD TILBAKEMELDING</p>
-				</div>
+					<!-- Vis passord checkbox! -->
+					<div class="visPassord">
+						<label>Vis passord</label>
+						<input type="checkbox" name="visPassord" value="visPassord">
+					</div>
+					<!-- SKRIV INN PASSORDTILBAKEMELDING-->
+					<div class="visPassord2">
+						<p>Passord krav:</p>
+						<p> - SETT INN PASSORD TILBAKEMELDING</p>
+					</div>
 				
-				<div class="gjentaPKolonne">
-					<label for="passordSjekk">Gjenta passord:</label>
-					<input type="password" name="passordSjekk">	
+					<div class="gjentaPKolonne">
+						<label for="passordSjekk">Gjenta passord:</label>
+						<input type="password" name="passordSjekk">	
+					</div>	
 				</div>	
-			</div>	
 			<div class="knappeKlynge">
 				<!--Registrer knapp-->
 				<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
 				<!-- Logg inn link -->
 				<p class="ekstraLink2"> <a href="registrering.i">Har du allerede en bruker? Logg inn her</a></p>
-			</div>
-			
-			</div> <!-- Her kan det være noe feil!-->
+			</div>	
+			<!-- Her kan det være noe feil!-->
 			<!-- 2b) registrerDeg (Trygve) -->
 			<?php registrerDeg($dblink); ?>
-		</form>
+			</form>
 		</div>
 	</main>
 
