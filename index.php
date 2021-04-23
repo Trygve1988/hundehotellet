@@ -29,7 +29,7 @@ $dblink = kobleOpp();
             <!-- <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg" alt=""> -->
 
             <!--<div class="front"> -->
-
+<!--
            <section>
                 <img src="bilder/hundSlider1.jpg" alt="" id="slider">
         
@@ -39,8 +39,8 @@ $dblink = kobleOpp();
                     <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg" alt=""></li>
                 </ul>
             </section> 
-         
-<!--                <div class="slideshow-container">
+         -->
+                <div class="Slideshow-container">
                     <div class="mySlides fade">
                         <div class="numbertext">1 / 3</div>
                         <img src="bilder/hundSlider1.jpg" alt="Bilde av hund fra bildeslider">
@@ -62,8 +62,8 @@ $dblink = kobleOpp();
                         <span class="dot"></span>
                     </div>
                 </div>
---> 
-                <div class="text">
+ 
+                <div class="velkommenText">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
                     <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
