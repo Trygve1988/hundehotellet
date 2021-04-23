@@ -198,7 +198,7 @@ function lagOption($hund) {
 }
 
 function velgHund($dblink) {
-    if (isset($_POST['velgHund'])) { 
+    if (isset($_POST['neste'])) { 
         //får tak i hundID ut ifra $brukerID og $navn  IKKE PERFEKT LØSNING!
         $navn = $_POST['hund']; 
         $brukerID = $_SESSION['brukerID'];
