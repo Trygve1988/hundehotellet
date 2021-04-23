@@ -179,7 +179,6 @@ function visFooter() {
 // ************************** 3) Om Oss  **************************
 // ************************** 4) Priser  **************************
 function visPriser($dblink) {
-    echo "<h2> Priser </h2>";
     echo "<table>";
 
     //overskrifter
