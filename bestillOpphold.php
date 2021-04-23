@@ -60,6 +60,9 @@ $dblink = kobleOpp();
 
 	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
 
+	<!-- 2g bestillOpphold -->
+	<?php velgHund($dblink); ?> 
+
 	<!-- ************************** 3) fellesBunn **************************-->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>

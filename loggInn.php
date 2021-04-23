@@ -62,11 +62,14 @@ $dblink = kobleOpp();
 			<!-- Glemt passord og Registrer deg linker -->
 			<div class="ekstraLinker"> 
 				<a class="link1" href="#">Glemt passord</a>
-				<a href="#">Registrer deg</a>
+				<a href="registrerDeg.php">Registrer deg</a>
 			</div>
 		</div>	
 		</form>
 		</div>
+
+		<!-- 2c) loggInn -->
+		<?php loggInn($dblink); ?> 
 	</main>
 
 
