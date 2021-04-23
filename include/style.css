@@ -8,7 +8,7 @@ body {
 	/*bakgrunnsbildet*/
 	left: 0px;
 	top: 0px;
-	z-index: -1;
+	z-index: -1; /*Denne må sjekkes opp*/
 	background-image: url("bilder/bakgrunn.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -236,6 +236,17 @@ body {
   	background-image: url("bakgrunn.jpg");
   	background-repeat: no-repeat;
   	background-size: 100%;
+}
+*/
+/* KLADD
+.hvitBakgrunn {
+	display: block; display: inline-block;
+	width: 60%;
+	height: auto;
+	padding: 40px 8px 25px 8px;
+	background-color: white;
+	text-align:center;
+	z-index: 1;
 }
 */
 .hvitBakgrunn {
@@ -523,11 +534,16 @@ img .cvvkode {
  }
 
 /* Lukke knappen til modal */
-.lukkModal { /*Test med Gunn Inger sin avbryt knapp*/
-	color: black;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
+.lukkModal { /*Test med Gunn Inger sin avbryt knapp / Går ikke, er input og dette her er span*/
+	width: 38px;
+	height: 38px;
+	margin: 0;
+	margin-left: 95.5%;
+	padding: 1px;
+	border-radius: 50%;
+	font-size: 27px;
+	background-color: #394f79;
+	color: #ffffff;
  }
 
 .lukkModal:hover,.lukkModal:focus {
@@ -537,7 +553,7 @@ img .cvvkode {
   }
 
 /*Til topp knappen*/
-#Knappen { /*Endre til tilToppknapp*/
+#tilToppKnapp { /*Endre til tilToppknapp*/
     display: none;
     position: fixed;
     bottom: 20px;
