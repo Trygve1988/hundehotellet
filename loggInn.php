@@ -67,6 +67,9 @@ $dblink = kobleOpp();
 		</div>	
 		</form>
 		</div>
+
+		<!-- 2c) loggInn -->
+		<?php loggInn($dblink); ?> 
 	</main>
 
 
