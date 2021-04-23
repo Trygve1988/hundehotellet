@@ -15,6 +15,19 @@ body {
 	vertical-align: middle;
 }
 
+/* Til bilde slider*/
+
+@-webkit-keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+  }
+  
+  @keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+  }
+
+
 /* **************************** navbar (Even) ***************************** */
 .navbar {
     overflow: hidden; 
@@ -215,16 +228,6 @@ body {
 	animation-duration: 1.5s;
   }
   
-  @-webkit-keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
-  }
-  
-  @keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
-  }
-
 /* **************************** Gunni ***************************** */
 /*@media only screen and (min-width: 720px) { */
 
