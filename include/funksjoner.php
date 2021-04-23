@@ -405,7 +405,7 @@ function erNyHund() {
 
 // ************************** 5) Bestill Opphold 3 - velg Datoer og bading ************************** /**//
 function bekreftDatoer($dblink) {
-    if (isset($_POST['bekreftDatoer'])) { 
+    if (isset($_POST['bestill'])) { 
         $startDato = $_POST['startDato']; 
         $sluttDato = $_POST['sluttDato'];
         $sumÅBetale = sumÅBetale($dblink,$startDato,$sluttDato);
