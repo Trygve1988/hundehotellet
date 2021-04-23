@@ -104,7 +104,7 @@ $dblink = kobleOpp();
     <!-- ************************** 3) fellesBunn **************************-->
     <?php visFooter(); ?>
 
-    <button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button> <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
+    <button onclick="toppKnappFunksjon()" id="tilToppKnapp" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button> <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
 
     <script src="./include/javascriptKode/toppknappen.js"></script>
 
