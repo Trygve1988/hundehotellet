@@ -63,7 +63,7 @@ body {
 }
 */
 
-.text{ /* Stor tekst, Velkomen */
+.velkommenTekst { /* Stor tekst, Velkommen */
   text-align: center;
   font-size: 25px;
   font-weight: bold;
