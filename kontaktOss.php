@@ -54,7 +54,7 @@ $dblink = kobleOpp();
                 <label for="epost">Epost</label>
                 <input type="email" id="email" name="email" placeholder=" Skriv inn din epost adresse" required>
 
-                <input type="hidden" name="_next" value="http://127.0.0.1:5502/takk.html"> <!--Link til takk siden fra nettsiden-->
+                <input type="hidden" name="_next" value="http://127.0.0.1:5502/takkMelding.html"> <!--Link til takk siden fra nettsiden-->
 
 
                 <label for="melding">Melding</label>
