@@ -25,46 +25,9 @@ $dblink = kobleOpp();
     <!-- ************************** 2) main **************************-->
     <main>
         <div class="hvitBakgrunn">
-        <div class="hovedBakgrunn">
-            <!-- <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg" alt=""> -->
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
-            <!--<div class="front"> -->
-
-           <section id="bildeSlider">
-                <img src="bilder/hundSlider1.jpg" alt="" id="slider">
-        
-                <ul class="navigation">
-                    <li onclick="imgSlider('bilder/hundSlider1.jpg')"><img src="bilder/hundSlider1.jpg" alt=""></li>
-                    <li onclick="imgSlider('bilder/hundSlider2.jpg')"><img src="bilder/hundSlider2.jpg" alt=""></li>
-                    <li onclick="imgSlider('bilder/hundSlider3.jpg')"><img src="bilder/hundSlider3.jpg" alt=""></li>
-                </ul>
-            </section> 
-            
-<!--       funker ikke 
-                <div class="Slideshow-container">
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="bilder/hundSlider1.jpg" alt="Bilde av hund fra bildeslider">
-                    </div>  
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="bilder/hundSlider2.jpg" alt="Bilde av hund fra bildeslider">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="bilder/hundSlider3.jpg" alt="Bilde av hund fra bildeslider">
-                    </div>
-
-                    <div style="text-align: center;">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                </div>
---> 
-                <div class="velkommenText">
+                <div class="text">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
                     <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
@@ -73,19 +36,19 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD">
 
                     <div class="bildeKontroller">
-                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" alt="" class="bilder"></a>
+                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder"></a>
                         <h1> Bestill</h1>
                         <p>Her kan du bestille opphold til hunden(ene) dine.</p>
                     </div>
 
                     <div class="bildeKontroller">
-                        <a href="omOss.php"><img src="bilder/hunder2.jpg" alt="" class="bilder"></a>
+                        <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
                         <h1>Om Hundehotellet</h1>
                         <p>Her kan du få mer info om Hundehotellet.</p>
                     </div>
 
                     <div class="bildeKontroller">
-                        <a href="Pris.php"><img src="bilder/hunder3.jpg" alt="" class="bilder"></a>
+                        <a href="Pris.php"><img src="bilder/hunder3.jpg" class="bilder"></a>
                         <h1>Priser</h1>
                         <p>Her kan du se en oversikt over priser.</p>
                     </div>
@@ -98,7 +61,6 @@ $dblink = kobleOpp();
                     <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a>
                 </div>
-        </div>
         </div>
     </main>
 
