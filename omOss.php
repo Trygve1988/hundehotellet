@@ -26,9 +26,20 @@ $dblink = kobleOpp();
     <main>
 
         <!-- 2a omOss -->
-        <form method="POST">
-            <h2>Om Hundehotellet</h2>
-        </form>
+        <div class="hvitBakgrunn">
+    
+             <!-- Form-->    
+            <form class="skjemaBakgrunn" method="POST">
+
+                <!-- Avbryt knapp -->
+                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+
+                <!-- Overskrift -->
+                <h2>Om oss</h2>
+
+                <h3>Tekst:</h3>
+            </form>
+        </div> 
 
     </main>
 

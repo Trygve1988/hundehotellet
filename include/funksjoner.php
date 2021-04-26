@@ -54,12 +54,12 @@ function visBildeBakgrunn() {
 
 function visNav() { 
     ?> <div class="navbar">
-        <a href="index.php"> <img  class="logo" src="bilder/logo.png"> Bø Hundehotell </a>
+        <a href="index.php"> <img  class="logo" src="bilder/logohvit.png"> <img  class="logotext" src="bilder/teksthvit.png">  </a>
         <a href="index.php">Hjem</a>
         <a href="aktuelt.php">Aktuelt</a>
         <a href="omOss.php">Om Oss</a>
         <a href="priser.php">Priser</a>
-        <a href="KontaktOss.php">Kontakt Oss</a>
+        <a href="kontaktOss.php">Kontakt Oss</a>
         
         <?php
         // bestill Opphold

@@ -60,17 +60,16 @@ $dblink = kobleOpp();
 			<input type="text" name="epost">
 		
 			<label for="passord">Ønsket passord:</label>
-			<input type="password" name="passord">	
+			<input type="password" name="passord" required id="passord">	
 
 			<!-- Vis passord checkbox! -->
 			<div class="visPassord">
-				<label>Vis passord</label>
-				<input type="checkbox" name="visPassord" value="visPassord">
+				<input type="checkbox" onclick="visPassord()">Vis Passord
 			</div>
 			<!-- SKRIV INN PASSORDTILBAKEMELDING-->
 			<div class="visPassord2">
 				<p>Passord krav:</p>
-				<p> - SETT INN PASSORD TILBAKEMELDING</p>
+				<p id="status" melding()></p>
 			</div>
 			
 			<div class="gjentaPKolonne">
