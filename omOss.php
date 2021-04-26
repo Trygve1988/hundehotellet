@@ -29,9 +29,7 @@ $dblink = kobleOpp();
         <form method="POST">
         <div class="hvitBakgrunn"> 	
             <form class="skjemaBakgrunn" method="POST">	
-                <div class="skjemaKolonner">
-                    <h2>Om Hundehotellet</h2>
-                </div>
+                <p>Hallo hallo hallo asdasdasdad</p>
             </form>
         </div>
         </form>
