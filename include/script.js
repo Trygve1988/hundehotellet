@@ -134,6 +134,50 @@ function showSlide(){
 }
 
 
+// **************************  Bestill Opphold-knapper (Gunni) **************************
+
+// Bestill opphold 1
+// Knappefunksjon for nesteknapp i Bestill opphold 1/4
+// Lager button variablel
+var tilBO2Knapp = document.getElementById("tilBO2");
+
+// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
+tilToppenKnapp.addEventListener('click', tilBO2Funksjon, false);
+
+// Funksjonen
+function tilBO2Funksjon() {
+    window.location.href = "bestillOpphold2.php";
+} 
+
+// Bestill opphold 2
+// Knappefunksjon for nesteknapp i Bestill opphold 2/4
+// Lager button variablel
+var tilBO3Knapp = document.getElementById("tilBO3");
+
+// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
+tilToppenKnapp.addEventListener('click', tilBO3Funksjon, false);
+
+// Funksjonen
+function tilBO3Funksjon() {
+    window.location.href = "bestillOpphold3.php";
+}
+
+// Bestill opphold 3
+// Knappefunksjon for nesteknapp i Bestill opphold 3/4
+// Lager button variablel
+var tilBO4Knapp = document.getElementById("tilBO4");
+
+// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
+tilToppenKnapp.addEventListener('click', tilBO4Funksjon, false);
+
+// Funksjonen
+function tilBO4Funksjon() {
+    window.location.href = "bestillOpphold4.php";
+}  
+
+// Bestill opphold 4
+
+
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp
 //Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 
