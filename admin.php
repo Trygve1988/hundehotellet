@@ -22,8 +22,11 @@
 
         <!-- 2a admin -->
         <form method="POST">
-            <h2>Admin</h2>
-            <p>under arbeid....</p> 
+            <div class="hvitBakgrunn">
+                <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+                <h2>Admin</h2>
+                <p>under arbeid....</p>
+            </div> 
         </form> 
 
     </main>

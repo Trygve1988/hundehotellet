@@ -26,8 +26,11 @@ $dblink = kobleOpp();
 
         <!-- 2 alle opphold  -->
         <form method="POST">
-            <h2>alle opphold</h2>
-            <p>under arbeid....</p>
+            <div class="hvitBakgrunn">
+                <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+                <h2>alle opphold</h2>
+                <p>under arbeid....</p>
+            </div>
         </form>
 
     </main>

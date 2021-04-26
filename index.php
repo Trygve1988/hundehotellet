@@ -27,7 +27,7 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
-                <div class="text">
+                <div class="velkommenText">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
                     <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
