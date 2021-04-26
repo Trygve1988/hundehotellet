@@ -27,7 +27,13 @@ $dblink = kobleOpp();
 
         <!-- 2a omOss -->
         <form method="POST">
-            <h2>Om Hundehotellet</h2>
+        <div class="hvitBakgrunn"> 	
+            <form class="skjemaBakgrunn" method="POST">	
+                <div class="skjemaKolonner">
+                    <h2>Om Hundehotellet</h2>
+                </div>
+            </form>
+        </div>
         </form>
 
     </main>
