@@ -478,6 +478,12 @@ a:active {
 
 
 /* **************************** Kristina ***************************** */
+
+ /*Felles hover effekt på alle submit knappene*/
+ input[type=submit]:hover {
+	background-color: #613f75; /*Eksempelfarge*/
+ }
+
 body .modal {
 	overflow: hidden;
  }
@@ -562,7 +568,7 @@ img .cvvkode {
     
  }
 
-  #Knappen:hover {
+  #TilToppKnapp:hover {
     background-color: #613f75;
  }
 
@@ -615,7 +621,7 @@ footer a {
   }
 
 
-/*info til footeren til venstre*/
+/*info til footeren til venstre (Kontaktinformasjon)*/
    .venstre p {
     margin-bottom: 5px;  
  }
@@ -627,25 +633,24 @@ footer a {
     margin-bottom: 10px;  	
  }
 
+ /*Info til footeren i midten (Sosiale medier)*/
   .midten {
     display: inline-block;
     width:  30%;
  }
 
 /*Sosiale medier ikoner */
-.midten .sosiale-medier{
-	text-align: center;  
-	padding: 0;
- }
-
 .twitter-ikon,
 .facebook-ikon,
 .instagram-ikon{
+	float: left;
 	width: 40px;/*bredden på ikonene*/
  	height: 40px; /*Høyden på ikonene*/
 	margin-top: .625em;
+	padding: 8px;
  }
 
+ /*Opacity effekt hover SoMe ikonene*/
 .twitter-ikon:hover,
 .facebook-ikon:hover,
 .instagram-ikon:hover {
@@ -654,13 +659,15 @@ footer a {
  filter: alpha(opacity=60); /* For IE8 og tidligere */
  }
 
+ /*Kart til hundehotelladressen*/
   .høyre .kart{
    margin: 10px;
    width:  30%;
  }
 
-/*Til høyre i footeren*/
+/*Til høyre i footeren (Samarbeidspartnere*/
   .høyre{
+	text-align: left;
     margin-right: 80px;
     width:  30%;
  }
