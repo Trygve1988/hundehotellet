@@ -97,4 +97,10 @@ function showSlide(){
 }
 
 
+function imgSlider(anything){
+  document.getElementById("slider").src = anything;
+}
+//hentet fra https://www.youtube.com/watch?v=y0XHdEeEevs
+
+
 

@@ -105,14 +105,8 @@ function melding(){
   } 
 }
 
-//Bildeslider v2 (Even)
-function imgSlider(anything){
-  document.getElementById("slider").src = anything;
-}
-//hentet fra https://www.youtube.com/watch?v=y0XHdEeEevs
-
-//Bileslider V3
-//Hentet fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
+//Bildeslider  (Even)
+//Inspirert og hentet fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
 var slideIndex = 0;
 showSlide();
 

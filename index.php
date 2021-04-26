@@ -27,6 +27,31 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
+    
+                <div class="Slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="bilder/hundSlider1.jpg" alt="Bilde av hund fra bildeslider">
+                    </div>  
+    
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="bilder/hundSlider2.jpg" alt="Bilde av hund fra bildeslider">
+                    </div>
+    
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="bilder/hundSlider3.jpg" alt="Bilde av hund fra bildeslider">
+                    </div>
+    
+                    <div style="text-align: center;">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                      
+
                 <div class="velkommenText">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
