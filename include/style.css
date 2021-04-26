@@ -69,8 +69,14 @@ body {
   font-weight: bold;
   border: solid black;
 }
+.hvitBakgrunn {
+	background-color: white; 
+	margin-left: 380px;
+	margin-right: 380px;
+
+}
 /*
-.front{
+.front {
   background-color: white; 
   margin-left: 380px;
   margin-right: 380px;
@@ -246,7 +252,7 @@ body {
 	text-align:center;
 	z-index: 1;
 }
-*/
+
 .hvitBakgrunn {
 	display: inline-block;
 	width: 60%;
@@ -254,7 +260,7 @@ body {
 	padding: 40px 8px 25px 8px;
 	background-color: white;
 }
-
+*/
 /*Form grå bakgrunn*/
 .skjemaBakgrunn {
 	display: inline-block;
