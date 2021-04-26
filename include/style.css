@@ -102,12 +102,12 @@ body {
 	margin: auto;
   }
   
-  /* Hide the images by default */
+  /* Gjømmer bildene til nomralt */
   .mySlides {
 	display: none;
   }
   
-  /* Next & previous buttons */
+  /* Neste og forje knapper */
   .prev, .next {
 	cursor: pointer;
 	position: absolute;
@@ -123,7 +123,7 @@ body {
 	user-select: none;
   }
   
-  /* Position the "next button" to the right */
+  /* Posisjon på next og prev buttons */
   .next {
 	right: 0;
 	border-radius: 3px 0 0 3px;
@@ -134,7 +134,7 @@ body {
 	border-radius: 3px 0 0 3px;
   }
 
-  /* On hover, add a black background color with a little bit see-through */
+  /* Gjør knappene litt mørkere når du holder over dem */
   .prev:hover, .next:hover {
 	background-color: rgba(0,0,0,0.8);
   }

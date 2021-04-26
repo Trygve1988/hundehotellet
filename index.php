@@ -30,7 +30,6 @@ $dblink = kobleOpp();
                 <!-- Slideshow container -->
                 <div class="slideshow-container">
 
-                    <!-- Full-width images with number and caption text -->
                     <div class="mySlides fade">
                         <img src="bilder/hundSlider1.jpg" style="width:100%">
                     </div>
@@ -43,13 +42,13 @@ $dblink = kobleOpp();
                         <img src="bilder/hundSlider3.jpg" style="width:100%">
                     </div>
 
-                    <!-- Next and previous buttons -->  
+                    <!-- Neste og forje bildeknapp-->  
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>    
                     </div>
                     <br>
 
-                    <!-- The dots/circles -->
+                    <!-- Rundingene under bilde -->
                     <div style="text-align:center">
                     <span class="dot" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>

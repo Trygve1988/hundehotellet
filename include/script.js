@@ -110,12 +110,12 @@ function melding(){
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Next/previous kontroller
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// Thumbnail image kontroller
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
