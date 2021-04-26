@@ -136,7 +136,7 @@ function showSlide(){
 var tilBO2Knapp = document.getElementById("tilBO2");
 
 // Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
-tilToppenKnapp.addEventListener('click', tilBO2Funksjon, false);
+tilBO2.addEventListener('click', tilBO2Funksjon, false);
 
 // Funksjonen
 function tilBO2Funksjon() {
@@ -149,7 +149,7 @@ function tilBO2Funksjon() {
 var tilBO3Knapp = document.getElementById("tilBO3");
 
 // Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
-tilToppenKnapp.addEventListener('click', tilBO3Funksjon, false);
+tilBO3.addEventListener('click', tilBO3Funksjon, false);
 
 // Funksjonen
 function tilBO3Funksjon() {
@@ -162,7 +162,7 @@ function tilBO3Funksjon() {
 var tilBO4Knapp = document.getElementById("tilBO4");
 
 // Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
-tilToppenKnapp.addEventListener('click', tilBO4Funksjon, false);
+tilBO4.addEventListener('click', tilBO4Funksjon, false);
 
 // Funksjonen
 function tilBO4Funksjon() {

@@ -74,38 +74,39 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 		
-			<div>
-				<!-- Labels og input i kolonne 2-->
-				<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
-				<select name="lopeMedAndre">
-					<option value="velg">--Velg--</option>
-					<option value="ja">Ja</option>
-					<option value="nei">Nei</option>
-				</select>
+				<div>
+					<!-- Labels og input i kolonne 2-->
+					<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
+					<select name="lopeMedAndre">
+						<option value="velg">--Velg--</option>
+						<option value="ja">Ja</option>
+						<option value="nei">Nei</option>
+					</select>
 			
 		
-				<label for="losPaaTur">Kan hunden gå løs på tur:</label>
-				<select name="losPaaTur">
-					<option value="velg">--Velg--</option>
-					<option value="ja">Ja</option>
-					<option value="nei">Nei</option>
-				</select>
+					<label for="losPaaTur">Kan hunden gå løs på tur:</label>
+					<select name="losPaaTur">
+						<option value="velg">--Velg--</option>
+						<option value="ja">Ja</option>
+						<option value="nei">Nei</option>
+					</select>
 
 
-				<label for="fortype">Fòrtype:</label>
-				<select name="fortype">
-					<option value="velg">--Velg--</option>
-					<option value="inkludert">Det som er inkludert i oppholdet</option>
-					<option value="medbrakt">Medbrakt</option>
-				</select>
+					<label for="fortype">Fòrtype:</label>
+					<select name="fortype">
+						<option value="velg">--Velg--</option>
+						<option value="inkludert">Det som er inkludert i oppholdet</option>
+						<option value="medbrakt">Medbrakt</option>
+					</select>
 
-				<label for="ekstraInfo">Ekstra informasjon:</label>
-				<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
+					<label for="ekstraInfo">Ekstra informasjon:</label>
+					<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
 			
-				<!--Neste knapp-->
-				<div class="knappIKolonne">
-					<input class="hovedKnapp" type="submit" name="neste" value="Neste">
-				</div>
+					<!--Neste knapp-->
+					<div class="knappIKolonne">
+						<input class="hovedKnapp" type="submit" name="neste" value="Neste">
+					</div>
+				</div>	
 			</form>
 		</div>	
 	</main>

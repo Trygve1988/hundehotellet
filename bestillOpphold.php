@@ -48,12 +48,11 @@ $dblink = kobleOpp();
 				</div>
 			<!-- " + Registrer ny hund"- knapp -->
 			<input class="ekstraKnapp2" type="submit" name="registrerNyHund" value="+ Registrer ny hund">
-		
 			</div>
-			</div>
+
 			<!-- Neste-knapp -->
-			<button onclick="tilBO2Funksjon()" id="tilBO2" class="hovedKnapp" title="Neste">Neste</button>
-	</div>	
+			<button id="tilBO2" class="hovedKnapp" onclick="tilBO2Funksjon()" title="Neste">Neste</button>
+			</div>	
 	</main>
 
 	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
