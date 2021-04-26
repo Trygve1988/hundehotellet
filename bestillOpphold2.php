@@ -32,7 +32,7 @@ $dblink = kobleOpp();
 			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 
 			<!-- Overskrift -->
-			<h1>Bestill opphold</h1>
+			<h2>Bestill opphold</h2>
 			<h3>Kontroller at informasjon om hunden din er oppdatert:</h3>
 
 			<div class="skjemaKolonner">

@@ -33,7 +33,7 @@ $dblink = kobleOpp();
 		<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 
 	<!-- Overskrift -->
-	<h1>Registrer ny bruker</h1>
+	<h2>Registrer ny bruker</h2>
 
 	<div class="skjemaKolonner">
 		<div class="kolonne1">

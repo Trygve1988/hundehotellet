@@ -34,7 +34,7 @@ $dblink = kobleOpp();
 			<!-- Avbryt knapp -->
 			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 	
-			<h1>Bestill opphold</h1>
+			<h2>Bestill opphold</h2>
 
 			<h2 class="overskrift2">Oppsummering</h2>
 			<!-- Her må det refereres til databsen! -->

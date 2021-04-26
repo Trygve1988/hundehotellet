@@ -35,7 +35,7 @@ $dblink = kobleOpp();
 				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
 
 				<!-- Overskrift -->
-				<h1>Registrer ny hund</h1>	
+				<h2>Registrer ny hund</h2>	
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
