@@ -63,7 +63,7 @@ $dblink = kobleOpp();
                         <span class="dot"></span>
                     </div>
                 </div>
-                --> 
+--> 
                 <div class="velkommenText">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
