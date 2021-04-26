@@ -31,6 +31,8 @@ $dblink = kobleOpp();
 
         <!-- 2a kontakt oss -->
         <form method="POST">
+        <div class="hvitBakgrunn">
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
             <!--********************** Kristina ************************** -->
 

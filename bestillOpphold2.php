@@ -24,7 +24,8 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main **************************-->
 	<main>
-		<div class="hvitBakgrunn"> 
+		<div class="hvitBakgrunn">
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
 			<!-- Form-->	
 			<form class="skjemaBakgrunn" method="POST">
