@@ -361,7 +361,7 @@ input[type=text], input[type=password], input[type=date], input[type=month], tex
  input[type=submit] {
  	margin: 25px 0;
  	border-radius: 4px;
-	border-color: #394f79; 
+	border-color: ##2f3e52; 
  	padding: 10px 25px;
  	font-size: 19px;
  	background-color: #ffffff;
@@ -371,14 +371,14 @@ input[type=text], input[type=password], input[type=date], input[type=month], tex
  /* hovedKnapp, f.eks Logg inn, Registrer deg*/
  input[type=submit].hovedKnapp {
  	width: 250px;
-	background-color: #394f79;
+	background-color: #2f3e52;
 	color: #ffffff;
  }
 
  input[type=submit].hovedKnapp2 { /*HUSK AT DU KAN BRUKE TO KLASSER, se over!*/
 	width: 270px;
 	margin-bottom: 10px;
-	background-color: #394f79;
+	background-color: #2f3e52;
 	color: #ffffff;
  }
 
@@ -397,7 +397,7 @@ input[type=submit].avbrytKnapp {
 	padding: 1px;
 	border-radius: 50%;
 	font-size: 27px;
-	background-color: #394f79;
+	background-color: #2f3e52;
 	color: #ffffff;
 }
 /* Vanlig størrelse på checkbox og radiobutton*/
