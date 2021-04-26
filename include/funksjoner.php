@@ -134,7 +134,7 @@ function visFooter() {
             <p>Bø Hundehotell</p>
             <p><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
             <address>
-                <strong> Epost:</strong><a href="mailto:bohundehotell@example.com">bohundehotell.@example.com</a><br>    
+                <strong> Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell.@outlook.com</a><br>    
                    </address>
             <p> <strong>Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
         </div>
