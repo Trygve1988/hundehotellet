@@ -52,7 +52,7 @@ $dblink = kobleOpp();
 			</div>
 			</div>
 			<!-- Neste-knapp -->
-			<button onclick="tilBO2Funksjon()" id="tilBO2" class="hovedKnapp" title="Neste"></button>
+			<button onclick="tilBO2Funksjon()" id="tilBO2" class="hovedKnapp" title="Neste">Neste</button>
 	</div>	
 	</main>
 
