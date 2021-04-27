@@ -29,8 +29,8 @@ $dblink = kobleOpp();
     <!-- ************************** 2) main ************************** -->
     <main>
 
-        <!-- 2a kontakt oss -->
-        <form method="POST">
+        <!-- 2a kontakt oss 
+        <form method="POST">-->
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
@@ -61,7 +61,7 @@ $dblink = kobleOpp();
                         <label for="epost">Epost </label>
                         <input type="email" id="email" name="email" placeholder="epost adresse" required>
 
-                        <input type="hidden" name="_next" value="http://127.0.0.1:5502/takkMelding.html">
+                        <input type="hidden" name="_next" value="https://itfag.usn.no/~233513/takkMelding.html">
                         <!--Må legge til nettstedadresse i filezilla -->
 
 
@@ -75,7 +75,8 @@ $dblink = kobleOpp();
 
             </section>
 
-        </form>
+</div>
+      <!--  </form>-->
 
 
     </main>
