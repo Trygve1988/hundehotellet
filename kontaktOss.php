@@ -24,13 +24,13 @@ $dblink = kobleOpp();
 
 <body>
     <!-- ************************** 1) fellesTop ************************** -->
-    <?php visNav(); ?>
 
     <!-- ************************** 2) main ************************** -->
     <main>
+        <?php visNav(); ?>
 
-        <!-- 2a kontakt oss 
-        <form method="POST">-->
+        <!-- 2a kontakt oss -->
+        <form method="POST">
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
@@ -76,15 +76,14 @@ $dblink = kobleOpp();
             </section>
 
         </div>
-        <!--  </form>-->
-
+        </form>
+              
+        <?php visFooter(); ?>   
+        <?php visToppKnapp(); ?>    
 
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->
-    <?php visFooter(); ?>
-    <?php visToppKnapp(); ?>
-
 </body>
 
 </html>

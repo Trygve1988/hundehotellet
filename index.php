@@ -31,15 +31,15 @@ $dblink = kobleOpp();
                 <div class="slideshow-container">
 
                     <div class="mySlides fade">
-                        <img src="bilder/hundSlider1.jpg" style="width:100%">
+                        <img src="bilder/hundSlider1.jpg" style="width:100%" alt="Bilde av hund fra bildeslider">
                     </div>
 
                     <div class="mySlides fade">
-                        <img src="bilder/hundSlider2.jpg" style="width:100%">
+                        <img src="bilder/hundSlider2.jpg" style="width:100%" alt="Bilde av hund fra bildeslider">
                     </div>
 
                     <div class="mySlides fade">
-                        <img src="bilder/hundSlider3.jpg" style="width:100%">
+                        <img src="bilder/hundSlider3.jpg" style="width:100%" alt="Bilde av hund fra bildeslider">
                     </div>
 
                     <!-- Neste og forje bildeknapp-->  
@@ -64,19 +64,19 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD">
 
                     <div class="bildeKontroller">
-                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder"></a>
+                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til bestill opphold"></a>
                         <h1> Bestill</h1>
                         <p>Her kan du bestille opphold til hunden(ene) dine.</p>
                     </div>
 
                     <div class="bildeKontroller">
-                        <a href="Om Oss.html"><img src="bilder/hunder2.jpg" class="bilder"></a>
+                        <a href="omOss.php"><img src="bilder/hunder2.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til om hundehotellet"></a>
                         <h1>Om Hundehotellet</h1>
                         <p>Her kan du få mer info om Hundehotellet.</p>
                     </div>
 
                     <div class="bildeKontroller">
-                        <a href="Pris.php"><img src="bilder/hunder3.jpg" class="bilder"></a>
+                        <a href="priser.php"><img src="bilder/hunder3.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
                         <h1>Priser</h1>
                         <p>Her kan du se en oversikt over priser.</p>
                     </div>
@@ -94,12 +94,9 @@ $dblink = kobleOpp();
 
     <!-- ************************** 3) fellesBunn **************************-->
     <?php visFooter(); ?>
-
-    <button onclick="toppKnappFunksjon()" id="tilToppKnapp" title="Gå til toppen"><i class="fas fa-chevron-up"></i> </button> <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
+    <?php visToppKnapp(); ?>
 
     <script src="./include/javascriptKode/toppknappen.js"></script>
-
-    <?php visToppKnapp(); ?>
 
 </body>
 
