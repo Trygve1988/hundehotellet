@@ -25,47 +25,47 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main (gunni) **************************-->
 	
 	<main>
-		<div class="hvitBakgrunn"> 	
+	<div class="hvitBakgrunn">
+        <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
-		<!-- Form-->	
-		<form class="skjemaBakgrunn" method="POST">	
+				<!-- Form-->	
+				<form class="skjemaBakgrunn" method="POST">	
 
-		<!-- Avbryt knapp -->
-		<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
+				<!-- Avbryt knapp -->
+				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
 
-		<!-- Overskrift -->
-		<h1>Logg inn</h1>	
+				<!-- Overskrift -->
+				<h2>Logg inn</h2>	
 
-		<div class="skjemaKolonner">
-			<div>
-				<!-- Labels og input i kolonne 1 -->
-				<label for="epost">E-post:</label>
-				<input type="text" name="epost">
-			
-				<label for="passord">Passord:</label>
-				<input type="password" name="passord">	
+				<div class="skjemaKolonner">
+					<div>
+						<!-- Labels og input i kolonne 1 -->
+						<label for="epost">E-post:</label>
+						<input type="text" name="epost">
 
-				<!-- Vis passord checkbox! -->
-				<div class="visPassord">
-					<label>Vis passord</label>
-					<input type="checkbox" name="visPassord" value="visPassord">
+						<label for="passord">Passord:</label>
+						<input type="password" name="passord" required id="passord">	
+
+						<!-- Vis passord checkbox! -->
+						<div class="visPassord">
+							<input type="checkbox" onclick="visPassord()">Vis Passord
+						</div>	
+
+					</div>
+				</div>
+
+				<!--Logg inn knapp-->
+				<div class="knappeKlynge">
+					<div class="loggInnKnapp">
+						<input class="hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
+					</div>	
+					<!-- Glemt passord og Registrer deg linker -->
+					<div class="ekstraLinker"> 
+						<a class="link1" href="#">Glemt passord</a>
+						<a href="registrerDeg.php">Registrer deg</a>
+					</div>
 				</div>	
-
-			</div>
-		</div>
-		
-		<!--Logg inn knapp-->
-		<div class="knappeKlynge">
-			<div class="loggInnKnapp">
-				<input class="hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
-			</div>	
-			<!-- Glemt passord og Registrer deg linker -->
-			<div class="ekstraLinker"> 
-				<a class="link1" href="#">Glemt passord</a>
-				<a href="registrerDeg.php">Registrer deg</a>
-			</div>
-		</div>	
-		</form>
+				</form>
 		</div>
 
 		<!-- 2c) loggInn -->

@@ -29,12 +29,21 @@ $dblink = kobleOpp();
     <!-- ************************** 2) main **************************-->
     <main>
 
-        <!-- 2a aktuelt -->
-        <form method="POST">
-            <h2>priser</h2>
-            <?php visPriser($dblink); ?>
-        </form>
+        <div class="hvitBakgrunn">
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+    
+             <!-- Form-->    
+            <form class="skjemaBakgrunn" method="POST">
 
+                <!-- Avbryt knapp -->
+                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+
+                <!-- Overskrift -->
+                <h2>Pris</h2>
+
+                <h3>Tekst:</h3>
+            </form>
+        </div> 
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->

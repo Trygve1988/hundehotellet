@@ -5,8 +5,7 @@ $dblink = kobleOpp();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,73 +17,108 @@ $dblink = kobleOpp();
 </head>
 
 <body>
-
 	<!-- ************************** 1) fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main **************************-->
+	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
 		<div class="hvitBakgrunn"> 
-
+			<!-- Bildebakgrunn? -->
+			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 			<!-- Form-->	
 			<form class="skjemaBakgrunn" method="POST">
 			
 			<!-- Avbryt knapp -->
 			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
-			
-			<h2>Bestill opphold</h2>	
 
-			<div>
-				<div class="soloKolonne">
-					<label for="sammeBur">Skal hundene være i samme buret:</label>
-					<select name="sammeBur">
+			<!-- Overskrift -->
+			<h2>Bestill opphold</h2>
+			<h3>Kontroller at informasjon om hunden din er oppdatert:</h3>
+
+			<div class="skjemaKolonner">
+				<div class="kolonne1">
+					<!-- Labels og input i kolonne 1 -->
+					<label for="hNavn">Hundens navn:</label>
+					<input type="text" name="hNavn">
+			
+					<label for="rase">Rase:</label>
+					<input type="text" name="rase">
+
+					<!-- Inputen for fødselsdato er date -->
+					<label for="fDato">Fødselsdato:</label>
+					<input type="date" name="fDato">
+
+					<!-- Nedtrekkslister! -->
+					<label for="kjonn">Kjønn:</label>
+					<select name="kjonn">
 						<option value="velg">--Velg--</option>
-						<option value="hannhund">Ja</option>
-						<option value="tispe">Nei</option>
+						<option value="hannhund">Hannhund</option>
+						<option value="tispe">Tispe</option>
 					</select>
-					</div>
-					
-					<h3>Tidsperiode</h3>
-					<div class="enKolonneRad">
-						<div class="kolonne1">		
-							<label for="fra">Fra:</label>
-							<input type="date" name="fra">		
-						</div>
-						<div class="kolonne2">
-							<!-- Labels og input i kolonne 2-->
-							<label for="til">Til:</label>
-							<input type="date" name="til">	
-						</div>
-					</div>	
-					<h3>Tillegstjenester</h3>
-					<p>Vi tilbyr bading til hunden(e). Prisen for bading pr. hund pr. bad er 200kr</p>
-					<div class="soloKolonne">
-						<div class="skjemaKolonner">
-							<input class="storChecbox" type="checkbox" name="hund1">
-							<input type="text" name="hund1" value="Hund 1">
-						</div>
-						<div class="skjemaKolonner">
-							<input class="storChecbox" type="checkbox" name="hund2">
-							<input type="text" name="hund1" value="Hund 1">
+
+					<label for="steril">Sterilisert:</label>
+					<select name="steril">
+						<option value="velg">--Velg--</option>
+						<option value="ja">Ja</option>
+						<option value="nei">Nei</option>
+					</select>
+		
+					<label for="vaksinert">Vaksinert:</label>
+					<select name="vaksinert">
+						<option value="velg">--Velg--</option>
+						<option value="ja">Ja</option>
+						<option value="nei">Nei</option>
+					</select>
+					<div class="visPassord3">
+						<a href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
 					</div>
 				</div>
-				<!-- Knapperad -->
-				<div class="knapperad">	
-					<input class="hovedKnapp" type="submit" name="tilbake" value="Tilbake">
-					<div class="nesteKnapp2">
+		
+				<div>
+					<!-- Labels og input i kolonne 2-->
+					<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
+					<select name="lopeMedAndre">
+						<option value="velg">--Velg--</option>
+						<option value="ja">Ja</option>
+						<option value="nei">Nei</option>
+					</select>
+			
+		
+					<label for="losPaaTur">Kan hunden gå løs på tur:</label>
+					<select name="losPaaTur">
+						<option value="velg">--Velg--</option>
+						<option value="ja">Ja</option>
+						<option value="nei">Nei</option>
+					</select>
+
+
+					<label for="fortype">Fòrtype:</label>
+					<select name="fortype">
+						<option value="velg">--Velg--</option>
+						<option value="inkludert">Det som er inkludert i oppholdet</option>
+						<option value="medbrakt">Medbrakt</option>
+					</select>
+
+					<label for="ekstraInfo">Ekstra informasjon:</label>
+					<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
+			
+					<!--Neste knapp-->
+					<div class="knappIKolonne">
 						<input class="hovedKnapp" type="submit" name="neste" value="Neste">
 					</div>
-				</div>
-			</div>	
+				</div>	
 			</form>
-		</div>
-		
+		</div>	
 	</main>
+
+	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
+
+	<!-- 2g bestillOpphold -->
+	<?php velgHund($dblink); ?> 
 
 	<!-- ************************** 3) fellesBunn **************************-->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 
 </body>
-
 </html>

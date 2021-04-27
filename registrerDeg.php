@@ -25,14 +25,15 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
-	<div class="hvitBakgrunn"> 
+	<div class="hvitBakgrunn">
+        <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 		<!-- Form-->	
 		<form class="skjemaBakgrunn" method="POST">
 		<!-- Avbryt knapp -->
 		<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 
 	<!-- Overskrift -->
-	<h1>Registrer ny bruker</h1>
+	<h2>Registrer ny bruker</h2>
 
 	<div class="skjemaKolonner">
 		<div class="kolonne1">
@@ -60,17 +61,16 @@ $dblink = kobleOpp();
 			<input type="text" name="epost">
 		
 			<label for="passord">Ønsket passord:</label>
-			<input type="password" name="passord">
+			<input type="password" name="passord" required id="passord">	
 
 			<!-- Vis passord checkbox! -->
 			<div class="visPassord">
-				<label>Vis passord</label>
-				<input type="checkbox" name="visPassord" value="visPassord">
+				<input type="checkbox" onclick="visPassord()">Vis Passord
 			</div>
 			<!-- SKRIV INN PASSORDTILBAKEMELDING-->
 			<div class="visPassord2">
 				<p>Passord krav:</p>
-				<p> - SETT INN PASSORD TILBAKEMELDING</p>
+				<p id="status" melding()></p>
 			</div>
 			
 			<div class="gjentaPKolonne">

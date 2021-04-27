@@ -5,14 +5,6 @@ body {
 	text-align:center;
 	position: absolute;
 	width: 100%;
-	/*bakgrunnsbildet*/
-	left: 0px;
-	top: 0px;
-	z-index: -1; /*Denne må sjekkes opp*/
-	background-image: url("bilder/bakgrunn.jpg");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	vertical-align: middle;
 }
 
 /* **************************** navbar (Even) ***************************** */
@@ -32,7 +24,7 @@ body {
 
   .logo {
     width: 50px;
-    height: 25px;
+    height: 30px;
 }
 
 .logotext {
@@ -50,7 +42,7 @@ body {
     color: black; 
   }
 
-/*.bildeBakgrunn { Ikke slett just in case 
+.bildeBakgrunn { 
   position: absolute;
   width: 100%;
   left: 0px;
@@ -61,7 +53,7 @@ body {
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-*/
+
 
 .velkommenText{ /* Stor tekst, Velkomen */
   text-align: center;
@@ -100,66 +92,23 @@ body {
 	width: 300px;
 	height: 250px;
   }
-/*
-  section{
-	position: relative;
-	width: 100%;
-	height: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
-  
-  section #slider{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-  }
-  
-  section .navigation {
-	  position: absolute;
-	  bottom: 40px;
-	  left: 50%;
-	  transform: translateX(-50%);
-	  z-index: 100;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-  }
-  
-  section .navigation li {
-	list-style-type: none;
-	cursor: pointer;
-	margin: 10px;
-  }
-  
-  section .navigation li img {
-	  width: 150px;
-	  border: 4px solid #fff;
-	  border-radius: 4px;
-  }
-*/
 
+  * {box-sizing:border-box}
 
-/*Bilde slider CSS */
-*{box-sizing:border-box}
-
-/* Slideshow container */
-.Slideshow-container {
-	max-width: 100px;
+  /* Slideshow container */
+  .slideshow-container {
+	max-width: 1000px;
 	position: relative;
 	margin: auto;
-}
-
-/* Gjømmer bildene til normalt */
-.mySlides{
+  }
+  
+  /* Gjømmer bildene til nomralt */
+  .mySlides {
 	display: none;
-}
-
-.prev, .next {
+  }
+  
+  /* Neste og forje knapper */
+  .prev, .next {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
@@ -172,25 +121,23 @@ body {
 	transition: 0.6s ease;
 	border-radius: 0 3px 3px 0;
 	user-select: none;
-}
-
-.next{
+  }
+  
+  /* Posisjon på next og prev buttons */
+  .next {
 	right: 0;
 	border-radius: 3px 0 0 3px;
-}
+  }
 
-.prev:hover, .next:hover{
+  .prev {
+	left: 0;
+	border-radius: 3px 0 0 3px;
+  }
+
+  /* Gjør knappene litt mørkere når du holder over dem */
+  .prev:hover, .next:hover {
 	background-color: rgba(0,0,0,0.8);
-}
-
-/* Nummmer text (1/3 osv)*/
-.numbertext{
-	color: #f2f2f2;
-	font-size: 12px;
-	padding: 8px 12px;
-	position: absolute;
-	top: 0;
-}
+  }
 
 .dot{
 	cursor: pointer;
@@ -207,15 +154,15 @@ body {
 	background-color: #717171;
 }
 
-/* fading animasjon*/
+
 .fade {
 	-webkit-animation-name: fade;
 	-webkit-animation-duration: 1.5s;
 	animation-name: fade;
 	animation-duration: 1.5s;
   }
-  
-  @-webkit-keyframes fade {
+
+@-webkit-keyframes fade {
 	from {opacity: .4}
 	to {opacity: 1}
   }
@@ -225,6 +172,7 @@ body {
 	to {opacity: 1}
   }
 
+  
 /* **************************** Gunni ***************************** */
 /*@media only screen and (min-width: 720px) { */
 
@@ -363,7 +311,7 @@ input[type=text], input[type=password], input[type=date], input[type=month], tex
  input[type=submit] {
  	margin: 25px 0;
  	border-radius: 4px;
-	border-color: #394f79; 
+	border-color: #2f3e52; 
  	padding: 10px 25px;
  	font-size: 19px;
  	background-color: #ffffff;
@@ -373,14 +321,14 @@ input[type=text], input[type=password], input[type=date], input[type=month], tex
  /* hovedKnapp, f.eks Logg inn, Registrer deg*/
  input[type=submit].hovedKnapp {
  	width: 250px;
-	background-color: #394f79;
+	background-color: #2f3e52;
 	color: #ffffff;
  }
 
  input[type=submit].hovedKnapp2 { /*HUSK AT DU KAN BRUKE TO KLASSER, se over!*/
 	width: 270px;
 	margin-bottom: 10px;
-	background-color: #394f79;
+	background-color: #2f3e52;
 	color: #ffffff;
  }
 
@@ -399,7 +347,7 @@ input[type=submit].avbrytKnapp {
 	padding: 1px;
 	border-radius: 50%;
 	font-size: 27px;
-	background-color: #394f79;
+	background-color: #2f3e52;
 	color: #ffffff;
 }
 /* Vanlig størrelse på checkbox og radiobutton*/
@@ -488,6 +436,12 @@ a:active {
 
 
 /* **************************** Kristina ***************************** */
+
+ /*Felles hover effekt på alle submit knappene*/
+ input[type=submit]:hover {
+	background-color: #613f75; /*Eksempelfarge*/
+ }
+
 body .modal {
 	overflow: hidden;
  }
@@ -572,7 +526,7 @@ img .cvvkode {
     
  }
 
-  #Knappen:hover {
+  #TilToppKnapp:hover {
     background-color: #613f75;
  }
 
@@ -625,7 +579,7 @@ footer a {
   }
 
 
-/*info til footeren til venstre*/
+/*info til footeren til venstre (Kontaktinformasjon)*/
    .venstre p {
     margin-bottom: 5px;  
  }
@@ -637,25 +591,24 @@ footer a {
     margin-bottom: 10px;  	
  }
 
+ /*Info til footeren i midten (Sosiale medier)*/
   .midten {
     display: inline-block;
     width:  30%;
  }
 
 /*Sosiale medier ikoner */
-.midten .sosiale-medier{
-	text-align: center;  
-	padding: 0;
- }
-
 .twitter-ikon,
 .facebook-ikon,
 .instagram-ikon{
+	float: left;
 	width: 40px;/*bredden på ikonene*/
  	height: 40px; /*Høyden på ikonene*/
 	margin-top: .625em;
+	padding: 8px;
  }
 
+ /*Opacity effekt hover SoMe ikonene*/
 .twitter-ikon:hover,
 .facebook-ikon:hover,
 .instagram-ikon:hover {
@@ -664,13 +617,15 @@ footer a {
  filter: alpha(opacity=60); /* For IE8 og tidligere */
  }
 
+ /*Kart til hundehotelladressen*/
   .høyre .kart{
    margin: 10px;
    width:  30%;
  }
 
-/*Til høyre i footeren*/
+/*Til høyre i footeren (Samarbeidspartnere*/
   .høyre{
+	text-align: left;
     margin-right: 80px;
     width:  30%;
  }

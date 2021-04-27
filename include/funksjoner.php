@@ -54,12 +54,12 @@ function visBildeBakgrunn() {
 
 function visNav() { 
     ?> <div class="navbar">
-        <a href="index.php"> <img  class="logo" src="bilder/logo.png"> Bø Hundehotell </a>
+        <a href="index.php"> <img  class="logo" src="bilder/logohvit.png"> <img  class="logotext" src="bilder/teksthvit.png">  </a>
         <a href="index.php">Hjem</a>
         <a href="aktuelt.php">Aktuelt</a>
         <a href="omOss.php">Om Oss</a>
         <a href="priser.php">Priser</a>
-        <a href="KontaktOss.php">Kontakt Oss</a>
+        <a href="kontaktOss.php">Kontakt Oss</a>
         
         <?php
         // bestill Opphold
@@ -134,7 +134,7 @@ function visFooter() {
             <p>Bø Hundehotell</p>
             <p><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
             <address>
-                <strong> Epost:</strong><a href="mailto:bohundehotell@example.com">bohundehotell.@example.com</a><br>    
+                <strong> Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell.@outlook.com</a><br>    
                    </address>
             <p> <strong>Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
         </div>

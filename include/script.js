@@ -105,33 +105,81 @@ function melding(){
   } 
 }
 
-//Bildeslider v2 (Even)
-function imgSlider(anything){
-  document.getElementById("slider").src = anything;
+//Bildeslider  (Even)
+//Inspirert og hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous kontroller
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
-//hentet fra https://www.youtube.com/watch?v=y0XHdEeEevs
 
-//Bileslider V3
-//Hentet fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
-var slideIndex = 0;
-showSlide();
+// Thumbnail image kontroller
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-function showSlide(){
+function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dots");
-  for (i = 0; i<slides.length; i++) {
-    slides[i].style.display = "none";
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
   }
-  slideIndex++;
-  if(slideIndex > slides.length) {slideIndex = 1}
-  for(i=0; i < dots.length; i++){
-    dots[i].className = dots[i].className.replace("active","");
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   setTimeout(showSlide,2000); //Bytter bilde hvert 2sekund 
 }
+
+
+// **************************  Bestill Opphold-knapper (Gunni) **************************
+
+// Bestill opphold 1
+// Knappefunksjon for nesteknapp i Bestill opphold 1/4
+// Lager button variablel
+var tilBO2Knapp = document.getElementById("tilBO2");
+
+// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
+tilBO2.addEventListener('click', tilBO2Funksjon, false);
+
+// Funksjonen
+function tilBO2Funksjon() {
+    window.location.href = "bestillOpphold2.php";
+} 
+
+// Bestill opphold 2
+// Knappefunksjon for nesteknapp i Bestill opphold 2/4
+// Lager button variablel
+var tilBO3Knapp = document.getElementById("tilBO3");
+
+// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
+tilBO3.addEventListener('click', tilBO3Funksjon, false);
+
+// Funksjonen
+function tilBO3Funksjon() {
+    window.location.href = "bestillOpphold3.php";
+}
+
+// Bestill opphold 3
+// Knappefunksjon for nesteknapp i Bestill opphold 3/4
+// Lager button variablel
+var tilBO4Knapp = document.getElementById("tilBO4");
+
+// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
+tilBO4.addEventListener('click', tilBO4Funksjon, false);
+
+// Funksjonen
+function tilBO4Funksjon() {
+    window.location.href = "bestillOpphold4.php";
+}  
+
+// Bestill opphold 4
 
 
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************

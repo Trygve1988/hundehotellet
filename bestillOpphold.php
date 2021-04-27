@@ -26,6 +26,7 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
 		<div class="hvitBakgrunn">
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	
 			<!-- Form-->	
 			<form class="skjemaBakgrunn" method="POST">
@@ -47,15 +48,11 @@ $dblink = kobleOpp();
 				</div>
 			<!-- " + Registrer ny hund"- knapp -->
 			<input class="ekstraKnapp2" type="submit" name="registrerNyHund" value="+ Registrer ny hund">
-		
 			</div>
-			</div>
+
 			<!-- Neste-knapp -->
-			<div class="nesteKnapp">
-				<input class="hovedKnapp" type="submit" name="neste" value="Neste">
-			</div>
-		</form>
-	</div>	
+			<button id="tilBO2" class="hovedKnapp" onclick="tilBO2Funksjon()" title="Neste">Neste</button>
+			</div>	
 	</main>
 
 	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
