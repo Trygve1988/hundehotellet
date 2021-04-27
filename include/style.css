@@ -9,10 +9,11 @@ body {
 	width: 100%;
 }
 
-/*Responsiv footer ved PC-versjon*/
-@media () { /*Endre størrelsen på nettsiden*/
-    }
-  }
+/*Responsiv footer ved PC-versjon
+@media () { /*Endre størrelsen på nettsiden
+}
+
+*/
 
 /*Responsiv footer ved mobil-versjon*/
 @media (max-width: 1200px) { /*Endre størrelsen på nettsiden*/
@@ -21,7 +22,7 @@ body {
       flex-direction: column;  
       width: auto; 
     }
-  }
+}
 
 /* **************************** navbar (Even) ***************************** */
 .navbar {
