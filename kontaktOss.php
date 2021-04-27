@@ -66,7 +66,7 @@ $dblink = kobleOpp();
 
 
                         <label for="melding">Melding</label>
-                        <textarea id="message" name="message" placeholder="Hva lurer du på?"> </textarea>
+                        <textarea id="message" name="message"> </textarea>
                         <button type="submit">Send</button>
 
                     </form>
