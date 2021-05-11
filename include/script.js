@@ -194,8 +194,8 @@ function melding(){
   } 
 }
 
-//Bildeslider  (Even)
-//Inspirert og hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp
+// ************************** Bildeslider (Even) **************************
+//Bildeslider hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp
 var slideIndex = 1;
 showSlides(slideIndex);
 

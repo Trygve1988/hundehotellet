@@ -111,7 +111,34 @@ body {
 	height: 250px;
   }
 
-/* Bilde slideren er Inspirert og hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp */
+  /*Om oss bilder */
+  #KontrollerBD2{
+    display:flex;
+	flex-direction: row;
+  }
+  
+  .bildeKontroller2{
+    border: 2px solid black;
+    margin: 10px;
+  }
+
+  .bildeKontroller2 p, h1{
+    width: 280px;
+    text-align: justify;
+    font-family: Arial;
+    padding: 0px 0px 0px 5px;
+  }
+
+  .bildeKontroller2 h1 {
+    font-size: 30px;
+  }
+  
+  .bilder2{ /*Bestill, Om Hundhotellet, Pris, BILDER*/
+	width: 300px;
+	height: 250px;
+  }
+
+/* Bilde slideren er hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp */
   * {box-sizing:border-box}
 
   /* Slideshow container */

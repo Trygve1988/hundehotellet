@@ -24,6 +24,7 @@ $dblink = kobleOpp();
 
     <!-- ************************** 2) main **************************-->
     <main>
+    <!-- Bilde slideren er hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp -->
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
@@ -54,7 +55,8 @@ $dblink = kobleOpp();
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>  
-
+                <!--*********** Slutt på hentet kode ***********-->
+                
                 <div class="velkommenText">
                     <p>Velkommen til Bø Hundehotell</p>
                     <p>Norges BESTE Hundehotell for dine firbente venner</p>
