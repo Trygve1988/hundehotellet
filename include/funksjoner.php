@@ -54,38 +54,40 @@ function visBildeBakgrunn() {
 
 function visNav() { 
     ?> <div class="navbar">
-        <a href="index.php"> <img  class="logo" src="bilder/logohvit.png"> <img  class="logotext" src="bilder/teksthvit.png">  </a>
-        <a href="index.php">Hjem</a>
-        <a href="aktuelt.php">Aktuelt</a>
-        <a href="omOss.php">Om Oss</a>
-        <a href="priser.php">Priser</a>
-        <a href="kontaktOss.php">Kontakt Oss</a>
+        <a href="index.php"> <img  class="logo" src="bilder/logohvit.png"> <img class="logotext" src="bilder/teksthvit.png">  </a>
+        <a id="hjemLink" href="index.php">Hjem</a>
+        <a id="aktueltLink" href="aktuelt.php">Aktuelt</a>
+        <a id="omOssLink" href="omOss.php">Om Oss</a>
+        <a id="priserLink" href="priser.php">Priser</a>
+        <a id="kontaktOssLink" href="kontaktOss.php">Kontakt Oss</a>
         
         <?php
         // bestill Opphold
         if (erLoggetInn()) {
-            ?> <a href="bestillOpphold.php">Bestill Opphold</a> <?php 
+            ?> <a id="bestillLink" href="bestillOpphold.php">Bestill Opphold</a> <?php 
         }
         else {
-            ?> <a href="loggInn.php">Bestill Opphold</a> <?php
+            ?> <a id="bestillLink" href="loggInn.php">Bestill Opphold</a> <?php
         } 
         // anmeldelser 
         if (erAnsatt()) {
-            ?> <a href="anmeldelser.php">Anmeldelser</a> <?php 
+            ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php 
         }
         // admin
         if (erAdmin()) {
             ?> <a href="admin.php">Admin</a> <?php 
-        } 
+        }
         // minSide loggUt / loggInn registrerDeg
         if (erLoggetInn()) {
-             ?> <a class="right" href="minSide.php">Min Side</a> <?php 
-             ?> <a class="right" href="loggUt.php">Logg Ut</a> <?php
+             ?> <a id="minSideLink" class="right" href="minSide.php">Min Side</a> <?php 
+             ?> <a id="loggUtLink" class="right" href="loggUt.php">Logg Ut</a> <?php
         }
         else {
             ?> <a class="right" href="loggInn.php">Logg Inn</a> <?php
-            ?> <a class="right" href="registrerDeg.php">Registrer Deg</a> <?php
+            ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
+        <!-- spraakKnapp--> 
+        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png">
     </div><?php
 }
 
@@ -277,16 +279,16 @@ function autofyllHundKjønn($variabel,$dblink) {
     $sql = "SELECT * FROM hund WHERE hundID = '$hundID'";
     $resultat = mysqli_query($dblink, $sql);
     while($rad = mysqli_fetch_assoc($resultat)){
-        $kjønn = $rad[$variabel]; 
+        $kjønn = $rad[$variabel];
     }
-    if ($kjønn == "gutt") { 
+    if ($kjønn == "gutt") {
         echo "<option selected=\"selected\" value=\"gutt\"> gutt </option>";
         echo "<option value=\"jente\"> jente </option>";
     }
-    else { 
+    else {
         echo "<option value=\"gutt\"> gutt </option>";
         echo "<option selected=\"selected\"value=\"jente\"> jente </option>";
-    } 
+    }
 }
 
 function autofyllHundBoolsk($variabel,$dblink) {
