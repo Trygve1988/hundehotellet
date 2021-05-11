@@ -564,8 +564,8 @@ img .cvvkode {
 	overflow: hidden;
 	left:0;
 	width: 100%;
-	bottom: 0;
-	margin-top:50px; /*Avstand fra modalene og footeren*/
+/*	bottom: 0;*/
+	margin-top:100px; /*Avstand fra modalene og footeren*/
 	padding: 20px;
  }
 
