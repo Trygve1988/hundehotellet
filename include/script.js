@@ -88,6 +88,44 @@ function endreSpraak() {
   location.reload();
 }
 
+// ************************** 1) index: anmeldelseSlider (Trygve) ************************** 
+var anmeldelseTekst = document.getElementById("anmeldelseTekst");
+var nesteAnmeldelseKnapp = document.getElementById("nesteAnmeldelseKnapp");
+var tilbakeAnmeldelseKnapp = document.getElementById("tilbakeAnmeldelseKnapp");
+var anmeldelsePos = 0;
+
+//er vi på index siden ? 
+if (anmeldelseTekst !== null) {
+    nesteAnmeldelseKnapp.addEventListener('click',neste,false);
+    tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
+    neste();
+}
+
+function neste() {
+    anmeldelsePos++;
+    oppdaterAnmeldelseSlider();
+}
+
+function tilbake() {
+    anmeldelsePos--;
+    oppdaterAnmeldelseSlider();
+}
+
+function oppdaterAnmeldelseSlider() { 
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/hentUtAnmeldelse.php?q="+anmeldelsePos, true);
+    ajaxRequest.send(null); 
+    ajaxRequest.onreadystatechange = function() {
+        var svar = ajaxRequest.responseText;
+        if (svar == -1) {
+            anmeldelsePos = 0;
+            neste();        
+        }
+        else {
+            anmeldelseTekst.innerHTML = svar;
+        }
+    }
+}
 
 /*
 // ********************* 0) Felles: tilToppenKnapp (Kristina) ********************* 
@@ -115,47 +153,6 @@ function toppKnappFunksjon() {
 document.body.scrollTop = 0; // Denne koden brukes hvis nettleseren er Safari
 document.documentElement.scrollTop = 0; // Denne koden brukes hvis nettleseren er Chrome, Firefox, Opera og IE.
 }
-*/
-
-
-// ************************** 1) index: anmeldelseSlider (Trygve) ************************** 
-var anmeldelseTekst = document.getElementById("anmeldelseTekst");
-var nesteAnmeldelseKnapp = document.getElementById("nesteAnmeldelseKnapp");
-var tilbakeAnmeldelseKnapp = document.getElementById("tilbakeAnmeldelseKnapp");
-var anmeldelsePos = 0;
-
-//er vi på index siden ? 
-if (anmeldelseTekst !== null) {
-    nesteAnmeldelseKnapp.addEventListener('click',neste,false);
-    tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
-}
-
-function neste() {
-    anmeldelsePos++;
-    oppdaterAnmeldelseSlider();
-}
-
-function tilbake() {
-    anmeldelsePos--;
-    oppdaterAnmeldelseSlider();
-}
-
-function oppdaterAnmeldelseSlider() { 
-    var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/hentUtAnmeldelse.php?q="+anmeldelsePos, true);
-    ajaxRequest.send(null); 
-    ajaxRequest.onreadystatechange = function() {
-        var svar = ajaxRequest.responseText;
-        console.log(svar);
-        if (svar == -1) {
-            anmeldelsePos = 0;
-            neste();        
-        }
-        else {
-            anmeldelseTekst.innerHTML = svar;
-        }
-    }
-}
 
 
 // ************************** 11) Registrer deg: Hvis skjul passord funksjon (Even) **************************
@@ -173,6 +170,7 @@ function visPassord() {
     x.type = "password";
   }
 } 
+*/
 
 // ************************** 11) Registrer deg: Passord validation (Even) **************************
 //Passord validation (Even)
@@ -226,7 +224,7 @@ function showSlides(n) {
 }
 
 
-/*****Stop på hentet kode*****/
+// Stop på hentet kode
 
 // **************************  Bestill Opphold-knapper (Gunni) **************************
 
