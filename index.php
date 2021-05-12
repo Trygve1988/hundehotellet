@@ -24,10 +24,11 @@ $dblink = kobleOpp();
 
     <!-- ************************** 2) main **************************-->
     <main>
-    <!-- Bilde slideren er hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+    
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
+            <!-- Bilde slideren er hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp -->
                 <!-- Slideshow container -->
                 <div class="slideshow-container">
 
