@@ -58,7 +58,7 @@ function visNav() {
         <a id="hjemLink" href="index.php">Hjem</a>
         <a id="aktueltLink" href="aktuelt.php">Aktuelt</a>
         <a id="omOssLink" href="omOss.php">Om Oss</a>
-        <a id="priserLink" href="priser.php">Priser</a>
+        <a id="priserLink" href="priser.php">Pris og info</a>
         <a id="kontaktOssLink" href="kontaktOss.php">Kontakt Oss</a>
         
         <?php

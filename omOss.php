@@ -32,8 +32,8 @@ $dblink = kobleOpp();
              <!-- Form-->    
             <form class="skjemaBakgrunn" method="POST">
 
-                <!-- Avbryt knapp -->
-                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+                <!-- Avbryt knapp 
+                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">-->
 
                 <!-- Overskrift -->
                 <h2>Om oss</h2>
@@ -46,42 +46,42 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD2">
 
                     <div class="bildeKontroller2">
-                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder2" alt="Bilde av hund, dette bilde fører deg til bestill opphold"></a>
-                        <h1> Bestill</h1>
-                        <p>Her kan du bestille opphold til hunden(ene) dine.</p>
+                        <img src="bilder/Ansatt/ans1.jfif" class="bilder2" alt="">
+                        <p>Navn: Sansa Stark</p>
+                        <p>Stiling: Daglig leder</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="omOss.php"><img src="bilder/hunder2.jpg" class="bilder2" alt="Bilde av hund, dette bilde fører deg til om hundehotellet"></a>
-                        <h1>Om Hundehotellet</h1>
-                        <p>Her kan du få mer info om Hundehotellet.</p>
+                        <img src="bilder/Ansatt/ans2.jfif" class="bilder2" alt="">
+                        <p>Navn: Jon Snow</p>
+                        <p>Stiling: Nestleder</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="priser.php"><img src="bilder/hunder3.jpg" class="bilder2" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
-                        <h1>Priser</h1>
-                        <p>Her kan du se en oversikt over priser.</p>
+                        <img src="bilder/Ansatt/ans3.jfif" class="bilder2" alt="">
+                        <p>Navn: Daenerys Targaryen</p>
+                        <p>Stiling: Kontor-ansatt</p>
                     </div>
                 </div>
                 
                 <div id="KontrollerBD2">
 
                     <div class="bildeKontroller2">
-                        <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder2" alt="Bilde av hund, dette bilde fører deg til bestill opphold"></a>
-                        <h1> Bestill</h1>
-                        <p>Her kan du bestille opphold til hunden(ene) dine.</p>
+                        <img src="bilder/Ansatt/ans4.jfif" class="bilder2" alt="">
+                        <p>Navn: Eddard Stark.</p>
+                        <p>Stiling: Hundetrener</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="omOss.php"><img src="bilder/hunder2.jpg" class="bilder2" alt="Bilde av hund, dette bilde fører deg til om hundehotellet"></a>
-                        <h1>Om Hundehotellet</h1>
-                        <p>Her kan du få mer info om Hundehotellet.</p>
+                        <img src="bilder/Ansatt/ans5.jfif" class="bilder2" alt="">
+                        <p>Navn: Tyrion Lannister</p>
+                        <p>Stiling: Ansatt</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="priser.php"><img src="bilder/hunder3.jpg" class="bilder2" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
-                        <h1>Priser</h1>
-                        <p>Her kan du se en oversikt over priser.</p>
+                        <img src="bilder/Ansatt/ans6.jfif" class="bilder2" alt="">
+                        <p>Navn: Aerys Targaryen</p>
+                        <p>Navn: Ansatt</p>
                     </div>
                 </div>
             </form>
