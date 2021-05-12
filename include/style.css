@@ -225,6 +225,19 @@ main {
 /*****Stop på hentet kode*****/
 
 /* Pris og Info Css */
+.pris_og_info{
+	display:flex;
+	flex-direction: row;
+}
+
+.informasjon{
+	margin-left: 300px;
+}
+
+.prisPrDag, .tillegg , th, td  {
+	border: 1px solid black;
+}
+
 
   
 /* **************************** Gunni ***************************** */
