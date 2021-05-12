@@ -46,19 +46,19 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD2">
 
                     <div class="bildeKontroller2">
-                        <a href="bestillOpphold.php"> <img src="bilder/Ansatt/ans1.jfif" class="bilder2" alt="Bilde av hund, dette bilde fører deg til bestill opphold"></a>
+                        <img src="bilder/Ansatt/ans1.jfif" class="bilder2" alt="">
                         <p>Navn: Sansa Stark</p>
                         <p>Stiling: Daglig leder</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="omOss.php"><img src="bilder/Ansatt/ans2.jfif" class="bilder2" alt="Bilde av hund, dette bilde fører deg til om hundehotellet"></a>
+                        <img src="bilder/Ansatt/ans2.jfif" class="bilder2" alt="">
                         <p>Navn: Jon Snow</p>
                         <p>Stiling: Nestleder</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="priser.php"><img src="bilder/Ansatt/ans3.jfif" class="bilder2" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
+                        <img src="bilder/Ansatt/ans3.jfif" class="bilder2" alt="">
                         <p>Navn: Daenerys Targaryen</p>
                         <p>Stiling: Kontor-ansatt</p>
                     </div>
@@ -67,19 +67,19 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD2">
 
                     <div class="bildeKontroller2">
-                        <a href="bestillOpphold.php"> <img src="bilder/Ansatt/ans4.jfif" class="bilder2" alt="Bilde av hund, dette bilde fører deg til bestill opphold"></a>
+                        <img src="bilder/Ansatt/ans4.jfif" class="bilder2" alt="">
                         <p>Navn: Eddard Stark.</p>
                         <p>Stiling: Hundetrener</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="omOss.php"><img src="bilder/Ansatt/ans5.jfif" class="bilder2" alt="Bilde av hund, dette bilde fører deg til om hundehotellet"></a>
+                        <img src="bilder/Ansatt/ans5.jfif" class="bilder2" alt="">
                         <p>Navn: Tyrion Lannister</p>
                         <p>Stiling: Ansatt</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <a href="priser.php"><img src="bilder/Ansatt/ans6.jfif" class="bilder2" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
+                        <img src="bilder/Ansatt/ans6.jfif" class="bilder2" alt="">
                         <p>Navn: Aerys Targaryen</p>
                         <p>Navn: Ansatt</p>
                     </div>

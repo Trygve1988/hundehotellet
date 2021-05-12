@@ -39,9 +39,21 @@ $dblink = kobleOpp();
                 <input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 
                 <!-- Overskrift -->
-                <h2>Pris</h2>
+                <h1>Pris og info</h1>
 
-                <h3>Tekst:</h3>
+                <div class="prisOversikt">
+                    <div class="prisPrDag">
+                        <p>Pris pr dag pr hund:</p>
+                        <p>400kr</p>
+                    </div>
+
+                    <div class="tillegg">
+                        <p>Bading:</p>
+                        <p>200kr</p>
+                    </div>
+
+                </div>
+
             </form>
         </div> 
     </main>
