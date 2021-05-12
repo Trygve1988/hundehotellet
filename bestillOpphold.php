@@ -25,6 +25,10 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
+
+		<!-- erLoggetInn sjekk -->
+		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
+
 		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
 			<!-- Bildebakgrunn-->
