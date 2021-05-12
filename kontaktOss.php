@@ -24,11 +24,9 @@ $dblink = kobleOpp();
 
 <body>
     <!-- ************************** 1) fellesTop ************************** -->
-
+    <?php visNav(); ?>
     <!-- ************************** 2) main ************************** -->
     <main>
-        <?php visNav(); ?>
-
         <!-- 2a kontakt oss -->
         <form method="POST">
         <div class="hvitBakgrunn">
