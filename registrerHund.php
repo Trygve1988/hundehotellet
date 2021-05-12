@@ -25,10 +25,13 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
+		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
-            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
-			<!-- Form-->	
+            <!-- Bildebakgrunn -->	
+			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+
+			<!-- Skjema -->		
 			<form class="skjemaBakgrunn" method="POST">
 			
 				<!-- Avbryt knapp -->
@@ -41,32 +44,32 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="hNavn">Hundens navn:</label>
-						<input type="text" name="hNavn">
+						<input  class="inputTekst" type="text" name="hNavn">
 			
 						<label for="rase">Rase:</label>
-						<input type="text" name="rase">	
+						<input class="inputTekst" type="text" name="rase">	
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
-						<input type="date" name="fDato">	
+						<input class="inputTekst" type="date" name="fDato">	
 
 						<!-- Nedtrekkslister! -->
 						<label for="kjonn">Kjønn:</label>
-						<select name="kjonn">
+						<select class="inputSelect" name="kjonn">
 							<option value="velg">--Velg--</option>
 							<option value="hannhund">Hannhund</option>
 							<option value="tispe">Tispe</option>
 						</select>	
 
 						<label for="steril">Sterilisert:</label>
-						<select name="steril">
+						<select class="inputSelect" name="steril">
 							<option value="velg">--Velg--</option>
 							<option value="ja">Ja</option>
 							<option value="nei">Nei</option>
 						</select>
 		
 						<label for="vaksinert">Vaksinert:</label>
-						<select name="vaksinert">
+						<select class="inputSelect" name="vaksinert">
 							<option value="velg">--Velg--</option>
 							<option value="ja">Ja</option>
 							<option value="nei">Nei</option>
@@ -80,21 +83,21 @@ $dblink = kobleOpp();
 					<!-- Labels og input i kolonne 2-->
 					<div>
 						<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
-						<select name="lopeMedAndre">
+						<select class="inputSelect" name="lopeMedAndre">
 							<option value="velg">--Velg--</option>
 							<option value="ja">Ja</option>
 							<option value="nei">Nei</option>
 						</select>
 					
 						<label for="losPaaTur">Kan hunden gå løs på tur:</label>
-						<select name="losPaaTur">
+						<select class="inputSelect" name="losPaaTur">
 							<option value="velg">--Velg--</option>
 							<option value="ja">Ja</option>
 							<option value="nei">Nei</option>
 						</select>	
 
 						<label for="fortype">Fòrtype:</label>
-						<select name="fortype">
+						<select class="inputSelect" name="fortype">
 							<option value="velg">--Velg--</option>
 							<option value="inkludert">Det som er inkludert i oppholdet</option>
 							<option value="medbrakt">Medbrakt</option>
@@ -122,5 +125,4 @@ $dblink = kobleOpp();
 	<?php visToppKnapp(); ?>
 
 </body>
-
 </html>

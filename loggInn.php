@@ -22,14 +22,16 @@ $dblink = kobleOpp();
 	<!-- ************************** 1) fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main (gunni) **************************-->
+	<!-- ************************** 2) main (Gunni) **************************-->
 	
 	<main>
-	<div class="hvitBakgrunn">
-        <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+		<!-- Hvit bakgrunn -->	
+		<div class="hvitBakgrunn">
+        	<!-- Bildebakgrunn -->	
+			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
-				<!-- Form-->	
-				<form class="skjemaBakgrunn" method="POST">	
+			<!-- Skjema -->		
+			<form class="skjemaBakgrunn" method="POST">	
 
 				<!-- Avbryt knapp -->
 				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
@@ -41,14 +43,14 @@ $dblink = kobleOpp();
 					<div>
 						<!-- Labels og input i kolonne 1 -->
 						<label for="epost">E-post:</label>
-						<input type="text" name="epost">
+						<input class="inputTekst" type="text" name="epost">
 
 						<label for="passord">Passord:</label>
-						<input type="password" name="passord" required id="passord">	
+						<input class="inputPassord" type="password" name="passord" required id="passord">	
 
 						<!-- Vis passord checkbox! -->
 						<div class="visPassord">
-							<input type="checkbox" onclick="visPassord()">Vis Passord
+							<input class="vanligCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
 						</div>	
 
 					</div>
@@ -61,22 +63,20 @@ $dblink = kobleOpp();
 					</div>	
 					<!-- Glemt passord og Registrer deg linker -->
 					<div class="ekstraLinker"> 
-						<a class="link1" href="#">Glemt passord</a>
-						<a href="registrerDeg.php">Registrer deg</a>
+						<a class="link link1" href="#">Glemt passord</a>
+						<a class="link" href="registrerDeg.php">Registrer deg</a>
 					</div>
 				</div>	
-				</form>
+			</form>
 		</div>
-
+		<!-- ************************** (Trygve)**************************-->
 		<!-- 2c) loggInn -->
 		<?php loggInn($dblink); ?> 
 	</main>
-
 
 	<!-- ************************** 3) fellesBunn **************************-->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 
 </body>
-
 </html>

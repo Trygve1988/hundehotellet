@@ -22,97 +22,101 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
+		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
-			<!-- Bildebakgrunn? -->
+			
+			<!-- Bildebakgrunn -->
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-			<!-- Form-->	
+			
+			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 			
-			<!-- Avbryt knapp -->
-			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<!-- Avbryt knapp -->
+				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 
-			<!-- Overskrift -->
-			<h2>Bestill opphold</h2>
-			<h3>Kontroller at informasjon om hunden din er oppdatert:</h3>
-
-			<div class="skjemaKolonner">
-				<div class="kolonne1">
-					<!-- Labels og input i kolonne 1 -->
-					<label for="hNavn">Hundens navn:</label>
-					<input type="text" name="hNavn">
+				<!-- Overskrift -->
+				<h2>Bestill opphold</h2>
+				<h3>Kontroller at informasjon om hunden din er oppdatert:</h3>
+				
+				<div class="skjemaKolonner">
+					<div class="kolonne1">
 			
-					<label for="rase">Rase:</label>
-					<input type="text" name="rase">
+						<!-- Labels og input i kolonne 1 -->
+						<label for="hNavn">Hundens navn:</label>
+						<input class="inputTekst" type="text" name="hNavn">
+				
+						<label for="rase">Rase:</label>
+						<input class="inputTekst" type="text" name="rase">
 
-					<!-- Inputen for fødselsdato er date -->
-					<label for="fDato">Fødselsdato:</label>
-					<input type="date" name="fDato">
+						<!-- Inputen for fødselsdato er date -->
+						<label for="fDato">Fødselsdato:</label>
+						<input class="inputDato" type="date" name="fDato">
 
-					<!-- Nedtrekkslister! -->
-					<label for="kjonn">Kjønn:</label>
-					<select name="kjonn">
-						<option value="velg">--Velg--</option>
-						<option value="hannhund">Hannhund</option>
-						<option value="tispe">Tispe</option>
-					</select>
+						<!-- Nedtrekkslister! -->
+						<label for="kjonn">Kjønn:</label>
+						<select class="inputSelect" name="kjonn">
+							<option value="velg">--Velg--</option>
+							<option value="hannhund">Hannhund</option>
+							<option value="tispe">Tispe</option>
+						</select>
 
-					<label for="steril">Sterilisert:</label>
-					<select name="steril">
-						<option value="velg">--Velg--</option>
-						<option value="ja">Ja</option>
-						<option value="nei">Nei</option>
-					</select>
-		
-					<label for="vaksinert">Vaksinert:</label>
-					<select name="vaksinert">
-						<option value="velg">--Velg--</option>
-						<option value="ja">Ja</option>
-						<option value="nei">Nei</option>
-					</select>
-					<div class="visPassord3">
-						<a href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+						<label for="steril">Sterilisert:</label>
+						<select class="inputSelect" name="steril">
+							<option value="velg">--Velg--</option>
+							<option value="ja">Ja</option>
+							<option value="nei">Nei</option>
+						</select>
+			
+						<label for="vaksinert">Vaksinert:</label>
+						<select class="inputSelect" name="vaksinert">
+							<option value="velg">--Velg--</option>
+							<option value="ja">Ja</option>
+							<option value="nei">Nei</option>
+						</select>
+						<div class="visPassord3">
+							<a class="link" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+						</div>
 					</div>
-				</div>
-		
-				<div>
+					
 					<!-- Labels og input i kolonne 2-->
-					<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
-					<select name="lopeMedAndre">
-						<option value="velg">--Velg--</option>
-						<option value="ja">Ja</option>
-						<option value="nei">Nei</option>
-					</select>
+					<div>
+						<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
+						<select class="inputSelect" name="lopeMedAndre">
+							<option value="velg">--Velg--</option>
+							<option value="ja">Ja</option>
+							<option value="nei">Nei</option>
+						</select>
 			
-		
-					<label for="losPaaTur">Kan hunden gå løs på tur:</label>
-					<select name="losPaaTur">
-						<option value="velg">--Velg--</option>
-						<option value="ja">Ja</option>
-						<option value="nei">Nei</option>
-					</select>
+						<label for="losPaaTur">Kan hunden gå løs på tur:</label>
+						<select class="inputSelect" name="losPaaTur">
+							<option value="velg">--Velg--</option>
+							<option value="ja">Ja</option>
+							<option value="nei">Nei</option>
+						</select>
 
+						<label for="fortype">Fòrtype:</label>
+						<select class="inputSelect" name="fortype">
+							<option value="velg">--Velg--</option>
+							<option value="inkludert">Det som er inkludert i oppholdet</option>
+							<option value="medbrakt">Medbrakt</option>
+						</select>
 
-					<label for="fortype">Fòrtype:</label>
-					<select name="fortype">
-						<option value="velg">--Velg--</option>
-						<option value="inkludert">Det som er inkludert i oppholdet</option>
-						<option value="medbrakt">Medbrakt</option>
-					</select>
-
-					<label for="ekstraInfo">Ekstra informasjon:</label>
-					<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
-			
-					<!--Neste knapp-->
-					<div class="knappIKolonne">
-						<input class="hovedKnapp" type="submit" name="neste" value="Neste">
-					</div>
-				</div>	
+						<label for="ekstraInfo">Ekstra informasjon:</label>
+						<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
+				
+						<!--Neste knapp-->
+						<div class="knappIKolonne">
+							<!-- <input class="hovedKnapp" type="submit" name="neste" value="Neste"> -->
+							<button onclick="tilBO3Funksjon()" id="tilBO3" class="hovedKnapp"  title="Neste">Neste</button>
+						</div>
+					</div>	
 			</form>
 		</div>	
 	</main>
 
 	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
 
+	<!-- ************************** (Trygve) **************************-->
 	<!-- 2g bestillOpphold -->
 	<?php velgHund($dblink); ?> 
 

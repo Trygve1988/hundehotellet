@@ -24,62 +24,64 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main **************************-->
 	<main>
+		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
+			<!-- Bildebakgrunn-->
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
-			<!-- Form-->	
+			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 			
-			<!-- Avbryt knapp -->
-			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
-			
-			<h2>Bestill opphold</h2>	
+				<!-- Avbryt knapp -->
+				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				
+				<!-- Overskrift-->
+				<h2>Bestill opphold</h2>	
 
-			<div>
-				<div class="soloKolonne">
-					<label for="sammeBur">Skal hundene være i samme buret:</label>
-					<select name="sammeBur">
-						<option value="velg">--Velg--</option>
-						<option value="hannhund">Ja</option>
-						<option value="tispe">Nei</option>
-					</select>
-					</div>
-					
-					<h3>Tidsperiode</h3>
-					<div class="enKolonneRad">
-						<div class="kolonne1">		
-							<label for="fra">Fra:</label>
-							<input type="date" name="fra">		
-						</div>
-						<div class="kolonne2">
-							<!-- Labels og input i kolonne 2-->
-							<label for="til">Til:</label>
-							<input type="date" name="til">	
-						</div>
-					</div>	
-					<h3>Tillegstjenester</h3>
-					<p>Vi tilbyr bading til hunden(e). Prisen for bading pr. hund pr. bad er 200kr</p>
+				<div>
 					<div class="soloKolonne">
-						<div class="skjemaKolonner">
-							<input class="storChecbox" type="checkbox" name="hund1">
-							<input type="text" name="hund1" value="Hund 1">
+						<label for="sammeBur">Skal hundene være i samme buret:</label>
+						<select class="inputSelect" name="sammeBur">
+							<option value="velg">--Velg--</option>
+							<option value="hannhund">Ja</option>
+							<option value="tispe">Nei</option>
+						</select>
 						</div>
-						<div class="skjemaKolonner">
-							<input class="storChecbox" type="checkbox" name="hund2">
-							<input type="text" name="hund1" value="Hund 1">
+						
+						<h3>Tidsperiode</h3>
+						<div class="enKolonneRad">
+							<div class="kolonne1">		
+								<label for="fra">Fra:</label>
+								<input class="inputDate" type="date" name="fra">		
+							</div>
+							<div class="kolonne2">
+								<!-- Labels og input i kolonne 2-->
+								<label for="til">Til:</label>
+								<input type="date" name="til">	
+							</div>
+						</div>	
+						<h3>Tillegstjenester</h3>
+						<p>Vi tilbyr bading til hunden(e). Prisen for bading pr. hund pr. bad er 200kr</p>
+						<div class="soloKolonne">
+							<div class="skjemaKolonner">
+								<input class="storChecbox" type="checkbox" name="hund1">
+								<input class="inputDate" type="text" name="hund1" value="Hund 1">
+							</div>
+							<div class="skjemaKolonner">
+								<input class="storChecbox" type="checkbox" name="hund2">
+								<input class="inputDate" type="text" name="hund1" value="Hund 1">
+						</div>
 					</div>
-				</div>
-				<!-- Knapperad -->
-				<div class="knapperad">	
-					<input class="hovedKnapp" type="submit" name="tilbake" value="Tilbake">
-					<div class="nesteKnapp2">
-						<input class="hovedKnapp" type="submit" name="neste" value="Neste">
+					<!-- Knapperad -->
+					<div class="knapperad">	
+						<button onclick="tilBO2Funksjon()" id="tilBO2" class="hovedKnapp"  title="Tilbake">Tilbake</button>
+						<div class="nesteKnapp2">
+							<button onclick="tilBO4Funksjon()" id="tilBO4" class="hovedKnapp"  title="Neste">Neste</button>
+						</div>
 					</div>
-				</div>
-			</div>	
+				</div>	
 			</form>
-		</div>
-		
+		</div>	
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->
@@ -87,5 +89,4 @@ $dblink = kobleOpp();
 	<?php visToppKnapp(); ?>
 
 </body>
-
 </html>

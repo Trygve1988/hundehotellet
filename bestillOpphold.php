@@ -25,36 +25,38 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
+		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
-            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+			<!-- Bildebakgrunn-->
+			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	
-			<!-- Form-->	
+			<!-- Skjema-->	
 			<form class="skjemaBakgrunn" method="POST">
 
-			<!-- Avbryt knapp -->
-			<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<!-- Avbryt knapp -->
+				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 
-			<!-- Overskrift -->
-			<h2>Bestill opphold</h2>
-		
-			<h3>Velg hund(er):</h3>
-	
-			<div>
+				<!-- Overskrift -->
+				<h2>Bestill opphold</h2>
+			
+				<h3>Velg hund(er):</h3>
 				<div>
-					<div class="soloKolonne">
-					<input type="text" name="hund1" value="Hund 1">
-					<input type="text" name="hund2" value="Hund 2">
-					<input type="text" name="hund3" value="Hund 3">
+					<div>
+						<div class="soloKolonne">
+						<input class="inputTekst" type="text" name="hund1" value="Hund 1">
+						<input class="inputTekst" type="text" name="hund2" value="Hund 2">
+						<input class="inputTekst" type="text" name="hund3" value="Hund 3">
+					</div>
+				<!-- " + Registrer ny hund"- knapp -->
+				<input class="ekstraKnapp2" type="submit" name="registrerNyHund" value="+ Registrer ny hund">
 				</div>
-			<!-- " + Registrer ny hund"- knapp -->
-			<input class="ekstraKnapp2" type="submit" name="registrerNyHund" value="+ Registrer ny hund">
-			</div>
 
-			<!-- Neste-knapp -->
-			<button id="tilBO2" class="hovedKnapp" onclick="tilBO2Funksjon()" title="Neste">Neste</button>
-			</div>	
+				<!-- Neste-knapp -->
+				<button onclick="tilBO2Funksjon()" id="tilBO2" class="hovedKnapp"  title="Neste">Neste</button>
+			</form>
+		</div>
 	</main>
-
+	<!-- Til-toppen-knapp -->
 	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
 
 	<!-- 2g bestillOpphold -->
@@ -65,5 +67,4 @@ $dblink = kobleOpp();
 	<?php visToppKnapp(); ?>
 
 </body>
-
 </html>
