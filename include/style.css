@@ -482,8 +482,39 @@ input[type=checkbox].storCheckbox {
  /*Felles hover effekt på alle submit knappene*/
  input[type=submit]:hover {
 	background-color: #613f75; /*Eksempelfarge*/
+	
  }
 
+ 
+.bildeKontroller { /*Kristina laget hover effekten*/
+	overflow: hidden; /*Gjør at bildeeffekten ikke går ut av kortet*/
+   
+
+}
+#KontrollerBD .bildeKontroller img{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out; 
+
+}
+
+#KontrollerBD .bildeKontroller:hover img{
+	-webkit-transform: scale(1.3);
+    transform: scale(1.3);
+
+}
+/*Slutt på bildeeffekten*/
+
+/*Aktuelt siden*/
+.mellomromMellomInnlegg { /*Lager mellomrom mellom innleggene*/
+	padding: 10px;
+}
+
+
+
+
+/*CVC modalen pop up*/
 body .modal {
 	overflow: hidden;
  }
