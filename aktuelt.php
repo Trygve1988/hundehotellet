@@ -27,6 +27,7 @@ $dblink = kobleOpp();
         <!-- 2a aktuelt -->
         <form method="POST">
             <div class="hvitBakgrunn">
+                <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
                 <!--<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">-->
                     <h2>Aktuelt</h2>
                     <p>under arbeid....</p>
