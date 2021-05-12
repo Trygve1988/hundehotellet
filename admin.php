@@ -20,6 +20,9 @@
     <!-- ************************** 2) main **************************-->
     <main>
 
+        <!-- erAdmin sjekk -->
+        <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
+
         <!-- 2a admin -->
         <form method="POST">
             <div class="hvitBakgrunn">
