@@ -24,13 +24,11 @@ $dblink = kobleOpp();
 
 <body>
     <!-- ************************** 1) fellesTop ************************** -->
-
     <!-- ************************** 2) main ************************** -->
     <main>
-        <?php visNav(); ?>
-
+    <?php visNav(); ?>
         <!-- 2a kontakt oss -->
-        <form method="POST">
+        <!--<form method="POST"> -->
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
@@ -69,7 +67,7 @@ $dblink = kobleOpp();
                         <textarea id="message" name="message"> </textarea>
                         <button type="submit">Send</button>
 
-                    </form>
+                    <!--</form> -->
                 </div>
 
 
