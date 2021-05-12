@@ -74,7 +74,7 @@ main {
   width: 100%;
   left: 0px;
   top: 0px;
-  /*z-index: -1;*/
+  z-index: -1;
   background-image: url("bilder/bakgrunn.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
