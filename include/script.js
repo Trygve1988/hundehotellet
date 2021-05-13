@@ -16,18 +16,21 @@ function getCookie(cname) {
 // ************* ikke lagd selv slutt ************* -->
 
 
-// ********************* 0) Alle: globale spraak variabler (Trygve og ?) ********************* 
+// ********************* 0) Alle: globale spraak variabler (Trygve og Gunni) ********************* 
 var flaggTab        = ['bilder/FlaggNO.png', 'bilder/FlaggGB.png'];
 var hjemTab         = ['Hjem', 'Home'];
 var aktueltTab      = ['Aktuelt', 'News'];
 var omOssTab        = ['Om Oss', 'About us'];
 var priserTab       = ['Priser og Info', 'Prices and Info'];
 var kontaktOssTab   = ['Kontakt Oss', 'Contact us'];
-var bestillTab      = ['Bestill Opphold', 'Make a Booking'];
+var bestillTab      = ['Bestill Opphold', 'Book a stay'];
 var anmeldelserTab  = ['Anmeldelser', 'Customer reviews'];
 var minSideTab      = ['Min Side', 'My Page'];
-var loggUtTab       = ['Logg ut', 'Logg out'];
+var loggUtTab       = ['Logg ut', 'Sign out'];
 var registrerDegTab  = ['Registrer Deg', 'Register'];
+
+/*Forslag fra Gunni*/ 
+var loggInnTab  = ['Logg inn', 'Sign in'];
 
 
 //får tak i valgt språk fra spraak cookien
