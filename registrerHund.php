@@ -103,7 +103,8 @@ $dblink = kobleOpp();
 						<label for="fortype">Fòrtype:</label>
 						<select class="inputSelect" name="fortype">
 							<option value="velg">--Velg--</option>
-							<option value="inkludert">Det som er inkludert i oppholdet</option>
+							<option value="inkludert">Royal Canin</option>
+							<option value="inkludert">Vom</option>
 							<option value="medbrakt">Medbrakt</option>
 						</select>	
 
