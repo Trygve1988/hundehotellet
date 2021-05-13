@@ -225,7 +225,7 @@ main {
 
 /* Pris og Info CSS */
 .pris_og_info{
-	display: center;
+	display: flex;
 	flex-direction: row;
 }
 
