@@ -223,7 +223,7 @@ main {
 
 /*****Stop på hentet kode*****/
 
-/* Pris og Info Css */
+/* Pris og Info CSS */
 .pris_og_info{
 	display:flex;
 	flex-direction: row;
@@ -235,9 +235,7 @@ main {
 
 .prisPrDag, .tillegg , th, td  {
 	border: 1px solid black;
-}
-
-.prisPrDag , .tillegg {
+	background-color: white;
 }
 
 .informasjon {
