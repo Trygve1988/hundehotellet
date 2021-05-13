@@ -44,13 +44,15 @@ $dblink = kobleOpp();
 
 				<div>
 					<div class="soloKolonne">
-						<label for="sammeBur">Skal hundene være i samme buret:</label>
+						<!-- Valg om hundene skal være i samme bur (lagt på is) -->
+						<!--<label for="sammeBur">Skal hundene være i samme buret:</label>
 						<select class="inputSelect" name="sammeBur">
 							<option value="velg">--Velg--</option>
 							<option value="hannhund">Ja</option>
 							<option value="tispe">Nei</option>
 						</select>
 						</div>
+						-->
 						
 						<h3>Tidsperiode</h3>
 						<div class="enKolonneRad">
