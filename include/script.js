@@ -53,6 +53,9 @@ var minSideLink = document.getElementById("minSideLink");
 var loggUtLink  = document.getElementById("loggUtLink");
 var registrerDegLink = document.getElementById("registrerDegLink");
 
+/*Forslag fra Gunni*/
+var loggInnLink = document.getElementById("loggInnLink");
+
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
 aktueltLink.innerHTML = aktueltTab[språk];
@@ -71,6 +74,11 @@ if (loggUtLink !== null) {
 }
 if (registrerDegLink !== null) {
     registrerDegLink.innerHTML = registrerDegTab[språk];
+}
+
+/*Forslag fra Gunni*/
+if (loggInnLink !== null) {
+  loggInnLink.innerHTML = loggInnTab[språk];
 }
 
 
