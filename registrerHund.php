@@ -36,13 +36,13 @@ $dblink = kobleOpp();
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
 			<!-- Skjema -->		
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 			
 				<!-- Avbryt knapp -->
 				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
 
 				<!-- Overskrift -->
-				<h2>Registrer ny hund</h2>	
+				<h2>Registrer hund</h2>	
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
@@ -55,7 +55,7 @@ $dblink = kobleOpp();
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputTekst" type="date" name="fDato">	
+						<input class="inputDato" type="date" name="fDato">	
 
 						<!-- Nedtrekkslister! -->
 						<label for="kjonn">Kjønn:</label>
@@ -80,8 +80,9 @@ $dblink = kobleOpp();
 						</select>
 					
 						<!-- Passord link -->
-						<a class="visPassord3" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
-					
+						<div>
+							<a class="visPassord3" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+						</div>
 					<div>
 				
 					<!-- Labels og input i kolonne 2-->
