@@ -225,21 +225,24 @@ main {
 
 /* Pris og Info CSS */
 .pris_og_info{
-	display:flex;
+	display:center;
 	flex-direction: row;
-}
-
-.informasjon{
-	margin-left: 300px;
 }
 
 .prisPrDag, .tillegg , th, td  {
 	border: 1px solid black;
 	background-color: white;
+	width: 50%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.prisPrDag{
+	margin-right: 300px;
 }
 
 .informasjon {
-	width: 450px;
+	margin-left: 500px;
 	text-align: justify;
     font-family: Arial;
 
