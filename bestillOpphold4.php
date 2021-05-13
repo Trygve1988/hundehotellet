@@ -77,7 +77,7 @@ $dblink = kobleOpp();
 						<!-- ************************** CVC (Kristina)**************************-->
 						<!--CVC modalen (Kristina) -->
 						<button id="cvcModalKnapp">?</button>
-						<input type="text" placeholder="De tre siste sifrene på cvv nummeret" name="cvv" required value>
+						<input class="inputTekst" type="text" placeholder="De tre siste sifrene på cvv nummeret" name="cvv" required value>
 						<!--CVC modalen -->
 						<div id="cvcModal" class="modal">
 							<!-- Modal innhold (dette hopper opp i modalen) -->
