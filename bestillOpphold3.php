@@ -58,12 +58,12 @@ $dblink = kobleOpp();
 						<div class="enKolonneRad">
 							<div class="kolonne1">		
 								<label for="fra">Fra:</label>
-								<input class="inputDate" type="date" name="fra">		
+								<input class="inputDato" type="date" name="fra">		
 							</div>
 							<div class="kolonne2">
 								<!-- Labels og input i kolonne 2-->
 								<label for="til">Til:</label>
-								<input type="date" name="til">	
+								<input class="inputDato" type="date" name="til">	
 							</div>
 						</div>	
 						<h3>Tillegstjenester</h3>
@@ -71,11 +71,11 @@ $dblink = kobleOpp();
 						<div class="soloKolonne">
 							<div class="skjemaKolonner">
 								<input class="storChecbox" type="checkbox" name="hund1">
-								<input class="inputDate" type="text" name="hund1" value="Hund 1">
+								<input class="inputDato" type="text" name="hund1" value="Hund 1">
 							</div>
 							<div class="skjemaKolonner">
 								<input class="storChecbox" type="checkbox" name="hund2">
-								<input class="inputDate" type="text" name="hund1" value="Hund 1">
+								<input class="inputDato" type="text" name="hund1" value="Hund 1">
 						</div>
 					</div>
 					<!--Knapperad-->
