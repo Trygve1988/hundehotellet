@@ -40,63 +40,60 @@ $dblink = kobleOpp();
 
                 <!-- Overskrift -->
                 <h1>Pris og info</h1>
+                <div class="pris_og_Info">
+                    <div class="venstre_Pris_Info">
+                        <table class="prisPrDag">
+                            <tr>
+                                <th>Pris pr dag pr hund</th> 
+                             </tr>
+                            <tr>
+                                <td>400 kr</td>
+                            </tr>
+                        </table>
 
-                <div class="pris_og_info">
-                    <table class="prisPrDag">
-                        <tr>
-                            <th>Pris pr dag pr hund</th> 
-                         </tr>
-                        <tr>
-                            <td>400 kr</td>
-                        </tr>
-                    </table>
+                        <table class="tillegg">
+                            <tr>
+                                <th>Bading</th> 
+                            </tr>
+                            <tr>
+                                <td>200 kr</td>
+                            </tr>
+                        </table>
 
-                    <div class="informasjon">
+                        <div class="annenInfo">
 
-                        <h1>Informasjon</h1>
+                            <h1>Mer informasjon</h1>
 
-                        <p class="overskrift">Inn-/Utlevering:</p>
-                        <p>Mellom kl 09.00-11.00/16.00-17.00</p>
+                            <p class="overskrift" >Vetrinær:</p>
+                            <p>Vi samarbeider med:</p>
+                            <p>- Anicura Dyreklinkken i Telemark</p>
+                            <p>- Seljord Vetrinærkontor AS</p>
 
-                        <p class="overskrift">Vaksinasjonsattest:</p>
-                        <p>- Det med fremvises gyldig Vaksinasjonsattest ved ankomst.</p>
-                        <p>- Attesten må være nyere en 12 mnd.</p>
-                        <p>- Vi krever vaksinasjon mot valpesyke (pravo) og kennelhoste.</p>
-                        
-                        <p class="overskrift">Mat:</p>
-                        <p>- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.</p>
-                        <p>- Mat inngår i prisen på oppholdet.</p>
-
-                        <p class="overskrift">Seng:</p>
-                        <p>- Ta gjenre mednoe hunden kan ligge på for eksempel madrass eller teppe.</p>
-                        <p>- Vi har stadr teppe til alle bur.</p>
-
+                            <p class="overskrift" >Annet:</p>
+                            <p>- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
+                            <p>- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
+                        </div>
                     </div>
-                </div>
+                        <div class="informasjon">
+                            <h1>Informasjon</h1>
 
-                <table class="tillegg">
-                    <tr>
-                       <th>Bading</th> 
-                    </tr>
-                    <tr>
-                        <td>200 kr</td>
-                    </tr>
-                </table>
+                            <p class="overskrift">Inn-/Utlevering:</p>
+                            <p>Mellom kl 09.00-11.00/16.00-17.00</p>
 
-                <div class="annenInfo">
+                            <p class="overskrift">Vaksinasjonsattest:</p>
+                            <p>- Det med fremvises gyldig Vaksinasjonsattest ved ankomst.</p>
+                            <p>- Attesten må være nyere en 12 mnd.</p>
+                            <p>- Vi krever vaksinasjon mot valpesyke (pravo) og kennelhoste.</p>
 
-                    <h1>Mer informasjon</h1>
+                            <p class="overskrift">Mat:</p>
+                            <p>- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.</p>
+                            <p>- Mat inngår i prisen på oppholdet.</p>
 
-                    <p class="overskrift" >Vetrinær:</p>
-                    <p>Vi samarbeider med:</p>
-                    <p>- Anicura Dyreklinkken i Telemark</p>
-                    <p>- Seljord Vetrinærkontor AS</p>
-
-                    <p class="overskrift">Annet:</p>
-                    <p>- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
-                    <p>- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
-                </div>
-
+                            <p class="overskrift">Seng:</p>
+                            <p>- Ta gjenre mednoe hunden kan ligge på for eksempel madrass eller teppe.</p>
+                            <p>- Vi har stadr teppe til alle bur.</p>
+                        </div>
+                </div>  
             </form>
         </div> 
     </main>
