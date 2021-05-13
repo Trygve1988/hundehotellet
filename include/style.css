@@ -225,7 +225,7 @@ main {
 
 /* Pris og Info CSS */
 .pris_og_info{
-	display:center;
+	display: center;
 	flex-direction: row;
 }
 
@@ -237,17 +237,12 @@ main {
 	margin-bottom: 10px;
 }
 
-.prisPrDag{
-	margin-right: 300px;
-}
-
 .informasjon {
 	margin-left: 500px;
 	text-align: justify;
     font-family: Arial;
-
 	height: auto;
-	padding: 40px 8px 25px 8px;
+	padding: 10px 8px 10px 8px;
 	background-color: white;
 }
 
@@ -255,10 +250,14 @@ main {
 	width: 480px;
     text-align: justify;
     font-family: Arial;
-
 	height: auto;
-	padding: 40px 8px 25px 8px;
+	padding: 10px 8px 10px 8px;
 	background-color: white;
+}
+
+.overskrift{
+	text-decoration: underline;
+
 }
 
 
