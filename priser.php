@@ -42,25 +42,26 @@ $dblink = kobleOpp();
                 <h1>Pris og info</h1>
                 <div class="pris_og_Info">
                     <div class="venstre_Pris_Info">
-                        <table class="prisPrDag">
-                            <tr>
-                                <th>Pris pr dag pr hund</th> 
-                             </tr>
-                            <tr>
-                                <td>400 kr</td>
-                            </tr>
-                        </table>
-
-                        <h1>Tileggtjenester</h1>
                         
-                        <table class="tillegg">
-                            <tr>
-                                <th>Bading</th> 
-                            </tr>
-                            <tr>
-                                <td>200 kr</td>
-                            </tr>
-                        </table>
+                            <table class="prisPrDag">
+                                <tr>
+                                    <th>Pris pr dag pr hund</th> 
+                                 </tr>
+                                <tr>
+                                    <td>400 kr</td>
+                                </tr>
+                            </table>
+
+                            <h1>Tileggtjenester</h1>
+
+                            <table class="tillegg">
+                                <tr>
+                                    <th>Bading</th> 
+                                </tr>
+                                <tr>
+                                    <td>200 kr</td>
+                                </tr>
+                            </table>
 
                         <div class="annenInfo">
 
