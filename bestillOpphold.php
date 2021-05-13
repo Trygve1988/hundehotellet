@@ -52,7 +52,9 @@ $dblink = kobleOpp();
 						<input class="inputTekst" type="text" name="hund3" value="Hund 3">
 					</div>
 				<!-- " + Registrer ny hund"- knapp -->
-				<input class="ekstraKnapp2" type="submit" name="registrerNyHund" value="+ Registrer ny hund">
+				<a href = "registrerHund.php">
+					<input class="ekstraKnapp2" type="submit" name="registrerNyHund" value="+ Registrer ny hund">
+				</a>
 				</div>
 
 				<!-- Neste-knapp -->
