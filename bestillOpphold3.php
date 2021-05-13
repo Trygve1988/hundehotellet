@@ -71,11 +71,11 @@ $dblink = kobleOpp();
 						<div class="soloKolonne">
 							<div class="skjemaKolonner">
 								<input class="storChecbox" type="checkbox" name="hund1">
-								<input class="inputDato" type="text" name="hund1" value="Hund 1">
+								<input class="inputTekst" type="text" name="hund1" value="Hund 1">
 							</div>
 							<div class="skjemaKolonner">
-								<input class="storChecbox" type="checkbox" name="hund2">
-								<input class="inputDato" type="text" name="hund1" value="Hund 1">
+								<input class="storChecbox" type="checkbox" name="hund2"> <!-- Denne checkbox str må sjekkes opp!-->
+								<input class="inputTekst" type="text" name="hund1" value="Hund 1">
 						</div>
 					</div>
 					<!--Knapperad-->
