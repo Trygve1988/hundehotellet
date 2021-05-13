@@ -51,6 +51,8 @@ $dblink = kobleOpp();
                             </tr>
                         </table>
 
+                        <h1>Tileggtjenester</h1>
+                        
                         <table class="tillegg">
                             <tr>
                                 <th>Bading</th> 

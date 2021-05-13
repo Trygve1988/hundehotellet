@@ -224,14 +224,14 @@ main {
 /*****Stop på hentet kode*****/
 
 /* Pris og Info CSS */
-.pris_og_Info{
+.pris_og_Info {
 	display: flex;
 	flex-direction: row;
 }
 
 .venstre_Pris_Info {
 	width: 50%;
-	margin-right: 10px;
+	margin-right: 25px;
 }
 
 
@@ -240,7 +240,7 @@ main {
 	background-color: white;
 	width: 50%;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 10px
 }
 
 .informasjon {
@@ -250,10 +250,11 @@ main {
 	padding: 10px 8px 10px 8px;
 	background-color: white;
 	width: 100%;
+	margin-right: 25px;
 }
 
 .annenInfo{
-	width: 480px;
+	width: 450px;
     text-align: justify;
     font-family: Arial;
 	height: auto;
