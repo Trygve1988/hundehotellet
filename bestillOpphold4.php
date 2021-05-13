@@ -93,12 +93,18 @@ $dblink = kobleOpp();
 
 					</div>
 					
-					<!-- Knapperad -->
-					<div class="knapperad">	
-						<button onclick="tilBO3Funksjon()" id="tilBO3" class="hovedKnapp"  title="Tilbake">Tilbake</button>
-						<div class="nesteKnapp3">
-							<input class="hovedKnapp" type="submit" name="bestill" value="Bekreft bestilling">
-						</div>
+					<!--Knapperad-->
+					<div class="knapperad">
+						<!-- Tilbake-knapp-->
+						<a href = "bestillOpphold3.php">
+                			<input class="hovedknapp" type="button" value="Tilbake"> 
+            			</a>
+
+						<!-- Bekreft Bestilling SETT INN TILBAKEMELDING PÅ REGISTRERT OPPHOLD -->
+						<a href = "bestillingBekreftelse.php">
+							<input class="hovedKnapp" type="submit" name="registrerBestilling" value="Registrer bestilling">	 
+					 	</a>
+						
 					</div>
 				</div>
 			</form>

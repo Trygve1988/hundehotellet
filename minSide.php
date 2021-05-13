@@ -58,9 +58,13 @@
                         <td>Adresse</td>
                     </tr>
                 </table>
-
-                <input class="hovedKnapp" type="submit" name="redigerKunde" value="Rediger">
-            
+         
+                <!--Knapperad-->
+				<!-- "Rediger / oppdater kunde-info-knapp -->
+				<a href = "oppdaterKundeInfo.php">
+                	<input class="hovedknapp" type="oppdaterKundeInfo" value="Rediger"> 
+            	</a>
+		    
                 <!-- "Mine hunder" -->
                 <h3>Mine hunder</h3>
           
@@ -106,9 +110,19 @@
                         <td>Sett inn informasjonen her!</td>
                     </tr>
                 </table>
-                <input class="hovedKnapp" type="submit" name="redigerHund" value="Registrer ny hund">
-                <input class="hovedKnapp" type="submit" name="redigerHund" value="Rediger">
-
+                
+                <!--Knapperad-->
+				
+				<div class="knapperad"><
+                    <!-- Endre hundeinfo- knapp -->
+                    <a href = "oppdaterHundInfo.php">
+                	    <input class="hovedknapp" type="button" value="Rediger"> 
+            	    </a>
+                    <!-- Registrer ny hund-\knapp-->
+                    <a href = "registrerHund.php">
+                        <input class="hovedKnapp ekstraKnapp2" type="button" value="Registrer ny hund">
+                    </a>
+                    
                 <!-- "Mine opphold" -->
                 <h3>Mine opphold</h3>
                 <table class="oppholdTab">	
@@ -126,11 +140,14 @@
                     </tr>
                 </table>
                     
-                <div class="knapperad">
-                    <input class="hovedKnapp" type="submit" name="seEldreOpphold" value="Se eldre opphold">
-                    <input class="hovedKnapp" type="submit" name="Avbestill opphold" value="Rediger">
-                </div>   
-                <!-- ************************** 2) main (Trygve) **************************-->        
+                <!--Knapperad-->
+				
+				<!-- Se kundeopphol oversikt (for kundebrukere) -->
+				<a href = "alleOppholdforKunde.php">
+                	<input class="hovedknapp" type="button" value="Tilbake"> 
+            	</a>
+				
+                 <!-- ************************** 2) main (Trygve) **************************-->        
                     
                 <?php visInnloggetInfo($dblink); ?>
                 <?php visMineHunder($dblink) ?>

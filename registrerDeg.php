@@ -88,8 +88,10 @@ $dblink = kobleOpp();
 
 				<div class="knappeKlynge">
 					<!--Registrer knapp-->
-					<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
-					<!-- Logg inn link -->
+						<a href="index.php">
+							<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker"> <!-- HVOR SKAL DENNE LEDE?? -->
+						</a>
+							<!-- Logg inn link -->
 					<p class="ekstraLink2"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
 				</div>

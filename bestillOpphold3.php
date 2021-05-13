@@ -78,12 +78,17 @@ $dblink = kobleOpp();
 								<input class="inputDate" type="text" name="hund1" value="Hund 1">
 						</div>
 					</div>
-					<!-- Knapperad -->
-					<div class="knapperad">	
-						<button onclick="tilBO2Funksjon()" id="tilBO2" class="hovedKnapp"  title="Tilbake">Tilbake</button>
-						<div class="nesteKnapp2">
-							<button onclick="tilBO4Funksjon()" id="tilBO4" class="hovedKnapp"  title="Neste">Neste</button>
-						</div>
+					<!--Knapperad-->
+					<div class="knapperad">
+							<!-- Tilbake-knapp-->
+							<a href = "bestillOpphold2.php">
+                				<input class="hovedknapp" type="button" value="Tilbake"> 
+            				</a>
+
+							<!-- Neste-knapp-->
+							<a href = "bestillOpphold4.php">
+                				<input class="hovedknapp" type="button" value="Neste"> 
+            				</a>
 					</div>
 				</div>	
 			</form>

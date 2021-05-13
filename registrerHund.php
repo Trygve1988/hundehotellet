@@ -114,7 +114,9 @@ $dblink = kobleOpp();
 				
 						<!--Registrer knapp DENNE MÅ RETTES!--> 
 						<div class="knappIKolonne">
-							<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund">
+							<a href="index.php">
+								<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund"> <!-- HVOR SKAL DENNE LEDE?? -->
+							</a>
 						</div>
 					</div>
 				</div>

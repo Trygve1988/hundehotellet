@@ -109,10 +109,17 @@ $dblink = kobleOpp();
 						<label for="ekstraInfo">Ekstra informasjon:</label>
 						<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
 				
-						<!--Neste knapp-->
-						<div class="knappIKolonne">
-							<!-- <input class="hovedKnapp" type="submit" name="neste" value="Neste"> -->
-							<button onclick="tilBO3Funksjon()" id="tilBO3" class="hovedKnapp"  title="Neste">Neste</button>
+						<!--Knapperad-->
+						<div class="knapperad">
+							<!-- Tilbake-knapp-->
+							<a href = "bestillOpphold.php">
+                				<input class="hovedknapp" type="button" value="Tilbake"> 
+            				</a>
+
+							<!-- Neste-knapp-->
+							<a href = "bestillOpphold3.php">
+                				<input class="hovedknapp" type="button" value="Neste"> 
+            				</a>
 						</div>
 					</div>	
 			</form>
