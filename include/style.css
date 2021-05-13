@@ -230,7 +230,8 @@ main {
 }
 
 .venstre_Pris_Info {
-	width: 100%;
+	width: 50%;
+	margin-right: 10px;
 }
 
 
@@ -243,13 +244,12 @@ main {
 }
 
 .informasjon {
-	margin-left: 300px;
 	text-align: justify;
     font-family: Arial;
 	height: auto;
 	padding: 10px 8px 10px 8px;
 	background-color: white;
-	width: 50%;
+	width: 100%;
 }
 
 .annenInfo{
