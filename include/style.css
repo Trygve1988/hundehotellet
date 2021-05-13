@@ -237,6 +237,30 @@ main {
 	border: 1px solid black;
 }
 
+.prisPrDag , .tillegg {
+}
+
+.informasjon {
+	width: 450px;
+	text-align: justify;
+    font-family: Arial;
+
+	height: auto;
+	padding: 40px 8px 25px 8px;
+	background-color: white;
+}
+
+.annenInfo{
+	width: 480px;
+    text-align: justify;
+    font-family: Arial;
+
+	height: auto;
+	padding: 40px 8px 25px 8px;
+	background-color: white;
+}
+
+
 
   
 /* **************************** Gunni ***************************** */
