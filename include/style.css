@@ -224,10 +224,16 @@ main {
 /*****Stop på hentet kode*****/
 
 /* Pris og Info CSS */
-.pris_og_info{
-	display:center;
+.pris_og_Info{
+	display: flex;
 	flex-direction: row;
 }
+
+.venstre_Pris_Info {
+	width: 50%;
+	margin-right: 10px;
+}
+
 
 .prisPrDag, .tillegg , th, td  {
 	border: 1px solid black;
@@ -237,29 +243,30 @@ main {
 	margin-bottom: 10px;
 }
 
-.prisPrDag{
-	margin-right: 300px;
-}
-
 .informasjon {
-	margin-left: 500px;
 	text-align: justify;
     font-family: Arial;
-
 	height: auto;
-	padding: 40px 8px 25px 8px;
+	padding: 10px 8px 10px 8px;
 	background-color: white;
+	width: 100%;
 }
 
 .annenInfo{
 	width: 480px;
     text-align: justify;
     font-family: Arial;
-
 	height: auto;
-	padding: 40px 8px 25px 8px;
+	padding: 10px 8px 10px 8px;
 	background-color: white;
 }
+
+.overskrift{
+	text-decoration: underline;
+
+}
+
+
 
   
 /* **************************** Gunni ***************************** */
