@@ -57,7 +57,7 @@ $dblink = kobleOpp();
 
 				<!-- Neste-knapp -->
 				<a href = "bestillOpphold2.php">
-                	<input type="button" value="neste"> 
+                	<input class="hovedknapp" type="button" value="neste"> 
             	</a>
 			</form>
 		</div>
