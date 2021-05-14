@@ -37,7 +37,9 @@ $dblink = kobleOpp();
 			<form class="skjemaBakgrunn" method="POST">
 
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
 
 				<!-- Overskrift -->
 				<h2>Alle opphold</h2>

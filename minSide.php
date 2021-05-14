@@ -30,10 +30,13 @@
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	
 			<!-- Skjema-->	
-            <form class="skjema"> 
-                <!-- Avbryt knapp -->
-		        <input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+            <form class="skjema">
 
+                <!-- Avbryt knapp -->
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
+                
                 <!-- Overskrift -->
                 <h2>Min side</h2>
                 <p>Innlogget som: <span></span></p>

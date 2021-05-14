@@ -34,7 +34,7 @@ $dblink = kobleOpp();
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	
 			<!-- Skjema-->	
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
 				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">

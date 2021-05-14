@@ -31,10 +31,12 @@ $dblink = kobleOpp();
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 			
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 				
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
 
 				<!-- Overskrift -->
 				<h2>Registrer ny bruker</h2>
@@ -67,7 +69,7 @@ $dblink = kobleOpp();
 						<input class="inputTekst" type="text" name="epost">
 					
 						<label for="passord">Ønsket passord:</label>
-						<input class="inputTekst" type="password" name="passord" required id="passord">	
+						<input class="inputPassord" type="password" name="passord" required id="passord">	
 
 						<!-- Vis passord checkbox! -->
 						<div class="visPassord">
@@ -81,12 +83,12 @@ $dblink = kobleOpp();
 						
 						<div class="gjentaPKolonne">
 							<label for="passordSjekk">Gjenta passord:</label>
-							<input  class="inputPassord" type="password" name="passordSjekk">	
+							<input class="inputPassord" type="password" name="passordSjekk">	
 						</div>
 					</div>
 				</div>
 
-				<div class="knappeKlynge">
+				<div class="knappeKlynge hPosKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
 							<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker"> <!-- HVOR SKAL DENNE LEDE?? -->

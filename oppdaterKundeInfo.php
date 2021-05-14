@@ -34,14 +34,16 @@ $dblink = kobleOpp();
 			<!-- Bildebakgrunn-->
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
             <!-- Skjema -->	
-		    <form class="skjemaBakgrunn" method="POST">
+		    <form class="skjemaBakgrunn">
 
-                <!-- Avbryt knapp -->
-                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+               	<!-- Avbryt knapp -->
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
 
                 <!-- Overskrift -->
-                <h2>Min side</h2>
-                <p>Innlogget som: <span></span></p>
+                <h2>Rediger informasjon</h2>
+                <p>Innlogget som: <span>bruker</span></p>
                 <h3>Min profil</h3>
 
                 <div class="skjemaKolonner">
@@ -91,11 +93,9 @@ $dblink = kobleOpp();
                 </div>
                 </div>
 
-                <div class="knappeKlynge">
-                <!--Registrer knapp-->
-                <input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
-                <!-- Logg inn link -->
-                <p class="ekstraLink2"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
+                <div class="hPosKnapp">
+                    <!--Registrer knapp-->
+                    <input class="inputSubmit hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
                 </div>
             </form>   
         </div>	

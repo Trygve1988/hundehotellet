@@ -36,10 +36,12 @@ $dblink = kobleOpp();
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
 			<!-- Skjema -->		
-			<form class="skjemaBakgrunn">
+			<form class="skjemaBakgrunn" method="POST">
 			
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>	
 
 				<!-- Overskrift -->
 				<h2>Registrer hund</h2>	
@@ -114,7 +116,7 @@ $dblink = kobleOpp();
 				
 						<!--Registrer knapp DENNE MÅ RETTES!--> 
 						<div class="knappIKolonne">
-							<a href="index.php">
+							<a href="hundRegistrertBekreftelse.php">
 								<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund"> <!-- HVOR SKAL DENNE LEDE?? -->
 							</a>
 						</div>

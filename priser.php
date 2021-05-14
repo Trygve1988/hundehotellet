@@ -35,8 +35,10 @@ $dblink = kobleOpp();
              <!-- Form-->    
             <form class="skjemaBakgrunn" method="POST">
 
-                <!-- Avbryt knapp 
-                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">-->
+                	<!-- Avbryt knapp 
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>-->
 
                 <!-- Overskrift -->
                 <h1>Pris og info</h1>

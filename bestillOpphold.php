@@ -35,10 +35,12 @@ $dblink = kobleOpp();
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	
 			<!-- Skjema-->	
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
 
 				<!-- Overskrift -->
 				<h2>Bestill opphold</h2>
@@ -59,7 +61,7 @@ $dblink = kobleOpp();
 
 				<!-- Neste-knapp -->
 				<a href = "bestillOpphold2.php">
-                	<input class="hovedknapp" type="button" value="neste"> 
+                	<input class="inputSubmit hovedknapp" type="button" value="neste"> 
             	</a>
 			</form>
 		</div>

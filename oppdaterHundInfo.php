@@ -36,10 +36,12 @@ $dblink = kobleOpp();
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
             <!-- Skjema -->		
-            <form class="skjemaBakgrunn" method="POST">
+            <form class="skjemaBakgrunn">
             
                 <!-- Avbryt knapp -->
-                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>	
 
                 <!-- Overskrift -->
                 <h2>Registrer ny hund</h2>	
@@ -111,9 +113,18 @@ $dblink = kobleOpp();
                         <label for="ekstraInfo">Ekstra informasjon:</label>
                         <textarea class="tekstfelt1" name="ekstraInfo"></textarea>
                 
+
+                        <!--Avbryt knapp-->
+                        <div class="knappIKolonne">
+                            <a href="minSide.php">
+                                <input class="inputSubmit hovedKnapp" type="button" value="Avbryt">
+                            </a>
+                        </div>
                         <!--Registrer knapp-->
                         <div class="knappIKolonne">
-                            <input class="hovedKnapp" type="submit" name="oppdaterHundInfo" value="Lagre">
+                            <a href="#">
+                                <input class="inputSubmit hovedKnapp" type="submit" name="oppdaterHundInfo" value="Lagre">
+                            </a>
                         </div>
 
                     </div>
