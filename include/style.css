@@ -241,6 +241,8 @@ main {
 	margin-bottom: 10px;
 }
 
+
+
 .informasjon {
 	width: 450px;
     text-align: justify;
@@ -248,6 +250,7 @@ main {
 	height: auto;
 	padding: 10px 8px 10px 8px;
 	background-color: white;
+	margin: 10px;
 }
 
 .annenInfo{
@@ -257,6 +260,7 @@ main {
 	height: auto;
 	padding: 10px 8px 10px 8px;
 	background-color: white;
+	margin: 10px;
 }
 
 .overskrift{
