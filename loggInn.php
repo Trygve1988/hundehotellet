@@ -27,7 +27,8 @@ $dblink = kobleOpp();
 	<main>
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
-        	<!-- Bildebakgrunn -->	
+        	
+			<!-- Bildebakgrunn -->	
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
 			<!-- Skjema -->		
@@ -59,7 +60,7 @@ $dblink = kobleOpp();
 				</div>
 
 				<!--Logg inn knapp-->
-				<div class="knappeKlynge hPosKnapp">
+				<div class="knappeKlynge hPosKnapp soloBotRightKnapp">
 					<div class="loggInnKnapp">
 						<input class="inputSubmit hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
 					</div>	

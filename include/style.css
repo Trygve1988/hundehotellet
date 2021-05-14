@@ -372,16 +372,31 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
 	margin-right: 6.5%	
 } 
 
+.soloBotRightKnapp {
+	margin-top: 60%;	
+}
+/*
 .knapperad {
 	display:flex;
 	margin: 10px 0;
 	border: 1px;
 	padding: 5px;
+
+}
+*/
+.knapperad {
+	display:flex;
+	margin: 10px 0;
+	border: 1px;
+	padding: 5px;
+
+	
 }
 
 .knappeKlynge {
 	margin-left: 800px;
 }
+
 
 /* Sett klasseselector her!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
  /*Felles elementer for alle knapper: */
@@ -446,24 +461,26 @@ input[type=checkbox].storCheckbox {
 	margin-bottom: 5px;
 	width: 215px;
 }
-/* Forskjellige typer "neste"-knapper*/
-.nesteKnapp  { /* Denne burde rettes opp*/
+
+/* Forskjellige typer "neste"-knapper
+.nesteKnapp  { /* Denne burde rettes opp*
 	margin-left: 89%;
 }
-.nesteKnapp2  { /* Denne burde rettes opp*/
+.nesteKnapp2  { /* Denne burde rettes opp*
 	margin-left: 76%;
 }
-.nesteKnapp3  { /* Denne burde rettes opp*/
+.nesteKnapp3  { /* Denne burde rettes opp*
 	margin-left: 68%;
 }
 
-.nesteKnapp4  { /* Denne burde rettes opp*/
+.nesteKnapp4  { /* Denne burde rettes opp*
 	margin-left: 90%;
 }
 
-.knappIKolonne  { /* Denne burde rettes opp*/
+.knappIKolonne  { /* Denne burde rettes opp*
 	margin-left: 45%;
 }
+*/
 
 /* Linker*/
 
@@ -519,8 +536,8 @@ input[type=checkbox].storCheckbox {
 
 /* **************************** Kristina ***************************** */
 
- /*Felles hover effekt på alle submit knappene*/
- input[type=submit]:hover {
+ /*Felles hover effekt på alle submit/button knappene*/
+ input[type=submit]:hover,  input[type=button]:hover {
 	background-color: #613f75; /*Eksempelfarge*/
 	
  }

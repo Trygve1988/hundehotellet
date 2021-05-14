@@ -55,13 +55,13 @@ $dblink = kobleOpp();
 					</div>
 				<!-- " + Registrer ny hund"- knapp -->
 				<a href = "registrerHund.php">
-					<input class="ekstraKnapp2" type="button" value="+ Registrer ny hund">
+					<input class="hovedKnapp ekstraKnapp2" type="button" value="+ Registrer ny hund">
 				</a>
 				</div>
 
 				<!-- Neste-knapp -->
 				<a href = "bestillOpphold2.php">
-                	<input class="inputSubmit hovedknapp" type="button" value="neste"> 
+                	<input class="inputSubmit hovedknapp hPosKnapp" type="button" value="neste"> 
             	</a>
 			</form>
 		</div>

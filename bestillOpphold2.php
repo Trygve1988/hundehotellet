@@ -109,7 +109,7 @@ $dblink = kobleOpp();
 						</select>
 
 						<label for="ekstraInfo">Ekstra informasjon:</label>
-						<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
+						<textarea class="tekstboks tekstfelt1" name="ekstraInfo"></textarea>
 				
 						<!--Knapperad-->
 						<div class="knapperad">
