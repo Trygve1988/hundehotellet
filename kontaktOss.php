@@ -12,13 +12,13 @@ $dblink = kobleOpp();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./include/style.css">
-    <!--<link rel="stylesheet" href="./include/KontaktOss.css">-->
-    <!--<link rel="stylesheet" href="./include/takkMelding.scss">-->
+    <link rel="stylesheet" href="./include/KontaktOss.css">-->
+    <link rel="stylesheet" href="./include/takkMelding.scss">-->
     <title>Bø Hundehotell</title>
 
     <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
-    <!--<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>-->
-    <!--<script src="include/script.js" defer> </script>-->
+    <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
+    <script src="include/script.js" defer> </script>
 
 </head>
 
