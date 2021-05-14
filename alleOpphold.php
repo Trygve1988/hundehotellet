@@ -24,6 +24,9 @@ $dblink = kobleOpp();
     <!-- ************************** 2) main **************************-->
     <main>
 
+        <!-- erAnsatt sjekk-->
+        <?php if (!erAnsatt()) { header('Location: loggInn.php'); } ?>
+
         <!-- 2 alle opphold  -->
         <form method="POST">
             <div class="hvitBakgrunn">

@@ -25,47 +25,33 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
-
+  
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
-		<!-- Hvit bakgrunn-->
-		<div class="hvitBakgrunn">
-			<!-- Bildebakgrunn-->
-			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-	
-			<!-- Skjema-->	
-			<form class="skjemaBakgrunn">
+        <!-- Hvit bakgrunn -->	
+        <div class="hvitBakgrunn">
 
-				<!-- Avbryt knapp -->
+            <!-- Bildebakgrunn -->	
+            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+
+            <!-- Skjema -->		
+            <form class="skjemaBakgrunn">
+            
+                	<!-- Avbryt knapp -->
 				<a href = "index.php">
 					<input class="avbrytKnapp" type="button" value="X">
-				</a>
+				</a>	
 
-				<!-- Overskrift -->
-				<h2>Bestill opphold</h2>
-			
-				<h3>Velg hund(er):</h3>
-				<div>
-					<div>
-						<div class="soloKolonne">
-						<input class="inputTekst" type="text" name="hund1" value="Hund 1">
-						<input class="inputTekst" type="text" name="hund2" value="Hund 2">
-						<input class="inputTekst" type="text" name="hund3" value="Hund 3">
-					</div>
-				<!-- " + Registrer ny hund"- knapp -->
-				<a href = "registrerHund.php">
-					<input class="ekstraKnapp2" type="button" value="+ Registrer ny hund">
-				</a>
-				</div>
+                <!-- Overskrift -->
+                <h2>Registrer ny hund</h2>	
 
-				<!-- Neste-knapp -->
-				<a href = "bestillOpphold2.php">
-                	<input class="inputSubmit hovedknapp" type="button" value="neste"> 
-            	</a>
-			</form>
-		</div>
-	</main>
+                <div>
+                    <p>Hunden er registrert!</p>
+                </div>
+            </form>
+        </div>
+    </main>
 	<!-- Til-toppen-knapp -->
 	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
 

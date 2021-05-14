@@ -22,6 +22,10 @@ $dblink = kobleOpp();
 
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
+
+		<!-- erLoggetInn sjekk -->
+		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
+
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
@@ -29,10 +33,12 @@ $dblink = kobleOpp();
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 			
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 			
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
 
 				<!-- Overskrift -->
 				<h2>Bestill opphold</h2>
@@ -97,17 +103,25 @@ $dblink = kobleOpp();
 						<label for="fortype">Fòrtype:</label>
 						<select class="inputSelect" name="fortype">
 							<option value="velg">--Velg--</option>
-							<option value="inkludert">Det som er inkludert i oppholdet</option>
+							<option value="inkludert">Royal Canin</option>
+							<option value="inkludert">Vom</option>
 							<option value="medbrakt">Medbrakt</option>
 						</select>
 
 						<label for="ekstraInfo">Ekstra informasjon:</label>
 						<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
 				
-						<!--Neste knapp-->
-						<div class="knappIKolonne">
-							<!-- <input class="hovedKnapp" type="submit" name="neste" value="Neste"> -->
-							<button onclick="tilBO3Funksjon()" id="tilBO3" class="hovedKnapp"  title="Neste">Neste</button>
+						<!--Knapperad-->
+						<div class="knapperad">
+							<!-- Tilbake-knapp-->
+							<a href = "bestillOpphold.php">
+                				<input class="inputSubmit hovedknapp" type="button" value="Tilbake"> 
+            				</a>
+
+							<!-- Neste-knapp-->
+							<a href = "bestillOpphold3.php">
+                				<input class="inputSubmit hovedknapp" type="button" value="Neste"> 
+            				</a>
 						</div>
 					</div>	
 			</form>

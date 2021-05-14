@@ -95,7 +95,6 @@ main {
   }
   
   .bildeKontroller{
-    border: 2px solid black;
     margin: 30px;
   }
 
@@ -224,8 +223,41 @@ main {
 
 /*****Stop på hentet kode*****/
 
-/* Pris og Info Css */
+/* Pris og Info CSS */
+.info {
+	display: flex;
+	flex-direction: row;
+}
 
+.prisPrDag, th, td  {
+	border: 1px solid black;
+	background-color: white;
+	width: 50%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.informasjon {
+	text-align: justify;
+    font-family: Arial;
+	height: auto;
+	padding: 10px 8px 10px 8px;
+	background-color: white;
+}
+
+.annenInfo{
+	width: 450px;
+    text-align: justify;
+    font-family: Arial;
+	height: auto;
+	padding: 10px 8px 10px 8px;
+	background-color: white;
+}
+
+.overskrift{
+	text-decoration: underline;
+
+}
   
 /* **************************** Gunni ***************************** */
 /*Hvit midtstilt bakgrunn*/
@@ -332,6 +364,14 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
 
 /* Knapper*/
 
+/* Knappeposisjoner:*/
+
+/*Knapp i høyre hjørne av form*/
+.hPosKnapp input[type=submit], .hPosKnapp input[type=button] {
+	float: right;
+	margin-right: 6.5%	
+} 
+
 .knapperad {
 	display:flex;
 	margin: 10px 0;
@@ -345,7 +385,7 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
 
 /* Sett klasseselector her!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
  /*Felles elementer for alle knapper: */
- input[type=submit] inputKnapp {
+ input[type=submit].inputSubmit {
  	margin: 25px 0;
  	border-radius: 4px;
 	border-color: #2f3e52; 
@@ -357,13 +397,13 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
  
 
  /* hovedKnapp, f.eks Logg inn, Registrer deg*/
- input[type=submit].hovedKnapp {
+ input[type=submit].hovedKnapp, input[type=button].hovedKnapp {
  	width: 250px;
 	background-color: #2f3e52;
 	color: #ffffff;
  }
 
- input[type=submit].hovedKnapp2 { /*HUSK AT DU KAN BRUKE TO KLASSER, se over!*/
+ input[type=submit].hovedKnapp2, input[type=button].hovedKnapp2 { /*HUSK AT DU KAN BRUKE TO KLASSER, se over!*/
 	width: 270px;
 	margin-bottom: 10px;
 	background-color: #2f3e52;
@@ -371,13 +411,13 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
  }
 
 /* ekstraKnapp, f.eks legg til hund*/
-input[type=submit].ekstraKnapp2 {
+input[type=submit].ekstraKnapp2, input[type=button].ekstraKnapp2 {
 	border-radius:25px;
 	margin: 5px 0;
 }
 
 /*avbrytKnapp*/
-input[type=submit].avbrytKnapp {
+input[type=button].avbrytKnapp, input[type=submit].avbrytKnapp {
 	width: 38px;
 	height: 38px;
 	margin: 0;
@@ -482,8 +522,40 @@ input[type=checkbox].storCheckbox {
  /*Felles hover effekt på alle submit knappene*/
  input[type=submit]:hover {
 	background-color: #613f75; /*Eksempelfarge*/
+	
  }
 
+ 
+.bildeKontroller { /*Kristina laget hover effekten*/
+	overflow: hidden; /*Gjør at bildeeffekten ikke går ut av kortet*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+
+}
+#KontrollerBD .bildeKontroller img{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out; 
+
+}
+
+#KontrollerBD .bildeKontroller:hover img{
+	-webkit-transform: scale(1.3);
+    transform: scale(1.3);
+
+}
+/*Slutt på bildeeffekten*/
+
+/*Aktuelt siden*/
+.mellomromMellomInnlegg { /*Lager mellomrom mellom innleggene*/
+	padding: 10px;
+}
+
+
+
+
+/*CVC modalen pop up*/
 body .modal {
 	overflow: hidden;
  }

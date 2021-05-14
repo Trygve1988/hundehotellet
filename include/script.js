@@ -16,18 +16,21 @@ function getCookie(cname) {
 // ************* ikke lagd selv slutt ************* -->
 
 
-// ********************* 0) Alle: globale spraak variabler (Trygve og ?) ********************* 
+// ********************* 0) Alle: globale spraak variabler (Trygve og Gunni) ********************* 
 var flaggTab        = ['bilder/FlaggNO.png', 'bilder/FlaggGB.png'];
 var hjemTab         = ['Hjem', 'Home'];
 var aktueltTab      = ['Aktuelt', 'News'];
 var omOssTab        = ['Om Oss', 'About us'];
-var priserTab       = ['Priser', 'Prices'];
+var priserTab       = ['Priser og Info', 'Prices and Info'];
 var kontaktOssTab   = ['Kontakt Oss', 'Contact us'];
-var bestillTab      = ['Bestill Opphold', 'Make a Booking'];
+var bestillTab      = ['Bestill Opphold', 'Book a stay'];
 var anmeldelserTab  = ['Anmeldelser', 'Customer reviews'];
 var minSideTab      = ['Min Side', 'My Page'];
-var loggUtTab       = ['Logg ut', 'Logg out'];
+var loggUtTab       = ['Logg ut', 'Sign out'];
 var registrerDegTab  = ['Registrer Deg', 'Register'];
+
+/*Forslag fra Gunni*/ 
+var loggInnTab  = ['Logg inn', 'Sign in'];
 
 
 //får tak i valgt språk fra spraak cookien
@@ -50,6 +53,9 @@ var minSideLink = document.getElementById("minSideLink");
 var loggUtLink  = document.getElementById("loggUtLink");
 var registrerDegLink = document.getElementById("registrerDegLink");
 
+/*Forslag fra Gunni*/
+var loggInnLink = document.getElementById("loggInnLink");
+
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
 aktueltLink.innerHTML = aktueltTab[språk];
@@ -68,6 +74,11 @@ if (loggUtLink !== null) {
 }
 if (registrerDegLink !== null) {
     registrerDegLink.innerHTML = registrerDegTab[språk];
+}
+
+/*Forslag fra Gunni*/
+if (loggInnLink !== null) {
+  loggInnLink.innerHTML = loggInnTab[språk];
 }
 
 
@@ -224,51 +235,10 @@ function showSlides(n) {
 }
 
 
-// Stop på hentet kode
+// Slutt på hentet kode
 
-// **************************  Bestill Opphold-knapper (Gunni) **************************
-
-// Bestill opphold 1
-// Knappefunksjon for nesteknapp i Bestill opphold 1/4
-// Lager button variablel
-var tilBO2Knapp = document.getElementById("tilBO2");
-
-// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
-tilBO2.addEventListener('click', tilBO2Funksjon, false);
-
-// Funksjonen
-function tilBO2Funksjon() {
-    window.location.href = "bestillOpphold2.php";
-} 
-
-// Bestill opphold 2
-// Knappefunksjon for nesteknapp i Bestill opphold 2/4
-// Lager button variablel
-var tilBO3Knapp = document.getElementById("tilBO3");
-
-// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
-tilBO3.addEventListener('click', tilBO3Funksjon, false);
-
-// Funksjonen
-function tilBO3Funksjon() {
-    window.location.href = "bestillOpphold3.php";
-}
-
-// Bestill opphold 3
-// Knappefunksjon for nesteknapp i Bestill opphold 3/4
-// Lager button variablel
-var tilBO4Knapp = document.getElementById("tilBO4");
-
-// Evemtlistener på knapper som fyrer av en funksjon når knappen blir trykket på
-tilBO4.addEventListener('click', tilBO4Funksjon, false);
-
-// Funksjonen
-function tilBO4Funksjon() {
-    window.location.href = "bestillOpphold4.php";
-}  
 
 // Bestill opphold 4
-
 
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp

@@ -35,25 +35,56 @@ $dblink = kobleOpp();
              <!-- Form-->    
             <form class="skjemaBakgrunn" method="POST">
 
-                <!-- Avbryt knapp 
-                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">-->
+                	<!-- Avbryt knapp 
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>-->
 
                 <!-- Overskrift -->
-                <h1>Pris og info</h1>
+                    <h1>Pris og info</h1>
+                        <table class="prisPrDag">
+                            <tr>
+                                <th>Pris pr dag pr hund</th> 
+                                <th>Bading</th> 
+                            </tr>
+                            <tr>
+                                <td>400 kr</td>
+                                <td>200 kr</td>
+                             </tr>
+                         </table>
+                    <h1>Informasjon</h1>
+                    <div class="info">
+                        <div class="annenInfo">
 
-                <div class="prisOversikt">
-                    <div class="prisPrDag">
-                        <p>Pris pr dag pr hund:</p>
-                        <p>400kr</p>
-                    </div>
+                            <p class="overskrift" >Vetrinær:</p>
+                            <p>Vi samarbeider med:</p>
+                            <p>- Anicura Dyreklinkken i Telemark</p>
+                            <p>- Seljord Vetrinærkontor AS</p>
 
-                    <div class="tillegg">
-                        <p>Bading:</p>
-                        <p>200kr</p>
-                    </div>
+                            <p class="overskrift" >Annet:</p>
+                            <p>- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
+                            <p>- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
+                        </div>
 
-                </div>
+                        <div class="informasjon">
 
+                            <p class="overskrift">Inn-/Utlevering:</p>
+                            <p>Mellom kl 09.00-11.00/16.00-17.00</p>
+
+                            <p class="overskrift">Vaksinasjonsattest:</p>
+                            <p>- Det med fremvises gyldig Vaksinasjonsattest ved ankomst.</p>
+                            <p>- Attesten må være nyere en 12 mnd.</p>
+                            <p>- Vi krever vaksinasjon mot valpesyke (pravo) og kennelhoste.</p>
+
+                            <p class="overskrift">Mat:</p>
+                            <p>- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.</p>
+                            <p>- Mat inngår i prisen på oppholdet.</p>
+
+                            <p class="overskrift">Seng:</p>
+                            <p>- Ta gjenre mednoe hunden kan ligge på for eksempel madrass eller teppe.</p>
+                            <p>- Vi har stadr teppe til alle bur.</p>
+                        </div>
+                    </div>  
             </form>
         </div> 
     </main>

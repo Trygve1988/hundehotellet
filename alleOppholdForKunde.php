@@ -22,7 +22,6 @@ $dblink = kobleOpp();
 	<!-- ************************** 1) fellesTop ************************** -->
 	<?php visNav(); ?>
 
-
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
 
@@ -35,7 +34,7 @@ $dblink = kobleOpp();
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 	
 			<!-- Skjema-->	
-			<form class="skjemaBakgrunn">
+			<form class="skjemaBakgrunn" method="POST">
 
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -43,26 +42,21 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h2>Bestill opphold</h2>
-			
-				<h3>Velg hund(er):</h3>
-				<div>
-					<div>
-						<div class="soloKolonne">
-						<input class="inputTekst" type="text" name="hund1" value="Hund 1">
-						<input class="inputTekst" type="text" name="hund2" value="Hund 2">
-						<input class="inputTekst" type="text" name="hund3" value="Hund 3">
-					</div>
-				<!-- " + Registrer ny hund"- knapp -->
-				<a href = "registrerHund.php">
-					<input class="ekstraKnapp2" type="button" value="+ Registrer ny hund">
-				</a>
-				</div>
+				<h2>Alle opphold</h2>
 
-				<!-- Neste-knapp -->
-				<a href = "bestillOpphold2.php">
-                	<input class="inputSubmit hovedknapp" type="button" value="neste"> 
-            	</a>
+                <!-- Nedtrekksliste -->
+                <label for="sammeBur">Velg år</label>
+					<select class="inputSelect" name="velgÅr">
+						<option value="2021">2021</option>
+						<option value="2020">2020</option>
+						<option value="2019">2019</option>
+					</select>
+
+                <p>SETT INN TABELL OVER ALLE OPPHOLD</p> 
+				<!-- Tilbake til forsiden- knapp -->
+                <a href = "index.php">   
+                <input class="ekstraKnapp2" type="button" name="tilIndex" value="Tilbake til forsiden">
+								
 			</form>
 		</div>
 	</main>

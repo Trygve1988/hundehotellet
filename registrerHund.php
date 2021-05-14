@@ -25,6 +25,10 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
+
+		<!-- erLoggetInn sjekk -->
+		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
+
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
 
@@ -35,10 +39,12 @@ $dblink = kobleOpp();
 			<form class="skjemaBakgrunn" method="POST">
 			
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>	
 
 				<!-- Overskrift -->
-				<h2>Registrer ny hund</h2>	
+				<h2>Registrer hund</h2>	
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
@@ -51,7 +57,7 @@ $dblink = kobleOpp();
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputTekst" type="date" name="fDato">	
+						<input class="inputDato" type="date" name="fDato">	
 
 						<!-- Nedtrekkslister! -->
 						<label for="kjonn">Kjønn:</label>
@@ -76,8 +82,9 @@ $dblink = kobleOpp();
 						</select>
 					
 						<!-- Passord link -->
-						<a class="visPassord3" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
-					
+						<div>
+							<a class="visPassord3" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+						</div>
 					<div>
 				
 					<!-- Labels og input i kolonne 2-->
@@ -99,7 +106,8 @@ $dblink = kobleOpp();
 						<label for="fortype">Fòrtype:</label>
 						<select class="inputSelect" name="fortype">
 							<option value="velg">--Velg--</option>
-							<option value="inkludert">Det som er inkludert i oppholdet</option>
+							<option value="inkludert">Royal Canin</option>
+							<option value="inkludert">Vom</option>
 							<option value="medbrakt">Medbrakt</option>
 						</select>	
 
@@ -108,7 +116,9 @@ $dblink = kobleOpp();
 				
 						<!--Registrer knapp DENNE MÅ RETTES!--> 
 						<div class="knappIKolonne">
-							<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund">
+							<a href="hundRegistrertBekreftelse.php">
+								<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund"> <!-- HVOR SKAL DENNE LEDE?? -->
+							</a>
 						</div>
 					</div>
 				</div>

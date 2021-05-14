@@ -22,7 +22,6 @@ $dblink = kobleOpp();
 	<!-- ************************** 1) fellesTop ************************** -->
 	<?php visNav(); ?>
 
-
 	<!-- ************************** 2) main (Gunni) **************************-->
 	<main>
 
@@ -38,31 +37,16 @@ $dblink = kobleOpp();
 			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
-				<a href = "index.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>
+				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
 
 				<!-- Overskrift -->
-				<h2>Bestill opphold</h2>
+				<h2>Bekreftelse på bestilling</h2>
 			
-				<h3>Velg hund(er):</h3>
-				<div>
-					<div>
-						<div class="soloKolonne">
-						<input class="inputTekst" type="text" name="hund1" value="Hund 1">
-						<input class="inputTekst" type="text" name="hund2" value="Hund 2">
-						<input class="inputTekst" type="text" name="hund3" value="Hund 3">
-					</div>
-				<!-- " + Registrer ny hund"- knapp -->
-				<a href = "registrerHund.php">
-					<input class="ekstraKnapp2" type="button" value="+ Registrer ny hund">
-				</a>
-				</div>
-
-				<!-- Neste-knapp -->
-				<a href = "bestillOpphold2.php">
-                	<input class="inputSubmit hovedknapp" type="button" value="neste"> 
-            	</a>
+                <p>SETT IN TEKST FOR BEKREFTELSE PÅ OPPHOLD!!</p> 
+				<!-- Tilbake til forsiden- knapp -->
+                <a href = "index.php">   
+                <input class="ekstraKnapp2" type="button" name="tilIndex" value="Tilbake til forsiden">
+								
 			</form>
 		</div>
 	</main>
