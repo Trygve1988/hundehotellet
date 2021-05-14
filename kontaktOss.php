@@ -17,9 +17,9 @@ $dblink = kobleOpp();
     <title>Bø Hundehotell</title>
 
     <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
-    <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
+    <!--<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>-->
+    <!--<script src="include/script.js" defer> </script>-->
 
-    <script src="include/script.js" defer> </script>
 </head>
 
 <body>
@@ -30,7 +30,6 @@ $dblink = kobleOpp();
         <!-- 2a kontakt oss -->
         <!--<form method="POST"> -->
         <div class="hvitBakgrunn">
-            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
             <!--********************** Kristina ************************** -->
 

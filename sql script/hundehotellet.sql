@@ -1,3 +1,5 @@
+SET SQL_SAFE_UPDATES = 0;
+
 DROP TABLE IF EXISTS anmeldelse;
 DROP TABLE IF EXISTS innlegg;
 DROP TABLE IF EXISTS bading;
@@ -15,6 +17,7 @@ DROP TABLE IF EXISTS hund;
 DROP TABLE IF EXISTS hundefor;
 DROP TABLE IF EXISTS bruker;
 DROP TABLE IF EXISTS postSted;
+DROP TABLE IF EXISTS ledigeBurPrDag;
 
 CREATE TABLE postSted (
 	postNr 		char(4),
@@ -51,9 +54,7 @@ CREATE TABLE hund (
   	fdato 			date,
   	kjønn 			varchar (5),
   	sterilisert 	boolean,
-  	vaksniert 		boolean,
   	løpeMedAndre	boolean,
-  	løsPåTur		boolean,
   	info 			varchar (100),
   	brukerID 		smallInt,
   	forID 			smallInt,
@@ -104,8 +105,11 @@ CREATE TABLE prisHistorikk (
   	endretDato 		date,
   	nyttbeløp		smallInt,
   	gammeltbeløp	smallInt,
+  	brukerID        smallInt,
   	prisID 			smallInt,
-  	PRIMARY KEY (prisHistorikkID)
+  	PRIMARY KEY (prisHistorikkID),
+  	FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID),
+  	FOREIGN KEY (prisID) 	REFERENCES pris (prisID)
 );
 
 CREATE TABLE delsum (
@@ -178,23 +182,20 @@ CREATE TABLE innlegg (
 CREATE TABLE anmeldelse (
   	anmeldelseID 	smallint AUTO_INCREMENT,
   	tekst 			varchar (2000),
+  	godkjent 		boolean,
   	brukerID		smallint,
     PRIMARY KEY (anmeldelseID),
     FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID)
 );
 
+INSERT INTO bruker(brukerID,epost,passord,brukerType)
+VALUES
+(1,"admin","passord123","admin");
+
 INSERT INTO hundefor(forID, fortype)
 VALUES
 (1, "Normal-for"),
 (2, "Allergi-for");
-
-INSERT INTO  bruker (brukerID,epost,passord,brukerType)
-VALUES
-(1, "admin", "123", "admin");
-
-INSERT INTO hund (hundID,navn,rase,brukerID,forID)
-VALUES
-(1, "adminhund", "adminrase",1,1);
 
 INSERT INTO bur(burID, lengdeCm, breddeCm, hoydeCm)
 VALUES
@@ -204,22 +205,42 @@ VALUES
 
 INSERT INTO pris(prisID, beskrivelse, beløp)
 VALUES
-(1, "dagPris", 400),  
-(2, "bading", 200);
-
-INSERT INTO rabatt(rabattID, beskrivelse, prosent)
-VALUES
-(1, "toHunder", 0.2),  
-(2, "treHunder", 0.3),
-(3, "ansatt", 0.2);
+(1, "1Hund", 400), /* pris pr hund viss 1 hund på opphold               400   */ 
+(2, "2Hund", 300), /* pris pr hund viss 2 hunder på opphold             600   */ 
+(3, "3Hund", 250), /* pris pr hund viss 3 hunder eller mer på opphold   750   */   
+(4, "bading", 200);
 
 INSERT INTO innlegg(navn, tekst)
 VALUES
 ("kontaktOss", "innlegg Test Tekst");
 
 
-INSERT INTO anmeldelse (tekst, brukerID)	
+INSERT INTO anmeldelse (tekst, godkjent, brukerID)	
 VALUES
-("<p>Veldig bra hundekennel. Engasjerte ansatte som tok godt vare på hunden min og sørget for at den hadde det bra på oppholdet sitt.</p><p>- Espen Sivertsen</p>", 1),
-("<p>Takk til alle på Bø Hundekennel for nok et koselig opphold for hunden min. Selv om Pluto var litt redd i starten har han begynt å loggre når han forstår at han skal på hundehotellet'</p><p>- Sofie Pedersen</p>", 1),
-("<p>Bra hundehotell. Profesjonelle folk som vet hva de driver med og er optatte av at hundene skal ha det godt.'</p><p>- Ole Monsen</p>", 1);
+("<p>Veldig bra hundekennel. Engasjerte ansatte som tok godt vare på hunden min og sørget for at den hadde det bra på oppholdet sitt.</p><p>- Espen Sivertsen</p>", 1, 1),
+("<p>Takk til alle på Bø Hundekennel for nok et koselig opphold for hunden min. Selv om Pluto var litt redd i starten har han begynt å loggre når han forstår at han skal på hundehotellet'</p><p>- Sofie Pedersen</p>", 1, 1),
+("<p>Bra hundehotell. Profesjonelle folk som vet hva de driver med og er optatte av at hundene skal ha det godt.'</p><p>- Ole Monsen</p>", 1, 1);
+
+
+-- ledigeBurPrDag
+DROP TABLE IF EXISTS ledigeBurPrDag;
+CREATE TABLE ledigeBurPrDag (
+    dato DATE,
+    antallLedigeBur smallint
+);
+
+DROP PROCEDURE IF EXISTS filldates;
+DELIMITER |
+CREATE PROCEDURE filldates(dateStart DATE, dateEnd DATE)
+BEGIN
+  WHILE dateStart <= dateEnd DO
+    INSERT INTO ledigeBurPrDag (dato) VALUES (dateStart);
+    SET dateStart = date_add(dateStart, INTERVAL 1 DAY);
+  END WHILE;
+END;
+|
+DELIMITER ;
+
+CALL filldates('2021-03-01','2021-12-31');
+
+UPDATE ledigeBurPrDag SET antallLedigeBur = 3;
