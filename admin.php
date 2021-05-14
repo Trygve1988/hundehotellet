@@ -26,7 +26,6 @@
         <!-- 2a admin -->
         <form method="POST">
             <div class="hvitBakgrunn">
-                <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
                 <h2>Admin</h2>
                 <p>under arbeid....</p>
             </div> 

@@ -32,9 +32,6 @@ $dblink = kobleOpp();
         <!-- Hvit bakgrunn -->	
         <div class="hvitBakgrunn">
 
-            <!-- Bildebakgrunn -->	
-            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-
             <!-- Skjema -->		
             <form class="skjemaBakgrunn">
             
