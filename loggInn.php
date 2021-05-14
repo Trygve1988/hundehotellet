@@ -27,14 +27,17 @@ $dblink = kobleOpp();
 	<main>
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
-        	<!-- Bildebakgrunn -->	
+        	
+			<!-- Bildebakgrunn -->	
 			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
 			<!-- Skjema -->		
-			<form class="skjemaBakgrunn" method="POST">	
+			<form class="skjemaBakgrunn">	
 
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">	
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>	
 
 				<!-- Overskrift -->
 				<h2>Logg inn</h2>	
@@ -57,9 +60,9 @@ $dblink = kobleOpp();
 				</div>
 
 				<!--Logg inn knapp-->
-				<div class="knappeKlynge">
+				<div class="knappeKlynge hPosKnapp soloBotRightKnapp">
 					<div class="loggInnKnapp">
-						<input class="hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
+						<input class="inputSubmit hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
 					</div>	
 					<!-- Glemt passord og Registrer deg linker -->
 					<div class="ekstraLinker"> 

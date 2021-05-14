@@ -35,34 +35,26 @@ $dblink = kobleOpp();
              <!-- Form-->    
             <form class="skjemaBakgrunn" method="POST">
 
-                <!-- Avbryt knapp 
-                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">-->
+                	<!-- Avbryt knapp 
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>-->
 
                 <!-- Overskrift -->
-                <h1>Pris og info</h1>
-                <div class="pris_og_Info">
-                    <div class="venstre_Pris_Info">
+                    <h1>Pris og info</h1>
                         <table class="prisPrDag">
                             <tr>
                                 <th>Pris pr dag pr hund</th> 
-                             </tr>
-                            <tr>
-                                <td>400 kr</td>
-                            </tr>
-                        </table>
-
-                        <table class="tillegg">
-                            <tr>
                                 <th>Bading</th> 
                             </tr>
                             <tr>
+                                <td>400 kr</td>
                                 <td>200 kr</td>
-                            </tr>
-                        </table>
-
+                             </tr>
+                         </table>
+                    <h1>Informasjon</h1>
+                    <div class="info">
                         <div class="annenInfo">
-
-                            <h1>Mer informasjon</h1>
 
                             <p class="overskrift" >Vetrinær:</p>
                             <p>Vi samarbeider med:</p>
@@ -73,9 +65,8 @@ $dblink = kobleOpp();
                             <p>- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
                             <p>- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
                         </div>
-                    </div>
+
                         <div class="informasjon">
-                            <h1>Informasjon</h1>
 
                             <p class="overskrift">Inn-/Utlevering:</p>
                             <p>Mellom kl 09.00-11.00/16.00-17.00</p>
@@ -93,7 +84,7 @@ $dblink = kobleOpp();
                             <p>- Ta gjenre mednoe hunden kan ligge på for eksempel madrass eller teppe.</p>
                             <p>- Vi har stadr teppe til alle bur.</p>
                         </div>
-                </div>  
+                    </div>  
             </form>
         </div> 
     </main>

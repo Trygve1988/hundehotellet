@@ -228,18 +228,12 @@ main {
 /*****Stop på hentet kode*****/
 
 /* Pris og Info CSS */
-.pris_og_Info{
+.info {
 	display: flex;
 	flex-direction: row;
 }
 
-.venstre_Pris_Info {
-	width: 50%;
-	margin-right: 10px;
-}
-
-
-.prisPrDag, .tillegg , th, td  {
+.prisPrDag, th, td  {
 	border: 1px solid black;
 	background-color: white;
 	width: 50%;
@@ -253,11 +247,10 @@ main {
 	height: auto;
 	padding: 10px 8px 10px 8px;
 	background-color: white;
-	width: 100%;
 }
 
 .annenInfo{
-	width: 480px;
+	width: 450px;
     text-align: justify;
     font-family: Arial;
 	height: auto;
@@ -269,9 +262,6 @@ main {
 	text-decoration: underline;
 
 }
-
-
-
   
 /* **************************** Gunni ***************************** */
 /*Hvit midtstilt bakgrunn*/
@@ -378,20 +368,43 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
 
 /* Knapper*/
 
+/* Knappeposisjoner:*/
+
+/*Knapp i høyre hjørne av form*/
+.hPosKnapp input[type=submit], .hPosKnapp input[type=button] {
+	float: right;
+	margin-right: 6.5%	
+} 
+
+.soloBotRightKnapp {
+	margin-top: 60%;	
+}
+/*
 .knapperad {
 	display:flex;
 	margin: 10px 0;
 	border: 1px;
 	padding: 5px;
+
+}
+*/
+.knapperad {
+	display:flex;
+	margin: 10px 0;
+	border: 1px;
+	padding: 5px;
+
+	
 }
 
 .knappeKlynge {
 	margin-left: 800px;
 }
 
+
 /* Sett klasseselector her!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
  /*Felles elementer for alle knapper: */
- input[type=submit] inputKnapp {
+ input[type=submit].inputSubmit {
  	margin: 25px 0;
  	border-radius: 4px;
 	border-color: #2f3e52; 
@@ -403,13 +416,13 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
  
 
  /* hovedKnapp, f.eks Logg inn, Registrer deg*/
- input[type=submit].hovedKnapp {
+ input[type=submit].hovedKnapp, input[type=button].hovedKnapp {
  	width: 250px;
 	background-color: #2f3e52;
 	color: #ffffff;
  }
 
- input[type=submit].hovedKnapp2 { /*HUSK AT DU KAN BRUKE TO KLASSER, se over!*/
+ input[type=submit].hovedKnapp2, input[type=button].hovedKnapp2 { /*HUSK AT DU KAN BRUKE TO KLASSER, se over!*/
 	width: 270px;
 	margin-bottom: 10px;
 	background-color: #2f3e52;
@@ -417,13 +430,13 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
  }
 
 /* ekstraKnapp, f.eks legg til hund*/
-input[type=submit].ekstraKnapp2 {
+input[type=submit].ekstraKnapp2, input[type=button].ekstraKnapp2 {
 	border-radius:25px;
 	margin: 5px 0;
 }
 
 /*avbrytKnapp*/
-input[type=submit].avbrytKnapp {
+input[type=button].avbrytKnapp, input[type=submit].avbrytKnapp {
 	width: 38px;
 	height: 38px;
 	margin: 0;
@@ -452,24 +465,26 @@ input[type=checkbox].storCheckbox {
 	margin-bottom: 5px;
 	width: 215px;
 }
-/* Forskjellige typer "neste"-knapper*/
-.nesteKnapp  { /* Denne burde rettes opp*/
+
+/* Forskjellige typer "neste"-knapper
+.nesteKnapp  { /* Denne burde rettes opp*
 	margin-left: 89%;
 }
-.nesteKnapp2  { /* Denne burde rettes opp*/
+.nesteKnapp2  { /* Denne burde rettes opp*
 	margin-left: 76%;
 }
-.nesteKnapp3  { /* Denne burde rettes opp*/
+.nesteKnapp3  { /* Denne burde rettes opp*
 	margin-left: 68%;
 }
 
-.nesteKnapp4  { /* Denne burde rettes opp*/
+.nesteKnapp4  { /* Denne burde rettes opp*
 	margin-left: 90%;
 }
 
-.knappIKolonne  { /* Denne burde rettes opp*/
+.knappIKolonne  { /* Denne burde rettes opp*
 	margin-left: 45%;
 }
+*/
 
 /* Linker*/
 
@@ -525,8 +540,8 @@ input[type=checkbox].storCheckbox {
 
 /* **************************** Kristina ***************************** */
 
- /*Felles hover effekt på alle submit knappene*/
- input[type=submit]:hover {
+ /*Felles hover effekt på alle submit/button knappene*/
+ input[type=submit]:hover,  input[type=button]:hover {
 	background-color: #613f75; /*Eksempelfarge*/
 	
  }

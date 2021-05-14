@@ -34,10 +34,12 @@ $dblink = kobleOpp();
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 			
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
 				
 				<!-- Overskrift-->
 				<h2>Bestill opphold</h2>	
@@ -58,12 +60,12 @@ $dblink = kobleOpp();
 						<div class="enKolonneRad">
 							<div class="kolonne1">		
 								<label for="fra">Fra:</label>
-								<input class="inputDate" type="date" name="fra">		
+								<input class="inputDato" type="date" name="fra">		
 							</div>
 							<div class="kolonne2">
 								<!-- Labels og input i kolonne 2-->
 								<label for="til">Til:</label>
-								<input type="date" name="til">	
+								<input class="inputDato" type="date" name="til">	
 							</div>
 						</div>	
 						<h3>Tillegstjenester</h3>
@@ -71,19 +73,24 @@ $dblink = kobleOpp();
 						<div class="soloKolonne">
 							<div class="skjemaKolonner">
 								<input class="storChecbox" type="checkbox" name="hund1">
-								<input class="inputDate" type="text" name="hund1" value="Hund 1">
+								<input class="inputTekst" type="text" name="hund1" value="Hund 1">
 							</div>
 							<div class="skjemaKolonner">
-								<input class="storChecbox" type="checkbox" name="hund2">
-								<input class="inputDate" type="text" name="hund1" value="Hund 1">
+								<input class="storChecbox" type="checkbox" name="hund2"> <!-- Denne checkbox str må sjekkes opp!-->
+								<input class="inputTekst" type="text" name="hund1" value="Hund 1">
 						</div>
 					</div>
-					<!-- Knapperad -->
-					<div class="knapperad">	
-						<button onclick="tilBO2Funksjon()" id="tilBO2" class="hovedKnapp"  title="Tilbake">Tilbake</button>
-						<div class="nesteKnapp2">
-							<button onclick="tilBO4Funksjon()" id="tilBO4" class="hovedKnapp"  title="Neste">Neste</button>
-						</div>
+					<!--Knapperad-->
+					<div class="knapperad">
+							<!-- Tilbake-knapp-->
+							<a href = "bestillOpphold2.php">
+                				<input class="inputSubmit hovedknapp" type="button" value="Tilbake"> 
+            				</a>
+
+							<!-- Neste-knapp-->
+							<a href = "bestillOpphold4.php">
+                				<input class="inputSubmit hovedknapp" type="button" value="Neste"> 
+            				</a>
 					</div>
 				</div>	
 			</form>
