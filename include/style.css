@@ -224,18 +224,12 @@ main {
 /*****Stop på hentet kode*****/
 
 /* Pris og Info CSS */
-.pris_og_Info {
+.info {
 	display: flex;
 	flex-direction: row;
 }
 
-.venstre_Pris_Info {
-	width: 50%;
-	margin-right: 25px;
-}
-
-
-.prisPrDag, .tillegg , th, td  {
+.prisPrDag, th, td  {
 	border: 1px solid black;
 	background-color: white;
 	width: 50%;
@@ -249,8 +243,6 @@ main {
 	height: auto;
 	padding: 10px 8px 10px 8px;
 	background-color: white;
-	width: 100%;
-	margin-right: 25px;
 }
 
 .annenInfo{
