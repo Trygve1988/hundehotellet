@@ -35,7 +35,7 @@ $dblink = kobleOpp();
             <form class="skjemaBakgrunn" method="POST">
 
                 <!-- Overskrift -->
-                    <h1>Pris og info</h1>
+                    <h1>Pris</h1>
                         <table class="prisPrDag">
                             <tr>
                                 <th>Pris pr dag pr hund</th> 
