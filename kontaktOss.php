@@ -28,10 +28,9 @@ $dblink = kobleOpp();
     <?php visNav(); ?>
     <!-- ************************** main ******************************* -->
     <main>
-        <!-- 2a kontakt oss -->
+        <!-- kontakt oss -->
         <div class="hvitBakgrunn">
-            <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-
+         
             <!-- Form-->
             <form class="skjemaBakgrunn">
             <!-- ********************** (Kristina) ********************** -->
