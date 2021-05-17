@@ -12,8 +12,6 @@ $dblink = kobleOpp();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./include/style.css">
-    <link rel="stylesheet" href="./include/KontaktOss.css">-->
-    <link rel="stylesheet" href="./include/takkMelding.scss">-->
     <title>Bø Hundehotell</title>
 
     <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
@@ -24,11 +22,10 @@ $dblink = kobleOpp();
 
 <body>
     <!-- ************************** 1) fellesTop ************************** -->
+        <?php visNav(); ?>
     <!-- ************************** 2) main ************************** -->
     <main>
-    <?php visNav(); ?>
         <!-- 2a kontakt oss -->
-        <!--<form method="POST"> -->
         <div class="hvitBakgrunn">
 
             <!--********************** Kristina ************************** -->
