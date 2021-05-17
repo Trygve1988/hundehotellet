@@ -54,13 +54,12 @@ function visBildeBakgrunn() {
 
 function visNav() { 
     ?> <div class="navbar">
-        <a href="index.php"> <img  class="logo" src="bilder/logohvit.png"> <img class="logotext" src="bilder/teksthvit.png"></a>
+        <a href="index.php"> <img  class="logo" src="bilder/logohvit.png"> <img class="logotext" src="bilder/teksthvit.png">  </a>
         <a id="hjemLink" href="index.php">Hjem</a>
         <a id="aktueltLink" href="aktuelt.php">Aktuelt</a>
         <a id="omOssLink" href="omOss.php">Om Oss</a>
         <a id="priserLink" href="priserOgInfo.php">Pris og info</a>
         <a id="kontaktOssLink" href="kontaktOss.php">Kontakt Oss</a>
-        <a href="admin.php">Admin</a> <!-- står her midlertidig for testing -->
         
         <?php
         // bestill Opphold
