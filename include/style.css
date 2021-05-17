@@ -576,6 +576,32 @@ input[type=checkbox].storCheckbox {
 }
 
 
+/*Admin opphold siden*/
+ /*Opphold admin side*/
+
+ table, .opphold {
+	border-collapse: collapse;
+	width: 50%; /*Størrelse på tabellen*/
+  }
+
+  .opphold tr { 
+    background-color: white; /*Hvit bakgrunn på skjema*/
+  }
+
+  /*Overskrift i tabellene*/
+  .opphold th {
+    text-align: center;
+     background-color: #394f79;
+     color: white;
+     padding: 5px;
+  }
+  .opphold th, td {
+
+	padding: 15px; /*padding til overskrift*/
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+  }
+
 
 
 /*CVC modalen pop up*/

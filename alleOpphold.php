@@ -18,6 +18,8 @@ $dblink = kobleOpp();
 
 <body>
 
+    <!--***********************  Admin ***************************************************-->
+
     <!-- ************************** 1) fellesTop ************************** -->
     <?php visNav(); ?>
 
@@ -25,13 +27,246 @@ $dblink = kobleOpp();
     <main>
 
         <!-- erAnsatt sjekk-->
-        <?php if (!erAnsatt()) { header('Location: loggInn.php'); } ?>
+        <?php if (!erAnsatt()) {
+            header('Location: loggInn.php');
+        } ?>
 
         <!-- 2 alle opphold  -->
         <form method="POST">
             <div class="hvitBakgrunn">
-                <h2>alle opphold</h2>
-                <p>under arbeid....</p>
+
+                <h1>Ferdige opphold</h1>
+                <table class="opphold FerdigOpphold">
+                    <thead>
+                        <tr>
+                            <th>Bestilling ID</th>
+                            <th>Start</th>
+                            <th>Slutt</th>
+                            <th>Bestilt</th>
+                            <th>Betalt</th>
+
+                            <th>Total pris</th>
+                            <th>Opphold ID</th>
+                            <th>Bade</th>
+                            <th>Hunde ID</th>
+                            <th>Navn</th>
+                            <th>Bur ID</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--Tabell 2-->
+
+                <h1>Pågående opphold</h1>
+                <table class="opphold Pågående">
+                    <thead>
+                        <tr>
+                            <th>Bestilling ID</th>
+                            <th>Start</th>
+                            <th>Slutt</th>
+                            <th>Bestilt</th>
+                            <th>Betalt</th>
+
+                            <th>Total pris</th>
+                            <th>Opphold ID</th>
+                            <th>Bade</th>
+                            <th>Hunde ID</th>
+                            <th>Navn</th>
+                            <th>Bur ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--Tabell 3-->
+                <h1>Ikke begynte opphold</h1>
+                <table class="opphold IkkeBegyntOpphold">
+                    <thead>
+                        <tr>
+                            <th>Bestilling ID</th>
+                            <th>Start</th>
+                            <th>Slutt</th>
+                            <th>Bestilt</th>
+                            <th>Betalt</th>
+
+                            <th>Total pris</th>
+                            <th>Opphold ID</th>
+                            <th>Bade</th>
+                            <th>Hunde ID</th>
+                            <th>Navn</th>
+                            <th>Bur ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
             </div>
         </form>
 
