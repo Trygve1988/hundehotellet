@@ -42,56 +42,55 @@ $dblink = kobleOpp();
 				
 				<!-- Overskrift-->
 				<h2>Bestill opphold</h2>	
-
-				<div>
+				<!-- Valg om hundene skal være i samme bur (lagt på is) -->
+				<!--<label for="sammeBur">Skal hundene være i samme buret:</label>
+				<select class="inputSelect" name="sammeBur">
+					<option value="velg">--Velg--</option>
+					<option value="hannhund">Ja</option>
+					<option value="tispe">Nei</option>
+				</select>
+				</div>
+				-->
+				<h2 class="overskrift2">Tidsperiode</h2>
+				
+				<div class="soloKolonne">
+					<div class="kolonne1">		
+						<label for="fra">Fra:</label>
+						<input class="inputDato" type="date" name="fra">		
+							
+						<!-- Labels og input i kolonne 2-->
+						<label for="til">Til:</label>
+						<input class="inputDato" type="date" name="til">	
+					</div>
+		
+					<h2 class="overskrift2">Tillegstjenester</h2>
+					<p>Vi tilbyr bading til hunden(e). Prisen for bading pr. hund pr. bad er 200kr</p>
 					<div class="soloKolonne">
-						<!-- Valg om hundene skal være i samme bur (lagt på is) -->
-						<!--<label for="sammeBur">Skal hundene være i samme buret:</label>
-						<select class="inputSelect" name="sammeBur">
-							<option value="velg">--Velg--</option>
-							<option value="hannhund">Ja</option>
-							<option value="tispe">Nei</option>
-						</select>
+						<div class="skjemaKolonner">
+							<input class="storCheckbox" type="checkbox" name="hund1">
+							<input class="inputTekst" type="text" name="hund1" value="Hund 1">
 						</div>
-						-->
-						
-						<h3>Tidsperiode</h3>
-						<div class="enKolonneRad">
-							<div class="kolonne1">		
-								<label for="fra">Fra:</label>
-								<input class="inputDato" type="date" name="fra">		
-							</div>
-							<div class="kolonne2">
-								<!-- Labels og input i kolonne 2-->
-								<label for="til">Til:</label>
-								<input class="inputDato" type="date" name="til">	
-							</div>
-						</div>	
-						<h3>Tillegstjenester</h3>
-						<p>Vi tilbyr bading til hunden(e). Prisen for bading pr. hund pr. bad er 200kr</p>
-						<div class="soloKolonne">
-							<div class="skjemaKolonner">
-								<input class="storChecbox" type="checkbox" name="hund1">
-								<input class="inputTekst" type="text" name="hund1" value="Hund 1">
-							</div>
-							<div class="skjemaKolonner">
-								<input class="storChecbox" type="checkbox" name="hund2"> <!-- Denne checkbox str må sjekkes opp!-->
-								<input class="inputTekst" type="text" name="hund1" value="Hund 1">
+						<div class="skjemaKolonner">
+							<input class="storCheckbox" type="checkbox" name="hund2"> 
+							<input class="inputTekst" type="text" name="hund1" value="Hund 1">
 						</div>
 					</div>
-					<!--Knapperad-->
-					<div class="knapperad">
-							<!-- Tilbake-knapp-->
-							<a href = "bestillOpphold2.php">
-                				<input class="inputSubmit hovedknapp" type="button" value="Tilbake"> 
-            				</a>
-
-							<!-- Neste-knapp-->
-							<a href = "bestillOpphold4.php">
-                				<input class="inputSubmit hovedknapp" type="button" value="Neste"> 
-            				</a>
-					</div>
-				</div>	
+				</div>
+			<!--Knapperad-->
+			<div class="knappeRad">
+				<div class="knapp1IRad">
+					<!-- Tilbake-knapp-->
+					<a href = "bestillOpphold.php">
+		           		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+		       		</a>
+				</div>
+				<div class="etterKolonnerKnapp">
+					<!-- Neste-knapp-->
+					<a href = "bestillOpphold3.php">
+		            	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
+		            </a>	
+				</div>
+			</div>			
 			</form>
 		</div>	
 	</main>

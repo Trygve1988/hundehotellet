@@ -29,73 +29,71 @@ $dblink = kobleOpp();
 	    <!-- erLoggetInn sjekk -->
         <?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
-		<!-- Hvit bakgrunn-->
-		<div class="hvitBakgrunn">
-            <!-- Skjema -->	
-		    <form class="skjemaBakgrunn">
-
-               	<!-- Avbryt knapp -->
-				<a href = "index.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>
+		<!-- Hvit bakgrunn -->  
+        <div class="hvitBakgrunn">      
+            
+            <!-- Skjema --> 
+            <form class="skjemaBakgrunn">
+                
+                <!-- Avbryt knapp -->
+                <a href = "index.php">
+                    <input class="avbrytKnapp" type="button" value="X">
+                </a>
 
                 <!-- Overskrift -->
                 <h2>Rediger informasjon</h2>
                 <p>Innlogget som: <span>bruker</span></p>
-                <h3>Min profil</h3>
+                <h3 class="overskrift2">Min profil</h3>
 
                 <div class="skjemaKolonner">
-                <div class="kolonne1">
-                    <!-- Labels og input i kolonne 1 -->
-                    <label for="fornavn">Fornavn:</label>
-                    <input class="inputTekst" type="text" name="fornavn">
+                    <div class="kolonne1">
+                        <!-- Labels og input i kolonne 1 -->
+                        <label for="fornavn">Fornavn:</label>
+                        <input  class="inputTekst" type="text" name="fornavn">
 
-                    <label for="fDato">Fødselsdato:</label>
-                    <input class="inputDato" type="date" name="fDato">	
+                        <label for="fDato">Fødselsdato:</label>
+                        <input class="inputDato" type="date" name="fDato">  
 
-                    <label for="tlf">Telefonnummer:</label>
-                    <input class="inputTekst" type="text" name="tlf">
+                        <label for="tlf">Telefonnummer:</label>
+                        <input class="inputTekst" type="text" name="tlf">
 
-                    <label for="adresse">Adresse:</label>
-                    <input class="inputTekst" type="text" name="adresse">
-
-                    <label for="postNr">Postnummer:</label>
-                    <input class="inputTekst" type="text" name="postNr">
-                </div>
-
-                <div>
-                    <!-- Labels og input i kolonne 2-->
-                    <label for="etternavn">Etternavn:</label>
-                    <input class="inputTekst" type="text" name="etternavn">
-                    
-                    <label for="epost">E-post:</label>
-                    <input class="inputTekst" type="text" name="epost">
-                    
-                    <label for="gjeldendePassord">Gjeldende passord</label>
-                    <input class="inputPassord" type="password" name="gjeldendePassord">
-                    <!-- HER BURDE passordet SETTES INN KRYPTERT!)-->	
-
-                    <label for="nyttPassord">Nytt passord:</label>
-                    <input class="inputPassord" type="password" name="nyttPassord">	
-
-                    <!-- Vis passord checkbox! -->
-                    <div class="visPassord">
-                        <label>Vis passord</label>
-                        <input class="inputChecbox" type="checkbox" name="visPassord" value="visPassord">
+                        <label for="adresse">Adresse:</label>
+                        <input class="inputTekst" type="text" name="adresse">
+                        
+                        <label for="postNr">Postnummer:</label>
+                        <input class="inputTekst" type="text" name="postNr">
                     </div>
-                    <!-- SKRIV INN PASSORDTILBAKEMELDING-->
-                    <div class="visPassord2">
-                        <p>Passord krav:</p>
-                        <p> - SETT INN PASSORD TILBAKEMELDING</p>
+                    
+                    <div>
+                        <!-- Labels og input i kolonne 2-->
+                        <label for="etternavn">Etternavn:</label>
+                        <input class="inputTekst" type="text" name="etternavn">
+
+                        <label for="epost">E-post:</label>
+                        <input class="inputTekst" type="text" name="epost">
+                    
+                        <label for="passord">Ønsket passord:</label>
+                        <input class="inputPassord" type="password" name="passord" required id="passord">   
+                        <!-- Vis passord checkbox! -->
+                        <div class="visPassord">
+                            <input class="inputCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
+                        </div>
+                        <!-- SKRIV INN PASSORDTILBAKEMELDING-->
+                        <div class="passordKrav">
+                            <p>Passord krav:</p>
+                            <p id="status" melding()></p>
+                        </div>
                     </div>
                 </div>
-                </div>
 
-                <div class="hPosKnapp">
+                <div class="etterKolonnerKnapp">
                     <!--Registrer knapp-->
-                    <input class="inputSubmit hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker">
+                        <a href="index.php">
+                            <input class="hovedKnapp inputSubmit" type="submit" name="oppdaterBruker" value="Lagre"> <!-- HVOR SKAL DENNE LEDE?? -->
+                        </a>
                 </div>
-            </form>   
+                </div>
+            </form>
         </div>	
 	</main>
 	<!-- Til-toppen-knapp -->

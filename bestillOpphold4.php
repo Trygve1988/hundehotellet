@@ -30,8 +30,6 @@ $dblink = kobleOpp();
 		
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
-
-			<!-- Bildebakgrunn -->
 	
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
@@ -70,7 +68,7 @@ $dblink = kobleOpp();
 						<input class="inputDato" type="date" name="utlopsdato">
 					</div>
 					<div>
-						<!-- Labels og input i kolonne 2-->
+						<!-- Labels og input i andre del av skjemaet-->
 						<label for="kortNr">Kortnummer:</label>
 						<input  class="inputTekst" type="text" name="til">			
 
@@ -89,28 +87,29 @@ $dblink = kobleOpp();
 							</div>
 						</div>
 						<!-- **************************(Gunni)**************************-->
-						<label for="vilkaar">Kryss av for å <a class="blaaTekst link" href="#" >godta vilkår:</a></label> 
+						<!-- Godta vilkår -->
+						<label for="vilkaar">Kryss av for å <a class="blaaTekst" href="#" >godta vilkår:</a></label> 
 						<input class="litenCheckbox" type="checkbox" name="til">		
-
-					</div>
-					
-					<!--Knapperad-->
-					<div class="knapperad">
-						<!-- Tilbake-knapp-->
-						<a href = "bestillOpphold3.php">
-                			<input class="hovedknapp" type="button" value="Tilbake"> 
-            			</a>
-
-						<!-- Bekreft Bestilling SETT INN TILBAKEMELDING PÅ REGISTRERT OPPHOLD -->
-						<a href = "bestillingBekreftelse.php">
-							<input class="inputSubmit hovedKnapp" type="submit" name="registrerBestilling" value="Registrer bestilling">	 
-					 	</a>
 						
 					</div>
-				</div>
+				</div>	
+				<!--Knapperad-->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						<!-- Tilbake-knapp-->
+						<a href = "bestillOpphold.php">
+							<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+		            	</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Neste-knapp-->
+						<a href = "bestillOpphold3.php">
+	                		<input class="inputSubmit hovedKnapp2" type="submit" value="Registrer bestilling"> 		            	
+	                	</a>	
+					</div>
+				</div>			
 			</form>
 		</div>
-
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->

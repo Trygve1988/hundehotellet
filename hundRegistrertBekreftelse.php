@@ -28,12 +28,9 @@ $dblink = kobleOpp();
   
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
-
-        <!-- Hvit bakgrunn -->	
-        <div class="hvitBakgrunn">
-
-            <!-- Bildebakgrunn -->	
-
+  		
+		<!-- Hvit bakgrunn -->	
+ 		 <div class="hvitBakgrunn">
             <!-- Skjema -->		
             <form class="skjemaBakgrunn">
             
@@ -43,12 +40,16 @@ $dblink = kobleOpp();
 				</a>	
 
                 <!-- Overskrift -->
-                <h2>Registrer ny hund</h2>	
+                <h2>Hunden er registrert</h2>	
 
-                <div>
-                    <p>Hunden er registrert!</p>
+                <div class="soloKolonne">
+                    <p>*Hunden* er registrert! Hvis du ønsker å se eller endre informasjonen på de registrerte hundene dine, kan du gå inn på <a class="link" href="minSide.php">Min Side.</a></p>
                 </div>
-            </form>
+                <a href="index.php">
+                    <input class="hovedKnapp inputButton" type="button" name="oppdaterHund" value="Tilbake til forsiden"> 
+                </a>
+            </form>		
+        
         </div>
     </main>
 	<!-- Til-toppen-knapp -->

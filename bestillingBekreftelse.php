@@ -30,13 +30,12 @@ $dblink = kobleOpp();
 
 		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
-			<!-- Bildebakgrunn-->
 	
 			<!-- Skjema-->	
 			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
-				<input class="avbrytKnapp" type="submit" name="avbryt" value="X">
+				<input class="inputButton avbrytKnapp" type="button" name="avbryt" value="X">
 
 				<!-- Overskrift -->
 				<h2>Bekreftelse på bestilling</h2>
@@ -44,7 +43,7 @@ $dblink = kobleOpp();
                 <p>SETT IN TEKST FOR BEKREFTELSE PÅ OPPHOLD!!</p> 
 				<!-- Tilbake til forsiden- knapp -->
                 <a href = "index.php">   
-                <input class="ekstraKnapp2" type="button" name="tilIndex" value="Tilbake til forsiden">
+                <input class="inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til forsiden">
 								
 			</form>
 		</div>
