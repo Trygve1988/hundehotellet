@@ -51,7 +51,6 @@ function visBildeBakgrunn() {
      </div><?php
 }
 
-
 function visNav() { 
     ?> <div class="navbar">
         <a href="index.php"> <img  class="logo" src="bilder/logohvit.png"> <img class="logotext" src="bilder/teksthvit.png">  </a>

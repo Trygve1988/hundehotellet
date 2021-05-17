@@ -1,17 +1,39 @@
 <?php
-$dblink = mysqli_connect("itfag.usn.no", "h20APP2000gr5", "pw5", "h20APP2000grdb5");
+include_once "funksjoner.php";
+session_start();
+$dblink = kobleOpp();
 
-$anmeldelseID = $_GET['q'];
-$sql = "SELECT * FROM anmeldelse WHERE anmeldelseID = '$anmeldelseID';"; 
+$anmeldelseStr = ""; 
+$sql = "SELECT * FROM anmeldelse WHERE godkjent = 1;"; 
 $resultat = mysqli_query($dblink,$sql);
+while($rad = mysqli_fetch_assoc($resultat)) {
+    $anmeldelseStr =  $anmeldelseStr.$rad['tekst'] . ",";
+}
 
-//er det flere anmeldelser?
-if (mysqli_num_rows($resultat)==0) { 
-    echo -1; 
+echo $anmeldelseStr;
+
+?>
+
+
+
+
+
+
+<?php/*
+include_once "funksjoner.php";
+session_start();
+$dblink = kobleOpp();
+
+$anmeldelseTab = array();
+$pos = 0;
+
+$sql = "SELECT * FROM anmeldelse;"; 
+$resultat = mysqli_query($dblink,$sql);
+while($rad = mysqli_fetch_assoc($resultat)) {
+    $anmeldelseTab[$pos] = $rad['tekst'];
+    $pos++;
 }
-else {
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        echo $rad['tekst']; 
-    }
-}
+
+echo json_encode($anmeldelseTab);
+*/
 ?>
