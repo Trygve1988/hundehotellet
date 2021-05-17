@@ -301,12 +301,12 @@ main {
 	max-width: 45%;
 }
 
-/* FERDIG Setter bredde på EN kolonne. Denne brukes når den er på egenhånd*/
+/* Setter bredde på EN kolonne. Denne brukes når den er på egenhånd*/
 .soloKolonne { 
 	max-width: 52%;
 }
 
-/* FERDIG Kolonne 1 av 2, avstand til kolonne 2*/
+/* Kolonne 1 av 2, avstand til kolonne 2*/
 .kolonne1 {
 	margin-right: 5%;
 }
@@ -317,34 +317,39 @@ div .gjentaPKolonne {
 	margin-top: 104px;
 }
 
+/*Hovedoverskrift*/
+.hovedOverskrift {
+	margin-top: 50px;
+	font-size: 35px;
+}
+
 /* Overskrift til overskrift 2-stil (undertittel)*/
 .overskrift2 {
 	font-size: 24px;
 	margin-top: 40px;
 }
 
-
-/* FERDIG Tekst i bestillOpphold4, da denne skal ta mindre plass*/
-.vanligTekst {
+/* Tekst i bestillOpphold4, da denne skal ta mindre plass*/
+.mindreTekst {
 	margin-bottom: -5px;
 } 
 
-
-/*Vis passord typer LEGGE TIL FLOAT RIGHT?? */
+/* Vis passord typer LEGGE TIL FLOAT RIGHT?? */
 .visPassord {
 	float: right;
   	margin: -23px 0px 10px 15px;
     font-size: 15px;
     font-style: italic;
 }
-/*FERDIG Passordkrav - Tidligere kalt passord2""*/
+
+/* Passordkrav */
 .passordKrav {
     position: absolute;
     margin:  -25px 10px 10px 0; 
     font-size: 15px;
 }
 
-/* FERDIG Plasserer linken tett under et element (f.eks under input-element!)*/
+/* Plasserer linken tett under et element (f.eks under input-element!)*/
 .hPosLink {
 	display: block;
 	position: absolute;
@@ -354,7 +359,7 @@ div .gjentaPKolonne {
   	color: black;
 } 
 
-/*FERDIG Felles elementer i forskjellige input-typer*/
+/* Felles elementer i forskjellige input-typer*/
 input[type=text].inputTekst, input[type=password].inputPassord, input[type=date].inputDato, textarea.tekstboks, select.inputSelect {
 	display: inline-block;
 	box-sizing: border-box;
@@ -368,7 +373,7 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
 	font-size: 19px;
 }
 
-/* FERDIG Textarea, høyde lik tre input- felt*/
+/* Textarea, høyde lik tre input- felt*/
 .tekstfelt1 {
 	height: 250px;
 }
@@ -377,27 +382,28 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
 
 /* Knappeposisjoner:*/
 
-/*FERDIG Plasserer knappen etter kolonne*/
+/* Plasserer knappen etter kolonne*/
 .etterKolonnerKnapp {
 	float:right;
 	margin-right: 6.1%;
 }
 
-/*FERDIG Plasserer knappeklyngen nederst til høyre i skjemaet (f.eks i loggInn.html)*/
+/* Plasserer knappeklyngen nederst til høyre i skjemaet (f.eks i loggInn.html)*/
 .knappeKlyngeHB {
 	margin-top: 100px;
 }
 
-/*FERDIG Knapperad*/
+/* Knapperad*/
 .knappeRad {
 	display: block;
 }
-/*FERDIG Første knappen i en knapperad, vanligvis "tilbake-knapp" */
+
+/* Første knappen i en knapperad, vanligvis "tilbake-knapp" */
 .knapp1IRad {
 	float:left;
-
 }
- /*FERDIG Felles elementer for alle knapper: */
+
+ /* Felles elementer for alle knapper: */
  input[type=submit].inputSubmit, input[type=button].inputButton {
  	margin: 25px 0;
  	border-radius: 4px;
@@ -407,14 +413,14 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
  	text-decoration: none;
  }
  
- /* FERDIG hovedKnapp, f.eks Logg inn, Registrer deg */
+ /* hovedKnapp, f.eks Logg inn, Registrer deg */
  input[type=submit].hovedKnapp, input[type=button].hovedKnapp {
  	width: 250px;
  	font-size: 20px;
 	background-color: #2f3e52;
 	color: #ffffff;
  }
- /* FERDIG bredere hovedknapp, denne funker ikke sammen med hovedKnapp! */
+ /* Bredere hovedknapp */
  input[type=submit].hovedKnapp2, input[type=button].hovedKnapp2 { 
 	width: 270px;
 	margin-bottom: 10px;
@@ -422,20 +428,20 @@ input[type=text].inputTekst, input[type=password].inputPassord, input[type=date]
 	color: #ffffff;
  }
 
-/*FERDIG Logg-inn-knapp, gjør plass til tekst under knappen*/
+/* Logg-inn-knapp, gjør plass til tekst under knappen */
 .loggInnKnapp input[type=submit] {
 	margin-bottom: 5px;
 	width: 215px;
 }
 
-/* FERDIG??ekstraKnapp, f.eks legg til hund*/
+/* EkstraKnapp, f.eks legg til hund */
 input[type=submit].ekstraKnapp, input[type=button].ekstraKnapp {
 	border-radius:25px;
 	margin: 5px 0;
 	background-color: #ffffff;
 }
 
-/*Avbryt-knapp*/
+/* Avbryt-knapp */
  input[type=button].avbrytKnapp {
 	float: right;
 	width: 38px;
@@ -452,7 +458,7 @@ input[type=checkbox].litenCheckbox, input[type=radio].inputRadio {
 	height: 16px;
 }
 
-/*Stor størrelse på checbox*/
+/* Stor størrelse på checbox*/
 input[type=checkbox].storCheckbox {
 	width: 45px; 
 	height: 45px;
@@ -461,12 +467,13 @@ input[type=checkbox].storCheckbox {
 /* Linker*/
 
  /* Link-tekst */
- /* link 1 av 2 på en rad, setter mellomrom mellom link 1 og 2*/
+ 
+ /* link 1 av 2 på en rad, setter mellomrom mellom link 1 og 2 */
  .link1 {
  	padding-right: 32px;
  }
  
-/*Linkrad med to linker*/
+/* Linkrad med to linker */
  .ekstraLinker a { 
  	display: inline-block;
  	margin-top: 0px;
@@ -474,21 +481,22 @@ input[type=checkbox].storCheckbox {
  	color: black;
  	text-decoration: none; 
  }
- /*Vanlig linktekts, for eksempel i registrerDeg.php*/
+
+ /*Vanlig linktekts, for eksempel i registrerDeg.php */
   .ekstraLink  {
   	font-size: 15px;
   	margin-top: 0;
   	margin-bottom: 35px;
   	text-decoration: none; 
   }
-  /*Blå tekst*/
+  /* Blå tekst */
   .blaaTekst {
   	color: blue;
   	font-style: italic;
 	text-decoration: underline;
   }
 
-/*Link i normal tilstand*/
+/* Link i normal tilstand */
 .link {
 	color: #404040;
 	text-decoration: underline; 
@@ -505,7 +513,6 @@ input[type=checkbox].storCheckbox {
   color: #49116f;
   text-decoration: underline; 
 }
-
 
 
 /* **************************** Kristina ***************************** */

@@ -14,26 +14,26 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** main **************************-->
     <main>
 
         <!-- erAdmin sjekk -->
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
         <!-- 2a admin -->
-        <form method="POST">
+        <form >
             <div class="hvitBakgrunn">
-                <h2>Admin</h2>
+                <h2 class="hovedOverskrift">Admin</h2>
                 <p>under arbeid....</p>
             </div> 
         </form> 
 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** fellesBunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 

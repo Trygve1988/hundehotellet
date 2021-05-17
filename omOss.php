@@ -19,23 +19,22 @@ $dblink = kobleOpp();
 
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** main ******************************* -->
     <main>
-
-        <!-- 2a omOss -->
+        <!-- ********************** (Even) ***************************** -->
         <div class="hvitBakgrunn">
     
              <!-- Form-->    
-            <form class="skjemaBakgrunn" method="POST">
+            <form class="skjemaBakgrunn">
 
                 <!-- Avbryt knapp 
                 <input class="avbrytKnapp" type="submit" name="avbryt" value="X">-->
 
                 <!-- Overskrift -->
-                <h2>Om oss</h2>
+                <h2 class="hovedOverskrift">Om oss</h2>
 
                 <p class="omOssText">Bø Hundehotell holder til på Lektorvegen 91, i Bø i Telemark. Det er landelige omgivelser med store luftegårder, og fine turområder.
                 Vi seks ansatt som jobber her på Bø Hundehotell, vi har vært i Hundehotell businessen i 6år, vi startet opp for først gang den 12.04.2010. Den gang var det bare
@@ -87,7 +86,6 @@ $dblink = kobleOpp();
         </div> 
 
     </main>
-
 
     <!-- ************************** 3) fellesBunn **************************-->
     <?php visFooter(); ?>

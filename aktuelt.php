@@ -18,21 +18,20 @@ $dblink = kobleOpp();
 
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** main ******************************* -->
     <main>
 
-        <!-- 2a aktuelt -->
         <div class="hvitBakgrunn">
 
-            <!-- Form-->
-            <form class="skjemaBakgrunn" method="POST">
+            <!-- Skjema -->
+            <form class="skjemaBakgrunn">
                 <div class="aktuelt">
                     <div class="mellomromMellomInnlegg">
-                        <!--Margin-bottom funket ikke, derfor måtte det lages en div som lager luft mellom innleggene -->
-                        <h2>Aktuelt</h2>
+                        <!-- Margin-bottom funket ikke, derfor måtte det lages en div som lager luft mellom innleggene -->
+                        <h2 class="hovedOverskrift">Aktuelt</h2>
                         <p>Her kan du lese om det som skjer på Bø Hundehotell.</p>
                     </div>
                     <div class="mellomromMellomInnlegg">
@@ -55,14 +54,12 @@ $dblink = kobleOpp();
                         </p>
                     </div>
                 </div>
-
-
+            </form> 
         </div>
-        </form>
+
         <!-- ************************** 3) fellesBunn **************************-->
         <?php visFooter(); ?>
         <?php visToppKnapp(); ?>
 
 </body>
-
 </html>

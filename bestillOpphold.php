@@ -19,20 +19,21 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
 
-	<!-- ************************** 2) main (Gunni) **************************-->
+	<!-- ************************** main  ************************** -->
 	<main>
 
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
-
-		<!-- Hvit bakgrunn-->
+		
+		<!-- ************************ (Gunni) ****************************** -->
+		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 	
-			<!-- Skjema-->	
+			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
@@ -41,7 +42,7 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h2>Bestill opphold</h2>
+				<h2 class="hovedOverskrift">Bestill opphold</h2>
 			
 				<h3>Velg hund(er):</h3>
 				<div>
@@ -62,17 +63,16 @@ $dblink = kobleOpp();
 					<a href = "bestillOpphold2.php">
 	                	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
 	            	</a>
-            	</div>
+            	</div>	
+				
+				<!-- ************************ (Trygve) ****************************** -->
+				<!-- bestillOpphold -->
+				<?php velgHund($dblink); ?> 
 			</form>
 		</div>
 	</main>
-	<!-- Til-toppen-knapp -->
-	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
 
-	<!-- 2g bestillOpphold -->
-	<?php velgHund($dblink); ?> 
-
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn ************************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

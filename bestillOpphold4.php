@@ -19,15 +19,16 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main (Gunni)**************************-->
+	<!-- ************************** main ******************************* -->
 
 	<main>
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 		
+		<!-- ************************ (Gunni) ************************** -->
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 	
@@ -40,11 +41,11 @@ $dblink = kobleOpp();
 				</a>
 				
 				<!-- Overskrift -->	
-				<h2>Bestill opphold</h2>
+				<h2 class="hovedOverskrift">Bestill opphold</h2>
 
 				<h2 class="overskrift2">Oppsummering</h2>
 				<!-- Her må det refereres til databsen! -->
-				<div class="vanligTekst">
+				<div class="mindreTekst">
 					<p><b>Hunder:</b> <span>hund1</span>, <span>hund2</span> </p> 
 					<p><b>Dato:</b> <span>(dato)</span> til <span>(dato)</span> 
 					<p><b>Bading:</b> <span>hund1</span> </p>
@@ -60,7 +61,7 @@ $dblink = kobleOpp();
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
-						<!-- Labels og input i kolonne 1-->			
+						<!-- Labels og input i kolonne 1 -->			
 						<label for="kortholder">Kortholder:</label>
 						<input class="inputTekst" type="text" name="kortholder">		
 
@@ -68,13 +69,13 @@ $dblink = kobleOpp();
 						<input class="inputDato" type="date" name="utlopsdato">
 					</div>
 					<div>
-						<!-- Labels og input i andre del av skjemaet-->
+						<!-- Labels og input i kolonne 2 -->
 						<label for="kortNr">Kortnummer:</label>
 						<input  class="inputTekst" type="text" name="til">			
 
 						<label for="ccv">CCV/CVC:</label>
-						<!-- ************************** CVC (Kristina)**************************-->
-						<!--CVC modalen (Kristina) -->
+						<!-- ************************** CVC (Kristina) ************************* -->
+						<!--CVC modalen -->
 						<button id="cvcModalKnapp">?</button>
 						<input class="inputTekst" type="text" placeholder="De tre siste sifrene på cvv nummeret" name="cvv" required value>
 						<!--CVC modalen -->
@@ -86,24 +87,24 @@ $dblink = kobleOpp();
 								<img class="cvvkode" src="/bilder/ccv.png" alt="Bilde av hvor du finner CVC koden på visakortet">
 							</div>
 						</div>
-						<!-- **************************(Gunni)**************************-->
+						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
 						<label for="vilkaar">Kryss av for å <a class="blaaTekst" href="#" >godta vilkår:</a></label> 
 						<input class="litenCheckbox" type="checkbox" name="til">		
 						
 					</div>
 				</div>	
-				<!--Knapperad-->
+				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
-						<!-- Tilbake-knapp-->
-						<a href = "bestillOpphold.php">
+						<!-- Tilbake-knapp -->
+						<a href = "bestillOpphold3.php">
 							<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
 		            	</a>
 					</div>
 					<div class="etterKolonnerKnapp">
-						<!-- Neste-knapp-->
-						<a href = "bestillOpphold3.php">
+						<!-- Registrer bestilling-knapp -->
+						<a href = "bestillingBekreftelse.php">
 	                		<input class="inputSubmit hovedKnapp2" type="submit" value="Registrer bestilling"> 		            	
 	                	</a>	
 					</div>
@@ -112,7 +113,7 @@ $dblink = kobleOpp();
 		</div>
 	</main>
 
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn ************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

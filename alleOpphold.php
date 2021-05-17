@@ -18,24 +18,24 @@ $dblink = kobleOpp();
 
 <body>
 
-    <!--***********************  Admin ***************************************************-->
+    <!--***********************  Admin ********************************* -->
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** main ******************************* -->
     <main>
 
-        <!-- erAnsatt sjekk-->
+        <!-- erAnsatt sjekk -->
         <?php if (!erAnsatt()) {
             header('Location: loggInn.php');
         } ?>
 
-        <!-- 2 alle opphold  -->
-        <form method="POST">
+        <!-- alle opphold  -->
+        <form>
             <div class="hvitBakgrunn">
 
-                <h1>Ferdige opphold</h1>
+                <h2 class="hovedOverskrift">Ferdige opphold</h2>
                 <table class="opphold FerdigOpphold">
                     <thead>
                         <tr>
@@ -112,7 +112,7 @@ $dblink = kobleOpp();
                     </tbody>
                 </table>
 
-                <!--Tabell 2-->
+                <!-- Tabell 2 -->
 
                 <h1>Pågående opphold</h1>
                 <table class="opphold Pågående">
@@ -189,7 +189,7 @@ $dblink = kobleOpp();
                     </tbody>
                 </table>
 
-                <!--Tabell 3-->
+                <!-- Tabell 3 -->
                 <h1>Ikke begynte opphold</h1>
                 <table class="opphold IkkeBegyntOpphold">
                     <thead>
@@ -264,15 +264,11 @@ $dblink = kobleOpp();
                     </tbody>
                 </table>
 
-
-
-
             </div>
         </form>
-
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** fellesBunn **************************** -->
     <?php visFooter(); ?>
     <?php visToppKnapp(); ?>
 

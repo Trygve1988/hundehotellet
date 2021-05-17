@@ -15,20 +15,20 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** (Gunni) **************************-->
+    <!-- ************************** main ******************************* -->
     <main> 
 
     	<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
+        <!-- ************************ (Gunni) ****************************** -->
 		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
-			<!-- Bildebakgrunn-->
-	
-			<!-- Skjema-->	
+
+			<!-- Skjema -->	
             <form class="skjema">
 
                 <!-- Avbryt knapp -->
@@ -37,10 +37,10 @@
 				</a>
                 
                 <!-- Overskrift -->
-                <h2>Min side</h2>
+                <h2 class="hovedOverskrift">Min side</h2>
                 <p>Innlogget som: <span></span></p>
             
-                <!-- "Min profil" -->
+                <!-- Min profil -->
                 <h3>Min profil</h3>
                 <table class="kundeTab">	
                     <tr>
@@ -61,13 +61,13 @@
                     </tr>
                 </table>
          
-                <!--Knapperad-->
+                <!-- Knapperad -->
 				<!-- "Rediger / oppdater kunde-info-knapp -->
 				<a href = "oppdaterKundeInfo.php">
                 	<input class="hovedknapp" type="oppdaterKundeInfo" value="Rediger"> 
             	</a>
 		    
-                <!-- "Mine hunder" -->
+                <!-- Mine hunder -->
                 <h3>Mine hunder</h3>
           
                 <table class="hundTab">	
@@ -113,19 +113,19 @@
                     </tr>
                 </table>
                 
-                <!--Knapperad-->
+                <!-- Knapperad -->
 				
 				<div class="knapperad"><
                     <!-- Endre hundeinfo- knapp -->
                     <a href = "oppdaterHundInfo.php">
                 	    <input class="hovedknapp" type="button" value="Rediger"> 
             	    </a>
-                    <!-- Registrer ny hund-\knapp-->
+                    <!-- Registrer ny hund-\knapp -->
                     <a href = "registrerHund.php">
                         <input class="hovedKnapp ekstraKnapp2" type="button" value="Registrer ny hund">
                     </a>
                     
-                <!-- "Mine opphold" -->
+                <!-- Mine opphold -->
                 <h3>Mine opphold</h3>
                 <table class="oppholdTab">	
                     <tr>
@@ -142,27 +142,27 @@
                     </tr>
                 </table>
                     
-                <!--Knapperad-->
+                <!-- Knapperad -->
 				
 				<!-- Se kundeopphol oversikt (for kundebrukere) -->
 				<a href = "alleOppholdforKunde.php">
                 	<input class="hovedknapp" type="button" value="Tilbake"> 
             	</a>
 				
-                 <!-- ************************** 2) main (Trygve) **************************-->        
+                <!-- ************************** (Trygve) ************************** -->        
                     
                 <?php visInnloggetInfo($dblink); ?>
                 <?php visMineHunder($dblink) ?>
 
                 <!-- registrerHund -->
                 <a href="registrerHund.php">registrerHund</a>
-
+                <!-- ************************** (Trygve) *************************** -->
                 <?php //visBestillinger($dblink); UNDER ARBEID!!!!!?> 
             </form> 
         <div> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** 3) fellesBunn ********************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    

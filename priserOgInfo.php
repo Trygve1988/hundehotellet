@@ -23,19 +23,19 @@ $dblink = kobleOpp();
 
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** main **************************-->
     <main>
 
         <div class="hvitBakgrunn">
     
              <!-- Form-->    
-            <form class="skjemaBakgrunn" method="POST">
+            <form class="skjemaBakgrunn">
 
                 <!-- Overskrift -->
-                    <h1>Pris</h1>
+                    <h2 class="hovedOverskrift">Pris</h2>
                         <table class="prisPrDag">
                             <tr>
                                 <th>Pris pr dag pr hund</th> 
@@ -50,7 +50,7 @@ $dblink = kobleOpp();
                                 <td> kr</td>    
                              </tr>
                          </table>
-                    <h1>Informasjon</h1>
+                    <h2 class="overskrift2">Informasjon</h2>
                     <div class="info">
 
                         <div class="informasjon">
@@ -89,7 +89,7 @@ $dblink = kobleOpp();
         </div> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** fellesBunn **************************-->
     <?php visFooter(); ?>
     <?php visToppKnapp(); ?>
 

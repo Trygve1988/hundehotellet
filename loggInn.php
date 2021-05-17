@@ -19,12 +19,13 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main (Gunni) **************************-->
+	<!-- **************************  main  ***************************** -->
 	
 	<main>
+		<!-- ************************ (Gunni) ************************** -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
 
@@ -37,7 +38,7 @@ $dblink = kobleOpp();
 				</a>	
 
 				<!-- Overskrift -->
-				<h2>Logg inn</h2>	
+				<h2 class="hovedOverskrift">Logg inn</h2>	
 
 				<div class="skjemaKolonner">
 					<div>
@@ -48,7 +49,7 @@ $dblink = kobleOpp();
 						<label for="passord">Passord:</label>
 						<input class="inputPassord" type="password" name="passord" required id="passord">	
 
-						<!-- Vis passord checkbox! -->
+						<!-- Vis passord checkbox  -->
 						<div class="visPassord">
 							<input class="vanligCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
 						</div>	
@@ -66,15 +67,16 @@ $dblink = kobleOpp();
 						<a class="link link1" href="#">Glemt passord</a>
 						<a class="link" href="registrerDeg.php">Registrer deg</a>
 					</div>
-				</div>	
+				</div>
+				<!-- ************************** (Trygve)************************** -->
+				<!-- loggInn -->
+				<?php loggInn($dblink); ?> 	
 			</form>
 		</div>
-		<!-- ************************** (Trygve)**************************-->
-		<!-- 2c) loggInn -->
-		<?php loggInn($dblink); ?> 
+		
 	</main>
 
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn *********************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 
