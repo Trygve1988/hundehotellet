@@ -24,17 +24,17 @@ $dblink = kobleOpp();
 </head>
 
 <body>
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
-    <!-- ************************** 2) main ************************** -->
+    <!-- ************************** main ******************************* -->
     <main>
         <!-- 2a kontakt oss -->
         <div class="hvitBakgrunn">
             <img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
 
             <!-- Form-->
-            <form class="skjemaBakgrunn" method="POST">
-            <!--********************** Kristina ************************** -->
+            <form class="skjemaBakgrunn">
+            <!-- ********************** (Kristina) ********************** -->
 
             <section class="kontakt">
                 <div class=" kontakt kontakt-info">
@@ -69,17 +69,12 @@ $dblink = kobleOpp();
                         <button type="submit">Send</button>   </form> </div> 
                     -->
 
-            </section>
-
-      
+            </section>  
         </form>
-              
-    
-
     </main>
+    <!-- ************************** fellesBunn **************************-->
     <?php visFooter(); ?>   
-        <?php visToppKnapp(); ?>    
-    <!-- ************************** 3) fellesBunn **************************-->
+    <?php visToppKnapp(); ?>    
+    
 </body>
-
 </html>

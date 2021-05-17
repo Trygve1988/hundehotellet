@@ -19,12 +19,12 @@ $dblink = kobleOpp();
 
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** main ******************************* -->
     <main>
-    
+        	<!-- ************************ (Even) *********************** -->
         <div class="hvitBakgrunn">
 
             <!-- Bilde slideren er hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp -->
@@ -83,7 +83,7 @@ $dblink = kobleOpp();
                         <p>Her kan du se en oversikt over priser.</p>
                     </div>
                 </div>
-                <!-- Trygve anmeldelseslider -->
+                <!-- ************************ (Trygve) ****************************** -->
                 <div id="anmeldelseBoks">
                     <div id="anmeldelseTekstBoks">
                         <p id="anmeldelseTekst"></p>
@@ -94,7 +94,7 @@ $dblink = kobleOpp();
         </div>
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** fellesBunn ************************** -->
     <?php visFooter(); ?>
     <?php visToppKnapp(); ?>
 

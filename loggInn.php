@@ -49,7 +49,7 @@ $dblink = kobleOpp();
 						<label for="passord">Passord:</label>
 						<input class="inputPassord" type="password" name="passord" required id="passord">	
 
-						<!-- Vis passord checkbox! -->
+						<!-- Vis passord checkbox  -->
 						<div class="visPassord">
 							<input class="vanligCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
 						</div>	
@@ -68,7 +68,7 @@ $dblink = kobleOpp();
 						<a class="link" href="registrerDeg.php">Registrer deg</a>
 					</div>
 				</div>
-				<!-- ************************** (Trygve)**************************-->
+				<!-- ************************** (Trygve)************************** -->
 				<!-- loggInn -->
 				<?php loggInn($dblink); ?> 	
 			</form>

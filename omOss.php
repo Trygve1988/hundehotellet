@@ -19,17 +19,16 @@ $dblink = kobleOpp();
 
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** main ******************************* -->
     <main>
-
-        <!-- 2a omOss -->
+        <!-- ********************** (Even) ***************************** -->
         <div class="hvitBakgrunn">
     
              <!-- Form-->    
-            <form class="skjemaBakgrunn" method="POST">
+            <form class="skjemaBakgrunn">
 
                 <!-- Avbryt knapp 
                 <input class="avbrytKnapp" type="submit" name="avbryt" value="X">-->
@@ -87,7 +86,6 @@ $dblink = kobleOpp();
         </div> 
 
     </main>
-
 
     <!-- ************************** 3) fellesBunn **************************-->
     <?php visFooter(); ?>

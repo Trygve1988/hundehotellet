@@ -32,7 +32,7 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">
     
              <!-- Form-->    
-            <form class="skjemaBakgrunn" method="POST">
+            <form class="skjemaBakgrunn">
 
                 <!-- Overskrift -->
                     <h1>Pris</h1>
