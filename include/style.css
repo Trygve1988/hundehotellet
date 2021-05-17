@@ -543,9 +543,22 @@ input[type=checkbox].storCheckbox {
 	padding: 10px;
 }
 
+/*Kontakt oss siden*/
+section .kontakt {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start ;
+	margin: 0;
+  }
+  
+  .kontakt .kontakt-info {
+	align-content: flex-start;
+	align-items: flex-start;
+  
+  }
 
 /*Admin opphold siden*/
- /*Opphold admin side*/
 
  table, .opphold {
 	border-collapse: collapse;
