@@ -558,6 +558,15 @@ section .kontakt {
   
   }
 
+  .kontakt-info-tekst {
+	margin-bottom: 40px;
+}
+/*Lager luft mellom linjene*/
+div .kontakt > p {
+	margin-bottom: 5px;
+}
+
+
 /*Admin opphold siden*/
 
  table, .opphold {
