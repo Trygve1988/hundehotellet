@@ -19,15 +19,17 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main **************************-->
+	<!-- ************************** main ******************************* -->
+	
 	
 	<main>
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
-
+		
+		<!-- ************************* (Gunni) ************************* -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
 
@@ -55,7 +57,7 @@ $dblink = kobleOpp();
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato">	
 
-						<!-- Nedtrekkslister! -->
+						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjonn">
 							<option value="velg">--Velg--</option>
@@ -83,7 +85,7 @@ $dblink = kobleOpp();
 						</div>
 					<div>
 				
-					<!-- Labels og input i kolonne 2-->
+					<!-- Labels og input i kolonne 2 -->
 					<div>
 						<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select class="inputSelect" name="lopeMedAndre">
@@ -112,19 +114,19 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 				<!-- Registrer hund-knappp -->	
-				<div class="etterKolonnerKnapp"> <!-- HVOR SKAL DENNE KNAPPEN LEDE?? -->
+				<div class="etterKolonnerKnapp"> 
 					<a href="hundRegistrertBekreftelse.html">
 						<input class="hovedKnapp hovedKnapp2 inputSubmit" type="submit" name="registrerHund" value="Registrer hund"> 
 					</a>
 				</div>	
-				<!-- Dette må rettes opp! -->
-				<!-- 2b) registrerHund (Trygve) -->
+				<!-- ************************** (Trygve) ************************** -->	
+				<!-- registrerHund -->
 				<?php registrerHund($dblink); ?>
 			</form>
 		</div>
 	</main>
 
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn **************************-->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

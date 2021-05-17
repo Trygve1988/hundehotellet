@@ -17,15 +17,16 @@ $dblink = kobleOpp();
 </head>
 
 <body>
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main (Gunni) **************************-->
+	<!-- ************************** main ******************************* -->
 	<main>
 
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
+		<!-- ************************ (Gunni) ****************************** -->
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
@@ -55,7 +56,7 @@ $dblink = kobleOpp();
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato">
 
-						<!-- Nedtrekkslister! -->
+						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjonn">
 							<option value="velg">--Velg--</option>
@@ -81,7 +82,7 @@ $dblink = kobleOpp();
 						</div>
 					</div>
 					
-					<!-- Labels og input i kolonne 2-->
+					<!-- Labels og input i kolonne 2 -->
 					<div>
 						<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select class="inputSelect" name="lopeMedAndre">
@@ -124,17 +125,14 @@ $dblink = kobleOpp();
 	            		</a>	
 					</div>
 				</div>
+				<!-- ************************** (Trygve) ************************** -->
+				<!-- bestillOpphold -->
+				<?php velgHund($dblink); ?> 
 			</form>
 		</div>	
 	</main>
 
-	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
-
-	<!-- ************************** (Trygve) **************************-->
-	<!-- 2g bestillOpphold -->
-	<?php velgHund($dblink); ?> 
-
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn ************************************ -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

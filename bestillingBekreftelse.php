@@ -19,19 +19,20 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main (Gunni) **************************-->
+	<!-- ************************** main  ****************************** -->
 	<main>
 
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
-
-		<!-- Hvit bakgrunn-->
+		
+		<!-- ************************ (Gunni) ************************** -->
+		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 	
-			<!-- Skjema-->	
+			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
@@ -48,13 +49,8 @@ $dblink = kobleOpp();
 			</form>
 		</div>
 	</main>
-	<!-- Til-toppen-knapp -->
-	<button onclick="toppKnappFunksjon()" id="Knappen" title="Gå til toppen">Top</button>
 
-	<!-- 2g bestillOpphold -->
-	<?php velgHund($dblink); ?> 
-
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn ************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

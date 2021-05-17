@@ -19,19 +19,18 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main **************************-->
+	<!-- ************************** main ******************************* -->
 	<main>
-
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 		
-		<!-- Hvit bakgrunn-->
+		<!-- ************************ (Gunni) ****************************** -->
+		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
-			<!-- Bildebakgrunn-->
-
+			
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
 			
@@ -40,7 +39,7 @@ $dblink = kobleOpp();
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
 				
-				<!-- Overskrift-->
+				<!-- Overskrift -->
 				<h2>Bestill opphold</h2>	
 				<!-- Valg om hundene skal være i samme bur (lagt på is) -->
 				<!--<label for="sammeBur">Skal hundene være i samme buret:</label>
@@ -58,7 +57,7 @@ $dblink = kobleOpp();
 						<label for="fra">Fra:</label>
 						<input class="inputDato" type="date" name="fra">		
 							
-						<!-- Labels og input i kolonne 2-->
+						<!-- Labels og input i kolonne 2 -->
 						<label for="til">Til:</label>
 						<input class="inputDato" type="date" name="til">	
 					</div>
@@ -76,7 +75,7 @@ $dblink = kobleOpp();
 						</div>
 					</div>
 				</div>
-			<!--Knapperad-->
+			<!-- Knapperad -->
 			<div class="knappeRad">
 				<div class="knapp1IRad">
 					<!-- Tilbake-knapp-->
@@ -85,7 +84,7 @@ $dblink = kobleOpp();
 		       		</a>
 				</div>
 				<div class="etterKolonnerKnapp">
-					<!-- Neste-knapp-->
+					<!-- Neste-knapp -->
 					<a href = "bestillOpphold3.php">
 		            	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
 		            </a>	
@@ -95,7 +94,7 @@ $dblink = kobleOpp();
 		</div>	
 	</main>
 
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn ************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

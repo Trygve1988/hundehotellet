@@ -19,11 +19,12 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** 1) fellesTop ************************** -->
+	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** 2) main (Gunni)**************************-->
+	<!-- **************************   main    ************************** -->
 	<main>
+		<!-- ************************ (Gunni) ************************** -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">		
 			
@@ -58,7 +59,7 @@ $dblink = kobleOpp();
 					</div>
 					
 					<div>
-						<!-- Labels og input i kolonne 2-->
+						<!-- Labels og input i kolonne 2 -->
 						<label for="etternavn">Etternavn:</label>
 						<input class="inputTekst" type="text" name="etternavn">
 
@@ -68,7 +69,7 @@ $dblink = kobleOpp();
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required id="passord">	
 
-						<!-- Vis passord checkbox! -->
+						<!-- Vis passord checkbox -->
 						<div class="visPassord">
 							<label for="passordCheckbox">Vis Passord</label>
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
@@ -95,14 +96,15 @@ $dblink = kobleOpp();
 					<p class="ekstraLink"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
 				</div>
+				<!-- ************************** (Trygve) ************************** -->
+				<!-- registrerDeg -->
+				<?php registrerDeg($dblink); ?> 
 			</form>	
 		</div>
-			<!-- **************************(Trygve)**************************-->
-			<!-- 2b) registrerDeg -->
-			<?php registrerDeg($dblink); ?> 
+			
 	</main>
 
-	<!-- ************************** 3) fellesBunn **************************-->
+	<!-- ************************** fellesBunn ************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 
