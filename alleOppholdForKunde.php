@@ -33,7 +33,7 @@ $dblink = kobleOpp();
 			<!-- Bildebakgrunn-->
 	
 			<!-- Skjema-->	
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -50,12 +50,16 @@ $dblink = kobleOpp();
 						<option value="2020">2020</option>
 						<option value="2019">2019</option>
 					</select>
-
+				<div class="soloKolonne">
                 <p>SETT INN TABELL OVER ALLE OPPHOLD</p> 
+				
 				<!-- Tilbake til forsiden- knapp -->
-                <a href = "index.php">   
-                <input class="ekstraKnapp2" type="button" name="tilIndex" value="Tilbake til forsiden">
-								
+				</div>
+               <div class="etterKolonnerKnapp"> 
+               		<a href = "index.php">   
+                		<input class=" inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til forsiden">
+            		</a>
+				</div>				
 			</form>
 		</div>
 	</main>

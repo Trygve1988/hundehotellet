@@ -25,10 +25,7 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main (Gunni)**************************-->
 	<main>
 		<!-- Hvit bakgrunn -->	
-		<div class="hvitBakgrunn">
-			
-			<!-- Bildebakgrunn -->	
-			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
+		<div class="hvitBakgrunn">		
 			
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
@@ -67,16 +64,17 @@ $dblink = kobleOpp();
 
 						<label for="epost">E-post:</label>
 						<input class="inputTekst" type="text" name="epost">
-					
+							
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required id="passord">	
 
 						<!-- Vis passord checkbox! -->
 						<div class="visPassord">
-							<input class="inputCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
+							<label for="passordCheckbox">Vis Passord</label>
+							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
 						<!-- SKRIV INN PASSORDTILBAKEMELDING-->
-						<div class="visPassord2">
+						<div class="passordKrav">
 							<p>Passord krav:</p>
 							<p id="status" melding()></p>
 						</div>
@@ -88,20 +86,20 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
-				<div class="knappeKlynge hPosKnapp">
+				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
-							<input class="hovedKnapp2" type="submit" name="registrerBruker" value="Registrer ny bruker"> <!-- HVOR SKAL DENNE LEDE?? -->
+							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" value="Registrer ny bruker"> <!-- HVOR SKAL DENNE LEDE?? -->
 						</a>
 							<!-- Logg inn link -->
-					<p class="ekstraLink2"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
+					<p class="ekstraLink"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
 				</div>
-			</form>
+			</form>	
 		</div>
-		<!-- **************************(Trygve)**************************-->
-		<!-- 2b) registrerDeg -->
-		<?php registrerDeg($dblink); ?> 
+			<!-- **************************(Trygve)**************************-->
+			<!-- 2b) registrerDeg -->
+			<?php registrerDeg($dblink); ?> 
 	</main>
 
 	<!-- ************************** 3) fellesBunn **************************-->

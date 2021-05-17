@@ -29,32 +29,31 @@ $dblink = kobleOpp();
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
-        <!-- Hvit bakgrunn -->	
-        <div class="hvitBakgrunn">
-
-            <!-- Skjema -->		
+         <!-- Hvit bakgrunn -->  
+         <div class="hvitBakgrunn">
+            <!-- Skjema -->     
             <form class="skjemaBakgrunn">
             
                 <!-- Avbryt knapp -->
-				<a href = "index.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>	
+                <a href = "index.html">
+                    <input class="avbrytKnapp" type="button" value="X">
+                </a>    
 
                 <!-- Overskrift -->
-                <h2>Registrer ny hund</h2>	
+                <h2>Oppdater informasjon</h2> 
 
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
                         <!-- Labels og input i kolonne 1 -->
                         <label for="hNavn">Hundens navn:</label>
-                        <input class="inputTekst" type="text" name="hNavn">
+                        <input  class="inputTekst" type="text" name="hNavn">
             
                         <label for="rase">Rase:</label>
-                        <input class="inputTekst" type="text" name="rase">	
+                        <input class="inputTekst" type="text" name="rase">  
 
                         <!-- Inputen for fødselsdato er date -->
                         <label for="fDato">Fødselsdato:</label>
-                        <input class="inputTekst" type="date" name="fDato">	
+                        <input class="inputDato" type="date" name="fDato">  
 
                         <!-- Nedtrekkslister! -->
                         <label for="kjonn">Kjønn:</label>
@@ -62,7 +61,7 @@ $dblink = kobleOpp();
                             <option value="velg">--Velg--</option>
                             <option value="hannhund">Hannhund</option>
                             <option value="tispe">Tispe</option>
-                        </select>	
+                        </select>   
 
                         <label for="steril">Sterilisert:</label>
                         <select class="inputSelect" name="steril">
@@ -70,7 +69,7 @@ $dblink = kobleOpp();
                             <option value="ja">Ja</option>
                             <option value="nei">Nei</option>
                         </select>
-
+        
                         <label for="vaksinert">Vaksinert:</label>
                         <select class="inputSelect" name="vaksinert">
                             <option value="velg">--Velg--</option>
@@ -79,12 +78,13 @@ $dblink = kobleOpp();
                         </select>
                     
                         <!-- Passord link -->
-                        <a class="visPassord3" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
-                    
-                    <div>
+                        <div>
+                            <a class="hPosLink" href="#">Trykk her for mer informasjon om krav til vaksinering</a>          
+                        </div>
+                    </div>
                 
                     <!-- Labels og input i kolonne 2-->
-                    <div class="kolonne2">
+                    <div>
                         <label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
                         <select class="inputSelect" name="lopeMedAndre">
                             <option value="velg">--Velg--</option>
@@ -97,7 +97,7 @@ $dblink = kobleOpp();
                             <option value="velg">--Velg--</option>
                             <option value="ja">Ja</option>
                             <option value="nei">Nei</option>
-                        </select>	
+                        </select>   
 
                         <label for="fortype">Fòrtype:</label>
                         <select class="inputSelect" name="fortype">
@@ -105,27 +105,18 @@ $dblink = kobleOpp();
                             <option value="inkludert">Royal Canin</option>
                             <option value="inkludert">Vom</option>
                             <option value="medbrakt">Medbrakt</option>
-                        </select>	
+                        </select>   
 
                         <label for="ekstraInfo">Ekstra informasjon:</label>
-                        <textarea class="tekstfelt1" name="ekstraInfo"></textarea>
-                
-
-                        <!--Avbryt knapp-->
-                        <div class="knappIKolonne">
-                            <a href="minSide.php">
-                                <input class="inputSubmit hovedKnapp" type="button" value="Avbryt">
-                            </a>
-                        </div>
-                        <!--Registrer knapp-->
-                        <div class="knappIKolonne">
-                            <a href="#">
-                                <input class="inputSubmit hovedKnapp" type="submit" name="oppdaterHundInfo" value="Lagre">
-                            </a>
-                        </div>
-
+                        <textarea class="tekstboks tekstfelt1" name="ekstraInfo"></textarea>
                     </div>
                 </div>
+                <!-- Registrer hund-knappp -->  
+                <div class="etterKolonnerKnapp"> <!-- HVOR SKAL DENNE KNAPPEN LEDE?? -->
+                    <a href="hundRegistrertBekreftelse.html">
+                        <input class="hovedKnapp inputSubmit" type="submit" name="oppdaterHund" value="Lagre"> 
+                    </a>
+                </div>  
             </form>
         </div>
     </main>

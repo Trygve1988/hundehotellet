@@ -29,8 +29,6 @@ $dblink = kobleOpp();
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
-			<!-- Bildebakgrunn -->
-			
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
 			
@@ -78,7 +76,7 @@ $dblink = kobleOpp();
 							<option value="ja">Ja</option>
 							<option value="nei">Nei</option>
 						</select>
-						<div class="visPassord3">
+						<div class="passordKrav">
 							<a class="link" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
 						</div>
 					</div>
@@ -109,20 +107,23 @@ $dblink = kobleOpp();
 
 						<label for="ekstraInfo">Ekstra informasjon:</label>
 						<textarea class="tekstboks tekstfelt1" name="ekstraInfo"></textarea>
-				
-						<!--Knapperad-->
-						<div class="knapperad">
-							<!-- Tilbake-knapp-->
-							<a href = "bestillOpphold.php">
-                				<input class="inputSubmit hovedknapp" type="button" value="Tilbake"> 
-            				</a>
-
-							<!-- Neste-knapp-->
-							<a href = "bestillOpphold3.php">
-                				<input class="inputSubmit hovedknapp" type="button" value="Neste"> 
-            				</a>
-						</div>
-					</div>	
+					</div>
+				</div>	
+				<!--Knapperad-->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						<!-- Tilbake-knapp-->
+						<a href = "bestillOpphold.php">
+	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+	            		</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Neste-knapp-->
+						<a href = "bestillOpphold3.php">
+	                		<input class="inputButton hovedKnapp" type="button" value="Neste"> 
+	            		</a>	
+					</div>
+				</div>
 			</form>
 		</div>	
 	</main>

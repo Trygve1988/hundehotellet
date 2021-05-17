@@ -31,7 +31,6 @@ $dblink = kobleOpp();
 
 		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
-			<!-- Bildebakgrunn-->
 	
 			<!-- Skjema-->	
 			<form class="skjemaBakgrunn">
@@ -54,14 +53,16 @@ $dblink = kobleOpp();
 					</div>
 				<!-- " + Registrer ny hund"- knapp -->
 				<a href = "registrerHund.php">
-					<input class="hovedKnapp ekstraKnapp2" type="button" value="+ Registrer ny hund">
+					<input class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
 				</a>
 				</div>
 
 				<!-- Neste-knapp -->
-				<a href = "bestillOpphold2.php">
-                	<input class="inputSubmit hovedknapp hPosKnapp" type="button" value="neste"> 
-            	</a>
+				<div class="etterKolonnerKnapp">
+					<a href = "bestillOpphold2.php">
+	                	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
+	            	</a>
+            	</div>
 			</form>
 		</div>
 	</main>

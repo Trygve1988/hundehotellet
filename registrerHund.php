@@ -25,18 +25,14 @@ $dblink = kobleOpp();
 	<!-- ************************** 2) main **************************-->
 	
 	<main>
-
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
 
-            <!-- Bildebakgrunn -->	
-			<img class="bildeBakgrunn" src="bilder/bakgrunn.jpg">
-
 			<!-- Skjema -->		
-			<form class="skjemaBakgrunn" method="POST">
+			<form class="skjemaBakgrunn">
 			
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -83,7 +79,7 @@ $dblink = kobleOpp();
 					
 						<!-- Passord link -->
 						<div>
-							<a class="visPassord3" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+							<a class="hPosLink" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
 						</div>
 					<div>
 				
@@ -112,17 +108,15 @@ $dblink = kobleOpp();
 						</select>	
 
 						<label for="ekstraInfo">Ekstra informasjon:</label>
-						<textarea class="tekstfelt1" name="ekstraInfo"></textarea>
-				
-						<!--Registrer knapp DENNE MÅ RETTES!--> 
-						<div class="knappIKolonne">
-							<a href="hundRegistrertBekreftelse.php">
-								<input class="hovedKnapp" type="submit" name="registrerHund" value="Registrer hund"> <!-- HVOR SKAL DENNE LEDE?? -->
-							</a>
-						</div>
+						<textarea class="tekstfelt1" name="ekstraInfo"></textarea>						
 					</div>
 				</div>
-		
+				<!-- Registrer hund-knappp -->	
+				<div class="etterKolonnerKnapp"> <!-- HVOR SKAL DENNE KNAPPEN LEDE?? -->
+					<a href="hundRegistrertBekreftelse.html">
+						<input class="hovedKnapp hovedKnapp2 inputSubmit" type="submit" name="registrerHund" value="Registrer hund"> 
+					</a>
+				</div>	
 				<!-- Dette må rettes opp! -->
 				<!-- 2b) registrerHund (Trygve) -->
 				<?php registrerHund($dblink); ?>
