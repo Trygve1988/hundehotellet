@@ -8,7 +8,7 @@ body {
 	/*position: absolute;*/
 	width: 100%;
 	/*Bakgrunn*/
-    background-image: url("bakgrunn.jpg");
+    background-image: url("bakgrunn.png");
     background-size: 100%;
     background-repeat: no-repeat;
 }
