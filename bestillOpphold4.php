@@ -61,7 +61,7 @@ $dblink = kobleOpp();
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
-						<!-- Labels og input i kolonne 1-->			
+						<!-- Labels og input i kolonne 1 -->			
 						<label for="kortholder">Kortholder:</label>
 						<input class="inputTekst" type="text" name="kortholder">		
 
