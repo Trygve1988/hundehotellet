@@ -41,11 +41,11 @@ $dblink = kobleOpp();
 				</a>
 				
 				<!-- Overskrift -->	
-				<h2>Bestill opphold</h2>
+				<h2 class="hovedOverskrift">Bestill opphold</h2>
 
 				<h2 class="overskrift2">Oppsummering</h2>
 				<!-- Her må det refereres til databsen! -->
-				<div class="vanligTekst">
+				<div class="mindreTekst">
 					<p><b>Hunder:</b> <span>hund1</span>, <span>hund2</span> </p> 
 					<p><b>Dato:</b> <span>(dato)</span> til <span>(dato)</span> 
 					<p><b>Bading:</b> <span>hund1</span> </p>

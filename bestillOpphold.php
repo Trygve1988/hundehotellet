@@ -42,7 +42,7 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h2>Bestill opphold</h2>
+				<h2 class="hovedOverskrift">Bestill opphold</h2>
 			
 				<h3>Velg hund(er):</h3>
 				<div>

@@ -41,7 +41,7 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h2>Alle opphold</h2>
+				<h2 class="hovedOverskrift">Alle opphold</h2>
 
                 <!-- Nedtrekksliste -->
                 <label for="sammeBur">Velg år</label>

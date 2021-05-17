@@ -26,7 +26,7 @@
         <!-- 2a admin -->
         <form >
             <div class="hvitBakgrunn">
-                <h2>Admin</h2>
+                <h2 class="hovedOverskrift">Admin</h2>
                 <p>under arbeid....</p>
             </div> 
         </form> 

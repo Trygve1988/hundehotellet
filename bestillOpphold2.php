@@ -39,7 +39,7 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h2>Bestill opphold</h2>
+				<h2 class="hovedOverskrift">Bestill opphold</h2>
 				<h3>Kontroller at informasjon om hunden din er oppdatert:</h3>
 				
 				<div class="skjemaKolonner">

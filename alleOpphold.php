@@ -35,7 +35,7 @@ $dblink = kobleOpp();
         <form>
             <div class="hvitBakgrunn">
 
-                <h1>Ferdige opphold</h1>
+                <h2 class="hovedOverskrift">Ferdige opphold</h2>
                 <table class="opphold FerdigOpphold">
                     <thead>
                         <tr>

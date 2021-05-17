@@ -40,7 +40,7 @@ $dblink = kobleOpp();
                 </a>    
 
                 <!-- Overskrift -->
-                <h2>Oppdater informasjon</h2> 
+                <h2 class="hovedOverskrift">Oppdater informasjon</h2> 
 
                 <div class="skjemaKolonner">
                     <div class="kolonne1">

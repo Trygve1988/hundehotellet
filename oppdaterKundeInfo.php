@@ -41,7 +41,7 @@ $dblink = kobleOpp();
                 </a>
 
                 <!-- Overskrift -->
-                <h2>Rediger informasjon</h2>
+                <h2 class="hovedOverskrift">Rediger informasjon</h2>
                 <p>Innlogget som: <span>bruker</span></p>
                 <h3 class="overskrift2">Min profil</h3>
 

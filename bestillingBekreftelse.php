@@ -39,7 +39,7 @@ $dblink = kobleOpp();
 				<input class="inputButton avbrytKnapp" type="button" name="avbryt" value="X">
 
 				<!-- Overskrift -->
-				<h2>Bekreftelse på bestilling</h2>
+				<h2 class="hovedOverskrift">Bekreftelse på bestilling</h2>
 			
                 <p>SETT IN TEKST FOR BEKREFTELSE PÅ OPPHOLD!!</p> 
 				<!-- Tilbake til forsiden- knapp -->

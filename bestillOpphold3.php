@@ -40,7 +40,7 @@ $dblink = kobleOpp();
 				</a>
 				
 				<!-- Overskrift -->
-				<h2>Bestill opphold</h2>	
+				<h2 class="hovedOverskrift">Bestill opphold</h2>	
 				<!-- Valg om hundene skal være i samme bur (lagt på is) -->
 				<!--<label for="sammeBur">Skal hundene være i samme buret:</label>
 				<select class="inputSelect" name="sammeBur">

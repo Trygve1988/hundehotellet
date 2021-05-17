@@ -37,7 +37,7 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h1>Registrer ny bruker</h1>
+				<h2 class="hovedOverskrift">Registrer ny bruker</h2>
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">

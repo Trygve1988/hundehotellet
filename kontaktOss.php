@@ -37,7 +37,7 @@ $dblink = kobleOpp();
 
             <section class="kontakt">
                 <div class=" kontakt kontakt-info">
-                    <h1>Kontakt oss</h1>
+                    <h2 class="hovedOverskrift">Kontakt oss</h2>
                     <p>Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.</p>
 
                     <p><strong> Åpningstider:</strong> 08:00-18:00 man-tor <br>

@@ -27,7 +27,7 @@
         <!-- ************************ (Gunni) ****************************** -->
 		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
-        
+
 			<!-- Skjema -->	
             <form class="skjema">
 
@@ -37,7 +37,7 @@
 				</a>
                 
                 <!-- Overskrift -->
-                <h2>Min side</h2>
+                <h2 class="hovedOverskrift">Min side</h2>
                 <p>Innlogget som: <span></span></p>
             
                 <!-- Min profil -->
