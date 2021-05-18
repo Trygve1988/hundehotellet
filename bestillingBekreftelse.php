@@ -12,7 +12,7 @@ $dblink = kobleOpp();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bø Hundehotell</title>
 	<link href="include/style.css" rel="stylesheet" type="text/css">
-	<link href="include/takkMelding.scss" rel="stylesheet" type="text/css">
+	<link href="include/takkMelding.scss" rel="stylesheet">
 
 	<!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
 	<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
@@ -35,10 +35,11 @@ $dblink = kobleOpp();
 		<div class="hvitBakgrunn">
 	
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn">
+			 <!--Måtte lage min egen "bakgrunn" der jeg fjernet den grå bakgrunnen for å få meldingen mer i midten -->
+			<form class="skjemaBakgrunn1">
 
 	<!-- ************************ (Kristina) ************************** -->
-				<div class="luft">
+				
 
 					<div class="takkSiden">
 						<div class="module">
@@ -49,14 +50,11 @@ $dblink = kobleOpp();
 							<h2 class="hovedOverskrift">Bekreftelse på bestilling</h2>
 
 							<p>Din bestilling er nå mottatt!</p>
-							<p> Du kan sjekke bestillingen på Min side.
-								Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf 12345678
+							<p> Du kan sjekke bestillingen på Min side.</p>
+							<p>	Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf 12345678
 								eller <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a>
 							</p>
 
-
-
-							<div class="LinkerTilTakkSiden"> <!-- (Kristina) -->
 								<!-- Tilbake til forsiden- knapp (Gunni)-->
 								<a href="index.php">
 									<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til forsiden">
@@ -64,10 +62,10 @@ $dblink = kobleOpp();
 									<a href="minSide.php">
 										<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="gå til Min side">
 
-							</div>
+							
 						</div>
 					</div>
-				</div>
+				
 								
 			</form>
 		</div>
