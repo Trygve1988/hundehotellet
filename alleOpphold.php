@@ -43,16 +43,9 @@ $dblink = kobleOpp();
                             <th>Start</th>
                             <th>Slutt</th>
                             <th>Bestilt</th>
-                            <th>Betalt</th>
-
                             <th>Total pris</th>
-                            <th>Opphold ID</th>
-                            <th>Bade</th>
-                            <th>Hunde ID</th>
-                            <th>Navn</th>
                             <th>Bur ID</th>
-
-
+                            <th>Hunder</th>
 
                         </tr>
                     </thead>
@@ -65,10 +58,7 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
+
                         </tr>
                         <tr>
                             <td> </td>
@@ -78,10 +68,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -91,10 +77,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -104,10 +86,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                     </tbody>
                 </table>
@@ -122,14 +100,9 @@ $dblink = kobleOpp();
                             <th>Start</th>
                             <th>Slutt</th>
                             <th>Bestilt</th>
-                            <th>Betalt</th>
-
                             <th>Total pris</th>
-                            <th>Opphold ID</th>
-                            <th>Bade</th>
-                            <th>Hunde ID</th>
-                            <th>Navn</th>
                             <th>Bur ID</th>
+                            <th>Hunder</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -142,10 +115,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -155,10 +124,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -168,10 +133,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -181,10 +142,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                     </tbody>
                 </table>
@@ -198,14 +155,9 @@ $dblink = kobleOpp();
                             <th>Start</th>
                             <th>Slutt</th>
                             <th>Bestilt</th>
-                            <th>Betalt</th>
-
                             <th>Total pris</th>
-                            <th>Opphold ID</th>
-                            <th>Bade</th>
-                            <th>Hunde ID</th>
-                            <th>Navn</th>
                             <th>Bur ID</th>
+                            <th>Hunder</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -217,10 +169,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -230,10 +178,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -243,10 +187,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td> </td>
@@ -256,10 +196,6 @@ $dblink = kobleOpp();
                             <td></td>
                             <td> </td>
                             <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                     </tbody>
                 </table>
