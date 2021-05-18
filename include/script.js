@@ -154,8 +154,10 @@ document.body.scrollTop = 0; // Denne koden brukes hvis nettleseren er Safari
 document.documentElement.scrollTop = 0; // Denne koden brukes hvis nettleseren er Chrome, Firefox, Opera og IE.
 }
 
+*/
 
-// ************************** 11) Registrer deg: Hvis skjul passord funksjon (Even) **************************
+
+// ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
 const visPassordKnapp = document.querySelector("#visPassordKnapp");
 
 if (visPassordKnapp !== null) {
@@ -170,9 +172,8 @@ function visPassord() {
     x.type = "password";
   }
 } 
-*/
 
-// ************************** 11) Registrer deg: Passord validation (Even) **************************
+// ************************** Registrer deg: Passord validation (Even) **************************
 //Passord validation (Even)
 const passord = document.querySelector("#passord");
 const status = document.querySelector("#status");
@@ -183,8 +184,7 @@ if (passord !== null) {
 }
 
 function melding(){
-  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;  
-  //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
   if(passord.value.match(paso)){
     status.innerHTML="Passord er godkjent";
     return true;
