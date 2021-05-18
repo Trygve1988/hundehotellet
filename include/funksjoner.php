@@ -81,6 +81,20 @@ function visNav() {
     </div><?php
 }
 
+function visNav2() { 
+    ?> <div class="navbar2">
+
+        <?php
+        if(erAdmin()) {
+            ?> <a id="omOssLink" href="omOss.php">Kunder</a> <?php 
+            ?> <a id="omOssLink" href="omOss.php">Ansatte</a> <?php
+            ?> <a id="omOssLink" href="omOss.php">Se logger</a> <?php
+        }
+    ?>
+    </div>
+        <?php
+}
+
 function erLoggetInn() {
     return ( isset($_SESSION['bruker']) );
 }
