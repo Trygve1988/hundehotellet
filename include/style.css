@@ -7,10 +7,10 @@ body {
 	text-align:center;
 	/*position: absolute;*/
 	width: 100%;
-	/*Bakgrunn*/
+	/*Bakgrunn
     background-image: url("Bakgrunn.jpg");
     background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
 }
 
 main {
@@ -850,6 +850,13 @@ footer a {
   position: relative;
   font-style: italic;
 }
+
+.litenKnapp {
+    width: 140px;
+    padding: 10px;
+    margin: 0px;
+}
+
 
 
 

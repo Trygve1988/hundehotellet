@@ -34,7 +34,7 @@ $dblink = kobleOpp();
 		<div class="hvitBakgrunn">
 	
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn">
+			<form id="bestillOpphold1Skjema" class="skjemaBakgrunn" method="POST">
 
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -46,16 +46,13 @@ $dblink = kobleOpp();
 			
 				<h3>Velg hund(er):</h3>
 				<div>
-					<div>
-						<div class="soloKolonne">
-						<input class="inputTekst" type="text" name="hund1" value="Hund 1">
-						<input class="inputTekst" type="text" name="hund2" value="Hund 2">
-						<input class="inputTekst" type="text" name="hund3" value="Hund 3">
-					</div>
-				<!-- " + Registrer ny hund"- knapp -->
-				<a href = "registrerHund.php">
-					<input class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
-				</a>
+					<!-- her setter vi inn velgHundKnapper -->
+					<div id="velgHundKnappContainer"></div>  
+					
+					<!-- " + Registrer ny hund"- knapp -->
+					<a href = "registrerHund.php">
+						<input class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
+					</a>
 				</div>
 
 				<!-- Neste-knapp -->
@@ -64,10 +61,6 @@ $dblink = kobleOpp();
 	                	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
 	            	</a>
             	</div>	
-				
-				<!-- ************************ (Trygve) ****************************** -->
-				<!-- bestillOpphold -->
-				<?php velgHund($dblink); ?> 
 			</form>
 		</div>
 	</main>
