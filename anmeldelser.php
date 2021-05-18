@@ -21,8 +21,8 @@
     <main>
     	<!-- ************************ (Gunni) ****************************** -->
         <!-- Anmeldelser -->
-        <form>
         <div class="hvitBakgrunn">
+        <form class="skjemaBakgrunn">
                 <h2>Anmeldelser</h2>
                 <p>under arbeid....</p> 
             </div>
