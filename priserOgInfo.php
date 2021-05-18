@@ -36,7 +36,7 @@ $dblink = kobleOpp();
 
                 <!-- Overskrift -->
                     <h2 class="hovedOverskrift">Pris</h2>
-                        <table class="prisPrDag">
+                        <table class="toKolTab">
                             <tr>
                                 <th>Pris pr dag pr hund</th> 
                                 <th>Bading</th> 
