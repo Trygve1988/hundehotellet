@@ -256,15 +256,19 @@ main {
 	flex-direction: row;
 }
 
-.prisPrDag, th, td  {
+.toKolTab, .toKolTab th, .toKolTab td  {
 	border: 1px solid black;
+	border-collapse: collapse;
 	background-color: white;
 	width: 50%;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	padding: 5px;	
 }
 
-
+.toKolTab th {
+	font-size: 21px;
+}
 
 .informasjon {
 	width: 450px;
@@ -541,6 +545,23 @@ input[type=checkbox].storCheckbox {
   color: #49116f;
   text-decoration: underline; 
 }
+
+/*Horisontal tabell, th på toppen og tb under*/
+.hTab {
+	width: 90%;
+}
+
+/*Horisontal tabell, th på toppen og tb under*/
+.hTab th {
+	background-color: #cbd4e7;
+}
+
+/*Tabell med to kolonner */
+.minSideToKolTab {
+	width: 60%;
+}
+
+
 
 
 /* **************************** Kristina ***************************** */
