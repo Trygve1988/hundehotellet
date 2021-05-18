@@ -78,7 +78,7 @@ $dblink = kobleOpp();
                     </div>
 
                     <div class="bildeKontroller">
-                        <a href="priser.php"><img src="bilder/hunder3.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
+                        <a href="priserOgInfo.php"><img src="bilder/hunder3.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
                         <h1>Priser</h1>
                         <p>Her kan du se en oversikt over priser.</p>
                     </div>

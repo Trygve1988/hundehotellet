@@ -77,8 +77,22 @@ function visNav() {
             ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
         <!-- spraakKnapp--> 
-        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png">
+        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png" alt="Norway">
     </div><?php
+}
+
+function visNav2() { 
+    ?> <div class="navbar2">
+
+        <?php
+        if(erAdmin()) {
+            ?> <a id="kunderLink" href="omOss.php">Kunder</a> <?php 
+            ?> <a id="ansatteLink" href="omOss.php">Ansatte</a> <?php
+            ?> <a id="seLoggerLink" href="omOss.php">Se logger</a> <?php
+        }
+    ?>
+    </div>
+        <?php
 }
 
 function erLoggetInn() {
