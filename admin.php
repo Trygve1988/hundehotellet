@@ -24,8 +24,8 @@
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
         <!-- 2a admin -->
-        <form >
             <div class="hvitBakgrunn">
+            <form class="skjemaBakgrunn">
                 <h2 class="hovedOverskrift">Admin</h2>
                 <p>under arbeid....</p>
             </div> 
