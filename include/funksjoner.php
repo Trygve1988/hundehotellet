@@ -50,6 +50,7 @@ function visNav() {
         <a id="omOssLink" href="omOss.php">Om Oss</a>
         <a id="priserLink" href="priserOgInfo.php">Pris og info</a>
         <a id="kontaktOssLink" href="kontaktOss.php">Kontakt Oss</a>
+        <a href="admin.php">Admin</a> <!-- For testing -->
 
         <?php
         // bestill Opphold
