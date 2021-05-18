@@ -225,7 +225,7 @@ main {
 
 /*****Stop på hentet kode*****/
 
-/* Pris og Info CSS */
+/* Pris og Info CSS tabell */
 .info {
 	display: flex;
 	flex-direction: row;
@@ -265,6 +265,8 @@ main {
 	text-decoration: underline;
 
 }
+
+/* Stop på Pris og Info */ 
   
 /* **************************** Gunni ***************************** */
 /*Hvit midtstilt bakgrunn*/
