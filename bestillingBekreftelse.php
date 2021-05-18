@@ -25,8 +25,8 @@ $dblink = kobleOpp();
 	<!-- ************************** main  ****************************** -->
 	<main>
 
-		<!-- erLoggetInn sjekk -->
-		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
+		<!-- erLoggetInn sjekk --> 
+		<?php /* if (!erLoggetInn()) { header('Location: loggInn.php'); } Grået ut for å teste*/ ?>
 		
 		<!-- ************************ (Gunni) ************************** -->
 		<!-- Hvit bakgrunn -->
