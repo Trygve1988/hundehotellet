@@ -8,7 +8,7 @@ body {
 	/*position: absolute;*/
 	width: 100%;
 	/*Bakgrunn*/
-    background-image: url("bakgrunn.jpg");
+    background-image: url("bakgrunn.png");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -72,7 +72,7 @@ main {
     height: 30px;
   }
 
-/* **************************** bildeBakgrunn  ***************************** */
+/* **************************** bildeBakgrunn  gammel  ***************************** 
 .bildeBakgrunn { 
   position: absolute;
   width: 100%;
@@ -81,6 +81,7 @@ main {
   z-index: -1;
   vertical-align: middle;
 }
+*/
 
 /* **************************** index (Even)  ***************************** */
 .velkommenText{ /* Stor tekst, Velkomen */
@@ -138,7 +139,7 @@ main {
   }
   
   .bilder2{ 
-	width: 300px;
+	width: 280px;
 	height: 250px;
   }
 
