@@ -1,0 +1,36 @@
+/*
+.luftIBoksen {
+   display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center; 
+}
+*/
+.takkSiden {  
+    max-width: 500px;
+    background: linear-gradient(to left, #743ad5, #d53a9d);
+    padding: 10px; /*Endrer størrelsen på borderen*/
+    margin: 0;
+
+  }
+  
+  /*Bekfretelses ikon*/
+  .module {
+    text-align: center;
+    background: white;
+    color: black;
+    padding: 2rem;
+  }
+  
+/*Farge til OK fonten*/
+.module .fa-check-circle {
+    color:lime;
+ 
+}
+/*Lager luft rundt linkene*/
+  .module .LinkerTilTakkSiden {
+      padding: 20px;
+
+   
+  }
+
