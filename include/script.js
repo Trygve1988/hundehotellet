@@ -195,6 +195,7 @@ function melding(){
 }
 
 // ************************** Bildeslider (Even) **************************
+
 //Bildeslider hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -222,12 +223,8 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+// *********************** Slutt på hentet kode ***********************
 
-
-// Slutt på hentet kode
-
-
-// Bestill opphold 4
 
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp
