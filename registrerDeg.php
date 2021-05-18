@@ -29,7 +29,7 @@ $dblink = kobleOpp();
 		<div class="hvitBakgrunn">		
 			
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn">
+			<form class="skjemaBakgrunn" method="POST"> 
 				
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -56,6 +56,13 @@ $dblink = kobleOpp();
 						
 						<label for="postNr">Postnummer:</label>
 						<input class="inputTekst" type="text" name="postNr">
+
+						<!-- velg brukertype (bare for testing)  -->
+						<select class="inputSelect" name="brukertype">
+							<option value="kunde">kunde</option>
+							<option value="ansatt">ansatt</option>
+							<option value="admin">admin</option>
+                   		</select>
 					</div>
 					
 					<div>
@@ -87,6 +94,9 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
+				<!-- registrerDeg (Trygve) -->
+				<?php registrerDeg($dblink); ?> 
+
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
@@ -96,9 +106,7 @@ $dblink = kobleOpp();
 					<p class="ekstraLink"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
 				</div>
-				<!-- ************************** (Trygve) ************************** -->
-				<!-- registrerDeg -->
-				<?php registrerDeg($dblink); ?> 
+
 			</form>	
 		</div>
 			
