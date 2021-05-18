@@ -77,7 +77,7 @@ function visNav() {
             ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
         <!-- spraakKnapp--> 
-        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png">
+        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png" alt="Norway">
     </div><?php
 }
 
@@ -86,9 +86,9 @@ function visNav2() {
 
         <?php
         if(erAdmin()) {
-            ?> <a id="omOssLink" href="omOss.php">Kunder</a> <?php 
-            ?> <a id="omOssLink" href="omOss.php">Ansatte</a> <?php
-            ?> <a id="omOssLink" href="omOss.php">Se logger</a> <?php
+            ?> <a id="kunderLink" href="omOss.php">Kunder</a> <?php 
+            ?> <a id="ansatteLink" href="omOss.php">Ansatte</a> <?php
+            ?> <a id="seLoggerLink" href="omOss.php">Se logger</a> <?php
         }
     ?>
     </div>
@@ -270,7 +270,7 @@ function lagreKontaktOssInfo($dblink) {
 
 //hjelpemetoder
 function registrerHund($dblink) {
-    if (isset($_POST['registrer'])) { 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {  
         $navn = $_POST['navn'];
         $rase = $_POST['rase'];
         $fdato = $_POST['fdato'];
@@ -297,7 +297,7 @@ function registrerHund($dblink) {
         }
 
         echo "hund " . $hundID . " - ". $navn . " registrert" . "<br>";
-        header('Location: bestillOpphold1.php');
+        //header('Location: bestillOpphold1.php');
     }
 }
 

@@ -34,7 +34,7 @@ $dblink = kobleOpp();
 		<div class="hvitBakgrunn">
 
 			<!-- Skjema -->		
-			<form class="skjemaBakgrunn">
+			<form class="skjemaBakgrunn" method="POST">
 			
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -48,75 +48,63 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="hNavn">Hundens navn:</label>
-						<input  class="inputTekst" type="text" name="hNavn">
+						<input  class="inputTekst" type="text" name="navn" value="pluto">
 			
 						<label for="rase">Rase:</label>
-						<input class="inputTekst" type="text" name="rase">	
+						<input class="inputTekst" type="text" name="rase" value="labrador">	
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fDato">	
+						<input class="inputDato" type="date" name="fdato" value="2010-01-01">	
 
 						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
-						<select class="inputSelect" name="kjonn">
+						<select class="inputSelect" name="kjønn">
+							<option value="gutt">gutt</option>
+							<option value="jente">jente</option>
 							<option value="velg">--Velg--</option>
-							<option value="hannhund">Hannhund</option>
-							<option value="tispe">Tispe</option>
 						</select>	
-
-						<label for="steril">Sterilisert:</label>
-						<select class="inputSelect" name="steril">
-							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
-						</select>
-		
-						<label for="vaksinert">Vaksinert:</label>
-						<select class="inputSelect" name="vaksinert">
-							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
-						</select>
 					
-						<!-- Passord link -->
+						<label for="sterilisert">Sterilisert:</label>
+						<select class="inputSelect" name="sterilisert">
+							<option value="1">Ja</option>
+							<option value="0">Nei</option>
+							<option value="velg">--Velg--</option>
+						</select>
+						
 						<div>
 							<a class="hPosLink" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
-						</div>
+						</div>	
 					<div>
 				
-					<!-- Labels og input i kolonne 2 -->
+					 <!-- Labels og input i kolonne 2-->
 					<div>
-						<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
-						<select class="inputSelect" name="lopeMedAndre">
+						<!-- <label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>-->
+						<select class="inputSelect" name="løpeMedAndre">
+							<option value="1">Ja</option>
+							<option value="0">Nei</option>
 							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
 						</select>
-					
-						<label for="losPaaTur">Kan hunden gå løs på tur:</label>
-						<select class="inputSelect" name="losPaaTur">
-							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
-						</select>	
 
-						<label for="fortype">Fòrtype:</label>
-						<select class="inputSelect" name="fortype">
-							<option value="velg">--Velg--</option>
+						<label for="forID">Fòrtype:</label>
+						<select class="inputSelect" name="forID"> 
+							<option value="1">vanlig</option>
+							<option value="2">allergi</option>
 							<option value="inkludert">Royal Canin</option>
 							<option value="inkludert">Vom</option>
-							<option value="medbrakt">Medbrakt</option>
-						</select>	
+							<option value="medbrakt">Medbrakt</option>	
+							<option value="velg">--Velg--</option>
+						</select>
 
-						<label for="ekstraInfo">Ekstra informasjon:</label>
-						<textarea class="tekstfelt1" name="ekstraInfo"></textarea>						
+						<!-- <label for="ekstraInfo">Ekstra informasjon:</label>	-->	
+						<textarea class="tekstfelt1" name="info"></textarea>					
 					</div>
+-
 				</div>
 				<!-- Registrer hund-knappp -->	
 				<div class="etterKolonnerKnapp"> 
 					<a href="hundRegistrertBekreftelse.html">
-						<input class="hovedKnapp hovedKnapp2 inputSubmit" type="submit" name="registrerHund" value="Registrer hund"> 
+						<input class="hovedKnapp hovedKnapp2 inputSubmit" type="submit" name="registrer" value="Registrer hund"> 
 					</a>
 				</div>	
 				<!-- ************************** (Trygve) ************************** -->	

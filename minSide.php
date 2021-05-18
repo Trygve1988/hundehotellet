@@ -27,9 +27,9 @@
         <!-- ************************ (Gunni) ****************************** -->
 		<!-- Hvit bakgrunn-->
 		<div class="hvitBakgrunn">
-
-			<!-- Skjema -->	
-            <form class="skjema">
+			
+            <!-- Skjema-->	
+            <form class="skjemaBakgrunn">
 
                 <!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -38,14 +38,13 @@
                 
                 <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Min side</h2>
-                <p>Innlogget som: <span></span></p>
             
-                <!-- Min profil -->
-                <h3>Min profil</h3>
-                <table class="kundeTab">	
+                <!-- "Min profil" -->
+                <h2 class="overskrift2">Min profil</h2>
+                <table class="toKolTab  minSideToKolTab">	
                     <tr>
                         <th class="thKolonne">Navn</th>
-                        <td>SETT INN KUNDENAVN HER!</td>
+                        <td>Fornavn Etternavn</td>
                     </tr>
                     <tr>
                         <th class="thKolonne">Epost</th>
@@ -61,19 +60,29 @@
                     </tr>
                 </table>
          
-                <!-- Knapperad -->
+                <!--Knapperad-->
 				<!-- "Rediger / oppdater kunde-info-knapp -->
 				<a href = "oppdaterKundeInfo.php">
-                	<input class="hovedknapp" type="oppdaterKundeInfo" value="Rediger"> 
+                	<input class="hovedKnapp inputButton" type="button" value="Rediger"> 
             	</a>
 		    
-                <!-- Mine hunder -->
-                <h3>Mine hunder</h3>
-          
-                <table class="hundTab">	
+                <!-- "Mine hunder" -->
+                
+                <h2 class="overskrift2">Mine hunder</h2>
+                
+                <div class="litenInput">
+                <!-- Nedtrekksliste for valg av hund -->
+                <label for="velgHund">Velg hund:</label>
+                    <select class="inputSelect" name="velgHund">
+                        <option value="hund1">Hund1</option>
+                        <option value="hund2">Hund2</option>
+                        <option value="hund3">Hund3</option>
+                    </select>
+              </div>
+                <table class="toKolTab  minSideToKolTab">	
                     <tr>
                         <th class="thKolonne">Navn</th>
-                        <td>SETT INN HUNDENAVN HER!</td>
+                        <td>navn</td>
                     </tr>
                     <tr>
                         <th class="thKolonne">Rase</th>
@@ -89,7 +98,7 @@
                     </tr>
                     <tr>
                         <th class="thKolonne">Sterilisert</th>
-                        <td>ja ELLER nei</td>
+                        <td>Ja eller nei</td>
                     </tr>
                     <tr>
                         <th class="thKolonne">Vaksinert</th>
@@ -100,62 +109,56 @@
                         <td>Ja eller nei</td>
                     </tr>
                     <tr>
-                        <th class="thKolonne">Kan hunden gå løs på tur</th>
-                        <td>Ja eller nei</td>
-                    </tr>
-                    <tr>
                         <th class="thKolonne">Fòrtype</th>
                         <td>valg</td>
                     </tr>
                     <tr>
                         <th class="thKolonne">Ekstra informasjon</th>
-                        <td>Sett inn informasjonen her!</td>
+                        <td>Hunden er allergisk mot blabblabla!</td>
                     </tr>
                 </table>
                 
-                <!-- Knapperad -->
-				
-				<div class="knapperad"><
-                    <!-- Endre hundeinfo- knapp -->
-                    <a href = "oppdaterHundInfo.php">
-                	    <input class="hovedknapp" type="button" value="Rediger"> 
-            	    </a>
-                    <!-- Registrer ny hund-\knapp -->
+                <!--Knapperad-->
+				<div class="knapperad">
+                    <!-- Registrer ny hund-\knapp-->
                     <a href = "registrerHund.php">
-                        <input class="hovedKnapp ekstraKnapp2" type="button" value="Registrer ny hund">
+                        <input class="inputButton hovedKnapp ekstraKnapp2" type="button" value="Registrer ny hund">
                     </a>
-                    
-                <!-- Mine opphold -->
-                <h3>Mine opphold</h3>
-                <table class="oppholdTab">	
+                      <!-- Endre hundeinfo- knapp -->
+                    <a href = "oppdaterHundInfo.php">
+                        <input class="inputButton hovedKnapp" type="button" value="Rediger"> 
+                    </a>
+                <!-- "Mine opphold" -->
+                <h2 class="overskrift2">Mine opphold</h2>
+                <table class="toKolTab hTab">	
                     <tr>
-                        <th class="thKolonne">Dato fra</th>
-                        <th class="thKolonne">Til</th>
-                        <th class="thKolonne">Hunder</th>
-                        <th class="thKolonne">Ekstra</th>
+                        <th>Start</th>
+                        <th>Slutt</th>
+                        <th>Bestilt</th>
+                        <th>Betalt</th>
+                        <th>Totalpris</th>
+                        <th>Hund</th>
                     </tr>
                     <tr>
                         <td>start</th>
                         <td>slutt</td>
+                        <td>bestilt</th>
+                        <td>betalt</th>
+                        <td>totalpris</th>
                         <td>hund</th>
-                        <td>bading?</td>
                     </tr>
                 </table>
                     
-                <!-- Knapperad -->
-				
-				<!-- Se kundeopphol oversikt (for kundebrukere) -->
-				<a href = "alleOppholdforKunde.php">
-                	<input class="hovedknapp" type="button" value="Tilbake"> 
+                <!--Knapperad-->
+				<!-- Bestill opphold -->
+				<a href="bestillOpphold.php">
+                    <input class=" inputButton hovedKnapp" type="button" value="Bestill opphold"> 
+                </a>
+                <!-- Se eldre, viser alle registrerte opphold -->
+                <a href = "alleOppholdforKunde.php">
+                    <input class=" inputButton hovedKnapp" type="button" value="Se eldre"> 
             	</a>
-				
-                <!-- ************************** (Trygve) ************************** -->        
-                    
-                <?php visInnloggetInfo($dblink); ?>
-                <?php visMineHunder($dblink) ?>
-
-                <!-- registrerHund -->
-                <a href="registrerHund.php">registrerHund</a>
+                
                 <!-- ************************** (Trygve) *************************** -->
                 <?php //visBestillinger($dblink); UNDER ARBEID!!!!!?> 
             </form> 
