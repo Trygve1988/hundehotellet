@@ -579,7 +579,7 @@ div .kontakt > p {
 
 /*Admin opphold siden*/
 
- table, .opphold {
+.opphold table, .opphold {
 	border-collapse: collapse;
 	width: 50%; /*Størrelse på tabellen*/
   }
@@ -595,7 +595,7 @@ div .kontakt > p {
      color: white;
      padding: 5px;
   }
-  .opphold th, td {
+  .opphold th, .opphold td {
 
 	padding: 15px; /*padding til overskrift*/
 	text-align: left;
