@@ -1,56 +1,55 @@
-// ************************************** TRYGVE **************************************
-
 //***** ikke lagd selv: https://www.w3schools.com/js/js_cookies.asp **** -->
 function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+      }
+  }
+  return "";
 }
 // ************* ikke lagd selv slutt ************* -->
 
 
 // ************************** 2) Aktuelt  **************************
 // ************************** 3) Om Oss   **************************
+
 // ******************* 6 Bestill Opphold: a) lagVelghundKnapper *******************
 var bestillOpphold1Skjema = document.getElementById("bestillOpphold1Skjema");
 
 //er vi på bestillOpphold1 siden ? 
 if (bestillOpphold1Skjema !== null) {
-    hentUtBrukerSineHunder();   // 1)
-    lagVelgHundKnapper();       // 2)
+  hentUtBrukerSineHunder();   // 1)
+  lagVelgHundKnapper();       // 2)
 } 
 
 // 1) hentUtBrukerSineHunder
 function hentUtBrukerSineHunder() {
-    var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/hentUtBrukerSineHunder.php?", true);
-    ajaxRequest.send(null);
-    ajaxRequest.onreadystatechange = function() {
-        var hundIDTab = ajaxRequest.responseText;
-        setBrukerHunderCoockie(hundIDTab);
-    } 
+  var ajaxRequest = new XMLHttpRequest();  
+  ajaxRequest.open("GET", "include/hentUtBrukerSineHunder.php?", true);
+  ajaxRequest.send(null);
+  ajaxRequest.onreadystatechange = function() {
+      var hundIDTab = ajaxRequest.responseText;
+      setBrukerHunderCoockie(hundIDTab);
+  } 
 }
 
 function setBrukerHunderCoockie(hundIDTab) {
-    document.cookie = "brukerHunder=" + hundIDTab;
+  document.cookie = "brukerHunder=" + hundIDTab;
 }
 
 // 2) hentUtBrukerSineHunder
 function lagVelgHundKnapper() {
-    var brukerHunder = getCookie('brukerHunder'); 
-    // må laste inn siden på ny viss ikke vi har fått svar fra ajax kallet ennå
-    if (brukerHunder == "") {
-        location.reload();
-}
+  var brukerHunder = getCookie('brukerHunder'); 
+  // må laste inn siden på ny viss ikke vi har fått svar fra ajax kallet ennå
+  if (brukerHunder == "") {
+      location.reload();
+  }
 
   //har denne brukeren noen hunder som vi kan lage knapper til?
   if (brukerHunder.length > 2) {
@@ -100,118 +99,118 @@ function lagVelgHundKnapper() {
 var bestillOpphold1Mld = document.getElementById("bestillOpphold1Mld");
 
 function velgHund(e) {
-    // får tak i alle hundID'ene som allerede er valgt
-    var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
+  // får tak i alle hundID'ene som allerede er valgt
+  var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
 
-    // får tak i den nye hundID'en
-    var nyHund = this.name;
+  // får tak i den nye hundID'en
+  var nyHund = this.name;
 
-    var dataTab = nyHund.split(" ");
-    var nyHundID = dataTab[0];
+  var dataTab = nyHund.split(" ");
+  var nyHundID = dataTab[0];
 
-    //er hund allerede valgt?
-    if (!erhundAlleredeValgt(nyHundID)) {
-        //da skal hunden legges til coockien
+  //er hund allerede valgt?
+  if (!erhundAlleredeValgt(nyHundID)) {
+      //da skal hunden legges til coockien
 
-        //er DetAllerede valgt 3 hunder
-        var valgteHunder = getCookie('valgteHunder');
-        hundIDTab = valgteHunder.split(" ");
-        if (hundIDTab.length > 2) {
-            bestillOpphold1Mld.innerHTML = "Kan ikke velge mer en 3 hunder!";
-        }
-        else{
-            alleHunder = valgteHunder + " " + nyHundID;
-            document.cookie = "valgteHunder=" + alleHunder ;
-          
-            //endrer stil på knappen
-            e.target.style.backgroundColor = "darkblue"; 
+      //er DetAllerede valgt 3 hunder
+      var valgteHunder = getCookie('valgteHunder');
+      hundIDTab = valgteHunder.split(" ");
+      if (hundIDTab.length > 2) {
+          bestillOpphold1Mld.innerHTML = "Kan ikke velge mer en 3 hunder!";
+      }
+      else{
+          alleHunder = valgteHunder + " " + nyHundID;
+          document.cookie = "valgteHunder=" + alleHunder ;
+         
+          //endrer stil på knappen
+          e.target.style.backgroundColor = "darkblue"; 
 
-            bestillOpphold1Mld.innerHTML = "";
-        }
-    }
-    else {
-        // da skal hunden fjernes fra coockien
-        var hunderStr = "";
-        var valgteHunder = getCookie('valgteHunder');
-        hundIDTab = valgteHunder.split(" ");
-        for (var i=0; i<hundIDTab.length; i++) {
-            var hundID = hundIDTab[i]
-            if (hundID != nyHundID) {
-                hunderStr += hundID + " ";
-            }
-        }
-        document.cookie = "valgteHunder=" + hunderStr + ";"
-        
-        //endrer stil på knappen
-        e.target.style.backgroundColor = "gray"; 
+          bestillOpphold1Mld.innerHTML = "";
+      }
+  }
+  else {
+      // da skal hunden fjernes fra coockien
+      var hunderStr = "";
+      var valgteHunder = getCookie('valgteHunder');
+      hundIDTab = valgteHunder.split(" ");
+      for (var i=0; i<hundIDTab.length; i++) {
+          var hundID = hundIDTab[i]
+          if (hundID != nyHundID) {
+              hunderStr += hundID + " ";
+          }
+      }
+      document.cookie = "valgteHunder=" + hunderStr + ";"
+      
+      //endrer stil på knappen
+      e.target.style.backgroundColor = "gray"; 
 
-        bestillOpphold1Mld.innerHTML = "";
-    }
+      bestillOpphold1Mld.innerHTML = "";
+  }
 
-    var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
-    
-    //lager en tabell som skal lagres som php SESSION
-    valgteHunder = valgteHunder.split(" ");
-    settHunderOppholdSession(valgteHunder);
+  var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
+  
+  //lager en tabell som skal lagres som php SESSION
+  valgteHunder = valgteHunder.split(" ");
+  settHunderOppholdSession(valgteHunder);
 }
 
 function erhundAlleredeValgt(sjekkhundID) {
-    var hundAlleredeValgt = false;
-    var valgteHunder = getCookie('valgteHunder');
-    hundIDTab = valgteHunder.split(" ");
-    for (var i=0; i<hundIDTab.length; i++) {
-        var hundID = hundIDTab[i]
-        if (hundID == sjekkhundID) {
-            hundAlleredeValgt = true;
-        }
-    }
-    return hundAlleredeValgt;
+  var hundAlleredeValgt = false;
+  var valgteHunder = getCookie('valgteHunder');
+  hundIDTab = valgteHunder.split(" ");
+  for (var i=0; i<hundIDTab.length; i++) {
+      var hundID = hundIDTab[i]
+      if (hundID == sjekkhundID) {
+          hundAlleredeValgt = true;
+      }
+  }
+  return hundAlleredeValgt;
 }
 
 function settHunderOppholdSession(valgteHunder) {
-    var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/settHunderOppholdSession.php?q="+valgteHunder, true);
-    ajaxRequest.send(null);
-    ajaxRequest.onreadystatechange = function() {
-        var test = ajaxRequest.responseText;
-    } 
+  var ajaxRequest = new XMLHttpRequest();  
+  ajaxRequest.open("GET", "include/settHunderOppholdSession.php?q="+valgteHunder, true);
+  ajaxRequest.send(null);
+  ajaxRequest.onreadystatechange = function() {
+      var test = ajaxRequest.responseText;
+  } 
 }
 
 // ******************* 6) Bestill Opphold: c) lovligeDatoer *******************
 var startDato = document.getElementById("startDato");
 
 if (startDato !== null) {
-    hentUtFullbookedeDatoer();
-  }
+  hentUtFullbookedeDatoer();
+}
 
 function hentUtFullbookedeDatoer() {
-    var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/hentUtFullbookedeDatoer.php?", true);
-    ajaxRequest.send(null);
-    ajaxRequest.onreadystatechange = function() {
-        var opptattTab = ajaxRequest.responseText;
-        if(opptattTab) {
-            taVekkDatoer(opptattTab);
-        }
-    } 
+  var ajaxRequest = new XMLHttpRequest();  
+  ajaxRequest.open("GET", "include/hentUtFullbookedeDatoer.php?", true);
+  ajaxRequest.send(null);
+  ajaxRequest.onreadystatechange = function() {
+      var opptattTab = ajaxRequest.responseText;
+      if(opptattTab) {
+          taVekkDatoer(opptattTab);
+      }
+  } 
 }
 
 //***** ikke lagd selv,gratis å bruke: https://cdnjs.com/libraries/jquery/3.3.1  **** -->
 function taVekkDatoer(opptattTab) {   
-    $('input').datepicker({
+  $('input').datepicker({
 
-        showButtonPanel: true,
-        changeMonth: true,
-        minDate: new Date(),
-        maxDate: '+1Y',
-        inline: true,
+      showButtonPanel: true,
+      changeMonth: true,
+      minDate: new Date(),
+      maxDate: '+1Y',
+      inline: true,
 
-        dateFormat: 'yy-mm-dd',
-        beforeShowDay: function(date) {
-            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-            return [opptattTab.indexOf(string) == -1]
-        }
-    });
+      dateFormat: 'yy-mm-dd',
+      beforeShowDay: function(date) {
+          var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+          return [opptattTab.indexOf(string) == -1]
+      }
+  });
 }
 // ************* ikke lagd selv slutt ************* -->
 
@@ -221,100 +220,22 @@ var sluttDato = document.querySelector("#sluttDato");
 
 //er vi på Bestill opphold deg siden ? 
 if (startDato !== null) {
-    startDato.addEventListener('click', oppdaterSluttDato, false);
+  startDato.addEventListener('click', oppdaterSluttDato, false);
 }
 
 function oppdaterSluttDato() {
-    var start = new Date(startDato.value);
-    var slutt = new Date(sluttDato.value);
-    if (start >= slutt) { 
-        slutt.setDate(start.getDate()+1);
-        document.getElementById("sluttDato").valueAsDate = slutt; 
-    }
-}
-
-
-// ************************** 6) Bestill Opphold: a) ccv **************************
-const ccvHvaErDette = document.querySelector("#ccvHvaErDette");
-const ccvBilde = document.querySelector("#ccvBilde");
-
-//er vi på Bestill opphold siden ? 
-if (ccvHvaErDette !== null) {
-    ccvHvaErDette.addEventListener('mouseover', visCcvBilde, false);
-    ccvHvaErDette.addEventListener('mouseout', skjulCcvBilde, false);
-}
-
-function visCcvBilde() {
-    ccvBilde.style.display = "block";
-}
-
-function skjulCcvBilde() {
-    ccvBilde.style.display = "none";
-}
-
-
-// ************************** 11) Registrer deg: passord tilbakemelding **************************
-const passord = document.querySelector("#passord");
-const passordStatus = document.querySelector("#passordStatus");
-
-//er vi på Registrer deg siden ? 
-if (passord !== null) {
-    passord.addEventListener('click', passordMld, false);
-    passord.addEventListener('keyup', passordMld, false);
-    passord.addEventListener('blur', passordMldSkjul, false);
-}
-
-function passordMld() {
-  var passordOk = true;
-  // er passordet langt nok?
-  if (passord.value.length < 8) {
-      passordStatus.style.color = "red";
-      passordStatus.innerHTML = "Passordet må bestå av minst 8 siffer!";
-      passordOk = false;
+  var start = new Date(startDato.value);
+  var slutt = new Date(sluttDato.value);
+  if (start >= slutt) { 
+      slutt.setDate(start.getDate()+1);
+      document.getElementById("sluttDato").valueAsDate = slutt; 
   }
-  // har passordet minst et tall OG minst en bokstav?
-  var minstEtTall = false;
-  var minstEnBokstav = false;
-  for (var i=0; i<passord.value.length; i++) {
-      if ( sjekkOmTall(passord.value.charAt(i)) == true ) {
-          minstEtTall = true;
-      }
-      if ( sjekkOmBokstav(passord.value.charAt(i)) == true ) {
-          minstEnBokstav = true;
-      }
-  }
-  if ( minstEnBokstav == false || minstEtTall == false) { 
-      passordStatus.style.color = "red";
-      passordStatus.innerHTML = "Passordet må bestå av en blanding av tall og sifre";
-      passordOk = false;
-  }
-  if (passordOk == true) {
-      passordStatus.style.color = "green";
-      passordStatus.innerHTML = "Passordet er ok";
-  }
-}
-
-function sjekkOmTall(tegn) {
-    if(isNaN(tegn)) {
-        return false;
-    }  
-    else {
-        return true;
-    }  
-}
-
-function sjekkOmBokstav(tegn) {
-    return (/[a-zA-Z]/).test(tegn);
-}
-
-function passordMldSkjul() {
-    passordStatus.innerHTML = " ";
 }
 
 // ******************* 12) Nesten Alle: deleteHundCoockies *******************
 //er vi IKKE på bestillOpphold1 siden ? 
 if (bestillOpphold1Skjema == null) {
-  
+  deleteHundCoockies();
 }
 
 function deleteHundCoockies() {
@@ -344,27 +265,7 @@ function deleteHundCoockies() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 // ********************* 0) Alle: globale spraak variabler (Trygve og ?) ********************* 
 var flaggTab        = ['bilder/FlaggNO.png', 'bilder/FlaggGB.png'];
 var hjemTab         = ['Hjem', 'Home'];
@@ -476,7 +377,7 @@ function oppdaterAnmeldelseSlider() {
     }
 }
 
-/*
+
 // ********************* 0) Felles: tilToppenKnapp (Kristina) ********************* 
 //https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 //Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 
@@ -503,10 +404,10 @@ document.body.scrollTop = 0; // Denne koden brukes hvis nettleseren er Safari
 document.documentElement.scrollTop = 0; // Denne koden brukes hvis nettleseren er Chrome, Firefox, Opera og IE.
 }
 
-*/
 
 
-// ************************** Registrer deg: vis skjul passord funksjon (Even) **************************
+
+// ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
 const visPassordKnapp = document.querySelector("#visPassordKnapp");
 
 if (visPassordKnapp !== null) {
@@ -523,63 +424,60 @@ function visPassord() {
 } 
 
 // ************************** Registrer deg: Passord validation (Even) **************************
-/*
 //Passord validation (Even)
 const passord = document.querySelector("#passord");
 const status = document.querySelector("#status");
 
 //er vi på registrerDeg siden ? 
 if (passord !== null) {
-    passord.addEventListener('keyup', melding, false);
+  passord.addEventListener('keyup', melding, false);
 }
 
 function melding(){
   var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
   if(passord.value.match(paso)){
-      status.innerHTML="Passord er godkjent";
-      return true;
+    status.innerHTML="Passord er godkjent";
+    return true;
   } else{
-      status.innerHTML="Passordet må være mellom 8-15 tegn inkludert speseiel tegn.";
-      return false;
+    status.innerHTML="Passordet må være mellom 8-15 tegn inkludert speseiel tegn.";
+    return false;
   } 
 }
 
-
 // ************************** Bildeslider (Even) **************************
-
 //Bildeslider hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp
-const mySlides = document.getElementsByClassName("mySlides");
 var slideIndex = 1;
-
-if (mySlides !== null ) {
-    showSlides(slideIndex);
-}
+showSlides(slideIndex);
 
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+  showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+  showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
-// *********************** Slutt på hentet kode ***********************
 
+
+// Slutt på hentet kode
+
+
+// Bestill opphold 4
 
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp
