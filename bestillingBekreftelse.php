@@ -37,10 +37,6 @@ $dblink = kobleOpp();
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
 
-				<!-- Avbryt knapp -->
-				<input class="inputButton avbrytKnapp" type="button" name="avbryt" value="X">
-
-
 	<!-- ************************ (Kristina) ************************** -->
 				<div class="luft">
 
@@ -53,7 +49,7 @@ $dblink = kobleOpp();
 							<h2 class="hovedOverskrift">Bekreftelse på bestilling</h2>
 
 							<p>Din bestilling er nå mottatt!</p>
-							<p>
+							<p> Du kan sjekke bestillingen på Min side.
 								Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf 12345678
 								eller <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a>
 							</p>
@@ -66,7 +62,7 @@ $dblink = kobleOpp();
 									<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til forsiden">
 									<!-- Tilbake til min Side knapp (Kristina)-->
 									<a href="minSide.php">
-										<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til Min side">
+										<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="gå til Min side">
 
 							</div>
 						</div>
