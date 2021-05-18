@@ -256,7 +256,7 @@ function lagreKontaktOssInfo($dblink) {
 
 //hjelpemetoder
 function registrerHund($dblink) {
-    if (isset($_POST['registrer'])) { 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {  
         $navn = $_POST['navn'];
         $rase = $_POST['rase'];
         $fdato = $_POST['fdato'];
@@ -283,7 +283,7 @@ function registrerHund($dblink) {
         }
 
         echo "hund " . $hundID . " - ". $navn . " registrert" . "<br>";
-        header('Location: bestillOpphold1.php');
+        //header('Location: bestillOpphold1.php');
     }
 }
 
