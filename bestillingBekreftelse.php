@@ -50,19 +50,18 @@ $dblink = kobleOpp();
 							<h2 class="hovedOverskrift">Bekreftelse på bestilling</h2>
 
 							<p>Din bestilling er nå mottatt!</p>
-							<p> Du kan sjekke bestillingen på Min side.</p>
-							<p>	Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf 12345678
-								eller <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a>
-							</p>
+							<p> Du kan sjekke bestillingen på <a class="link" href="minSide.php">Min Side.</a></p>
+								Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf 12345678
+								eller <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a> 
+							</p> 
+							
+							<!-- -->
 
 								<!-- Tilbake til forsiden- knapp (Gunni)-->
 								<a href="index.php">
-									<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til forsiden">
-									<!-- Tilbake til min Side knapp (Kristina)-->
-									<a href="minSide.php">
-										<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="gå til Min side">
-
+									<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til forsiden"> </a>
 							
+								
 						</div>
 					</div>
 				
