@@ -374,9 +374,10 @@ function bekreftHundInfo($dblink) {
     }
 }
 
-// ************************** 6) Bestill Opphold 3 - velg Datoer og bading ************************** /**//
+// ************************** 6) Bestill Opphold 3 - velg Datoer  ************************** /**//
 function bekreftDatoer($dblink) {
-    if (isset($_POST['bekreftDatoer'])) { 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo "<br>".'<i style="color:red";> aaaaaaaaaaaaaaaaas </i>'; 
         $startDato = $_POST['startDato']; 
         $sluttDato = $_POST['sluttDato'];
         if ($startDato >= $sluttDato) {
@@ -385,7 +386,8 @@ function bekreftDatoer($dblink) {
         else {
             $totalPris = totalPris($dblink,$startDato,$sluttDato);
             opprettBestillingSession($startDato, $sluttDato, $totalPris);
-            header('Location: bestillOpphold4.php');
+            //header('Location: bestillOpphold4.php');
+            echo "<br>".'<i style="color:red";> aaaaaaaaaaaaaaaaas </i>'; 
         }
     }
 }

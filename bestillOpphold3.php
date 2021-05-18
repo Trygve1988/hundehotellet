@@ -12,9 +12,13 @@ $dblink = kobleOpp();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bø Hundehotell</title>
 	<link href="include/style.css" rel="stylesheet" type="text/css">
-	<!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
-	<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
 	<script src="include/script.js" defer> </script>
+    <!-- **** ikke lagd selv,gratis å bruke: https://cdnjs.com/libraries/jquery/3.3.1  **** -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <!-- ************************** ikke lagd selv slutt ************************** -->
+
 </head>
 
 <body>
@@ -32,7 +36,7 @@ $dblink = kobleOpp();
 		<div class="hvitBakgrunn">
 			
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn">
+			<form class="skjemaBakgrunn" method="POST">
 			
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -45,15 +49,16 @@ $dblink = kobleOpp();
 				<h2 class="overskrift2">Tidsperiode</h2>
 				
 				<div class="soloKolonne">
-					<div class="kolonne1">		
-						<label for="fra">Fra:</label>
-						<input class="inputDato" type="date" name="fra">		
-							
-						<!-- Labels og input i kolonne 2 -->
-						<label for="til">Til:</label>
-						<input class="inputDato" type="date" name="til">	
-					</div>
+					<div class="kolonne1">	
+						<!-- fra dato class="inputDato" -->
+                        <label for="startDato">Fra</label>
+                        <input  type="date" id="startDato" name="startDato" value="<?php echo date("Y-m-d");?>" readonly >
+						<!-- til dato -->  
+						<label for="sluttDato">Til:</label>
+						<input type="date" id="sluttDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
+					</div>	
 				</div>
+
 			<!-- Knapperad -->
 			<div class="knappeRad">
 				<div class="knapp1IRad">
@@ -63,12 +68,18 @@ $dblink = kobleOpp();
 		       		</a>
 				</div>
 				<div class="etterKolonnerKnapp">
+
 					<!-- Neste-knapp -->
 					<a href = "bestillOpphold3.php">
-		            	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
-		            </a>	
+		            	<input class="inputButton hovedKnapp" type="submit" value="bekreftDatoer" name="bekreftDatoer">
+		            </a>
+
 				</div>
-			</div>			
+			</div>	
+			
+			<!-- 2g bestillOpphold -->
+			<?php bekreftDatoer($dblink); ?> 
+
 			</form>
 		</div>	
 	</main>

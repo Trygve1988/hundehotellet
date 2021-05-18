@@ -32,6 +32,11 @@ $dblink = kobleOpp();
 			
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn">
+
+				<!-- test -->
+				<?php oppdaterHunder($dblink); ?>
+				<?php $h1 = $_SESSION['aktivHund']; ?>
+				<?php echo $h1->toString(); ?>
 			
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -47,67 +52,38 @@ $dblink = kobleOpp();
 			
 						<!-- Labels og input i kolonne 1 -->
 						<label for="hNavn">Hundens navn:</label>
-						<input class="inputTekst" type="text" name="hNavn">
+						<input class="inputTekst" type="text" name="navn" value= <?php echo $h1->getNavn() ?> required/>
 				
 						<label for="rase">Rase:</label>
-						<input class="inputTekst" type="text" name="rase">
+						<input class="inputTekst" type="text" name="rase" value= <?php echo $h1->getRase() ?> />
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fDato">
+						<input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 
-						<!-- Nedtrekkslister -->
-						<label for="kjonn">Kjønn:</label>
-						<select class="inputSelect" name="kjonn">
-							<option value="velg">--Velg--</option>
-							<option value="hannhund">Hannhund</option>
-							<option value="tispe">Tispe</option>
-						</select>
+						<label for="kjønn">kjønn:</label>
+						<input class="inputTekst" type="text" name="kjønn" value= <?php echo $h1->getKjønn() ?> > 
+						
+						<label for="sterilisert">sterilisert: </label>
+						<input class="inputTekst" type="text" name="sterilisert" value= <?php echo $h1->getSterilisert() ?> > 
 
-						<label for="steril">Sterilisert:</label>
-						<select class="inputSelect" name="steril">
-							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
-						</select>
-			
-						<label for="vaksinert">Vaksinert:</label>
-						<select class="inputSelect" name="vaksinert">
-							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
-						</select>
 						<div class="passordKrav">
-							<a class="link" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+							<!-- <a class="link" href="#">Trykk her for mer informasjon om krav til vaksinering</a>	-->	
 						</div>
 					</div>
 					
 					<!-- Labels og input i kolonne 2 -->
 					<div>
-						<label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
-						<select class="inputSelect" name="lopeMedAndre">
-							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
-						</select>
-			
-						<label for="losPaaTur">Kan hunden gå løs på tur:</label>
-						<select class="inputSelect" name="losPaaTur">
-							<option value="velg">--Velg--</option>
-							<option value="ja">Ja</option>
-							<option value="nei">Nei</option>
-						</select>
+						<label for="løpeMedAndre">løpeMedAndre:</label>
+						<input class="inputTekst" type="text" name="løpeMedAndre" value= <?php echo $h1->getLøpeMedAndre() ?> > 
 
-						<label for="fortype">Fòrtype:</label>
-						<select class="inputSelect" name="fortype">
-							<option value="velg">--Velg--</option>
-							<option value="inkludert">Royal Canin</option>
-							<option value="inkludert">Vom</option>
-							<option value="medbrakt">Medbrakt</option>
-						</select>
+						<label for="forID">forType:</label>
+						<input class="inputTekst" type="text" name="forID" value= <?php echo $h1->getForID() ?>>
 
-						<label for="ekstraInfo">Ekstra informasjon:</label>
-						<textarea class="tekstboks tekstfelt1" name="ekstraInfo"></textarea>
+						<!-- info -->  
+						<label for="info">info:</label>
+						<input class="inputTekst" type="text" name="info" value= <?php echo $h1->getInfo() ?>>
+
 					</div>
 				</div>	
 				<!--Knapperad-->
@@ -119,15 +95,16 @@ $dblink = kobleOpp();
 	            		</a>
 					</div>
 					<div class="etterKolonnerKnapp">
+
 						<!-- Neste-knapp-->
 						<a href = "bestillOpphold3.php">
-	                		<input class="inputButton hovedKnapp" type="button" value="Neste"> 
+	                		<input class="inputButton hovedKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo"> 
 	            		</a>	
 					</div>
 				</div>
 				<!-- ************************** (Trygve) ************************** -->
 				<!-- bestillOpphold -->
-				<?php velgHund($dblink); ?> 
+				<?php bekreftHundInfo($dblink); ?> 
 			</form>
 		</div>	
 	</main>
@@ -138,3 +115,41 @@ $dblink = kobleOpp();
 
 </body>
 </html>
+
+
+<!-- Nedtrekkslister 
+<label for="kjonn">Kjønn:</label>
+<select class="inputSelect" name="kjonn">
+	<option value="velg">--Velg--</option>
+	<option value="hannhund">Hannhund</option>
+	<option value="tispe">Tispe</option>
+</select>--> 
+<!-- kjønn --> 
+
+<!--<label for="steril">Sterilisert:</label>
+<select class="inputSelect" name="steril">
+	<option value="velg">--Velg--</option>
+	<option value="ja">Ja</option>
+	<option value="nei">Nei</option>
+</select>-->
+<!-- sterilisert --> 
+
+						<!--<label for="ekstraInfo">Ekstra informasjon:</label>
+<textarea class="tekstboks tekstfelt1" name="info" value=--> 
+
+<!-- <label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
+<select class="inputSelect" name="lopeMedAndre">
+	<option value="velg">--Velg--</option>
+	<option value="ja">Ja</option>
+	<option value="nei">Nei</option>
+</select> -->
+<!-- løpeMedAndre, -->  
+
+<!-- <label for="fortype">Fòrtype:</label>
+<select class="inputSelect" name="fortype">
+	<option value="velg">--Velg--</option>
+	<option value="inkludert">Royal Canin</option>
+	<option value="inkludert">Vom</option>
+	<option value="medbrakt">Medbrakt</option>
+</select>--> 
+<!-- forType -->  
