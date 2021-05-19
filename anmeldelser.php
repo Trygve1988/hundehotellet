@@ -28,7 +28,7 @@
                 <div class="anmeldseGodkjenning">
                     <textarea name="skrivAnmeldse" id="skrivAnmeldse" cols="100" rows="20" readonly></textarea>
                 </div>
-                    <input class="litenKnapp" type="button" value="Avbryt" name = "Avbryt">
+                    <input class="litenKnapp" type="button" value="Avbryt" name = "Slett">
                     <input class="litenKnapp" type="button" value="Godkjenn" name = "Godkjenn">
             </form> 
         </div>
