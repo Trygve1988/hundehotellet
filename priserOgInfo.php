@@ -54,7 +54,7 @@ $dblink = kobleOpp();
                         <div class="informasjon">
 
                             <p class="overskrift">Inn-/Utlevering:</p>
-                            <p>Mellom kl 09.00-11.00/16.00-17.00</p>
+                            <p>Mellom kl 09.00-17.00</p>
 
                             <p class="overskrift">Mat:</p>
                             <p>- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.</p>
