@@ -86,9 +86,9 @@ function visNav2() {
 
         <?php
         if(erAdmin()) {
-            ?> <a id="kunderLink" href="omOss.php">Kunder</a> <?php 
-            ?> <a id="ansatteLink" href="omOss.php">Ansatte</a> <?php
-            ?> <a id="seLoggerLink" href="omOss.php">Se logger</a> <?php
+            ?> <a id="kunderLink" href="kunder.php">Kunder</a> <?php 
+            ?> <a id="ansatteLink" href="ansatte.php">Ansatte</a> <?php
+            ?> <a id="seLoggerLink" href="seLogger.php">Se logger</a> <?php
         }
     ?>
     </div>

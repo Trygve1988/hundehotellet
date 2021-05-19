@@ -25,12 +25,12 @@
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
         <!-- 2a admin -->
-            <div class="hvitBakgrunn">
+     <!--       <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
                 <h2 class="hovedOverskrift">Admin</h2>
                 <p>under arbeid....</p>
             </div> 
-        </form> 
+            </form> -->
 
     </main>
 
