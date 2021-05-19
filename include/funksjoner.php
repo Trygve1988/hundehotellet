@@ -61,7 +61,6 @@ function visNav() {
         } 
         // anmeldelser 
         if (erAnsatt()) {
-            ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php
             ?> <a id="alleOppholdLink" href="alleOpphold.php">Ansatt side</a> <?php
             
         }
@@ -108,6 +107,7 @@ function visNav3() {
             ?> <a id="matingLink" href="mating.php">Mating</a> <?php 
             ?> <a id="luftegårdLink" href="luftegård.php">Luftegård</a> <?php
             ?> <a id="turLink" href="tur.php">Tur</a> <?php
+            ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php
         }
     ?>
     </div>
