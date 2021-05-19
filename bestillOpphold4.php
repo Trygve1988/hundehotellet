@@ -33,7 +33,7 @@ $dblink = kobleOpp();
 		<div class="hvitBakgrunn">
 	
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn">
+			<form class="skjemaBakgrunn" method="POST">
 	
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
@@ -77,7 +77,7 @@ $dblink = kobleOpp();
 						<!-- ************************** CVC (Kristina) ************************* -->
 						<!--CVC modalen -->
 						<button id="cvcModalKnapp">?</button>
-						<input class="inputTekst" type="text" placeholder="De tre siste sifrene på cvv nummeret" name="cvv" required value>
+						<input class="inputTekst" type="text" placeholder="De tre siste sifrene på cvv nummeret" name="cvv">
 						<!--CVC modalen -->
 						<div id="cvcModal" class="modal">
 							<!-- Modal innhold (dette hopper opp i modalen) -->
@@ -103,13 +103,17 @@ $dblink = kobleOpp();
 		            	</a>
 					</div>
 					<div class="etterKolonnerKnapp">
-						<!-- Registrer bestilling-knapp -->
-						<a href = "bestillingBekreftelse.php">
-	                		<input class="inputSubmit hovedKnapp2" type="submit" value="Registrer bestilling"> 		            	
-	                	</a>	
+
+                     <!-- bestill --> 
+                     <input class="inputButton hovedKnapp" type="submit" value="bestill" name="bestill">
+
 					</div>
 				</div>			
 			</form>
+			
+			<!-- 2g bestillOpphold -->
+			<?php bestilling($dblink); ?> 
+
 		</div>
 	</main>
 

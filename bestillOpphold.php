@@ -43,6 +43,8 @@ $dblink = kobleOpp();
 
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Bestill opphold</h2>
+				<p>Bø Hundehotell har kapastitet til max 3 hunder i samme bur.</p>
+            	<p>Venligst bestill flere ganger viss du ønsker å bestille opphold til flere en 3 hunder.</p><br>
 			
 				<h3>Velg hund(er):</h3>
 				<div>

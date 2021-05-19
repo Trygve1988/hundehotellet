@@ -43,19 +43,19 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="fornavn">Fornavn:</label>
-						<input  class="inputTekst" type="text" name="fornavn">
+						<input  class="inputTekst" type="text" name="fornavn" value="peter">
 
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fDato">	
+						<input class="inputDato" type="date" name="fDato" value="2000-01-01">	
 
 						<label for="tlf">Telefonnummer:</label>
-						<input class="inputTekst" type="text" name="tlf">
+						<input class="inputTekst" type="text" name="tlf" value="77733111">	
 
 						<label for="adresse">Adresse:</label>
-						<input class="inputTekst" type="text" name="adresse">
+						<input class="inputTekst" type="text" name="adresse" value="Epleveien 5">	
 						
 						<label for="postNr">Postnummer:</label>
-						<input class="inputTekst" type="text" name="postNr">
+						<input class="inputTekst" type="text" name="postNr" value="9944">	
 
 						<!-- velg brukertype (bare for testing)  -->
 						<select class="inputSelect" name="brukertype">
@@ -68,13 +68,13 @@ $dblink = kobleOpp();
 					<div>
 						<!-- Labels og input i kolonne 2 -->
 						<label for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn">
+						<input class="inputTekst" type="text" name="etternavn" value="griffin">	
 
 						<label for="epost">E-post:</label>
-						<input class="inputTekst" type="text" name="epost">
+						<input class="inputTekst" type="text" name="epost" value="test">	
 							
 						<label for="passord">Ønsket passord:</label>
-						<input class="inputPassord" type="password" name="passord" required id="passord">	
+						<input class="inputPassord" type="password" name="passord" required id="passord" value="123">		
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">

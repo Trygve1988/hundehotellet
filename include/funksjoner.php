@@ -386,8 +386,7 @@ function bekreftDatoer($dblink) {
         else {
             $totalPris = totalPris($dblink,$startDato,$sluttDato);
             opprettBestillingSession($startDato, $sluttDato, $totalPris);
-            //header('Location: bestillOpphold4.php');
-            echo "<br>".'<i style="color:red";> aaaaaaaaaaaaaaaaas </i>'; 
+            header('Location: bestillOpphold4.php');
         }
     }
 }
