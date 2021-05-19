@@ -38,16 +38,14 @@ $dblink = kobleOpp();
                     <h2 class="hovedOverskrift">Pris</h2>
                         <table class="toKolTab">
                             <tr>
-                                <th>Pris pr dag pr hund</th> 
-                                <th>Bading</th> 
-                                <th> BLANK </th> 
-                                <th> BLANK</th> 
+                                <th>Pris pr dag for 1 hund</th> 
+                                <th>Pris pr dag for 2 hund</th> 
+                                <th> Pris pr dag for 3 hund </th> 
                             </tr>
                             <tr>
-                                <td>400 kr</td>
-                                <td>200 kr</td>
-                                <td> kr</td>
-                                <td> kr</td>    
+                                <td></td>
+                                <td></td>
+                                <td></td>   
                              </tr>
                          </table>
                     <h2 class="overskrift2">Informasjon</h2>

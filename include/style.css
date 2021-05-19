@@ -299,6 +299,12 @@ main {
 	text-align: justify;
     font-family: Arial;
 }
+
+.anmeldseGodkjenning textarea {
+	resize: none;
+	text-align: justify;
+    font-family: Arial;
+}
   
 /* **************************** Gunni ***************************** */
 /*Hvit midtstilt bakgrunn*/
