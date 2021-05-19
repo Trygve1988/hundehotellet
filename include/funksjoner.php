@@ -65,7 +65,7 @@ function visNav() {
         }
         // admin
         if (erAdmin()) {
-           ?> <a href="admin.php">Admin</a> <?php 
+           ?> <a href="kunder.php">Admin</a> <?php 
         }
         // minSide loggUt / loggInn registrerDeg
         if (erLoggetInn()) {
