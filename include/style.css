@@ -293,8 +293,12 @@ main {
 	text-decoration: underline;
 
 }
-
-/* Stop på Pris og Info */ 
+/* Skriv anmeldse textArea CSS */ 
+.anmeldseTilbakemelding textarea{
+	resize: none;
+	text-align: justify;
+    font-family: Arial;
+}
   
 /* **************************** Gunni ***************************** */
 /*Hvit midtstilt bakgrunn*/
