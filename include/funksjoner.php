@@ -61,7 +61,9 @@ function visNav() {
         } 
         // anmeldelser 
         if (erAnsatt()) {
-            ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php 
+            ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php
+            ?> <a id="alleOppholdLink" href="alleOpphold.php">Ansatt</a> <?php
+            
         }
         // admin
         if (erAdmin()) {
@@ -89,6 +91,23 @@ function visNav2() {
             ?> <a id="kunderLink" href="kunder.php">Kunder</a> <?php 
             ?> <a id="ansatteLink" href="ansatte.php">Ansatte</a> <?php
             ?> <a id="seLoggerLink" href="seLogger.php">Se logger</a> <?php
+        }
+    ?>
+    </div>
+        <?php
+}
+
+function visNav3() { 
+    ?> <div class="navbar2">
+
+        <?php
+        if(erAnsatt()) {
+            ?> <a id="alleOppholdLink" href="alleOpphold.php">Alle Opphold</a> <?php 
+            ?> <a id="ansatteLink" href="ansatte.php">Bur</a> <?php
+            ?> <a id="seLoggerLink" href="seLogger.php">Inn og utsjekkinger</a> <?php
+            ?> <a id="kunderLink" href="kunder.php">Mating</a> <?php 
+            ?> <a id="ansatteLink" href="ansatte.php">Luftegård</a> <?php
+            ?> <a id="seLoggerLink" href="seLogger.php">Tur</a> <?php
         }
     ?>
     </div>
