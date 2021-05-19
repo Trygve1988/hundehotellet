@@ -103,11 +103,11 @@ function visNav3() {
         <?php
         if(erAnsatt()) {
             ?> <a id="alleOppholdLink" href="alleOpphold.php">Alle Opphold</a> <?php 
-            ?> <a id="burLink" href="ansatte.php">Bur</a> <?php
-            ?> <a id="innOgUtLink" href="seLogger.php">Inn og utsjekkinger</a> <?php
-            ?> <a id="matingLink" href="kunder.php">Mating</a> <?php 
-            ?> <a id="luftegårdLink" href="ansatte.php">Luftegård</a> <?php
-            ?> <a id="turLink" href="seLogger.php">Tur</a> <?php
+            ?> <a id="burLink" href="bur.php">Bur</a> <?php
+            ?> <a id="innOgUtLink" href="innOgUtsjekkinger.php">Inn og utsjekkinger</a> <?php
+            ?> <a id="matingLink" href="mating.php">Mating</a> <?php 
+            ?> <a id="luftegårdLink" href="luftegård.php">Luftegård</a> <?php
+            ?> <a id="turLink" href="tur.php">Tur</a> <?php
         }
     ?>
     </div>
