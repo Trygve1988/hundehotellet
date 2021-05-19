@@ -40,7 +40,7 @@ $dblink = kobleOpp();
                             <tr>
                                 <th>Pris pr dag for 1 hund</th> 
                                 <th>Pris pr dag for 2 hund</th> 
-                                <th> Pris pr dag for 3 hund </th> 
+                                <th>Pris pr dag for 3 hund</th> 
                             </tr>
                             <tr>
                                 <td></td>

@@ -34,6 +34,8 @@ $dblink = kobleOpp();
             <form class="skjemaBakgrunn">
                 <h2 class="hovedOverskrift">Se logger</h2>
                 <table class="toKolTab">
+
+                <p>Hva skal egentlig inn i tabellen her ???</p>
                     <tr>
                         <th>Ansatte Fornavn</th> 
                         <th>Ansatte Etternavn</th> 
