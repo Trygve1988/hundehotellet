@@ -30,37 +30,38 @@ $dblink = kobleOpp();
 		<!-- erLoggetInn sjekk -->
 		<?php /*if (!erLoggetInn()) { header('Location: loggInn.php'); } grået ut for å teste*/ ?>
 
-		<!-- ************************ (Gunni) ************************** -->
+	<!-- ************************ (Gunni (makert i koden hva som er hennes) og Kristina (makert i koden) ) ************************** -->
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 
 			<!-- Skjema -->
+					    <!--Måtte lage min egen "bakgrunn" der jeg fjernet den grå bakgrunnen for å få meldingen mer i midten -->
 			<form class="skjemaBakgrunn1">
 
-				<!-- Avbryt knapp 
-				<a href = "index.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>-->
-
-				<div class="takkSiden">
+	<!-- ************************ (Kristinas kode) ************************** -->
+	<div class="takkSiden">
 					<div class="module">
 						<!--Module(fontawesome)  -->
 						<!-- gratis Opp ikon fra https://fontawesome.com/icons/check-circle?style=solid -->
 						<i class="fas fa-check-circle fa-2x"></i>
 
 						<!-- Overskrift -->
-						<h2 class="hovedOverskrift">Hunden er registrert</h2>
+						<h2 class="hovedOverskrift">Hunden er registrert!</h2>
 
-						<div class="soloKolonne">
-							<p>*Hunden* er registrert! Hvis du ønsker å se eller endre informasjonen på de registrerte hundene dine, kan du gå inn på <a class="link" href="minSide.php">Min Side.</a></p>
+						<div class="RegistrertHundTekst">
+						<!-- ************************ (Gunn Ingers  tekst og kode) ************************** -->
+							<p>*Hunden* er registrert! Hvis du ønsker å se eller endre informasjonen på de
+								registrerte hundene dine, kan du gå inn på <a class="link" href="minSide.php">Min Side.</a></p>
 						</div>
 						<a href="index.php">
 							<input class="hovedKnapp inputButton" type="button" name="oppdaterHund" value="Tilbake til forsiden">
 						</a>
+	<!-- ************************ (Gunn Ingers kode slutt) ************************** -->
+
 					</div>
 				</div>
-		</div>
-		</form>
+					<!-- ************************ (Kristinas kode slutt) ************************** -->
+			</form>
 		</div>
 	</main>
 
