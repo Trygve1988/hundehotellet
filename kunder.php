@@ -34,10 +34,10 @@ $dblink = kobleOpp();
                 <h2 class="hovedOverskrift">Kunder</h2>
                 <table class="toKolTab">
                     <tr>
-                        <th>Kunde Fornavn</th> 
-                        <th>Kunde Etternavn</th> 
-                        <th>Kunde Epost </th> 
-                        <th>Kunde Passord</th> 
+                        <th>Fornavn</th> 
+                        <th>Etternavn</th> 
+                        <th>Epost</th> 
+                        <th>Passord</th> 
                     </tr>
                     <tr>
                         <td></td>
