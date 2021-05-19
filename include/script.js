@@ -259,13 +259,6 @@ function deleteHundCoockies() {
 }
 
 
-
-
-
-
-
-
-/*
 // ********************* 0) Alle: globale spraak variabler (Trygve og ?) ********************* 
 var flaggTab        = ['bilder/FlaggNO.png', 'bilder/FlaggGB.png'];
 var hjemTab         = ['Hjem', 'Home'];
@@ -346,65 +339,53 @@ var anmeldelsePos = 0;
 
 //er vi på index siden ? 
 if (anmeldelseTekst !== null) {
+    var anmeldelseTab = null;
+    hentUtAnmeldelser(); // setter anmeldelsene inne i anmeldelseTab
+    oppdaterAnmeldelseSlider();
     nesteAnmeldelseKnapp.addEventListener('click',neste,false);
     tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
-    neste();
 }
 
 function neste() {
     anmeldelsePos++;
+    //er vi gått for langt mot høyre?
+    if (anmeldelseTab !== null && anmeldelsePos > anmeldelseTab.length-3) {
+        anmeldelsePos = 0;
+    }
     oppdaterAnmeldelseSlider();
 }
 
 function tilbake() {
     anmeldelsePos--;
+    //er vi gått for langt mot venstre?
+    if(anmeldelseTab !== null && anmeldelsePos < 0) {
+        console.log("godzilla");
+        anmeldelsePos = anmeldelseTab.length-3;
+    }
     oppdaterAnmeldelseSlider();
 }
 
-function oppdaterAnmeldelseSlider() { 
+function hentUtAnmeldelser() { 
     var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/hentUtAnmeldelse.php?q="+anmeldelsePos, true);
+    ajaxRequest.open("GET", "include/hentUtAnmeldelse.php?", true);
     ajaxRequest.send(null); 
     ajaxRequest.onreadystatechange = function() {
-        var svar = ajaxRequest.responseText;
-        if (svar == -1) {
-            anmeldelsePos = 0;
-            neste();        
-        }
-        else {
-            anmeldelseTekst.innerHTML = svar;
-        }
+        anmeldelseStr = ajaxRequest.responseText; 
+        lagAnmeldelseTab(anmeldelseStr);
+        oppdaterAnmeldelseSlider();
     }
 }
 
-
-// ********************* 0) Felles: tilToppenKnapp (Kristina) ********************* 
-//https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
-//Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 
-//Var har blitt gjort om til let (fikk streng beskjed av foreleser på NTNU om om å bare bruke let istenfor var og const).
-
-// Henter topp knappen ved hentet elmentet id kalt Knappen
-let minKnapp = document.getElementById("Knappen");
-
-// Når brukeren ruller 20 px fra toppen av dokumentet, viser knappen  
-window.onscroll = function() {scrolleFunksjon()};
-
-function scrolleFunksjon() {
-    // Topp knappen dukker opp når brukeren scroller ned
-if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    minKnapp.style.display = "block";
-} else {
-    minKnapp.style.display = "none";
-}
+function lagAnmeldelseTab(anmeldelseStr) { 
+    anmeldelseTab = anmeldelseStr.split(",")  // lager tabell
 }
 
-// Når brukeren klikker på knappen, scrolles det til toppen av dokumentet 
-function toppKnappFunksjon() {
-document.body.scrollTop = 0; // Denne koden brukes hvis nettleseren er Safari
-document.documentElement.scrollTop = 0; // Denne koden brukes hvis nettleseren er Chrome, Firefox, Opera og IE.
+function oppdaterAnmeldelseSlider() { 
+    if (anmeldelseTab !== null ) {
+        var text = anmeldelseTab[anmeldelsePos];
+        anmeldelseTekst.innerHTML = text;
+    }
 }
-
-
 
 
 // ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
@@ -446,8 +427,12 @@ function melding(){
 
 // ************************** Bildeslider (Even) **************************
 //Bildeslider hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp
+var test = document.getElementsByClassName("mySlides");
+
 var slideIndex = 1;
-showSlides(slideIndex);
+if (test !== null) {
+  showSlides(slideIndex);
+}
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -458,19 +443,19 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
 }
 
 
@@ -478,7 +463,7 @@ function showSlides(n) {
 
 
 // Bestill opphold 4
-
+/*
 // ************************** 5) Bestill Opphold: CCV modal (Kristina) **************************
 // https://www.w3schools.com/howto/howto_css_modals.asp
 //Javascript kode fra w3schools, endret navn på variabler, klasser, funksjoner. 

@@ -65,7 +65,7 @@ function visNav() {
         }
         // admin
         if (erAdmin()) {
-           ?> <a href="admin.php">Admin</a> <?php 
+           ?> <a href="kunder.php">Admin</a> <?php 
         }
         // minSide loggUt / loggInn registrerDeg
         if (erLoggetInn()) {
@@ -86,9 +86,9 @@ function visNav2() {
 
         <?php
         if(erAdmin()) {
-            ?> <a id="kunderLink" href="omOss.php">Kunder</a> <?php 
-            ?> <a id="ansatteLink" href="omOss.php">Ansatte</a> <?php
-            ?> <a id="seLoggerLink" href="omOss.php">Se logger</a> <?php
+            ?> <a id="kunderLink" href="kunder.php">Kunder</a> <?php 
+            ?> <a id="ansatteLink" href="ansatte.php">Ansatte</a> <?php
+            ?> <a id="seLoggerLink" href="seLogger.php">Se logger</a> <?php
         }
     ?>
     </div>
@@ -386,8 +386,7 @@ function bekreftDatoer($dblink) {
         else {
             $totalPris = totalPris($dblink,$startDato,$sluttDato);
             opprettBestillingSession($startDato, $sluttDato, $totalPris);
-            //header('Location: bestillOpphold4.php');
-            echo "<br>".'<i style="color:red";> aaaaaaaaaaaaaaaaas </i>'; 
+            header('Location: bestillOpphold4.php');
         }
     }
 }

@@ -83,7 +83,8 @@ $dblink = kobleOpp();
                         <p>Her kan du se en oversikt over priser.</p>
                     </div>
                 </div>
-                <!-- ************************ (Trygve) ****************************** -->
+
+                <!-- Trygve anmeldelseslider -->
                 <div id="anmeldelseBoks">
                     <div id="anmeldelseTekstBoks">
                         <p id="anmeldelseTekst"></p>
@@ -91,14 +92,13 @@ $dblink = kobleOpp();
                     <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a>
                 </div>
+
         </div>
     </main>
 
     <!-- ************************** fellesBunn ************************** -->
     <?php visFooter(); ?>
     <?php visToppKnapp(); ?>
-
-    <script src="./include/javascriptKode/toppknappen.js"></script>
 
 </body>
 
