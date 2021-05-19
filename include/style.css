@@ -599,26 +599,24 @@ input[type=checkbox].storCheckbox {
 }
 
 /*Kontakt oss siden*/
-section .kontakt {
+
+/*
+
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start ;
 	margin: 0;
-  }
-  
-  .kontakt .kontakt-info {
-	align-content: flex-start;
-	align-items: flex-start;
-  
-  }
 
-  .kontakt-info-tekst {
-	margin-bottom: 40px;
+ */
+
+ .kontakt .kontakt-info {
+	margin: 10px;
+
 }
-/*Lager luft mellom linjene*/
-div .kontakt > p {
-	margin-bottom: 5px;
+
+.kontakt-info-tekst {
+  margin-bottom: 40px;
 }
 
 

@@ -61,11 +61,13 @@ function visNav() {
         } 
         // anmeldelser 
         if (erAnsatt()) {
-            ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php 
+            ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php
+            ?> <a id="alleOppholdLink" href="alleOpphold.php">Ansatt side</a> <?php
+            
         }
         // admin
         if (erAdmin()) {
-           ?> <a href="admin.php">Admin</a> <?php 
+           ?> <a href="kunder.php">Admin side</a> <?php 
         }
         // minSide loggUt / loggInn registrerDeg
         if (erLoggetInn()) {
@@ -89,6 +91,23 @@ function visNav2() {
             ?> <a id="kunderLink" href="kunder.php">Kunder</a> <?php 
             ?> <a id="ansatteLink" href="ansatte.php">Ansatte</a> <?php
             ?> <a id="seLoggerLink" href="seLogger.php">Se logger</a> <?php
+        }
+    ?>
+    </div>
+        <?php
+}
+
+function visNav3() { 
+    ?> <div class="navbar2">
+
+        <?php
+        if(erAnsatt()) {
+            ?> <a id="alleOppholdLink" href="alleOpphold.php">Alle Opphold</a> <?php 
+            ?> <a id="burLink" href="bur.php">Bur</a> <?php
+            ?> <a id="innOgUtLink" href="innOgUtsjekkinger.php">Inn og utsjekkinger</a> <?php
+            ?> <a id="matingLink" href="mating.php">Mating</a> <?php 
+            ?> <a id="luftegårdLink" href="luftegård.php">Luftegård</a> <?php
+            ?> <a id="turLink" href="tur.php">Tur</a> <?php
         }
     ?>
     </div>

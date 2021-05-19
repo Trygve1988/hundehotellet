@@ -16,37 +16,24 @@ $dblink = kobleOpp();
     <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
     <script src="include/script.js" defer> </script>
 </head>
-<body>
 
 
     <!-- ************************** fellesTop ************************** -->
         <?php visNav(); ?>
         <?php visNav2() ?>
+        <?php visNav3() ?>
 
     <!-- ************************** main **************************-->
     <main>
 
-        <!-- erAdmin sjekk -->
-        <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
+        <!-- erAnsatt sjekk -->
+        <?php if (!erAnsatt()) {
+            header('Location: loggInn.php');
+        } ?>
 
         <!-- 2a admin -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
-                <h2 class="hovedOverskrift">Se logger</h2>
-                <table class="toKolTab">
-                    <tr>
-                        <th>Ansatte Fornavn</th> 
-                        <th>Ansatte Etternavn</th> 
-                        <th>Ansatte Epost </th> 
-                        <th>Ansatte Passord</th> 
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>    
-                     </tr>
-                </table>
             </form> 
         </div> 
 
