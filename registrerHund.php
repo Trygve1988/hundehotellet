@@ -73,7 +73,7 @@ $dblink = kobleOpp();
 						</select>
 						
 						<div>
-							<a class="hPosLink" href="#">Trykk her for mer informasjon om krav til vaksinering</a>			
+							<a class="hPosLink" href="priserOgInfo.php">Trykk her for mer informasjon om krav til vaksinering</a>			
 						</div>	
 					<div>
 				
@@ -99,7 +99,6 @@ $dblink = kobleOpp();
 						<!-- <label for="ekstraInfo">Ekstra informasjon:</label>	-->	
 						<textarea class="tekstfelt1" name="info"></textarea>					
 					</div>
--
 				</div>
 				<!-- Registrer hund-knappp -->	
 				<div class="etterKolonnerKnapp"> 
