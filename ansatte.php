@@ -32,7 +32,7 @@ $dblink = kobleOpp();
         <!-- 2a admin -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
-                <h2 class="hovedOverskrift">Se logger</h2>
+                <h2 class="hovedOverskrift">Ansatte</h2>
                 <table class="toKolTab">
                     <tr>
                         <th>Ansatte Fornavn</th> 

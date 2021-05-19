@@ -1,17 +1,17 @@
 //***** ikke lagd selv: https://www.w3schools.com/js/js_cookies.asp **** -->
 function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-      }
-  }
-  return "";
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
 // ************* ikke lagd selv slutt ************* -->
 
@@ -24,31 +24,33 @@ var bestillOpphold1Skjema = document.getElementById("bestillOpphold1Skjema");
 
 //er vi på bestillOpphold1 siden ? 
 if (bestillOpphold1Skjema !== null) {
-  hentUtBrukerSineHunder();   // 1)
-  lagVelgHundKnapper();       // 2)
+    hentUtBrukerSineHunder();   // 1)
+    lagVelgHundKnapper();       // 2)
 } 
 
 // 1) hentUtBrukerSineHunder
 function hentUtBrukerSineHunder() {
-  var ajaxRequest = new XMLHttpRequest();  
-  ajaxRequest.open("GET", "include/hentUtBrukerSineHunder.php?", true);
-  ajaxRequest.send(null);
-  ajaxRequest.onreadystatechange = function() {
-      var hundIDTab = ajaxRequest.responseText;
-      setBrukerHunderCoockie(hundIDTab);
-  } 
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/hentUtBrukerSineHunder.php?", true);
+    ajaxRequest.send(null);
+    ajaxRequest.onreadystatechange = function() {
+        var hundIDTab = ajaxRequest.responseText;
+        setBrukerHunderCoockie(hundIDTab);
+    } 
 }
 
 function setBrukerHunderCoockie(hundIDTab) {
-  document.cookie = "brukerHunder=" + hundIDTab;
+    document.cookie = "brukerHunder=" + hundIDTab;
 }
 
 // 2) hentUtBrukerSineHunder
 function lagVelgHundKnapper() {
-  var brukerHunder = getCookie('brukerHunder'); 
-  // må laste inn siden på ny viss ikke vi har fått svar fra ajax kallet ennå
-  if (brukerHunder == "") {
-      location.reload();
+    var brukerHunder = getCookie('brukerHunder'); 
+    // må laste inn siden på ny viss ikke vi har fått svar fra ajax kallet ennå
+    if (brukerHunder == "") {
+        setTimeout(function(){
+            location.reload()
+        }, 100);
   }
 
   //har denne brukeren noen hunder som vi kan lage knapper til?
@@ -99,118 +101,118 @@ function lagVelgHundKnapper() {
 var bestillOpphold1Mld = document.getElementById("bestillOpphold1Mld");
 
 function velgHund(e) {
-  // får tak i alle hundID'ene som allerede er valgt
-  var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
+    // får tak i alle hundID'ene som allerede er valgt
+    var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
 
-  // får tak i den nye hundID'en
-  var nyHund = this.name;
+    // får tak i den nye hundID'en
+    var nyHund = this.name;
 
-  var dataTab = nyHund.split(" ");
-  var nyHundID = dataTab[0];
+    var dataTab = nyHund.split(" ");
+    var nyHundID = dataTab[0];
 
-  //er hund allerede valgt?
-  if (!erhundAlleredeValgt(nyHundID)) {
-      //da skal hunden legges til coockien
+    //er hund allerede valgt?
+    if (!erhundAlleredeValgt(nyHundID)) {
+        //da skal hunden legges til coockien
 
-      //er DetAllerede valgt 3 hunder
-      var valgteHunder = getCookie('valgteHunder');
-      hundIDTab = valgteHunder.split(" ");
-      if (hundIDTab.length > 2) {
-          bestillOpphold1Mld.innerHTML = "Kan ikke velge mer en 3 hunder!";
-      }
-      else{
-          alleHunder = valgteHunder + " " + nyHundID;
-          document.cookie = "valgteHunder=" + alleHunder ;
-         
-          //endrer stil på knappen
-          e.target.style.backgroundColor = "darkblue"; 
+        //er DetAllerede valgt 3 hunder
+        var valgteHunder = getCookie('valgteHunder');
+        hundIDTab = valgteHunder.split(" ");
+        if (hundIDTab.length > 2) {
+            bestillOpphold1Mld.innerHTML = "Kan ikke velge mer en 3 hunder!";
+        }
+        else{
+            alleHunder = valgteHunder + " " + nyHundID;
+            document.cookie = "valgteHunder=" + alleHunder ;
+          
+            //endrer stil på knappen
+            e.target.style.backgroundColor = "darkblue"; 
 
-          bestillOpphold1Mld.innerHTML = "";
-      }
-  }
-  else {
-      // da skal hunden fjernes fra coockien
-      var hunderStr = "";
-      var valgteHunder = getCookie('valgteHunder');
-      hundIDTab = valgteHunder.split(" ");
-      for (var i=0; i<hundIDTab.length; i++) {
-          var hundID = hundIDTab[i]
-          if (hundID != nyHundID) {
-              hunderStr += hundID + " ";
-          }
-      }
-      document.cookie = "valgteHunder=" + hunderStr + ";"
-      
-      //endrer stil på knappen
-      e.target.style.backgroundColor = "gray"; 
+            bestillOpphold1Mld.innerHTML = "";
+        }
+    }
+    else {
+        // da skal hunden fjernes fra coockien
+        var hunderStr = "";
+        var valgteHunder = getCookie('valgteHunder');
+        hundIDTab = valgteHunder.split(" ");
+        for (var i=0; i<hundIDTab.length; i++) {
+            var hundID = hundIDTab[i]
+            if (hundID != nyHundID) {
+                hunderStr += hundID + " ";
+            }
+        }
+        document.cookie = "valgteHunder=" + hunderStr + ";"
+        
+        //endrer stil på knappen
+        e.target.style.backgroundColor = "gray"; 
 
-      bestillOpphold1Mld.innerHTML = "";
-  }
+        bestillOpphold1Mld.innerHTML = "";
+    }
 
-  var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
-  
-  //lager en tabell som skal lagres som php SESSION
-  valgteHunder = valgteHunder.split(" ");
-  settHunderOppholdSession(valgteHunder);
+    var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
+    
+    //lager en tabell som skal lagres som php SESSION
+    valgteHunder = valgteHunder.split(" ");
+    settHunderOppholdSession(valgteHunder);
 }
 
 function erhundAlleredeValgt(sjekkhundID) {
-  var hundAlleredeValgt = false;
-  var valgteHunder = getCookie('valgteHunder');
-  hundIDTab = valgteHunder.split(" ");
-  for (var i=0; i<hundIDTab.length; i++) {
-      var hundID = hundIDTab[i]
-      if (hundID == sjekkhundID) {
-          hundAlleredeValgt = true;
-      }
-  }
-  return hundAlleredeValgt;
+    var hundAlleredeValgt = false;
+    var valgteHunder = getCookie('valgteHunder');
+    hundIDTab = valgteHunder.split(" ");
+    for (var i=0; i<hundIDTab.length; i++) {
+        var hundID = hundIDTab[i]
+        if (hundID == sjekkhundID) {
+            hundAlleredeValgt = true;
+        }
+    }
+    return hundAlleredeValgt;
 }
 
 function settHunderOppholdSession(valgteHunder) {
-  var ajaxRequest = new XMLHttpRequest();  
-  ajaxRequest.open("GET", "include/settHunderOppholdSession.php?q="+valgteHunder, true);
-  ajaxRequest.send(null);
-  ajaxRequest.onreadystatechange = function() {
-      var test = ajaxRequest.responseText;
-  } 
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/settHunderOppholdSession.php?q="+valgteHunder, true);
+    ajaxRequest.send(null);
+    ajaxRequest.onreadystatechange = function() {
+        var test = ajaxRequest.responseText;
+    } 
 }
 
 // ******************* 6) Bestill Opphold: c) lovligeDatoer *******************
 var startDato = document.getElementById("startDato");
 
 if (startDato !== null) {
-  hentUtFullbookedeDatoer();
+    hentUtFullbookedeDatoer();
 }
 
 function hentUtFullbookedeDatoer() {
-  var ajaxRequest = new XMLHttpRequest();  
-  ajaxRequest.open("GET", "include/hentUtFullbookedeDatoer.php?", true);
-  ajaxRequest.send(null);
-  ajaxRequest.onreadystatechange = function() {
-      var opptattTab = ajaxRequest.responseText;
-      if(opptattTab) {
-          taVekkDatoer(opptattTab);
-      }
-  } 
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/hentUtFullbookedeDatoer.php?", true);
+    ajaxRequest.send(null);
+    ajaxRequest.onreadystatechange = function() {
+        var opptattTab = ajaxRequest.responseText;
+        if(opptattTab) {
+            taVekkDatoer(opptattTab);
+        }
+    } 
 }
 
 //***** ikke lagd selv,gratis å bruke: https://cdnjs.com/libraries/jquery/3.3.1  **** -->
 function taVekkDatoer(opptattTab) {   
-  $('input').datepicker({
+    $('input').datepicker({
 
-      showButtonPanel: true,
-      changeMonth: true,
-      minDate: new Date(),
-      maxDate: '+1Y',
-      inline: true,
+        showButtonPanel: true,
+        changeMonth: true,
+        minDate: new Date(),
+        maxDate: '+1Y',
+        inline: true,
 
-      dateFormat: 'yy-mm-dd',
-      beforeShowDay: function(date) {
-          var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-          return [opptattTab.indexOf(string) == -1]
-      }
-  });
+        dateFormat: 'yy-mm-dd',
+        beforeShowDay: function(date) {
+            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+            return [opptattTab.indexOf(string) == -1]
+        }
+    });
 }
 // ************* ikke lagd selv slutt ************* -->
 
@@ -220,42 +222,42 @@ var sluttDato = document.querySelector("#sluttDato");
 
 //er vi på Bestill opphold deg siden ? 
 if (startDato !== null) {
-  startDato.addEventListener('click', oppdaterSluttDato, false);
+    startDato.addEventListener('click', oppdaterSluttDato, false);
 }
 
 function oppdaterSluttDato() {
-  var start = new Date(startDato.value);
-  var slutt = new Date(sluttDato.value);
-  if (start >= slutt) { 
-      slutt.setDate(start.getDate()+1);
-      document.getElementById("sluttDato").valueAsDate = slutt; 
-  }
+    var start = new Date(startDato.value);
+    var slutt = new Date(sluttDato.value);
+    if (start >= slutt) { 
+        slutt.setDate(start.getDate()+1);
+        document.getElementById("sluttDato").valueAsDate = slutt; 
+    }
 }
 
 // ******************* 12) Nesten Alle: deleteHundCoockies *******************
 //er vi IKKE på bestillOpphold1 siden ? 
 if (bestillOpphold1Skjema == null) {
-  deleteHundCoockies();
+    deleteHundCoockies();
 }
 
 function deleteHundCoockies() {
-  var cookies = document.cookie.split(";");
+    var cookies = document.cookie.split(";");
 
-  for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i];
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
 
-      //er dette en cookie som skal slettes?
-      var sjekkCookie = cookies[i];
-      var dataTab = sjekkCookie.split("=");
-      sjekkCookie = dataTab[0];
+        //er dette en cookie som skal slettes?
+        var sjekkCookie = cookies[i];
+        var dataTab = sjekkCookie.split("=");
+        sjekkCookie = dataTab[0];
 
-      if (sjekkCookie=="brukerHunder" || sjekkCookie==" brukerHunder" || 
-      sjekkCookie=="valgteHunder"|| sjekkCookie==" valgteHunder") {
-          var eqPos = cookie.indexOf("=");
-          var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-      }
-  }
+        if (sjekkCookie=="brukerHunder" || sjekkCookie==" brukerHunder" || 
+        sjekkCookie=="valgteHunder"|| sjekkCookie==" valgteHunder") {
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    }
 }
 
 
@@ -318,17 +320,17 @@ if (registrerDegLink !== null) {
 spraakKnapp.addEventListener('click', endreSpraak, false);
 
 function endreSpraak() {
-  var verdi = getCookie('spraak');
-  console.log(verdi);
-  if (verdi == 0) {
-      verdi = 1;
-  }
-  else {
-      verdi = 0;
-  }
-  document.cookie = "spraak=" + verdi;
+    var verdi = getCookie('spraak');
+    console.log(verdi);
+    if (verdi == 0) {
+        verdi = 1;
+    }
+    else {
+        verdi = 0;
+    }
+    document.cookie = "spraak=" + verdi;
 
-  location.reload();
+    location.reload();
 }
 
 // ************************** 1) index: anmeldelseSlider (Trygve) ************************** 
