@@ -1,36 +1,43 @@
-/*
-.luftIBoksen {
-   display: flex;
-  flex-direction: center;
-  justify-content: center;
-  align-items: center; 
-}
-*/
-.takkSiden {  
-    max-width: 500px;
-    background: linear-gradient(to left, #743ad5, #d53a9d);
-    padding: 10px; /*Endrer størrelsen på borderen*/
-    margin: 0;
 
-  }
-  
-  /*Bekfretelses ikon*/
-  .module {
-    text-align: center;
-    background: white;
-    color: black;
-    padding: 2rem;
-  }
-  
-/*Farge til OK fonten*/
-.module .fa-check-circle {
-    color:lime;
- 
-}
-/*Lager luft rundt linkene*/
-  .module .LinkerTilTakkSiden {
-      padding: 20px;
-
-   
-  }
-
+.skjemaBakgrunn1 {   /*Gunn Ingers kode, kommentarene forklarer mine endringer */
+    display: inline-block;
+    height: auto;
+    min-height: 600px;
+    border-radius: 20px;
+    padding:  10px 25px 70px; /*Fjernet 15px padding for å få meldingen mer sidestilt*/
+    margin: 0; /*Fjerner irriterende margin*/
+    /*fjernet for å få mer midstilt
+    background-color: #e7e4e4;
+    text-align: left;
+    */
+    
+    }
+    
+    .takkSiden {  
+        max-width: 500px;
+        background: linear-gradient(to left, #743ad5, #d53a9d);
+        padding: 10px; /*Endrer størrelsen på borderen*/
+        margin: 0;
+        margin-right: 0;       
+      }
+      
+      /*Bekreftelses ikon*/
+      .module {
+        text-align: center;
+        background: white;
+        color: black;
+        padding: 2rem;
+      }
+      
+    /*Farge til OK fonten*/
+    .module .fa-check-circle {
+        color:lime;
+     
+    }
+    /*Lager luft rundt linkene
+      .module .LinkerTilTakkSiden {
+          padding: 20px;
+    
+       
+      }*/
+    
