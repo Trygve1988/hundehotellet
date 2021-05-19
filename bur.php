@@ -25,16 +25,60 @@ $dblink = kobleOpp();
     <!-- ************************** main **************************-->
     <main>
 
-        <!-- erAnsatt sjekk -->
-        <?php if (!erAnsatt()) {
+      <!-- erAnsatt sjekk -->
+      <?php /*if (!erAnsatt()) {
             header('Location: loggInn.php');
-        } ?>
+        } */?>
 
         <!-- 2a admin -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
+
+<!--Tabell bur -->
+<h2 class="hovedOverskrift">Bur</h2>
+                <table class="opphold Pågående">
+                    <thead>
+                        <tr>
+                            <th>Bur ID</th>
+                            <th>Lengde cm</th>
+                            <th>Bredde cm</th>
+                            <th>Høyde cm</th>
+                         
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        
+                        </tr>
+                        <tr>
+                        <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                        <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                        <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </form> 
         </div> 
+
 
     </main>
 

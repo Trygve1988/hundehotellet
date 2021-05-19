@@ -18,29 +18,144 @@ $dblink = kobleOpp();
 </head>
 
 
-    <!-- ************************** fellesTop ************************** -->
-        <?php visNav(); ?>
-        <?php visNav3() ?>
+<!-- ************************** fellesTop ************************** -->
+<?php visNav(); ?>
+<?php visNav3() ?>
 
-    <!-- ************************** main **************************-->
-    <main>
+<!-- ************************** main **************************-->
+<main>
 
-        <!-- erAnsatt sjekk -->
-        <?php if (!erAnsatt()) {
-            header('Location: loggInn.php');
-        } ?>
 
-        <!-- 2a admin -->
-        <div class="hvitBakgrunn">
-            <form class="skjemaBakgrunn">
-            </form> 
-        </div> 
+    <!-- erAnsatt sjekk -->
+    <?php /*if (!erAnsatt()) {
+        header('Location: loggInn.php');
+    } */ ?>
 
-    </main>
+    <!-- 2a admin -->
+    <div class="hvitBakgrunn">
+        <form class="skjemaBakgrunn">
 
-    <!-- ************************** fellesBunn **************************-->
-    <?php visFooter(); ?> 
-    <?php visToppKnapp(); ?> 
+            <!-- Tabell Utsjekk -->
+            <h2 class="hovedOverskrift">Utsjekk</h2>
+            <table class="opphold utsjekk">
+                <thead>
+
+                    <tr>
+                        <th>Start tidspunkt</th>
+                        <th>Slutt tidspunkt</th>
+                        <th>Opphold ID</th>
+                        <th>Bruker ID</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <!-- Tabell Innsjekk -->
+            <h2 class="hovedOverskrift">Innsjekk</h2>
+            <table class="opphold innsjekk">
+                <thead>
+
+                    <tr>
+                        <th>Start tidspunkt</th>
+                        <th>Slutt tidspunkt</th>
+                        <th>Opphold ID</th>
+                        <th>Bruker ID</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+</main>
+
+<!-- ************************** fellesBunn **************************-->
+<?php visFooter(); ?>
+<?php visToppKnapp(); ?>
 
 </body>
+
 </html>

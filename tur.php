@@ -18,29 +18,93 @@ $dblink = kobleOpp();
 </head>
 
 
-    <!-- ************************** fellesTop ************************** -->
-        <?php visNav(); ?>
-        <?php visNav3() ?>
+<!-- ************************** fellesTop ************************** -->
+<?php visNav(); ?>
+<?php visNav3() ?>
 
-    <!-- ************************** main **************************-->
-    <main>
+<!-- ************************** main **************************-->
+<main>
 
-        <!-- erAnsatt sjekk -->
-        <?php if (!erAnsatt()) {
-            header('Location: loggInn.php');
-        } ?>
 
-        <!-- 2a admin -->
-        <div class="hvitBakgrunn">
-            <form class="skjemaBakgrunn">
-            </form> 
-        </div> 
 
-    </main>
+    <!-- erAnsatt sjekk -->
+    <?php /*if (!erAnsatt()) {
+        header('Location: loggInn.php');
+    } */ ?>
 
-    <!-- ************************** fellesBunn **************************-->
-    <?php visFooter(); ?> 
-    <?php visToppKnapp(); ?> 
+    <!-- 2a admin -->
+    <div class="hvitBakgrunn">
+        <form class="skjemaBakgrunn">
+
+            <!-- Tabell 3 -->
+            <h2 class="hovedOverskrift">Tur</h2>
+            <table class="opphold tur">
+                <thead>
+
+                    <tr>
+                        <th>Gått Tur ID</th>
+                        <th>Start tidspunkt</th>
+                        <th>Slutt tidspunkt</th>
+                        <th>Opphold ID</th>
+                        <th>Bruker ID</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+</main>
+
+<!-- ************************** fellesBunn **************************-->
+<?php visFooter(); ?>
+<?php visToppKnapp(); ?>
 
 </body>
+
 </html>

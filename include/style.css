@@ -629,11 +629,12 @@ input[type=checkbox].storCheckbox {
 }
 
 
-/*Admin opphold siden*/
+/*Admin 
+opphold, bur, mating, tur, luftegård, Innsjekk/utsjekk tabeller*/
 
 .opphold table, .opphold {
 	border-collapse: collapse;
-	width: 50%; /*Størrelse på tabellen*/
+	width: 100%; /*Størrelse på tabellen*/
   }
 
   .opphold tr { 
@@ -642,13 +643,14 @@ input[type=checkbox].storCheckbox {
 
   /*Overskrift i tabellene*/
   .opphold th {
-    text-align: center;
+	width: auto;
      background-color: #394f79;
      color: white;
-     padding: 5px;
+	 padding-top: 20px;/*padding til overskrift*/
+	 padding-bottom: 20px;
+	 padding: 20px;
   }
-  .opphold th, .opphold td {
-
+  .opphold td {
 	padding: 15px; /*padding til overskrift*/
 	text-align: left;
 	border-bottom: 1px solid #ddd;
