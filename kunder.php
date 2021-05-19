@@ -32,7 +32,25 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
                 <h2 class="hovedOverskrift">Kunder</h2>
-                <p>under arbeid....</p>
+                <table class="toKolTab">
+                    <tr>
+                        <th>Kunde Fornavn</th> 
+                        <th>Kunde Etternavn</th> 
+                        <th>Kunde Epost </th> 
+                        <th>Kunde Passord</th> 
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>    
+                     </tr>
+                </table>
+                <div class="admin_kanpper">
+                    <input class="litenKnapp" type="button" value="Ny kunde" name = "Ny">
+                    <input class="litenKnapp" type="button" value="Endre kund" name = "Endre">
+                    <input class="litenKnapp" type="button" value="Slett kunde" name = "Slett">
+                </div>
             </form> 
         </div> 
 
