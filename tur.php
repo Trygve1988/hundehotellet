@@ -98,6 +98,9 @@ $dblink = kobleOpp();
 
                 </tbody>
             </table>
+        </form>
+    </div>
+    
 
 </main>
 

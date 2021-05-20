@@ -201,8 +201,9 @@ $dblink = kobleOpp();
                     </tbody>
                 </table>
 
-        </div>
+      
         </form>
+          </div>
     </main>
 
     <!-- ************************** fellesBunn **************************** -->
