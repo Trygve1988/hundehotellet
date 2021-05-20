@@ -411,11 +411,11 @@ function oppdaterAnmeldelseSlider() {
 
 
 // ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
-const visPassordKnapp = document.querySelector("#visPassordKnapp");
+//const visPassordKnapp = document.querySelector("#visPassordKnapp");
 
-if (visPassordKnapp !== null) {
-    visPassordKnapp.addEventListener('click', visPassord, false);
-} 
+//if (visPassordKnapp !== null) {
+//    visPassordKnapp.addEventListener('click', visPassord, false);
+//} 
 
 function visPassord() {
   var x = document.getElementById("passord");
@@ -442,7 +442,8 @@ function melding(){
     status.innerHTML="Passord er godkjent";
     return true;
   } else{
-    status.innerHTML="Passordet må være mellom 8-15 tegn, minst 1 stor bokstav, og  minnst et speseielt tegn.";
+    status.innerHTML="Passordet må være mellom 8-15 tegn, og";
+    status.innerHTML="minst 1 stor bokstav, og  minnst et speseielt tegn.";
     return false;
   } 
 }

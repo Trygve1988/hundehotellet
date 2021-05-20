@@ -75,7 +75,7 @@ $dblink = kobleOpp();
 							
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
-						required id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" value="123Ab%12">
+						id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" value="123Ab%12">
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
@@ -90,7 +90,7 @@ $dblink = kobleOpp();
 						
 						<div class="gjentaPKolonne">
 							<label for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk" required>	
+							<input class="inputPassord" type="password" name="passordSjekk" required value="123Ab%12">	
 						</div>
 					</div>
 				</div>
