@@ -33,7 +33,7 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">      
             
             <!-- Skjema --> 
-            <form class="skjemaBakgrunn">
+            <form class="skjemaBakgrunn" method="POST">
                 
                 <!-- Avbryt knapp -->
                 <a href = "index.php">

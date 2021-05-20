@@ -31,7 +31,7 @@ $dblink = kobleOpp();
 		<div class="hvitBakgrunn"> 
 			
 			<!-- Skjema -->	
-			<form class="skjemaBakgrunn">
+			<form class="skjemaBakgrunn" method="POST">
 
 				<!-- test -->
 				<?php oppdaterHunder($dblink); ?>
@@ -98,7 +98,7 @@ $dblink = kobleOpp();
 
 						<!-- Neste-knapp-->
 						<a href = "bestillOpphold3.php">
-	                		<input class="inputButton hovedKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo"> 
+	                		<input class="inputSubmit hovedKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo"> 
 	            		</a>	
 					</div>
 				</div>

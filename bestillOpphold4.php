@@ -103,15 +103,15 @@ $dblink = kobleOpp();
 		            	</a>
 					</div>
 					<div class="etterKolonnerKnapp">
-
-                     <!-- bestill --> 
-                     <input class="inputButton hovedKnapp" type="submit" value="bestill" name="bestill">
-
+                     	<a href="bestillingBekreftelse">
+						 	<!-- Bekreft bestilling --> 
+                     		<input class="inputSubmit hovedKnapp" type="submit" value="bestill" name="bestill">
+						</a>
 					</div>
 				</div>			
 			</form>
 			
-			<!-- 2g bestillOpphold -->
+			<!-- Bestill opphold -->
 			<?php bestilling($dblink); ?> 
 
 		</div>
