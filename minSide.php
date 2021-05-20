@@ -42,25 +42,10 @@
             
                 <!-- "Min profil" -->
                 <h2 class="overskrift2">Min profil</h2>
-                <table class="toKolTab  minSideToKolTab">	
-                    <tr>
-                        <th class="thKolonne">Navn</th>
-                        <td>Fornavn Etternavn</td>
-                    </tr>
-                    <tr>
-                        <th class="thKolonne">Epost</th>
-                        <td>epost</td>
-                    </tr>
-                    <tr>
-                        <th class="thKolonne">Tlf</th>
-                        <td>tlf</td>
-                    </tr>
-                    <tr>
-                        <th class="thKolonne">Adresse</th>
-                        <td>Adresse</td>
-                    </tr>
-                </table>
-         
+                
+                <!-- Min profil funksjonskall -->
+                <?php minProfilTab($dblink); ?>
+
                 <!--Knapperad-->
 				<!-- "Rediger / oppdater kunde-info-knapp -->
 				<a href = "oppdaterKundeInfo.php">
