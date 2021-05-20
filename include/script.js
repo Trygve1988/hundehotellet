@@ -295,6 +295,9 @@ var loggUtTab       = ['Logg ut', 'Logg out'];
 var registrerDegTab  = ['Registrer Deg', 'Register'];
 // step 1) lag en tabell
 var admininOverskriftTab  = ['Admininstrer Brukere', 'Manage Users']; 
+var omOssOverskriftTab  = ['Om oss', 'About Us'];
+var omOssTextTab       = ['Bø Hundehotell holder til på Lektorvegen 91, i Bø i Telemark. Det er landelige omgivelser med store luftegårder, og fine turområder.Vi seks ansatt som jobber her på Bø Hundehotell, vi har vært i Hundehotell businessen i 6år, vi startet opp for først gang den 12.04.2010. Den gang var det barejeg og mannen min. Vi er alle hunde elskere på her på Bø Hundehotell, og eier eller er vant med hund fra før av. Din hund vil være trygg i våre hender. Vi håper vi ser deg og din hund her.','Bø Hundehotell is located at Lektorvegen 91, in Bø in Telemark. It is a rural setting with large airyards, and nice hiking areas. We six employees who work here at Bø Hundehotell, we have been in the Hundehotell business for 6 years, we started up for the first time on 12.04.2010. That time it was just me and my husband. We are all dog lovers here at Bø Hundehotell, and already own or are used to dogs. Your dog will be safe in our hands. We hope to see you and your dog here.' ];
+var velkommenTab1     = ['Velkommen til Bø Hundehotell','Welcome to Bø Hundehotell'];
 
 //får tak i valgt språk fra spraak cookien
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -317,6 +320,9 @@ var loggUtLink  = document.getElementById("loggUtLink");
 var registrerDegLink = document.getElementById("registrerDegLink");
 // step 2) hent ut objektet som skal endre språk
 var admininOverskrift = document.getElementById("admininOverskrift"); 
+var omOssOverskrift = document.getElementById('omOssOverskrift');
+var omOssText = document.getElementById('omOssText');
+var velkommenNoText1 = document.getElementById('velkommenNoText1');
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -341,6 +347,17 @@ if (registrerDegLink !== null) {
 if (admininOverskrift !== null) {
     admininOverskrift.innerHTML = admininOverskriftTab[språk]; //test
 }
+if (omOssOverskrift !== null) {
+    omOssOverskrift.innerHTML = omOssOverskriftTab[språk]; 
+}
+if (omOssText !== null) {
+    omOssText.innerHTML = omOssTextTab[språk]; 
+}
+if (velkommenNoText1 !== null) {
+    velkommenNoText1.innerHTML = velkommenTab1[språk]; 
+}
+
+
 
 // ********************* 0) navbar: spraakKnapp (Trygve)*********************
 spraakKnapp.addEventListener('click', endreSpraak, false);
