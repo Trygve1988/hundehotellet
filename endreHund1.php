@@ -26,25 +26,33 @@
                 header('Location: loggInn.php');
             } 
         ?>
-    
-        <form class="skjema" method="POST"> 
-            <!-- 2a) velg hund -->
-            <h3>Endre Hund</h3>  
-            <div class="skjemaFlexBox"> 
-                <div> 
-                    <!-- hund -->
-                    <select id="hund" value="hund" name="hund">
-                        <?php $hunder = laghunderTab($dblink);
-                        for ($i=0; $i<count($hunder); $i++) {
-                            lagOption($hunder[$i]);
-                        } ?>
-                    </select>
-                    <!-- velgHundKnapp --> 
-                    <input type="submit" value="Velg" name="velgHund">
-                </div>
-            </div> 
-        </form> 
 
+        <!-- Hvit bakgrunn -->
+		<div class="hvitBakgrunn"> 
+			
+			<!-- Skjema -->	
+			<form class="skjemaBakgrunn" method="POST">
+                <h2>Endre Hund</h2>
+				<div class="skjemaKolonner">
+					<div class="kolonne1">
+                        <select id="hund" class="inputSelect" value="hund" name="hund">
+                            <?php $hunder = laghunderTab($dblink);
+                            for ($i=0; $i<count($hunder); $i++) {
+                                lagOption($hunder[$i]);
+                            } ?>
+                        </select>
+
+                        <a href="minSide.php">
+                            <input class="litenKnapp" type="button" value="Tilbake">  
+                        <a>
+                        <input class="litenKnapp" type="submit" value="Velg" name="velgHund">
+
+                    </div>
+                </div> 
+            </form> 
+        </div> 
+                        
+        
         <!-- 2g bestillOpphold -->
         <?php velgHundSomSkalEndres($dblink); ?> 
 

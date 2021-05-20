@@ -20,11 +20,10 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** fellesTop ************************** -->
+	<!-- ************************** Felles topp ************************** -->
 	<?php visNav(); ?>
 
-
-	<!-- ************************** main ******************************* -->
+	<!-- ************************** Main ******************************* -->
 	<main>
 
 		<!-- erLoggetInn sjekk -->
@@ -49,14 +48,14 @@ $dblink = kobleOpp();
 						<h2 class="hovedOverskrift">Hunden er registrert!</h2>
 
 						<div class="RegistrertHundTekst">
-						<!-- ************************ (Gunn Ingers  tekst og kode) ************************** -->
+						<!-- ************************ (Gunn Ingers  tekst og kode) *********************** -->
 							<p>*Hunden* er registrert! Hvis du ønsker å se eller endre informasjonen på de
 								registrerte hundene dine, kan du gå inn på <a class="link" href="minSide.php">Min Side.</a></p>
 						</div>
 						<a href="index.php">
 							<input class="hovedKnapp inputButton" type="button" name="oppdaterHund" value="Tilbake til forsiden">
 						</a>
-	<!-- ************************ (Gunn Ingers kode slutt) ************************** -->
+						<!-- ************************ (Gunn Ingers kode slutt) *************************** -->
 
 					</div>
 				</div>

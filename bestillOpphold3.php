@@ -45,17 +45,18 @@ $dblink = kobleOpp();
 				
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Bestill opphold</h2>	
-
 				<h2 class="overskrift2">Tidsperiode</h2>
 				
-				<div class="soloKolonne">
+				<div class="skjemaKolonner">
 					<div class="kolonne1">	
 						<!-- fra dato class="inputDato" -->
                         <label for="startDato">Fra</label>
-                        <input  type="date" id="startDato" name="startDato" value="<?php echo date("Y-m-d");?>" readonly >
+                        <input type="date" id="startDato" class="inputDato" name="startDato" value="<?php echo date("Y-m-d");?>" readonly >
+					</div>	
+					<div class="kolonne2">	
 						<!-- til dato -->  
 						<label for="sluttDato">Til:</label>
-						<input type="date" id="sluttDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
+						<input type="date" id="sluttDato" class="inputDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
 					</div>	
 				</div>
 
@@ -68,16 +69,14 @@ $dblink = kobleOpp();
 		       		</a>
 				</div>
 				<div class="etterKolonnerKnapp">
-
 					<!-- Neste-knapp -->
 					<a href = "bestillOpphold3.php">
-		            	<input class="inputButton hovedKnapp" type="submit" value="bekreftDatoer" name="bekreftDatoer">
+		            	<input class="inputSubmit hovedKnapp" type="submit" value="bekreftDatoer" name="bekreftDatoer">
 		            </a>
-
 				</div>
 			</div>	
 			
-			<!-- 2g bestillOpphold -->
+			<!-- Bestill opphold -->
 			<?php bekreftDatoer($dblink); ?> 
 
 			</form>

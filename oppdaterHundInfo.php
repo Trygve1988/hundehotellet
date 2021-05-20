@@ -118,7 +118,7 @@ $dblink = kobleOpp();
                     </a>
                 </div> 
                 <!-- ************************ (Trygve) ************************** -->
-                <!-- bestillOpphold -->
+                <!-- Bestill opphold -->
 	            <?php velgHund($dblink); ?>  
             </form>
         </div>

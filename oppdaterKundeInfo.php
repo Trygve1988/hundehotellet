@@ -33,7 +33,7 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">      
             
             <!-- Skjema --> 
-            <form class="skjemaBakgrunn">
+            <form class="skjemaBakgrunn" method="POST">
                 
                 <!-- Avbryt knapp -->
                 <a href = "index.php">
@@ -78,7 +78,7 @@ $dblink = kobleOpp();
                         <div class="visPassord">
                             <input class="inputCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
                         </div>
-                        <!-- SKRIV INN PASSORDTILBAKEMELDING-->
+                        <!-- Passord krav -->
                         <div class="passordKrav">
                             <p>Passord krav:</p>
                             <p id="status" melding()></p>
@@ -87,7 +87,7 @@ $dblink = kobleOpp();
                 </div>
 
                 <div class="etterKolonnerKnapp">
-                    <!--Registrer knapp-->
+                    <!-- Registrer knapp-->
                         <a href="index.php">
                             <input class="hovedKnapp inputSubmit" type="submit" name="oppdaterBruker" value="Lagre"> <!-- HVOR SKAL DENNE LEDE?? -->
                         </a>
