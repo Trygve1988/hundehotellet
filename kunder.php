@@ -46,7 +46,7 @@ $dblink = kobleOpp();
                         <td></td>    
                      </tr>
                 </table>
-                <div class="admin_kanpper">
+                <div class="admin_knapper">
                     <input class="litenKnapp" type="button" value="Ny kunde" name = "Ny">
                     <input class="litenKnapp" type="button" value="Endre kund" name = "Endre">
                     <input class="litenKnapp" type="button" value="Slett kunde" name = "Slett">
