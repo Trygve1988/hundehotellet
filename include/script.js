@@ -411,11 +411,11 @@ function oppdaterAnmeldelseSlider() {
 
 
 // ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
-//const visPassordKnapp = document.querySelector("#visPassordKnapp");
+const visPassordKnapp = document.querySelector("#visPassordKnapp");
 
-//if (visPassordKnapp !== null) {
-//    visPassordKnapp.addEventListener('click', visPassord, false);
-//} 
+if (visPassordKnapp !== null) {
+    visPassordKnapp.addEventListener('click', visPassord, false);
+} 
 
 function visPassord() {
   var x = document.getElementById("passord");
