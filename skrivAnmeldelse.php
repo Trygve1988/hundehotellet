@@ -34,9 +34,9 @@
                     <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="100" rows="20"></textarea>
                 </div>
                 <a href="minSide.php">
-                    <input class="litenKnapp" type="button" value="Avbryt" name = "Avbryt">
+                    <input class="inputButton" type="button" value="Avbryt" name = "Avbryt">
                 </a>
-                <input class="litenKnapp" type="submit" value="Send" name = "sendAnmeldelseKnapp">
+                <input class="inputSubmit" type="submit" value="Send" name = "sendAnmeldelseKnapp">
 
                 <?php lagreAnmeldelse($dblink); ?>
 
