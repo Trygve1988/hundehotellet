@@ -107,6 +107,7 @@ function visNav3() {
             ?> <a id="matingLink" href="mating.php">Mating</a> <?php 
             ?> <a id="luftegårdLink" href="luftegård.php">Luftegård</a> <?php
             ?> <a id="turLink" href="tur.php">Tur</a> <?php
+            ?> <a href="seLogger.php">Logg</a> <?php
             ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php
         }
     ?>
@@ -198,6 +199,31 @@ function visFooter() {
 
 
 
+
+
+function test($dblink) {
+    //tabell overskrifter
+    echo "<h2> Min Info </h2>";
+    echo "<table>";
+    echo "<tr>";
+    echo    "<th>brukerID</th>";  
+    echo    "<th>navn</th>";      
+    echo "</tr>";
+
+    //sql spørring
+    $brukerID = 6;
+    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+
+    //sql resultat -> tabell rader
+    $resultat = mysqli_query($dblink, $sql);
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo "<tr>";
+            echo "<td>". $rad['brukerID'] . "</td>";
+            echo "<td>". $rad['fornavn'] ." ". $rad['etternavn']. "</td>";
+        echo "</tr>";
+    } 
+    echo "</table>";
+}
 
 
 // ************************** 1) Index **************************
@@ -958,8 +984,6 @@ function nullStillInnsjekkinger($dblink) {
     }
 }
 
-
-
 //sjekk Ut
 function visSkalSjekkeUtIDag($dblink) {
     $idag = new DateTime();
@@ -999,7 +1023,6 @@ function lagSkalSjekkesUtTab($dblink) {
     $skalSjekkesInnTab = null;
     $pos = 0;
 
-    /*$sql = " SELECT H.navn, BR.fornavn, BR.etternavn    */
     $sql = " SELECT B.bestillingID, H.navn
     FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR 
     WHERE B.bestillingID = O.bestillingID  
@@ -1206,6 +1229,32 @@ function godkjennAnmeldelse($dblink) {
     }
 }
 
+// ************************** 7j) Ansatt Logg ************************** 
+function visAvbestilteOpphold($dblink)  { 
+    echo "<h3>"."Avbestilte opphold"."<h3>"; 
+    echo "<table class=\"blaaTab\">";
+    echo "<tr>";
+    echo    "<th>startDato</th>";
+    echo    "<th>sluttDato</th>";
+    echo    "<th>bestiltDato</th>";
+    echo    "<th>totalPris</th>";
+    echo    "<th>brukerID</th>";
+    echo "</tr>";
+
+    $sql = "SELECT * FROM slettetBestilling ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>"; 
+        echo "<td>" . $rad['startDato'] . "</td>"; 
+        echo "<td>" . $rad['sluttDato'] . "</td>"; 
+        echo "<td>" . $rad['bestiltDato'] . "</td>"; 
+        echo "<td>" . $rad['totalPris'] . "</td>"; 
+        echo "<td>" . $rad['brukerID'] . "</td>"; 
+        echo "</tr>";
+    }
+    echo "</table>";
+
+}
 
 // ************************** 9) Admin -> a) Bruker admin ************************** 
 function visAlleBrukere($dblink)  {     
@@ -1213,11 +1262,11 @@ function visAlleBrukere($dblink)  {
     $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' ;";
     $resultat = mysqli_query($dblink, $sql); 
     
-    echo "<table class=\"blaaTab\">";
+    echo "<table>";
     echo "<tr>";
-    echo    "<th>bID</th>";
+    echo    "<th>brukerID</th>";
     echo    "<th>epost</th>";
-    echo    "<th>type</th>";
+    echo    "<th>brukerType</th>";
     echo    "<th>fornavn</th>";
     echo    "<th>etternavn</th>";
     echo    "<th>tlf</th>";
@@ -1376,7 +1425,7 @@ function visInnloggetInfo($dblink) {
         $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID';";
         $resultat = mysqli_query($dblink, $sql); 
 
-        echo "<table class=\"blaaTab\">";
+        echo "<table>";
         echo "<tr>";
         echo    "<th>brukerID</th>";
         echo    "<th>epost</th>";
@@ -1408,7 +1457,7 @@ function visMineHunder($dblink) {
     $brukerID = $bruker->getBrukerID();
     $sql = "SELECT * FROM hund WHERE brukerID = '$brukerID';";
     $resultat = mysqli_query($dblink, $sql); 
-    echo "<table class=\"blaaTab\">";
+    echo "<table>";
     echo "<tr>";
     echo    "<th>hundID</th>";
     echo    "<th>navn</th>";
@@ -1486,6 +1535,7 @@ function lagOppholdTab($dblink) {
         $b1->addHund($rad['navn']);
         $forigeBestillingID = $bestillingID;
     }
+
     return $bestillingTab;
 }
 
@@ -1494,7 +1544,7 @@ function lagOppholdTab($dblink) {
 function lagOppholdOverskrifter() {
     echo "<h2> Mine Opphold </h2>";
     //overskrifter
-    echo "<table class=\"blaaTab\">";
+    echo "<table>";
     echo "<tr>";
     echo    "<th>bestillingID</th>";    // bestilling
     echo    "<th>start</th>";           // bestilling
@@ -1723,7 +1773,23 @@ function lagBestillingOption($bestilling) {
 function avbestill($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         $bestillingID = $_POST['bestillinger'];
-        
+
+        //henter ut bestilling info
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $startDato;
+        $sluttDato;
+        $bestiltDato;
+        $totalPris;
+        $sql = "SELECT * FROM bestilling WHERE bestillingID = '$bestillingID' ;";
+        $resultat = mysqli_query($dblink, $sql); 
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            $startDato = $rad['startDato'];
+            $sluttDato = $rad['sluttDato'];
+            $bestiltDato = $rad['bestiltDato'];
+            $totalPris  = $rad['totalPris'];
+        }
+
         //slett opphold
         $sql = "DELETE FROM opphold WHERE bestillingID = '$bestillingID' ;";
         $resultat = mysqli_query($dblink, $sql); 
@@ -1733,6 +1799,11 @@ function avbestill($dblink) {
         $resultat = mysqli_query($dblink, $sql); 
 
         echo "bestillingID " . $bestillingID . " avbestil. <br>";
+
+        //setter inn en rad i slettetBestilling
+        $sql = "INSERT INTO slettetBestilling (startDato, sluttDato, bestiltDato, totalPris, brukerID)
+        VALUES ('$startDato','$sluttDato','$bestiltDato','$totalPris','$brukerID') ;";
+        $resultat = mysqli_query($dblink, $sql); 
     }
 }
 

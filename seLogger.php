@@ -21,7 +21,7 @@ $dblink = kobleOpp();
 
     <!-- ************************** fellesTop ************************** -->
         <?php visNav(); ?>
-        <?php visNav2() ?>
+        <?php visNav3() ?>
 
     <!-- ************************** main **************************-->
     <main>
@@ -33,22 +33,7 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
                 <h2 class="hovedOverskrift">Se logger</h2>
-                <table class="toKolTab">
-
-                <p>Hva skal egentlig inn i tabellen her ???</p>
-                    <tr>
-                        <th>Ansatte Fornavn</th> 
-                        <th>Ansatte Etternavn</th> 
-                        <th>Ansatte Epost </th> 
-                        <th>Ansatte Passord</th> 
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>    
-                     </tr>
-                </table>
+                <?php visAvbestilteOpphold($dblink); ?> 
             </form> 
         </div> 
 
