@@ -49,13 +49,13 @@ $dblink = kobleOpp();
 						<input class="inputDato" type="date" name="fDato" required value="2000-01-01">	
 
 						<label for="tlf">Telefonnummer:</label>
-						<input class="inputTekst" type="text" name="tlf" required value="77733111">	
+						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
 
 						<label for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" required value="Epleveien 5">	
 						
 						<label for="postNr">Postnummer:</label>
-						<input class="inputTekst" type="text" name="postNr" required value="9944">	
+						<input class="inputTekst" type="text" name="postNr" required pattern="[0-9]{4}" value="9944">	
 
 						<!-- velg brukertype (bare for testing)  -->
 						<select class="inputSelect" name="brukertype">
