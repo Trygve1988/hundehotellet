@@ -24,6 +24,7 @@
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn" method="POST">
                 <h2 class="hovedOverskrift" >Skriv Anmeldse</h2>
+
                 <div class="anmeldseTilbakemelding">
                     <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="100" rows="20"></textarea>
                 </div>

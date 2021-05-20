@@ -61,11 +61,37 @@ $dblink = kobleOpp();
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 
+						<!-- kjønn --> 
+						<?php $kjonn = $h1->getKjønn(); ?>
 						<label for="kjønn">kjønn:</label>
-						<input class="inputTekst" type="text" name="kjønn" value= <?php echo $h1->getKjønn() ?> > 
-						
-						<label for="sterilisert">sterilisert: </label>
-						<input class="inputTekst" type="text" name="sterilisert" value= <?php echo $h1->getSterilisert() ?> > 
+						<select class="inputSelect" name="kjønn"> 
+							<?php
+							if ($kjonn == "gutt") { 
+								?><option value="gutt" selected >gutt</option><?php
+								?><option value="jente">jente</option><?php
+							} 
+							else { 
+								?><option value="gutt">gutt</option><?php
+								?><option value="jente" selected>jente</option><?php
+							}
+							?>
+						<select> 
+
+						<!-- sterilisert --> 
+						<?php $sterilisert = $h1->getSterilisert(); ?>
+						<label for="sterilisert">sterilisert:</label>
+						<select class="inputSelect" name="sterilisert"> 
+							<?php
+							if ($sterilisert == "1") { 
+								?><option value="1" selected >ja</option><?php
+								?><option value="0">nei</option><?php
+							} 
+							else { 
+								?><option value="1">ja</option><?php
+								?><option value="0" selected>nei</option><?php
+							}
+							?>
+						<select> 
 
 						<div class="passordKrav">
 							<!-- <a class="link" href="#">Trykk her for mer informasjon om krav til vaksinering</a>	-->	
