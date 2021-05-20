@@ -93,8 +93,8 @@ $dblink = kobleOpp();
 
                 <!-- Tabell 2 -->
 
-                <h1>Pågående opphold</h1>
-                <table class="opphold Pågående">
+                <h2 class="hovedOverskrift">Aktive opphold</h2>
+                <table class="opphold aktiv">
                     <thead>
                         <tr>
                             <th>Bestilling ID</th>
@@ -148,7 +148,7 @@ $dblink = kobleOpp();
                 </table>
 
                 <!-- Tabell 3 -->
-                <h1>Ikke begynte opphold</h1>
+                <h2 class="hovedOverskrift">Ikke begynte opphold </h2>
                 <table class="opphold IkkeBegyntOpphold">
                     <thead>
                         <tr>
