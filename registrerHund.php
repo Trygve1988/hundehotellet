@@ -75,11 +75,11 @@ $dblink = kobleOpp();
 						<div>
 							<a class="hPosLink" href="priserOgInfo.php">Trykk her for mer informasjon om krav til vaksinering</a>			
 						</div>	
-					<div>
+					</div>
 				
-					 <!-- Labels og input i kolonne 2-->
-					<div>
-						<!-- <label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>-->
+					<!-- Labels og input i kolonne 2-->
+					<div class="kolonne2">
+						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select class="inputSelect" name="løpeMedAndre">
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
@@ -96,14 +96,18 @@ $dblink = kobleOpp();
 							<option value="velg">--Velg--</option>
 						</select>
 
-						<!-- <label for="ekstraInfo">Ekstra informasjon:</label>	-->	
+						<label for="info">Ekstra informasjon:</label>
 						<textarea class="tekstfelt1" name="info"></textarea>					
 					</div>
+
 				</div>
 				<!-- Registrer hund-knappp -->	
-				<div class="etterKolonnerKnapp"> 
+				<div> 
+					<a href="minSide.php">
+						<input class="litenKnapp" type="button" value="Tilbake"> 
+					</a>
 					<a href="hundRegistrertBekreftelse.html">
-						<input class="hovedKnapp hovedKnapp2 inputSubmit" type="submit" name="registrer" value="Registrer hund"> 
+						<input class="litenKnapp" type="submit" name="registrer" value="Registrer hund"> 
 					</a>
 				</div>	
 				<!-- ************************** (Trygve) ************************** -->	

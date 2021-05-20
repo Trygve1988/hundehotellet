@@ -25,12 +25,18 @@
             <form class="skjemaBakgrunn" method="POST">
                 <h2 class="hovedOverskrift" >Skriv Anmeldse</h2>
                 <div class="anmeldseTilbakemelding">
-                    <textarea name="skrivAnmeldse" id="skrivAnmeldse" cols="100" rows="20"></textarea>
+                    <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="100" rows="20"></textarea>
                 </div>
+                <a href="minSide.php">
                     <input class="litenKnapp" type="button" value="Avbryt" name = "Avbryt">
-                    <input class="litenKnapp" type="button" value="Send" name = "Send">
+                </a>
+                <input class="litenKnapp" type="submit" value="Send" name = "sendAnmeldelseKnapp">
+
+                <?php lagreAnmeldelse($dblink); ?>
+
             </form> 
         </div>
+
     </main>
 
     <!-- ************************** fellesBunn ************************** -->

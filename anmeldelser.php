@@ -23,14 +23,20 @@
     	<!-- ************************ (Gunni) ****************************** -->
         <!-- Anmeldelser -->
         <div class="hvitBakgrunn">
-            <form class="skjemaBakgrunn">
+            <form class="skjemaBakgrunn" method="post"> 
                 <h2>Anmeldelser</h2>
-                <div class="anmeldseGodkjenning">
-                    <textarea name="skrivAnmeldse" id="skrivAnmeldse" cols="100" rows="20" readonly></textarea>
-                </div>
-                    <input class="litenKnapp" type="button" value="Avbryt" name = "Slett">
-                    <input class="litenKnapp" type="button" value="Godkjenn" name = "Godkjenn">
+                <!--<div class="anmeldseGodkjenning">
+                    <textarea name="skrivAnmeldse" id="skrivAnmeldse" cols="100" rows="20" readonly> </textarea>
+                </div>-->
+                <?php visNesteIkkeGodkjenteAnmeldelse($dblink); ?> 
+                <button class="litenKnapp" type="submit" name="slettAnmeldelseKnapp">Slett</button>
+                <button class="litenKnapp" type="submit" name="godkjennAnmeldelseKnapp">Godkjenn</button>
+   
             </form> 
+
+            <?php slettAnmeldelse($dblink); ?> 
+            <?php godkjennAnmeldelse($dblink); ?> 
+
         </div>
     </main>
 
