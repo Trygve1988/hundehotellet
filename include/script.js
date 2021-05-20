@@ -442,8 +442,7 @@ function melding(){
     status.innerHTML="Passord er godkjent";
     return true;
   } else{
-    status.innerHTML="Passordet må være mellom 8-15 tegn, og";
-    status.innerHTML="minst 1 stor bokstav, og  minnst et speseielt tegn.";
+    status.innerHTML="Mellom 8-15 tegn, minst 1 stor bokstav, og  minnst et speseielt tegn.";
     return false;
   } 
 }
