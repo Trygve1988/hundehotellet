@@ -26,50 +26,53 @@
                 header('Location: loggInn.php');
             } 
         ?>
-        
-        <!-- 2a omOss -->
-        <form class="skjema"> 
 
-            <!-- InnloggetInfo -->
-            <?php visInnloggetInfo($dblink); ?>
-            <a href="endreBrukerInfo.php">
-                <input class="litenKnapp" type="button" value="Endre Bruker" name="Endre Bruker">
-            </a>
-            <a href="endrePassord.php"> 
-                <input class="litenKnapp" type="button" value="Endre Passord" name="Endre Passord">
-            </a>
-            <br><br><br>
+        <!-- Hvit bakgrunn -->
+		<div class="hvitBakgrunn">
+	
+            <!-- Skjema -->	
+            <form class="skjemaBakgrunn" method="POST">
 
-            <!-- MineHunder -->
-            <?php visMineHunder($dblink) ?>
-            <a href="registrerHund.php">
-                <input class="litenKnapp" type="button" value="Registrer Hund" name="Registrer Hund">
-            </a>
-            <?php if (harHund($dblink)) { ?>
-                <a href="endreHund1.php">
-                    <input class="litenKnapp" type="button" value="Endre Hund" name="Endre Hund">  
+                <!-- InnloggetInfo -->
+                <?php visInnloggetInfo($dblink); ?>
+                <a href="endreBrukerInfo.php">
+                    <input class="litenKnapp" type="button" value="Endre Bruker" name="Endre Bruker">
                 </a>
-            <?php } ?>
-            <br><br><br>
-
-            <!-- Bestillinger --> 
-            <?php visMineOpphold($dblink); ?> 
-            <?php if (harOpphold($dblink)) { ?>
-                <br>
-                <a href="Avbestill.php">
-                    <input class="litenKnapp" type="button" value="Avbestill" name="Avbestill"> 
-                </a> 
-                <a href="anmeldelseKunde.php">
-                    <input class="litenKnapp" type="button" value="Skriv Anmeldelse" name="Skriv Anmeldelse">
+                <a href="endrePassord.php"> 
+                    <input class="litenKnapp" type="button" value="Endre Passord" name="Endre Passord">
                 </a>
-            <?php } ?>
-            
-            <!-- knappePanel --> 
-            <div class="knappePanel">  
+                <br><br><br>
 
-            </div>
+                <!-- MineHunder -->
+                <?php visMineHunder($dblink) ?>
+                <a href="registrerHund.php">
+                    <input class="litenKnapp" type="button" value="Registrer Hund" name="Registrer Hund">
+                </a>
+                <?php if (harHund($dblink)) { ?>
+                    <a href="endreHund1.php">
+                        <input class="litenKnapp" type="button" value="Endre Hund" name="Endre Hund">  
+                    </a>
+                <?php } ?>
+                <br><br><br>
 
-        </form> 
+                <!-- Bestillinger --> 
+                <?php visMineOpphold($dblink); ?> 
+                <?php if (harOpphold($dblink)) { ?>
+                    <br>
+                    <a href="Avbestill.php">
+                        <input class="litenKnapp" type="button" value="Avbestill" name="Avbestill"> 
+                    </a> 
+                    <a href="skrivAnmeldelse.php">
+                        <input class="litenKnapp" type="button" value="Skriv Anmeldelse" name="Skriv Anmeldelse">
+                    </a>
+                <?php } ?>
+                
+                <!-- knappePanel --> 
+                <div class="knappePanel">  
+
+                </div>
+            </form> 
+        </div>
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->

@@ -45,40 +45,33 @@ $dblink = kobleOpp();
 				
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Bestill opphold</h2>	
-
 				<h2 class="overskrift2">Tidsperiode</h2>
 				
-				<div class="soloKolonne">
+				<div class="skjemaKolonner">
 					<div class="kolonne1">	
 						<!-- fra dato class="inputDato" -->
                         <label for="startDato">Fra</label>
-                        <input  type="date" id="startDato" name="startDato" value="<?php echo date("Y-m-d");?>" readonly >
+                        <input type="date" id="startDato" class="inputDato" name="startDato" value="<?php echo date("Y-m-d");?>" readonly >
+					</div>	
+					<div class="kolonne2">	
 						<!-- til dato -->  
 						<label for="sluttDato">Til:</label>
-						<input type="date" id="sluttDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
+						<input type="date" id="sluttDato" class="inputDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
 					</div>	
 				</div>
 
-			<!-- Knapperad -->
-			<div class="knappeRad">
-				<div class="knapp1IRad">
-					<!-- Tilbake-knapp-->
-					<a href = "bestillOpphold.php">
-		           		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
-		       		</a>
-				</div>
-				<div class="etterKolonnerKnapp">
+				<!-- Tilbake-knapp-->
+				<a href = "bestillOpphold.php">
+					<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+				</a>
 
-					<!-- Neste-knapp -->
-					<a href = "bestillOpphold3.php">
-		            	<input class="inputButton hovedKnapp" type="submit" value="bekreftDatoer" name="bekreftDatoer">
-		            </a>
+				<!-- Neste-knapp -->
+				<a href = "bestillOpphold3.php">
+					<input class="inputButton hovedKnapp" type="submit" value="bekreftDatoer" name="bekreftDatoer">
+				</a>
 
-				</div>
-			</div>	
-			
-			<!-- 2g bestillOpphold -->
-			<?php bekreftDatoer($dblink); ?> 
+				<!-- 2g bestillOpphold -->
+				<?php bekreftDatoer($dblink); ?> 
 
 			</form>
 		</div>	

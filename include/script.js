@@ -234,6 +234,26 @@ function oppdaterSluttDato() {
     }
 }
 
+// ************************** 9) admin **************************
+var adminSeBrukertypeSelect = document.getElementById("adminSeBrukertypeSelect");
+
+//er vi på Registrer deg siden ? 
+if (adminSeBrukertypeSelect !== null) {
+    adminSeBrukertypeSelect.addEventListener('change', settAdminSeBrukertypeSession, false);
+}
+
+function settAdminSeBrukertypeSession() {
+    var brukertype = document.getElementById("adminSeBrukertypeSelect").value;
+    console.log(brukertype);
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/settAdminSeBrukertypeSession.php?q="+brukertype, true);
+    ajaxRequest.send(null);
+    ajaxRequest.onreadystatechange = function() {
+        var test = ajaxRequest.responseText;
+        location.reload();
+    }
+}
+
 // ******************* 12) Nesten Alle: deleteHundCoockies *******************
 //er vi IKKE på bestillOpphold1 siden ? 
 if (bestillOpphold1Skjema == null) {
@@ -428,6 +448,7 @@ function melding(){
 }
 
 // ************************** Bildeslider (Even) **************************
+/*
 //Bildeslider hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp
 var test = document.getElementsByClassName("mySlides");
 

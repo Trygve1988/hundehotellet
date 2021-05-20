@@ -19,7 +19,8 @@ define("DB",      "h20APP2000grdb5");
 // $pos = $_SESSION['valgteHunderPos'];         ( 6) Bestill Opphold 2  oppdater Hunder)
 // $_SESSION['aktivHund'] = $hund;              ( 6) Bestill Opphold 2  oppdater Hunder)
 // $_SESSION['bestilling'] =  $bestilling;      ( 6) Bestill Opphold 3 - velg Datoer)
-
+// $_SESSION['endreBruker']                     (  9) Admin -> c) endre Bruker
+// $_SESSION['adminSeBrukertype']               (  9) Admin 
 
 /* ************************** 0) Alle: c) database ************************** */ 
 function kobleOpp() {
@@ -66,7 +67,7 @@ function visNav() {
         }
         // admin
         if (erAdmin()) {
-           ?> <a href="kunder.php">Admin side</a> <?php 
+           ?> <a href="admin.php">Admin side</a> <?php 
         }
         // minSide loggUt / loggInn registrerDeg
         if (erLoggetInn()) {
@@ -87,9 +88,7 @@ function visNav2() {
 
         <?php
         if(erAdmin()) {
-            ?> <a id="kunderLink" href="kunder.php">Kunder</a> <?php 
-            ?> <a id="ansatteLink" href="ansatte.php">Ansatte</a> <?php
-            ?> <a id="seLoggerLink" href="seLogger.php">Se logger</a> <?php
+            ?> <a id="kunderLink" href="admin.php">Admin</a> <?php 
         }
     ?>
     </div>
@@ -200,31 +199,6 @@ function visFooter() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ************************** 1) Index **************************
 // ************************** 2) Aktuelt  **************************
 // ************************** 3) Om Oss  **************************
@@ -289,7 +263,7 @@ function lagreKontaktOssInfo($dblink) {
 
 //hjelpemetoder
 function registrerHund($dblink) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {  
+    if (isset($_POST['registrer'])) { 
         $navn = $_POST['navn'];
         $rase = $_POST['rase'];
         $fdato = $_POST['fdato'];
@@ -316,7 +290,7 @@ function registrerHund($dblink) {
         }
 
         echo "hund " . $hundID . " - ". $navn . " registrert" . "<br>";
-        //header('Location: bestillOpphold1.php');
+        header('Location: bestillOpphold1.php');
     }
 }
 
@@ -393,10 +367,9 @@ function bekreftHundInfo($dblink) {
     }
 }
 
-// ************************** 6) Bestill Opphold 3 - velg Datoer  ************************** /**//
+// ************************** 6) Bestill Opphold 3 - velg Datoer og bading ************************** /**//
 function bekreftDatoer($dblink) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo "<br>".'<i style="color:red";> aaaaaaaaaaaaaaaaas </i>'; 
+    if (isset($_POST['bekreftDatoer'])) { 
         $startDato = $_POST['startDato']; 
         $sluttDato = $_POST['sluttDato'];
         if ($startDato >= $sluttDato) {
@@ -621,166 +594,8 @@ function oppdaterLedigeBur($dblink,$startDato,$sluttDato) {
     }
 }
 
-// ************************** 6b) Alle Opphold **************************
-function visIkkeBegynteOpphold($dblink) {
-    echo "<h3> Ikke begynte opphold </h3>";
-    visoppholdOverskrifter($dblink);
-    $sql = lagIkkeBegynteOppholdSQLSpørring($dblink);
-    oppholdSQLSvar($dblink,$sql);
-}
 
-function visPågåendeOpphold($dblink) {
-    echo "<h3> Pågående Opphold </h3>";
-    visoppholdOverskrifter($dblink);
-    $sql = lagPågåendeOppholdSQLSpørring($dblink);
-    oppholdSQLSvar($dblink,$sql);
-}
-
-function visFerdigeOpphold($dblink) {
-    echo "<h3> Ferdige Opphold </h3>";
-    visoppholdOverskrifter($dblink);
-    $sql = lagFerdigeOppholdSQLSpørring($dblink);
-    oppholdSQLSvar($dblink,$sql);
-}
-
-function vis5SisteFerdigeOpphold($dblink) {
-    echo "<h3> Ferdige Opphold </h3>";
-    visoppholdOverskrifter($dblink);
-    $sql = lag5SisteFerdigeOppholdSQLSpørring($dblink);
-    oppholdSQLSvar($dblink,$sql);
-}
-
-
-// hjelpefunksjoner
-function visoppholdOverskrifter($dblink) {
-    echo "<table>";
-    echo "<tr>";
-    echo    "<th>bestillingID</th>";    // bestilling
-    echo    "<th>start</th>";           // bestilling
-    echo    "<th>slutt</th>";           // bestilling
-    echo    "<th>bestilt</th>";         // bestilling
-    echo    "<th>betalt</th>";          // bestilling
-    echo    "<th>totalPris</th>";       // bestilling
-    echo    "<th>oppholdID</th>";       // opphold
-    echo    "<th>bade</th>";            // opphold
-    echo    "<th>hundID</th>";          // opphold
-    echo    "<th>navn</th>";            // hund
-    echo    "<th>burID</th>";           // opphold
-    echo "</tr>";
-}
-
-function lagIkkeBegynteOppholdSQLSpørring($dblink) { 
-    // finner ikke begynte opphold
-    return "SELECT B.*, O.*, H.*
-        FROM bestilling AS B, opphold AS O, hund AS H
-        WHERE B.bestillingID = O.bestillingID
-        AND   O.hundID = H.hundID
-        AND   B.startDato > CURRENT_TIMESTAMP ;" ; 
-}
-
-function lagPågåendeOppholdSQLSpørring($dblink) { 
-    // finner ikke begynte opphold
-    return "SELECT B.*, O.*, H.*
-        FROM bestilling AS B, opphold AS O, hund AS H
-        WHERE B.bestillingID = O.bestillingID
-        AND   O.hundID = H.hundID
-        AND   B.startDato < CURRENT_TIMESTAMP AND sluttDato > CURRENT_TIMESTAMP;";
-}
-
-function lagFerdigeOppholdSQLSpørring($dblink) { 
-    // finner ikke begynte opphold
-    return "SELECT B.*, O.*, H.*
-        FROM bestilling AS B, opphold AS O, hund AS H
-        WHERE B.bestillingID = O.bestillingID
-        AND   O.hundID = H.hundID
-        AND   B.startDato < CURRENT_TIMESTAMP AND B.sluttDato < CURRENT_TIMESTAMP
-        ORDER BY B.sluttDato DESC ;";
-}
-
-function lag5SisteFerdigeOppholdSQLSpørring($dblink) { 
-    // finner ikke begynte opphold
-    return "SELECT B.*, O.*, H.*
-        FROM bestilling AS B, opphold AS O, hund AS H
-        WHERE B.bestillingID = O.bestillingID
-        AND   O.hundID = H.hundID
-        AND   B.startDato < CURRENT_TIMESTAMP AND B.sluttDato < CURRENT_TIMESTAMP
-        ORDER BY B.sluttDato DESC
-        LIMIT 5 ;";
-}
-
-function oppholdSQLSvar($dblink,$sql) { 
-    $resultat = mysqli_query($dblink, $sql); 
-    $forigeBestillingID = "";
-    while($rad = mysqli_fetch_assoc($resultat)){
-        echo "<tr>";
-
-        //bestillingID
-        $bestillingID = $rad['bestillingID'];
-        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
-            echo "<td>" . $bestillingID . "</td>";  
-        }
-        else {
-            echo "<td>"."</td>"; 
-        }
-        
-        //startDato
-        $startDato = $rad['startDato'];
-        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
-            echo "<td>" . $startDato . "</td>";  
-        }
-        else {
-            echo "<td>"."</td>"; 
-        }
-
-        //sluttDato
-        $sluttDato = $rad['sluttDato'];
-        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
-            echo "<td>" . $sluttDato . "</td>";  
-        }
-        else {
-            echo "<td>"."</td>"; 
-        }
-
-        //bestiltDato
-        $bestiltDato = $rad['bestiltDato'];
-        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
-            echo "<td>" . $bestiltDato . "</td>";  
-        }
-        else {
-            echo "<td>"."</td>"; 
-        }
-
-        //betaltDato
-        $betaltDato = $rad['betaltDato'];
-        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
-            echo "<td>" . $betaltDato . "</td>";  
-        }
-        else {
-            echo "<td>"."</td>"; 
-        }
-
-        //totalPris
-        $totalPris = $rad['totalPris'];
-        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
-            echo "<td>" . $totalPris . "</td>";  
-        }
-        else {
-            echo "<td>"."</td>"; 
-        }
-
-        echo "<td>" . $rad['oppholdID'] . "</td>";      //opphold
-        echo "<td>" . $rad['skalBade'] . "</td>";       //opphold
-        echo "<td>" . $rad['hundID'] . "</td>";         // opphold
-        echo "<td>" . $rad['navn'] . "</td>";           // hund
-        echo "<td>" . $rad['burID'] . "</td>";          // opphold
-        echo "</tr>";
-
-        $forigeBestillingID = $bestillingID;
-    }
-    echo "</table>" . "<br>";
-}
-
-// ************************** 6c) Bur-Oversikt ************************** 
+// ************************** 7a) Ansatt: Bur-Oversikt ************************** 
 function visLedigeBurPrDag($dblink) {
     // lager burTab med alle dagene
     $burTab = lagBurTab($dblink);
@@ -885,31 +700,382 @@ function skrivUkeTab($burTab) {
     echo "</table>";
 }
 
-// ************************** 6d) Mating ************************** 
+
+// ************************** 7b) Ansatt: Alle Opphold ************************** 
+function visIkkeBegynteOpphold($dblink) {
+    echo "<h3> Ikke begynte opphold </h3>";
+    visoppholdOverskrifter($dblink);
+    $sql = lagIkkeBegynteOppholdSQLSpørring($dblink);
+    oppholdSQLSvar($dblink,$sql);
+}
+
+function visAktiveOpphold($dblink) {
+    echo "<h3> Aktive Opphold </h3>";
+    visoppholdOverskrifter($dblink);
+    $sql = lagPågåendeOppholdSQLSpørring($dblink);
+    oppholdSQLSvar($dblink,$sql);
+}
+
+function visFerdigeOpphold($dblink) {
+    echo "<h3> Ferdige Opphold </h3>";
+    visoppholdOverskrifter($dblink);
+    $sql = lagFerdigeOppholdSQLSpørring($dblink);
+    oppholdSQLSvar($dblink,$sql);
+}
+
+function vis5SisteFerdigeOpphold($dblink) {
+    echo "<h3> Ferdige Opphold </h3>";
+    visoppholdOverskrifter($dblink);
+    $sql = lag5SisteFerdigeOppholdSQLSpørring($dblink);
+    oppholdSQLSvar($dblink,$sql);
+}
+
+
+// hjelpefunksjoner
+function visoppholdOverskrifter($dblink) {
+    echo "<table>";
+    echo "<tr>";
+    echo    "<th>bID</th>";             // bestilling
+    echo    "<th>start</th>";           // bestilling
+    echo    "<th>slutt</th>";           // bestilling
+    echo    "<th>bestilt</th>";         // bestilling
+
+    echo    "<th>sjekkInn</th>";        // bestilling
+    echo    "<th>sjekkUt</th>";         // bestilling
+
+    echo    "<th>betalt</th>";          // bestilling
+    echo    "<th>pris</th>";            // bestilling
+    echo    "<th>oID</th>";             // opphold
+    echo    "<th>hundID</th>";          // opphold
+    echo    "<th>navn</th>";            // hund
+    echo    "<th>burID</th>";           // opphold
+    echo "</tr>";
+}
+
+function lagIkkeBegynteOppholdSQLSpørring($dblink) { 
+    // finner ikke begynte opphold
+    return "SELECT B.*, O.*, H.*
+        FROM bestilling AS B, opphold AS O, hund AS H
+        WHERE B.bestillingID = O.bestillingID
+        AND   O.hundID = H.hundID
+        AND   B.startDato > CURRENT_TIMESTAMP ;" ; 
+}
+
+function lagPågåendeOppholdSQLSpørring($dblink) { 
+    // finner ikke begynte opphold
+    return "SELECT B.*, O.*, H.*
+        FROM bestilling AS B, opphold AS O, hund AS H
+        WHERE B.bestillingID = O.bestillingID
+        AND   O.hundID = H.hundID
+        AND   B.startDato < CURRENT_TIMESTAMP AND sluttDato > CURRENT_TIMESTAMP;";
+}
+
+function lagFerdigeOppholdSQLSpørring($dblink) { 
+    // finner ikke begynte opphold
+    return "SELECT B.*, O.*, H.*
+        FROM bestilling AS B, opphold AS O, hund AS H
+        WHERE B.bestillingID = O.bestillingID
+        AND   O.hundID = H.hundID
+        AND   B.startDato < CURRENT_TIMESTAMP AND B.sluttDato < CURRENT_TIMESTAMP
+        ORDER BY B.sluttDato DESC ;";
+}
+
+function lag5SisteFerdigeOppholdSQLSpørring($dblink) { 
+    // finner ikke begynte opphold
+    return "SELECT B.*, O.*, H.*
+        FROM bestilling AS B, opphold AS O, hund AS H
+        WHERE B.bestillingID = O.bestillingID
+        AND   O.hundID = H.hundID
+        AND   B.startDato < CURRENT_TIMESTAMP AND B.sluttDato < CURRENT_TIMESTAMP
+        ORDER BY B.sluttDato DESC
+        LIMIT 5 ;";
+}
+
+function oppholdSQLSvar($dblink,$sql) { 
+    $resultat = mysqli_query($dblink, $sql); 
+    $forigeBestillingID = "";
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>";
+
+        //bestillingID
+        $bestillingID = $rad['bestillingID'];
+        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
+            echo "<td>" . $bestillingID . "</td>";  
+        }
+        else {
+            echo "<td>"."</td>"; 
+        }
+        
+        //startDato
+        $startDato = $rad['startDato'];
+        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
+            echo "<td>" . $startDato . "</td>";  
+        }
+        else {
+            echo "<td>"."</td>"; 
+        }
+
+        //sluttDato
+        $sluttDato = $rad['sluttDato'];
+        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
+            echo "<td>" . $sluttDato . "</td>";  
+        }
+        else {
+            echo "<td>"."</td>"; 
+        }
+
+        //bestiltDato
+        $bestiltDato = $rad['bestiltDato'];
+        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
+            echo "<td>" . $bestiltDato . "</td>";  
+        }
+        else {
+            echo "<td>"."</td>"; 
+        }
+
+        echo "<td>" . " " . "</td>"; 
+        echo "<td>" . " " . "</td>"; 
+
+        //betaltDato
+        $betaltDato = $rad['betaltDato'];
+        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
+            echo "<td>" . $betaltDato . "</td>";  
+        }
+        else {
+            echo "<td>"."</td>"; 
+        }
+
+        //totalPris
+        $totalPris = $rad['totalPris'];
+        if ($bestillingID !== $forigeBestillingID) { // skriver bare viss IKKE lik den forige
+            echo "<td>" . $totalPris . "</td>";  
+        }
+        else {
+            echo "<td>"."</td>"; 
+        }
+
+        echo "<td>" . $rad['oppholdID'] . "</td>";      //opphold
+        echo "<td>" . $rad['hundID'] . "</td>";         // opphold
+        echo "<td>" . $rad['navn'] . "</td>";           // hund
+        echo "<td>" . $rad['burID'] . "</td>";          // opphold
+        echo "</tr>";
+
+        $forigeBestillingID = $bestillingID;
+    }
+    echo "</table>" . "<br>";
+}
+
+// ************************** 7c) Ansatt: Inn/utsjekk ************************** 
+function visSkalSjekkeInnIDag($dblink) {
+    $idag = new DateTime();
+    echo "<h2>" . "Innsjekkinger i dag " . $idag->format('Y-m-d') . "</h2>";
+    // vis opphold Overskrifter
+    echo "<table id=\"matingTab\">";
+    echo "<tr>";
+    echo    "<th>bID</th>";  
+    echo    "<th>hund</th>";  
+    echo    "<th>kunde</th>";   
+    echo    "<th>sjekketInn</th>";   
+    echo "</tr>";
+
+    $sql = " SELECT B.bestillingID, H.navn, BR.fornavn, BR.etternavn, B.sjekketInn 
+    FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR       
+    WHERE B.bestillingID = O.bestillingID  
+    AND O.hundID = H.hundID 
+    AND H.brukerID = BR.brukerID
+    AND DAY(B.startDato) = DAY(CURRENT_TIMESTAMP)
+    ORDER BY B.bestillingID ;"; 
+    $resultat = mysqli_query($dblink, $sql); 
+
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>";
+        echo "<td>" . $rad['bestillingID'] . "</td>";  
+        echo "<td>" . $rad['navn']      . "</td>";    
+        echo "<td>" . $rad['fornavn'] . " " . $rad['etternavn'] . "</td>";  
+        echo "<td>" . substr($rad['sjekketInn'],11,5)      . "</td>";    
+        echo "</tr>";
+    }
+    echo "</table>" . "<br>";
+}
+
+function lagSkalSjekkesInnTab($dblink) {
+    // variabler
+    $forigeBestillingID = "";
+    $skalSjekkesInnTab = null;
+    $pos = 0;
+
+    /*$sql = " SELECT H.navn, BR.fornavn, BR.etternavn    */
+    $sql = " SELECT B.bestillingID, H.navn
+    FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR 
+    WHERE B.bestillingID = O.bestillingID  
+    AND O.hundID = H.hundID 
+    AND H.brukerID = BR.brukerID
+    AND DAY(B.startDato) = DAY(CURRENT_TIMESTAMP) 
+    AND B.sjekketInn IS NULL ;";  
+    $resultat = mysqli_query($dblink, $sql); 
+
+    while($rad = mysqli_fetch_assoc($resultat)){
+        // bestillingID
+        
+        $bestillingID = $rad['bestillingID'];
+        echo $bestillingID . "<br>";
+        // er dette en ny bestilling?
+        if ($forigeBestillingID !== $bestillingID) {
+            //ny bestilling: lager et FerdigBestilling objekt
+            $b1 = new FerdigBestilling($bestillingID);
+            $skalSjekkesInnTab[$pos++] = $b1;
+        }
+        // resten
+        $b1->setStartDato($rad['startDato']);
+        $b1->setSluttDato($rad['sluttDato']);
+        $b1->addHund($rad['navn']);
+        $forigeBestillingID = $bestillingID;
+    }
+    return $skalSjekkesInnTab;
+}
+
+function sjekkInn($dblink) {
+    if (isset($_POST['sjekkInnKnapp'])) { 
+        ob_start();
+        $bestillingID = $_POST['sjekkInnSelect'];
+        $bestillingID = substr($bestillingID,0,1);
+
+        $sql = "UPDATE bestilling SET sjekketInn = CURRENT_TIMESTAMP WHERE bestillingID = '$bestillingID' ;";
+        mysqli_query($dblink,$sql);
+        header("Refresh:0");
+        ob_end_flush();
+    }
+}
+
+function nullStillInnsjekkinger($dblink) {
+    if (isset($_POST['nullstillInnsjekkingerKnapp'])) { 
+        ob_start();
+        $sql = "UPDATE bestilling SET sjekketInn = null ;";
+        mysqli_query($dblink,$sql);
+        header("Refresh:0");
+        ob_end_flush();
+    }
+}
+
+
+
+//sjekk Ut
+function visSkalSjekkeUtIDag($dblink) {
+    $idag = new DateTime();
+    echo "<h2>" . "Utsjekkinger i dag " . $idag->format('Y-m-d') . "</h2>";
+    // vis opphold Overskrifter
+    echo "<table id=\"matingTab\">";
+    echo "<tr>";
+    echo    "<th>bID</th>";  
+    echo    "<th>hund</th>";  
+    echo    "<th>kunde</th>";   
+    echo    "<th>sjekketUt</th>";   
+    echo "</tr>";
+
+    $sql = " SELECT B.bestillingID, H.navn, BR.fornavn, BR.etternavn, B.sjekketUt 
+    FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR       
+    WHERE B.bestillingID = O.bestillingID  
+    AND O.hundID = H.hundID 
+    AND H.brukerID = BR.brukerID
+    AND DAY(B.sluttDato) = DAY(CURRENT_TIMESTAMP)
+    ORDER BY B.bestillingID ;"; 
+    $resultat = mysqli_query($dblink, $sql); 
+
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>";
+        echo "<td>" . $rad['bestillingID'] . "</td>";  
+        echo "<td>" . $rad['navn']      . "</td>";    
+        echo "<td>" . $rad['fornavn'] . " " . $rad['etternavn'] . "</td>";  
+        echo "<td>" . substr($rad['sjekketUt'],11,5)      . "</td>";    
+        echo "</tr>";
+    }
+    echo "</table>" . "<br>";
+}
+
+function lagSkalSjekkesUtTab($dblink) {
+    // variabler
+    $forigeBestillingID = "";
+    $skalSjekkesInnTab = null;
+    $pos = 0;
+
+    /*$sql = " SELECT H.navn, BR.fornavn, BR.etternavn    */
+    $sql = " SELECT B.bestillingID, H.navn
+    FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR 
+    WHERE B.bestillingID = O.bestillingID  
+    AND O.hundID = H.hundID 
+    AND H.brukerID = BR.brukerID
+    AND DAY(B.sluttDato) = DAY(CURRENT_TIMESTAMP) 
+    AND B.sjekketInn IS NULL ;";  
+    $resultat = mysqli_query($dblink, $sql); 
+
+    while($rad = mysqli_fetch_assoc($resultat)){
+        // bestillingID
+        
+        $bestillingID = $rad['bestillingID'];
+        echo $bestillingID . "<br>";
+        // er dette en ny bestilling?
+        if ($forigeBestillingID !== $bestillingID) {
+            //ny bestilling: lager et FerdigBestilling objekt
+            $b1 = new FerdigBestilling($bestillingID);
+            $skalSjekkesInnTab[$pos++] = $b1;
+        }
+        // resten
+        $b1->setStartDato($rad['startDato']);
+        $b1->setSluttDato($rad['sluttDato']);
+        $b1->addHund($rad['navn']);
+        $forigeBestillingID = $bestillingID;
+    }
+    return $skalSjekkesInnTab;
+}
+
+function sjekkUt($dblink) {
+    if (isset($_POST['sjekkUtKnapp'])) { 
+        ob_start();
+        $bestillingID = $_POST['sjekkUtSelect'];
+        $bestillingID = substr($bestillingID,0,1);
+
+        $sql = "UPDATE bestilling SET sjekketUt = CURRENT_TIMESTAMP WHERE bestillingID = '$bestillingID' ;";
+        mysqli_query($dblink,$sql);
+        header("Refresh:0");
+        ob_end_flush();
+    }
+}
+
+function nullStillUtsjekkinger($dblink) {
+    if (isset($_POST['nullStillUtsjekkingerKnapp'])) { 
+        ob_start();
+        $sql = "UPDATE bestilling SET sjekketUt = null ;";
+        mysqli_query($dblink,$sql);
+        header("Refresh:0");
+        ob_end_flush();
+    }
+}
+
+// ************************** 7d) Mating ************************** 
 function visAlleHunderPaaOppholdNaa($dblink) {
     echo "<h2>" . "Alle hunder som er på opphold nå" . "</h2>";
     // vis opphold Overskrifter
     echo "<table id=\"matingTab\">";
     echo "<tr>";
-    echo    "<th>oppholdID</th>";  
-    echo    "<th>forID</th>";  
-    echo    "<th>navn</th>";          
+    echo    "<th>oID</th>";  
+    echo    "<th>hund</th>";  
+    echo    "<th>forType</th>";   
     echo "</tr>";
 
-    //$sql = " SELECT O.oppholdID, F.forID, H.navn FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
-    $sql = " SELECT O.oppholdID, F.forID, H.navn FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
+    $sql = " SELECT O.oppholdID, F.forType, H.navn FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
     AND H.forID = F.forID
     AND B.startDato < CURRENT_TIMESTAMP AND sluttDato > CURRENT_TIMESTAMP
+    AND B.sjekketInn IS NOT NULL
     ORDER BY O.oppholdID  ;";
     $resultat = mysqli_query($dblink, $sql); 
 
     while($rad = mysqli_fetch_assoc($resultat)){
         echo "<tr>";
         echo "<td>" . $rad['oppholdID'] . "</td>";  
-        echo "<td>" . $rad['forID'] . "</td>";     
-        echo "<td>" . $rad['navn']      . "</td>";                  
+        echo "<td>" . $rad['navn']      . "</td>";   
+        echo "<td>" . $rad['forType'] . "</td>";           
         echo "</tr>";
     }
     echo "</table>" . "<br>";
@@ -923,26 +1089,25 @@ function visAlleRegistrerteMatingerIDag($dblink) {
     // vis opphold Overskrifter
     echo "<table id=\"matingTab\">";
     echo "<tr>";
-    echo    "<th>oppholdID</th>";  
-    echo    "<th>forID</th>";  
-    echo    "<th>navn</th>";    
+    echo    "<th>oID</th>";  
+    echo    "<th>hund</th>";  
+    echo    "<th>forType</th>";  
     echo    "<th>Mating</th>";       
     echo "</tr>";
 
     // SQLSpørring for å finne alle registrerte matinger i dag 
-    $sql = " SELECT M.*, H.navn, F.forID FROM mating AS M, opphold AS O, hund AS H, hundefor AS F
+    $sql = " SELECT M.*, H.navn, F.forType FROM mating AS M, opphold AS O, hund AS H, hundefor AS F
     WHERE M.oppholdID = O.oppholdID
     AND O.hundID = H.hundID
     AND H.forID = F.forID
-    AND day(M.tidspunkt) = day(CURRENT_TIMESTAMP)
-    ORDER BY O.oppholdID ;";
+    AND day(M.tidspunkt) = day(CURRENT_TIMESTAMP);";
     $resultat = mysqli_query($dblink, $sql); 
 
     while($rad = mysqli_fetch_assoc($resultat)){
         echo "<tr>";
-        echo "<td>" . $rad['oppholdID'] . "</td>";  
-        echo "<td>" . $rad['forID'] . "</td>";     
-        echo "<td>" . $rad['navn']      . "</td>";         
+        echo "<td>" . $rad['oppholdID'] . "</td>"; 
+        echo "<td>" . $rad['navn']      . "</td>";    
+        echo "<td>" . $rad['forType'] . "</td>";     
         $tidspunkt = $rad['tidspunkt'];  
         echo "<td>" . substr($tidspunkt,10,6) . "</td>";            
         echo "</tr>";
@@ -973,7 +1138,7 @@ function getMatingOppholdIDer($dblink) {
     $pos = 0;
     $sql = " SELECT O.oppholdID FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID AND   O.hundID = H.hundID
-    AND   B.startDato < CURRENT_TIMESTAMP AND sluttDato > CURRENT_TIMESTAMP;";
+    AND   B.startDato < CURRENT_TIMESTAMP AND sluttDato > CURRENT_TIMESTAMP AND B.sjekketInn IS NOT NULL ;";
     $resultat = mysqli_query($dblink, $sql); 
     while($rad = mysqli_fetch_assoc($resultat)){
         $oppholdIDTab[$pos++] = $rad['oppholdID'];    
@@ -989,33 +1154,8 @@ function slettAlleMatinger($dblink) {
     }  
 }
 
-// ************************** 7) Anmeldelser **************************
-function lagreAnmeldelse($dblink) {
-    if (isset($_POST['sendAnmeldelseKnapp'])) { 
 
-        // brukerNavn
-        $bruker = $_SESSION['bruker'];
-        $brukerID = $bruker->getBrukerID();
-
-        // brukerNavn
-        $brukerFornavn = $bruker->getFornavn();
-        $brukerEtternavn = $bruker->getEtternavn();
-        $brukerNavn = $brukerFornavn . " " . $brukerEtternavn;
-
-        // text (anmeldelse)
-        $tekst = $_POST['anmeldelseKundeText']; 
-        $tekst = "<p>".$tekst."</p>"."<p>"."- ".$brukerNavn."</p>";
-
-        //lagre i db
-        $sql = "INSERT INTO anmeldelse (tekst,dato,brukerID,godkjent) 
-        VALUES ('$tekst',CURRENT_TIMESTAMP,'$brukerID',0);" ;
-        mysqli_query($dblink,$sql);
-
-        //melding
-        echo "<br>".'<i style="color:green; position:absolute";"> Takk for din tilbakemelding </i>'; 
-    }
-}
-
+// ************************** 7i) Ansatt Anmeldelser ************************** 
 function visNesteIkkeGodkjenteAnmeldelse($dblink) {
     // henter ut neste ikke godkjente anmeldelse
     $sql = "SELECT * FROM anmeldelse WHERE godkjent = 0";
@@ -1065,7 +1205,140 @@ function godkjennAnmeldelse($dblink) {
     }
 }
 
-// ************************** 8) Admin **************************
+
+// ************************** 9) Admin -> a) Bruker admin ************************** 
+function visAlleBrukere($dblink)  {     
+    $brukertype = $_SESSION['adminSeBrukertype'];
+    $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    
+    echo "<table class=\"blaaTab>\">";
+    echo "<tr>";
+    echo    "<th>brukerID</th>";
+    echo    "<th>epost</th>";
+    echo    "<th>brukerType</th>";
+    echo    "<th>fornavn</th>";
+    echo    "<th>etternavn</th>";
+    echo    "<th>tlf</th>";
+    echo    "<th>adresse</th>";
+    echo "</tr>";
+
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>"; 
+        echo "<td>" . $rad['brukerID'] . "</td>"; 
+        echo "<td>" . $rad['epost'] . "</td>"; 
+        echo "<td>" . $rad['brukerType'] . "</td>"; 
+        echo "<td>" . $rad['fornavn'] . "</td>"; 
+        echo "<td>" . $rad['etternavn'] . "</td>"; 
+        echo "<td>" . $rad['tlf'] . "</td>"; 
+        echo "<td>" . $rad['adresse'] . "</td>"; 
+        echo "</tr>";
+    }
+    echo "</table>" . "<br>";
+} 
+
+// ************************** 9) Admin -> b) registrerNyBruker ************************** 
+function registrerNyBruker($dblink) {
+    if (isset($_POST['registrerNyBrukerKnapp'])) {   
+        $epost = $_POST['epost'];
+        $passord = $_POST['passord'];
+        $passord = password_hash($passord, PASSWORD_DEFAULT);
+        $brukerType = $_POST['brukertype'];
+        $fornavn = $_POST['fornavn'];
+        $etternavn = $_POST['etternavn'];
+        $tlf = $_POST['tlf'];
+        $adresse = $_POST['adresse'];
+
+        //sjekker at epost ikke finnes fra før
+        $sql = "SELECT * FROM bruker WHERE epost = '$epost'";
+        $resultat = mysqli_query($dblink, $sql);
+        $antall = mysqli_num_rows($resultat);
+        if ($antall > 0) { // epost finnes fra før!
+            echo "<br>".'<i style="color:red; position:absolute";"> epost er allerede registrert! </i>'; 
+        }
+
+        //registrerer ny bruker
+        else {
+            $sql = "INSERT INTO bruker(epost,passord,brukerType,fornavn,etternavn,tlf,adresse) 
+                    VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse');";
+            $resultat = mysqli_query($dblink, $sql);
+            echo "<br>".'<i style="color:green; position:absolute";"> Ny Bruker Registrert </i>'; 
+        }
+    }
+}
+
+// ************************** 9) Admin -> c) endre Bruker ************************** 
+function lagBrukereTab($dblink) {
+    $brukereTab = array();
+    $pos = 0;
+
+    $brukertype = $_SESSION['adminSeBrukertype'];
+    $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)){
+        $brukereTab[$pos++] = $rad['brukerID']." ".$rad['epost']." - ".$rad['fornavn']." ".$rad['etternavn']; 
+    }
+    return $brukereTab;
+}
+
+
+function velgEndreBruker($dblink) {
+    if (isset($_POST['velgEndreBrukerKnapp'])) { 
+        $brukerID = $_POST['velgEndreBrukerSelect'];
+        $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+        $resultat = mysqli_query($dblink, $sql);
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            $brukerID       = $rad['brukerID'];
+            $epost          = $rad['epost'];
+            $brukerType     = $rad['brukerType'];
+            $fornavn        = $rad['fornavn'];
+            $etternavn      = $rad['etternavn'];
+            $tlf            = $rad['tlf'];
+            $adresse        = $rad['adresse'];
+            $fødselsNr      = $rad['fødselsNr'];
+            $stilling       = $rad['stilling'];
+            $postNr         = $rad['postNr'];
+        }
+        $b = new Bruker($brukerID,$epost,$brukerType,$fornavn,$etternavn,$tlf, $adresse, $fødselsNr, $stilling, $postNr);
+        $_SESSION['endreBruker'] = $b;
+        header('Location: adminEndreBruker2.php');
+    } 
+}
+
+function adminEndreBrukerInfo($dblink) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $bruker = $_SESSION['endreBruker'];
+        $brukerID = $bruker->getBrukerID();
+        $epost = $_POST['epost'];
+        $brukerType = $bruker->getBrukerType();
+        $fornavn = $_POST['fornavn'];
+        $etternavn = $_POST['etternavn'];
+        $tlf = $_POST['tlf'];
+        $adresse = $_POST['adresse'];
+
+        $sql = "UPDATE bruker SET epost = '$epost',fornavn = '$fornavn', etternavn = '$etternavn',
+        tlf = '$tlf', adresse = '$adresse' WHERE brukerID = '$brukerID' ;";
+        $resultat = mysqli_query($dblink, $sql);
+
+        $b = new Bruker($brukerID,$epost,$brukerType,$fornavn,$etternavn,$tlf, $adresse, $fødselsNr, $stilling, $postNr);
+        $_SESSION['endreBruker'] = $b;
+        header("Refresh:0");
+    }
+}
+
+// ************************** 9) Admin -> d) slett Bruker ************************** 
+function slettBruker($dblink) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $brukerID = $_POST['velgSlettBrukerSelect'];
+        echo $brukerID;
+        $sql = "DELETE FROM bruker WHERE brukerID = '$brukerID' ;";
+        $resultat = mysqli_query($dblink, $sql);
+        header("Refresh:0");
+        echo "<br>".'<i style="color:green; position:absolute";"> Bruker slettet </i>'; 
+    }
+}
+
+// ************************** 9) Admin -> e) visPrisHistorikk**************************
 function visPrisHistorikk($dblink) {
     echo "<h2> Pris-Historikk </h2>";
 
@@ -1093,7 +1366,7 @@ function visPrisHistorikk($dblink) {
     echo "</table>" . "<br>";
 }
 
-// ************************** 9) Min Side **************************
+// ************************** 10) Min Side **************************
 function visInnloggetInfo($dblink) {
     if (isset($_SESSION['bruker'])) {
         echo "<h2> Min profil </h2>";
@@ -1280,7 +1553,7 @@ function harOpphold($dblink) {
     return $harOpphold; 
 }
 
-// ************************** 9) minSide -> a)endre brukerinfo **************************
+// ************************** 10) minSide -> a)endre brukerinfo **************************
 function endreBrukerInfo($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bruker = $_SESSION['bruker'];
@@ -1302,7 +1575,7 @@ function endreBrukerInfo($dblink) {
     }
 }
 
-// ************************** 9) minSide -> b)endrePassord **************************
+// ************************** 10) minSide -> b)endrePassord **************************
 function endrePassord($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bruker = $_SESSION['bruker'];
@@ -1344,10 +1617,10 @@ function endrePassord($dblink) {
     }
 }
 
-// ************************** 9) minSide -> c) registrerHund **************************
+// ************************** 10) minSide -> c) registrerHund **************************
 //denne funskjonen er allerede laget under bestill opphold
 
-// ************************** 9) minSide -> d) endre hund1  **************************
+// ************************** 10) minSide -> d) endre hund1  **************************
 function laghunderTab($dblink) {
     //lager tabell med brukeren sine hundIDer
     $bruker = $_SESSION['bruker'];
@@ -1369,7 +1642,6 @@ function lagOption($hund) {
 
 function velgHundSomSkalEndres($dblink) {
     if (isset($_POST['velgHund'])) { 
-        //får tak i hundID ut ifra $brukerID og $navn  IKKE PERFEKT LØSNING!
         $navn = $_POST['hund']; 
         $bruker = $_SESSION['bruker'];
         $brukerID = $bruker->getBrukerID();
@@ -1382,7 +1654,7 @@ function velgHundSomSkalEndres($dblink) {
     }
 }
 
-// ************************** 9) minSide -> e) endre hund2 **************************
+// ************************** 10) minSide -> e) endre hund2 **************************
 function endreHund($dblink) {
     if (isset($_POST['bekreftHundInfo'])) {  
         $hund = $_SESSION['aktivHund'];
@@ -1411,7 +1683,7 @@ function endreHund($dblink) {
     }
 }
 
-// ************************** 9) minSide -> f) avbestill bestilling ************************** 
+// ************************** 10) minSide -> f) avbestill bestilling ************************** 
 function lagIkkeBegyntBestillingTab($dblink) {
     $bruker = $_SESSION['bruker'];
     $brukerID = $bruker->getBrukerID();
@@ -1463,7 +1735,36 @@ function avbestill($dblink) {
         echo "bestillingID " . $bestillingID . " avbestil. <br>";
     }
 }
-// ************************** 10) Logg Inn **************************
+
+// ************************** 10) Min side -> g) Skriv anmeldelse **************************
+function lagreAnmeldelse($dblink) {
+    if (isset($_POST['sendAnmeldelseKnapp'])) { 
+
+        // brukerNavn
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+
+        // brukerNavn
+        $brukerFornavn = $bruker->getFornavn();
+        $brukerEtternavn = $bruker->getEtternavn();
+        $brukerNavn = $brukerFornavn . " " . $brukerEtternavn;
+
+        // text (anmeldelse)
+        $tekst = $_POST['anmeldelseKundeText']; 
+        $tekst = "<p>".$tekst."</p>"."<p>"."- ".$brukerNavn."</p>";
+
+        //lagre i db
+        $sql = "INSERT INTO anmeldelse (tekst,dato,brukerID,godkjent) 
+        VALUES ('$tekst',CURRENT_TIMESTAMP,'$brukerID',0);" ;
+        mysqli_query($dblink,$sql);
+
+        //melding
+        echo "<br>".'<i style="color:green; position:absolute";"> Takk for din tilbakemelding </i>'; 
+    }
+}
+
+
+// ************************** 11) Logg Inn **************************
 function loggInn($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $epost = $_POST['epost'];
@@ -1479,20 +1780,17 @@ function loggInn($dblink) {
         if ($stmt->num_rows == 1) {
             $stmt->fetch();
             if (password_verify($passord, $hashPw))   {
-                $fødselsNr=0; 
-                $stilling=" ";
-                $postNr=0;
                 opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
                 $tlf, $adresse, $fødselsNr, $stilling, $postNr);
 
-                echo "<br>".'<i style="color:green; position:absolute";"> Du er nå logget inn </i>'; 
-                //header('Location: minSide.php');
+                header('Location: minSide.php');
                 $innloggingOk = true;
             }
         }
         if($innloggingOk == false) {
-            echo "<br>".'<i style="color:red; position:absolute";"> feil epost og/eller passord! </i>'; 
+            echo "<br>".'<i ";"> feil epost og/eller passord! </i>'; 
         }
+        $_SESSION['adminSeBrukertype'] = "kunde";
     }
 }
 
@@ -1503,7 +1801,7 @@ $tlf, $adresse, $fødselsNr, $stilling, $postNr) {
     $_SESSION['bruker'] = $bruker;
 }
 
-// ************************** 11) Registrer deg **************************
+// ************************** 12) Registrer deg **************************
 function registrerDeg($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $epost = $_POST['epost'];
