@@ -100,15 +100,41 @@ $dblink = kobleOpp();
 					
 					<!-- Labels og input i kolonne 2 -->
 					<div>
+						<!-- løpeMedAndre --> 
+						<?php $løpeMedAndre = $h1->getLøpeMedAndre(); ?>
 						<label for="løpeMedAndre">løpeMedAndre:</label>
-						<input class="inputTekst" type="text" name="løpeMedAndre" value= <?php echo $h1->getLøpeMedAndre() ?> > 
+						<select class="inputSelect" name="løpeMedAndre"> 
+							<?php
+							if ($løpeMedAndre == "1") { 
+								?><option value="1" selected >ja</option><?php
+								?><option value="0">nei</option><?php
+							} 
+							else { 
+								?><option value="1">ja</option><?php
+								?><option value="0" selected>nei</option><?php
+							}
+							?>
+						<select> 
 
+						<!-- forType --> 
+						<?php $forID = $h1->getForID(); ?>
 						<label for="forID">forType:</label>
-						<input class="inputTekst" type="text" name="forID" value= <?php echo $h1->getForID() ?>>
+						<select class="inputSelect" name="forID"> 
+							<?php
+							if ($forID == "1") { 
+								?><option value="1" selected >vanlig</option><?php
+								?><option value="0">allergi</option><?php
+							} 
+							else { 
+								?><option value="1">vanlig</option><?php
+								?><option value="0" selected>allergi</option><?php
+							}
+							?>
+						<select> 
 
-						<!-- info -->  
-						<label for="info">info:</label>
-						<input class="inputTekst" type="text" name="info" value= <?php echo $h1->getInfo() ?>>
+						<!-- info 
+						<label for="info">Ekstra informasjon:</label>-->
+						<textarea class="tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
 
 					</div>
 				</div>	
