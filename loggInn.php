@@ -47,7 +47,7 @@ $dblink = kobleOpp();
 						<input class="inputTekst" type="text" name="epost">
 
 						<label for="passord">Passord:</label>
-						<input class="inputPassord" type="password" name="passord" required id="passord">	
+						<input class="inputPassord" type="password" name="passord">	
 
 						<!-- Vis passord checkbox  -->
 						<div class="visPassord">

@@ -411,10 +411,10 @@ function visPassord() {
 const passord = document.querySelector("#passord");
 const status = document.querySelector("#status");
 
-//er vi på registrerDeg siden ? 
-if (passord !== null) {
+//Sjekker om man skriver inn passord
+if(passord !== null) {
   passord.addEventListener('keyup', melding, false);
-}
+} 
 
 function melding(){
   var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
