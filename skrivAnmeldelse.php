@@ -23,6 +23,11 @@
         <!-- Anmeldelser -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn" method="POST">
+            	<!-- Avbryt knapp -->
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
+
                 <h2 class="hovedOverskrift" >Skriv Anmeldse</h2>
                 <div class="anmeldseTilbakemelding">
                     <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="100" rows="20"></textarea>
