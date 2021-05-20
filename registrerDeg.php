@@ -43,19 +43,19 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="fornavn">Fornavn:</label>
-						<input  class="inputTekst" type="text" name="fornavn" value="peter">
+						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
 
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fDato" value="2000-01-01">	
+						<input class="inputDato" type="date" name="fDato" required value="2000-01-01">	
 
 						<label for="tlf">Telefonnummer:</label>
-						<input class="inputTekst" type="text" name="tlf" value="77733111">	
+						<input class="inputTekst" type="text" name="tlf" required value="77733111">	
 
 						<label for="adresse">Adresse:</label>
-						<input class="inputTekst" type="text" name="adresse" value="Epleveien 5">	
+						<input class="inputTekst" type="text" name="adresse" required value="Epleveien 5">	
 						
 						<label for="postNr">Postnummer:</label>
-						<input class="inputTekst" type="text" name="postNr" value="9944">	
+						<input class="inputTekst" type="text" name="postNr" required value="9944">	
 
 						<!-- velg brukertype (bare for testing)  -->
 						<select class="inputSelect" name="brukertype">
@@ -68,13 +68,14 @@ $dblink = kobleOpp();
 					<div>
 						<!-- Labels og input i kolonne 2 -->
 						<label for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" value="griffin">	
+						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
 
 						<label for="epost">E-post:</label>
-						<input class="inputTekst" type="text" name="epost" value="test">	
+						<input class="inputTekst" type="text" name="epost" required value="test">	
 							
 						<label for="passord">Ønsket passord:</label>
-						<input class="inputPassord" type="password" name="passord" required id="passord" value="123">		
+						<input class="inputPassord" type="password" name="passord" required 
+						id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" value="123Ab%12">
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
@@ -89,7 +90,7 @@ $dblink = kobleOpp();
 						
 						<div class="gjentaPKolonne">
 							<label for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk">	
+							<input class="inputPassord" type="password" name="passordSjekk" required value="123Ab%12">	
 						</div>
 					</div>
 				</div>
