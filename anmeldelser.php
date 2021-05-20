@@ -24,6 +24,12 @@
         <!-- Anmeldelser -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn" method="post"> 
+
+            	<!-- Avbryt knapp -->
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
+
                 <h2>Anmeldelser</h2>
                 <!--<div class="anmeldseGodkjenning">
                     <textarea name="skrivAnmeldse" id="skrivAnmeldse" cols="100" rows="20" readonly> </textarea>
