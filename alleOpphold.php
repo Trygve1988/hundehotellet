@@ -33,10 +33,10 @@ $dblink = kobleOpp();
         } ?>
 
         <!-- alle opphold  -->
-        <form>
-            <div class="hvitBakgrunn">
+        <div class="hvitBakgrunn">
+            <form class="skjemaBakgrunn">
 
-            <h2 class="hovedOverskrift">Ferdige opphold</h2>
+                <h2 class="hovedOverskrift">Ferdige opphold</h2>
                 <table class="opphold FerdigOpphold">
                     <thead>
                         <tr>
@@ -201,7 +201,7 @@ $dblink = kobleOpp();
                     </tbody>
                 </table>
 
-            </div>
+        </div>
         </form>
     </main>
 
