@@ -72,6 +72,7 @@ function visNav() {
         // minSide loggUt / loggInn registrerDeg
         if (erLoggetInn()) {
              ?> <a id="minSideLink" class="right" href="minSide.php">Min Side</a> <?php 
+             ?> <a id="minSideLink" class="right" href="minSideTest.php">Min Side Test</a> <?php 
              ?> <a id="loggUtLink" class="right" href="loggUt.php">Logg Ut</a> <?php
         }
         else {
@@ -1212,11 +1213,11 @@ function visAlleBrukere($dblink)  {
     $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' ;";
     $resultat = mysqli_query($dblink, $sql); 
     
-    echo "<table class=\"blaaTab>\">";
+    echo "<table class=\"blaaTab\">";
     echo "<tr>";
-    echo    "<th>brukerID</th>";
+    echo    "<th>bID</th>";
     echo    "<th>epost</th>";
-    echo    "<th>brukerType</th>";
+    echo    "<th>type</th>";
     echo    "<th>fornavn</th>";
     echo    "<th>etternavn</th>";
     echo    "<th>tlf</th>";
@@ -1375,7 +1376,7 @@ function visInnloggetInfo($dblink) {
         $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID';";
         $resultat = mysqli_query($dblink, $sql); 
 
-        echo "<table>";
+        echo "<table class=\"blaaTab\">";
         echo "<tr>";
         echo    "<th>brukerID</th>";
         echo    "<th>epost</th>";
@@ -1407,7 +1408,7 @@ function visMineHunder($dblink) {
     $brukerID = $bruker->getBrukerID();
     $sql = "SELECT * FROM hund WHERE brukerID = '$brukerID';";
     $resultat = mysqli_query($dblink, $sql); 
-    echo "<table>";
+    echo "<table class=\"blaaTab\">";
     echo "<tr>";
     echo    "<th>hundID</th>";
     echo    "<th>navn</th>";
@@ -1485,7 +1486,6 @@ function lagOppholdTab($dblink) {
         $b1->addHund($rad['navn']);
         $forigeBestillingID = $bestillingID;
     }
-
     return $bestillingTab;
 }
 
@@ -1494,7 +1494,7 @@ function lagOppholdTab($dblink) {
 function lagOppholdOverskrifter() {
     echo "<h2> Mine Opphold </h2>";
     //overskrifter
-    echo "<table>";
+    echo "<table class=\"blaaTab\">";
     echo "<tr>";
     echo    "<th>bestillingID</th>";    // bestilling
     echo    "<th>start</th>";           // bestilling

@@ -48,7 +48,7 @@ $dblink = kobleOpp();
 						<h2 class="hovedOverskrift">Hunden er registrert!</h2>
 
 						<div class="RegistrertHundTekst">
-						<!-- ************************ (Gunn Ingers  tekst og kode) *********************** -->
+						<!-- ************************ (Gunn Ingers tekst og kode) *********************** -->
 							<p>*Hunden* er registrert! Hvis du ønsker å se eller endre informasjonen på de
 								registrerte hundene dine, kan du gå inn på <a class="link" href="minSide.php">Min Side.</a></p>
 						</div>

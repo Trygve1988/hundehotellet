@@ -16,33 +16,6 @@ main {
 	min-height: 600px;
 }
 
-
-
-table{
-	border-collapse: collapse;
-	width: 95%; /*Størrelse på tabellen*/
-}
-
-tr {
-	background-color: white; /*Hvit bakgrunn på skjema*/
-}
-
-th {
-	width: auto;
-	background-color: #394f79;
-	color: white;
-	padding-top: 20px;/*padding til overskrift*/
-	padding-bottom: 20px;
-	padding: 20px;
-}
-
-td {
-	padding: 15px; /*padding til overskrift*/
-	text-align: left;
-	border-bottom: 1px solid #ddd;
-}
-
-
 /*Responsiv footer ved PC-versjon
 @media () { /*Endre størrelsen på nettsiden
 }
@@ -974,4 +947,31 @@ footer a {
 /* admin */
 #adminSeBrukertypeSelect {
     max-width: 170px;
+}
+
+/* Laget av Kristina */
+.blaaTab table{
+	border-collapse: collapse;
+	width: 95%; /*Størrelse på tabellen*/
+}
+
+.blaaTab tr {
+	background-color: white; /*Hvit bakgrunn på skjema*/
+}
+
+.blaaTab th {
+	width: auto;
+	background-color: #394f79;
+	color: white;
+	padding-top: 15px;/*padding til overskrift*/
+	padding-bottom: 15px;
+	padding: 15px;
+	font-size: 18px;
+}
+
+.blaaTab td {
+	padding: 15px; /*padding til overskrift*/
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
 }
