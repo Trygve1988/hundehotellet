@@ -1,5 +1,4 @@
-# sprint3-prototype-1.0
-Bøhunde Hotell
+# Bøhunde Hotell v1
 
 Denne applikasjonen er laget av Gunn Inger Bleikelia, Even Håland, Trygve Johannesen, Kristina Sola.
 
