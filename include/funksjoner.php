@@ -1905,6 +1905,79 @@ function registrerDeg($dblink) {
     }
 }
 
+
+// ********************* Gunni - Min side - Tabeller ********************* 
+
+/* Min profil tabell */
+function minProfilTab($dblink) {
+    
+    // $brukerID
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+
+    // SQL-spørring
+    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+
+    //SQL-resultat -> Tabellrader
+    $resultat = mysqli_query($dblink, $sql);
+    
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo "<table class=\"toKolTab  minSideToKolTab\">";	
+            echo "<tr>";
+            echo "<th class=\"thKolonne\">Navn</th>";
+                echo "<td>". $rad['fornavn'] ." ". $rad['etternavn']. "</td>";
+                echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Epost</th>";
+                echo "<td>". $rad['epost'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Tlf</th>";
+                echo "<td>". $rad['tlf'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Adresse</th>";
+                echo "<td>". $rad['adresse'] . "</td>";
+            echo "</tr>";
+        echo "</table>";
+    } 
+}
+
+/*Mine hunder tabell*/
+function minProfilTab($dblink) {
+    
+    // $brukerID
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+
+    // SQL-spørring
+    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+
+    //SQL-resultat -> Tabellrader
+    $resultat = mysqli_query($dblink, $sql);
+    
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo "<table class=\"toKolTab  minSideToKolTab\">";	
+            echo "<tr>";
+            echo "<th class=\"thKolonne\">Navn</th>";
+                echo "<td>". $rad['fornavn'] ." ". $rad['etternavn']. "</td>";
+                echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Epost</th>";
+                echo "<td>". $rad['epost'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Tlf</th>";
+                echo "<td>". $rad['tlf'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Adresse</th>";
+                echo "<td>". $rad['adresse'] . "</td>";
+            echo "</tr>";
+        echo "</table>";
+    } 
+}
+
 ob_end_flush();
 
 /*
