@@ -44,12 +44,14 @@ $dblink = kobleOpp();
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Bestill opphold</h2>
 				<p>Bø Hundehotell har kapastitet til max 3 hunder i samme bur.</p>
-            	<p>Venligst bestill flere ganger viss du ønsker å bestille opphold til flere en 3 hunder.</p><br>
+            	<p>Vennligst bestill flere ganger viss du ønsker å bestille opphold til flere en 3 hunder.</p><br>
 			
 				<h3>Velg hund(er):</h3>
 				<div>
-					<!-- her setter vi inn velgHundKnapper -->
+					<!-- "Velg hund" knapp -->
 					<div id="velgHundKnappContainer"></div>  
+
+					<!-- Her må det settes inn valg av hund!! --> 
 
 					<!-- " + Registrer ny hund"- knapp -->
 					<a href = "registrerHund.php">
@@ -63,6 +65,7 @@ $dblink = kobleOpp();
 	                	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
 	            	</a>
             	</div>
+				<!-- Tilbakemelding til bruker -->
 				<p id="bestillOpphold1Mld"></p> 	
 			</form>
 		</div>

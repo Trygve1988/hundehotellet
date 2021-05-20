@@ -71,7 +71,7 @@ $dblink = kobleOpp();
 				<div class="etterKolonnerKnapp">
 					<!-- Neste-knapp -->
 					<a href = "bestillOpphold3.php">
-		            	<input class="inputSubmit hovedKnapp" type="submit" value="bekreftDatoer" name="bekreftDatoer">
+		            	<input class="inputSubmit hovedKnapp" type="submit" value="bekreftDatoer" name="Bekreft datoer">
 		            </a>
 				</div>
 			</div>	
