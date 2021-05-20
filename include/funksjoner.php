@@ -1262,7 +1262,7 @@ function visAlleBrukere($dblink)  {
     $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' ;";
     $resultat = mysqli_query($dblink, $sql); 
     
-    echo "<table>";
+    echo "<table class=\"blaaTab\">";
     echo "<tr>";
     echo    "<th>brukerID</th>";
     echo    "<th>epost</th>";
