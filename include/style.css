@@ -109,10 +109,11 @@ main {
 
 /* **************************** index (Even)  ***************************** */
 .velkommenText{ /* Stor tekst, Velkomen */
-  text-align: center;
-  font-size: 25px;
-  font-weight: bold;
-  border: solid black;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	border: solid black;
+	margin: 30px;
 }
 
   #KontrollerBD{
@@ -314,7 +315,7 @@ main {
 	padding: 40px 8px 25px 8px;
 	background-color: white;
 	box-shadow: -5px 0 10px -5px white, 5px 0 10px -5px white; /*Skyggeeffekt*/
-	clip-path: inset(0px -15px 0px -15px); /*Gjør at skyggen ikke går på toppen og bunnen*/
+	clip-path: inset(0px -15px 0px -15px); /*Gjør at skyggen ikke kommer på toppen og bunnen*/
 }
 
 /*Form grå bakgrunn*/
