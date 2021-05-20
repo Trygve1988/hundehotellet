@@ -780,26 +780,21 @@ footer a {
  }
 
    footer p {  
-    color: white;
     letter-spacing: 1px;
     font-size: 1em;
     display: block;
     line-height: 1.625;
-    margin-bottom: 40px;
+    margin-bottom: 10px; /*Lager luft mellom linjene*/
     margin: 0;
  }
  
 
 /*info til footeren til venstre (Kontaktinformasjon)*/
-   .venstre p {
-    margin-bottom: 5px;  
- }
-
   .venstre {
     display: inline-block;
     text-align: left;
-	width:  30%; /* lager luft mellom boksene */
-    margin-bottom: 10px;  	
+	width:  40%; /* lager luft mellom boksene */
+    /*margin-bottom: 10px;  	*/
  }
 
  /*Info til footeren i midten (Sosiale medier)*/
@@ -813,8 +808,8 @@ footer a {
 .facebook-ikon,
 .instagram-ikon{
 	float: left;
-	width: 40px;/*bredden på ikonene*/
- 	height: 40px; /*Høyden på ikonene*/
+	width: 50px;/*bredden på ikonene*/
+ 	height: 50px; /*Høyden på ikonene*/
 	margin-top: .625em;
 	padding: 8px;
  }
