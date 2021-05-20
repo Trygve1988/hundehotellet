@@ -67,7 +67,7 @@
                     </a>
                 <?php } ?>
                 
-                <!-- knappePanel --> 
+                <!-- Knappepanel --> 
                 <div class="knappePanel">  
 
                 </div>

@@ -76,7 +76,7 @@ $dblink = kobleOpp();
 				</div>
 			</div>	
 			
-			<!-- 2g bestillOpphold -->
+			<!-- Bestill opphold -->
 			<?php bekreftDatoer($dblink); ?> 
 
 			</form>

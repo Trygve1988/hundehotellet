@@ -103,7 +103,7 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 				<!-- ************************** (Trygve) ************************** -->
-				<!-- bestillOpphold -->
+				<!-- Bestill Opphold -->
 				<?php bekreftHundInfo($dblink); ?> 
 			</form>
 		</div>	
