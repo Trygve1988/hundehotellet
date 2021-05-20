@@ -29,7 +29,7 @@
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 
-            <h2>Administrer Brukere</h2>
+            <h2 id="admininOverskrift">Administrer Brukere</h2>
 
             <!-- brukertype -->
             <?php $brukertype = $_SESSION['adminSeBrukertype']; ?>

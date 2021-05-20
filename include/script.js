@@ -293,7 +293,8 @@ var anmeldelserTab  = ['Anmeldelser', 'Customer reviews'];
 var minSideTab      = ['Min Side', 'My Page'];
 var loggUtTab       = ['Logg ut', 'Logg out'];
 var registrerDegTab  = ['Registrer Deg', 'Register'];
-
+// step 1) lag en tabell
+var admininOverskriftTab  = ['Admininstrer Brukere', 'Manage Users']; 
 
 //får tak i valgt språk fra spraak cookien
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -314,6 +315,8 @@ var anmeldelserLink = document.getElementById("anmeldelserLink");
 var minSideLink = document.getElementById("minSideLink");
 var loggUtLink  = document.getElementById("loggUtLink");
 var registrerDegLink = document.getElementById("registrerDegLink");
+// step 2) hent ut objektet som skal endre språk
+var admininOverskrift = document.getElementById("admininOverskrift"); 
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -334,7 +337,10 @@ if (loggUtLink !== null) {
 if (registrerDegLink !== null) {
     registrerDegLink.innerHTML = registrerDegTab[språk];
 }
-
+// step 3) sett objektet til valgt språk i språktabellen
+if (admininOverskrift !== null) {
+    admininOverskrift.innerHTML = admininOverskriftTab[språk]; //test
+}
 
 // ********************* 0) navbar: spraakKnapp (Trygve)*********************
 spraakKnapp.addEventListener('click', endreSpraak, false);
