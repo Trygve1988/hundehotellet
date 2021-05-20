@@ -97,17 +97,17 @@ $dblink = kobleOpp();
 						</select>
 
 						<label for="info">Ekstra informasjon:</label>
-						<textarea class="tekstfelt1" name="info"></textarea>					
+						<textarea class="tekstboks tekstfelt1" name="info"></textarea>					
 					</div>
 
 				</div>
 				<!-- Registrer hund-knappp -->	
 				<div> 
 					<a href="minSide.php">
-						<input class="litenKnapp" type="button" value="Tilbake"> 
+						<input class="inputButton" type="button" value="Tilbake"> 
 					</a>
 					<a href="hundRegistrertBekreftelse.html">
-						<input class="litenKnapp" type="submit" name="registrer" value="Registrer hund"> 
+						<input class="inputSubmit" type="submit" name="registrer" value="Registrer hund"> 
 					</a>
 				</div>	
 				<!-- ************************** (Trygve) ************************** -->	
