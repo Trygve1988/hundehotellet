@@ -109,10 +109,10 @@ main {
 
 /* **************************** index (Even)  ***************************** */
 .velkommenText{ /* Stor tekst, Velkomen */
-  text-align: center;
-  font-size: 25px;
-  font-weight: bold;
- 
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	border: solid black;
 }
 
   #KontrollerBD{
