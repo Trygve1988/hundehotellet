@@ -46,7 +46,7 @@ $dblink = kobleOpp();
 						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
 
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fDato" required value="2000-01-01">	
+						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
 						<label for="tlf">Telefonnummer:</label>
 						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
