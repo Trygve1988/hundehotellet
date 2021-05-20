@@ -46,16 +46,16 @@ $dblink = kobleOpp();
 						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
 
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fDato" required value="2000-01-01">	
+						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
 						<label for="tlf">Telefonnummer:</label>
-						<input class="inputTekst" type="text" name="tlf" required value="77733111">	
+						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
 
 						<label for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" required value="Epleveien 5">	
 						
 						<label for="postNr">Postnummer:</label>
-						<input class="inputTekst" type="text" name="postNr" required value="9944">	
+						<input class="inputTekst" type="text" name="postNr" required pattern="[0-9]{4}" value="9944">	
 
 						<!-- velg brukertype (bare for testing)  -->
 						<select class="inputSelect" name="brukertype">
@@ -71,7 +71,7 @@ $dblink = kobleOpp();
 						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
 
 						<label for="epost">E-post:</label>
-						<input class="inputTekst" type="text" name="epost" required value="test">	
+						<input class="inputTekst" type="text" name="epost" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="test@ha.no">	
 							
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
@@ -79,7 +79,8 @@ $dblink = kobleOpp();
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
-							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">Vis Passord
+							<label for="passordCheckbox">Vis Passord</label>
+							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
 						<!-- SKRIV INN PASSORDTILBAKEMELDING-->
 						<div class="passordKrav">
