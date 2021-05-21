@@ -107,6 +107,7 @@ function visNav3() {
             ?> <a id="matingLink" href="mating.php">Mating</a> <?php 
             ?> <a id="luftegårdLink" href="luftegård.php">Luftegård</a> <?php
             ?> <a id="turLink" href="tur.php">Tur</a> <?php
+            ?> <a id="hundInfoLink" href="hundInfo.php">Tur</a><?php
             ?> <a href="seLogger.php">Logg</a> <?php
             ?> <a id="anmeldelserLink" href="anmeldelser.php">Anmeldelser</a> <?php
         }
