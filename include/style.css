@@ -407,7 +407,8 @@ div .gjentaPKolonne {
 } 
 
 /* Felles elementer i forskjellige input-typer*/
-input[type=text].inputTekst, input[type=password].inputPassord, input[type=date].inputDato, textarea.tekstboks, select.inputSelect {
+input[type=text].inputTekst, input[type=password].inputPassord, 
+input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder select {
 	display: inline-block;
 	box-sizing: border-box;
 	width: 100%;
