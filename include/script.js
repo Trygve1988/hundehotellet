@@ -343,7 +343,7 @@ var infomasjonTab10 = ['- Anicura Dyreklinkken i Telemark','- Anicura Dyreklinkk
 var infomasjonTab11 = ['- Seljord Vetrinærkontor AS','- Seljord Vetrinærkontor AS'];
 var infomasjonTab12 = ['- Vi står ikke økonomisk ansvarlig for personlige eiendeler hunden har med seg hit.','- We are not financially responsible for personal belongings the dog brings here.'];
 var infomasjonTab13 = ['- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.','- Please do not bring things you are afraid of being damaged during your stay.'];
-
+var navkontaktInformasjonTab = ['Kontaktinformasjon','Contact information'];
 
 //får tak i valgt språk fra spraak cookien
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -414,6 +414,7 @@ var infomasjonText10 = document.getElementById("infomasjonText10");
 var infomasjonText11 = document.getElementById("infomasjonText11");
 var infomasjonText12 = document.getElementById("infomasjonText12");
 var infomasjonText13 = document.getElementById("infomasjonText13");
+var navkontaktInformasjon = document.getElementById("navkontaktInformasjon");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -581,6 +582,9 @@ if (infomasjonText12 !== null) {
 }
 if (infomasjonText13 !== null) {
     infomasjonText13.innerHTML = infomasjonTab13[språk]; 
+}
+if (navkontaktInformasjon !== null) {
+    navkontaktInformasjon.innerHTML = navkontaktInformasjonTab[språk]; 
 }
 
 
