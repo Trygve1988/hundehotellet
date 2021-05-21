@@ -36,11 +36,6 @@ $dblink = kobleOpp();
 			<!-- Skjema -->	
 			<form id="bestillOpphold1Skjema" class="skjemaBakgrunn" method="POST">
 
-				<!-- Avbryt knapp -->
-				<a href = "index.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>
-
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Bestill opphold</h2>
 				<p>Bø Hundehotell har kapastitet til max 3 hunder i samme bur.</p>

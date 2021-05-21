@@ -160,9 +160,7 @@ function visFooter() {
             <h1>Kontakinformsjon</h1>
             <p>Bø Hundehotell</p>
             <p><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
-            <address>
-                <strong> Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell.@outlook.com</a><br>    
-                   </address>
+            <p><strong> Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com</a></p>
             <p> <strong>Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
         </div>
 
@@ -1933,6 +1931,137 @@ function registrerDeg($dblink) {
             loggInn($dblink);
         }
     }
+}
+
+
+// ********************* Gunni - Min side - Tabeller ********************* 
+
+/* Min profil tabell */
+function minProfilTab($dblink) {
+    
+    // $brukerID
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+
+    // SQL-spørring
+    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+
+    //SQL-resultat -> Tabellrader
+    $resultat = mysqli_query($dblink, $sql);
+    
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo "<table class=\"toKolTab  minSideToKolTab\">";	
+            echo "<tr>";
+            echo "<th class=\"thKolonne\">Navn</th>";
+                echo "<td>". $rad['fornavn'] ." ". $rad['etternavn']. "</td>";
+                echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Epost</th>";
+                echo "<td>". $rad['epost'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Tlf</th>";
+                echo "<td>". $rad['tlf'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Adresse</th>";
+                echo "<td>". $rad['adresse'] . "</td>";
+            echo "</tr>";
+        echo "</table>";
+    } 
+}
+
+/*Mine hunder tabell*/
+function mineHunderTab($dblink) {
+    
+    // $brukerID
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+
+    // SQL-spørring
+    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+
+    //SQL-resultat -> Tabellrader
+    $resultat = mysqli_query($dblink, $sql);
+    
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo "<table class=\"toKolTab  minSideToKolTab\">";	
+            echo "<tr>";
+            echo "<th class=\"thKolonne\">Navn</th>";
+                echo "<td>". $rad['navn'] ."</td>";
+                echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Rase</th>";
+                echo "<td>". $rad['rase'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Fødselsdato</th>";
+                echo "<td>". $rad['fdato'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Kjønn</th>";
+                echo "<td>". $rad['kjønn'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Sterilisert</th>";
+                echo "<td>". $rad['sterilisert']. "</td>";
+             echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Kan omgås andre hunder</th>";
+                echo "<td>". $rad['løpeMedAndre'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Fòrtype</th>";
+                echo "<td>". $rad['forID'] . "</td>";    
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Ekstra informasjon</th>";
+                echo "<td>". $rad['info'] . "</td>";
+            echo "</tr>";
+        echo "</table>";
+    } 
+}
+/*Mine opphold tabell*/
+function mineOppholdTab($dblink) {
+    
+    // $brukerID
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+
+    // SQL-spørring
+    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+
+    //SQL-resultat -> Tabellrader
+    $resultat = mysqli_query($dblink, $sql);
+    
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo "<table class=\"toKolTab  minSideToKolTab\">";	
+            echo "<tr>";
+            echo "<th class=\"thKolonne\">Start</th>";
+                echo "<td>". $rad['startDato'] ."</td>";
+                echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Slutt</th>";
+                echo "<td>". $rad['sluttDato'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Bestilt</th>";
+                echo "<td>". $rad['bestiltDato'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Betalt</th>";
+                echo "<td>". $rad['betaltDato'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Totalpris</th>";
+                echo "<td>". $rad['totalPris']. "</td>";
+             echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">Hund</th>";
+                echo "<td>". $rad['HundID'] . "</td>";
+            echo "</tr>";
+        echo "</table>";
+    } 
 }
 
 ob_end_flush();

@@ -30,9 +30,6 @@ $dblink = kobleOpp();
              <!-- Form-->    
             <form class="skjemaBakgrunn">
 
-                <!-- Avbryt knapp 
-                <input class="avbrytKnapp" type="submit" name="avbryt" value="X">-->
-
                 <!-- Overskrift -->
                 <h2 id="omOssOverskrift" class="hovedOverskrift">Om oss</h2>
 

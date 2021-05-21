@@ -22,6 +22,12 @@ $dblink = kobleOpp();
 	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
+	<!-- ************************** main ******************************* -->
+	
+	<main>
+		<!-- erLoggetInn sjekk -->
+		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
+		
 		<!-- ************************* (Gunni) ************************* -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
@@ -65,11 +71,6 @@ $dblink = kobleOpp();
 							<option value="velg">--Velg--</option>
 						</select>
 						
-						<div>
-							<a class="hPosLink" href="priserOgInfo.php">Trykk her for mer informasjon om krav til vaksinering</a>			
-						</div>	
-					</div>
-				
 					<!-- Labels og input i kolonne 2-->
 					<div class="kolonne2">
 						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
@@ -90,19 +91,20 @@ $dblink = kobleOpp();
 						</select>
 
 						<label for="info">Ekstra informasjon:</label>
-						<textarea class="tekstfelt1" name="info"></textarea>					
+						<textarea class="tekstboks tekstfelt1" name="info"></textarea>					
 					</div>
 
 				</div>
 				<!-- Registrer hund-knappp 
 				<div> 
 					<a href="minSide.php">
-						<input class="litenKnapp" type="button" value="Tilbake"> 
-					</a>-->	
-					<!-- <a href="hundRegistrertBekreftelse.html"></a>-->
-					<input class="litenKnapp" type="submit" name="registrer" value="Registrer hund"> 
+						<input class="inputButton" type="button" value="Tilbake"> 
+					</a>
+					<a href="hundRegistrertBekreftelse.html">
+						<input class="inputSubmit" type="submit" name="registrer" value="Registrer hund"> 
+					</a>
 				</div>	
-				<!-- ************************** (Trygve) ************************** -->	
+				 ************************** (Trygve) ************************** -->	
 			</form>
 		</div>
 

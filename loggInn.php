@@ -32,11 +32,6 @@ $dblink = kobleOpp();
 			<!-- Skjema -->		
 			<form class="skjemaBakgrunn" method="POST">	
 
-				<!-- Avbryt knapp -->
-				<a href = "index.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>	
-
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Logg inn</h2>	
 
