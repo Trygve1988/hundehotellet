@@ -157,15 +157,15 @@ function visFooter() {
     <!--sett footeren din inn her kristina -->
     <footer class="main-footer">
         <div class="venstre">
-            <h1>Kontakinformsjon</h1>
-            <p>Bø Hundehotell</p>
-            <p><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
-            <p><strong> Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com</a></p>
-            <p> <strong>Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
+            <h1 id="navkontaktInformasjon">Kontakinformsjon</h1>
+            <p id="navbøHundehotell">Bø Hundehotell</p>
+            <p id="navtlf"><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
+            <p id="navEpost"><strong> Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com</a></p>
+            <p id="navAdresse"> <strong>Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
         </div>
 
         <div class="midten sosiale-medier">
-            <h1>Sosiale medier</h1>
+            <h1 id="navSosialMedier">Sosiale medier</h1>
             <a href="https://www.instagram.com" target="_blank">
                 <img src="./bilder/instagramIkon.png" alt="Instagram Logo" class="instagram-ikon"></a>
             <a href="https://www.facebook.com" target="_blank">
@@ -176,18 +176,18 @@ function visFooter() {
 
         <!-- Gratis google kart fra https://maps-website.com-->
         <div class="høyre kart">
-            <h1>Besøk oss</h1>
+            <h1 id="navBøskOss">Besøk oss</h1>
             <iframe width="350" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
             id="gmap_canvas"
                 src="https://maps.google.com/maps?width=350&amp;height=200&amp;hl=en&amp;q=Lektorvegen%2091%20B%C3%B8%20i%20Telemark+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
            
                 <a target="_blank" href="https://www.google.com/maps/place/Lektorvegen+91,+3802+Bø,+Norway/@59.412934,9.078556,12z/data=!4m2!3m1!1s0x46474940ffa6344f:0x913038103500cc71?hl=en&gl=US" title="Trykk her for å åpne kartet">
-                  <br>  <i class="fas fa-map-marker-alt"></i> Klikk her for å se kartet</a>
+                  <br>  <i id="navKlikk" class="fas fa-map-marker-alt"></i> Klikk her for å se kartet</a>
         </div>
 
         <div class="høyre">
-            <h1>Samarbeidspartnere</h1>
-            <p>Royal Canin</p>
+            <h1 id="navSamerbeid">Samarbeidspartnere</h1>
+            <p id="navRyal">Royal Canin</p>
         </div>
     </footer>
     <?php 

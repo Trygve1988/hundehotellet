@@ -34,13 +34,13 @@ $dblink = kobleOpp();
     <!-- 2a admin -->
     <div class="hvitBakgrunn">
         <!--Må endre til div siden form dyttet tabellene under den gråbakgrunnen -->
-        <div class="skjemaBakgrunn">
+        <form class="skjemaBakgrunn">
 
             <!-- Droplist hund (samkjørt med CSS koden til Gunn Ingers skjemaer) -->
             <h2 class="hovedOverskrift">Hund</h2>
             <div class="hunder">
-                <!-- <p>Velg hund</p>-->
-                <form action="/action_page.php">
+                <!-- Kræsjer med form skjemaBakgrunn
+                <form action="/action_page.php"> -->
                     <label for="hunder">Velg hund:</label>
                     <select>
                         <option value="hund1">Balder </option>
@@ -48,7 +48,7 @@ $dblink = kobleOpp();
                         <option value="hund3">Fifi </option>
                         <option value="hund4">Bella </option>
                     </select>
-                </form>
+              <!--  </form> -->
             </div>
 
             <!-- Tabell 1 -->
@@ -237,7 +237,7 @@ $dblink = kobleOpp();
 
                 </tbody>
             </table>
-        </div>
+</form>
 
     </div>
 
