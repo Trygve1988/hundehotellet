@@ -95,7 +95,7 @@ $dblink = kobleOpp();
 					</div>
 
 				</div>
-				<!-- Registrer hund-knappp -->	
+				<!-- Registrer hund-knappp 
 				<div> 
 					<a href="minSide.php">
 						<input class="inputButton" type="button" value="Tilbake"> 
@@ -104,11 +104,13 @@ $dblink = kobleOpp();
 						<input class="inputSubmit" type="submit" name="registrer" value="Registrer hund"> 
 					</a>
 				</div>	
-				<!-- ************************** (Trygve) ************************** -->	
-				<!-- registrerHund -->
-				<?php registrerHund($dblink); ?>
+				 ************************** (Trygve) ************************** -->	
 			</form>
 		</div>
+
+		<!-- registrerHund -->
+		<?php registrerHund($dblink); ?>
+
 	</main>
 
 	<!-- ************************** fellesBunn **************************-->

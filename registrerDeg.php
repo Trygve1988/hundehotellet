@@ -95,18 +95,18 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
-				<!-- registrerDeg (Trygve) -->
-				<?php registrerDeg($dblink); ?> 
-
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
 							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" value="Registrer ny bruker"> <!-- HVOR SKAL DENNE LEDE?? -->
 						</a>
-							<!-- Logg inn link -->
+
+					<!-- Logg inn link -->
 					<p class="ekstraLink"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
-				</div>
+
+				<!-- registrerDeg (Trygve) -->
+				<?php registrerDeg($dblink); ?> 
 
 			</form>	
 		</div>
