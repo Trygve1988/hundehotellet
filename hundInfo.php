@@ -37,22 +37,22 @@ $dblink = kobleOpp();
         <form class="skjemaBakgrunn">
 
             <!-- Droplist hund (samkjørt med CSS koden til Gunn Ingers skjemaer) -->
-            <h2 class="hovedOverskrift">Hund</h2>
-            <div class="hunder">
+            <h1 class="hovedOverskrift">Hund</h1>
+            <div class="litenInput hunder">
                 <!-- Kræsjer med form skjemaBakgrunn
                 <form action="/action_page.php"> -->
-                    <label for="hunder">Velg hund:</label>
-                    <select>
-                        <option value="hund1">Balder </option>
-                        <option value="hund2">Trofast </option>
-                        <option value="hund3">Fifi </option>
-                        <option value="hund4">Bella </option>
-                    </select>
-              <!--  </form> -->
+                <label for="hunder">Velg hund:</label>
+                <select>
+                    <option value="hund1">Balder </option>
+                    <option value="hund2">Trofast </option>
+                    <option value="hund3">Fifi </option>
+                    <option value="hund4">Bella </option>
+                </select>
+                <!--  </form> -->
             </div>
 
             <!-- Tabell 1 -->
-            <h2 class="hovedOverskrift">Info</h2>
+            <h2 class="overskrift2">Info</h2>
             <table class="opphold ">
                 <thead>
 
@@ -115,7 +115,7 @@ $dblink = kobleOpp();
 
 
             <!-- Tabell 2 -->
-            <h2 class="hovedOverskrift">Opphold info</h2>
+            <h2 class="overskrift2">Opphold info</h2>
             <table class="opphold oppholdInfo">
                 <thead>
 
@@ -179,7 +179,7 @@ $dblink = kobleOpp();
 
 
             <!-- Tabell 3 -->
-            <h2 class="hovedOverskrift">Aktiviteter</h2>
+            <h2 class="overskrift2">Aktiviteter</h2>
             <table class="opphold aktiviteter">
                 <thead>
 
@@ -237,7 +237,7 @@ $dblink = kobleOpp();
 
                 </tbody>
             </table>
-</form>
+        </form>
 
     </div>
 
