@@ -951,6 +951,7 @@ footer a {
     max-width: 170px;
 }
 
+
 /* Laget av Kristina */
 .blaaTab table{
 	border-collapse: collapse;
@@ -975,5 +976,34 @@ footer a {
 	padding: 15px; /*padding til overskrift*/
 	text-align: left;
 	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+}
+
+
+
+/* Laget av Kristina */
+.blaaTabSmal table{
+	border-collapse: collapse;
+	width: 95%; /*Størrelse på tabellen*/
+}
+
+.blaaTabSmal tr {
+	background-color: white; /*Hvit bakgrunn på skjema*/
+}
+
+.blaaTabSmal th {
+	width: auto;
+	background-color: #394f79;
+	color: white;
+	padding-top: 5px;/*padding til overskrift*/
+	padding-bottom: 5px;
+	padding: 5px;
+	font-size: 18px;
+}
+
+.blaaTabSmal td {
+	padding: 5px; /*padding til overskrift*/
+	text-align: left;
+	border-bottom: 5px solid #ddd;
 	font-size: 18px;
 }

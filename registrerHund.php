@@ -22,13 +22,6 @@ $dblink = kobleOpp();
 	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** main ******************************* -->
-	
-	
-	<main>
-		<!-- erLoggetInn sjekk -->
-		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
-		
 		<!-- ************************* (Gunni) ************************* -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
@@ -101,20 +94,21 @@ $dblink = kobleOpp();
 					</div>
 
 				</div>
-				<!-- Registrer hund-knappp -->	
+				<!-- Registrer hund-knappp 
 				<div> 
 					<a href="minSide.php">
 						<input class="litenKnapp" type="button" value="Tilbake"> 
-					</a>
-					<a href="hundRegistrertBekreftelse.html">
-						<input class="litenKnapp" type="submit" name="registrer" value="Registrer hund"> 
-					</a>
+					</a>-->	
+					<!-- <a href="hundRegistrertBekreftelse.html"></a>-->
+					<input class="litenKnapp" type="submit" name="registrer" value="Registrer hund"> 
 				</div>	
 				<!-- ************************** (Trygve) ************************** -->	
-				<!-- registrerHund -->
-				<?php registrerHund($dblink); ?>
 			</form>
 		</div>
+
+		<!-- registrerHund -->
+		<?php registrerHund($dblink); ?>
+
 	</main>
 
 	<!-- ************************** fellesBunn **************************-->

@@ -316,8 +316,8 @@ function registrerHund($dblink) {
             $hundID = implode($rad);
         }
 
-        echo "hund " . $hundID . " - ". $navn . " registrert" . "<br>";
-        header('Location: bestillOpphold1.php');
+        //echo "hund " . $hundID . " - ". $navn . " registrert" . "<br>";
+        header('Location: bestillOpphold.php');
     }
 }
 
@@ -760,7 +760,7 @@ function vis5SisteFerdigeOpphold($dblink) {
 
 // hjelpefunksjoner
 function visoppholdOverskrifter($dblink) {
-    echo "<table>";
+    echo "<table class=\"blaaTabSmal\">";
     echo "<tr>";
     echo    "<th>bID</th>";             // bestilling
     echo    "<th>start</th>";           // bestilling
@@ -890,6 +890,23 @@ function oppholdSQLSvar($dblink,$sql) {
         $forigeBestillingID = $bestillingID;
     }
     echo "</table>" . "<br>";
+}
+
+function lagIkkeBegyntBestillingTabForAnsatt($dblink) {
+    $bestillinger = array();
+    $pos = 0;
+    $sql = "SELECT DISTINCT B.* FROM bestilling AS B, opphold AS O, hund AS H
+    WHERE B.bestillingID = O.bestillingID
+    AND O.hundID = H.hundID ;" ;
+    $resultat = mysqli_query($dblink, $sql);
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        $bestillingID = $rad['bestillingID'];
+        $startDato = $rad['startDato'];
+        $sluttDato = $rad['sluttDato'];
+        $bestillinger[$pos++] = $bestillingID . ", fra " . $startDato . " til " . $sluttDato;
+    }
+    return $bestillinger;
+
 }
 
 // ************************** 7c) Ansatt: Inn/utsjekk ************************** 
@@ -1313,6 +1330,7 @@ function registrerNyBruker($dblink) {
                     VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse');";
             $resultat = mysqli_query($dblink, $sql);
             echo "<br>".'<i style="color:green; position:absolute";"> Ny Bruker Registrert </i>'; 
+            header('Location: admin.php');
         }
     }
 }
@@ -1380,11 +1398,20 @@ function adminEndreBrukerInfo($dblink) {
 function slettBruker($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $brukerID = $_POST['velgSlettBrukerSelect'];
-        echo $brukerID;
         $sql = "DELETE FROM bruker WHERE brukerID = '$brukerID' ;";
         $resultat = mysqli_query($dblink, $sql);
-        header("Refresh:0");
-        echo "<br>".'<i style="color:green; position:absolute";"> Bruker slettet </i>'; 
+
+        //ble brukeren slettet?
+        $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+        $resultat = mysqli_query($dblink, $sql);
+        $antall = mysqli_num_rows($resultat);
+        if ($antall !== 0) {  
+            echo "<br>".'<i style="color:red; position:absolute";"> Kunne ikke slette bruker! </i>'; 
+        }
+        else {
+            header("Refresh:0");
+            echo "<br>".'<i style="color:green; position:absolute";"> Bruker slettet </i>'; 
+        }
     }
 }
 
@@ -1804,6 +1831,7 @@ function avbestill($dblink) {
         $sql = "INSERT INTO slettetBestilling (startDato, sluttDato, bestiltDato, totalPris, brukerID)
         VALUES ('$startDato','$sluttDato','$bestiltDato','$totalPris','$brukerID') ;";
         $resultat = mysqli_query($dblink, $sql); 
+        header("Refresh:0");
     }
 }
 
@@ -1851,8 +1879,12 @@ function loggInn($dblink) {
         if ($stmt->num_rows == 1) {
             $stmt->fetch();
             if (password_verify($passord, $hashPw))   {
+                $fødselsNr = 0;
+                $stilling = "";
+                $postNr = 0;
                 opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
                 $tlf, $adresse, $fødselsNr, $stilling, $postNr);
+                //$_SESSION['adminSeBrukertype'] = "kunde";
 
                 header('Location: minSide.php');
                 $innloggingOk = true;
@@ -1861,7 +1893,6 @@ function loggInn($dblink) {
         if($innloggingOk == false) {
             echo "<br>".'<i ";"> feil epost og/eller passord! </i>'; 
         }
-        $_SESSION['adminSeBrukertype'] = "kunde";
     }
 }
 
@@ -1891,7 +1922,7 @@ function registrerDeg($dblink) {
         $resultat = mysqli_query($dblink, $sql);
         $antall = mysqli_num_rows($resultat);
         if ($antall > 0) { // epost finnes fra før!
-            echo "<br>".'<i style="color:red; position:absolute";"> epost er allerede registrert! </i>'; 
+            //echo "<br>".'<i style="color:red; position:absolute";"> epost er allerede registrert! </i>'; 
         }
 
         //registrerer ny bruker
@@ -1900,7 +1931,6 @@ function registrerDeg($dblink) {
                     VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse');";
             $resultat = mysqli_query($dblink, $sql);
             loggInn($dblink);
-            header('Location: minSide.php');
         }
     }
 }
