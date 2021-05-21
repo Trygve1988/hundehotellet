@@ -24,7 +24,6 @@ $dblink = kobleOpp();
 
 	<!-- ************************** main ******************************* -->
 	
-	
 	<main>
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
@@ -72,11 +71,6 @@ $dblink = kobleOpp();
 							<option value="velg">--Velg--</option>
 						</select>
 						
-						<div>
-							<a class="hPosLink" href="priserOgInfo.php">Trykk her for mer informasjon om krav til vaksinering</a>			
-						</div>	
-					</div>
-				
 					<!-- Labels og input i kolonne 2-->
 					<div class="kolonne2">
 						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>

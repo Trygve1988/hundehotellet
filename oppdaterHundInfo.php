@@ -69,19 +69,6 @@ $dblink = kobleOpp();
                             <option value="ja">Ja</option>
                             <option value="nei">Nei</option>
                         </select>
-        
-                        <label for="vaksinert">Vaksinert:</label>
-                        <select class="inputSelect" name="vaksinert">
-                            <option value="velg">--Velg--</option>
-                            <option value="ja">Ja</option>
-                            <option value="nei">Nei</option>
-                        </select>
-                    
-                        <!-- Passord link -->
-                        <div>
-                            <a class="hPosLink" href="#">Trykk her for mer informasjon om krav til vaksinering</a>          
-                        </div>
-                    </div>
                 
                     <!-- Labels og input i kolonne 2 -->
                     <div>
