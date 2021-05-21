@@ -59,28 +59,28 @@ $dblink = kobleOpp();
                 
                 <div class="velkommenText">
                     <p id="velkommenNoText1">Velkommen til Bø Hundehotell</p>
-                    <p>Norges BESTE Hundehotell for dine firbente venner</p>
-                    <p>Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
+                    <p id="velkommenNoText2">Norges BESTE Hundehotell for dine firbente venner</p>
+                    <p id="velkommenNoText3">Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
                 </div>
                 
                 <div id="KontrollerBD">
 
                     <div class="bildeKontroller">
                         <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til bestill opphold"></a>
-                        <h1> Bestill</h1>
-                        <p>Her kan du bestille opphold til hunden(ene) dine.</p>
+                        <h1 id="bestill"> Bestill</h1>
+                        <p id="indextText1">Her kan du bestille opphold til hunden(ene) dine.</p>
                     </div>
 
                     <div class="bildeKontroller">
                         <a href="omOss.php"><img src="bilder/hunder2.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til om hundehotellet"></a>
-                        <h1>Om Hundehotellet</h1>
-                        <p>Her kan du få mer info om Hundehotellet.</p>
+                        <h1 id="omHundehotellet">Om Hundehotellet</h1>
+                        <p id='indextText2'>Her kan du få mer info om Hundehotellet.</p>
                     </div>
 
                     <div class="bildeKontroller">
                         <a href="priserOgInfo.php"><img src="bilder/hunder3.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til pris oversikt siden"></a>
-                        <h1>Priser</h1>
-                        <p>Her kan du se en oversikt over priser.</p>
+                        <h1 id="priser">Priser</h1>
+                        <p id=indextText3>Her kan du se en oversikt over priser.</p>
                     </div>
                 </div>
 

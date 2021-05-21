@@ -51,9 +51,8 @@
                 </div> 
             </form> 
         </div> 
-                        
-        
-        <!-- 2g bestillOpphold -->
+                           
+        <!-- bestillOpphold -->
         <?php velgHundSomSkalEndres($dblink); ?> 
 
     </main>

@@ -35,12 +35,12 @@ $dblink = kobleOpp();
             <form class="skjemaBakgrunn">
 
                 <!-- Overskrift -->
-                    <h2 class="hovedOverskrift">Pris</h2>
+                    <h2 id="prisText" class="hovedOverskrift">Pris</h2>
                         <table class="toKolTab">
                             <tr>
-                                <th>Pris pr dag for 1 hund</th> 
-                                <th>Pris pr dag for 2 hunder</th> 
-                                <th>Pris pr dag for 3 hunder</th> 
+                                <th id="prisText1">Pris pr dag for 1 hund</th> 
+                                <th id="prisText2">Pris pr dag for 2 hunder</th> 
+                                <th id="prisText3">Pris pr dag for 3 hunder</th> 
                             </tr>
                             <tr>
                                 <td></td>
@@ -48,39 +48,39 @@ $dblink = kobleOpp();
                                 <td></td>   
                              </tr>
                          </table>
-                    <h2 class="overskrift2">Informasjon</h2>
+                    <h2 id="informasjonText" class="overskrift2">Informasjon</h2>
                     <div class="info">
 
                         <div class="informasjon">
 
-                            <p class="overskrift">Inn-/Utlevering:</p>
-                            <p>Mellom kl 09.00-17.00</p>
+                            <p id="overSkrift1" class="overskrift">Ut-/Innsjekking:</p>
+                            <p id="infomasjonText1">Utsjekking mellom kl 09.00-12.00, Innsjekking mellom kl 12-00-16.00</p>
 
-                            <p class="overskrift">Mat:</p>
-                            <p>- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.</p>
-                            <p>- Mat inngår i prisen på oppholdet.</p>
+                            <p id="overSkrift2" class="overskrift">Mat:</p>
+                            <p id="infomasjonText2">- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.</p>
+                            <p id="infomasjonText3">- Mat inngår i prisen på oppholdet.</p>
 
-                            <p class="overskrift">Seng:</p>
-                            <p>- Ta gjenre mednoe hunden kan ligge på for eksempel madrass eller teppe.</p>
-                            <p>- Vi har stadr teppe til alle bur.</p>
+                            <p id="overSkrift3" class="overskrift">Seng:</p>
+                            <p id="infomasjonText4">- Ta gjenre mednoe hunden kan ligge på for eksempel madrass eller teppe.</p>
+                            <p id="infomasjonText5">- Vi har stadr teppe til alle bur.</p>
                         </div>
 
                         <div class="annenInfo">
 
-                            <p class="overskrift">Vaksinasjonsattest:</p>
-                            <p>- Det med fremvises gyldig Vaksinasjonsattest ved ankomst.</p>
-                            <p>- Attesten må være nyere en 12 mnd.</p>
-                            <p>- Vi krever vaksinasjon mot valpesyke (pravo) og kennelhoste.</p>
+                            <p id="overSkrift4" class="overskrift">Vaksinasjonsattest:</p>
+                            <p id="infomasjonText6">- Det med fremvises gyldig Vaksinasjonsattest ved ankomst.</p>
+                            <p id="infomasjonText7">- Attesten må være nyere en 12 mnd.</p>
+                            <p id="infomasjonText8">- Vi krever vaksinasjon mot valpesyke (pravo) og kennelhoste.</p>
 
 
-                            <p class="overskrift" >Vetrinær:</p>
-                            <p>Vi samarbeider med:</p>
-                            <p>- Anicura Dyreklinkken i Telemark</p>
-                            <p>- Seljord Vetrinærkontor AS</p>
+                            <p id="overSkrift5" class="overskrift" >Veterinær:</p>
+                            <p id="infomasjonText9">Vi samarbeider med:</p>
+                            <p id="infomasjonText10">- Anicura Dyreklinkken i Telemark</p>
+                            <p id="infomasjonText11">- Seljord Vetrinærkontor AS</p>
 
-                            <p class="overskrift" >Annet:</p>
-                            <p>- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
-                            <p>- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
+                            <p id="overSkrift6" class="overskrift" >Annet:</p>
+                            <p id="infomasjonText12">- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
+                            <p id="infomasjonText13">- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
                         </div>
                     </div>  
             </form>
