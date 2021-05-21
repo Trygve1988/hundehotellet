@@ -319,6 +319,19 @@ var stillingTab3    = ['Stiling: Kontor-ansatt','Position: Office employee'];
 var stillingTab4    = ['Stiling: Hundetrener','Position: Dog trainer'];
 var stillingTab5    = ['Stiling: Ansatt','Position: Employee'];
 var stillingTab6    = ['Stiling: Ansatt','Position: Employee'];
+var prisTab         = ['Pris','Price'];
+var informasjonTab  = ['Informasjon','Information'];
+var prisTab1        = ['Pris pr dag for 1 hund','Price per day for 1 dog'];
+var prisTab2        = ['Pris pr dag for 2 hunder','Price per day for 2 dogs'];
+var prisTab3        = ['Pris pr dag for 3 hunder','Price per day for 3 dogs'];
+var overSkriftTab1  = ['Inn-/Utlevering:','Check inn/Delivery:'];
+var overSkriftTab2  = ['Mat:','Food:'];
+var overSkriftTab3  = ['Seng:','Bed:'];
+var overSkriftTab4  = ['Vaksinasjonsattest:','Vaccination certificate:'];
+var overSkriftTab5  = ['Veterinær:','Veterinarian:'];
+var overSkriftTab6  = ['Annet:','Other:'];
+
+
 
 //får tak i valgt språk fra spraak cookien
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -365,6 +378,17 @@ var stilling3 = document.getElementById("stilling3");
 var stilling4 = document.getElementById("stilling4");
 var stilling5 = document.getElementById("stilling5");
 var stilling6 = document.getElementById("stilling6");
+var prisText = document.getElementById('prisText');
+var informasjonText = document.getElementById('informasjonText');
+var prisText1 = document.getElementById('prisText1');
+var prisText2 = document.getElementById('prisText2');
+var prisText2 = document.getElementById('prisText3');
+var overSkrift1 = document.getElementById('overSkrift1');
+var overSkrift2 = document.getElementById('overSkrift2');
+var overSkrift3 = document.getElementById('overSkrift3');
+var overSkrift4 = document.getElementById('overSkrift4');
+var overSkrift5 = document.getElementById('overSkrift5');
+var overSkrift6 = document.getElementById('overSkrift6');
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -461,6 +485,40 @@ if (stilling5 !== null) {
 if (stilling6 !== null) {
     stilling6.innerHTML = stillingTab6[språk]; 
 }
+if (prisText !== null) {
+    prisText.innerHTML = prisTab[språk]; 
+} 
+if (informasjonText !== null) {
+    informasjonText.innerHTML = informasjonTab[språk]; 
+}
+if (prisText1 !== null) {
+    prisText1.innerHTML = prisTab1[språk]; 
+}
+if (prisText2 !== null) {
+    prisText2.innerHTML = prisTab2[språk]; 
+}
+if (prisText3 !== null) {
+    prisText3.innerHTML = prisTab3[språk]; 
+}
+if (overSkrift1 !== null) {
+    overSkrift1.innerHTML = overSkriftTab1[språk]; 
+}
+if (overSkrift2 !== null) {
+    overSkrift2.innerHTML = overSkriftTab2[språk]; 
+}
+if (overSkrift3 !== null) {
+    overSkrift3.innerHTML = overSkriftTab3[språk]; 
+}
+if (overSkrift4 !== null) {
+    overSkrift4.innerHTML = overSkriftTab4[språk]; 
+}
+if (overSkrift5 !== null) {
+    overSkrift5.innerHTML = overSkriftTab5[språk]; 
+}
+if (overSkrift6 !== null) {
+    overSkrift6.innerHTML = overSkriftTab6[språk]; 
+}
+
 
 
 
