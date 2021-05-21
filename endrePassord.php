@@ -30,8 +30,15 @@
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
+            	
+
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
+                <!-- Avbryt knapp -->
+			    <a href = "index.php">
+				    <input class="avbrytKnapp" type="button" value="X">
+			    </a>    
+                
                 <h2>Endre Passord</h2>
 				<div class="skjemaKolonner">
 					<div class="kolonne1">

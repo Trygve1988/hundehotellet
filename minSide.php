@@ -32,11 +32,7 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <!-- Avbryt knapp -->
-				<a href = "index.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>
-                
+      
                 <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Min side</h2>
             
@@ -78,6 +74,7 @@
                     <a href = "oppdaterHundInfo.php">
                         <input class="inputButton hovedKnapp" type="button" value="Rediger"> 
                     </a>
+
                 <!-- "Mine opphold" -->
                 <h2 class="overskrift2">Mine opphold</h2>
 

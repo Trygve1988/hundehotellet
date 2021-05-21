@@ -43,7 +43,7 @@ $dblink = kobleOpp();
                         <img src="bilder/hundSlider3.jpg" style="width:100%" alt="Bilde av hund fra bildeslider">
                     </div>
 
-                    <!-- Neste og forje bildeknapp-->  
+                    <!-- Neste og forrige bildeknapp-->  
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>    
                     </div>
