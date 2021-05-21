@@ -76,7 +76,7 @@ function visNav() {
              ?> <a id="loggUtLink" class="right" href="loggUt.php">Logg Ut</a> <?php
         }
         else {
-            ?> <a class="right" href="loggInn.php">Logg Inn</a> <?php
+            ?> <a id="loggInnLink" class="right" href="loggInn.php">Logg Inn</a> <?php
             ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
         <!-- spraakKnapp--> 

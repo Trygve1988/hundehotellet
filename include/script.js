@@ -291,6 +291,7 @@ var kontaktOssTab   = ['Kontakt Oss', 'Contact us'];
 var bestillTab      = ['Bestill Opphold', 'Make a Booking'];
 var anmeldelserTab  = ['Anmeldelser', 'Customer reviews'];
 var minSideTab      = ['Min Side', 'My Page'];
+var loggInnTab      = ['Logg Inn','Sign In'];
 var loggUtTab       = ['Logg ut', 'Logg out'];
 var registrerDegTab  = ['Registrer Deg', 'Register'];
 // step 1) lag en tabell
@@ -298,6 +299,26 @@ var admininOverskriftTab  = ['Admininstrer Brukere', 'Manage Users'];
 var omOssOverskriftTab  = ['Om oss', 'About Us'];
 var omOssTextTab       = ['Bø Hundehotell holder til på Lektorvegen 91, i Bø i Telemark. Det er landelige omgivelser med store luftegårder, og fine turområder.Vi seks ansatt som jobber her på Bø Hundehotell, vi har vært i Hundehotell businessen i 6år, vi startet opp for først gang den 12.04.2010. Den gang var det barejeg og mannen min. Vi er alle hunde elskere på her på Bø Hundehotell, og eier eller er vant med hund fra før av. Din hund vil være trygg i våre hender. Vi håper vi ser deg og din hund her.','Bø Hundehotell is located at Lektorvegen 91, in Bø in Telemark. It is a rural setting with large airyards, and nice hiking areas. We six employees who work here at Bø Hundehotell, we have been in the Hundehotell business for 6 years, we started up for the first time on 12.04.2010. That time it was just me and my husband. We are all dog lovers here at Bø Hundehotell, and already own or are used to dogs. Your dog will be safe in our hands. We hope to see you and your dog here.' ];
 var velkommenTab1     = ['Velkommen til Bø Hundehotell','Welcome to Bø Hundehotell'];
+var velkommenTab2   = ['Norges BESTE Hundehotell for dine firbente venner','Norways BEST Dog Hotel for your four legged friends'];
+var velkommenTab3   = ['Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16','Opening hours: Mon-Fri 8-18, Sat-Sun: 10-16'];
+var bestillTab      = ['Bestill','Order here'];
+var indextTextTab1  = ['Her kan du bestille opphold til hunden(ene) dine.','Here you can book a stay for your dog (s).'];
+var omHundehotelletTab = ['Om Hundehotellet','About Hundehotellet'];
+var indextTextTab2  = ['Her kan du få mer info om Hundehotellet.','Here you can get more info about Hundehotellet.'];
+var priserTab       = ['Priser','Prices'];
+var indextTextTab3  = ['Her kan du se en oversikt over priser.','Here you can see an overview of prices.'];
+var navnTab1        = ['Navn: Sansa Stark','Name: Sansa Stark'];
+var navnTab2        = ['Navn: Jon Snow','Name: Jon Snow'];
+var navnTab3        = ['Navn: Daenerys Targaryen','Name: Daenerys Targaryen'];
+var navnTab4        = ['Navn: Eddard Stark','Name: Eddard Stark'];
+var navnTab5        = ['Navn: Tyrion Lannister','Name: Tyrion Lannister'];
+var navnTab6        = ['Navn: Aerys Targaryen','Name: Aerys Targaryen'];
+var stillingTab1    = ['Stiling: Daglig leder','Position: General manager'];
+var stillingTab2    = ['Stiling: Nestleder','Position: Deputy Chairman'];
+var stillingTab3    = ['Stiling: Kontor-ansatt','Position: Office employee'];
+var stillingTab4    = ['Stiling: Hundetrener','Position: Dog trainer'];
+var stillingTab5    = ['Stiling: Ansatt','Position: Employee'];
+var stillingTab6    = ['Stiling: Ansatt','Position: Employee'];
 
 //får tak i valgt språk fra spraak cookien
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -316,13 +337,34 @@ var kontaktOssLink = document.getElementById("kontaktOssLink");
 var bestillLink = document.getElementById("bestillLink");
 var anmeldelserLink = document.getElementById("anmeldelserLink");
 var minSideLink = document.getElementById("minSideLink");
+var loggInnLink = document.getElementById("loggInnLink"); 
 var loggUtLink  = document.getElementById("loggUtLink");
 var registrerDegLink = document.getElementById("registrerDegLink");
 // step 2) hent ut objektet som skal endre språk
 var admininOverskrift = document.getElementById("admininOverskrift"); 
-var omOssOverskrift = document.getElementById('omOssOverskrift');
-var omOssText = document.getElementById('omOssText');
-var velkommenNoText1 = document.getElementById('velkommenNoText1');
+var omOssOverskrift = document.getElementById("omOssOverskrift");
+var omOssText = document.getElementById("omOssText");
+var velkommenNoText1 = document.getElementById("velkommenNoText1");
+var velkommenNoText2 = document.getElementById("velkommenNoText2");
+var velkommenNoText3 = document.getElementById("velkommenNoText3");
+var bestill = document.getElementById("bestill");
+var indextText1 = document.getElementById("indextText1");
+var omHundehotellet = document.getElementById("omHundehotellet");
+var indextText2 = document.getElementById("indextText2");
+var priser = document.getElementById("priser");
+var indextText3 = document.getElementById("indextText3");
+var navn1 = document.getElementById("navn1");
+var navn2 = document.getElementById("navn2");
+var navn3 = document.getElementById("navn3");
+var navn4 = document.getElementById("navn4");
+var navn5 = document.getElementById("navn5");
+var navn6 = document.getElementById("navn6");
+var stilling1 = document.getElementById("stilling1");
+var stilling2 = document.getElementById("stilling2");
+var stilling3 = document.getElementById("stilling3");
+var stilling4 = document.getElementById("stilling4");
+var stilling5 = document.getElementById("stilling5");
+var stilling6 = document.getElementById("stilling6");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -336,6 +378,9 @@ if (anmeldelserLink !== null) {
 }
 if (minSideLink !== null) {
     minSideLink.innerHTML = minSideTab[språk];
+}
+if (loggInnLink !== null) {
+    loggInnLink.innerHTML = loggInnTab[språk];
 }
 if (loggUtLink !== null) {
   loggUtLink.innerHTML = loggUtTab[språk];
@@ -356,6 +401,69 @@ if (omOssText !== null) {
 if (velkommenNoText1 !== null) {
     velkommenNoText1.innerHTML = velkommenTab1[språk]; 
 }
+if (velkommenNoText2 !== null) {
+    velkommenNoText2.innerHTML = velkommenTab2[språk]; 
+}
+if (velkommenNoText3 !== null) {
+    velkommenNoText3.innerHTML = velkommenTab3[språk]; 
+}
+if (bestill !== null) {
+    bestill.innerHTML = bestillTab[språk]; 
+}
+if (indextText1 !== null) {
+    indextText1.innerHTML = indextTextTab1[språk]; 
+}
+if (omHundehotellet !== null) {
+    omHundehotellet.innerHTML = omHundehotelletTab[språk]; 
+}
+if (indextText2 !== null) {
+    indextText2.innerHTML = indextTextTab2[språk]; 
+}
+if (priser !== null) {
+    priser.innerHTML = priserTab[språk]; 
+}navn1
+if (indextText3 !== null) {
+    indextText3.innerHTML = indextTextTab3[språk]; 
+}
+if (navn1 !== null) {
+    navn1.innerHTML = navnTab1[språk]; 
+}
+if (navn2 !== null) {
+    navn2.innerHTML = navnTab3[språk]; 
+}
+if (navn3 !== null) {
+    navn3.innerHTML = navnTab3[språk]; 
+}
+if (navn4 !== null) {
+    navn4.innerHTML = navnTab4[språk]; 
+}
+if (navn5 !== null) {
+    navn5.innerHTML = navnTab5[språk]; 
+}
+if (navn6 !== null) {
+    navn6.innerHTML = navnTab6[språk]; 
+}
+if (stilling1 !== null) {
+    stilling1.innerHTML = stillingTab1[språk]; 
+}
+if (stilling2 !== null) {
+    stilling2.innerHTML = stillingTab2[språk]; 
+}
+if (stilling3 !== null) {
+    stilling3.innerHTML = stillingTab3[språk]; 
+}
+if (stilling4 !== null) {
+    stilling4.innerHTML = stillingTab4[språk]; 
+}
+if (stilling5 !== null) {
+    stilling5.innerHTML = stillingTab6[språk]; 
+}
+if (stilling6 !== null) {
+    stilling6.innerHTML = stillingTab6[språk]; 
+}
+
+
+
 
 
 
