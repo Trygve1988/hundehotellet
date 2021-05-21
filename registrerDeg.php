@@ -48,9 +48,6 @@ $dblink = kobleOpp();
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
-						<label for="tlf">Telefonnummer:</label>
-						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
-
 						<label for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" required value="Epleveien 5">	
 						
@@ -70,6 +67,9 @@ $dblink = kobleOpp();
 						<label for="etternavn">Etternavn:</label>
 						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
 
+						<label for="tlf">Telefonnummer:</label>
+						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
+						
 						<label for="epost">E-post:</label>
 						<input class="inputTekst" type="text" name="epost" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="test@ha.no">	
 							

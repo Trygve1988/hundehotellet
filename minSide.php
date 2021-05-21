@@ -26,7 +26,7 @@
                 header('Location: loggInn.php');
             } 
         ?>
-
+        <!-- ************************** Gunni **************************** -->
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 	
@@ -50,14 +50,15 @@
 		    
                 <!-- "Mine hunder" -->
                 <h2 class="overskrift2">Mine hunder</h2>
-                
                 <div class="litenInput">
+
                 <!-- Nedtrekksliste for valg av hund -->
                 <label for="velgHund">Velg hund:</label>
-                    <select class="inputSelect" name="velgHund">
-                        <option value="hund1">Hund1</option>
-                        <option value="hund2">Hund2</option>
-                        <option value="hund3">Hund3</option>
+                    <select class="inputSelect" id="hund" name="velgHund">
+                        <?php $hunder = laghunderTab($dblink);
+                            for ($i=0; $i<count($hunder); $i++) {
+                                lagOption($hunder[$i]);
+                            } ?>
                     </select>
               </div>  
               
@@ -91,7 +92,9 @@
                     <input class=" inputButton hovedKnapp" type="button" value="Se eldre"> 
             	</a>
             </form> 
-        <div> 
+        <div>
+        <!-- Valg av hund som skal velges -->
+        <?php velgHundSomSkalEndres($dblink); ?>  
     </main>
     <footer></footer>
 </body>

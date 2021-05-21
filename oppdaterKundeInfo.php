@@ -54,9 +54,6 @@ $dblink = kobleOpp();
                         <label for="fDato">Fødselsdato:</label>
                         <input class="inputDato" type="date" name="fDato">  
 
-                        <label for="tlf">Telefonnummer:</label>
-                        <input class="inputTekst" type="text" name="tlf">
-
                         <label for="adresse">Adresse:</label>
                         <input class="inputTekst" type="text" name="adresse">
                         
@@ -68,6 +65,9 @@ $dblink = kobleOpp();
                         <!-- Labels og input i kolonne 2 -->
                         <label for="etternavn">Etternavn:</label>
                         <input class="inputTekst" type="text" name="etternavn">
+
+                        <label for="tlf">Telefonnummer:</label>
+                        <input class="inputTekst" type="text" name="tlf">
 
                         <label for="epost">E-post:</label>
                         <input class="inputTekst" type="text" name="epost">

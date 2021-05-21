@@ -1944,7 +1944,7 @@ function minProfilTab($dblink) {
 /*Mine hunder tabell*/
 function mineHunderTab($dblink) {
     
-    // $brukerID
+    /*// $brukerID
     $bruker = $_SESSION['bruker'];
     $brukerID = $bruker->getBrukerID();
 
@@ -1991,6 +1991,9 @@ function mineHunderTab($dblink) {
         echo "</table>";
     } 
 }
+*/
+    
+    
 /*Mine opphold tabell*/
 function mineOppholdTab($dblink) {
     
@@ -2033,6 +2036,8 @@ function mineOppholdTab($dblink) {
         echo "</table>";
     } 
 }
+
+
 
 ob_end_flush();
 
