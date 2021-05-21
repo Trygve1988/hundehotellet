@@ -27,7 +27,9 @@ $dblink = kobleOpp();
 	<main>
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
-        
+
+        <!-- aktivHundSjekk -->
+        <?php $h1 = $_SESSION['aktivHund']; ?>       
         <!-- ************************ (Gunni) ************************** -->
          <!-- Hvit bakgrunn -->  
          <div class="hvitBakgrunn">
@@ -42,66 +44,75 @@ $dblink = kobleOpp();
                 <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Oppdater informasjon</h2> 
 
+                <!-- Nedtrekksliste for valg av hund -->
+                <h2>Velg hund</h2>
+			
+					<div class="litenInput">
+                        <label for="velgHund">Velg hund:</label>
+                        <select class="inputSelect" id="hund" name="velgHund">
+                            <?php $hunder = laghunderTab($dblink);
+                                for ($i=0; $i<count($hunder); $i++) {
+                                    lagOption($hunder[$i]);
+                                } ?>
+                        </select>
+                        <a href="minSide.php">
+                            <input class="litenKnapp" type="button" value="Tilbake">  
+                        <a>
+                            <input class="litenKnapp" type="submit" value="Velg" name="velgHund">
+                    </div>
+                </div> 
+
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
                         <!-- Labels og input i kolonne 1 -->
                         <label for="hNavn">Hundens navn:</label>
-                        <input  class="inputTekst" type="text" name="hNavn">
-            
-                        <label for="rase">Rase:</label>
-                        <input class="inputTekst" type="text" name="rase">  
+                        <input  class="inputTekst" type="text" name="hNavn" value= <?php echo $h1->getNavn() ?> required/><!-- Skal det være required her? -->
 
+                        <label for="rase">Rase:</label>
+                        <input class="inputTekst" type="text" name="rase" value= <?php echo $h1->getRase() ?> >  
                         <!-- Inputen for fødselsdato er date -->
                         <label for="fDato">Fødselsdato:</label>
-                        <input class="inputDato" type="date" name="fDato">  
+                        <input class="inputDato" type="date" name="fDato" value= <?php echo $h1->getFdato() ?> >  
 
                         <!-- Nedtrekkslister -->
                         <label for="kjonn">Kjønn:</label>
                         <select class="inputSelect" name="kjonn">
-                            <option value="velg">--Velg--</option>
+                            <option value="velg"><?php echo $h1->getKjønn() ?></option>
                             <option value="hannhund">Hannhund</option>
                             <option value="tispe">Tispe</option>
                         </select>   
 
                         <label for="steril">Sterilisert:</label>
                         <select class="inputSelect" name="steril">
-                            <option value="velg">--Velg--</option>
+                            <option value="velg"><?php echo $h1->getSterilisert() ?></option>
                             <option value="ja">Ja</option>
                             <option value="nei">Nei</option>
                         </select>
-                
                     <!-- Labels og input i kolonne 2 -->
                     <div>
                         <label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
                         <select class="inputSelect" name="lopeMedAndre">
-                            <option value="velg">--Velg--</option>
+                            <option value="velg"><?php echo $h1->getLøpeMedAndre() ?></option>
                             <option value="ja">Ja</option>
                             <option value="nei">Nei</option>
                         </select>
-                    
-                        <label for="losPaaTur">Kan hunden gå løs på tur:</label>
-                        <select class="inputSelect" name="losPaaTur">
-                            <option value="velg">--Velg--</option>
-                            <option value="ja">Ja</option>
-                            <option value="nei">Nei</option>
-                        </select>   
 
                         <label for="fortype">Fòrtype:</label>
                         <select class="inputSelect" name="fortype">
-                            <option value="velg">--Velg--</option>
+                            <option value="velg"><?php echo $h1->getForID() ?></option>
                             <option value="inkludert">Royal Canin</option>
                             <option value="inkludert">Vom</option>
                             <option value="medbrakt">Medbrakt</option>
                         </select>   
 
                         <label for="ekstraInfo">Ekstra informasjon:</label>
-                        <textarea class="tekstboks tekstfelt1" name="ekstraInfo"></textarea>
+                        <textarea class="tekstboks tekstfelt1" name="ekstraInfo"><?php echo $h1->getInfo() ?></textarea>
                     </div>
                 </div>
                 <!-- Registrer hund-knappp -->  
                 <div class="etterKolonnerKnapp"> 
                     <a href="hundRegistrertBekreftelse.html">
-                        <input class="hovedKnapp inputSubmit" type="submit" name="oppdaterHund" value="Lagre"> 
+                        <input class="hovedKnapp inputSubmit" type="submit" name="bekreftHundInfo" value="Lagre"> 
                     </a>
                 </div> 
                 <!-- ************************ (Trygve) ************************** -->
@@ -109,6 +120,8 @@ $dblink = kobleOpp();
 	            <?php velgHund($dblink); ?>  
             </form>
         </div>
+        <!-- Oppdater hund -->
+        <?php endreHund($dblink); ?> 
     </main>
 
 	<!-- ************************** fellesBunn ************************** -->

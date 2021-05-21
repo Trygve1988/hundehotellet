@@ -25,185 +25,37 @@ $dblink = kobleOpp();
     <?php visNav3() ?>
 
     <!-- ************************** main ******************************* -->
-    <main>
+    <main> 
 
-        <!-- erAnsatt sjekk -->
-        <?php if (!erAnsatt()) {
-            header('Location: loggInn.php');
-        } ?>
+        <!-- 2a erAnsatt sjekk-->
+        <?php if (!erAnsatt()) { header('Location: loggInn.php'); } ?>
 
-        <!-- alle opphold  -->
+        <!-- Hvit bakgrunn -->	
         <div class="hvitBakgrunn">
-            <form class="skjemaBakgrunn">
 
-                <h2 class="hovedOverskrift">Ferdige opphold</h2>
-                <table class="opphold FerdigOpphold">
-                    <thead>
-                        <tr>
-                            <th>Bestilling ID</th>
-                            <th>Start</th>
-                            <th>Slutt</th>
-                            <th>Bestilt</th>
-                            <th>Total pris</th>
-                            <th>Bur ID</th>
-                            <th>Hunder</th>
+            <!-- Skjema -->		
+            <form class="skjemaBakgrunn" method="POST">
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
+                <!-- Overskrift -->
+                <h2 class="hovedOverskrift">Alle Opphold</h2>	
 
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- 2a alleOpphold -->
+                <?php visIkkeBegynteOpphold($dblink); ?>
+                <?php visAktiveOpphold($dblink); ?>
+                <?php vis5SisteFerdigeOpphold($dblink); ?>
+                <a href="ansattAlleOppholdEldre.php"> 
+                    <input class="litenKnapp" type="button" value="Se Eldre"> 
+                </a> 
+                <a href="bestillOpphold.php"> 
+                    <input class="litenKnapp" type="button" value="Bestill Opphold"> 
+                </a> 
+                <a href="ansattAvbestill.php">
+                    <input class="litenKnapp" type="button" value="Avbestill" name="Avbestill"> 
+                </a> 
+            </form>
 
-                <!-- Tabell 2 -->
+        </div>
 
-                <h2 class="hovedOverskrift">Aktive opphold</h2>
-                <table class="opphold aktiv">
-                    <thead>
-                        <tr>
-                            <th>Bestilling ID</th>
-                            <th>Start</th>
-                            <th>Slutt</th>
-                            <th>Bestilt</th>
-                            <th>Total pris</th>
-                            <th>Bur ID</th>
-                            <th>Hunder</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Tabell 3 -->
-                <h2 class="hovedOverskrift">Ikke begynte opphold </h2>
-                <table class="opphold IkkeBegyntOpphold">
-                    <thead>
-                        <tr>
-                            <th>Bestilling ID</th>
-                            <th>Start</th>
-                            <th>Slutt</th>
-                            <th>Bestilt</th>
-                            <th>Total pris</th>
-                            <th>Bur ID</th>
-                            <th>Hunder</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-      
-        </form>
-          </div>
     </main>
 
     <!-- ************************** fellesBunn **************************** -->

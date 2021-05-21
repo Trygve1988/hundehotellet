@@ -26,7 +26,6 @@ $dblink = kobleOpp();
 <main>
 
 
-
     <!-- erAnsatt sjekk -->
     <?php /*if (!erAnsatt()) {
         header('Location: loggInn.php');
@@ -34,23 +33,213 @@ $dblink = kobleOpp();
 
     <!-- 2a admin -->
     <div class="hvitBakgrunn">
-        <form class="skjemaBakgrunn">
+        <!--Må endre til div siden form dyttet tabellene under den gråbakgrunnen -->
+        <div class="skjemaBakgrunn">
+
+            <!-- Droplist hund (samkjørt med CSS koden til Gunn Ingers skjemaer) -->
+            <h2 class="hovedOverskrift">Hund</h2>
+            <div class="hunder">
+                <!-- <p>Velg hund</p>-->
+                <form action="/action_page.php">
+                    <label for="hunder">Velg hund:</label>
+                    <select>
+                        <option value="hund1">Balder </option>
+                        <option value="hund2">Trofast </option>
+                        <option value="hund3">Fifi </option>
+                        <option value="hund4">Bella </option>
+                    </select>
+                </form>
+            </div>
+
+            <!-- Tabell 1 -->
+            <h2 class="hovedOverskrift">Info</h2>
+            <table class="opphold ">
+                <thead>
+
+                    <tr>
+                        <th>Gått Tur ID</th>
+                        <th>Start tidspunkt</th>
+                        <th>Slutt tidspunkt</th>
+                        <th>Opphold ID</th>
+                        <th>Bruker ID</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+            <!-- Tabell 2 -->
+            <h2 class="hovedOverskrift">Opphold info</h2>
+            <table class="opphold oppholdInfo">
+                <thead>
+
+                    <tr>
+                        <th>Gått Tur ID</th>
+                        <th>Start tidspunkt</th>
+                        <th>Slutt tidspunkt</th>
+                        <th>Opphold ID</th>
+                        <th>Bruker ID</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
 
             <!-- Tabell 3 -->
-            <h2 class="hovedOverskrift">Tur</h2>
+            <h2 class="hovedOverskrift">Aktiviteter</h2>
+            <table class="opphold aktiviteter">
+                <thead>
 
+                    <tr>
+                        <th>Gått Tur ID</th>
+                        <th>Start tidspunkt</th>
+                        <th>Slutt tidspunkt</th>
+                        <th>Opphold ID</th>
+                        <th>Bruker ID</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
 
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
 
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
 
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
 
+                    </tr>
 
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
 
-            
-         
-        </form>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
     </div>
-    
 
 </main>
 
