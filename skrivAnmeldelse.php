@@ -23,7 +23,8 @@
         <!-- Anmeldelser -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn" method="POST">
-            	<!-- Avbryt knapp -->
+            	
+                <!-- Avbryt knapp -->
 				<a href = "index.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
