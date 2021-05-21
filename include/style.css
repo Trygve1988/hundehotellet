@@ -353,6 +353,11 @@ main {
 	margin-right: 5%;
 }
 
+/*Lite felt, for eksempel for "velg hund" eller velg år? */
+.litenInput {
+	width: 200px;
+}
+
 /*Gjenta passord- kolonne, gjør plass til passordtilbakemelding*/
 div .gjentaPKolonne { 
 	max-width: 100%;
@@ -556,6 +561,8 @@ input[type=checkbox].storCheckbox {
   text-decoration: underline; 
 }
 
+/* Tabeller */
+
 /*Horisontal tabell, th på toppen og tb under*/
 .hTab {
 	width: 90%;
@@ -570,7 +577,6 @@ input[type=checkbox].storCheckbox {
 .minSideToKolTab {
 	width: 60%;
 }
-
 
 
 
