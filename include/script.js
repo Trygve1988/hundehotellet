@@ -324,13 +324,25 @@ var informasjonTab  = ['Informasjon','Information'];
 var prisTab1        = ['Pris pr dag for 1 hund','Price per day for 1 dog'];
 var prisTab2        = ['Pris pr dag for 2 hunder','Price per day for 2 dogs'];
 var prisTab3        = ['Pris pr dag for 3 hunder','Price per day for 3 dogs'];
-var overSkriftTab1  = ['Inn-/Utlevering:','Check inn/Delivery:'];
+var overSkriftTab1  = ['Ut-/Innsjekking:','Check out/Check inn:'];
 var overSkriftTab2  = ['Mat:','Food:'];
-var overSkriftTab3  = ['Seng:','Bed:'];
+var overSkriftTab3  = ['Seng:','Bed'];
 var overSkriftTab4  = ['Vaksinasjonsattest:','Vaccination certificate:'];
 var overSkriftTab5  = ['Veterinær:','Veterinarian:'];
 var overSkriftTab6  = ['Annet:','Other:'];
-
+var infomasjonTab1 = ['Utsjekking mellom kl 09.00-12.00, Innsjekking mellom kl 12-00-16.00','Check-out between 09.00-12.00, Check-in between 12-00-16.00'];
+var infomasjonTab2 = ['- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.','- We use Royal Canin and rumen adapted to the dogs age and activity test level. If you want the dog to have other food, please get in touch.'];
+var infomasjonTab3 = ['- Mat inngår i prisen på oppholdet.','- Food is included in the price'];
+var infomasjonTab4 = ['- Ta gjerne med noe hunden kan ligge på for eksempel madrass eller teppe','- Feel free to bring something the dog can lie on, for example, a mattress or blanket'];
+var infomasjonTab5 = ['- Vi har stort teppe til alle bur.','- We have large blankets for all our cages.'];
+var infomasjonTab6 = ['- Det med fremvises gyldig Vaksinasjonsattest ved ankomst.','- A valid Vaccination Certificate is presented on arrival.'];
+var infomasjonTab7 = ['- Attesten må være nyere enn 12 mnd.','- The certificate must be newer than 12 months.'];
+var infomasjonTab8 = ['- Vi krever vaksinasjon mot valpesyke (parvo) og kennelhoste.','- We require vaccination against puppy disease (parvo) and kennel cough.'];
+var infomasjonTab9 = ['Vi samarbeider med:','We work with:'];
+var infomasjonTab10 = ['- Anicura Dyreklinkken i Telemark','- Anicura Dyreklinkken i Telemark'];
+var infomasjonTab11 = ['- Seljord Vetrinærkontor AS','- Seljord Vetrinærkontor AS'];
+var infomasjonTab12 = ['- Vi står ikke økonomisk ansvarlig for personlige eiendeler hunden har med seg hit.','- We are not financially responsible for personal belongings the dog brings here.'];
+var infomasjonTab13 = ['- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.','- Please do not bring things you are afraid of being damaged during your stay.'];
 
 
 //får tak i valgt språk fra spraak cookien
@@ -378,17 +390,30 @@ var stilling3 = document.getElementById("stilling3");
 var stilling4 = document.getElementById("stilling4");
 var stilling5 = document.getElementById("stilling5");
 var stilling6 = document.getElementById("stilling6");
-var prisText = document.getElementById('prisText');
-var informasjonText = document.getElementById('informasjonText');
-var prisText1 = document.getElementById('prisText1');
-var prisText2 = document.getElementById('prisText2');
-var prisText2 = document.getElementById('prisText3');
-var overSkrift1 = document.getElementById('overSkrift1');
-var overSkrift2 = document.getElementById('overSkrift2');
-var overSkrift3 = document.getElementById('overSkrift3');
-var overSkrift4 = document.getElementById('overSkrift4');
-var overSkrift5 = document.getElementById('overSkrift5');
-var overSkrift6 = document.getElementById('overSkrift6');
+var prisText = document.getElementById("prisText");
+var informasjonText = document.getElementById("informasjonText");
+var prisText1 = document.getElementById("prisText1");
+var prisText2 = document.getElementById("prisText2");
+var prisText2 = document.getElementById("prisText3");
+var overSkrift1 = document.getElementById("overSkrift1");
+var overSkrift2 = document.getElementById("overSkrift2");
+var overSkrift3 = document.getElementById("overSkrift3");
+var overSkrift4 = document.getElementById("overSkrift4");
+var overSkrift5 = document.getElementById("overSkrift5");
+var overSkrift6 = document.getElementById("overSkrift6");
+var infomasjonText1 = document.getElementById("infomasjonText1");
+var infomasjonText2 = document.getElementById("infomasjonText2");
+var infomasjonText3 = document.getElementById("infomasjonText3");
+var infomasjonText4 = document.getElementById("infomasjonText4");
+var infomasjonText5 = document.getElementById("infomasjonText5");
+var infomasjonText6 = document.getElementById("infomasjonText6");
+var infomasjonText7 = document.getElementById("infomasjonText7");
+var infomasjonText8 = document.getElementById("infomasjonText8");
+var infomasjonText9 = document.getElementById("infomasjonText9");
+var infomasjonText10 = document.getElementById("infomasjonText10");
+var infomasjonText11 = document.getElementById("infomasjonText11");
+var infomasjonText12 = document.getElementById("infomasjonText12");
+var infomasjonText13 = document.getElementById("infomasjonText13");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -517,6 +542,45 @@ if (overSkrift5 !== null) {
 }
 if (overSkrift6 !== null) {
     overSkrift6.innerHTML = overSkriftTab6[språk]; 
+}
+if (infomasjonText1 !== null) {
+    infomasjonText1.innerHTML = infomasjonTab1[språk]; 
+}
+if (infomasjonText2 !== null) {
+    infomasjonText2.innerHTML = infomasjonTab2[språk]; 
+}
+if (infomasjonText3 !== null) {
+    infomasjonText3.innerHTML = infomasjonTab3[språk]; 
+}
+if (infomasjonText4 !== null) {
+    infomasjonText4.innerHTML = infomasjonTab4[språk]; 
+}
+if (infomasjonText5 !== null) {
+    infomasjonText5.innerHTML = infomasjonTab5[språk]; 
+}
+if (infomasjonText6 !== null) {
+    infomasjonText6.innerHTML = infomasjonTab6[språk]; 
+}
+if (infomasjonText7 !== null) {
+    infomasjonText7.innerHTML = infomasjonTab7[språk]; 
+}
+if (infomasjonText8 !== null) {
+    infomasjonText8.innerHTML = infomasjonTab8[språk]; 
+}
+if (infomasjonText9 !== null) {
+    infomasjonText9.innerHTML = infomasjonTa91[språk]; 
+}
+if (infomasjonText10 !== null) {
+    infomasjonText10.innerHTML = infomasjonTab10[språk]; 
+}
+if (infomasjonText11 !== null) {
+    infomasjonText11.innerHTML = infomasjonTab11[språk]; 
+}
+if (infomasjonText12 !== null) {
+    infomasjonText12.innerHTML = infomasjonTab12[språk]; 
+}
+if (infomasjonText13 !== null) {
+    infomasjonText13.innerHTML = infomasjonTab13[språk]; 
 }
 
 
