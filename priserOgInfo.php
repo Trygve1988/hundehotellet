@@ -78,7 +78,7 @@ $dblink = kobleOpp();
                             <p id="infomasjonText10">- Anicura Dyreklinkken i Telemark</p>
                             <p id="infomasjonText11">- Seljord Vetrinærkontor AS</p>
 
-                            <p id="overSkrift5" class="overskrift" >Annet:</p>
+                            <p id="overSkrift6" class="overskrift" >Annet:</p>
                             <p id="infomasjonText12">- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
                             <p id="infomasjonText13">- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
                         </div>

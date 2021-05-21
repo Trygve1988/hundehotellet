@@ -394,7 +394,7 @@ var prisText = document.getElementById("prisText");
 var informasjonText = document.getElementById("informasjonText");
 var prisText1 = document.getElementById("prisText1");
 var prisText2 = document.getElementById("prisText2");
-var prisText2 = document.getElementById("prisText3");
+var prisText3 = document.getElementById("prisText3");
 var overSkrift1 = document.getElementById("overSkrift1");
 var overSkrift2 = document.getElementById("overSkrift2");
 var overSkrift3 = document.getElementById("overSkrift3");
@@ -568,7 +568,7 @@ if (infomasjonText8 !== null) {
     infomasjonText8.innerHTML = infomasjonTab8[språk]; 
 }
 if (infomasjonText9 !== null) {
-    infomasjonText9.innerHTML = infomasjonTa91[språk]; 
+    infomasjonText9.innerHTML = infomasjonTab9[språk]; 
 }
 if (infomasjonText10 !== null) {
     infomasjonText10.innerHTML = infomasjonTab10[språk]; 
