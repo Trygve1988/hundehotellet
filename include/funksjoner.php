@@ -1933,10 +1933,10 @@ function registrerDeg($dblink) {
     }
 }
 
-
+/*
 // ********************* Gunni - Min side - Tabeller ********************* 
 
-/* Min profil tabell */
+// Min profil tabell 
 function minProfilTab($dblink) {
     
     // $brukerID
@@ -1971,10 +1971,10 @@ function minProfilTab($dblink) {
     } 
 }
 
-/*Mine hunder tabell*/
+//Mine hunder tabell
 function mineHunderTab($dblink) {
     
-    /*// $brukerID
+    // $brukerID
     $bruker = $_SESSION['bruker'];
     $brukerID = $bruker->getBrukerID();
 
@@ -2021,10 +2021,8 @@ function mineHunderTab($dblink) {
         echo "</table>";
     } 
 }
-*/
-    
-    
-/*Mine opphold tabell*/
+
+// Mine opphold tabell
 function mineOppholdTab($dblink) {
     
     // $brukerID
