@@ -35,7 +35,7 @@
 
             <!-- brukertype -->
             <?php $brukertype = $_SESSION['adminSeBrukertype']; ?>
-            Velg Brukertype <select id="adminSeBrukertypeSelect" class="inputSelect"><?php
+            Velg Brukertype <select id="adminSeBrukertypeSelect" class="litenSelect"><?php
                 // kunde
                 if ($brukertype == "kunde") { 
                     ?><option value="kunde" selected>Kunde</option><?php

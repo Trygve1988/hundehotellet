@@ -854,7 +854,7 @@ footer a {
 /* **************************** Trygve ***************************** */
 /* alle */
 .litenKnapp {
-    width: 160px;
+    width: 200px;
     padding: 14px;
     border: none;
     border-radius: 4px;
@@ -864,6 +864,20 @@ footer a {
     /* Color */
     color: white; 
     background-color: rgb(60, 79, 104);
+}
+
+.litenSelect {
+    max-width: 350px;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 4px 0 30px 0;
+	border: 1px solid #b7aeae;
+	border-radius: 4px;
+	padding: 10px;
+  	background-color: white;	
+  	font-family: Arial, Times New Roman, Calibri, serif;
+	font-size: 19px;
 }
 
 /* Index */
@@ -904,66 +918,9 @@ footer a {
     background-color: rgb(60, 79, 104);
 }
 
-/* Ansatt: bur */
-.burTab {
-    display: inline; 
-    margin:10px;
-}
-
-/* Ansatt: sjekkInn */
-#sjekkInnSelect {
-    max-width: 350px;
-}
-
-#sjekkInnKnapp {
-    max-width: 150px;
-}
-
-#nullstillInnsjekkingerKnapp {
-    max-width: 150px;
-}
-
-#sjekkUtSelect {
-    max-width: 350px;
-}
-
-#sjekkUtKnapp {
-    max-width: 150px;
-}
-
-#nullStillUtsjekkingerKnapp {
-    max-width: 150px;
-}
-
-/* Ansatt: mating */
-#matingTab {
-    font-size: 22px;
-}
-
-#registrerMatingAlleKnapp {
-    width: 220px;
-    padding: 14px;
-    margin: 0px;
-    margin-bottom: 40px;
-}
-
-#slettAlleMatingerKnapp {
-    width: 100px;
-    padding: 14px;
-    margin: 0px;
-    margin-bottom: 40px;
-}
-
-/* admin */
-#adminSeBrukertypeSelect {
-    max-width: 170px;
-}
-
-
 /* Laget av Kristina */
 .blaaTab table{
 	border-collapse: collapse;
-	width: 95%; /*Størrelse på tabellen*/
 }
 
 .blaaTab tr {
@@ -990,11 +947,6 @@ footer a {
 
 
 /* Laget av Kristina */
-.blaaTabSmal table{
-	border-collapse: collapse;
-	width: 95%; /*Størrelse på tabellen*/
-}
-
 .blaaTabSmal tr {
 	background-color: white; /*Hvit bakgrunn på skjema*/
 }
@@ -1012,6 +964,35 @@ footer a {
 .blaaTabSmal td {
 	padding: 5px; /*padding til overskrift*/
 	text-align: left;
-	border-bottom: 5px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+}
+
+
+
+
+/* Ansatt: bur Laget av Kristina */
+.burTab {
+    display: inline; 
+    margin:10px;
+}
+
+/* Laget av Kristina */
+.burTab tr {
+	background-color: white; /*Hvit bakgrunn på skjema*/
+}
+
+.burTab th {
+	width: auto;
+	background-color: #394f79;
+	color: white;
+	padding: 5px;
+	font-size: 18px;
+}
+
+.burTab td {
+	padding: 5px; /*padding til overskrift*/
+	text-align: left;
+	border-bottom: 2px solid #ddd;
 	font-size: 18px;
 }
