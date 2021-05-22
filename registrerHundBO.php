@@ -47,10 +47,10 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="hNavn">Hundens navn:</label>
-						<input  class="inputTekst" type="text" name="navn" value="pluto">
+						<input  class="inputTekst" type="text" name="navn" value="Pluto">
 			
 						<label for="rase">Rase:</label>
-						<input class="inputTekst" type="text" name="rase" value="labrador">	
+						<input class="inputTekst" type="text" name="rase" value="Labrador">	
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
@@ -59,8 +59,8 @@ $dblink = kobleOpp();
 						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn">
-							<option value="gutt">gutt</option>
-							<option value="jente">jente</option>
+							<option value="Hannhund">gutt</option>
+							<option value="Tispe">jente</option>
 							<option value="velg">--Velg--</option>
 						</select>	
 					
@@ -82,11 +82,8 @@ $dblink = kobleOpp();
 
 						<label for="forID">Fòrtype:</label>
 						<select class="inputSelect" name="forID"> 
-							<option value="1">vanlig</option>
-							<option value="2">allergi</option>
-							<option value="inkludert">Royal Canin</option>
-							<option value="inkludert">Vom</option>
-							<option value="medbrakt">Medbrakt</option>	
+							<option value="1">Royal Canin (vanlig)</option>
+							<option value="2">Vom (allergi)</option>
 							<option value="velg">--Velg--</option>
 						</select>
 
