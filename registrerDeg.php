@@ -48,6 +48,9 @@ $dblink = kobleOpp();
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
+						<label for="tlf">Telefonnummer:</label>
+						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
+						
 						<label for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" required value="Epleveien 5">	
 						
@@ -66,9 +69,6 @@ $dblink = kobleOpp();
 						<!-- Labels og input i kolonne 2 -->
 						<label for="etternavn">Etternavn:</label>
 						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
-
-						<label for="tlf">Telefonnummer:</label>
-						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
 						
 						<label for="epost">E-post:</label>
 						<input class="inputTekst" type="text" name="epost" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value="test@ha.no">	
@@ -82,7 +82,7 @@ $dblink = kobleOpp();
 							<label for="passordCheckbox">Vis Passord</label>
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
-						<!-- SKRIV INN PASSORDTILBAKEMELDING-->
+						<!-- Passord tilbakemelding -->
 						<div class="passordKrav">
 							<p>Passord krav:</p>
 							<p id="status" melding()></p>
