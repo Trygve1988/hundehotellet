@@ -143,7 +143,7 @@ $dblink = kobleOpp();
 
 						<!-- Neste-knapp-->
 						<a href = "bestillOpphold3.php">
-	                		<input class="inputSubmit hovedKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo"> 
+	                		<input class="inputSubmit hovedKnapp" type="submit" value="Neste" name="bekreftHundInfo"> 
 	            		</a>	
 					</div>
 				</div>
