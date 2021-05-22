@@ -1,3 +1,4 @@
+// ************************** 0) Alle getCookcie  ************************** 
 //***** ikke lagd selv: https://www.w3schools.com/js/js_cookies.asp **** -->
 function getCookie(cname) {
     var name = cname + "=";
@@ -16,11 +17,94 @@ function getCookie(cname) {
 // ************* ikke lagd selv slutt ************* -->
 
 
+// ******************* 0) Nesten Alle: deleteHundCoockies *******************
+var bestillOpphold1Skjema = document.getElementById("bestillOpphold1Skjema");
+
+//er vi IKKE på bestillOpphold1 siden ? 
+if (bestillOpphold1Skjema == null) {
+    deleteHundCoockies();
+}
+
+function deleteHundCoockies() {
+    console.log("deleteHundCoockies");
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+
+        //er dette en cookie som skal slettes?
+        var sjekkCookie = cookies[i];
+        var dataTab = sjekkCookie.split("=");
+        sjekkCookie = dataTab[0];
+
+        if (sjekkCookie=="brukerHunder" || sjekkCookie==" brukerHunder" || 
+        sjekkCookie=="valgteHunder"|| sjekkCookie==" valgteHunder") {
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    }
+}
+
+// ************************** 1) index: anmeldelseSlider (Trygve) ************************** 
+var anmeldelseTekst = document.getElementById("anmeldelseTekst");
+var nesteAnmeldelseKnapp = document.getElementById("nesteAnmeldelseKnapp");
+var tilbakeAnmeldelseKnapp = document.getElementById("tilbakeAnmeldelseKnapp");
+var anmeldelsePos = 0;
+
+//er vi på index siden ? 
+if (anmeldelseTekst !== null) {
+    var anmeldelseTab = null;
+    hentUtAnmeldelser(); // setter anmeldelsene inne i anmeldelseTab
+    oppdaterAnmeldelseSlider();
+    nesteAnmeldelseKnapp.addEventListener('click',neste,false);
+    tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
+}
+
+function neste() {
+    anmeldelsePos++;
+    //er vi gått for langt mot høyre?
+    if (anmeldelseTab !== null && anmeldelsePos > anmeldelseTab.length-3) {
+        anmeldelsePos = 0;
+    }
+    oppdaterAnmeldelseSlider();
+}
+
+function tilbake() {
+    anmeldelsePos--;
+    //er vi gått for langt mot venstre?
+    if(anmeldelseTab !== null && anmeldelsePos < 0) {
+        console.log("godzilla");
+        anmeldelsePos = anmeldelseTab.length-3;
+    }
+    oppdaterAnmeldelseSlider();
+}
+
+function hentUtAnmeldelser() { 
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/ajaxHentUtAnmeldelse.php?", true);
+    ajaxRequest.send(null); 
+    ajaxRequest.onreadystatechange = function() {
+        anmeldelseStr = ajaxRequest.responseText; 
+        lagAnmeldelseTab(anmeldelseStr);
+        oppdaterAnmeldelseSlider();
+    }
+}
+
+function lagAnmeldelseTab(anmeldelseStr) { 
+    anmeldelseTab = anmeldelseStr.split(",")  // lager tabell
+}
+
+function oppdaterAnmeldelseSlider() { 
+    if (anmeldelseTab !== null ) {
+        var text = anmeldelseTab[anmeldelsePos];
+        anmeldelseTekst.innerHTML = text;
+    }
+}
 // ************************** 2) Aktuelt  **************************
 // ************************** 3) Om Oss   **************************
 
 // ******************* 6 Bestill Opphold: a) lagVelghundKnapper *******************
-var bestillOpphold1Skjema = document.getElementById("bestillOpphold1Skjema");
 
 //er vi på bestillOpphold1 siden ? 
 if (bestillOpphold1Skjema !== null) {
@@ -31,7 +115,7 @@ if (bestillOpphold1Skjema !== null) {
 // 1) hentUtBrukerSineHunder
 function hentUtBrukerSineHunder() {
     var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/hentUtBrukerSineHunder.php?", true);
+    ajaxRequest.open("GET", "include/ajaxHentUtBrukerSineHunder.php?", true);
     ajaxRequest.send(null);
     ajaxRequest.onreadystatechange = function() {
         var hundIDTab = ajaxRequest.responseText;
@@ -51,50 +135,48 @@ function lagVelgHundKnapper() {
         setTimeout(function(){
             location.reload()
         }, 100);
-  }
+    }
 
-  //har denne brukeren noen hunder som vi kan lage knapper til?
-  if (brukerHunder.length > 2) {
-      brukerHunder = brukerHunder.substring(1,brukerHunder.length-1); // tar vekk [ og ]
-      var hundTab = brukerHunder.split(",");  // leger brukerens hunder inn i en tabell
+    //har denne brukeren noen hunder som vi kan lage knapper til?
+    if (brukerHunder.length > 2) {
+        brukerHunder = brukerHunder.substring(1,brukerHunder.length-1); // tar vekk [ og ]
+        var hundTab = brukerHunder.split(",");  // leger brukerens hunder inn i en tabell
 
-      //går gjennom alle hundene
-      for (var i=0; i<hundTab.length; i++) {
-          hund = hundTab[i]; 
-          hund = hund.substring(1,hund.length-1); // tar vekk " og "
+        //går gjennom alle hundene
+        for (var i=0; i<hundTab.length; i++) {
+            hund = hundTab[i]; 
+            hund = hund.substring(1,hund.length-1); // tar vekk " og "
 
-          //plukker ut hundID'en og navnet til denne hunden
-          var dataTab = hund.split(" ");
-          var hundID = dataTab[0];
-          var navn = dataTab[1];
-          console.log("hundID: " + hundID);
-          console.log("navn:   " + navn);
-          
-          //lager en velgHundKnapp
-          var velgHundKnapp = document.createElement("button");
-          velgHundKnapp.innerHTML = navn; // vises på knappen
-          velgHundKnapp.name = hundID;    // gjemt verdi (denne skal vi bruke)
-          velgHundKnapp.className ="velgHundKnapp";
-          velgHundKnapp.type="button";
-          velgHundKnapp.style.backgroundColor = "gray";
+            //plukker ut hundID'en og navnet til denne hunden
+            var dataTab = hund.split(" ");
+            var hundID = dataTab[0];
+            var navn = dataTab[1];
+            
+            //lager en velgHundKnapp
+            var velgHundKnapp = document.createElement("button");
+            velgHundKnapp.innerHTML = navn; // vises på knappen
+            velgHundKnapp.name = hundID;    // gjemt verdi (denne skal vi bruke)
+            velgHundKnapp.className ="velgHundKnapp";
+            velgHundKnapp.type="button";
+            velgHundKnapp.style.backgroundColor = "gray";
 
-          //er denne hunden valgt? da må knappen være lyseblå
-          var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
-          var valgteHunderTab = valgteHunder.split(" ");
-          for (var j=0; j<valgteHunderTab.length; j++) {
-              if (valgteHunderTab[j] == hundID) {
-                  velgHundKnapp.style.backgroundColor = "darkblue";
-              }
-          }
-  
-          //plasserer knappen
-          var bestillOpphold1Skjema = document.getElementById('velgHundKnappContainer');
-          bestillOpphold1Skjema.appendChild(velgHundKnapp);
-  
-          // legger på en velgHund eventHandler
-          velgHundKnapp.addEventListener('click', velgHund, false);
-      }
-  }
+            //er denne hunden valgt? da må knappen være lyseblå
+            var valgteHunder = getCookie('valgteHunder'); // ["23","24","25"]
+            var valgteHunderTab = valgteHunder.split(" ");
+            for (var j=0; j<valgteHunderTab.length; j++) {
+                if (valgteHunderTab[j] == hundID) {
+                    velgHundKnapp.style.backgroundColor = "darkblue";
+                }
+            }
+    
+            //plasserer knappen
+            var bestillOpphold1Skjema = document.getElementById('velgHundKnappContainer');
+            bestillOpphold1Skjema.appendChild(velgHundKnapp);
+    
+            // legger på en velgHund eventHandler
+            velgHundKnapp.addEventListener('click', velgHund, false);
+        }
+    }
 }
 
 // ******************* 6) Bestill Opphold: b) velgHund *******************
@@ -123,7 +205,7 @@ function velgHund(e) {
         else{
             alleHunder = valgteHunder + " " + nyHundID;
             document.cookie = "valgteHunder=" + alleHunder ;
-          
+           
             //endrer stil på knappen
             e.target.style.backgroundColor = "darkblue"; 
 
@@ -171,7 +253,7 @@ function erhundAlleredeValgt(sjekkhundID) {
 
 function settHunderOppholdSession(valgteHunder) {
     var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/settHunderOppholdSession.php?q="+valgteHunder, true);
+    ajaxRequest.open("GET", "include/ajaxSettHunderOppholdSession.php?q="+valgteHunder, true);
     ajaxRequest.send(null);
     ajaxRequest.onreadystatechange = function() {
         var test = ajaxRequest.responseText;
@@ -207,7 +289,7 @@ if (startDato !== null) {
 
 function hentUtFullbookedeDatoer() {
     var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/hentUtFullbookedeDatoer.php?", true);
+    ajaxRequest.open("GET", "include/ajaxHentUtFullbookedeDatoer.php?", true);
     ajaxRequest.send(null);
     ajaxRequest.onreadystatechange = function() {
         var opptattTab = ajaxRequest.responseText;
@@ -254,6 +336,28 @@ function oppdaterSluttDato() {
     }
 }
 
+
+// ************************** 7) Ansatt: inspiser hund **************************
+var velgHundSelect = document.getElementById("velgHundSelect");
+
+//er vi på Registrer deg siden ? 
+if (velgHundSelect !== null) {
+    velgHundSelect.addEventListener('change', settInspiserHundSession, false);
+}
+
+function settInspiserHundSession() {
+    var hundID = document.getElementById("velgHundSelect").value;
+    console.log(hundID);
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/ajaxSettInspiserHundSession.php?q="+hundID, true);
+    ajaxRequest.send(null);
+    ajaxRequest.onreadystatechange = function() {
+        var test = ajaxRequest.responseText;
+        location.reload();
+    }
+}
+
+
 // ************************** 9) admin **************************
 var adminSeBrukertypeSelect = document.getElementById("adminSeBrukertypeSelect");
 
@@ -266,7 +370,7 @@ function settAdminSeBrukertypeSession() {
     var brukertype = document.getElementById("adminSeBrukertypeSelect").value;
     console.log(brukertype);
     var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/settAdminSeBrukertypeSession.php?q="+brukertype, true);
+    ajaxRequest.open("GET", "include/ajaxSettAdminSeBrukertypeSession.php?q="+brukertype, true);
     ajaxRequest.send(null);
     ajaxRequest.onreadystatechange = function() {
         var test = ajaxRequest.responseText;
@@ -274,34 +378,41 @@ function settAdminSeBrukertypeSession() {
     }
 }
 
-// ******************* 12) Nesten Alle: deleteHundCoockies *******************
-//er vi IKKE på bestillOpphold1 siden ? 
-if (bestillOpphold1Skjema == null) {
-    deleteHundCoockies();
-}
-
-function deleteHundCoockies() {
-    var cookies = document.cookie.split(";");
-
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-
-        //er dette en cookie som skal slettes?
-        var sjekkCookie = cookies[i];
-        var dataTab = sjekkCookie.split("=");
-        sjekkCookie = dataTab[0];
-
-        if (sjekkCookie=="brukerHunder" || sjekkCookie==" brukerHunder" || 
-        sjekkCookie=="valgteHunder"|| sjekkCookie==" valgteHunder") {
-            var eqPos = cookie.indexOf("=");
-            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        }
-    }
-}
 
 
-// ********************* 0) Alle: globale spraak variabler (Trygve og ?) ********************* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********************* 0) Alle: globale spraak variabler (Even) ********************* 
 var flaggTab        = ['bilder/FlaggNO.png', 'bilder/FlaggGB.png'];
 var hjemTab         = ['Hjem', 'Home'];
 var aktueltTab      = ['Aktuelt', 'News'];
@@ -374,7 +485,7 @@ var kontaktOssTab2 = ['Kontakt oss','Contact Us'];
 var kontaktInfoTekstTab = ['Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.','If you have any questions, just contact us either by email or phone.'];
 var åpningstiderTab = ['Åpningstider: 08:00-18:00 man-tor (10-00-16:00 lør-søn)',"Opening hours: 08: 00-18: 00 Mon-Thu (10-00-16: 00 Sat-Sun)"];
 
-//får tak i valgt språk fra spraak cookien
+//får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
 if(!språk) {
     språk = 0;  
@@ -671,63 +782,6 @@ function endreSpraak() {
 
     location.reload();
 }
-
-// ************************** 1) index: anmeldelseSlider (Trygve) ************************** 
-var anmeldelseTekst = document.getElementById("anmeldelseTekst");
-var nesteAnmeldelseKnapp = document.getElementById("nesteAnmeldelseKnapp");
-var tilbakeAnmeldelseKnapp = document.getElementById("tilbakeAnmeldelseKnapp");
-var anmeldelsePos = 0;
-
-//er vi på index siden ? 
-if (anmeldelseTekst !== null) {
-    var anmeldelseTab = null;
-    hentUtAnmeldelser(); // setter anmeldelsene inne i anmeldelseTab
-    oppdaterAnmeldelseSlider();
-    nesteAnmeldelseKnapp.addEventListener('click',neste,false);
-    tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
-}
-
-function neste() {
-    anmeldelsePos++;
-    //er vi gått for langt mot høyre?
-    if (anmeldelseTab !== null && anmeldelsePos > anmeldelseTab.length-3) {
-        anmeldelsePos = 0;
-    }
-    oppdaterAnmeldelseSlider();
-}
-
-function tilbake() {
-    anmeldelsePos--;
-    //er vi gått for langt mot venstre?
-    if(anmeldelseTab !== null && anmeldelsePos < 0) {
-        console.log("godzilla");
-        anmeldelsePos = anmeldelseTab.length-3;
-    }
-    oppdaterAnmeldelseSlider();
-}
-
-function hentUtAnmeldelser() { 
-    var ajaxRequest = new XMLHttpRequest();  
-    ajaxRequest.open("GET", "include/hentUtAnmeldelse.php?", true);
-    ajaxRequest.send(null); 
-    ajaxRequest.onreadystatechange = function() {
-        anmeldelseStr = ajaxRequest.responseText; 
-        lagAnmeldelseTab(anmeldelseStr);
-        oppdaterAnmeldelseSlider();
-    }
-}
-
-function lagAnmeldelseTab(anmeldelseStr) { 
-    anmeldelseTab = anmeldelseStr.split(",")  // lager tabell
-}
-
-function oppdaterAnmeldelseSlider() { 
-    if (anmeldelseTab !== null ) {
-        var text = anmeldelseTab[anmeldelsePos];
-        anmeldelseTekst.innerHTML = text;
-    }
-}
-
 
 // ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
 const visPassordKnapp = document.querySelector("#visPassordKnapp");

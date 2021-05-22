@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    include_once "include/funksjonerMinSide.php";
     session_start();
     $dblink = kobleOpp();
 ?> 
@@ -29,27 +30,36 @@
             } 
         ?>
 
-        <!-- Hvit bakgrunn -->
+        <?php $bruker = $_SESSION['bruker'] ?>
+       
+        <!-- 2a oppdater brukerInfo Skjema -->
+		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
-            	
-
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
-                <!-- Avbryt knapp -->
-			    <a href = "index.php">
-				    <input class="avbrytKnapp" type="button" value="X">
-			    </a>    
-                
-                <h2>Endre Passord</h2>
+
+                	<!-- Avbryt knapp -->
+				<a href = "index.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>	
+
+                <h2>Endre BrukerInfo</h2>  
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
-                        <label for="gammeltPassord">Gammelt Passord:</label>
-                        <input class="inputTekst" type="text" id="gammeltPassord" name="gammeltPassord" >
-                        <label for="nyttPassord">Nytt Passord:</label>   
-                        <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" required >  
-                        <label for="bekreftNyttPassord">Bekreft Nytt Passord:</label>  
-                        <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" required >
+                        <label for="epost">epost:</label>
+                        <input class="inputTekst" type="text" id="epost" name="epost" value= <?php echo $bruker->getEpost() ?>>
+                        <label for="tlf">tlf:</label>   
+                        <input class="inputTekst" type="text" id="tlf" name="tlf" value= <?php echo $bruker->getTlf() ?> >
+                        <label for="adresse">adresse:</label>     
+                        <input class="inputTekst" type="text" id="adresse" name="adresse" value= <?php echo $bruker->getAdresse() ?> > 
+
+                    </div>
+                    <div class="kolonne2">
+                        <label for="fornavn">fornavn:</label>   
+                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
+                        <label for="etternavn">etternavn:</label>  
+                        <input class="inputTekst" type="text" id="etternavn" name="etternavn" value= <?php echo $bruker->getEtternavn() ?> >
                     </div>
                 </div> 
 
@@ -61,7 +71,7 @@
             </form>
         </div> 
          <!-- 2b oppdaterBrukerInfo -->
-        <?php endrePassord($dblink) ?> 
+        <?php endreBrukerInfo($dblink) ?> 
 
     </main>
 

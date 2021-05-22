@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    include_once "include/funksjonerAnsatt.php";
     session_start();
     $dblink = kobleOpp();
 ?> 
@@ -31,10 +32,11 @@
             <form class="skjemaBakgrunn" method="POST">
                 <h2>Luftegård</h2>
                 <?php visAlleHunderPaaOppholdNaaLufting($dblink); ?>
+                <?php visAlleRegistrerteLuftingerIDag($dblink); ?>
+
                 <input class="litenKnapp" type="submit" name="registrerLuftingStartAlle" value="Registrer Start (alle)">
                 <input class="litenKnapp" type="submit" name="registrerLuftingSluttAlle" value="Registrer Slutt (alle)">
                 <input class="litenKnapp" type="submit" name="slettAlle" value="Slett Alle"> 
-                <?php visAlleRegistrerteLuftingerIDag($dblink); ?>
 
                 <?php registrerLuftingStartAlle($dblink); ?>
                 <?php registrerLuftingSluttAlle($dblink); ?>
