@@ -53,7 +53,7 @@ $dblink = kobleOpp();
 				<h2 class="overskrift2">Oppsummering</h2>
 				<!-- Her må det refereres til databsen! -->
 				<div class="mindreTekst">
-					<p><b>Hunder:</b> <?php echo getValgteHunderNavn($dblink); ?> </p> 
+					<p><b>Hund(er):</b> <?php echo getValgteHunderNavn($dblink); ?> </p> 
 					<p><b>Dato:</b> <span>(<?php echo $startDato ?>)</span> til <span>(<?php echo $sluttDato ?>)</span> 
 					<p><b><u>Sum å betale: <span> <?php echo $totalPris ?> </span>kr</u></b></p>
 				</div>
