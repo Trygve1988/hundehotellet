@@ -350,6 +350,9 @@ var navSosialMedierTab = ['Sosiale medier','Social media'];
 var navBøskOssTab = ['Besøk oss','Visit Us'];
 var navKlikkTab = ['Klikk her for å se kartet','Click here to see the map'];
 var navSamerbeidTab = ['Samarbeidspartnere','Collaborators'];
+var kontaktOssTab2 = ['Kontakt oss','Contact Us'];
+var kontaktInfoTekstTab = ['Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.','If you have any questions, just contact us either by email or phone.'];
+var åpningstiderTab = ['Åpningstider: 08:00-18:00 man-tor (10-00-16:00 lør-søn)',"Opening hours: 08: 00-18: 00 Mon-Thu (10-00-16: 00 Sat-Sun)"];
 
 //får tak i valgt språk fra spraak cookien
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -427,6 +430,9 @@ var navSosialMedier = document.getElementById("navSosialMedier");
 var navBøskOss = document.getElementById("navBøskOss");
 var navKlikk = document.getElementById("navKlikk");
 var navSamerbeid = document.getElementById("navSamerbeid");
+var kontaktOss = document.getElementById("kontaktOss");
+var kontaktInfoTekst = document.getElementById("kontaktInfoTekst");
+var åpningstider = document.getElementById('åpningstider');
 
 
 spraakKnapp.src = flaggTab[språk];
@@ -613,9 +619,18 @@ if (navBøskOss !== null) {
 }
 if (navKlikk !== null) {
     navKlikk.innerHTML = navKlikkTab[språk];  
-}
+} 
 if (navSamerbeid !== null) {
     navSamerbeid.innerHTML = navSamerbeidTab[språk];  
+} 
+if (kontaktOss !== null) {
+    kontaktOss.innerHTML = kontaktOssTab2[språk];  
+}
+if (kontaktInfoTekst !== null) {
+    kontaktInfoTekst.innerHTML = kontaktInfoTekstTab[språk];  
+}
+if (åpningstider !== null) {
+    åpningstider.innerHTML = åpningstiderTab[språk];  
 }
 
 
