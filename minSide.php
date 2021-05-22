@@ -69,7 +69,7 @@
                 <!--Knapperad-->
 				<div class="knapperad">
                     <!-- Registrer ny hund-\knapp-->
-                    <a href = "registrerHund.php">
+                    <a href = "registrerHundMS.php">
                         <input class="inputButton hovedKnapp ekstraKnapp2" type="button" value="Registrer ny hund">
                     </a>
                       <!-- Endre hundeinfo- knapp -->

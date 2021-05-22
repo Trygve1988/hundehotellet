@@ -49,7 +49,7 @@ $dblink = kobleOpp();
 					<!-- Her må det settes inn valg av hund!! --> 
 
 					<!-- " + Registrer ny hund"- knapp -->
-					<a href = "registrerHund.php">
+					<a href = "registrerHundBO.php">
 						<input class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
 					</a>
 				</div>
