@@ -46,8 +46,6 @@ $dblink = kobleOpp();
 					<!-- "Velg hund" knapp -->
 					<div id="velgHundKnappContainer"></div>  
 
-					<!-- Her må det settes inn valg av hund!! --> 
-
 					<!-- " + Registrer ny hund"- knapp -->
 					<a href = "registrerHundBO.php">
 						<input class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
@@ -55,10 +53,11 @@ $dblink = kobleOpp();
 				</div>
 
 				<!-- Neste-knapp -->
-				<div class="etterKolonnerKnapp">
+				<div class="etterKolonnerKnapp knappeKlyngeHB">
 					<!-- <a href = "bestillOpphold2.php"> </a> -->
 	                <input id="tilBestillOpphold2Knapp" class="inputButton hovedKnapp" type="button" value="Neste"> 
             	</div>
+
 				<!-- Tilbakemelding til bruker -->
 				<p id="bestillOpphold1Mld"></p> 	
 			</form>
