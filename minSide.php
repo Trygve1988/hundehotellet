@@ -50,17 +50,18 @@
 		    
                 <!-- "Mine hunder" -->
                 <h2 class="overskrift2">Mine hunder</h2>
+                
                 <div class="litenInput">
 
-                <!-- Nedtrekksliste for valg av hund -->
-                <label for="velgHund">Velg hund:</label>
-                    <select class="inputSelect" id="hund" name="velgHund">
-                        <?php $hunder = laghunderTab($dblink);
-                            for ($i=0; $i<count($hunder); $i++) {
-                                lagOption($hunder[$i]);
-                            } ?>
-                    </select>
-              </div>  
+                    <!-- Nedtrekksliste for valg av hund -->
+                    <label for="velgHund">Velg hund:</label>
+                        <select class="inputSelect" id="hund" name="velgHund">
+                            <?php $hunder = laghunderTab($dblink);
+                                for ($i=0; $i<count($hunder); $i++) {
+                                    lagOption($hunder[$i]);
+                                } ?>
+                        </select>
+                </div>  
               
               <!-- Mine hunder funksjonskall -->
                 <?php mineHunderTab($dblink); ?>
