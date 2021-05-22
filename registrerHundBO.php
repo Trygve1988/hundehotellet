@@ -93,19 +93,26 @@ $dblink = kobleOpp();
 						<label for="info">Ekstra informasjon:</label>
 						<textarea class="tekstboks tekstfelt1" name="info"></textarea>					
 					</div>
+				</div>
 
+				
+				<!-- Knapperad -->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						
+						<!-- Tilbake til Bestill opphold 1 -->
+						<a href = "bestillOpphold.php">
+	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+	            		</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+
+						<!-- Registrer hund-knapp-->
+						<a href = "bestillOpphold3.php">
+	                		<input class="inputSubmit hovedKnapp" type="submit" value="Registrer hund" name="registrer"> 
+	            		</a>	
+					</div>
 				</div>
-				<!-- Tilbake til Bestill opphold -->	
-				<div> 
-					<a href="bestillOpphold1.php">
-						<input class="inputButton" type="button" value="Tilbake"> 
-					</a>
-					
-				</div>
-					<!-- Registrer hund  -->
-					<a href="hundRegistrertBekreftelse.html">
-						<input class="inputSubmit hovedKnapp2" type="submit" name="registrer" value="Registrer hund"> 
-					</a>
 			</form>
 		</div>
 

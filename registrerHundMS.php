@@ -107,6 +107,24 @@ $dblink = kobleOpp();
 					<a href="hundRegistrertBekreftelse.html">
 						<input class="inputSubmit hovedKnapp2" type="submit" name="registrer" value="Registrer hund"> 
 					</a>
+
+					<!-- Knapperad -->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						
+						<!-- Tilbake til Min side -->
+						<a href = "minSide.php">
+	                		<input class="inputButton ekstraKnapp" type="button" value="Tilbake"> 
+	            		</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+
+						<!-- Registrer-knapp-->
+						<a href = "minSide.php">
+	                		<input class="inputSubmit hovedKnapp2" type="submit" value="Registrer hund" name="registrer"> 
+	            		</a>	
+					</div>
+				</div>
 			</form>
 		</div>
 
