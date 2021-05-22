@@ -109,7 +109,7 @@ $dblink = kobleOpp();
 							?>
 						<select> 
 
-						<!-- forType --> 
+						<!-- Fôrtype--> 
 						<?php $forID = $h1->getForID(); ?>
 						<label for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID"> 
