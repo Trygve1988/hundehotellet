@@ -71,7 +71,7 @@ $dblink = kobleOpp();
 						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
 						
 						<label for="epost">E-post:</label>
-						<input class="inputTekst" type="text" name="epost" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="test@ha.no">	
+						<input class="inputTekst" type="text" name="epost" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value="test@ha.no">	
 							
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
