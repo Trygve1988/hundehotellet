@@ -331,8 +331,6 @@ function registrerHund($dblink) {
     }
 }
 
-//oppdaterValgteHunderSession($hund);
-
 // ********************* 6) Bestill Opphold 2  oppdater Hunder  ********************* 
 function oppdaterHunder($dblink) {
     //kjører gjennom alle valgte hunder

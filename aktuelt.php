@@ -61,18 +61,22 @@ $dblink = kobleOpp();
                     <?php visAlleInnlegg($dblink); ?>
 
                     <!-- lagreInnlegg -->
-                    <div class="mellomromMellomInnlegg">
-                        <h2>Skriv nytt innlegg </h2>
-                        <label for="overskrift">overskrift:</label>
-                        <input class="inputTekst" type="text" name="innleggOverskrift" value="overskrift">
-
-                        <label for="text">text:</label>
-                        <input class="inputTekst" type="text" name="innleggText" value="text">
-
-                        <input class="litenKnapp" type="submit" value="lagre" name="lagreInnleggKnapp">
-
-                        <?php lagreInnlegg($dblink); ?>
-                    </div>
+                    <?php
+                    if (erAnsatt()) { ?>
+                        <div class="mellomromMellomInnlegg">
+                            <h2>Skriv nytt innlegg </h2>
+                            <label for="overskrift">overskrift:</label>
+                            <input class="inputTekst" type="text" name="innleggOverskrift" value="overskrift">
+    
+                            <label for="text">text:</label>
+                            <input class="inputTekst" type="text" name="innleggText" value="text">
+    
+                            <input class="litenKnapp" type="submit" value="lagre" name="lagreInnleggKnapp">
+    
+                            <?php lagreInnlegg($dblink); ?>
+                        </div><?php 
+                    } ?>
+                    
                 </div>
             </form> 
         </div>

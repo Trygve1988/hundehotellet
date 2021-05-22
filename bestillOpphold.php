@@ -56,9 +56,8 @@ $dblink = kobleOpp();
 
 				<!-- Neste-knapp -->
 				<div class="etterKolonnerKnapp">
-					<a href = "bestillOpphold2.php">
-	                	<input class="inputButton hovedKnapp" type="button" value="Neste"> 
-	            	</a>
+					<!-- <a href = "bestillOpphold2.php"> </a> -->
+	                <input id="tilBestillOpphold2Knapp" class="inputButton hovedKnapp" type="button" value="Neste"> 
             	</div>
 				<!-- Tilbakemelding til bruker -->
 				<p id="bestillOpphold1Mld"></p> 	

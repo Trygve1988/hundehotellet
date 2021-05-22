@@ -178,7 +178,27 @@ function settHunderOppholdSession(valgteHunder) {
     } 
 }
 
-// ******************* 6) Bestill Opphold: c) lovligeDatoer *******************
+
+// ******************* 6) Bestill Opphold: c) tilBestillOpphold2 *******************
+var tilBestillOpphold2Knapp = document.getElementById("tilBestillOpphold2Knapp");
+
+//er vi på bestillOpphold1 siden ? 
+if (tilBestillOpphold2Knapp !== null) {
+    tilBestillOpphold2Knapp.addEventListener('click',tilBestillOpphold2,false);
+} 
+
+function tilBestillOpphold2() {
+    console.log("tilBestillOpphold2");
+    if (getCookie('valgteHunder') == ""){
+        bestillOpphold1Mld.innerHTML = "Du må velge hund(er) først!";   
+    }
+    else {
+        window.location.href = "bestillOpphold2.php"; 
+    }
+} 
+
+
+// ******************* 6) Bestill Opphold: d) lovligeDatoer *******************
 var startDato = document.getElementById("startDato");
 
 if (startDato !== null) {
@@ -216,7 +236,7 @@ function taVekkDatoer(opptattTab) {
 }
 // ************* ikke lagd selv slutt ************* -->
 
-// ************************** 6) Bestill Opphold: c) endreSluttDato **************************
+// ************************** 6) Bestill Opphold: e) endreSluttDato **************************
 var startDato = document.querySelector("#startDato");
 var sluttDato = document.querySelector("#sluttDato");
 
