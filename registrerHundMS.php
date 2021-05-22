@@ -37,7 +37,7 @@ $dblink = kobleOpp();
 			<form class="skjemaBakgrunn" method="POST">
 			
 				<!-- Avbryt knapp -->
-				<a href = "index.php">
+				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>	
 
