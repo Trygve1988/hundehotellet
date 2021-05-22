@@ -28,6 +28,13 @@ $dblink = kobleOpp();
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 		
+		<?php
+			$bestilling = $_SESSION['bestilling'];
+			$startDato = $bestilling->getStartDato();
+			$sluttDato = $bestilling->getSluttDato();
+			$totalPris = $bestilling->getTotalPris();
+		?>
+
 		<!-- ************************ (Gunni) ************************** -->
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
@@ -46,12 +53,11 @@ $dblink = kobleOpp();
 				<h2 class="overskrift2">Oppsummering</h2>
 				<!-- Her må det refereres til databsen! -->
 				<div class="mindreTekst">
-					<p><b>Hunder:</b> <span>hund1</span>, <span>hund2</span> </p> 
-					<p><b>Dato:</b> <span>(dato)</span> til <span>(dato)</span> 
-					<p><b>Bading:</b> <span>hund1</span> </p>
-					<p><b><u>Sum å betale: <span> totalPris </span>kr</u></b></p>
+					<p><b>Hunder:</b> <?php echo getValgteHunderNavn($dblink); ?> </p> 
+					<p><b>Dato:</b> <span>(<?php echo $startDato ?>)</span> til <span>(<?php echo $sluttDato ?>)</span> 
+					<p><b><u>Sum å betale: <span> <?php echo $totalPris ?> </span>kr</u></b></p>
 				</div>
-				
+
 				<h2 class="overskrift2" >Betaling</h2>
 				<!-- Valg av betalingsmetode: -->
 				<label for="kort">Betalingskort:</label>
@@ -90,7 +96,7 @@ $dblink = kobleOpp();
 						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
 						<label for="vilkaar">Kryss av for å <a class="blaaTekst" href="#" >godta vilkår:</a></label> 
-						<input class="litenCheckbox" type="checkbox" name="til">		
+						<input class="litenCheckbox" type="checkbox" name="til" required>		
 						
 					</div>
 				</div>	

@@ -252,6 +252,17 @@ function visPriser($dblink) {
     echo "</table>" . "<br>";
 }
 
+function lagPrisTab($dblink) {
+    $prisTab;
+    $pos = 0;
+    $sql = "SELECT * FROM pris;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)){
+        $prisTab[$pos++] = $rad['beløp'] . "kr";
+    }
+    return $prisTab;
+}
+
 function visDagPris($dblink) {
     $beskrivelse = "dagPris";
     $sql = "SELECT * FROM pris WHERE beskrivelse = '$beskrivelse' ;";
@@ -495,6 +506,8 @@ function bestilling($dblink) {
 
             // oppdater LedigeBur
             oppdaterLedigeBur($dblink,$startDato,$sluttDato);
+
+            header('Location: bestillingBekreftelse.php');
         }
     }
 }
@@ -606,6 +619,23 @@ function erBurLedigDenneDatoen($dblink,$dato,$burID) {
     } 
     return $burLedig; 
 }
+
+function getValgteHunderNavn($dblink) {
+    $valgteHunderNavn = "";
+    $valgteHunder = $_SESSION['valgteHunder'];  
+    for ($i=0; $i<count($valgteHunder); $i++) {
+        $hundID = $valgteHunder[$i];
+        $sql = "SELECT navn FROM hund WHERE hundID = '$hundID';";
+        $resultat = mysqli_query($dblink, $sql); 
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            $valgteHunderNavn = $valgteHunderNavn . " " . $rad['navn'];
+        }
+    }
+    return $valgteHunderNavn;
+}
+
+
+
 
 // ************************** 6) Bestill Opphold 5 - etter at oppholdet er bestilt ************************** /**//
 // oppdaterer ledigeBurPrDag tabellen i db
@@ -1414,7 +1444,30 @@ function slettBruker($dblink) {
     }
 }
 
-// ************************** 9) Admin -> e) visPrisHistorikk**************************
+// ************************** 9) Admin -> e) gjennoprett Bruker **************************
+function lagSlettedeBrukereTab($dblink) {
+    $brukereTab = array();
+    $pos = 0;
+    $brukertype = $_SESSION['adminSeBrukertype'];
+    $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' AND slettetDato IS NOT NULL ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)){
+        $brukereTab[$pos++] = $rad['brukerID']." ".$rad['epost']." - ".$rad['fornavn']." ".$rad['etternavn']; 
+    }
+    return $brukereTab;
+}
+
+function gjennoprettBruker($dblink) {
+    if (isset($_POST['velgGjennoprettBrukerKnapp'])) { 
+        $brukerID = $_POST['velgGjennoprettBrukerSelect'];
+        $sql = "UPDATE bruker SET slettetDato = null WHERE brukerID = '$brukerID' ;";
+        $resultat = mysqli_query($dblink, $sql);
+        echo "kontoen er gjennoprettet ";
+        header("Refresh:0");
+    }
+}
+
+// ************************** 9) Admin -> f) visPrisHistorikk**************************
 function visPrisHistorikk($dblink) {
     echo "<h2> Pris-Historikk </h2>";
 
@@ -1693,7 +1746,35 @@ function endrePassord($dblink) {
     }
 }
 
-// ************************** 10) minSide -> c) registrerHund **************************
+// ************************** 10) minSide -> c) slettKonto **************************
+function slettMinBruker($dblink) {
+    if (isset($_POST['slettBrukerKnapp'])) {
+        //sjekker at denne brukeren ikke har noen fremtidige eller aktive opphold
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $sql = "SELECT B.* 
+        FROM hund AS H, opphold AS O, bestilling AS B 
+        WHERE H.hundID = O.hundID 
+        AND O.bestillingID = B.bestillingID        
+        AND B.sjekketUt IS NULL 
+        AND H.brukerID = '$brukerID'; ";   
+        $resultat = mysqli_query($dblink, $sql); 
+        $antall = mysqli_num_rows($resultat);
+        if ($antall > 0) {  
+            echo "<br>"."<br>".'<i style="color:red; position:absolute";"> 
+            Kan ikke slette Bruker! Du har fremtidige/aktive opphold! </i>'; 
+        }
+        else {
+            //sletter bruker 
+            $sql = "UPDATE bruker SET slettetDato = CURRENT_TIMESTAMP WHERE brukerID = '$brukerID' ;";
+            $resultat = mysqli_query($dblink, $sql);
+            header('Location: loggUt.php');
+            echo "kontoen din er slettet ";
+        }
+    }
+}
+
+// ************************** 10) minSide -> registrerHund **************************
 //denne funskjonen er allerede laget under bestill opphold
 
 // ************************** 10) minSide -> d) endre hund1  **************************
@@ -1867,32 +1948,44 @@ function loggInn($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $epost = $_POST['epost'];
         $passord = $_POST['passord'];
-        $innloggingOk = false;
-        $stmt = $dblink->prepare("SELECT brukerID,epost,passord,brukerType,fornavn,etternavn,tlf,adresse 
-        FROM bruker WHERE (epost) = (?)");
-        $stmt->bind_param("s", $_POST['epost']);
-        $stmt->execute();
-        $stmt->store_result();
-        $stmt->bind_result($brukerID, $epost, $hashPw, $brukerType, $fornavn, $etternavn, $tlf, $adresse);
+        //sjekker at bruker ikke er slettet
+        $sql = "SELECT * FROM bruker WHERE epost = '$epost' AND slettetDato IS NOT NULL; ";   
+        $resultat = mysqli_query($dblink, $sql); 
+        $antall = mysqli_num_rows($resultat);
+        if ($antall > 0) {  
+            echo "<br>".'<i position:absolute";"> Vi har mottat din forespørsel 
+            om å slette denne kontoen. Du kan kontakte oss på bohundehotell@outlook.com 
+            viss du vil at vi skal gjennopprette kontoen din! </i>'; 
+        }
+        else {
+            //bruker er ikke slettet
+            $innloggingOk = false;
+            $stmt = $dblink->prepare("SELECT brukerID,epost,passord,brukerType,fornavn,etternavn,tlf,adresse 
+            FROM bruker WHERE (epost) = (?)");
+            $stmt->bind_param("s", $_POST['epost']);
+            $stmt->execute();
+            $stmt->store_result();
+            $stmt->bind_result($brukerID, $epost, $hashPw, $brukerType, $fornavn, $etternavn, $tlf, $adresse);
 
-        if ($stmt->num_rows == 1) {
-            $stmt->fetch();
-            if (password_verify($passord, $hashPw))   {
-                $fødselsNr = 0;
-                $stilling = "";
-                $postNr = 0;
-                opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
-                $tlf, $adresse, $fødselsNr, $stilling, $postNr);
-                //$_SESSION['adminSeBrukertype'] = "kunde";
+            if ($stmt->num_rows == 1) {
+                $stmt->fetch();
+                if (password_verify($passord, $hashPw))   {
+                    $fødselsNr = "";
+                    $stilling = "";
+                    $postNr = 0;
+                    opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
+                    $tlf, $adresse, $fødselsNr, $stilling, $postNr);
 
-                header('Location: minSide.php');
-                $innloggingOk = true;
+                    header('Location: minSide.php');
+                    $innloggingOk = true;
+                }
             }
-        }
-        if($innloggingOk == false) {
-            echo "<br>".'<i ";"> feil epost og/eller passord! </i>'; 
-        }
-    }
+            if($innloggingOk == false) {
+                echo "<br>".'<i style="color:red; position:absolute";"> feil epost og/eller passord! </i>'; 
+            }
+            $_SESSION['adminSeBrukertype'] = "kunde";
+        }        
+    }     
 }
 
 function opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
@@ -1931,6 +2024,29 @@ function registrerDeg($dblink) {
             $resultat = mysqli_query($dblink, $sql);
             loggInn($dblink);
         }
+    }
+}
+
+//test
+function lagreInnlegg($dblink) {
+    if (isset($_POST['lagreInnleggKnapp'])) { 
+        $navn = "aktuelt";
+        $innleggOverskrift = $_POST['innleggOverskrift'];
+        $innleggText = $_POST['innleggText'];
+        $tekst = "<div class=\"mellomromMellomInnlegg\">"."<h2>".$innleggOverskrift."</h2>".  
+        "<p>".$innleggText."</p>"."</div>"."<hr>";
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $sql = "INSERT INTO innlegg(navn,tekst,brukerID) VALUES ('$navn','$tekst','$brukerID') ;";
+        mysqli_query($dblink, $sql);
+    }
+}
+
+function visAlleInnlegg($dblink) {
+    $sql = "SELECT * FROM innlegg ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo $rad['tekst'];
     }
 }
 

@@ -29,6 +29,8 @@ $dblink = kobleOpp();
     <!-- ************************** main **************************-->
     <main>
 
+        <?php $prisTab = lagPrisTab($dblink); ?>
+                
         <div class="hvitBakgrunn">
     
              <!-- Form-->    
@@ -43,9 +45,9 @@ $dblink = kobleOpp();
                                 <th id="prisText3">Pris pr dag for 3 hunder</th> 
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>   
+                                <td> <?php echo $prisTab[0]; ?> </td>
+                                <td> <?php echo $prisTab[1]; ?> </td>
+                                <td> <?php echo $prisTab[2]; ?> </td>   
                              </tr>
                          </table>
                     <h2 id="informasjonText" class="overskrift2">Informasjon</h2>
