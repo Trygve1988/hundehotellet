@@ -47,10 +47,10 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="hNavn">Hundens navn:</label>
-						<input  class="inputTekst" type="text" name="navn" value="pluto">
+						<input  class="inputTekst" type="text" name="navn" value="Pluto">
 			
 						<label for="rase">Rase:</label>
-						<input class="inputTekst" type="text" name="rase" value="labrador">	
+						<input class="inputTekst" type="text" name="rase" value="Labrador">	
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
@@ -59,8 +59,8 @@ $dblink = kobleOpp();
 						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn">
-							<option value="gutt">gutt</option>
-							<option value="jente">jente</option>
+							<option value="Hannhund">gutt</option>
+							<option value="Tispe">jente</option>
 							<option value="velg">--Velg--</option>
 						</select>	
 					
@@ -82,18 +82,15 @@ $dblink = kobleOpp();
 
 						<label for="forID">Fòrtype:</label>
 						<select class="inputSelect" name="forID"> 
-							<option value="1">vanlig</option>
-							<option value="2">allergi</option>
-							<option value="inkludert">Royal Canin</option>
-							<option value="inkludert">Vom</option>
-							<option value="medbrakt">Medbrakt</option>	
+							<option value="1">Royal Canin (vanlig)</option>
+							<option value="2">Vom (allergi)</option>
 							<option value="velg">--Velg--</option>
 						</select>
+
 
 						<label for="info">Ekstra informasjon:</label>
 						<textarea class="tekstboks tekstfelt1" name="info"></textarea>					
 					</div>
-
 				</div>
 
 				<!-- Tilbake til Min Side -->	
@@ -107,6 +104,24 @@ $dblink = kobleOpp();
 					<a href="hundRegistrertBekreftelse.html">
 						<input class="inputSubmit hovedKnapp2" type="submit" name="registrer" value="Registrer hund"> 
 					</a>
+
+					<!-- Knapperad -->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						
+						<!-- Tilbake til Min side -->
+						<a href = "minSide.php">
+	                		<input class="inputButton ekstraKnapp" type="button" value="Tilbake"> 
+	            		</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+
+						<!-- Registrer-knapp-->
+						<a href = "minSide.php">
+	                		<input class="inputSubmit hovedKnapp2" type="submit" value="Registrer hund" name="registrer"> 
+	            		</a>	
+					</div>
+				</div>
 			</form>
 		</div>
 
