@@ -53,7 +53,7 @@ $dblink = kobleOpp();
 				</div>
 
 				<!--Logg inn knapp-->
-				<div class="etterKolonnerKnapp knappeKlyngeHB">
+				<div class="etterKolonnerKnapp bunnKnapp">
 					<div class="loggInnKnapp">
 						<input class="inputSubmit hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
 					</div>	

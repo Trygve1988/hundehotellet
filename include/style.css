@@ -442,8 +442,8 @@ input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder sele
 	margin-right: 6.1%;
 }
 
-/* Plasserer knappeklyngen nederst til høyre i skjemaet (f.eks i loggInn.html)*/
-.knappeKlyngeHB {
+/* Plasserer knappen(e) nederst i skjemaet */
+.bunnKnapp {
 	margin-top: 100px;
 }
 
