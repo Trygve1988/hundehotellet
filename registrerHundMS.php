@@ -81,7 +81,7 @@ $dblink = kobleOpp();
 							<option value="velg">--Velg--</option>
 						</select>
 
-						<label for="forID">Fòrtype:</label>
+						<label for="forID">Fôrtype</label>
 						<select class="inputSelect" name="forID"> 
 							<option value="1">Royal Canin (vanlig)</option>
 							<option value="2">Vom (allergi)</option>

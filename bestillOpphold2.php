@@ -57,7 +57,7 @@ $dblink = kobleOpp();
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 
-						<!-- kjønn --> 
+						<!-- Kjønn --> 
 						<?php $kjonn = $h1->getKjønn(); ?>
 						<label for="kjønn">kjønn:</label>
 						<select class="inputSelect" name="kjønn"> 
@@ -73,9 +73,9 @@ $dblink = kobleOpp();
 							?>
 						<select> 
 
-						<!-- sterilisert --> 
+						<!-- Sterilisert --> 
 						<?php $sterilisert = $h1->getSterilisert(); ?>
-						<label for="sterilisert">sterilisert:</label>
+						<label for="sterilisert">Sterilisert:</label>
 						<select class="inputSelect" name="sterilisert"> 
 							<?php
 							if ($sterilisert == "1") { 
@@ -89,16 +89,13 @@ $dblink = kobleOpp();
 							?>
 						<select> 
 
-						<div class="passordKrav">
-							<!-- <a class="link" href="#">Trykk her for mer informasjon om krav til vaksinering</a>	-->	
-						</div>
 					</div>
 					
 					<!-- Labels og input i kolonne 2 -->
 					<div>
 						<!-- løpeMedAndre --> 
 						<?php $løpeMedAndre = $h1->getLøpeMedAndre(); ?>
-						<label for="løpeMedAndre">løpeMedAndre:</label>
+						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select class="inputSelect" name="løpeMedAndre"> 
 							<?php
 							if ($løpeMedAndre == "1") { 
@@ -114,7 +111,7 @@ $dblink = kobleOpp();
 
 						<!-- forType --> 
 						<?php $forID = $h1->getForID(); ?>
-						<label for="forID">forType:</label>
+						<label for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID"> 
 							<?php
 							if ($forID == "1") { 

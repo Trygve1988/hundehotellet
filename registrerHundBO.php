@@ -60,8 +60,8 @@ $dblink = kobleOpp();
 						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn">
-							<option value="gutt">gutt</option>
-							<option value="jente">jente</option>
+							<option value="gutt">Hannhund</option>
+							<option value="jente">Tispe</option>
 							<option value="velg">--Velg--</option>
 						</select>	
 					
@@ -81,7 +81,7 @@ $dblink = kobleOpp();
 							<option value="velg">--Velg--</option>
 						</select>
 
-						<label for="forID">Fòrtype:</label>
+						<label for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID"> 
 							<option value="1">Royal Canin (vanlig)</option>
 							<option value="2">Vom (allergi)</option>
