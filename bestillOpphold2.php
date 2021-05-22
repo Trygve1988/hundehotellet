@@ -34,11 +34,6 @@ $dblink = kobleOpp();
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 
-				<!-- test HUSK Å FJERNE DENNE!!!!!!! -->
-				<?php oppdaterHunder($dblink); ?>
-				<?php $h1 = $_SESSION['aktivHund']; ?>
-				<?php echo $h1->toString(); ?>
-			
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
 					<input class="avbrytKnapp" type="button" value="X">
