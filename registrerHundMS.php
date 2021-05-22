@@ -59,8 +59,8 @@ $dblink = kobleOpp();
 						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn">
-							<option value="Hannhund">gutt</option>
-							<option value="Tispe">jente</option>
+							<option value="gutt">Hannhund</option>
+							<option value="jente">Tispe</option>
 							<option value="velg">--Velg--</option>
 						</select>	
 					
