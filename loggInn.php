@@ -49,6 +49,7 @@ $dblink = kobleOpp();
 						<div class="visPassord">
 							<input class="vanligCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
 						</div>	
+
 					</div>
 				</div>
 
