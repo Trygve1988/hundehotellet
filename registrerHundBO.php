@@ -92,7 +92,6 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
-				
 				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
