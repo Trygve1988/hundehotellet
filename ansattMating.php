@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    include_once "include/funksjonerAnsatt.php";
     session_start();
     $dblink = kobleOpp();
 ?> 
@@ -31,9 +32,11 @@
             <form class="skjemaBakgrunn" method="POST">
                 <h2>Mating</h2>
                 <?php visAlleHunderPaaOppholdNaa($dblink); ?>
+                <?php visAlleRegistrerteMatingerIDag($dblink); ?>
+
                 <input class="litenKnapp" type="submit" name="registrerMatingAlle" value="Registrer Mating (alle)">
                 <input class="litenKnapp" type="submit" name="slettAlle" value="Slett Alle"> 
-                <?php visAlleRegistrerteMatingerIDag($dblink); ?>
+
                 <?php registrerMatingAlle($dblink); ?>
                 <?php slettAlleMatinger($dblink); ?>
             </form>

@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    include_once "include/funksjonerAnsatt.php";
     session_start();
     $dblink = kobleOpp();
 ?> 
@@ -30,13 +31,14 @@
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
                 <h2>Kommentar</h2>
-                <?php visAlleHunderPaaOppholdNaaKommentar($dblink); ?>
+                <?php //visAlleHunderPaaOppholdNaaKommentar($dblink); ?>
+                <?php visAlleRegistrerteKommentarIDag($dblink); ?>
 
                 <!-- skriv kommentar -->
                 <label for="kommentarText">kommentarText:</label>
                 <textarea name="kommentarText" rows="10" cols="115"></textarea>
 
-                <!-- velg Hund-->
+                <!-- velg Hund -->
                 <select name="velgHundSelect" class="litenSelect" width="100px">
                     <?php $hunder = lagHunderPaaOppholdNaaTab($dblink);
                     for ($i=0; $i<count($hunder); $i++) {
@@ -48,9 +50,7 @@
                 <input class="litenKnapp" type="submit" name="registrerKommentarKnapp" value="Lagre">
                 <input class="litenKnapp" type="submit" name="slettAlle" value="Slett Alle"> 
 
-                <?php visAlleRegistrerteKommentarIDag($dblink); ?>
                 <?php registrerKommentar($dblink); ?>
-                <?php //slettAlleMatinger($dblink); ?>
             </form>
 
         </div>

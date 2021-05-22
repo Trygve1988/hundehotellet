@@ -1,5 +1,6 @@
 <?php
 include_once "include/funksjoner.php";
+include_once "include/funksjonerBestillOpphold.php";
 session_start();
 $dblink = kobleOpp();
 ?>
@@ -59,8 +60,8 @@ $dblink = kobleOpp();
 						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn">
-							<option value="Hannhund">gutt</option>
-							<option value="Tispe">jente</option>
+							<option value="gutt">gutt</option>
+							<option value="jente">jente</option>
 							<option value="velg">--Velg--</option>
 						</select>	
 					

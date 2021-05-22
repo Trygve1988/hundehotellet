@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    include_once "include/funksjonerMinSide.php";
     session_start();
     $dblink = kobleOpp();
 ?> 
@@ -35,21 +36,19 @@
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
                 <h2>Endre Hund</h2>
-				<div class="skjemaKolonner">
-					<div class="kolonne1">
-                        <select id="hund" class="inputSelect" value="hund" name="hund">
-                            <?php $hunder = laghunderTab($dblink);
-                            for ($i=0; $i<count($hunder); $i++) {
-                                lagOption($hunder[$i]);
-                            } ?>
-                        </select>
-
-                        <a href="minSide.php">
-                            <input class="litenKnapp" type="button" value="Tilbake">  
-                        <a>
-                        <input class="litenKnapp" type="submit" value="Velg" name="velgHund">
-
-                    </div>
+                <div>
+                    <select id="hund" class="litenSelect" value="hund" name="hund">
+                        <?php $hunder = laghunderTab($dblink);
+                        for ($i=0; $i<count($hunder); $i++) {
+                            lagOption($hunder[$i]);
+                        } ?>
+                    </select>
+                </div>
+                <div>
+                    <a href="minSide.php">
+                        <input class="litenKnapp" type="button" value="Tilbake">  
+                    <a>
+                    <input class="litenKnapp" type="submit" value="Velg" name="velgHund">
                 </div> 
             </form> 
         </div> 

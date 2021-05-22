@@ -971,28 +971,28 @@ footer a {
 
 
 
-/* Ansatt: bur Laget av Kristina */
-.burTab {
-    display: inline; 
-    margin:10px;
+
+
+/* inspiserHundTab */
+.inspiserHundTab table {
+    table-layout: fixed;
 }
 
-/* Laget av Kristina */
-.burTab tr {
+.inspiserHundTab tr {
 	background-color: white; /*Hvit bakgrunn på skjema*/
 }
 
-.burTab th {
+.inspiserHundTab th {
 	width: auto;
-	background-color: #394f79;
-	color: white;
+	background-color: #d2e1ff;
 	padding: 5px;
 	font-size: 18px;
+    text-align:left
 }
 
-.burTab td {
+.inspiserHundTab td {
 	padding: 5px; /*padding til overskrift*/
 	text-align: left;
-	border-bottom: 2px solid #ddd;
+	border-bottom: 1px solid #ddd;
 	font-size: 18px;
 }

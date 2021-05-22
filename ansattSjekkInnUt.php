@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    include_once "include/funksjonerAnsatt.php";
     session_start();
     $dblink = kobleOpp();
 ?> 
@@ -42,11 +43,11 @@
                 </select>
 
                 <!-- sjekkInnKnapp --> 
-                <input id="sjekkInnKnapp" type="submit" value="Sjekk Inn" name="sjekkInnKnapp">
+                <input class="litenKnapp" type="submit" value="Sjekk Inn" name="sjekkInnKnapp">
                 <?php sjekkInn($dblink); ?>
 
                 <!-- test: nullstillKnapp --> 
-                <input id="nullstillInnsjekkingerKnapp" type="submit" value="Nullstill" name="nullstillInnsjekkingerKnapp">
+                <input class="litenKnapp" type="submit" value="Nullstill" name="nullstillInnsjekkingerKnapp">
                 <?php nullStillInnsjekkinger($dblink); ?>
 
 
@@ -54,7 +55,7 @@
                 <?php visSkalSjekkeUtIDag($dblink); ?>
 
                 <!-- skal sjekkes Ut hunder -->
-                <select id="sjekkUtSelect" name="sjekkUtSelect">
+                <select class="litenSelect" name="sjekkUtSelect">
                     <?php $hunder = lagSkalSjekkesUtTab($dblink);
                     for ($i=0; $i<count($hunder); $i++) {
                         lagOption($hunder[$i]->toStringSjekkInn());
@@ -62,11 +63,11 @@
                 </select>
 
                 <!-- sjekkUtKnapp --> 
-                <input id="sjekkUtKnapp" type="submit" value="Sjekk Ut" name="sjekkUtKnapp">
+                <input class="litenKnapp" type="submit" value="Sjekk Ut" name="sjekkUtKnapp">
                 <?php sjekkUt($dblink); ?>
 
                 <!-- test: nullstillKnapp --> 
-                <input id="nullStillUtsjekkingerKnapp" type="submit" value="Nullstill" name="nullStillUtsjekkingerKnapp">
+                <input class="litenKnapp" type="submit" value="Nullstill" name="nullStillUtsjekkingerKnapp">
                 <?php nullStillUtsjekkinger($dblink); ?>
 
             </form>

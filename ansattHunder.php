@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    include_once "include/funksjonerAnsatt.php";
     session_start();
     $dblink = kobleOpp();
 ?> 
@@ -32,26 +33,27 @@
                 <h2>Hunder</h2> 
 
                 <!-- velg Hund-->
+                <label for="velgHundSelect">Velg Hund</label>
                 <select id="velgHundSelect" class="litenSelect" name="velgHundSelect" width="100px">
                     <?php $hunder = lagHunderPaaOppholdNaaTab($dblink);
                     $inspiserHund = $_SESSION['inspiserHund']; 
                     for ($i=0; $i<count($hunder); $i++) {
                         lagInspiserHundOption($hunder[$i],$inspiserHund);
                     } ?>
-                </select><br>
+                </select>
 
-                <div class="skjemaFlexBox"> 
-                    <div> 
+                <div class="skjemaKolonner">
+					<div class="kolonne1">
                         <?php visInspiserHundInfo($dblink); ?>
                     </div> 
-                    <div> 
+                    <div class="kolonne2"> 
                         <?php visInspiserHundOppholdInfo($dblink); ?>
                     </div> 
                 </div> 
 
                 <!-- aktivitet/komentar-->
-                <br><?php visAlleRegistrerteMatingerDetteOppholdet($dblink); ?><br>
-                <?php visAlleRegistrerteLuftingerDetteOppholdet($dblink); ?><br>
+                <?php visAlleRegistrerteMatingerDetteOppholdet($dblink); ?>
+                <?php visAlleRegistrerteLuftingerDetteOppholdet($dblink); ?>
                 <?php visAlleRegistrerteKommentarerDetteOppholdet($dblink); ?>  
             </form>
 

@@ -73,5 +73,9 @@ class FerdigBestilling {
         return $this->bestillingID . ", " . $this->startDato . ", " . $this->sluttDato . ", " . 
         $this->bestiltDato . ", " . $this->totalPris . ", " . $this->burID . ", " . implode(",",$this->hundTab);
     }
+    
+    function toStringSjekkInn() {
+        return $this->bestillingID . ", " . implode(",",$this->hundTab);
+    }
 }
 ?>
