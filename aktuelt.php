@@ -29,7 +29,7 @@ $dblink = kobleOpp();
         <div class="hvitBakgrunn">
 
             <!-- Skjema -->
-            <form class="skjemaBakgrunn">
+            <form class="skjemaBakgrunn" method="POST">
                 <div class="aktuelt">
                     <div class="mellomromMellomInnlegg">
                         <!-- Margin-bottom funket ikke, derfor måtte det lages en div som lager luft mellom innleggene -->
@@ -54,6 +54,24 @@ $dblink = kobleOpp();
                         <p> Bø hundehotell trenger en ny ansatt som kan bade og føne hundene og massere dem etter turgåing. Er dette noe for deg send din søknad til
                             bohundehotell@outlook.com
                         </p>
+                    </div>
+                    <hr>
+
+                    <!-- visAlleInnlegg -->
+                    <?php visAlleInnlegg($dblink); ?>
+
+                    <!-- lagreInnlegg -->
+                    <div class="mellomromMellomInnlegg">
+                        <h2>Skriv nytt innlegg </h2>
+                        <label for="overskrift">overskrift:</label>
+                        <input class="inputTekst" type="text" name="innleggOverskrift" value="overskrift">
+
+                        <label for="text">text:</label>
+                        <input class="inputTekst" type="text" name="innleggText" value="text">
+
+                        <input class="litenKnapp" type="submit" value="lagre" name="lagreInnleggKnapp">
+
+                        <?php lagreInnlegg($dblink); ?>
                     </div>
                 </div>
             </form> 

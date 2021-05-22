@@ -41,6 +41,9 @@
                 <a href="endrePassord.php"> 
                     <input class="litenKnapp" type="button" value="Endre Passord" name="Endre Passord">
                 </a>
+                <a href="slettBruker.php"> 
+                    <input class="litenKnapp" type="button" value="Slett Bruker">
+                </a>
                 <br><br><br>
 
                 <!-- MineHunder -->

@@ -72,6 +72,10 @@
                 <?php $tekst = "Slett_" . $_SESSION['adminSeBrukertype']; ?>
                 <input class="litenKnapp" type="button" value= <?php echo $tekst ?> >
             </a>
+            <a href="adminGjennoprettBruker.php">
+                <?php $tekst = "Gjennoprett_" . $_SESSION['adminSeBrukertype']; ?>
+                <input class="litenKnapp" type="button" value= <?php echo $tekst ?> >
+            </a>
         </form> 
 
     </main>
