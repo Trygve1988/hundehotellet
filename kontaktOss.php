@@ -32,15 +32,15 @@ $dblink = kobleOpp();
 
                 <section class="kontakt">
                     <div class="kontakt-info">
-                        <h2 class="hovedOverskrift">Kontakt oss</h2>
+                        <h2 id="kontaktOss" class="hovedOverskrift">Kontakt oss</h2>
 
                         <div class="kontakt-info-tekst">
-                            <p>Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.</p>
+                            <p id="kontaktInfoTekst">Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.</p>
                         </div>
 
-                        <p><strong> Åpningstider:</strong> 08:00-18:00 man-tor (10-00-16:00 lør-søn)</p>
-                        <p><strong> E-post: </strong><a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a> </p>
-                        <p> <strong> Adresse: </strong> Lektorvegen 913802 Bø i Telemark </p>
+                        <p class="storText">Åpningstider:</p><p>08:00-18:00 man-tor (10-00-16:00 lør-søn)</p>
+                        <p class="storText">E-post:</p><p><a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a></p>
+                        <p class="storText">Adresse::</p><p> Lektorvegen 913802 Bø i Telemark</p>
                         <p> <strong> Tlf: </strong> 12345678</p>
                     </div>
 

@@ -22,15 +22,12 @@ $dblink = kobleOpp();
 	<!-- ************************** fellesTop ************************** -->
 	<?php visNav(); ?>
 
-<<<<<<< HEAD
-=======
 	<!-- ************************** main ******************************* -->
 	
 	<main>
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 		
->>>>>>> 840c6f6ac0a9ef42e0c066ec4d5faad855a2f840
 		<!-- ************************* (Gunni) ************************* -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
@@ -73,7 +70,7 @@ $dblink = kobleOpp();
 							<option value="0">Nei</option>
 							<option value="velg">--Velg--</option>
 						</select>
-						
+					</div>	
 					<!-- Labels og input i kolonne 2-->
 					<div class="kolonne2">
 						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
@@ -98,15 +95,17 @@ $dblink = kobleOpp();
 					</div>
 
 				</div>
-				<!-- Registrer hund-knappp -->	
+				<!-- Tilbake til Bestill opphold -->	
 				<div> 
-					<a href="minSide.php">
+					<a href="bestillOpphold1.php">
 						<input class="inputButton" type="button" value="Tilbake"> 
 					</a>
 					
-					<!-- <a href="hundRegistrertBekreftelse.html"></a> -->
-				</div>	
-				<input class="inputSubmit" type="submit" name="registrer" value="Registrer hund"> 
+				</div>
+					<!-- Registrer hund  -->
+					<a href="hundRegistrertBekreftelse.html">
+						<input class="inputSubmit hovedKnapp2" type="submit" name="registrer" value="Registrer hund"> 
+					</a>
 			</form>
 		</div>
 

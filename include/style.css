@@ -305,6 +305,11 @@ main {
 	text-align: justify;
     font-family: Arial;
 }
+
+/*Kontant oss CSS for å kjøre tekst bold*/
+.storText{
+	font-weight: bold;
+}
   
 /* **************************** Gunni ***************************** */
 /*Hvit midtstilt bakgrunn*/
