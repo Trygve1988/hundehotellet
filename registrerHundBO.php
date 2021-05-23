@@ -111,11 +111,13 @@ $dblink = kobleOpp();
 	            		</a>	
 					</div>
 				</div>
-			</form>
-		</div>
 
-		<!-- registrerHund -->
-		<?php registrerHund($dblink); ?>
+				<!-- registrerHund -->
+				<?php registrerHund($dblink); ?>
+
+			</form>
+
+		</div>
 
 	</main>
 

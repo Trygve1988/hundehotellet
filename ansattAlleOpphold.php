@@ -33,11 +33,11 @@
             <form class="skjemaBakgrunn" method="POST">
                 <!-- 2a alleOpphold -->
                 <h2>Alle Opphold</h2>
-                <?php visAlleOpphold($dblink); ?>
+                <?php //visAlleOpphold($dblink); ?>
 
-                <?php //visIkkeBegynteOpphold($dblink); ?>
-                <?php //visAktiveOpphold($dblink); ?>
-                <?php //vis5SisteFerdigeOpphold($dblink); ?>
+                <?php visIkkeBegynteOpphold($dblink); ?>
+                <?php visAktiveOpphold($dblink); ?>
+                <?php vis5SisteFerdigeOpphold($dblink); ?>
 
                 <a href="ansattAlleOppholdEldre.php"> 
                     <input class="litenKnapp" type="button" value="Se Eldre"> 
