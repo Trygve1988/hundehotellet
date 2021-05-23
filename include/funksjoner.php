@@ -375,7 +375,7 @@ function visAlleInnlegg($dblink) {
     }
 }
 
-/*
+
 // ********************* Gunni - Min side - Tabeller ********************* 
 
 // Min profil tabell 
