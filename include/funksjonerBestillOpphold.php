@@ -32,8 +32,8 @@ function registrerHund($dblink) {
             $hundID = implode($rad);
         }
 
-        //echo "hund " . $hundID . " - ". $navn . " registrert" . "<br>";
-        header('Location: bestillOpphold.php');
+        echo "<br>".'<i style="color:green";> Hund registrert! </i>'; 
+        //header('Location: bestillOpphold.php');
     }
 }
 

@@ -53,11 +53,14 @@
                 <!-- MineHunder -->
                 <?php visMineHunder($dblink) ?>
                 <a href="registrerHundMS.php">
-                    <input class="litenKnapp" type="button" value="Registrer Hund" name="Registrer Hund">
+                    <input class="litenKnapp" type="button" value="Registrer Hund">
                 </a>
                 <?php if (harHund($dblink)) { ?>
                     <a href="minSideTestEndreHund1.php">
-                        <input class="litenKnapp" type="button" value="Endre Hund" name="Endre Hund">  
+                        <input class="litenKnapp" type="button" value="Endre Hund">  
+                    </a>
+                    <a href="minSideTestSlettHund.php">
+                        <input class="litenKnapp" type="button" value="Slett Hund">  
                     </a>
                 <?php } ?>
                 <br><br><br>

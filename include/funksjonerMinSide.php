@@ -1,6 +1,6 @@
 <?php
 ob_start();
-// ************************** 10) Min Side **************************
+// ************************** 1) visInnloggetInfo **************************
 function visInnloggetInfo($dblink) {
     if (isset($_SESSION['bruker'])) {
         echo "<h2> Min profil </h2>";
@@ -35,6 +35,7 @@ function visInnloggetInfo($dblink) {
     } 
 }
 
+// ************************** 2) visMineHunder **************************
 function visMineHunder($dblink) {
     echo "<h2> Mine registrerte hunder </h2>";
     $bruker = $_SESSION['bruker'];
@@ -71,6 +72,7 @@ function visMineHunder($dblink) {
     echo "</table>" . "<br>";;
 }
 
+// ************************** 3) visMineOpphold **************************
 function visMineOpphold($dblink) {
     if (harOpphold($dblink)) {
 
@@ -185,7 +187,7 @@ function harOpphold($dblink) {
     return $harOpphold; 
 }
 
-// ************************** 10) minSide -> a)endre brukerinfo **************************
+// ************************** 4) endreBrukerInfo **************************
 function endreBrukerInfo($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bruker = $_SESSION['bruker'];
@@ -207,7 +209,7 @@ function endreBrukerInfo($dblink) {
     }
 }
 
-// ************************** 10) minSide -> b)endrePassord **************************
+// ************************** 5) endrePassord **************************
 function endrePassord($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bruker = $_SESSION['bruker'];
@@ -249,7 +251,7 @@ function endrePassord($dblink) {
     }
 }
 
-// ************************** 10) minSide -> c) slettKonto **************************
+// ************************** 6) slettKonto **************************
 function slettMinBruker($dblink) {
     if (isset($_POST['slettBrukerKnapp'])) {
         //sjekker at denne brukeren ikke har noen fremtidige eller aktive opphold
@@ -277,10 +279,10 @@ function slettMinBruker($dblink) {
     }
 }
 
-// ************************** 10) minSide -> registrerHund **************************
+// ************************** registrerHund **************************
 //denne funskjonen er allerede laget under bestill opphold
 
-// ************************** 10) minSide -> d) endre hund1  **************************
+// ************************** 7) endre hund1  **************************
 function laghunderTab($dblink) {
     //lager tabell med brukeren sine hundIDer
     $bruker = $_SESSION['bruker'];
@@ -310,7 +312,7 @@ function velgHundSomSkalEndres($dblink) {
     }
 }
 
-// ************************** 10) minSide -> e) endre hund2 **************************
+// ************************** 8) endre hund2 **************************
 function endreHund($dblink) {
     if (isset($_POST['bekreftHundInfo'])) {  
         $hund = $_SESSION['aktivHund'];
@@ -339,7 +341,22 @@ function endreHund($dblink) {
     }
 }
 
-// ************************** 10) minSide -> f) avbestill bestilling ************************** 
+// ************************** 9) slett hund **************************  
+function slettHund($dblink) {
+    if (isset($_POST['slettHund'])) {  
+        $brukerID = $_SESSION['bruker']->getBrukerID();
+        $hund = $_POST['hund'];
+
+        echo "brukerID: " . $brukerID;
+        echo "hund:     " . $hund;
+
+        $sql = "DELETE FROM hund WHERE brukerID = '$brukerID' AND navn = $hund ;";
+        $resultat = mysqli_query($dblink, $sql);
+        //header("Refresh:0");
+    }
+}
+
+// ************************** 10)  avbestill bestilling ************************** 
 function lagIkkeBegyntBestillingTab($dblink) {
     $bruker = $_SESSION['bruker'];
     $brukerID = $bruker->getBrukerID();
@@ -414,7 +431,7 @@ function avbestill($dblink) {
     }
 }
 
-// ************************** 10) Min side -> g) Skriv anmeldelse **************************
+// ************************** 11) Skriv anmeldelse **************************
 function lagreAnmeldelse($dblink) {
     if (isset($_POST['sendAnmeldelseKnapp'])) { 
 
