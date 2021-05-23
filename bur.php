@@ -15,7 +15,7 @@ $dblink = kobleOpp();
     <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
     <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
     <script src="include/script.js" defer> </script>
-   
+    <script src="include/scriptSpraak.js" defer> </script>
 </head>
 
 

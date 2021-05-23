@@ -96,16 +96,6 @@ main {
     color: black; 
   }
 
-/* **************************** bildeBakgrunn  gammel  ***************************** 
-.bildeBakgrunn { 
-  position: absolute;
-  width: 100%;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-  vertical-align: middle;
-}
-*/
 
 /* **************************** index (Even)  ***************************** */
 .velkommenText{ /* Stor tekst, Velkomen */
@@ -851,7 +841,7 @@ footer a {
 
  
 
-/* **************************** Trygve ***************************** */
+/* **************************** Trygve  ***************************** */
 /* alle */
 .litenKnapp {
     width: 200px;
@@ -918,7 +908,7 @@ footer a {
     background-color: rgb(60, 79, 104);
 }
 
-/* Laget av Kristina */
+/* blaaTab (Trygve og Kristina) */
 .blaaTab table{
 	border-collapse: collapse;
 }
@@ -943,10 +933,7 @@ footer a {
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
 }
-
-
-
-/* Laget av Kristina */
+/* blaaTabSmal (Trygve og Kristina) */
 .blaaTabSmal tr {
 	background-color: white; /*Hvit bakgrunn på skjema*/
 }
@@ -968,12 +955,7 @@ footer a {
 	font-size: 18px;
 }
 
-
-
-
-
-
-/* inspiserHundTab */
+/* inspiserHundTab (Trygve og Kristina) */
 .inspiserHundTab table {
     table-layout: fixed;
 }

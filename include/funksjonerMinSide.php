@@ -123,8 +123,6 @@ function lagOppholdTab($dblink) {
     return $bestillingTab;
 }
 
-
-
 function lagOppholdOverskrifter() {
     echo "<h2> Mine Opphold </h2>";
     //overskrifter
