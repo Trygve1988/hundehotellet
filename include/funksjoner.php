@@ -339,7 +339,7 @@ function registrerDeg($dblink) {
         $resultat = mysqli_query($dblink, $sql);
         $antall = mysqli_num_rows($resultat);
         if ($antall > 0) { // epost finnes fra før!
-            //echo "<br>".'<i style="color:red; position:absolute";"> epost er allerede registrert! </i>'; 
+            echo "<br>".'<i style="color:red; position:absolute";"> epost er allerede registrert! </i>'; 
         }
 
         //registrerer ny bruker
@@ -347,7 +347,8 @@ function registrerDeg($dblink) {
             $sql = "INSERT INTO bruker(epost,passord,brukerType,fornavn,etternavn,tlf,adresse) 
                     VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse');";
             $resultat = mysqli_query($dblink, $sql);
-            loggInn($dblink);
+            //loggInn($dblink);
+            echo "<br>".'<i style="color:green; position:absolute";"> Du er nå registrert! </i>'; 
         }
     }
 }

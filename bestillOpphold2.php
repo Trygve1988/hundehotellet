@@ -35,6 +35,11 @@ $dblink = kobleOpp();
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 
+				<!-- test -->
+				<?php oppdaterHunder($dblink); ?>
+				<?php $h1 = $_SESSION['aktivHund']; ?>
+				<?php echo $h1->toString(); ?>
+			
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
 					<input class="avbrytKnapp" type="button" value="X">
@@ -58,70 +63,73 @@ $dblink = kobleOpp();
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 
-						<!-- Kjønn --> 
+						<!-- kjønn --> 
 						<?php $kjonn = $h1->getKjønn(); ?>
 						<label for="kjønn">kjønn:</label>
 						<select class="inputSelect" name="kjønn"> 
 							<?php
 							if ($kjonn == "gutt") { 
-								?><option value="gutt" selected >Hannhund</option><?php
-								?><option value="jente">Tispe</option><?php
+								?><option value="gutt" selected >gutt</option><?php
+								?><option value="jente">jente</option><?php
 							} 
 							else { 
-								?><option value="gutt">Hannhund</option><?php
-								?><option value="jente" selected>Tispe</option><?php
+								?><option value="gutt">gutt</option><?php
+								?><option value="jente" selected>jente</option><?php
 							}
 							?>
 						<select> 
 
-						<!-- Sterilisert --> 
+						<!-- sterilisert --> 
 						<?php $sterilisert = $h1->getSterilisert(); ?>
-						<label for="sterilisert">Sterilisert:</label>
+						<label for="sterilisert">sterilisert:</label>
 						<select class="inputSelect" name="sterilisert"> 
 							<?php
 							if ($sterilisert == "1") { 
-								?><option value="1" selected >Ja</option><?php
-								?><option value="0">Nei</option><?php
+								?><option value="1" selected >ja</option><?php
+								?><option value="0">nei</option><?php
 							} 
 							else { 
-								?><option value="1">Ja</option><?php
-								?><option value="0" selected>Nei</option><?php
+								?><option value="1">ja</option><?php
+								?><option value="0" selected>nei</option><?php
 							}
 							?>
 						<select> 
 
+						<div class="passordKrav">
+							<!-- <a class="link" href="#">Trykk her for mer informasjon om krav til vaksinering</a>	-->	
+						</div>
 					</div>
 					
 					<!-- Labels og input i kolonne 2 -->
 					<div>
 						<!-- løpeMedAndre --> 
 						<?php $løpeMedAndre = $h1->getLøpeMedAndre(); ?>
-						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
+						<label for="løpeMedAndre">løpeMedAndre:</label>
 						<select class="inputSelect" name="løpeMedAndre"> 
 							<?php
 							if ($løpeMedAndre == "1") { 
-								?><option value="1" selected >Ja</option><?php
-								?><option value="0">Nei</option><?php
+								?><option value="1" selected >ja</option><?php
+								?><option value="0">nei</option><?php
 							} 
 							else { 
-								?><option value="1">Ja</option><?php
-								?><option value="0" selected>Nei</option><?php
+								?><option value="1">ja</option><?php
+								?><option value="0" selected>nei</option><?php
 							}
 							?>
 						<select> 
 
-						<!-- Fôrtype--> 
+						<!-- forType --> 
 						<?php $forID = $h1->getForID(); ?>
-						<label for="forID">Fôrtype:</label>
+						<label for="forID">forType:</label>
 						<select class="inputSelect" name="forID"> 
 							<?php
 							if ($forID == "1") { 
-								?><option value="1" selected >Royal Canin (vanlig)</option><?php
-								?><option value="0">Vom (Allergi)</option><?php
+								?><option value="1" selected >vanlig</option><?php
+								?><option value="0">allergi</option><?php
 							} 
 							else { 
-								?><option value="1">Royal Canin (vanlig)</option><?php
-								?><option value="0" selected>Vom (allergi)</option><?php
+								?><option value="1">vanlig</option><?php
+								?><option value="0" selected>allergi</option><?php
 							}
 							?>
 						<select> 
@@ -144,7 +152,7 @@ $dblink = kobleOpp();
 
 						<!-- Neste-knapp-->
 						<a href = "bestillOpphold3.php">
-	                		<input class="inputSubmit hovedKnapp" type="submit" value="Neste" name="bekreftHundInfo"> 
+	                		<input class="inputSubmit hovedKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo"> 
 	            		</a>	
 					</div>
 				</div>

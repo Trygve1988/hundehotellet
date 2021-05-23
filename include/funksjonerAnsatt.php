@@ -106,17 +106,8 @@ function skrivUkeTab($burTab) {
     echo "</table>";
 }
 
-/*
+
 // ********************************* 7b) Ansatt: Alle Opphold *********************************
-
-
-
-
-
-
-
-
-
 function visIkkeBegynteOpphold($dblink) {
     echo "<h3> Ikke begynte opphold </h3>";
     visoppholdOverskrifter($dblink);
@@ -309,7 +300,6 @@ function lagIkkeBegyntBestillingTabForAnsatt($dblink) {
     return $bestillinger;
  
 }
-*/
 
 
 
