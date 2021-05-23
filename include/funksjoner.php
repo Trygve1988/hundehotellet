@@ -80,7 +80,7 @@ function visNav() {
             ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
         <!-- spraakKnapp--> 
-        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png" alt="Norsk">
+        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png" alt="Change language">
     </div><?php
 }
 

@@ -34,9 +34,6 @@ function endreSpraak() {
     location.reload();
 }
 
-
-
-
 // ********************* 0) Alle: globale spraak variabler (Even) ********************* 
 var flaggTab        = ['bilder/FlaggNO.png', 'bilder/FlaggGB.png'];
 var hjemTab         = ['Hjem', 'Home'];
