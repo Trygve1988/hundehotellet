@@ -107,7 +107,15 @@ var navKlikkTab = ['Klikk her for å se kartet','Click here to see the map'];
 var navSamerbeidTab = ['Samarbeidspartnere','Collaborators'];
 var kontaktOssTab2 = ['Kontakt oss','Contact Us'];
 var kontaktInfoTekstTab = ['Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.','If you have any questions, just contact us either by email or phone.'];
-var åpningstiderTab = ['Åpningstider: 08:00-18:00 man-tor (10-00-16:00 lør-søn)',"Opening hours: 08: 00-18: 00 Mon-Thu (10-00-16: 00 Sat-Sun)"];
+var åpningstiderTab = ['Åpningstider:',"Opening hours:"];
+var åpningstider2Tab = ['08:00-18:00 man-tor (10-00-16:00 lør-søn)','08: 00-18: 00 Mon-Thu (10-00-16: 00 Sat-Sun)'];
+var epostTab = ['Epost:','Email:']; 
+var adresseKontkatossTab = ['Adresse:','Address:'];
+var bestillOppholdTab = ['Bestill opphold','Book a stay'];
+var bestillOppholdTextTab = ['Bø Hundehotell har kapasitet til max 3 hunder i samme bur.','Bø Hundehotell has a capacity for a maximum of 3 dogs in the same cage.'];
+var bestillOppholdTextTab2 = ['Vennligst bestill flere ganger hvis du ønsker å bestille opphold til flere en 3 hunder.','Please book several times if you want to book stays for more than 3 dogs.'];
+var velgHunderTab = ['Velg hund(er):','Select dog (s):'];
+var registerHundTab = ['+ Registrer ny hund','+ Register new dog'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -186,7 +194,15 @@ var navKlikk = document.getElementById("navKlikk");
 var navSamerbeid = document.getElementById("navSamerbeid");
 var kontaktOss = document.getElementById("kontaktOss");
 var kontaktInfoTekst = document.getElementById("kontaktInfoTekst");
-var åpningstider = document.getElementById('åpningstider');
+var åpningstider = document.getElementById("åpningstider");
+var åpningstider2 = document.getElementById("åpningstider2");
+var epost = document.getElementById("epost");
+var adresseKontkatoss = document.getElementById("adresseKontkatoss");
+var bestillOpphold = document.getElementById("bestillOpphold");
+var bestillOppholdText = document.getElementById("bestillOppholdText");
+var bestillOppholdText2 = document.getElementById("bestillOppholdText2");
+var velgHunder = document.getElementById("velgHunder");
+var registerHund = document.getElementById("registerHund");
 
 
 spraakKnapp.src = flaggTab[språk];
@@ -382,7 +398,31 @@ if (kontaktOss !== null) {
 }
 if (kontaktInfoTekst !== null) {
     kontaktInfoTekst.innerHTML = kontaktInfoTekstTab[språk];  
-}
+} 
 if (åpningstider !== null) {
     åpningstider.innerHTML = åpningstiderTab[språk];  
+} epost
+if (åpningstider2 !== null) {
+    åpningstider2.innerHTML = åpningstider2Tab[språk];  
+} 
+if (epost !== null) {
+    epost.innerHTML = epostTab[språk];  
+} 
+if (adresseKontkatoss !== null) {
+    adresseKontkatoss.innerHTML = adresseKontkatossTab[språk];  
+} bestillOppholdText
+if (bestillOpphold !== null) {
+    bestillOpphold.innerHTML = bestillOppholdTab[språk];  
+}
+if (bestillOppholdText !== null) {
+    bestillOppholdText.innerHTML = bestillOppholdTextTab[språk];  
+} 
+if (bestillOppholdText2 !== null) {
+    bestillOppholdText2.innerHTML = bestillOppholdTextTab2[språk];  
+} 
+if (velgHunder !== null) {
+    velgHunder.innerHTML = velgHunderTab[språk];  
+}
+if (registerHund !== null) {
+    registerHund.innerHTML = registerHundTab[språk];  
 }
