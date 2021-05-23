@@ -379,6 +379,22 @@ function settAdminSeBrukertypeSession() {
 }
 
 
+// ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
+const visPassordKnapp = document.querySelector("#visPassordKnapp");
+
+if (visPassordKnapp !== null) {
+    visPassordKnapp.addEventListener('click', visPassord, false);
+} 
+
+function visPassord() {
+  var x = document.getElementById("passord");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+} 
+
 // ************************** Registrer deg: Passord validation (Even) **************************
 //Passord validation (Even)
 const passord = document.querySelector("#passord");
