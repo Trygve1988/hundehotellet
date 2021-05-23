@@ -37,7 +37,7 @@ $dblink = kobleOpp();
             <form class="skjemaBakgrunn">
             
                 <!-- Avbryt knapp -->
-                <a href = "index.html">
+                <a href = "minSide.php">
                     <input class="avbrytKnapp" type="button" value="X">
                 </a>    
 
@@ -88,6 +88,7 @@ $dblink = kobleOpp();
                             <option value="ja">Ja</option>
                             <option value="nei">Nei</option>
                         </select>
+                    </div>
                     <!-- Labels og input i kolonne 2 -->
                     <div>
                         <label for="lopeMedAndre">Kan hunden omgås andre hunder:</label>
@@ -100,21 +101,22 @@ $dblink = kobleOpp();
                         <label for="fortype">Fòrtype:</label>
                         <select class="inputSelect" name="fortype">
                             <option value="velg"><?php echo $h1->getForID() ?></option>
-                            <option value="inkludert">Royal Canin</option>
-                            <option value="inkludert">Vom</option>
-                            <option value="medbrakt">Medbrakt</option>
+                            <option value="inkludert">Royal Canin (vanlig)</option>
+                            <option value="inkludert">Vom (allergi)</option>
                         </select>   
 
                         <label for="ekstraInfo">Ekstra informasjon:</label>
                         <textarea class="tekstboks tekstfelt1" name="ekstraInfo"><?php echo $h1->getInfo() ?></textarea>
                     </div>
                 </div>
-                <!-- Registrer hund-knappp -->  
+                
+                <!-- Lagre-knapp -->  
                 <div class="etterKolonnerKnapp"> 
                     <a href="hundRegistrertBekreftelse.html">
                         <input class="hovedKnapp inputSubmit" type="submit" name="bekreftHundInfo" value="Lagre"> 
                     </a>
                 </div> 
+               
                 <!-- ************************ (Trygve) ************************** -->
                 <!-- Bestill opphold -->
 	            <?php velgHund($dblink); ?>  

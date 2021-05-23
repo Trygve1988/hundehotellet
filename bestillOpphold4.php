@@ -60,11 +60,13 @@ $dblink = kobleOpp();
 				</div>
 
 				<h2 class="overskrift2" >Betaling</h2>
-				<!-- Valg av betalingsmetode: -->
+
+				<!-- Valg av betalingsmetode: FJERNE DENNE??
+			
 				<label for="kort">Betalingskort:</label>
 				<input class="radiobox" type="radio" name="kort">
 				<label for="vipps">VIPPS:</label>
-				<input class="radiobox" type="radio" name="vipps">		
+				<input class="radiobox" type="radio" name="vipps"> -->
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
@@ -97,8 +99,9 @@ $dblink = kobleOpp();
 						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
 						<label for="vilkaar">Kryss av for å <a class="blaaTekst" href="#" >godta vilkår:</a></label> 
-						<input class="litenCheckbox" type="checkbox" name="til" required>		
-						
+						<a href="vilkaar.php"> 
+							<input class="litenCheckbox" type="checkbox" name="til" required> 		
+						</a>
 					</div>
 				</div>	
 				<!-- Knapperad -->
@@ -110,9 +113,9 @@ $dblink = kobleOpp();
 		            	</a>
 					</div>
 					<div class="etterKolonnerKnapp">
-                     	<a href="bestillingBekreftelse">
+                     	<a href="bestillingBekreftelse.php">
 						 	<!-- Bekreft bestilling --> 
-                     		<input class="inputSubmit hovedKnapp" type="submit" value="bestill" name="bestill">
+                     		<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft bestilling" name="bestill">
 						</a>
 					</div>
 				</div>			

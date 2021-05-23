@@ -36,7 +36,7 @@ $dblink = kobleOpp();
 			<form class="skjemaBakgrunn">
 
 				<!-- Avbryt knapp -->
-				<a href = "index.php">
+				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
 
@@ -45,7 +45,7 @@ $dblink = kobleOpp();
 
                 <!-- Nedtrekksliste -->
                 <label for="sammeBur">Velg år</label>
-					<select class="inputSelect" name="velgÅr">
+					<select class="inputSelect litenInput" name="velgÅr">
 						<option value="2021">2021</option>
 						<option value="2020">2020</option>
 						<option value="2019">2019</option>

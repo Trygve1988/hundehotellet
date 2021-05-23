@@ -36,13 +36,13 @@ $dblink = kobleOpp();
             <form class="skjemaBakgrunn" method="POST">
                 
                 <!-- Avbryt knapp -->
-                <a href = "index.php">
+                <a href = "minSide.php">
                     <input class="avbrytKnapp" type="button" value="X">
                 </a>
 
                 <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Rediger informasjon</h2>
-                <p>Innlogget som: <span>bruker</span></p>
+    
                 <h3 class="overskrift2">Min profil</h3>
 
                 <div class="skjemaKolonner">
@@ -53,6 +53,9 @@ $dblink = kobleOpp();
 
                         <label for="fDato">Fødselsdato:</label>
                         <input class="inputDato" type="date" name="fDato">  
+
+                        <label for="tlf">Telefonnummer:</label>
+                        <input class="inputTekst" type="text" name="tlf">
 
                         <label for="adresse">Adresse:</label>
                         <input class="inputTekst" type="text" name="adresse">
@@ -65,9 +68,6 @@ $dblink = kobleOpp();
                         <!-- Labels og input i kolonne 2 -->
                         <label for="etternavn">Etternavn:</label>
                         <input class="inputTekst" type="text" name="etternavn">
-
-                        <label for="tlf">Telefonnummer:</label>
-                        <input class="inputTekst" type="text" name="tlf">
 
                         <label for="epost">E-post:</label>
                         <input class="inputTekst" type="text" name="epost">
@@ -91,7 +91,6 @@ $dblink = kobleOpp();
                         <a href="index.php">
                             <input class="hovedKnapp inputSubmit" type="submit" name="oppdaterBruker" value="Lagre"> <!-- HVOR SKAL DENNE LEDE?? -->
                         </a>
-                </div>
                 </div>
             </form>
         </div>	
