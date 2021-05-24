@@ -43,8 +43,15 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-
-                <h2 class="hovedOverskrift">Endre Hund</h2>
+				 
+				<!-- Avbryt knapp -->
+				<a href = "minSide.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>	
+                
+				<!-- Overskrift -->
+				<h2 class="hovedOverskrift">Endre Hund</h2>
+				
 				<div>
 					<label for="velgHundSelect">Velg hund:</label>
 					<select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
