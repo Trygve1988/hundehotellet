@@ -50,49 +50,49 @@ $dblink = kobleOpp();
 				</a>
 				
 				<!-- Overskrift -->	
-				<h2 class="hovedOverskrift">Bestill opphold</h2>
+				<h2 id="bestillOpphold4" class="hovedOverskrift">Bestill opphold</h2>
 
-				<h2 class="overskrift2">Oppsummering</h2>
+				<h2 id="oppSummering" class="overskrift2">Oppsummering</h2>
 				<!-- Her må det refereres til databsen! -->
 				<div class="mindreTekst">
-					<p><b>Hund(er):</b> <?php echo getValgteHunderNavn($dblink); ?> </p> 
-					<p><b>Dato:</b> <span>(<?php echo $startDato ?>)</span> til <span>(<?php echo $sluttDato ?>)</span> 
-					<p><b><u>Sum å betale: <span> <?php echo $totalPris ?> </span>kr</u></b></p>
+					<p><b id="hund">Hund(er):</b> <?php echo getValgteHunderNavn($dblink); ?> </p> 
+					<p><b id="dato">Dato:</b> <span>(<?php echo $startDato ?>)</span> - <span>(<?php echo $sluttDato ?>)</span> 
+					<p><b><u id="sumÅbetale">Sum å betale: <span> <?php echo $totalPris ?> </span>kr</u></b></p>
 				</div>
 
-				<h2 class="overskrift2" >Betaling</h2>
+				<h2 id="bestling" class="overskrift2" >Betaling</h2>
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->			
-						<label for="kortholder">Kortholder:</label>
+						<label id="kortholder" for="kortholder">Kortholder:</label>
 						<input class="inputTekst" type="text" name="kortholder">		
 
-						<label for="utlopsdato">Utløpsdato:</label>
+						<label id="utløpsdato" for="utlopsdato">Utløpsdato:</label>
 						<input class="inputDato" type="date" name="utlopsdato">
 					</div>
 					<div>
 						<!-- Labels og input i kolonne 2 -->
-						<label for="kortNr">Kortnummer:</label>
-						<input  class="inputTekst" type="text" name="til">			
+						<label id="kortNr" for="kortNr">Kortnummer:</label>
+						<input class="inputTekst" type="text" pattern="[0-9]{16}" name="til">			
 
 						<label for="ccv">CCV/CVC:</label>
 						<!-- ************************** CVC (Kristina) ************************* -->
 						<!--CVC modalen -->
 						<button id="cvcModalKnapp">?</button>
-						<input class="inputTekst" type="text" placeholder="De tre siste sifrene på cvv nummeret" name="cvv">
+						<input class="inputTekst" type="text" pattern="[0-9]{3}" name="cvv">
 						<!--CVC modalen -->
 						<div id="cvcModal" class="modal">
 							<!-- Modal innhold (dette hopper opp i modalen) -->
 							<div class="modal-innhold">
 								<span class="lukkModal">&times;</span>
-								<h1>Hvor finner jeg CVC koden?</h1>
+								<h1 id="finneCVC">Hvor finner jeg CVC koden?</h1>
 								<img class="cvvkode" src="/bilder/ccv.png" alt="Bilde av hvor du finner CVC koden på visakortet">
 							</div>
 						</div>
 						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
-						<label for="vilkaar">Kryss av for å <a class="blaaTekst" href="#" >godta vilkår:</a></label> 
+						<a id="vilkår" class="blaaTekst" href="vilkaar.php"> Kryss av for å godta vilkår:</a></label> 
 						<input class="litenCheckbox" type="checkbox" name="til" required>		
 						
 					</div>

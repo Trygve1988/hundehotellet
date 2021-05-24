@@ -47,8 +47,7 @@ var minSideTab      = ['Min Side', 'My Page'];
 var loggInnTab      = ['Logg Inn','Sign In'];
 var loggUtTab       = ['Logg ut', 'Logg out'];
 var registrerDegTab  = ['Registrer Deg', 'Register'];
-var admininOverskriftTab  = ['Admininstrer Brukere', 'Manage Users']; 
-var omOssOverskriftTab  = ['Om oss', 'About Us'];
+var omOssOverskriftTab  = ['Om oss', 'About us'];
 var omOssTextTab       = ['Bø Hundehotell holder til på Lektorvegen 91, i Bø i Telemark. Det er landelige omgivelser med store luftegårder, og fine turområder.Vi seks ansatt som jobber her på Bø Hundehotell, vi har vært i Hundehotell businessen i 6år, vi startet opp for først gang den 12.04.2010. Den gang var det barejeg og mannen min. Vi er alle hunde elskere på her på Bø Hundehotell, og eier eller er vant med hund fra før av. Din hund vil være trygg i våre hender. Vi håper vi ser deg og din hund her.','Bø Hundehotell is located at Lektorvegen 91, in Bø in Telemark. It is a rural setting with large airyards, and nice hiking areas. We six employees who work here at Bø Hundehotell, we have been in the Hundehotell business for 6 years, we started up for the first time on 12.04.2010. That time it was just me and my husband. We are all dog lovers here at Bø Hundehotell, and already own or are used to dogs. Your dog will be safe in our hands. We hope to see you and your dog here.' ];
 var velkommenTab1     = ['Velkommen til Bø Hundehotell','Welcome to Bø Hundehotell'];
 var velkommenTab2   = ['Norges BESTE Hundehotell for dine firbente venner','Norways BEST Dog Hotel for your four legged friends'];
@@ -103,7 +102,7 @@ var navSosialMedierTab = ['Sosiale medier','Social media'];
 var navBøskOssTab = ['Besøk oss','Visit Us'];
 var navKlikkTab = ['Klikk her for å se kartet','Click here to see the map'];
 var navSamerbeidTab = ['Samarbeidspartnere','Collaborators'];
-var kontaktOssTab2 = ['Kontakt oss','Contact Us'];
+var kontaktOssTab2 = ['Kontakt oss','Contact us'];
 var kontaktInfoTekstTab = ['Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.','If you have any questions, just contact us either by email or phone.'];
 var åpningstiderTab = ['Åpningstider:',"Opening hours:"];
 var åpningstider2Tab = ['08:00-18:00 Man-Tordag (10:00-16:00 Lør-Søndag)','08:00-18:00 Mon-Thuday (10:00-16:00 Sat-Sunda)'];
@@ -131,6 +130,15 @@ var allargiTab = ['allergi','Allergy'];
 var tidsperiodeTab = ['Tidsperiode','Time period'];
 var fraTab = ['Fra','From'];
 var tilTab = ['Til','To'];
+var oppSummeringTab = ['Oppsummering','Summary'];
+var hundTab = ['Hund(er):','Dog(s):'];
+var datoTab = ['Dato:','Date:'];
+var bestlingTab = ['Betaling','Payment'];
+var kortholderTab = ['Korteier:','Cardowner:'];
+var utløpsdatoTab = ['Utløpsdato:','Expiration date:'];
+var kortNrTab = ['Kortnummer:','Card number:'];
+var finneCVCTab = ['Hvor finner jeg CVC koden?','Where can I find the CVC code?'];
+var vilkårTab = ['Kryss av for å godtavilkår:','Check to accept terms:'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -152,7 +160,6 @@ var minSideLink = document.getElementById("minSideLink");
 var loggInnLink = document.getElementById("loggInnLink"); 
 var loggUtLink  = document.getElementById("loggUtLink");
 var registrerDegLink = document.getElementById("registrerDegLink");
-var admininOverskrift = document.getElementById("admininOverskrift"); 
 var omOssOverskrift = document.getElementById("omOssOverskrift");
 var omOssText = document.getElementById("omOssText");
 var velkommenNoText1 = document.getElementById("velkommenNoText1");
@@ -244,6 +251,16 @@ var bestillOpphold3 = document.getElementById("bestillOpphold3");
 var tidsperiode = document.getElementById("tidsperiode");
 var fra = document.getElementById("fra");
 var til = document.getElementById("til");
+var bestillOpphold4 = document.getElementById("bestillOpphold4");
+var oppSummering = document.getElementById("oppSummering");
+var hund = document.getElementById("hund");
+var dato = document.getElementById("dato");
+var bestling = document.getElementById("bestling");
+var kortholder = document.getElementById("kortholder");
+var utløpsdato = document.getElementById("utløpsdato");
+var kortNr = document.getElementById("kortNr");
+var finneCVC = document.getElementById("finneCVC");
+var vilkår = document.getElementById("vilkår");
 
 
 
@@ -536,4 +553,16 @@ if (bestillOpphold3 !== null) {
     tidsperiode.innerHTML = tidsperiodeTab[språk];
     fra.innerHTML = fraTab[språk];
     til.innerHTML = tilTab[språk];
+}
+if(bestillOpphold4 !== null) {
+    bestillOpphold4.innerHTML = bestillOppholdTab[språk];
+    oppSummering.innerHTML = oppSummeringTab[språk];
+    hund.innerHTML = hundTab[språk];
+    dato.innerHTML = datoTab[språk];
+    bestling.innerHTML = bestlingTab[språk];
+    kortholder.innerHTML = kortholderTab[språk];
+    utløpsdato.innerHTML = utløpsdatoTab[språk];
+    kortNr.innerHTML = kortNrTab[språk];
+    finneCVC.innerHTML = finneCVCTab[språk];
+    vilkår.innerHTML = vilkårTab[språk];
 }
