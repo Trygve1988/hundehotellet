@@ -284,17 +284,15 @@ main {
 	text-decoration: underline;
 
 }
-/* Skriv anmeldse textArea CSS */ 
-.anmeldseTilbakemelding textarea{
+/* Skriv anmeldelse textArea CSS */ 
+.anmeldelseTilbakemelding textarea{
 	resize: none;
 	text-align: justify;
-    font-family: Arial;
 }
 
 .anmeldseGodkjenning textarea {
 	resize: none;
 	text-align: justify;
-    font-family: Arial;
 }
 
 /*Kontant oss CSS for å kjøre tekst bold*/
@@ -423,10 +421,19 @@ input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder sele
 	font-size: 19px;
 }
 
-/* Textarea, høyde lik tre input- felt*/
+/* Textarea i kolonne, høyde lik tre input- felt*/
 .tekstfelt1 {
 	height: 250px;
 }
+
+/* Stor tekstboks, f.eks i minSideSkrivAnmeldelse FJERNES?
+textarea.storTekstboks {
+	column-count: 1;
+	text-align: justify;
+	column-width: 750px;
+
+}
+*/
 
 /* KNAPPER*/
 

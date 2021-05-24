@@ -16,39 +16,52 @@
 </head>
 <body>
 
-    <!-- ************************** fellesTop **************************** -->
+    <!-- ************************** Felles topp **************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** main ********************************** -->
+    <!-- ************************** Main *********************************** -->
     <main>
     	<!-- ************************ (Gunni) ****************************** -->
-        <!-- Anmeldelser -->
+        <!-- Hvit bakgrunn -->
         <div class="hvitBakgrunn">
+            
+            <!-- Skjemabakgrunn -->
             <form class="skjemaBakgrunn" method="POST">
             	
                 <!-- Avbryt knapp -->
-				<a href = "index.php">
+				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
 
-                <h2 class="hovedOverskrift" >Skriv Anmeldse</h2>
+                <!-- Overskrift -->
+                <h2 class="hovedOverskrift" >Skriv anmeldelse</h2>
 
-                <div class="anmeldseTilbakemelding">
-                    <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="100" rows="20"></textarea>
+                <!-- Tekstområde -->
+                <div class="anmeldelseTilbakemelding">
+                    <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="121" rows="20"></textarea>
                 </div>
-                <a href="minSide.php">
-                    <input class="inputButton" type="button" value="Avbryt" name = "Avbryt">
-                </a>
-                <input class="inputSubmit" type="submit" value="Send" name = "sendAnmeldelseKnapp">
 
+                <!--Knapperad-->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp-->
+						<a href="minSide.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Avbryt" name = "Avbryt">
+                        </a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Neste knapp-->
+						<input class="inputSubmit hovedKnapp2" type="submit" value="Send" name = "sendAnmeldelseKnapp">
+					</div>
+				</div>
+
+                <!-- Lagre anmeldelse -->
                 <?php lagreAnmeldelse($dblink); ?>
-
             </form> 
         </div>
-
     </main>
 
-    <!-- ************************** fellesBunn ************************** -->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 
