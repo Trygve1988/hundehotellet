@@ -40,7 +40,7 @@
 			<!-- Oppdater brukerInfo Skjema -->
 			<form class="skjemaBakgrunn" method="POST">
 
-                	<!-- Avbryt knapp -->
+                <!-- Avbryt knapp -->
 				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>	
