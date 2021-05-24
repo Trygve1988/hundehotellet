@@ -34,21 +34,20 @@ $dblink = kobleOpp();
 			<form class="skjemaBakgrunn" method="POST">	
 
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Logg inn</h2>	
+				<h2 id="loggInn" class="hovedOverskrift">Logg inn</h2>	
 
 				<div class="skjemaKolonner">
 					<div>
 						<!-- Labels og input i kolonne 1 -->
-						<label for="epost">E-post:</label>
+						<label id="epostLoggInn" for="epost">E-post:</label>
 						<input class="inputTekst" type="text" name="epost" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="test@ha.no">
 
-						<label for="passord">Passord:</label>
-						<input class="inputPassord" type="password" name="passord" required 
-						id="passord" value="123Ab%12">
+						<label id="passordloggInn" for="passord">Passord:</label>
+						<input class="inputPassord" type="password" name="passord" required id="passord" value="123Ab%12">
 
 						<!-- Vis passord checkbox  -->
 						<div class="visPassord">
-							<input class="vanligCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
+							<input id="visPassordLogInn" class="vanligCheckbox" type="checkbox" onclick="visPassord()">Vis Passord
 						</div>	
 					</div>
 				</div>
@@ -60,8 +59,8 @@ $dblink = kobleOpp();
 					</div>	
 					<!-- Glemt passord og Registrer deg linker -->
 					<div class="ekstraLinker"> 
-						<a class="link link1" href="#">Glemt passord</a>
-						<a class="link" href="registrerDeg.php">Registrer deg</a>
+						<a id="glemtPassord" class="link link1" href="#">Glemt passord</a>
+						<a id="registrerDeg" class="link" href="registrerDeg.php">Registrer deg</a>
 					</div>
 				</div>
 				<!-- ************************** (Trygve)************************** -->
