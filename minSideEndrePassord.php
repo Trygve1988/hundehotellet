@@ -42,31 +42,51 @@
 				    <input class="avbrytKnapp" type="button" value="X">
 			    </a>    
                 
-                <h2>Endre Passord</h2>
+                <h2 class="hovedOverskrift">Endre passord</h2>
 				<div class="skjemaKolonner">
 					<div class="soloKolonne">
                         <label for="gammeltPassord">Gammelt passord:</label>
                         <input class="inputTekst" type="text" id="gammeltPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" name="gammeltPassord" >
+                        
                         <label for="nyttPassord">Nytt passord:</label>   
                         <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >  
-                        <label for="bekreftNyttPassord">Bekreft nytt passord:</label>  
-                        <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >
-                    
+                        
+                        <!-- Passord rad -->
+						<div class="passordRad">
+							<!-- Vis passord checkbox -->
+							<div class="visPassord">
+								<label for="passordCheckbox">Vis Passord</label>
+								<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
+							</div>
+
+							<!-- Passord tilbakemelding -->
+							<div class="passordKrav">
+								<p>Passord krav:</p>
+								<p id="status" melding()></p>
+								<!-- Engelsk tilbakemelding --->
+								<p id="status2" melding2()></p>
+							</div>
+						</div>	
+                        <div class="gjentaPKolonne">
+                            <label for="bekreftNyttPassord">Bekreft nytt passord:</label>  
+                            <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >
+                        </div>
                     <!-- oppdaterBrukerInfo -->
                     <?php endrePassord($dblink) ?> 
                     </div>
                 </div> 
+
                 <!--Knapperad-->
-				<div class="knappeRad bunnKnapp">
+				<div class="knappeRad">
 					<div class="knapp1IRad">
-						<!-- Tilbake-knapp-->
+						<!-- Tilbakeknapp-->
 						<a href="minSide.php">
-                            <input class="litenKnapp" type="button" value="Tilbake">  
+                            <input class="inputButton mediumKnapp" type="button" value="Tilbake">  
                         <a>
 					</div>
 					<div class="etterKolonnerKnapp">
-						<!-- Neste-knapp-->
-						 <input class="litenKnapp" type="submit" value="Lagre"  name="lagre">
+						<!-- Lagre knapp-->
+						 <input class="inputSubmit mediumKnapp" type="submit" value="Lagre"  name="lagre">
 					</div>
 				</div>
             </form>
