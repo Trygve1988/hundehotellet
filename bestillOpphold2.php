@@ -46,51 +46,51 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Bestill opphold</h2>
-				<h3>Kontroller at informasjon om hunden din er oppdatert:</h3>
+				<h2 id="bestillOpphold2" class="hovedOverskrift">Bestill opphold</h2>
+				<h3 id="bekreft">Kontroller at informasjon om hunden din er oppdatert:</h3>
 				
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
 			
 						<!-- Labels og input i kolonne 1 -->
-						<label for="hNavn">Hundens navn:</label>
+						<label id="hundNavn" for="hNavn">Hundens navn:</label>
 						<input class="inputTekst" type="text" name="navn" value= <?php echo $h1->getNavn() ?> required/>
 				
-						<label for="rase">Rase:</label>
+						<label id="rase" for="rase">Rase:</label>
 						<input class="inputTekst" type="text" name="rase" value= <?php echo $h1->getRase() ?> />
 
 						<!-- Inputen for fødselsdato er date -->
-						<label for="fDato">Fødselsdato:</label>
+						<label id="fdato" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 
 						<!-- kjønn --> 
 						<?php $kjonn = $h1->getKjønn(); ?>
-						<label for="kjønn">kjønn:</label>
+						<label id="kjønn" for="kjønn">kjønn:</label>
 						<select class="inputSelect" name="kjønn"> 
 							<?php
 							if ($kjonn == "gutt") { 
-								?><option value="gutt" selected >gutt</option><?php
-								?><option value="jente">jente</option><?php
+								?><option id="hann" value="gutt" selected >Hann</option><?php
+								?><option id="tispe" value="jente">Tispe</option><?php
 							} 
 							else { 
-								?><option value="gutt">gutt</option><?php
-								?><option value="jente" selected>jente</option><?php
+								?><option id="hann2" value="gutt">Hann</option><?php
+								?><option id="tispe2" value="jente" selected>Tispe</option><?php
 							}
 							?>
 						<select> 
 
 						<!-- sterilisert --> 
 						<?php $sterilisert = $h1->getSterilisert(); ?>
-						<label for="sterilisert">sterilisert:</label>
+						<label id="sterilisert" for="sterilisert">sterilisert:</label>
 						<select class="inputSelect" name="sterilisert"> 
 							<?php
 							if ($sterilisert == "1") { 
-								?><option value="1" selected >ja</option><?php
-								?><option value="0">nei</option><?php
+								?><option id="ja" value="1" selected >ja</option><?php
+								?><option id="nei" value="0">nei</option><?php
 							} 
 							else { 
-								?><option value="1">ja</option><?php
-								?><option value="0" selected>nei</option><?php
+								?><option  value="1">ja</option><?php
+								?><option  value="0" selected>nei</option><?php
 							}
 							?>
 						<select> 
@@ -104,12 +104,12 @@ $dblink = kobleOpp();
 					<div>
 						<!-- løpeMedAndre --> 
 						<?php $løpeMedAndre = $h1->getLøpeMedAndre(); ?>
-						<label for="løpeMedAndre">løpeMedAndre:</label>
+						<label id="løpeMedAndre" for="løpeMedAndre">løpeMedAndre:</label>
 						<select class="inputSelect" name="løpeMedAndre"> 
 							<?php
 							if ($løpeMedAndre == "1") { 
-								?><option value="1" selected >ja</option><?php
-								?><option value="0">nei</option><?php
+								?><option id="ja2" value="1" selected >ja</option><?php
+								?><option id="nei2"value="0">nei</option><?php
 							} 
 							else { 
 								?><option value="1">ja</option><?php
@@ -120,16 +120,16 @@ $dblink = kobleOpp();
 
 						<!-- forType --> 
 						<?php $forID = $h1->getForID(); ?>
-						<label for="forID">forType:</label>
+						<label id="forType" for="forID">forType:</label>
 						<select class="inputSelect" name="forID"> 
 							<?php
 							if ($forID == "1") { 
-								?><option value="1" selected >vanlig</option><?php
-								?><option value="0">allergi</option><?php
+								?><option id="vanlig" value="1" selected >vanlig</option><?php
+								?><option id="allargi" value="0">allergi</option><?php
 							} 
 							else { 
-								?><option value="1">vanlig</option><?php
-								?><option value="0" selected>allergi</option><?php
+								?><option id="vanlig2" value="1">vanlig</option><?php
+								?><option id="allergi2" value="0" selected>allergi</option><?php
 							}
 							?>
 						<select> 

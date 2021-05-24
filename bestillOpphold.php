@@ -39,7 +39,7 @@ $dblink = kobleOpp();
 			<form id="bestillOpphold1Skjema" class="skjemaBakgrunn" method="POST">
 
 				<!-- Overskrift -->
-				<h2 id="bestillOpphold" class="hovedOverskrift">Bestill opphold</h2>
+				<h2 class="bestillOpphold" class="hovedOverskrift">Bestill opphold</h2>
 				<p id="bestillOppholdText">Bø Hundehotell har kapastitet til max 3 hunder i samme bur.</p>
             	<p id="bestillOppholdText2">Vennligst bestill flere ganger viss du ønsker å bestille opphold til flere en 3 hunder.</p><br>
 			

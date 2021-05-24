@@ -113,6 +113,21 @@ var bestillOppholdTextTab = ['Bø Hundehotell har kapasitet til max 3 hunder i s
 var bestillOppholdTextTab2 = ['Vennligst bestill flere ganger hvis du ønsker å bestille opphold til flere en 3 hunder.','Please book several times if you want to book stays for more than 3 dogs.'];
 var velgHunderTab = ['Velg hund(er):','Select dog (s):'];
 var registerHundTab = ['+ Registrer ny hund','+ Register new dog'];
+var bestillOppholdTab2 = ['Bestill opphold','Book a stay'];
+var bekreftTab = ['Kontroller at informasjon om hunden din er oppdatert:','Make sure your dogs information is up to date:'];
+var hundNavnTab = ['Hundens navn:','The Dogs name:'];
+var raseTab = ['Rase:','Race:'];
+var fdatoTab = [' Fødselsdato:','Date of birth:'];
+var kjønnTab = ['Kjønn:','Sex:'];
+var hannTab = ['Hann','Male'];
+var tispeTab = ['Tispe','Bitch'];
+var sterilisertTab = ['Sterilisert:','Sterilized:'];
+var jaTab = ['Ja','Yes'];
+var neiTab = ['Ja','Yes'];
+var løpeMedAndreTab = ['Løpe Med Andre:','Run With Others:'];
+var forTypeTab = ['For type:','Dog food type:'];
+var vanligTab = ['Vanlig','Normal'];
+var allargiTab = ['allergi','Allergy'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -200,6 +215,28 @@ var bestillOppholdText = document.getElementById("bestillOppholdText");
 var bestillOppholdText2 = document.getElementById("bestillOppholdText2");
 var velgHunder = document.getElementById("velgHunder");
 var registerHund = document.getElementById("registerHund");
+var bestillOpphold2 = document.getElementById("bestillOpphold2");
+var bekreft = document.getElementById("bekreft");
+var hundNavn = document.getElementById("hundNavn");
+var rase = document.getElementById("rase");
+var fdato = document.getElementById("fdato");
+var kjønn = document.getElementById("kjønn");
+var hann = document.getElementById("hann");
+var hann2 = document.getElementById("hann2");
+var tispe = document.getElementById("tispe");
+var tispe2 = document.getElementById("tispe2");
+var sterilisert = document.getElementById("sterilisert");
+var ja = document.getElementById("ja");
+var ja2 = document.getElementById("ja2");
+var nei = document.getElementById("nei");
+var nei2 = document.getElementById("nei2");;
+var løpeMedAndre = document.getElementById("løpeMedAndre");
+var forType = document.getElementById("forType");
+var vanlig = document.getElementById("vanlig");
+var vanlig2 = document.getElementById("vanlig2");
+var allargi = document.getElementById("allargi");
+var allargi2 = document.getElementById("allargi2");
+
 
 
 spraakKnapp.src = flaggTab[språk];
@@ -257,7 +294,7 @@ if (indextText2 !== null) {
 }
 if (priser !== null) {
     priser.innerHTML = priserTab[språk]; 
-}navn1
+}
 if (indextText3 !== null) {
     indextText3.innerHTML = indextTextTab3[språk]; 
 }
@@ -398,7 +435,7 @@ if (kontaktInfoTekst !== null) {
 } 
 if (åpningstider !== null) {
     åpningstider.innerHTML = åpningstiderTab[språk];  
-} epost
+} 
 if (åpningstider2 !== null) {
     åpningstider2.innerHTML = åpningstider2Tab[språk];  
 } 
@@ -407,7 +444,7 @@ if (epost !== null) {
 } 
 if (adresseKontkatoss !== null) {
     adresseKontkatoss.innerHTML = adresseKontkatossTab[språk];  
-} bestillOppholdText
+} 
 if (bestillOpphold !== null) {
     bestillOpphold.innerHTML = bestillOppholdTab[språk];  
 }
@@ -422,4 +459,79 @@ if (velgHunder !== null) {
 }
 if (registerHund !== null) {
     registerHund.innerHTML = registerHundTab[språk];  
+}
+if (bestillOpphold2 !== null) {
+    bestillOpphold2.innerHTML = bestillOppholdTab2[språk];  
+} 
+if (bekreft !== null) {
+    bekreft.innerHTML = bekreftTab[språk];  
+} 
+if (hundNavn !== null) {
+    hundNavn.innerHTML = hundNavnTab[språk];  
+} 
+if (rase !== null) {
+    rase.innerHTML = raseTab[språk];  
+} 
+if (fdato !== null) {
+    fdato.innerHTML = fdatoTab[språk];  
+} 
+if (kjønn !== null) {
+    kjønn.innerHTML = kjønnTab[språk];  
+}
+if (hann !== null) {
+    hann.innerHTML = hannTab[språk];  
+}
+if (hann2 !== null) {
+    hann2.innerHTML = hannTab[språk];  
+}
+if (tispe !== null) {
+    tispe.innerHTML = tispeTab[språk];  
+} 
+if (tispe2 !== null) {
+    tispe2.innerHTML = tispeTab[språk];  
+}
+if (sterilisert !== null) {
+    sterilisert.innerHTML = sterilisertTab[språk];  
+}
+if (ja !== null) {
+    ja.innerHTML = jaTab[språk];  
+}
+if (ja2 !== null) {
+    ja2.innerHTML = jaTab[språk];  
+}
+if (ja3 !== null) {
+    ja3.innerHTML = jaTab[språk];  
+}
+if (ja4 !== null) {
+    ja4.innerHTML = jaTab[språk];  
+}
+if (nei !== null) {
+    nei.innerHTML = neiTab[språk];  
+}
+if (nei2 !== null) {
+    nei2.innerHTML = neiTab[språk];  
+}
+if (nei3 !== null) {
+    nei3.innerHTML = neiTab[språk];  
+} 
+if (nei4 !== null) {
+    nei4.innerHTML = neiTab[språk];  
+} 
+if (løpeMedAndre !== null) {
+    løpeMedAndre.innerHTML = løpeMedAndreTab[språk];  
+} 
+if (forType !== null) {
+    forType.innerHTML = forTypeTab[språk];  
+}
+if (vanlig !== null) {
+    vanlig.innerHTML = vanligTab[språk];  
+}
+if (vanlig2 !== null) {
+    vanlig2.innerHTML = vanligTab[språk];  
+}
+if (allargi !== null) {
+    allargi.innerHTML = allargiTab[språk];  
+}
+if (allargi2 !== null) {
+    allargi2.innerHTML = allargiTab[språk];  
 }
