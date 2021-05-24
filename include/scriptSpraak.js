@@ -82,7 +82,8 @@ var overSkriftTab3  = ['Seng:','Bed:'];
 var overSkriftTab4  = ['Vaksinasjonsattest:','Vaccination certificate:'];
 var overSkriftTab5  = ['Veterinær:','Veterinarian:'];
 var overSkriftTab6  = ['Annet:','Other:'];
-var infomasjonTab1 = ['Utsjekking mellom kl 09.00-12.00, Innsjekking mellom kl 12-00-16.00','Check-out between 09.00-12.00, Check-in between 12-00-16.00'];
+var infomasjonTab = ['Utsjekking mellom kl 09.00-12.00,','Check-out between 09.00-12.00,'];
+var infomasjonTab1 = ['Innsjekking mellom kl 12-00-16.00','Check-in between 12-00-16.00'];
 var infomasjonTab2 = ['- Vi bruker Royal Canin og vom tilpasset hundens alder og aktivitestsnivå. Hvis du vil at hunden skal ha annen mat, vennligst ta kontakt.','- We use Royal Canin and rumen adapted to the dogs age and activity test level. If you want the dog to have other food, please get in touch.'];
 var infomasjonTab3 = ['- Mat inngår i prisen på oppholdet.','- Food is included in the price'];
 var infomasjonTab4 = ['- Ta gjerne med noe hunden kan ligge på for eksempel madrass eller teppe','- Feel free to bring something the dog can lie on, for example, a mattress or blanket'];
@@ -183,6 +184,7 @@ var overSkrift3 = document.getElementById("overSkrift3");
 var overSkrift4 = document.getElementById("overSkrift4");
 var overSkrift5 = document.getElementById("overSkrift5");
 var overSkrift6 = document.getElementById("overSkrift6");
+var infomasjonText = document.getElementById("infomasjonText");
 var infomasjonText1 = document.getElementById("infomasjonText1");
 var infomasjonText2 = document.getElementById("infomasjonText2");
 var infomasjonText3 = document.getElementById("infomasjonText3");
@@ -365,6 +367,9 @@ if (overSkrift5 !== null) {
 }
 if (overSkrift6 !== null) {
     overSkrift6.innerHTML = overSkriftTab6[språk]; 
+}
+if (infomasjonText !== null) {
+    infomasjonText.innerHTML = infomasjonTab[språk]; 
 }
 if (infomasjonText1 !== null) {
     infomasjonText1.innerHTML = infomasjonTab1[språk]; 
