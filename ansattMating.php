@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="include/style.css" rel="stylesheet" type="text/css">
+    <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
+	<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
     <script src="include/script.js" defer> </script>
     <script src="include/scriptSpraak.js" defer> </script>
 </head>
@@ -28,18 +30,19 @@
 
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
+
+            <?php registrerMatingAlle($dblink); ?>
+            <?php slettAlleMatinger($dblink); ?>
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
                 <h2>Mating</h2>
-                <?php visAlleHunderPaaOppholdNaa($dblink); ?>
+                <?php //visAlleHunderPaaOppholdNaa($dblink); ?>
                 <?php visAlleRegistrerteMatingerIDag($dblink); ?>
 
                 <input class="litenKnapp" type="submit" name="registrerMatingAlle" value="Registrer Mating (alle)">
                 <input class="litenKnapp" type="submit" name="slettAlle" value="Slett dagens mating"> 
 
-                <?php registrerMatingAlle($dblink); ?>
-                <?php slettAlleMatinger($dblink); ?>
             </form>
 
         </div>

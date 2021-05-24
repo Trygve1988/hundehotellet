@@ -40,6 +40,9 @@ $dblink = kobleOpp();
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Registrer ny bruker</h2>
 
+				<!-- registrerDeg (Trygve) -->
+				<?php registrerDeg($dblink); ?> 
+
 				<div class="skjemaKolonner">
 					
 					<!-- Labels og input i kolonne 1 -->
@@ -108,8 +111,6 @@ $dblink = kobleOpp();
 					<p class="ekstraLink"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
 
-				<!-- Registrer deg (Trygve) -->
-				<?php registrerDeg($dblink); ?> 
 			</form>	
 		</div>		
 	</main>

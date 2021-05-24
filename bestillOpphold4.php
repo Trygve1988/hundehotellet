@@ -52,6 +52,9 @@ $dblink = kobleOpp();
 				<!-- Overskrift -->	
 				<h2 id="bestillOpphold4" class="hovedOverskrift">Bestill opphold</h2>
 
+				<!-- Bestill opphold -->
+				<?php bestilling($dblink); ?> 
+
 				<h2 id="oppSummering" class="overskrift2">Oppsummering</h2>
 				<!-- Her må det refereres til databsen! -->
 				<div class="mindreTekst">
@@ -97,6 +100,7 @@ $dblink = kobleOpp();
 						
 					</div>
 				</div>	
+
 				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
@@ -113,9 +117,6 @@ $dblink = kobleOpp();
 					</div>
 				</div>			
 			</form>
-			
-			<!-- Bestill opphold -->
-			<?php bestilling($dblink); ?> 
 
 		</div>
 	</main>

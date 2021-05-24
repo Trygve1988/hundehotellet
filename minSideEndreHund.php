@@ -56,23 +56,77 @@
                         <!-- fdato --> 
                         <label for="fdato">fdato:</label>
                         <input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
+						
                         <!-- kjønn --> 
-                        <label for="kjønn">kjønn:</label>
-                        <input class="inputTekst" type="text" name="kjønn" value= <?php echo $h1->getKjønn() ?> > 
-                    </div>
-                    <div>
+						<?php $kjonn = $h1->getKjønn(); ?>
+						<label id="kjønn" for="kjønn">kjønn:</label>
+						<select class="inputSelect" name="kjønn"> 
+							<?php
+							if ($kjonn == "gutt") { 
+								?><option id="hann" value="gutt" selected >Hann</option><?php
+								?><option id="tispe" value="jente">Tispe</option><?php
+							} 
+							else { 
+								?><option id="hann2" value="gutt">Hann</option><?php
+								?><option id="tispe2" value="jente" selected>Tispe</option><?php
+							}
+							?>
+						<select> 
+
                         <!-- sterilisert --> 
-                        <label for="sterilisert">sterilisert: </label>
-                        <input class="inputTekst" type="text" name="sterilisert" value= <?php echo $h1->getSterilisert() ?> > 
-                        <!-- løpeMedAndre, -->  
-                        <label for="løpeMedAndre">løpeMedAndre:</label>
-                        <input class="inputTekst" type="text" name="løpeMedAndre" value= <?php echo $h1->getLøpeMedAndre() ?> > 
-                        <!-- forType -->  
-                        <label for="forID">forType:</label>
-                        <input class="inputTekst" type="text" name="forID" value= <?php echo $h1->getForID() ?>> 
-                        <!-- info -->  
-                        <label for="info">info:</label>
-                        <input class="inputTekst" type="text" name="info" value= <?php echo $h1->getInfo() ?>>
+						<?php $sterilisert = $h1->getSterilisert(); ?>
+						<label id="sterilisert" for="sterilisert">sterilisert:</label>
+						<select class="inputSelect" name="sterilisert"> 
+							<?php
+							if ($sterilisert == "1") { 
+								?><option id="ja" value="1" selected >Ja</option><?php
+								?><option id="nei" value="0">Nei</option><?php
+							} 
+							else { 
+								?><option  value="1">Ja</option><?php
+								?><option  value="0" selected>Nei</option><?php
+							}
+							?>
+						<select> 
+                    </div>
+
+                    <div>
+                        <!-- løpeMedAndre --> 
+						<?php $løpeMedAndre = $h1->getLøpeMedAndre(); ?>
+						<label id="løpeMedAndre" for="løpeMedAndre">løpeMedAndre:</label>
+						<select class="inputSelect" name="løpeMedAndre"> 
+							<?php
+							if ($løpeMedAndre == "1") { 
+								?><option id="ja2" value="1" selected >ja</option><?php
+								?><option id="nei2"value="0">nei</option><?php
+							} 
+							else { 
+								?><option value="1">ja</option><?php
+								?><option value="0" selected>nei</option><?php
+							}
+							?>
+						<select> 
+
+						<!-- forType --> 
+						<?php $forID = $h1->getForID(); ?>
+						<label id="forType" for="forID">forType:</label>
+						<select class="inputSelect" name="forID"> 
+							<?php
+							if ($forID == "1") { 
+								?><option id="vanlig" value="1" selected >vanlig</option><?php
+								?><option id="allargi" value="0">allergi</option><?php
+							} 
+							else { 
+								?><option id="vanlig2" value="1">vanlig</option><?php
+								?><option id="allergi2" value="0" selected>allergi</option><?php
+							}
+							?>
+						<select>  
+                       
+                        <!-- info 
+						<label for="info">Ekstra informasjon:</label>-->
+						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
+
                     </div>
                 </div>
 

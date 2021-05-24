@@ -69,7 +69,11 @@
                         } ?>
                     </select>
                 </div>
-                <?php minHundTab($dblink); ?>
+                <?php 
+                if ( isset($_SESSION['minSideHund']) ) {  
+                    minHundTab($dblink); 
+                }
+                ?>
                 <!-- Registrer hund knapp -->    
                 <a href="registrerHundMS.php">
                     <input class="inputButton mediumKnapp" type="button" value="Registrer hund">
@@ -85,9 +89,10 @@
                         <input class="inputButton mediumKnapp" type="button" value="Slett hund">  
                     </a>               
                 <?php } ?>
+                <br><br><br>
 
-                <!-- Mine opphold --> 
-                <h2 class="overskrift2">Mine Opphold</h2>
+
+                <!-- Bestillinger --> 
                 <?php visMineOpphold($dblink); ?> 
                 
                 <?php if (harOpphold($dblink)) { ?>              

@@ -199,6 +199,44 @@ function lagOption($verdi) {
     ?> <option value= <?php echo $verdi?> > <?php echo $verdi?> </option><?php
 }
 
+function registrerHund($dblink) {
+    if (isset($_POST['registrer'])) { 
+        $navn = $_POST['navn'];
+        $rase = $_POST['rase'];
+        $fdato = $_POST['fdato'];
+        if ( empty($fdato )) {
+            $fdato = "2000-01-01";
+        }
+        $kjønn = $_POST['kjønn'];
+        $sterilisert = $_POST['sterilisert'];
+        $løpeMedAndre = $_POST['løpeMedAndre'];
+        $info = $_POST['info'];
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $forID = $_POST['forID'];
+
+        $sql = "INSERT INTO hund(navn,rase,fdato,kjønn, sterilisert,løpeMedAndre,info,brukerID,forID)
+        VALUES ('$navn','$rase','$fdato','$kjønn','$sterilisert','$løpeMedAndre','$info','$brukerID','$forID');";
+        $resultat = mysqli_query($dblink, $sql);
+
+        //får tak i hundID
+        $hundID; 
+        $sql = "SELECT MAX(hundID) FROM hund;"; 
+        $resultat = mysqli_query($dblink, $sql); 
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            $hundID = implode($rad);
+        }
+
+        echo "<br>".'<i style="color:green";> Hund registrert! </i>'; 
+        //header('Location: bestillOpphold.php');
+
+        //viss ikke $_SESSION['minSideHund'] er satt så setter vi den nå
+        if ($_SESSION['minSideHund'] == null) {
+            $_SESSION['minSideHund'] = $hundID; 
+        }
+    }
+}
+
 function setAktivHund($dblink,$hundID) {
     // setter valgt hund-objekt sesjonsvariabel
     $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
@@ -221,9 +259,35 @@ function setAktivHund($dblink,$hundID) {
     $sterilisert,$løpeMedAndre,$info,$brukerID,$forID);
 
     $_SESSION['aktivHund'] = $hund;
-
 }
 
+function bestillOppholdendreHund($dblink) {
+    if (isset($_POST['bekreftHundInfo'])) {  
+        $hund = $_SESSION['aktivHund'];
+        $hundID = $hund->getHundID();
+        $navn = $_POST['navn'];
+        $rase = $_POST['rase'];
+        $fdato = $_POST['fdato'];
+        $kjønn = $_POST['kjønn'];
+
+        $sterilisert = $_POST['sterilisert'];
+        $løpeMedAndre = $_POST['løpeMedAndre'];
+        $info = $_POST['info'];
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $forID = $_POST['forID'];
+
+        $sql = "UPDATE hund SET navn = '$navn', rase = '$rase', 
+        fdato = '$fdato', kjønn = '$kjønn', 
+        sterilisert = '$sterilisert', løpeMedAndre = '$løpeMedAndre', info = '$info', 
+        brukerID = '$brukerID', forID = '$forID' 
+        WHERE hundID = $hundID;";
+        $resultat = mysqli_query($dblink, $sql);
+        echo "hund " . $hundID . " - ". $navn . " oppdatert" . "<br>";
+        setAktivHund($dblink,$hundID);
+        //header('Location: minSide.php');
+    }
+}
 // ************************** 1) Index **************************
 // ************************** 2) Aktuelt  **************************
 // ************************** 3) Om Oss  **************************
@@ -371,7 +435,7 @@ function registrerDeg($dblink) {
             $sql = "INSERT INTO bruker(epost,passord,brukerType,fornavn,etternavn,tlf,adresse) 
                     VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse');";
             $resultat = mysqli_query($dblink, $sql);
-            //loggInn($dblink);
+            loggInn($dblink);
             echo "<br>".'<i style="color:green; position:absolute";"> Du er nå registrert! </i>'; 
         }
     }
@@ -399,7 +463,6 @@ function visAlleInnlegg($dblink) {
         echo $rad['tekst'];
     }
 }
-
 
 // ********************* Gunni - Min side - Tabeller ********************* 
 
@@ -448,52 +511,90 @@ function minProfilTab($dblink) {
 
 //Mine hunder tabell
 function minHundTab($dblink) {
-    
-    // $brukerID
-    $hundID = $_SESSION['minSideHund'];
+    //if (isset($_POST['minSideHund'])) {     
+        // $brukerID
+        $hundID = $_SESSION['minSideHund'];
 
-    // SQL-spørring
-    $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
+        // SQL-spørring
+        $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
 
-    //SQL-resultat -> Tabellrader
-    $resultat = mysqli_query($dblink, $sql);
-    
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        echo "<table class=\"toKolTab  minSideToKolTab\">";	
-            echo "<tr>";
-            echo "<th class=\"thKolonne\">Navn</th>";
-                echo "<td>". $rad['navn'] ."</td>";
+        //SQL-resultat -> Tabellrader
+        $resultat = mysqli_query($dblink, $sql);
+        
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            echo "<table class=\"toKolTab  minSideToKolTab\">";	
+                echo "<tr>";
+                echo "<th class=\"thKolonne\">Navn</th>";
+                    echo "<td>". $rad['navn'] ."</td>";
+                    echo "</tr>";
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Rase</th>";
+                    echo "<td>". $rad['rase'] . "</td>";
                 echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Rase</th>";
-                echo "<td>". $rad['rase'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Fødselsdato</th>";
-                echo "<td>". $rad['fdato'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Kjønn</th>";
-                echo "<td>". $rad['kjønn'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Sterilisert</th>";
-                echo "<td>". $rad['sterilisert']. "</td>";
-             echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Kan omgås andre hunder</th>";
-                echo "<td>". $rad['løpeMedAndre'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Fòrtype</th>";
-                echo "<td>". $rad['forID'] . "</td>";    
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Ekstra informasjon</th>";
-                echo "<td>". $rad['info'] . "</td>";
-            echo "</tr>";
-        echo "</table>";
-    } 
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Fødselsdato</th>";
+                    echo "<td>". $rad['fdato'] . "</td>";
+                echo "</tr>";
+
+               //kjønn
+               $kjønn;
+               if ($rad['kjønn'] == "gutt") {
+                   $kjønn = "Hann"; 
+               }
+               else {
+                   $kjønn = "Tispe"; 
+               }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Kjønn</th>";
+                    echo "<td>". $kjønn . "</td>";
+                echo "</tr>";
+
+                //sterilisert
+                $sterilisert;
+                if ($rad['sterilisert'] == 1) {
+                    $sterilisert = "Ja"; 
+                }
+                else {
+                    $sterilisert = "Nei"; 
+                }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Sterilisert</th>";
+                    echo "<td>". $sterilisert . "</td>";
+                echo "</tr>";
+
+                //løpeMedAndre
+                $løpeMedAndre;
+                if ($rad['løpeMedAndre'] == 1) {
+                    $løpeMedAndre = "Ja"; 
+                }
+                else {
+                    $løpeMedAndre = "Nei"; 
+                }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Kan omgås andre hunder</th>";
+                    echo "<td>". $løpeMedAndre . "</td>";
+                echo "</tr>";
+
+                //løpeMedAndre
+                $forID;
+                if ($rad['forID'] == 1) {
+                    $forID = "Vanlig"; 
+                }
+                else {
+                    $forID = "Allergi"; 
+                }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Fòrtype</th>";
+                    echo "<td>". $forID . "</td>";    
+                echo "</tr>";
+
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Ekstra informasjon</th>";
+                    echo "<td>". $rad['info'] . "</td>";
+                echo "</tr>";
+            echo "</table>";
+        } 
+    //}
 }
 
 // Mine opphold tabell

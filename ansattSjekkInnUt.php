@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="include/style.css" rel="stylesheet" type="text/css">
+    <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
+	<script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
     <script src="include/script.js" defer> </script>
     <script src="include/scriptSpraak.js" defer> </script>
 </head>
@@ -32,6 +34,11 @@
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
 
+                <?php sjekkInn($dblink); ?>
+                <?php sjekkUt($dblink); ?>
+                <?php nullStillInnsjekkinger($dblink); ?>
+                <?php nullStillUtsjekkinger($dblink); ?>
+
                 <!-- 2a visSkalSjekkeInnIDag -->
                 <?php visSkalSjekkeInnIDag($dblink); ?>
 
@@ -44,17 +51,13 @@
                 </select>
 
                 <!-- sjekkInnKnapp --> 
-                <input class="litenKnapp" type="submit" value="Sjekk inn" name="sjekkInnKnapp">
-                <?php sjekkInn($dblink); ?>
+                <input class="litenKnapp" type="submit" value="Sjekk Inn" name="sjekkInnKnapp">
 
                 <!-- test: nullstillKnapp --> 
-                <input class="litenKnapp" type="submit" value="Angre" name="nullstillInnsjekkingerKnapp">
-                <?php nullStillInnsjekkinger($dblink); ?>
-
-
+                <input class="litenKnapp" type="submit" value="Nullstill" name="nullstillInnsjekkingerKnapp">
+            
                 <!-- *********** SjekkeUt *********** -->
                 <?php visSkalSjekkeUtIDag($dblink); ?>
-
                 <!-- skal sjekkes Ut hunder -->
                 <select class="litenSelect" name="sjekkUtSelect">
                     <?php $hunder = lagSkalSjekkesUtTab($dblink);
@@ -64,13 +67,11 @@
                 </select>
 
                 <!-- sjekkUtKnapp --> 
-                <input class="litenKnapp" type="submit" value="Sjekk ut" name="sjekkUtKnapp">
-                <?php sjekkUt($dblink); ?>
-
+                <input class="litenKnapp" type="submit" value="Sjekk Ut" name="sjekkUtKnapp">
+                
                 <!-- test: nullstillKnapp --> 
-                <input class="litenKnapp" type="submit" value="Angre" name="nullStillUtsjekkingerKnapp">
-                <?php nullStillUtsjekkinger($dblink); ?>
-
+                <input class="litenKnapp" type="submit" value="Nullstill" name="nullStillUtsjekkingerKnapp">
+                
             </form>
         </div>
     </main>
