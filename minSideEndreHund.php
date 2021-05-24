@@ -51,7 +51,7 @@
                 
 				<!-- Overskrift -->
 				<h2 class="hovedOverskrift">Endre Hund</h2>
-				
+
 				<div>
 					<label for="velgHundSelect">Velg hund:</label>
 					<select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
@@ -172,7 +172,6 @@
 
          <!-- oppdaterBrukerInfo -->
          <?php endreHund($dblink); ?> 
-
     </main>
 
     <!-- ************************** Felles bunn **************************-->
