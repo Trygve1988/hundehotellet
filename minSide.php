@@ -46,13 +46,13 @@
 
                 <div class="knapperad">
                     <a href="minSideEndreBrukerInfo.php">
-                        <input class="inputButton  mediumKnapp" type="button" value="Endre Bruker" name="Endre Bruker">
+                        <input class="inputButton  mediumKnapp" type="button" value="Endre brukerinfo" name="Endre Bruker">
                     </a>
                     <a href="minSideEndrePassord.php"> 
-                        <input class="inputButton  mediumKnapp" type="button" value="Endre Passord" name="Endre Passord">
+                        <input class="inputButton  mediumKnapp" type="button" value="Endre passord" name="Endre Passord">
                     </a>
                     <a href="minSideSlettBruker.php"> 
-                        <input class="inputButton  mediumKnapp" type="button" value="Slett Bruker">
+                        <input class="inputButton  mediumKnapp" type="button" value="Slett bruker">
                     </a>
                 </div>
 
@@ -70,17 +70,17 @@
                 <?php minHundTab($dblink); ?>
                 <!-- Registrer hund knapp -->    
                 <a href="registrerHundMS.php">
-                    <input class="inputButton mediumKnapp" type="button" value="Registrer Hund">
+                    <input class="inputButton mediumKnapp" type="button" value="Registrer hund">
                 </a>
                 
                 <?php if (harHund($dblink)) { ?>
                     <!-- Endre hund knapp -->  
                     <a href="minSideEndreHund.php">
-                        <input class="inputButton mediumKnapp" type="button" value="Endre Hund">  
+                        <input class="inputButton mediumKnapp" type="button" value="Endre hund">  
                     </a>
                     <!-- Slett hund knapp -->  
                     <a href="minSideSlettHund.php">
-                        <input class="inputButton mediumKnapp" type="button" value="Slett Hund">  
+                        <input class="inputButton mediumKnapp" type="button" value="Slett hund">  
                     </a>               
                 <?php } ?>
 
@@ -91,15 +91,15 @@
                     <!--Knapperad-->
                     <div class="knappeRad">
                         <div class="knapp1IRad">
-                            <!-- Tilbake-knapp-->
+                            <!-- Avbestill knapp -->
                             <a href="minSideAvbestill.php">
                                 <input class="inputButton mediumKnapp" type="button" value="Avbestill" name="Avbestill"> 
                             </a> 
                         </div>
                         <div class="etterKolonnerKnapp">
-                            <!-- Neste-knapp-->
+                            <!-- Skriv anmneldese knapp-->
                             <a class="" href="minSideSkrivAnmeldelse.php">
-                                <input class="inputButton mediumKnapp" type="button" value="Skriv Anmeldelse" name="Skriv Anmeldelse">
+                                <input class="inputButton mediumKnapp" type="button" value="Skriv anmeldelse" name="Skriv Anmeldelse">
                             </a>	
                         </div>
                     </div>
