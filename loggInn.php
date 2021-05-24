@@ -47,7 +47,7 @@ $dblink = kobleOpp();
 
 						<!-- Vis passord checkbox  -->
 						<div class="visPassord">
-							<label id="visPassordLogInn" for="visPassord">Vis Passord</label> <input id="visPassordLogInn" class="vanligCheckbox" type="checkbox" onclick="visPassord()">
+							<label id="visPassordLogInn" for="visPassord">Vis Passord</label> <input class="vanligCheckbox" type="checkbox" onclick="visPassord()">
 						</div>	
 					</div>
 				</div>
