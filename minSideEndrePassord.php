@@ -34,37 +34,43 @@
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
-            	
-
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
+                
                 <!-- Avbryt knapp -->
-			    <a href = "index.php">
+			    <a href = "minSide.php">
 				    <input class="avbrytKnapp" type="button" value="X">
 			    </a>    
                 
                 <h2>Endre Passord</h2>
 				<div class="skjemaKolonner">
-					<div class="kolonne1">
-                        <label for="gammeltPassord">Gammelt Passord:</label>
+					<div class="soloKolonne">
+                        <label for="gammeltPassord">Gammelt passord:</label>
                         <input class="inputTekst" type="text" id="gammeltPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" name="gammeltPassord" >
-                        <label for="nyttPassord">Nytt Passord:</label>   
+                        <label for="nyttPassord">Nytt passord:</label>   
                         <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >  
-                        <label for="bekreftNyttPassord">Bekreft Nytt Passord:</label>  
+                        <label for="bekreftNyttPassord">Bekreft nytt passord:</label>  
                         <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >
+                    
+                    <!-- oppdaterBrukerInfo -->
+                    <?php endrePassord($dblink) ?> 
                     </div>
                 </div> 
-
-                <a href="minSide.php">
-                    <input class="litenKnapp" type="button" value="Tilbake">  
-                 <a>
-                 <input class="litenKnapp" type="submit" value="Lagre"  name="lagre">
-
+                <!--Knapperad-->
+				<div class="knappeRad bunnKnapp">
+					<div class="knapp1IRad">
+						<!-- Tilbake-knapp-->
+						<a href="minSide.php">
+                            <input class="litenKnapp" type="button" value="Tilbake">  
+                        <a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Neste-knapp-->
+						 <input class="litenKnapp" type="submit" value="Lagre"  name="lagre">
+					</div>
+				</div>
             </form>
         </div> 
-         <!-- 2b oppdaterBrukerInfo -->
-        <?php endrePassord($dblink) ?> 
-
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->
