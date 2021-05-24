@@ -263,9 +263,6 @@ if (registrerDegLink !== null) {
     registrerDegLink.innerHTML = registrerDegTab[språk];
 }
 // step 3) sett objektet til valgt språk i språktabellen
-if (admininOverskrift !== null) {
-    admininOverskrift.innerHTML = admininOverskriftTab[språk]; //test
-}
 if (omOssOverskrift !== null) {
     omOssOverskrift.innerHTML = omOssOverskriftTab[språk]; 
 }
