@@ -76,7 +76,7 @@
                     </div>
                 </div> 
 
-                <!--Knapperad -->
+                <!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
 						<!-- Tilbakeknapp -->
@@ -93,7 +93,7 @@
         </div> 
     </main>
 
-    <!-- ************************** Felles bunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    
