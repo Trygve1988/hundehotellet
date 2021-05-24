@@ -1,6 +1,6 @@
 <?php
 include_once "include/funksjoner.php";
-include_once "include/funksjonerBestillOpphold.php";
+include_once "include/funksjonerMinSide.php";
 session_start();
 $dblink = kobleOpp();
 ?>
@@ -94,20 +94,11 @@ $dblink = kobleOpp();
 						<textarea class="tekstboks tekstfelt1" name="info"></textarea>					
 					</div>
 				</div>
+				
+				<!-- registrerHund -->
+				<?php minSideRegistrerHund($dblink); ?>
 
-				<!-- Tilbake til Min Side -->	
-				<div> 
-					<a href="minSide.php">
-						<input class="inputButton ekstraKnapp" type="button" value="Tilbake"> 
-					</a>
-					
-				</div>
-					<!-- Registrer hund  -->
-					<a href="hundRegistrertBekreftelse.html">
-						<input class="inputSubmit hovedKnapp2" type="submit" name="registrer" value="Registrer hund"> 
-					</a>
-
-					<!-- Knapperad -->
+				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
 						
@@ -127,8 +118,7 @@ $dblink = kobleOpp();
 			</form>
 		</div>
 
-		<!-- registrerHund -->
-		<?php registrerHund($dblink); ?>
+
 
 	</main>
 

@@ -85,12 +85,12 @@ $dblink = kobleOpp();
 						<select class="inputSelect" name="sterilisert"> 
 							<?php
 							if ($sterilisert == "1") { 
-								?><option id="ja" value="1" selected >ja</option><?php
-								?><option id="nei" value="0">nei</option><?php
+								?><option id="ja" value="1" selected >Ja</option><?php
+								?><option id="nei" value="0">Nei</option><?php
 							} 
 							else { 
-								?><option  value="1">ja</option><?php
-								?><option  value="0" selected>nei</option><?php
+								?><option  value="1">Ja</option><?php
+								?><option  value="0" selected>Nei</option><?php
 							}
 							?>
 						<select> 

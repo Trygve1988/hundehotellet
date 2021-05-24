@@ -28,6 +28,9 @@
         <!-- 2a erLoggetInn sjekk -->
         <?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
+        <!-- Hvit bakgrunn -->
+		<div class="hvitBakgrunn">
+
         <form class="skjema" method="POST"> 
             <h1>Avbestill</h1>
 
@@ -37,9 +40,9 @@
                 <div> 
                     <!-- velgBestilling select --> 
                     <select id="bestillinger" value="bestillinger" name="bestillinger">
-                        <?php $bestillingTab = lagIkkeBegyntBestillingTabForAnsatt($dblink);  
+                        <?php //$bestillingTab = lagIkkeBegyntBestillingTabForAnsatt($dblink);  
                         for ($i=0; $i<count($bestillingTab); $i++) {
-                            lagBestillingOption($bestillingTab[$i]);
+                            //lagBestillingOption($bestillingTab[$i]);
                         } ?>
                     </select>
                     <!-- velgBestilling knapp --> 
@@ -48,8 +51,10 @@
                 </div>
             </div> 
 
-        <!-- 2b velgEndreBestilling -->
-        <?php avbestill($dblink); ?> 
+            <!-- 2b velgEndreBestilling -->
+            <?php //avbestill($dblink); ?> 
+
+        </form> 
     
     </main>
 

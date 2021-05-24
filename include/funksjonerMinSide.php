@@ -279,7 +279,40 @@ function slettMinBruker($dblink) {
 }
 
 // ************************** registrerHund **************************
-//denne funskjonen er allerede laget under bestill opphold
+function minSideRegistrerHund($dblink) {
+    if (isset($_POST['registrer'])) { 
+        $navn = $_POST['navn'];
+        $rase = $_POST['rase'];
+        $fdato = $_POST['fdato'];
+        if ( empty($fdato )) {
+            $fdato = "2000-01-01";
+        }
+        $kjønn = $_POST['kjønn'];
+        $sterilisert = $_POST['sterilisert'];
+        $løpeMedAndre = $_POST['løpeMedAndre'];
+        $info = $_POST['info'];
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $forID = $_POST['forID'];
+
+        $sql = "INSERT INTO hund(navn,rase,fdato,kjønn, sterilisert,løpeMedAndre,info,brukerID,forID)
+        VALUES ('$navn','$rase','$fdato','$kjønn','$sterilisert','$løpeMedAndre','$info','$brukerID','$forID');";
+        $resultat = mysqli_query($dblink, $sql);
+
+        //får tak i hundID
+        $hundID; 
+        $sql = "SELECT MAX(hundID) FROM hund;"; 
+        $resultat = mysqli_query($dblink, $sql); 
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            $hundID = implode($rad);
+        }
+
+        $_SESSION['minSideHund'] = $hundID; 
+
+        echo "<br>".'<i style="color:green";> Hund registrert! </i>'; 
+        header('Location: minSide.php');
+    }
+}
 
 
 function lagMinSideOption($hund,$hundID) {
@@ -318,7 +351,7 @@ function velgHundSomSkalEndres($dblink) {
         $rad = mysqli_fetch_assoc($resultat);
         $hundID = $rad['hundID'];
         setAktivHund($dblink,$hundID);
-        header('Location: minSideTestEndreHund2.php');
+        header('Location: minSideEndreHund2.php');
     }
 }
 
@@ -347,7 +380,7 @@ function endreHund($dblink) {
         $resultat = mysqli_query($dblink, $sql);
         echo "hund " . $hundID . " - ". $navn . " oppdatert" . "<br>";
         setAktivHund($dblink,$hundID);
-        header("Refresh:0");
+        header('Location: minSide.php');
     }
 }
 
@@ -366,6 +399,11 @@ function slettHund($dblink) {
 
 // ************************** 10)  avbestill bestilling ************************** 
 function lagIkkeBegyntBestillingTab($dblink) {
+    //Avbestilling Frist
+    $date = new DateTime();
+    $date->modify('-1 day');
+    $date = $date->format('Y-m-d');
+
     $bruker = $_SESSION['bruker'];
     $brukerID = $bruker->getBrukerID();
     $bestillinger = array();
@@ -373,7 +411,8 @@ function lagIkkeBegyntBestillingTab($dblink) {
     $sql = "SELECT DISTINCT B.* FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
-    AND H.brukerID = $brukerID ;" ;
+    AND H.brukerID = $brukerID 
+    AND DAY(B.startDato) < DAY(CURRENT_TIMESTAMP) ;" ;
     $resultat = mysqli_query($dblink, $sql);
     while($rad = mysqli_fetch_assoc($resultat)) {
         $bestillingID = $rad['bestillingID'];
