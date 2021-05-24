@@ -24,7 +24,7 @@
     <!-- ************************** Main **************************-->
     <main> 
 
-        <!-- 2a erLoggetInn -->
+        <!-- erLoggetInn sjekk -->
         <?php 
             if (!erLoggetInn()) {
                 header('Location: loggInn.php');
