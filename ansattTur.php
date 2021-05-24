@@ -33,11 +33,23 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-            <h2>Tur</h2>
+                <h2>Tur</h2>
+
+                <?php visAlleRegistrerteTurerIDag($dblink); ?>
+
+                <?php registrerTurStartAlle($dblink); ?>
+                <?php registrerTurSluttAlle($dblink); ?>
+                <?php slettAlleTurer($dblink); ?>
+                <br><br>
+                
+                <input class="litenKnapp" type="submit" name="registrerTurStartAlle" value="Registrer Start (alle)">
+                <input class="litenKnapp" type="submit" name="registrerTurSluttAlle" value="Registrer Slutt (alle)">
+                <input class="litenKnapp" type="submit" name="slettAlle" value="Slett Alle"> 
+
             </form>
 
-        <div>
-            
+        </div>
+        
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->

@@ -123,8 +123,8 @@
 							?>
 						<select>  
                        
-                        <!-- info 
-						<label for="info">Ekstra informasjon:</label>-->
+                        <!-- info -->
+						<label for="info">Ekstra informasjon:</label>
 						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
 
                     </div>
