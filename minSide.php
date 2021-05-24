@@ -30,7 +30,7 @@
                 header('Location: loggInn.php');
             } 
         ?>
-
+        <!-- ************************** (Gunni) ************************* -->
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 	
@@ -40,7 +40,7 @@
                 <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Min side</h2>
 
-                <!-- "Min profil" -->
+                <!-- Min profil -->
                 <h2 class="overskrift2">Min profil</h2>
                 <?php minProfilTab($dblink); ?>
 
@@ -55,7 +55,8 @@
                 </a>
                 <br><br><br>
 
-                <!-- MineHunder -->
+                <!-- ************************** (Trygve) ************************** -->
+                <!-- Mine hunder -->
                 <h2 class="overskrift2">Mine Hunder</h2>
                 <label for="velgHundSelect">Velg Hund</label>
                 <select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect" width="100px">
@@ -80,10 +81,8 @@
                 <?php } ?>
                 <br><br><br>
 
-
-
-
-                <!-- Bestillinger --> 
+                <!-- Mine opphold --> 
+                <h2 class="overskrift2">Mine Opphold</h2>";
                 <?php visMineOpphold($dblink); ?> 
                 <?php if (harOpphold($dblink)) { ?>
                     <br>
@@ -94,12 +93,11 @@
                         <input class="litenKnapp" type="button" value="Skriv Anmeldelse" name="Skriv Anmeldelse">
                     </a>
                 <?php } ?>
-
             </form> 
         </div>
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    

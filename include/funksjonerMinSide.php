@@ -126,7 +126,6 @@ function lagOppholdTab($dblink) {
 }
 
 function lagOppholdOverskrifter() {
-    echo "<h2> Mine Opphold </h2>";
     //overskrifter
     echo "<table class=\"blaaTab\">";
     echo "<tr>";
