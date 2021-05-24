@@ -108,9 +108,9 @@ function skrivUkeTab($burTab) {
 
 // ********************************* 7b) Ansatt: Alle Opphold ******************************************
 function visAlleOpphold($dblink) {
-    //1) IkkeBegynte Opphold
-    lagOppholdOverskrifter("Ikke Begynte");
-    $sql = lagIkkeBegynteOppholdSpørring($dblink); //!!!
+    //3) ferdige Opphold
+    lagOppholdOverskrifter("Ferdige");
+    $sql = lagFerdigeOppholdSpørring($dblink); //!!!
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
 
@@ -120,12 +120,15 @@ function visAlleOpphold($dblink) {
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
 
-    //3) ferdige Opphold
-    lagOppholdOverskrifter("Ferdige");
-    $sql = lagFerdigeOppholdSpørring($dblink); //!!!
+    //1) IkkeBegynte Opphold
+    lagOppholdOverskrifter("Ikke Begynte");
+    $sql = lagIkkeBegynteOppholdSpørring($dblink); //!!!
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
+
+
 }
+
 
 function lagOppholdOverskrifter($oppholdStatus) {
     echo "<h3>".$oppholdStatus." Opphold"."</h3>";
@@ -149,7 +152,7 @@ function lagIkkeBegynteOppholdSpørring($dblink) {
     WHERE B.bestillingID = O.bestillingID 
     AND O.hundID = H.hundID 
     AND   B.sjekketInn IS NULL
-    ORDER BY B.bestillingID ; ";
+    ORDER BY B.startDato ; ";
 }
 
 function lagAktiveOppholdSpørring($dblink) {
@@ -158,7 +161,7 @@ function lagAktiveOppholdSpørring($dblink) {
     AND O.hundID = H.hundID 
     AND   B.sjekketInn IS NOT NULL
     AND   B.sjekketUt IS NULL
-    ORDER BY B.bestillingID ; ";
+    ORDER BY B.startDato ; ";
 }
 
 function lagFerdigeOppholdSpørring($dblink) {
@@ -166,7 +169,7 @@ function lagFerdigeOppholdSpørring($dblink) {
     WHERE B.bestillingID = O.bestillingID 
     AND O.hundID = H.hundID 
     AND   B.sjekketUt IS NOT NULL
-    ORDER BY B.bestillingID ; ";
+    ORDER BY B.startDato ; ";
 }
 
 
