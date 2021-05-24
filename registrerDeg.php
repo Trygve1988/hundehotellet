@@ -75,6 +75,13 @@ $dblink = kobleOpp();
 							<label for="passordCheckbox">Vis Passord</label>
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
+
+					<!-- Må være eller så kræsjer Vis passord og Passord krav ! --->
+						<break>
+							<p></p>
+						</break>
+					<!-- ******* Slutt ******* -->
+
 						<!-- Passord tilbakemelding -->
 						<div class="passordKrav">
 							<p>Passord krav:</p>
