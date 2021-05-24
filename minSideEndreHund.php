@@ -19,21 +19,20 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main ************************** onchange="this.form.submit()"  -->   
+    <!-- ************************** Main ************************** onchange="this.form.submit()" ?????????????????????????? -->   
     <main> 
-
-        <!-- 2a erLoggetInn -->
+        <!-- erLoggetInn sjekk-->
         <?php 
             if (!erLoggetInn()) {
                 header('Location: loggInn.php');
             } 
         ?>
 
-        <!-- 2b) Hund info -->
-        <?php 
+        <!-- Hund info -->
+		<?php 
         $minSideHund = $_SESSION['minSideHund']; 
         setAktivHund($dblink,$minSideHund);
         $h1 = $_SESSION['aktivHund']; 
@@ -46,20 +45,36 @@
             <form class="skjemaBakgrunn" method="POST">
 
                 <h2 class="hovedOverskrift">Endre Hund</h2>
-
+				<div>
+					<label for="velgHundSelect">Velg hund:</label>
+					<select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
+						<?php $hunder = lagHunderTab($dblink);
+							$minSideHund = $_SESSION['minSideHund']; 
+							for ($i=0; $i<count($hunder); $i++) {
+								lagMinSideOption($hunder[$i],$minSideHund);
+							} ?>
+					</select>
+				</div>
+		
                 <div class="skjemaKolonner">
+					
+					<!-- Labels og input i kolonne 1 -->
                     <div class="kolonne1">
-                        <!-- navn --> 
-                        Hundens navn <input class="inputTekst" type="text" name="navn" size="20" value= <?php echo $h1->getNavn() ?> required/>
-                        <!-- rase --> 
-                        Rase <input class="inputTekst" type="text"  name="rase" size="20" value= <?php echo $h1->getRase() ?> />
-                        <!-- fdato --> 
-                        <label for="fdato">fdato:</label>
+                        <!-- Navn --> 
+                        <label for="navn">Navn:</label>
+						<input class="inputTekst" type="text" name="navn" size="20" value= <?php echo $h1->getNavn() ?> required/>
+                        
+						<!-- Rase --> 
+						<label for="rase">Rase:</label>
+						<input class="inputTekst" type="text"  name="rase" size="20" value= <?php echo $h1->getRase() ?> />
+                        
+						<!-- Fdato --> 
+                        <label for="fdato">Fødselsdato:</label>
                         <input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 						
-                        <!-- kjønn --> 
+                        <!-- Kjønn --> 
 						<?php $kjonn = $h1->getKjønn(); ?>
-						<label id="kjønn" for="kjønn">kjønn:</label>
+						<label id="kjønn" for="kjønn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn"> 
 							<?php
 							if ($kjonn == "gutt") { 
@@ -73,9 +88,9 @@
 							?>
 						<select> 
 
-                        <!-- sterilisert --> 
+                        <!-- Sterilisert --> 
 						<?php $sterilisert = $h1->getSterilisert(); ?>
-						<label id="sterilisert" for="sterilisert">sterilisert:</label>
+						<label id="sterilisert" for="sterilisert">Sterilisert:</label>
 						<select class="inputSelect" name="sterilisert"> 
 							<?php
 							if ($sterilisert == "1") { 
@@ -90,61 +105,70 @@
 						<select> 
                     </div>
 
+					<!-- Labels og input i kolonne 2 -->		
                     <div>
                         <!-- løpeMedAndre --> 
 						<?php $løpeMedAndre = $h1->getLøpeMedAndre(); ?>
-						<label id="løpeMedAndre" for="løpeMedAndre">løpeMedAndre:</label>
+						<label id="løpeMedAndre" for="løpeMedAndre">Kan hunden omgås andre hunder?:</label>
 						<select class="inputSelect" name="løpeMedAndre"> 
 							<?php
 							if ($løpeMedAndre == "1") { 
-								?><option id="ja2" value="1" selected >ja</option><?php
-								?><option id="nei2"value="0">nei</option><?php
+								?><option id="ja2" value="1" selected >Ja</option><?php
+								?><option id="nei2"value="0">Nei</option><?php
 							} 
 							else { 
-								?><option value="1">ja</option><?php
-								?><option value="0" selected>nei</option><?php
+								?><option value="1">Ja</option><?php
+								?><option value="0" selected>Nei</option><?php
 							}
 							?>
 						<select> 
 
-						<!-- forType --> 
+						<!-- Fôrtype --> 
 						<?php $forID = $h1->getForID(); ?>
-						<label id="forType" for="forID">forType:</label>
+						<label id="forType" for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID"> 
 							<?php
 							if ($forID == "1") { 
-								?><option id="vanlig" value="1" selected >vanlig</option><?php
-								?><option id="allargi" value="0">allergi</option><?php
+								?><option id="vanlig" value="1" selected >Royal Canin (vanlig)</option><?php
+								?><option id="allargi" value="0">Vom (allergi)</option><?php
 							} 
 							else { 
-								?><option id="vanlig2" value="1">vanlig</option><?php
-								?><option id="allergi2" value="0" selected>allergi</option><?php
+								?><option id="vanlig2" value="1">Royal Canin (vanlig)</option><?php
+								?><option id="allergi2" value="0" selected>Vom (allergi)</option><?php
 							}
 							?>
 						<select>  
                        
-                        <!-- info 
+                        <!-- Ekstra informasjon 
 						<label for="info">Ekstra informasjon:</label>-->
 						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
-
                     </div>
                 </div>
 
-                <!-- bekreftHundInfo --> 
-                <a href="minSide.php">
-					<input class="litenKnapp" type="button" value="Tilbake"> 
-				</a>
-                <input class="litenKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo">
-
+				<!--Knapperad-->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp-->
+						<a href="minSide.php">
+							<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+						</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Lagre knapp -->
+						<a href = "bestillOpphold3.php">
+	                		<input class="inputSubmit hovedKnapp" type="submit" value="Lagre" name="bekreftHundInfo"> 
+	            		</a>
+					</div>
+				</div>
             </form> 
         </div>
 
-         <!-- 2b oppdaterBrukerInfo -->
+         <!-- oppdaterBrukerInfo -->
          <?php endreHund($dblink); ?> 
 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    
