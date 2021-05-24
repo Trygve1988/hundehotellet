@@ -47,10 +47,12 @@ $dblink = kobleOpp();
 					
 					<!-- Labels og input i kolonne 1 -->
 					<div class="kolonne1">
-						
 						<label for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
-
+						
+						<label for="etternavn">Etternavn:</label>
+						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
+						
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
@@ -63,9 +65,6 @@ $dblink = kobleOpp();
 
 					<!-- Labels og input i kolonne 2 -->
 					<div>	
-						<label for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
-						
 						<label for="epost">E-post:</label>
 						<input class="inputTekst" type="text" name="epost" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value="test@ha.no">	
 							
@@ -74,8 +73,9 @@ $dblink = kobleOpp();
 						id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" onChange="sjekkPassord()" value="123Ab%12">
 
 						
-						<!-- Vis passord checkbox -->
+						<!-- Passord rad -->
 						<div class="passordRad">
+							<!-- Vis passord checkbox -->
 							<div class="visPassord">
 								<label for="passordCheckbox">Vis Passord</label>
 								<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
@@ -88,12 +88,11 @@ $dblink = kobleOpp();
 								<!-- Engelsk tilbakemelding --->
 								<p id="status2" melding2()></p>
 							</div>
-							
-							<div class="gjentaPKolonne">
-								<label for="passordSjekk">Gjenta passord:</label>
-								<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
-							</div>
-							</div>	
+						</div>	
+						<div class="gjentaPKolonne">
+							<label for="passordSjekk">Gjenta passord:</label>
+							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
+						</div>		
 					</div>
 				</div>
 
