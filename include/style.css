@@ -964,6 +964,35 @@ footer a {
 	font-size: 18px;
 }
 
+
+/* blaaTabSmal (Trygve og Kristina) */
+.burTab {
+    display: inline; 
+    margin:10px;
+	padding-bottom: 20px;
+}
+
+.burTab tr {
+	background-color: white; /*Hvit bakgrunn på skjema*/
+}
+
+.burTab th {
+	width: auto;
+	background-color: #394f79;
+	color: white;
+	padding-top: 5px;/*padding til overskrift*/
+	padding-bottom: 5px;
+	padding: 5px;
+	font-size: 18px;
+}
+
+.burTab td {
+	padding: 5px; /*padding til overskrift*/
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+}
+
 /* inspiserHundTab (Trygve og Kristina) */
 .inspiserHundTab table {
     table-layout: fixed;
@@ -987,3 +1016,4 @@ footer a {
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
 }
+

@@ -82,9 +82,9 @@ function skrivUkeTab($burTab) {
     $dagNavn = array("Man", "Tirs", "Ons", "Tors", "Fre", "Lør", "Søn");
     echo "<table class=\"burTab\">";
     echo "<tr>";
-    echo    "<th>dag</th>";
-    echo    "<th>dato</th>";
-    echo    "<th>ledige</th>";
+    echo    "<th>Dag</th>";
+    echo    "<th>Dato</th>";
+    echo    "<th>Ledige</th>";
     echo "</tr>";
 
     for ($i=0; $i<count($burTab); $i++) {
@@ -110,40 +110,38 @@ function skrivUkeTab($burTab) {
 function visAlleOpphold($dblink) {
     //3) ferdige Opphold
     lagOppholdOverskrifter("Ferdige");
-    $sql = lagFerdigeOppholdSpørring($dblink); //!!!
+    $sql = lagFerdigeOppholdSpørring5Siste($dblink); //
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
 
     //2) aktive Opphold
     lagOppholdOverskrifter("Aktive");
-    $sql = lagAktiveOppholdSpørring($dblink); //!!!
+    $sql = lagAktiveOppholdSpørring($dblink); //
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
 
     //1) IkkeBegynte Opphold
-    lagOppholdOverskrifter("Ikke Begynte");
-    $sql = lagIkkeBegynteOppholdSpørring($dblink); //!!!
+    lagOppholdOverskrifter("Kommende");
+    $sql = lagIkkeBegynteOppholdSpørring($dblink); //
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
-
-
 }
 
 
 function lagOppholdOverskrifter($oppholdStatus) {
-    echo "<h3>".$oppholdStatus." Opphold"."</h3>";
+    echo "<h3>".$oppholdStatus." opphold"."</h3>";
     //overskrifter
-    echo "<table class=\"blaaTabSmal\">";
+    echo "<table class=\"blaaTabSmal\">";  
     echo "<tr>";
-    echo    "<th>bestillingID</th>";    // bestilling
-    echo    "<th>start</th>";           // bestilling
-    echo    "<th>slutt</th>";           // bestilling
-    echo    "<th>bestilt</th>";         // bestilling
-    echo    "<th>sjekkInn</th>";        // bestilling
-    echo    "<th>sjekkUt</th>";         // bestilling
-    echo    "<th>totalPris</th>";       // bestilling
-    echo    "<th>burID</th>";           // opphold
-    echo    "<th>hunder</th>";            // hund
+    echo    "<th>BestillingID</th>";    // bestilling
+    echo    "<th>Start</th>";           // bestilling
+    echo    "<th>Slutt</th>";           // bestilling
+    echo    "<th>Bestilt</th>";         // bestilling
+    echo    "<th>SjekkInn</th>";        // bestilling
+    echo    "<th>SjekkUt</th>";         // bestilling
+    echo    "<th>TotalPris</th>";       // bestilling
+    echo    "<th>BurID</th>";           // opphold
+    echo    "<th>Hunder</th>";            // hund
     echo "</tr>";
 }
 
@@ -162,6 +160,16 @@ function lagAktiveOppholdSpørring($dblink) {
     AND   B.sjekketInn IS NOT NULL
     AND   B.sjekketUt IS NULL
     ORDER BY B.startDato ; ";
+}
+
+function lagFerdigeOppholdSpørring5Siste($dblink) {
+    return "SELECT B.*, O.*, H.* FROM bestilling AS B, opphold AS O, hund AS H
+    WHERE B.bestillingID = O.bestillingID 
+    AND O.hundID = H.hundID 
+    AND   B.sjekketUt IS NOT NULL
+    ORDER BY B.startDato 
+    LIMIT 5;
+    ; ";
 }
 
 function lagFerdigeOppholdSpørring($dblink) {
@@ -223,6 +231,15 @@ function visOppholdTab($bestillingTab) {
     echo "</table>";
 } 
 
+// ********************************* 7b) Ansatt: Alle Opphold : Eldre ******************************************
+function visFerdigeOpphold($dblink) {
+    lagOppholdOverskrifter("Alle Ferdige");
+    $sql = lagFerdigeOppholdSpørring($dblink); //
+    $bestillingTab = lagOppholdTab($dblink,$sql);
+    visOppholdTab($bestillingTab);
+}
+
+
 // ************************** 7c) Ansatt: Inn/utsjekk ************************** 
 function visSkalSjekkeInnIDag($dblink) {
     visSkalSjekkesOverskrifter($dblink,"Innsjekkinger");
@@ -242,10 +259,10 @@ function visSkalSjekkesOverskrifter($dblink,$ord) {
     // vis opphold Overskrifter
     echo "<table class=\"blaaTab\">";
     echo "<tr>";
-    echo    "<th>bID</th>";  
-    echo    "<th>hund</th>";  
-    echo    "<th>kunde</th>";   
-    echo    "<th>sjekketInn</th>";   
+    echo    "<th>BestillingID</th>";  
+    echo    "<th>Hund</th>";  
+    echo    "<th>Kunde</th>";   
+    echo    "<th>".$ord."</th>";   
     echo "</tr>";
 } 
 
@@ -407,7 +424,7 @@ function lagInspiserHundOption($hund,$inspiserHundID) {
 function visInspiserHundInfo($dblink) {
     $inspiserHund = $_SESSION['inspiserHund']; 
     echo "<h3>Hund-Info</h3>";
-    echo "<table class=\"inspiserHundTab\">";
+    echo "<table class=\"toKolTab\">";
 
     $sql = "SELECT H.* FROM hund AS H, opphold AS O
     WHERE H.hundID = O.hundID 
@@ -437,7 +454,7 @@ function skrivRad($navn,$verdi) {
 function visInspiserHundOppholdInfo($dblink) {
     $inspiserHund = $_SESSION['inspiserHund']; 
     echo "<h3>Opphold-Info</h3>";
-    echo "<table class=\"inspiserHundTab\">";
+    echo "<table class=\"toKolTab\">";
 
     $sql = "SELECT O.*, B.*
     FROM opphold AS O, bestilling AS B
@@ -561,16 +578,46 @@ function visAlleRegistrerteKommentarerDetteOppholdet($dblink) {
 }
 
 // ************************** 7e) Mating **************************************************** 
-function visAlleHunderPaaOppholdNaa($dblink) {
-    echo "<h3>" . "Alle hunder som er på opphold nå" . "</h3>";
+function visAlleRegistrerteMatingerIDag($dblink) {
+    // alle registrerte matinger i dag 
+    $idag = new DateTime();
+    echo "<h3>" . "Registrerte matinger i dag " . $idag->format('Y-m-d') . "</h3>";
     // vis opphold Overskrifter
     echo "<table class=\"blaaTab\">";
     echo "<tr>";
-    echo    "<th>oID</th>";  
-    echo    "<th>hund</th>";  
-    echo    "<th>forType</th>";   
+    echo    "<th>OppholdID</th>";  
+    echo    "<th>Hund</th>";  
+    echo    "<th>ForType</th>";  
+    echo    "<th>Mating</th>";       
     echo "</tr>";
 
+    // SQLSpørring for å finne alle registrerte matinger i dag 
+    $sql = " SELECT M.*, H.navn, F.forType FROM mating AS M, opphold AS O, hund AS H, hundefor AS F
+    WHERE M.oppholdID = O.oppholdID
+    AND O.hundID = H.hundID
+    AND H.forID = F.forID
+    AND day(M.tidspunkt) = day(CURRENT_TIMESTAMP);";
+    $resultat = mysqli_query($dblink, $sql); 
+
+    //viss ingen treff
+    $antall = mysqli_num_rows($resultat);
+    if ($antall == 0) { 
+        visAlleHunderPaaOppholdNaaMating($dblink);
+    }
+
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>";
+        echo "<td>" . $rad['oppholdID'] . "</td>"; 
+        echo "<td>" . $rad['navn']      . "</td>";    
+        echo "<td>" . $rad['forType'] . "</td>";     
+        $tidspunkt = $rad['tidspunkt'];  
+        echo "<td>" . substr($tidspunkt,10,6) . "</td>";            
+        echo "</tr>";
+    }
+    echo "</table>" . "<br>";
+}
+
+function visAlleHunderPaaOppholdNaaMating($dblink) {
     $sql = " SELECT O.oppholdID, F.forType, H.navn FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
@@ -585,45 +632,15 @@ function visAlleHunderPaaOppholdNaa($dblink) {
         echo "<tr>";
         echo "<td>" . $rad['oppholdID'] . "</td>";  
         echo "<td>" . $rad['navn']      . "</td>";   
-        echo "<td>" . $rad['forType'] . "</td>";           
-        echo "</tr>";
-    }
-    echo "</table>" . "<br>";
-}
-
-
-function visAlleRegistrerteMatingerIDag($dblink) {
-    // alle registrerte matinger i dag 
-    $idag = new DateTime();
-    echo "<h3>" . "Registrerte matinger i dag " . $idag->format('Y-m-d') . "</h3>";
-    // vis opphold Overskrifter
-    echo "<table class=\"blaaTab\">";
-    echo "<tr>";
-    echo    "<th>oID</th>";  
-    echo    "<th>hund</th>";  
-    echo    "<th>forType</th>";  
-    echo    "<th>Mating</th>";       
-    echo "</tr>";
-
-    // SQLSpørring for å finne alle registrerte matinger i dag 
-    $sql = " SELECT M.*, H.navn, F.forType FROM mating AS M, opphold AS O, hund AS H, hundefor AS F
-    WHERE M.oppholdID = O.oppholdID
-    AND O.hundID = H.hundID
-    AND H.forID = F.forID
-    AND day(M.tidspunkt) = day(CURRENT_TIMESTAMP);";
-    $resultat = mysqli_query($dblink, $sql); 
-
-    while($rad = mysqli_fetch_assoc($resultat)){
-        echo "<tr>";
-        echo "<td>" . $rad['oppholdID'] . "</td>"; 
-        echo "<td>" . $rad['navn']      . "</td>";    
         echo "<td>" . $rad['forType'] . "</td>";     
-        $tidspunkt = $rad['tidspunkt'];  
-        echo "<td>" . substr($tidspunkt,10,6) . "</td>";            
+        echo "<td></td>";          
         echo "</tr>";
     }
     echo "</table>" . "<br>";
 }
+
+
+
 
 function registrerMatingAlle($dblink) {
     if (isset($_POST['registrerMatingAlle'])) { 
@@ -670,16 +687,59 @@ function slettAlleMatinger($dblink) {
 }
 
 // ************************** 7f) Ansatt Lufting **************************************************** 
-function visAlleHunderPaaOppholdNaaLufting($dblink) {
-    echo "<h3>" . "Alle hunder som er på opphold nå" . "</h3>";
+function visAlleRegistrerteLuftingerIDag($dblink) {
+    // alle registrerte matinger i dag 
+    $idag = new DateTime();
+    echo "<h3>" . "Registrerte Luftinger i dag " . $idag->format('Y-m-d') . "</h3>";
     // vis opphold Overskrifter
     echo "<table class=\"blaaTab\">";
     echo "<tr>";
-    echo    "<th>oID</th>";  
-    echo    "<th>hund</th>";  
-    echo    "<th>løpeMedAndre</th>";   
+    echo    "<th>OppholdID</th>";  
+    echo    "<th>Hund</th>";  
+    echo    "<th>LøpeMedAndre</th>";  
+    echo    "<th>Start</th>";    
+    echo    "<th>Slutt</th>";    
     echo "</tr>";
 
+    // SQLSpørring for å finne alle registrerte matinger i dag    
+    $sql = " SELECT L.*, H.navn, H.løpeMedAndre
+    FROM lufting AS L, opphold AS O, hund AS H
+    WHERE L.oppholdID = O.oppholdID
+    AND O.hundID = H.hundID
+    AND day(L.startTidspunkt) = day(CURRENT_TIMESTAMP);";
+    $resultat = mysqli_query($dblink, $sql); 
+
+    //viss ingen treff
+    $antall = mysqli_num_rows($resultat);
+    if ($antall == 0) { 
+        visAlleHunderPaaOppholdNaaLufting($dblink);
+    }
+    else {
+        while($rad = mysqli_fetch_assoc($resultat)){
+            echo "<tr>";
+            echo "<td>" . $rad['oppholdID'] . "</td>"; 
+            echo "<td>" . $rad['navn']      . "</td>";    
+            $løpeMedAndre = $rad['løpeMedAndre'];
+            if ($løpeMedAndre == 1) {
+                $løpeMedAndre = "JA"; 
+            }
+            else {
+                $løpeMedAndre = "NEI";  
+            }
+            echo "<td>" . $løpeMedAndre . "</td>";       
+            $startTidspunkt = $rad['startTidspunkt'];  
+            echo "<td>" . substr($startTidspunkt,10,6) . "</td>";  
+            $sluttTidspunkt = $rad['sluttTidspunkt'];  
+            echo "<td>" . substr($sluttTidspunkt,10,6) . "</td>";  
+            echo "</tr>";
+        }
+        echo "</table>" . "<br>";
+    }
+}
+
+
+
+function visAlleHunderPaaOppholdNaaLufting($dblink) {
     $sql = " SELECT O.oppholdID, F.forType, H.navn, H.løpeMedAndre FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
@@ -701,42 +761,9 @@ function visAlleHunderPaaOppholdNaaLufting($dblink) {
         else {
             $løpeMedAndre = "NEI";  
         }
-        echo "<td>" . $løpeMedAndre . "</td>";           
-        echo "</tr>";
-    }
-    echo "</table>" . "<br>";
-}
-
-
-function visAlleRegistrerteLuftingerIDag($dblink) {
-    // alle registrerte matinger i dag 
-    $idag = new DateTime();
-    echo "<h3>" . "Registrerte Luftinger i dag " . $idag->format('Y-m-d') . "</h3>";
-    // vis opphold Overskrifter
-    echo "<table class=\"blaaTab\">";
-    echo "<tr>";
-    echo    "<th>oID</th>";  
-    echo    "<th>hund</th>";  
-    echo    "<th>start</th>";    
-    echo    "<th>slutt</th>";    
-    echo "</tr>";
-
-    // SQLSpørring for å finne alle registrerte matinger i dag    
-    $sql = " SELECT L.*, H.navn
-    FROM lufting AS L, opphold AS O, hund AS H
-    WHERE L.oppholdID = O.oppholdID
-    AND O.hundID = H.hundID
-    AND day(L.startTidspunkt) = day(CURRENT_TIMESTAMP);";
-    $resultat = mysqli_query($dblink, $sql); 
-
-    while($rad = mysqli_fetch_assoc($resultat)){
-        echo "<tr>";
-        echo "<td>" . $rad['oppholdID'] . "</td>"; 
-        echo "<td>" . $rad['navn']      . "</td>";        
-        $startTidspunkt = $rad['startTidspunkt'];  
-        echo "<td>" . substr($startTidspunkt,10,6) . "</td>";  
-        $sluttTidspunkt = $rad['sluttTidspunkt'];  
-        echo "<td>" . substr($sluttTidspunkt,10,6) . "</td>";  
+        echo "<td>" . $løpeMedAndre . "</td>";     
+        echo "<td></td>";    
+        echo "<td></td>";          
         echo "</tr>";
     }
     echo "</table>" . "<br>";
@@ -750,7 +777,8 @@ function registrerLuftingStartAlle($dblink) {
         $resultat = mysqli_query($dblink, $sql); 
         $antall = mysqli_num_rows($resultat);
         if ($antall > 0) { 
-            echo "Har allerede registrert lufting start i dag!";
+            echo "<br>".'<i style="color:red; position:absolute";"> 
+            Har allerede registrert lufting start i dag! </i>';
         }
         else {
             // brukerNavn
@@ -760,7 +788,6 @@ function registrerLuftingStartAlle($dblink) {
             $oppholdIDTab = getAktiveOppholdIDer($dblink);
             // kjører gjennom hele oppholdIDTab og registrerer luftinger
             for ($i=0; $i<count($oppholdIDTab); $i++) {
-                echo $oppholdIDTab[$i] . "<br>";
                 $oppholdID = $oppholdIDTab[$i];
                 $sql = "INSERT INTO lufting (startTidspunkt,oppholdID,brukerID)
                 VALUES (CURRENT_TIMESTAMP,'$oppholdID','$brukerID');" ;
@@ -773,28 +800,29 @@ function registrerLuftingStartAlle($dblink) {
 
 function registrerLuftingSluttAlle($dblink) {
     if (isset($_POST['registrerLuftingSluttAlle'])) { 
-        echo "ass";
         // brukerID
         $bruker = $_SESSION['bruker'];
         $brukerID = $bruker->getBrukerID();
         // lager oppholdIDTab
+        $oppholdIDTab = null; 
         $oppholdIDTab = getErILuftegaardIDer($dblink);
         // kjører gjennom hele oppholdIDTab og registrerer luftinger
-        for ($i=0; $i<count($oppholdIDTab); $i++) {
-            echo $oppholdIDTab[$i] . "<br>";
-            $oppholdID = $oppholdIDTab[$i];
-            $sql = "UPDATE lufting 
-            SET sluttTidspunkt = CURRENT_TIMESTAMP
-            WHERE oppholdID = '$oppholdID' 
-            AND day(startTidspunkt) = day(CURRENT_TIMESTAMP);" ;
-            mysqli_query($dblink,$sql);
-        } 
-        header("Refresh:0");
+        if ($oppholdIDTab != null) {
+            for ($i=0; $i<count($oppholdIDTab); $i++) {
+                $oppholdID = $oppholdIDTab[$i];
+                $sql = "UPDATE lufting 
+                SET sluttTidspunkt = CURRENT_TIMESTAMP
+                WHERE oppholdID = '$oppholdID' 
+                AND day(startTidspunkt) = day(CURRENT_TIMESTAMP);" ;
+                mysqli_query($dblink,$sql);
+            } 
+            header("Refresh:0");
+        }
     }
 }
 
 function getErILuftegaardIDer($dblink) {
-    $oppholdIDTab;
+    $oppholdIDTab = null; 
     $pos = 0;
     $sql = " SELECT O.oppholdID 
     FROM bestilling AS B, opphold AS O, hund AS H, lufting AS L
@@ -879,7 +907,15 @@ function registrerKommentar($dblink) {
         VALUES ('$tekst',CURRENT_TIMESTAMP,'$oppholdID','$brukerID');";
         $resultat = mysqli_query($dblink, $sql);
         echo "<br>".'<i style="color:green; position:absolute";"> Kommentar registrert </i>';
+        header("Refresh:0");
     }
+}
+
+function slettAlleKommentarer($dblink) {
+    if (isset($_POST['slettAlle'])) { 
+        $sql = "DELETE FROM kommentar WHERE day(tidspunkt) = day(CURRENT_TIMESTAMP) ;" ;
+        mysqli_query($dblink,$sql);
+    }  
 }
 
 function visAlleRegistrerteKommentarIDag($dblink) {   
@@ -888,10 +924,10 @@ function visAlleRegistrerteKommentarIDag($dblink) {
     // vis opphold Overskrifter
     echo "<table class=\"blaaTab\">";
     echo "<tr>";
-    echo    "<th>oID</th>";  
-    echo    "<th>hund</th>"; 
-    echo    "<th>tidspunkt</th>";   
-    echo    "<th>tekst</th>"; 
+    echo    "<th>OppholdID</th>";  
+    echo    "<th>Hund</th>"; 
+    echo    "<th>Tidspunkt</th>";   
+    echo    "<th>Tekst</th>"; 
     echo "</tr>";
 
     // SQLSpørring for å finne alle registrerte kommentarer i dag    

@@ -7,15 +7,15 @@ function visAlleBrukere($dblink)  {
     $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' ;";
     $resultat = mysqli_query($dblink, $sql); 
     
-    echo "<table class=\"blaaTab\">";
+    echo "<table class=\"blaaTabSmal\">";
     echo "<tr>";
-    echo    "<th>brukerID</th>";
-    echo    "<th>epost</th>";
-    echo    "<th>brukerType</th>";
-    echo    "<th>fornavn</th>";
-    echo    "<th>etternavn</th>";
-    echo    "<th>tlf</th>";
-    echo    "<th>adresse</th>";
+    echo    "<th>ID</th>";
+    echo    "<th>Epost</th>";
+    echo    "<th>BrukerType</th>";
+    echo    "<th>Fornavn</th>";
+    echo    "<th>Etternavn</th>";
+    echo    "<th>Tlf</th>";
+    echo    "<th>Adresse</th>";
     echo "</tr>";
 
     while($rad = mysqli_fetch_assoc($resultat)){
@@ -118,7 +118,7 @@ function adminEndreBrukerInfo($dblink) {
 
         $b = new Bruker($brukerID,$epost,$brukerType,$fornavn,$etternavn,$tlf, $adresse, $fødselsNr, $stilling, $postNr);
         $_SESSION['endreBruker'] = $b;
-        header("Refresh:0");
+        header('Location: admin.php');
     }
 }
 

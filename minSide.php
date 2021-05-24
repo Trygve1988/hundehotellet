@@ -57,6 +57,7 @@
 
                 <!-- MineHunder -->
                 <h2 class="overskrift2">Mine Hunder</h2>
+
                 <label for="velgHundSelect">Velg Hund</label>
                 <select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect" width="100px">
                     <?php $hunder = lagHunderTab($dblink);
@@ -65,7 +66,12 @@
                         lagMinSideOption($hunder[$i],$minSideHund);
                     } ?>
                 </select>
-                <?php minHundTab($dblink); ?>
+
+                <?php 
+                if ( isset($_SESSION['minSideHund']) ) {  
+                    minHundTab($dblink); 
+                }
+                ?>
 
                 <a href="registrerHundMS.php">
                     <input class="litenKnapp" type="button" value="Registrer Hund">
@@ -79,8 +85,6 @@
                     </a>
                 <?php } ?>
                 <br><br><br>
-
-
 
 
                 <!-- Bestillinger --> 
