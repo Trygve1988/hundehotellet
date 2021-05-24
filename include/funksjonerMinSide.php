@@ -129,13 +129,13 @@ function lagOppholdOverskrifter() {
     //overskrifter
     echo "<table class=\"blaaTab\">";
     echo "<tr>";
-    echo    "<th>bestillingID</th>";    // bestilling
-    echo    "<th>start</th>";           // bestilling
-    echo    "<th>slutt</th>";           // bestilling
-    echo    "<th>bestilt</th>";         // bestilling
-    echo    "<th>totalPris</th>";       // bestilling
-    echo    "<th>burID</th>";           // opphold
-    echo    "<th>hunder</th>";            // hund
+    echo    "<th>BestillingID</th>";    // bestilling
+    echo    "<th>Start</th>";           // bestilling
+    echo    "<th>Slutt</th>";           // bestilling
+    echo    "<th>Bestilt</th>";         // bestilling
+    echo    "<th>TotalPris</th>";       // bestilling
+    echo    "<th>BurID</th>";           // opphold
+    echo    "<th>Hunder</th>";          // hund
     echo "</tr>";
 }
 

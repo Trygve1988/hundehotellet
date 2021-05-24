@@ -849,7 +849,169 @@ function slettAlleLuftinger($dblink) {
     }  
 }
 
-// ************************** 7g) Kommentar *********************************************** 
+// ************************** 7g) Tur *********************************************** 
+function visAlleRegistrerteTurerIDag($dblink) {
+    // alle registrerte matinger i dag 
+    $idag = new DateTime();
+    echo "<h3>" . "Registrerte Turer i dag " . $idag->format('Y-m-d') . "</h3>";
+    // vis opphold Overskrifter
+    echo "<table class=\"blaaTab\">";
+    echo "<tr>";
+    echo    "<th>OppholdID</th>";  
+    echo    "<th>Hund</th>";  
+    echo    "<th>LøpeMedAndre</th>";  
+    echo    "<th>Start</th>";    
+    echo    "<th>Slutt</th>";    
+    echo "</tr>";
+
+    // SQLSpørring for å finne alle registrerte matinger i dag    
+    $sql = " SELECT T.*, H.navn, H.løpeMedAndre
+    FROM tur AS T, opphold AS O, hund AS H 
+    WHERE T.oppholdID = O.oppholdID
+    AND O.hundID = H.hundID
+    AND day(T.startTidspunkt) = day(CURRENT_TIMESTAMP) ;";
+    $resultat = mysqli_query($dblink, $sql); 
+
+    //viss ingen treff
+    $antall = mysqli_num_rows($resultat);
+    if ($antall == 0) { 
+        visAlleHunderPaaOppholdNaaTur($dblink);
+    }
+    else {
+        while($rad = mysqli_fetch_assoc($resultat)){
+            echo "<tr>";
+            echo "<td>" . $rad['oppholdID'] . "</td>"; 
+            echo "<td>" . $rad['navn']      . "</td>";    
+            $løpeMedAndre = $rad['løpeMedAndre'];
+            if ($løpeMedAndre == 1) {
+                $løpeMedAndre = "JA"; 
+            }
+            else {
+                $løpeMedAndre = "NEI";  
+            }
+            echo "<td>" . $løpeMedAndre . "</td>";       
+            $startTidspunkt = $rad['startTidspunkt'];  
+            echo "<td>" . substr($startTidspunkt,10,6) . "</td>";  
+            $sluttTidspunkt = $rad['sluttTidspunkt'];  
+            echo "<td>" . substr($sluttTidspunkt,10,6) . "</td>";  
+            echo "</tr>";
+        }
+        echo "</table>" . "<br>";
+    }
+}
+
+function visAlleHunderPaaOppholdNaaTur($dblink) {
+    $sql = " SELECT O.oppholdID, F.forType, H.navn, H.løpeMedAndre 
+    FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
+    WHERE B.bestillingID = O.bestillingID
+    AND O.hundID = H.hundID
+    AND H.forID = F.forID
+    AND day(B.startDato) <= day(CURRENT_TIMESTAMP) AND day(B.sluttDato) >= day(CURRENT_TIMESTAMP)
+    AND B.sjekketInn IS NOT NULL
+    AND B.sjekketUt IS NULL
+    ORDER BY O.oppholdID  ;";
+    $resultat = mysqli_query($dblink, $sql); 
+
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>";
+        echo "<td>" . $rad['oppholdID'] . "</td>";  
+        echo "<td>" . $rad['navn']      . "</td>";   
+        $løpeMedAndre = $rad['løpeMedAndre'];
+        if ($løpeMedAndre == 1) {
+            $løpeMedAndre = "JA"; 
+        }
+        else {
+            $løpeMedAndre = "NEI";  
+        }
+        echo "<td>" . $løpeMedAndre . "</td>";     
+        echo "<td></td>";    
+        echo "<td></td>";          
+        echo "</tr>";
+    }
+    echo "</table>" . "<br>";
+}
+
+function registrerTurStartAlle($dblink) {
+    if (isset($_POST['registrerTurStartAlle'])) { 
+        //har vi allerede registrert lufting start i dag?
+        $sql = "SELECT * FROM tur WHERE day(startTidspunkt) = day(CURRENT_TIMESTAMP);" ;
+        $resultat = mysqli_query($dblink, $sql); 
+        $antall = mysqli_num_rows($resultat);
+        if ($antall > 0) { 
+            echo "<br>".'<i style="color:red; position:absolute";"> 
+            Har allerede registrert tur start i dag! </i>';
+        }
+        else {
+            // brukerNavn
+            $bruker = $_SESSION['bruker'];
+            $brukerID = $bruker->getBrukerID();
+            // lager oppholdIDTab
+            $oppholdIDTab = getAktiveOppholdIDer($dblink);
+            // kjører gjennom hele oppholdIDTab og registrerer luftinger
+            for ($i=0; $i<count($oppholdIDTab); $i++) {
+                $oppholdID = $oppholdIDTab[$i];
+                $sql = "INSERT INTO tur (startTidspunkt,oppholdID,brukerID)
+                VALUES (CURRENT_TIMESTAMP,'$oppholdID','$brukerID');" ;
+                mysqli_query($dblink,$sql);
+            } 
+            header("Refresh:0");
+        }
+    }
+}
+
+function registrerTurSluttAlle($dblink) {
+    if (isset($_POST['registrerTurSluttAlle'])) { 
+        // brukerID
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        // lager oppholdIDTab
+        $oppholdIDTab = null; 
+        $oppholdIDTab = getErPaaTurIDer($dblink);
+        // kjører gjennom hele oppholdIDTab og registrerer luftinger
+        if ($oppholdIDTab != null) {
+            for ($i=0; $i<count($oppholdIDTab); $i++) {
+                $oppholdID = $oppholdIDTab[$i];
+                $sql = "UPDATE tur 
+                SET sluttTidspunkt = CURRENT_TIMESTAMP
+                WHERE oppholdID = '$oppholdID' 
+                AND day(startTidspunkt) = day(CURRENT_TIMESTAMP);" ;
+                mysqli_query($dblink,$sql);
+            } 
+            header("Refresh:0");
+        }
+    }
+}
+
+function getErPaaTurIDer($dblink) {
+    $oppholdIDTab = null; 
+    $pos = 0;
+    $sql = " SELECT O.oppholdID 
+    FROM bestilling AS B, opphold AS O, hund AS H, tur AS T
+    WHERE B.bestillingID = O.bestillingID 
+    AND   O.hundID = H.hundID
+    AND   O.oppholdID = T.oppholdID
+    AND day(B.startDato) <= day(CURRENT_TIMESTAMP) 
+    AND day(B.sluttDato) >= day(CURRENT_TIMESTAMP) 
+    AND B.sjekketInn IS NOT NULL 
+    AND B.sjekketUt IS NULL 
+    AND day(T.startTidspunkt) = day(CURRENT_TIMESTAMP) ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)){
+        $oppholdIDTab[$pos++] = $rad['oppholdID'];    
+    } 
+    return $oppholdIDTab;
+}
+
+// test !!!!!!!!!
+function slettAlleTurer($dblink) {
+    if (isset($_POST['slettAlle'])) { 
+        $sql = "DELETE FROM tur;" ;
+        mysqli_query($dblink,$sql);
+        header("Refresh:0");
+    }  
+}
+
+// ************************** 7h) Kommentar *********************************************** 
 function visAlleHunderPaaOppholdNaaKommentar($dblink) {
     echo "<h3>" . "Alle hunder som er på opphold nå" . "</h3>";
     // vis opphold Overskrifter
