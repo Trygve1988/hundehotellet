@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main> 
 
-        <!-- 2a erLoggetInn -->
+        <!-- erLoggetInn -->
         <?php 
             if (!erLoggetInn()) {
                 header('Location: loggInn.php');
@@ -33,7 +33,7 @@
 
         <?php $bruker = $_SESSION['bruker'] ?>
        
-        <!-- 2a oppdater brukerInfo Skjema -->
+        <!-- Oppdater brukerInfo Skjema -->
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
@@ -41,26 +41,30 @@
 			<form class="skjemaBakgrunn" method="POST">
 
                 	<!-- Avbryt knapp -->
-				<a href = "index.php">
+				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>	
 
-                <h2>Endre BrukerInfo</h2>  
+                <h2 class="hovedOversikt">Endre brukerinformasjon</h2>  
 				<div class="skjemaKolonner">
-					<div class="kolonne1">
-                        <label for="epost">epost:</label>
-                        <input class="inputTekst" type="text" id="epost" name="epost" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value= <?php echo $bruker->getEpost() ?>>
-                        <label for="tlf">tlf:</label>   
+					<div class="kolonne1">   
+                        <label for="fornavn">Fornavn:</label>   
+                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
+
+                        <label for="tlf">Tlf:</label>   
                         <input class="inputTekst" type="text" id="tlf" name="tlf" pattern="[0-9]{8}" value= <?php echo $bruker->getTlf() ?> >
-                        <label for="adresse">adresse:</label>     
+                        
+                        <label for="adresse">Adresse:</label>     
                         <input class="inputTekst" type="text" id="adresse" name="adresse" value= <?php echo $bruker->getAdresse() ?> > 
 
                     </div>
                     <div class="kolonne2">
-                        <label for="fornavn">fornavn:</label>   
-                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
-                        <label for="etternavn">etternavn:</label>  
+                        <label for="etternavn">Etternavn:</label>  
                         <input class="inputTekst" type="text" id="etternavn" name="etternavn" value= <?php echo $bruker->getEtternavn() ?> >
+
+                        <label for="epost">Epost:</label>
+                        <input class="inputTekst" type="text" id="epost" name="epost" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value= <?php echo $bruker->getEpost() ?>>
+
                     </div>
                 </div> 
 
