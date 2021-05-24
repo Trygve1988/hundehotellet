@@ -86,6 +86,7 @@ $dblink = kobleOpp();
 						<div class="passordKrav">
 							<p>Passord krav:</p>
 							<p id="status" melding()></p>
+							<!-- Engelsk tilbakemelding --->
 							<p id="status2" melding2()></p>
 						</div>
 						
