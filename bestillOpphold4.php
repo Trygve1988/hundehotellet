@@ -92,7 +92,7 @@ $dblink = kobleOpp();
 						</div>
 						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
-						<a id="vilkår" class="blaaTekst" href="vilkaar.php"> Kryss av for ågodta vilkår:</a></label> 
+						<a id="vilkår" class="blaaTekst" href="vilkaar.php"> Kryss av for å godta vilkår:</a></label> 
 						<input class="litenCheckbox" type="checkbox" name="til" required>		
 						
 					</div>
