@@ -128,7 +128,7 @@ function lagOppholdTab($dblink) {
 function lagOppholdOverskrifter() {
     echo "<h2> Mine Opphold </h2>";
     //overskrifter
-    echo "<table>";
+    echo "<table class=\"blaaTab\">";
     echo "<tr>";
     echo    "<th>bestillingID</th>";    // bestilling
     echo    "<th>start</th>";           // bestilling
@@ -282,6 +282,17 @@ function slettMinBruker($dblink) {
 // ************************** registrerHund **************************
 //denne funskjonen er allerede laget under bestill opphold
 
+
+function lagMinSideOption($hund,$hundID) {
+    if ($hundID == substr($hund,0,2)) {  
+        ?> <option value= <?php echo $hund?> selected > <?php echo $hund ?> </option><?php
+    }
+    else {
+        ?> <option value= <?php echo $hund?> > <?php echo $hund ?> </option><?php
+    }
+}
+
+
 // ************************** 7) endre hund1  **************************
 function laghunderTab($dblink) {
     //lager tabell med brukeren sine hundIDer
@@ -293,7 +304,7 @@ function laghunderTab($dblink) {
     $hundIDTab = array();
     $pos = 0;
     while($rad = mysqli_fetch_assoc($resultat)){
-        $hundIDTab[$pos++] = $rad['navn']; 
+        $hundIDTab[$pos++] = $rad['hundID']." ".$rad['navn']; 
     }
     return $hundIDTab;
 }
@@ -346,13 +357,11 @@ function slettHund($dblink) {
     if (isset($_POST['slettHund'])) {  
         $brukerID = $_SESSION['bruker']->getBrukerID();
         $hund = $_POST['hund'];
-
-        echo "brukerID: " . $brukerID;
-        echo "hund:     " . $hund;
-
-        $sql = "DELETE FROM hund WHERE brukerID = '$brukerID' AND navn = $hund ;";
+        $hundID = substr($hund,0,2);
+        $sql = "DELETE FROM hund WHERE hundID = '$hundID' ;";
         $resultat = mysqli_query($dblink, $sql);
-        //header("Refresh:0");
+        echo "<br>".'<i style="color:green; position:absolute";"> Hund slettet </i>';
+        header("Refresh:0");
     }
 }
 

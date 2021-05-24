@@ -5,6 +5,8 @@ class FerdigBestilling {
     private $startDato;
     private $sluttDato;
     private $bestiltDato;
+    private $sjekketInn; 
+    private $sjekketUt; 
     private $totalPris;
     private $burID;
     private $hundTab = array();
@@ -25,6 +27,14 @@ class FerdigBestilling {
         $this->bestiltDato = $bestiltDato;
     }
 
+    function setSjekketInn($sjekketInn) {
+        $this->sjekketInn = $sjekketInn;
+    }
+
+    function setSjekketUt($sjekketUt) {
+        $this->sjekketUt = $sjekketUt;
+    }
+    
     function setTotalPris($totalPris) {
         $this->totalPris = $totalPris;
     }
@@ -55,6 +65,14 @@ class FerdigBestilling {
 
     function getBestiltDato() {
         return $this->bestiltDato;
+    }
+
+    function getSjekketInn() {
+        return $this->sjekketInn;
+    }
+
+    function getSjekketUt() {
+        return $this->sjekketUt;
     }
 
     function getTotalPris() {

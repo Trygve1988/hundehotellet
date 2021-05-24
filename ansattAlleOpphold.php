@@ -33,11 +33,11 @@
             <form class="skjemaBakgrunn" method="POST">
                 <!-- 2a alleOpphold -->
                 <h2>Alle Opphold</h2>
-                <?php //visAlleOpphold($dblink); ?>
+                <?php visAlleOpphold($dblink); ?>
 
-                <?php visIkkeBegynteOpphold($dblink); ?>
-                <?php visAktiveOpphold($dblink); ?>
-                <?php vis5SisteFerdigeOpphold($dblink); ?>
+                <?php //visIkkeBegynteOpphold($dblink); ?>
+                <?php //visAktiveOpphold($dblink); ?>
+                <?php //vis5SisteFerdigeOpphold($dblink); ?>
 
                 <a href="ansattAlleOppholdEldre.php"> 
                     <input class="litenKnapp" type="button" value="Se Eldre"> 
@@ -46,8 +46,8 @@
                     <input class="litenKnapp" type="button" value="Bestill Opphold"> 
                 </a> 
                 <a href="ansattAvbestill.php">
-                    <input class="litenKnapp" type="button" value="Avbestill" name="Avbestill"> 
-                </a> 
+                    <input id="avbestillKnapp" class="litenKnapp" type="button" value="Avbestill" name="Avbestill">
+                </a>
             </form>
         </div>
     </main>
