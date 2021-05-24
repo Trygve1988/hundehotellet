@@ -70,7 +70,7 @@ $dblink = kobleOpp();
 							
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
-						id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" onChange="sjekkPassord()" value="123Ab%12">
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="123Ab%12">
 
 						
 						<!-- Passord rad -->
