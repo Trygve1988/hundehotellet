@@ -18,10 +18,10 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main **************************-->
     <main> 
 
         <!-- 2a erLoggetInn -->
@@ -76,16 +76,16 @@
                     </div>
                 </div> 
 
-                <!--Knapperad-->
+                <!--Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
-						<!-- Tilbakeknapp-->
+						<!-- Tilbakeknapp -->
 						<a href="minSide.php">
                             <input class="inputButton mediumKnapp" type="button" value="Tilbake">  
                         <a>
 					</div>
 					<div class="etterKolonnerKnapp">
-						<!-- Lagre knapp-->
+						<!-- Lagre knapp -->
 						 <input class="inputSubmit mediumKnapp" type="submit" value="Lagre"  name="lagre">
 					</div>
 				</div>
@@ -93,7 +93,7 @@
         </div> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    
