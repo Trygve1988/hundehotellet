@@ -454,7 +454,18 @@ function melding2(){
       status2.innerHTML="Between 8-15 characters, one uppercase letter, one special character.";
       return false;
     } 
-  }
+}
+
+// Sjekker om passord er like
+function sjekkPassord(){
+    const passord = document.querySelector('input[name=passord]');
+    const sjekkPaso = document.querySelector('input[name=passordSjekk]');
+    if(sjekkPaso.value === passord.value){
+        
+    } else{
+        sjekkPaso.setCustomValidity('Ikke like / Not alike'); 
+    }
+}
 
 // ************************** Bildeslider (Even) **************************
 

@@ -68,7 +68,7 @@ $dblink = kobleOpp();
 							
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
-						id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" value="123Ab%12">
+						id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" onChange="sjekkPassord()" value="123Ab%12">
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
@@ -92,7 +92,7 @@ $dblink = kobleOpp();
 						
 						<div class="gjentaPKolonne">
 							<label for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk" required value="123Ab%12">	
+							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
 						</div>
 					</div>
 				</div>
@@ -101,7 +101,7 @@ $dblink = kobleOpp();
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
-							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" value="Registrer ny bruker">
+							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" value="Registrer ny bruker">
 						</a>
 
 					<!-- Logg inn link -->
