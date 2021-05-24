@@ -62,7 +62,7 @@ $dblink = kobleOpp();
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn" required >
 								<option value="velg">--Velg--</option>
-							<option value="gutt">Hannhund</option>
+							<option value="gutt">Hann</option>
 							<option value="jente">Tispe</option>
 						
 						</select>	
