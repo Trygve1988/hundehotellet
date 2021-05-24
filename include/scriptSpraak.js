@@ -57,7 +57,7 @@ var bestillTab      = ['Bestill','Order here'];
 var indextTextTab1  = ['Her kan du bestille opphold til hunden(ene) dine.','Here you can book a stay for your dog (s).'];
 var omHundehotelletTab = ['Om Hundehotellet','About Hundehotellet'];
 var indextTextTab2  = ['Her kan du få mer info om Hundehotellet.','Here you can get more info about Hundehotellet.'];
-var priserTab       = ['Priser','Prices'];
+var priserTab1       = ['Priser','Prices'];
 var indextTextTab3  = ['Her kan du se en oversikt over priser.','Here you can see an overview of prices.'];
 var navnTab1        = ['Navn: Sansa Stark','Name: Sansa Stark'];
 var navnTab2        = ['Navn: Jon Snow','Name: Jon Snow'];
@@ -113,7 +113,6 @@ var bestillOppholdTextTab = ['Bø Hundehotell har kapasitet til max 3 hunder i s
 var bestillOppholdTextTab2 = ['Vennligst bestill flere ganger hvis du ønsker å bestille opphold til flere en 3 hunder.','Please book several times if you want to book stays for more than 3 dogs.'];
 var velgHunderTab = ['Velg hund(er):','Select dog (s):'];
 var registerHundTab = ['+ Registrer ny hund','+ Register new dog'];
-var bestillOppholdTab2 = ['Bestill opphold','Book a stay'];
 var bekreftTab = ['Kontroller at informasjon om hunden din er oppdatert:','Make sure your dogs information is up to date:'];
 var hundNavnTab = ['Hundens navn:','The Dogs name:'];
 var raseTab = ['Rase:','Race:'];
@@ -293,7 +292,7 @@ if (indextText2 !== null) {
     indextText2.innerHTML = indextTextTab2[språk]; 
 }
 if (priser !== null) {
-    priser.innerHTML = priserTab[språk]; 
+    priser.innerHTML = priserTab1[språk]; 
 }
 if (indextText3 !== null) {
     indextText3.innerHTML = indextTextTab3[språk]; 
@@ -461,7 +460,7 @@ if (registerHund !== null) {
     registerHund.innerHTML = registerHundTab[språk];  
 }
 if (bestillOpphold2 !== null) {
-    bestillOpphold2.innerHTML = bestillOppholdTab2[språk];  
+    bestillOpphold2.innerHTML = bestillOppholdTab[språk];  
 } 
 if (bekreft !== null) {
     bekreft.innerHTML = bekreftTab[språk];  
@@ -499,24 +498,12 @@ if (ja !== null) {
 if (ja2 !== null) {
     ja2.innerHTML = jaTab[språk];  
 }
-if (ja3 !== null) {
-    ja3.innerHTML = jaTab[språk];  
-}
-if (ja4 !== null) {
-    ja4.innerHTML = jaTab[språk];  
-}
 if (nei !== null) {
     nei.innerHTML = neiTab[språk];  
 }
 if (nei2 !== null) {
     nei2.innerHTML = neiTab[språk];  
 }
-if (nei3 !== null) {
-    nei3.innerHTML = neiTab[språk];  
-} 
-if (nei4 !== null) {
-    nei4.innerHTML = neiTab[språk];  
-} 
 if (løpeMedAndre !== null) {
     løpeMedAndre.innerHTML = løpeMedAndreTab[språk];  
 } 
