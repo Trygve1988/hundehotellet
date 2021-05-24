@@ -10,7 +10,7 @@ $dblink = kobleOpp();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Aktuelt</title>
+    <title>Aktuelt</title>
     <link href="include/style.css" rel="stylesheet" type="text/css">
     <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
     <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
@@ -30,6 +30,9 @@ $dblink = kobleOpp();
 
             <!-- Skjema -->
             <form class="skjemaBakgrunn" method="POST">
+
+                <!--********************** Kristina ************************** -->
+
                 <div class="aktuelt">
                     <div class="mellomromMellomInnlegg">
                         <!-- Margin-bottom funket ikke, derfor måtte det lages en div som lager luft mellom innleggene -->
@@ -67,23 +70,24 @@ $dblink = kobleOpp();
                             <h2>Skriv nytt innlegg </h2>
                             <label for="overskrift">overskrift:</label>
                             <input class="inputTekst" type="text" name="innleggOverskrift" value="overskrift">
-    
+
                             <label for="text">text:</label>
                             <input class="inputTekst" type="text" name="innleggText" value="text">
-    
+
                             <input class="litenKnapp" type="submit" value="lagre" name="lagreInnleggKnapp">
-    
+
                             <?php lagreInnlegg($dblink); ?>
-                        </div><?php 
-                    } ?>
-                    
+                        </div><?php
+                            } ?>
+
                 </div>
-            </form> 
+            </form>
         </div>
     </main>
-        <!-- ************************** 3) fellesBunn **************************-->
-        <?php visFooter(); ?>
-        <?php visToppKnapp(); ?>
+    <!-- ************************** 3) fellesBunn **************************-->
+    <?php visFooter(); ?>
+    <?php visToppKnapp(); ?>
 
 </body>
+
 </html>

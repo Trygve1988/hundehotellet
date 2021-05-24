@@ -310,8 +310,8 @@ main {
 	height: auto;
 	padding: 40px 8px 25px 8px;
 	background-color: white;
-	box-shadow: -5px 0 10px -5px white, 5px 0 10px -5px white; /*Skyggeeffekt*/
-	clip-path: inset(0px -15px 0px -15px); /*Gjør at skyggen ikke kommer på toppen og bunnen*/
+	box-shadow: -5px 0 10px -5px white, 5px 0 10px -5px white; /*Skyggeeffekt (Kristina)*/
+	clip-path: inset(0px -15px 0px -15px); /*Gjør at skyggen ikke kommer på toppen og bunnen (Kristina)*/
 }
 
 /*Form grå bakgrunn*/
@@ -587,7 +587,7 @@ input[type=checkbox].storCheckbox {
  }
 
  
-.bildeKontroller { /*Kristina laget hover effekten*/
+.bildeKontroller { /*Kristina laget hover og skygge effekten*/
 	overflow: hidden; /*Gjør at bildeeffekten ikke går ut av kortet*/
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    

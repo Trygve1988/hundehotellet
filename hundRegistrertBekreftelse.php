@@ -30,7 +30,6 @@ $dblink = kobleOpp();
 		<!-- erLoggetInn sjekk -->
 		<?php /*if (!erLoggetInn()) { header('Location: loggInn.php'); } grået ut for å teste*/ ?>
 
-	<!-- ************************ (Gunni (makert i koden hva som er hennes) og Kristina (makert i koden) ) ************************** -->
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 
@@ -38,7 +37,7 @@ $dblink = kobleOpp();
 					    <!--Måtte lage min egen "bakgrunn" der jeg fjernet den grå bakgrunnen for å få meldingen mer i midten -->
 			<form class="skjemaBakgrunn1">
 
-	<!-- ************************ (Kristinas kode) ************************** -->
+	<!-- ************************ (Kristina) ************************** -->
 	<div class="takkSiden">
 					<div class="module">
 						<!--Module(fontawesome)  -->

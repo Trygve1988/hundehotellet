@@ -26,7 +26,7 @@ $dblink = kobleOpp();
         <!-- 2a kontakt oss -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
-                <!--********************** Kristina ************************** -->
+                <!--********************** (Kristina) ************************** -->
 
                 <section class="kontakt">
                     <div class="kontakt-info">

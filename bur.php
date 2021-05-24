@@ -35,6 +35,8 @@ $dblink = kobleOpp();
     <div class="hvitBakgrunn">
         <form class="skjemaBakgrunn">
 
+         <!--********************** Kristina ************************** -->
+
             <!--Tabell bur -->
             <h2 class="hovedOverskrift">Bur</h2>
             <table class="opphold Pågående">

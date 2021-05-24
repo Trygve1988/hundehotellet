@@ -57,7 +57,7 @@ $dblink = kobleOpp();
 							
 							<!-- -->
 
-								<!-- Tilbake til forsiden- knapp (Gunni)-->
+								<!-- Tilbake til forsiden- knapp (Gunn Inger)-->
 								<a href="index.php">
 									<input class="inputButton hovedKnapp" type="button" name="tilIndex" value="Tilbake til forsiden"> </a>
 							
