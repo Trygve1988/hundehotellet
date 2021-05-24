@@ -933,7 +933,14 @@ footer a {
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
 }
+
+
 /* blaaTabSmal (Trygve og Kristina) */
+.blaaTabSmal {
+	padding-bottom: 20px;
+}
+
+
 .blaaTabSmal tr {
 	background-color: white; /*Hvit bakgrunn på skjema*/
 }

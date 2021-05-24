@@ -33,7 +33,11 @@
         ?>
 
         <!-- 2b) Hund info -->
-        <?php $h1 = $_SESSION['aktivHund']; ?>
+        <?php 
+        $minSideHund = $_SESSION['minSideHund']; 
+        setAktivHund($dblink,$minSideHund);
+        $h1 = $_SESSION['aktivHund']; 
+        ?>
 
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">

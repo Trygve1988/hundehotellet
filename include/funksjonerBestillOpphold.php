@@ -56,31 +56,6 @@ function oppdaterHunder($dblink) {
     }
 }
 
-function setAktivHund($dblink,$hundID) {
-    // setter valgt hund-objekt sesjonsvariabel
-    $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
-    $resultat = mysqli_query($dblink, $sql); 
-    $rad = mysqli_fetch_assoc($resultat);
-
-    $hundID = $rad['hundID'];
-    $navn = $rad['navn'];
-    $rase = $rad['rase'];
-    $fdato = $rad['fdato'];
-    $kjønn = $rad['kjønn'];
-
-    $sterilisert = $rad['sterilisert'];
-    $løpeMedAndre = $rad['løpeMedAndre'];
-    $info = $rad['info'];
-    $brukerID = $rad['brukerID'];
-    $forID = $rad['forID'];
-
-    $hund = new Hund($hundID,$navn,$rase,$fdato,$kjønn,
-    $sterilisert,$løpeMedAndre,$info,$brukerID,$forID);
-
-    $_SESSION['aktivHund'] = $hund;
-
-}
-
 // c) bekreftHundInfo
 function bekreftHundInfo($dblink) {
     if (isset($_POST['bekreftHundInfo'])) {  

@@ -338,15 +338,15 @@ function oppdaterSluttDato() {
 
 
 // ************************** 7) Ansatt: inspiser hund **************************
-var velgHundSelect = document.getElementById("velgHundSelect");
+var velgInspiserHundSelect = document.getElementById("velgInspiserHundSelect");
 
 //er vi på Registrer deg siden ? 
-if (velgHundSelect !== null) {
-    velgHundSelect.addEventListener('change', settInspiserHundSession, false);
+if (velgInspiserHundSelect !== null) {
+    velgInspiserHundSelect.addEventListener('change', settInspiserHundSession, false);
 }
 
 function settInspiserHundSession() {
-    var hundID = document.getElementById("velgHundSelect").value;
+    var hundID = document.getElementById("velgInspiserHundSelect").value;
     console.log(hundID);
     var ajaxRequest = new XMLHttpRequest();  
     ajaxRequest.open("GET", "include/ajaxSettInspiserHundSession.php?q="+hundID, true);
@@ -356,6 +356,33 @@ function settInspiserHundSession() {
         location.reload();
     }
 }
+
+
+
+// ************************** test **************************
+var velgMinSideHundSelect = document.getElementById("velgMinSideHundSelect");
+
+//er vi på Registrer deg siden ? 
+if (velgMinSideHundSelect !== null) {
+    velgMinSideHundSelect.addEventListener('change', settMinSideHundSession, false);
+}
+
+function settMinSideHundSession() {
+    var hundID = document.getElementById("velgMinSideHundSelect").value;
+    console.log(hundID);
+    var ajaxRequest = new XMLHttpRequest();  
+    ajaxRequest.open("GET", "include/ajaxSettMinSideHundSession.php?q="+hundID, true);
+    ajaxRequest.send(null);
+    ajaxRequest.onreadystatechange = function() {
+        var test = ajaxRequest.responseText;
+        location.reload();
+    }
+}
+
+
+
+
+
 
 
 // ************************** 9) admin **************************
