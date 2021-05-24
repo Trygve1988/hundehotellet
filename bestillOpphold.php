@@ -39,18 +39,18 @@ $dblink = kobleOpp();
 			<form id="bestillOpphold1Skjema" class="skjemaBakgrunn" method="POST">
 
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Bestill opphold</h2>
-				<p>Bø Hundehotell har kapastitet til max 3 hunder i samme bur.</p>
-            	<p>Vennligst bestill flere ganger viss du ønsker å bestille opphold til flere en 3 hunder.</p><br>
+				<h2 class="bestillOpphold" class="hovedOverskrift">Bestill opphold</h2>
+				<p id="bestillOppholdText">Bø Hundehotell har kapastitet til max 3 hunder i samme bur.</p>
+            	<p id="bestillOppholdText2">Vennligst bestill flere ganger viss du ønsker å bestille opphold til flere en 3 hunder.</p><br>
 			
-				<h3>Velg hund(er):</h3>
+				<h3 id="velgHunder">Velg hund(er):</h3>
 				<div>
 					<!-- "Velg hund" knapp -->
 					<div id="velgHundKnappContainer"></div>  
 
 					<!-- " + Registrer ny hund"- knapp -->
 					<a href = "registrerHundBO.php">
-						<input class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
+						<input id="registerHund" class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
 					</a>
 				</div>
 

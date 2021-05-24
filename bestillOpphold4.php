@@ -61,11 +61,6 @@ $dblink = kobleOpp();
 				</div>
 
 				<h2 class="overskrift2" >Betaling</h2>
-				<!-- Valg av betalingsmetode: -->
-				<label for="kort">Betalingskort:</label>
-				<input class="radiobox" type="radio" name="kort">
-				<label for="vipps">VIPPS:</label>
-				<input class="radiobox" type="radio" name="vipps">		
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
