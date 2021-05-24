@@ -20,10 +20,10 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** fellesTop ************************** -->
+	<!-- ************************** Felles topp ************************** -->
 	<?php visNav(); ?>
 
-	<!-- **************************  main  ***************************** -->
+	<!-- **************************  Main  ******************************* -->
 	
 	<main>
 		<!-- ************************ (Gunni) ************************** -->
@@ -52,7 +52,7 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
-				<!--Logg inn knapp-->
+				<!--Logg inn knapp -->
 				<div class="etterKolonnerKnapp bunnKnapp">
 					<div class="loggInnKnapp">
 						<input class="inputSubmit hovedKnapp" type="submit" name="loggInn" value="Logg Inn">
@@ -63,15 +63,15 @@ $dblink = kobleOpp();
 						<a id="registrerDeg" class="link" href="registrerDeg.php">Registrer deg</a>
 					</div>
 				</div>
-				<!-- ************************** (Trygve)************************** -->
+
+				<!-- ************************** (Trygve) ************************** -->
 				<!-- loggInn -->
 				<?php loggInn($dblink); ?> 	
 			</form>
-		</div>
-		
+		</div>	
 	</main>
 
-	<!-- ************************** fellesBunn *********************************** -->
+	<!-- ************************** Felles bunn *********************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 
