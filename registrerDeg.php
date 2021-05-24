@@ -20,10 +20,10 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** fellesTop ************************** -->
+	<!-- ************************** Felles topp ************************** -->
 	<?php visNav(); ?>
 
-	<!-- **************************   main    ************************** -->
+	<!-- **************************   Main    ************************** -->
 	<main>
 		<!-- ************************ (Gunni) ************************** -->
 		<!-- Hvit bakgrunn -->	
@@ -41,8 +41,10 @@ $dblink = kobleOpp();
 				<h2 class="hovedOverskrift">Registrer ny bruker</h2>
 
 				<div class="skjemaKolonner">
+					
+					<!-- Labels og input i kolonne 1 -->
 					<div class="kolonne1">
-						<!-- Labels og input i kolonne 1 -->
+						
 						<label for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
 
@@ -54,20 +56,10 @@ $dblink = kobleOpp();
 						
 						<label for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" required value="Epleveien 5">	
-						
-						<label for="postNr">Postnummer:</label>
-						<input class="inputTekst" type="text" name="postNr" required pattern="[0-9]{4}" value="9944">	
-
-						<!-- velg brukertype (bare for testing)  -->
-						<select class="inputSelect" name="brukertype">
-							<option value="kunde">kunde</option>
-							<option value="ansatt">ansatt</option>
-							<option value="admin">admin</option>
-                   		</select>
 					</div>
-					
-					<div>
-						<!-- Labels og input i kolonne 2 -->
+
+					<!-- Labels og input i kolonne 2 -->
+					<div>	
 						<label for="etternavn">Etternavn:</label>
 						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
 						
@@ -96,22 +88,21 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
+				<!-- Knapper -->
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
-							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" value="Registrer ny bruker"> <!-- HVOR SKAL DENNE LEDE?? -->
+							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" value="Registrer ny bruker">
 						</a>
 
 					<!-- Logg inn link -->
 					<p class="ekstraLink"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
 
-				<!-- registrerDeg (Trygve) -->
+				<!-- Registrer deg (Trygve) -->
 				<?php registrerDeg($dblink); ?> 
-
 			</form>	
-		</div>
-			
+		</div>		
 	</main>
 
 	<!-- ************************** fellesBunn ************************** -->
