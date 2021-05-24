@@ -393,6 +393,11 @@ div .gjentaPKolonne {
     font-size: 15px;
 }
 
+/* Gjør at passord-elementene holder seg på en rad */
+.passordRad {
+	display: initial;
+}
+
 /* Plasserer linken tett under et element (f.eks under input-element!)*/
 .hPosLink {
 	display: block;
