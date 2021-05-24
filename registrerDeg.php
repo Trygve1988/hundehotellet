@@ -104,7 +104,7 @@ $dblink = kobleOpp();
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
-							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" value="Registrer ny bruker">
+							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" disabled value="Registrer ny bruker">
 						</a>
 
 					<!-- Logg inn link -->
