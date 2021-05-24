@@ -52,41 +52,45 @@ $dblink = kobleOpp();
 						<input  class="inputTekst" type="text" name="navn" value="Pluto">
 			
 						<label for="rase">Rase:</label>
-						<input class="inputTekst" type="text" name="rase" value="Labrador">	
+						<input class="inputTekst" type="text" name="rase" value="Labrador" required >	
 
 						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fdato" value="2010-01-01">	
+						<input class="inputDato" type="date" name="fdato" value="2010-01-01" required >	
 
 						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
-						<select class="inputSelect" name="kjønn">
+						<select class="inputSelect" name="kjønn" required >
+								<option value="velg">--Velg--</option>
 							<option value="gutt">Hannhund</option>
 							<option value="jente">Tispe</option>
-							<option value="velg">--Velg--</option>
+						
 						</select>	
 					
 						<label for="sterilisert">Sterilisert:</label>
-						<select class="inputSelect" name="sterilisert">
+						<select class="inputSelect" name="sterilisert" required >
+							<option value="velg">--Velg--</option>
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
-							<option value="velg">--Velg--</option>
+							
 						</select>
 					</div>	
 					<!-- Labels og input i kolonne 2-->
 					<div class="kolonne2">
 						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
-						<select class="inputSelect" name="løpeMedAndre">
+						<select class="inputSelect" name="løpeMedAndre" required >
+								<option value="velg">--Velg--</option>
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
-							<option value="velg">--Velg--</option>
+						
 						</select>
 
 						<label for="forID">Fôrtype:</label>
-						<select class="inputSelect" name="forID"> 
+						<select class="inputSelect" name="forID" required > 
+								<option value="velg">--Velg--</option>
 							<option value="1">Royal Canin (vanlig)</option>
 							<option value="2">Vom (allergi)</option>
-							<option value="velg">--Velg--</option>
+						
 						</select>
 
 						<label for="info">Ekstra informasjon:</label>
