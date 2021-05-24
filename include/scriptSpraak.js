@@ -53,7 +53,7 @@ var omOssTextTab       = ['Bø Hundehotell holder til på Lektorvegen 91, i Bø 
 var velkommenTab1     = ['Velkommen til Bø Hundehotell','Welcome to Bø Hundehotell'];
 var velkommenTab2   = ['Norges BESTE Hundehotell for dine firbente venner','Norways BEST Dog Hotel for your four legged friends'];
 var velkommenTab3   = ['Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16','Opening hours: Mon-Fri 8-18, Sat-Sun: 10-16'];
-var bestillTab      = ['Bestill','Order here'];
+var bestillTab1      = ['Bestill','Order here'];
 var indextTextTab1  = ['Her kan du bestille opphold til hunden(ene) dine.','Here you can book a stay for your dog (s).'];
 var omHundehotelletTab = ['Om Hundehotellet','About Hundehotellet'];
 var indextTextTab2  = ['Her kan du få mer info om Hundehotellet.','Here you can get more info about Hundehotellet.'];
@@ -282,7 +282,7 @@ if (velkommenNoText3 !== null) {
     velkommenNoText3.innerHTML = velkommenTab3[språk]; 
 }
 if (bestill !== null) {
-    bestill.innerHTML = bestillTab[språk]; 
+    bestill.innerHTML = bestillTab1[språk]; 
 }
 if (indextText1 !== null) {
     indextText1.innerHTML = indextTextTab1[språk]; 
