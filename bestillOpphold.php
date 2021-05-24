@@ -45,19 +45,18 @@ $dblink = kobleOpp();
 			
 				<h3 id="velgHunder">Velg hund(er):</h3>
 				<div>
-					<!-- "Velg hund" knapp -->
+					<!-- Velg hund knapp -->
 					<div id="velgHundKnappContainer"></div>  
 
-					<!-- " + Registrer ny hund"- knapp -->
+					<!--  Registrer ny hund  knapp -->
 					<a href = "registrerHundBO.php">
 						<input id="registerHund" class="inputButton ekstraKnapp" type="button" value="+ Registrer ny hund">
 					</a>
 				</div>
 
-				<!-- Neste-knapp -->
+				<!-- Neste knapp -->
 				<div class="etterKolonnerKnapp knappeKlyngeHB">
-					<!-- <a href = "bestillOpphold2.php"> </a> -->
-	                <input id="tilBestillOpphold2Knapp" class="inputButton hovedKnapp" type="button" value="Neste"> 
+	                <input id="tilBestillOpphold2Knapp" class="inputSubmit hovedKnapp" type="submit" value="Neste"> 
             	</div>
 
 				<!-- Tilbakemelding til bruker -->
