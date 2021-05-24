@@ -41,7 +41,8 @@
                 <?php visAlleRegistrerteMatingerIDag($dblink); ?>
 
                 <input class="litenKnapp" type="submit" name="registrerMatingAlle" value="Registrer Mating (alle)">
-                <input class="litenKnapp" type="submit" name="slettAlle" value="Slett Alle"> 
+                <input class="litenKnapp" type="submit" name="slettAlle" value="Slett dagens mating"> 
+
             </form>
 
         </div>

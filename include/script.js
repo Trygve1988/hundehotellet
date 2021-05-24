@@ -426,10 +426,12 @@ function visPassord() {
 //Passord validation (Even)
 const passord = document.querySelector("#passord");
 const status = document.querySelector("#status");
+const status2 = document.querySelector("#status2");
 
 //Sjekker om man skriver inn passord
 if(passord !== null) {
   passord.addEventListener('keyup', melding, false);
+  passord.addEventListener('keyup', melding2, false);
 } 
 
 function melding(){
@@ -438,10 +440,21 @@ function melding(){
     status.innerHTML="Passord er godkjent";
     return true;
   } else{
-    status.innerHTML="Mellom 8-15 tegn, minst 1 stor bokstav, og  minnst et speseielt tegn.";
+    status.innerHTML="Mellom 8-15 tegn, minst et stor bokstav, og  minst et speseielt tegn.";
     return false;
   } 
 }
+
+function melding2(){
+    var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+    if(passord.value.match(paso)){
+      status2.innerHTML="Password has been approved";
+      return true;
+    } else{
+      status2.innerHTML="Between 8-15 characters, one uppercase letter, one special character.";
+      return false;
+    } 
+  }
 
 // ************************** Bildeslider (Even) **************************
 

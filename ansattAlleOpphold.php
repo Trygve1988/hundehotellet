@@ -34,15 +34,13 @@
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
                 <!-- 2a alleOpphold -->
-                <h2>Alle Opphold</h2>
+                <h2 class="hovedOverskrift">Alle opphold</h2>	
                 <?php visAlleOpphold($dblink); ?>
 
                 <a href="ansattAlleOppholdEldre.php"> 
                     <input class="litenKnapp" type="button" value="Se Eldre"> 
                 </a> 
-                <a href="bestillOpphold1.php"> 
-                    <input class="litenKnapp" type="button" value="Bestill Opphold"> 
-                </a> 
+            
                 <a href="ansattAvbestill.php">
                     <input id="avbestillKnapp" class="litenKnapp" type="button" value="Avbestill" name="Avbestill">
                 </a>

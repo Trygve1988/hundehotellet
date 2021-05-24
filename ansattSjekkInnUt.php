@@ -56,8 +56,6 @@
                 <!-- test: nullstillKnapp --> 
                 <input class="litenKnapp" type="submit" value="Nullstill" name="nullstillInnsjekkingerKnapp">
             
-
-
                 <!-- *********** SjekkeUt *********** -->
                 <?php visSkalSjekkeUtIDag($dblink); ?>
                 <!-- skal sjekkes Ut hunder -->
@@ -71,11 +69,9 @@
                 <!-- sjekkUtKnapp --> 
                 <input class="litenKnapp" type="submit" value="Sjekk Ut" name="sjekkUtKnapp">
                 
-
                 <!-- test: nullstillKnapp --> 
                 <input class="litenKnapp" type="submit" value="Nullstill" name="nullStillUtsjekkingerKnapp">
                 
-
             </form>
         </div>
     </main>

@@ -394,7 +394,7 @@ function loggInn($dblink) {
                 }
             }
             if($innloggingOk == false) {
-                echo "<br>".'<i style="color:red; position:absolute";"> feil epost og/eller passord! </i>'; 
+                echo "<br>".'<i style="color:red; position:absolute";"> Du har skrivd inn feil epost og/eller passord! </i>'; 
             }
             $_SESSION['adminSeBrukertype'] = "kunde";
         }        

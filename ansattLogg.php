@@ -33,7 +33,10 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <h2>Logg</h2>
+            <h1 class="hovedOverskrift">Logg</h1>
+                <p>Logg over avbestilte bestillinger fra brukere.</p>
+
+                <h2 class="overskrift2"> Avbestilte opphold</h2>
                 <?php visAvbestilteOpphold($dblink); ?> 
             </form> 
 

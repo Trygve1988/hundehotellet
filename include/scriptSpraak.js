@@ -139,6 +139,9 @@ var utløpsdatoTab = ['Utløpsdato:','Expiration date:'];
 var kortNrTab = ['Kortnummer:','Card number:'];
 var finneCVCTab = ['Hvor finner jeg CVC koden?','Where can I find the CVC code?'];
 var vilkårTab = ['Kryss av for å godtavilkår:','Check to accept terms:'];
+var passordTab = ['Passord:','Password:'];
+var visPassordTab = ['Vis passord','Show password'];
+var glemtPassordTab = ['Glemt passord ?','Forgot your password ?']; 
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -261,6 +264,12 @@ var utløpsdato = document.getElementById("utløpsdato");
 var kortNr = document.getElementById("kortNr");
 var finneCVC = document.getElementById("finneCVC");
 var vilkår = document.getElementById("vilkår");
+var loggInn = document.getElementById("loggInn");
+var epostLoggInn = document.getElementById("epostLoggInn");
+var passordloggInn = document.getElementById("passordloggInn");
+var visPassordLogInn = document.getElementById("visPassordLogInn");
+var glemtPassord = document.getElementById("glemtPassord");
+var registrerDeg = document.getElementById("registrerDeg");
 
 
 
@@ -553,7 +562,7 @@ if (bestillOpphold3 !== null) {
     tidsperiode.innerHTML = tidsperiodeTab[språk];
     fra.innerHTML = fraTab[språk];
     til.innerHTML = tilTab[språk];
-}
+}epostLoggInn
 if(bestillOpphold4 !== null) {
     bestillOpphold4.innerHTML = bestillOppholdTab[språk];
     oppSummering.innerHTML = oppSummeringTab[språk];
@@ -565,4 +574,12 @@ if(bestillOpphold4 !== null) {
     kortNr.innerHTML = kortNrTab[språk];
     finneCVC.innerHTML = finneCVCTab[språk];
     vilkår.innerHTML = vilkårTab[språk];
+}
+if(loggInn !== null) {
+    loggInn.innerHTML = loggInnTab[språk];
+    epostLoggInn.innerHTML = epostTab[språk];
+    passordloggInn.innerHTML = passordTab[språk];
+    visPassordLogInn.innerHTML = visPassordTab[språk];
+    glemtPassord.innerHTML = glemtPassordTab[språk];
+    registrerDeg.innerHTML = registrerDegTab[språk];
 }

@@ -35,8 +35,7 @@
 
             <div class="skjemaKolonner">
 			    <div class="kolonne1">
-
-                    <h3>Endre Bruker</h3>  
+                <h1 class="hovedOverskrift">Endre bruker</h1>
 
                     <!-- velgEndreBrukerSelect --> 
                     <select name="velgEndreBrukerSelect" class="inputSelect">
@@ -47,7 +46,7 @@
                     </select>
 
                     <a href="admin.php">
-                        <input class="litenKnapp" type="button" value="Tilbake">  
+                        <input class="litenKnapp" type="button" value="Avbryt">  
                      <a>
                     <input class="litenKnapp" type="submit" value="Velg" name="velgEndreBrukerKnapp">
         
