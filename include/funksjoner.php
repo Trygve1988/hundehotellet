@@ -72,7 +72,6 @@ function visNav() {
         // minSide loggUt / loggInn registrerDeg
         if (erLoggetInn()) {
              ?> <a id="minSideLink" class="right" href="minSide.php">Min Side</a> <?php 
-             ?> <a id="minSideLink" class="right" href="minSideTest.php">Min Side Test</a> <?php 
              ?> <a id="loggUtLink" class="right" href="loggUt.php">Logg Ut</a> <?php
         }
         else {
@@ -198,6 +197,31 @@ function visFooter() {
 // ************************** 0) alle **************************
 function lagOption($verdi) {
     ?> <option value= <?php echo $verdi?> > <?php echo $verdi?> </option><?php
+}
+
+function setAktivHund($dblink,$hundID) {
+    // setter valgt hund-objekt sesjonsvariabel
+    $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
+    $resultat = mysqli_query($dblink, $sql); 
+    $rad = mysqli_fetch_assoc($resultat);
+
+    $hundID = $rad['hundID'];
+    $navn = $rad['navn'];
+    $rase = $rad['rase'];
+    $fdato = $rad['fdato'];
+    $kjønn = $rad['kjønn'];
+
+    $sterilisert = $rad['sterilisert'];
+    $løpeMedAndre = $rad['løpeMedAndre'];
+    $info = $rad['info'];
+    $brukerID = $rad['brukerID'];
+    $forID = $rad['forID'];
+
+    $hund = new Hund($hundID,$navn,$rase,$fdato,$kjønn,
+    $sterilisert,$løpeMedAndre,$info,$brukerID,$forID);
+
+    $_SESSION['aktivHund'] = $hund;
+
 }
 
 // ************************** 1) Index **************************
@@ -395,6 +419,10 @@ function minProfilTab($dblink) {
     while($rad = mysqli_fetch_assoc($resultat)) {
         echo "<table class=\"toKolTab  minSideToKolTab\">";	
             echo "<tr>";
+                echo "<th class=\"thKolonne\">BrukerID</th>";
+                echo "<td>". $rad['brukerID']. "</td>";
+            echo "</tr>";
+            echo "<tr>";
             echo "<th class=\"thKolonne\">Navn</th>";
                 echo "<td>". $rad['fornavn'] ." ". $rad['etternavn']. "</td>";
                 echo "</tr>";
@@ -410,19 +438,22 @@ function minProfilTab($dblink) {
                 echo "<th class=\"thKolonne\">Adresse</th>";
                 echo "<td>". $rad['adresse'] . "</td>";
             echo "</tr>";
+            echo "<tr>";
+                echo "<th class=\"thKolonne\">BrukerType</th>";
+                echo "<td>". $rad['brukerType'] . "</td>";
+            echo "</tr>";
         echo "</table>";
     } 
 }
 
 //Mine hunder tabell
-function mineHunderTab($dblink) {
+function minHundTab($dblink) {
     
     // $brukerID
-    $bruker = $_SESSION['bruker'];
-    $brukerID = $bruker->getBrukerID();
+    $hundID = $_SESSION['minSideHund'];
 
     // SQL-spørring
-    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
+    $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
 
     //SQL-resultat -> Tabellrader
     $resultat = mysqli_query($dblink, $sql);
