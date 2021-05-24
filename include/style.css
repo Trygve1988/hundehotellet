@@ -482,6 +482,7 @@ input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder sele
 /* EkstraKnapp, f.eks legg til hund */
 input[type=submit].ekstraKnapp, input[type=button].ekstraKnapp {
 	border-radius:25px;
+	padding: 20px; /*Gjør knappen større*/
 	margin: 5px 0;
 	background-color: #ffffff;
 }
