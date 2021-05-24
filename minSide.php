@@ -100,7 +100,7 @@
                     <div class="knappeRad">
                         <!-- Avbestill knapp -->
                         <a href="minSideAvbestill.php">
-                            <input class="inputButton mediumKnapp" type="button" value="Avbestill" name="Avbestill"> 
+                            <input class="inputButton mediumKnapp" type="button" value="Avbestill opphold" name="Avbestill"> 
                         </a> 
                       
                         <!-- Skriv anmneldese knapp-->
