@@ -44,7 +44,7 @@
                 </select>
 
                 <!-- sjekkInnKnapp --> 
-                <input class="litenKnapp" type="submit" value="Sjekk Inn" name="sjekkInnKnapp">
+                <input class="litenKnapp" type="submit" value="Sjekk inn" name="sjekkInnKnapp">
                 <?php sjekkInn($dblink); ?>
 
                 <!-- test: nullstillKnapp --> 
@@ -64,7 +64,7 @@
                 </select>
 
                 <!-- sjekkUtKnapp --> 
-                <input class="litenKnapp" type="submit" value="Sjekk Ut" name="sjekkUtKnapp">
+                <input class="litenKnapp" type="submit" value="Sjekk ut" name="sjekkUtKnapp">
                 <?php sjekkUt($dblink); ?>
 
                 <!-- test: nullstillKnapp --> 
