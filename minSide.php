@@ -44,22 +44,23 @@
                 <h2 class="overskrift2">Min profil</h2>
                 <?php minProfilTab($dblink); ?>
 
-                <a href="minSideEndreBrukerInfo.php">
-                    <input class="litenKnapp" type="button" value="Endre Bruker" name="Endre Bruker">
-                </a>
-                <a href="minSideEndrePassord.php"> 
-                    <input class="litenKnapp" type="button" value="Endre Passord" name="Endre Passord">
-                </a>
-                <a href="minSideSlettBruker.php"> 
-                    <input class="litenKnapp" type="button" value="Slett Bruker">
-                </a>
-                <br><br><br>
+                <div class="knapperad">
+                    <a href="minSideEndreBrukerInfo.php">
+                        <input class="inputButton  mediumKnapp" type="button" value="Endre Bruker" name="Endre Bruker">
+                    </a>
+                    <a href="minSideEndrePassord.php"> 
+                        <input class="inputButton  mediumKnapp" type="button" value="Endre Passord" name="Endre Passord">
+                    </a>
+                    <a href="minSideSlettBruker.php"> 
+                        <input class="inputButton  mediumKnapp" type="button" value="Slett Bruker">
+                    </a>
+                </div>
 
                 <!-- ************************** (Trygve) ************************** -->
                 <!-- Mine hunder -->
                 <h2 class="overskrift2">Mine Hunder</h2>
-                <label for="velgHundSelect">Velg Hund</label>
-                <select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect" width="100px">
+                <label for="velgHundSelect">Velg hund:</label>
+                <select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
                     <?php $hunder = lagHunderTab($dblink);
                     $minSideHund = $_SESSION['minSideHund']; 
                     for ($i=0; $i<count($hunder); $i++) {
@@ -67,31 +68,42 @@
                     } ?>
                 </select>
                 <?php minHundTab($dblink); ?>
-
+                <!-- Registrer hund knapp -->    
                 <a href="registrerHundMS.php">
-                    <input class="litenKnapp" type="button" value="Registrer Hund">
+                    <input class="inputButton mediumKnapp" type="button" value="Registrer Hund">
                 </a>
+                
                 <?php if (harHund($dblink)) { ?>
+                    <!-- Endre hund knapp -->  
                     <a href="minSideEndreHund.php">
-                        <input class="litenKnapp" type="button" value="Endre Hund">  
+                        <input class="inputButton mediumKnapp" type="button" value="Endre Hund">  
                     </a>
+                    <!-- Slett hund knapp -->  
                     <a href="minSideSlettHund.php">
-                        <input class="litenKnapp" type="button" value="Slett Hund">  
-                    </a>
+                        <input class="inputButton mediumKnapp" type="button" value="Slett Hund">  
+                    </a>               
                 <?php } ?>
-                <br><br><br>
 
                 <!-- Mine opphold --> 
-                <h2 class="overskrift2">Mine Opphold</h2>";
+                <h2 class="overskrift2">Mine Opphold</h2>
                 <?php visMineOpphold($dblink); ?> 
-                <?php if (harOpphold($dblink)) { ?>
-                    <br>
-                    <a href="minSideAvbestill.php">
-                        <input class="litenKnapp" type="button" value="Avbestill" name="Avbestill"> 
-                    </a> 
-                    <a href="minSideSkrivAnmeldelse.php">
-                        <input class="litenKnapp" type="button" value="Skriv Anmeldelse" name="Skriv Anmeldelse">
-                    </a>
+                <?php if (harOpphold($dblink)) { ?>              
+                    <!--Knapperad-->
+                    <div class="knappeRad">
+                        <div class="knapp1IRad">
+                            <!-- Tilbake-knapp-->
+                            <a href="minSideAvbestill.php">
+                                <input class="inputButton mediumKnapp" type="button" value="Avbestill" name="Avbestill"> 
+                            </a> 
+                        </div>
+                        <div class="etterKolonnerKnapp">
+                            <!-- Neste-knapp-->
+                            <a class="" href="minSideSkrivAnmeldelse.php">
+                                <input class="inputButton mediumKnapp" type="button" value="Skriv Anmeldelse" name="Skriv Anmeldelse">
+                            </a>	
+                        </div>
+                    </div>
+                    
                 <?php } ?>
             </form> 
         </div>

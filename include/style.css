@@ -486,6 +486,20 @@ input[type=submit].ekstraKnapp, input[type=button].ekstraKnapp {
 	margin: 5px 0;
 	background-color: #ffffff;
 }
+/* Medium stor knapp, til f.eks knapper på minSide.php */
+input[type=submit].mediumKnapp, input[type=button].mediumKnapp {
+	width: 200px;
+	margin: 10px 0;
+	font-size: 16px;
+ 	background-color: #2f3e52;
+    color: #ffffff; 
+}
+
+/* førIfKnapp, knapp som starter på ny rad, men som gir plass til elementer til høyre HVIS de trenger */
+.førIfKnapp {
+	display: inline;
+	
+}
 
 /* Avbryt-knapp */
  input[type=button].avbrytKnapp {
@@ -494,7 +508,7 @@ input[type=submit].ekstraKnapp, input[type=button].ekstraKnapp {
 	height: 38px;
 	border-radius: 50%;
 	font-size: 27px;
-	background-color: #2f3e52;
+	
 	color: #ffffff;
 }
 
@@ -913,6 +927,7 @@ footer a {
 /* blaaTab (Trygve og Kristina) */
 .blaaTab table{
 	border-collapse: collapse;
+	margin-bottom: 5px;
 }
 
 .blaaTab tr {
