@@ -32,9 +32,11 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <h3>Slett Bruker</h3>  
+            <h1 class="hovedOverskrift">Slett Bruker</h1>
+            
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
+                    <label for="slettBruker">Velg bruker du vil slette.</label>
                         <select name="velgSlettBrukerSelect" class="inputSelect">
                             <?php $brukere = lagBrukereTab($dblink);
                             for ($i=0; $i<count($brukere); $i++) {
@@ -42,7 +44,7 @@
                             } ?>
                         </select>
                         <a href="admin.php">
-                            <input class="litenKnapp" type="button" value="Tilbake">  
+                            <input class="litenKnapp" type="button" value="Avbryt">  
                         <a>
                         <input class="litenKnapp" type="submit" value="Slett" name="velgSlettBrukerKnapp">
                     </div>
