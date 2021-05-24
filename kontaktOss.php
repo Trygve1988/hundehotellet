@@ -19,14 +19,14 @@ $dblink = kobleOpp();
 </head>
 
 <body>
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
-    <!-- ************************** 2) main ************************** -->
+    <!-- ************************** Main ********************************* -->
     <main>
-        <!-- 2a kontakt oss -->
+        <!-- Kontakt oss -->
         <div class="hvitBakgrunn">
             <form class="skjemaBakgrunn">
-                <!--********************** (Kristina) ************************** -->
+                <!-- ********************** (Kristina) ******************* -->
 
                 <section class="kontakt">
                     <div class="kontakt-info">
@@ -41,17 +41,13 @@ $dblink = kobleOpp();
                         <p id="adresseKontkatoss" class="storText">Adresse::</p><p> Lektorvegen 913802 Bø i Telemark</p>
                         <p> <strong> Tlf: </strong> 12345678</p>
                     </div>
-
                 </section>
-
             </form>
-
         </div>
-
     </main>
 
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************* -->
     <?php visFooter(); ?>
     <?php visToppKnapp(); ?>
 

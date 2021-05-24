@@ -21,16 +21,16 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** fellesTop ************************** -->
+	<!-- ************************** Felles topp ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** main ******************************* -->
+	<!-- ************************** Main ********************************* -->
 	
 	<main>
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 		
-		<!-- ************************* (Gunni) ************************* -->
+		<!-- ************************* (Gunni) ************************** -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">
 
@@ -49,46 +49,43 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
 						<label for="hNavn">Hundens navn:</label>
-						<input  class="inputTekst" type="text" name="navn" value="Pluto">
+						<input  class="inputTekst" type="text" name="navn" value="Pluto" required>
 			
 						<label for="rase">Rase:</label>
-						<input class="inputTekst" type="text" name="rase" value="Labrador">	
+						<input class="inputTekst" type="text" name="rase" value="Labrador" required>	
 
-						<!-- Inputen for fødselsdato er date -->
 						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fdato" value="2010-01-01">	
+						<input class="inputDato" type="date" name="fdato" value="2010-01-01" required>	
 
-						<!-- Nedtrekkslister -->
 						<label for="kjonn">Kjønn:</label>
-						<select class="inputSelect" name="kjønn">
-							<option value="gutt">Hannhund</option>
+						<select class="inputSelect" name="kjønn" required>
+							<option value="gutt">Hann</option>
 							<option value="jente">Tispe</option>
 							<option value="velg">--Velg--</option>
 						</select>	
 					
 						<label for="sterilisert">Sterilisert:</label>
-						<select class="inputSelect" name="sterilisert">
+						<select class="inputSelect" name="sterilisert" required>
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
 							<option value="velg">--Velg--</option>
 						</select>
 					</div>	
-					<!-- Labels og input i kolonne 2-->
+					<!-- Labels og input i kolonne 2 -->
 					<div class="kolonne2">
 						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
-						<select class="inputSelect" name="løpeMedAndre">
+						<select class="inputSelect" name="løpeMedAndre" required>
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
 							<option value="velg">--Velg--</option>
 						</select>
 
 						<label for="forID">Fôrtype</label>
-						<select class="inputSelect" name="forID"> 
+						<select class="inputSelect" name="forID" required> 
 							<option value="1">Royal Canin (vanlig)</option>
 							<option value="2">Vom (allergi)</option>
 							<option value="velg">--Velg--</option>
 						</select>
-
 
 						<label for="info">Ekstra informasjon:</label>
 						<textarea class="tekstboks tekstfelt1" name="info"></textarea>					
@@ -100,16 +97,14 @@ $dblink = kobleOpp();
 
 				<!-- Knapperad -->
 				<div class="knappeRad">
-					<div class="knapp1IRad">
-						
+					<div class="knapp1IRad">		
 						<!-- Tilbake til Min side -->
 						<a href = "minSide.php">
-	                		<input class="inputButton ekstraKnapp" type="button" value="Tilbake"> 
+	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
 	            		</a>
 					</div>
 					<div class="etterKolonnerKnapp">
-
-						<!-- Registrer-knapp-->
+						<!-- Registrer knapp -->
 						<a href = "minSide.php">
 	                		<input class="inputSubmit hovedKnapp2" type="submit" value="Registrer hund" name="registrer"> 
 	            		</a>	
@@ -117,10 +112,9 @@ $dblink = kobleOpp();
 				</div>
 			</form>
 		</div>
-
 	</main>
 
-	<!-- ************************** fellesBunn **************************-->
+	<!-- ************************** Felles bunn **************************-->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

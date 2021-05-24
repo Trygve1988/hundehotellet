@@ -460,10 +460,14 @@ function melding2(){
 function sjekkPassord(){
     const passord = document.querySelector('input[name=passord]');
     const sjekkPaso = document.querySelector('input[name=passordSjekk]');
-    if(sjekkPaso.value === passord.value){
-        
+    if(sjekkPaso.value == passord.value){
+        document.getElementById('submit').disabled = false;
+        sjekkPaso.setCustomValidity('Like / Alike');
+        console.log("like");
     } else{
-        sjekkPaso.setCustomValidity('Ikke like / Not alike'); 
+        document.getElementById('submit').disabled = true;
+        sjekkPaso.setCustomValidity('Ikke like / Not alike');
+        console.log("Ikke like passord");
     }
 }
 

@@ -16,31 +16,59 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main> 
-
-        <!-- 2a erLoggetInn -->
+        <!-- erLoggetInn -->
         <?php 
             if (!erLoggetInn()) {
                 header('Location: loggInn.php');
             } 
         ?>
-
-        <!-- 2a admin -->
+        <!-- Hvit bakgrunn -->
         <div class="hvitBakgrunn">
+
+            <!-- Skjema -->
+
             <form class="skjemaBakgrunn" method="POST">
-                <h2>Slett Bruker</h2>
+                 
+                <!-- Avbryt knapp -->
+			    <a href = "minSide.php">
+				    <input class="avbrytKnapp" type="button" value="X">
+			    </a>    
+                
+                <!-- Overskrift --> 
+                <h2 class="hovedOverskrift">Slett bruker</h2>
+
                 <p>Du må avbestille eventuelle fremtidige opphold før du kan slette kontoen din.</p>  
-                <input class="litenKnapp" type="submit" name="slettBrukerKnapp" value="Slett Min Konto">
-                <?php slettMinBruker($dblink) ?> 
+                <p>Det er mulig å gjenoprette kontoen innen 30 dager er gått. Etter dette blir kontoen slettet.</p>
+                <p>Er det noe du lurer på i forhold til sletting av konto, kontakt oss på epost: <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com.</p>
+                
+                <!--Knapperad-->
+				<div class="knappeRad bunnKnapp">
+					<div class="knapp1IRad">
+						<!-- Tilbake-knapp-->
+						<a href = "minSide.php">
+	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+	            		</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Neste-knapp-->
+						<input class="inputSubmit hovedKnapp" type="submit" name="slettBrukerKnapp" value="Slett konto">
+					</div>
+                </div>
+
+                <!-- Tilbakemelding -->
+                <div>
+                    <?php slettMinBruker($dblink) ?>
+                </div>
             </form>
         </div> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    

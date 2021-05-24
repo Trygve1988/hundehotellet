@@ -143,14 +143,14 @@ $dblink = kobleOpp();
 				<!--Knapperad-->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
-						<!-- Tilbake-knapp-->
+						<!-- Tilbake knapp-->
 						<a href = "bestillOpphold.php">
 	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
 	            		</a>
 					</div>
 					<div class="etterKolonnerKnapp">
 
-						<!-- Neste-knapp-->
+						<!-- Neste knapp-->
 						<a href = "bestillOpphold3.php">
 	                		<input class="inputSubmit hovedKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo"> 
 	            		</a>	

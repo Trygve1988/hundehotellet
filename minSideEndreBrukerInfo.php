@@ -33,14 +33,14 @@
 
         <?php $bruker = $_SESSION['bruker'] ?>
        
-        <!-- Oppdater brukerInfo Skjema -->
+        
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
-			<!-- Skjema -->	
+			<!-- Oppdater brukerInfo Skjema -->
 			<form class="skjemaBakgrunn" method="POST">
 
-                	<!-- Avbryt knapp -->
+                <!-- Avbryt knapp -->
 				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>	
@@ -75,12 +75,12 @@
 
             </form>
         </div> 
-         <!-- 2b oppdaterBrukerInfo -->
+         <!-- oppdaterBrukerInfo -->
         <?php endreBrukerInfo($dblink) ?> 
 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    

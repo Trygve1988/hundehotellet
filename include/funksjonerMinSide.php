@@ -239,12 +239,12 @@ function endrePassord($dblink) {
                     echo "endret passord" . "<br>";
                 }
                 else {
-                    echo "gammeltPassord matcher ikke!" . "<br>";
+                    echo "Gammelt passord matcher ikke!" . "<br>";
                 }
             }  
         }
         else {
-            echo "de nye passordene matcher ikke!" . "<br>";
+            echo "De nye passordene matcher ikke!" . "<br>";
         }
 
     }

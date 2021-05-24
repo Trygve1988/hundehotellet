@@ -47,10 +47,12 @@ $dblink = kobleOpp();
 					
 					<!-- Labels og input i kolonne 1 -->
 					<div class="kolonne1">
-						
 						<label for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
-
+						
+						<label for="etternavn">Etternavn:</label>
+						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
+						
 						<label for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
@@ -63,40 +65,34 @@ $dblink = kobleOpp();
 
 					<!-- Labels og input i kolonne 2 -->
 					<div>	
-						<label for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
-						
 						<label for="epost">E-post:</label>
 						<input class="inputTekst" type="text" name="epost" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value="test@ha.no">	
 							
 						<label for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
-						id="passord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" onChange="sjekkPassord()" value="123Ab%12">
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="123Ab%12">
 
-						<!-- Vis passord checkbox -->
-						<div class="visPassord">
-							<label for="passordCheckbox">Vis Passord</label>
-							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
-						</div>
-
-					<!-- Må være eller så kræsjer Vis passord og Passord krav!, Funker ikke med padding--->
-						<break>
-							<p></p>
-						</break>
-					<!-- ******* Slutt ******* -->
-
-						<!-- Passord tilbakemelding -->
-						<div class="passordKrav">
-							<p>Passord krav:</p>
-							<p id="status" melding()></p>
-							<!-- Engelsk tilbakemelding --->
-							<p id="status2" melding2()></p>
-						</div>
 						
+						<!-- Passord rad -->
+						<div class="passordRad">
+							<!-- Vis passord checkbox -->
+							<div class="visPassord">
+								<label for="passordCheckbox">Vis Passord</label>
+								<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
+							</div>
+
+							<!-- Passord tilbakemelding -->
+							<div class="passordKrav">
+								<p>Passord krav:</p>
+								<p id="status" melding()></p>
+								<!-- Engelsk tilbakemelding --->
+								<p id="status2" melding2()></p>
+							</div>
+						</div>	
 						<div class="gjentaPKolonne">
 							<label for="passordSjekk">Gjenta passord:</label>
 							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
-						</div>
+						</div>		
 					</div>
 				</div>
 
@@ -104,7 +100,7 @@ $dblink = kobleOpp();
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
-							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" value="Registrer ny bruker">
+							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" disabled value="Registrer ny bruker">
 						</a>
 
 					<!-- Logg inn link -->
