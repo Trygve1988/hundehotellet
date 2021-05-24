@@ -47,11 +47,11 @@
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
                         <label for="gammeltPassord">Gammelt Passord:</label>
-                        <input class="inputTekst" type="text" id="gammeltPassord" name="gammeltPassord" >
+                        <input class="inputTekst" type="text" id="gammeltPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" name="gammeltPassord" >
                         <label for="nyttPassord">Nytt Passord:</label>   
-                        <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" required >  
+                        <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >  
                         <label for="bekreftNyttPassord">Bekreft Nytt Passord:</label>  
-                        <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" required >
+                        <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >
                     </div>
                 </div> 
 
