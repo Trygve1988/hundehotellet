@@ -106,7 +106,7 @@ var navSamerbeidTab = ['Samarbeidspartnere','Collaborators'];
 var kontaktOssTab2 = ['Kontakt oss','Contact Us'];
 var kontaktInfoTekstTab = ['Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.','If you have any questions, just contact us either by email or phone.'];
 var åpningstiderTab = ['Åpningstider:',"Opening hours:"];
-var åpningstider2Tab = ['08:00-18:00 Man-Tordag (10:00-16:00 Lør-Søndag)','08:00-18:00 Mon-Thuday (10:00-16:00 Sat-Sunday)'];
+var åpningstider2Tab = ['08:00-18:00 Man-Tordag (10:00-16:00 Lør-Søndag)','08:00-18:00 Mon-Thuday (10:00-16:00 Sat-Sunda)'];
 var epostTab = ['Epost:','Email:']; 
 var adresseKontkatossTab = ['Adresse:','Address:'];
 var bestillOppholdTab = ['Bestill opphold','Book a stay'];
@@ -123,11 +123,14 @@ var hannTab = ['Hann','Male'];
 var tispeTab = ['Tispe','Bitch'];
 var sterilisertTab = ['Sterilisert:','Sterilized:'];
 var jaTab = ['Ja','Yes'];
-var neiTab = ['Ja','Yes'];
+var neiTab = ['Nei','No'];
 var løpeMedAndreTab = ['Løpe Med Andre:','Run With Others:'];
 var forTypeTab = ['For type:','Dog food type:'];
 var vanligTab = ['Vanlig','Normal'];
 var allargiTab = ['allergi','Allergy'];
+var tidsperiodeTab = ['Tidsperiode','Time period'];
+var fraTab = ['Fra','From'];
+var tilTab = ['Til','To'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -237,6 +240,10 @@ var vanlig = document.getElementById("vanlig");
 var vanlig2 = document.getElementById("vanlig2");
 var allargi = document.getElementById("allargi");
 var allargi2 = document.getElementById("allargi2");
+var bestillOpphold3 = document.getElementById("bestillOpphold3");
+var tidsperiode = document.getElementById("tidsperiode");
+var fra = document.getElementById("fra");
+var til = document.getElementById("til");
 
 
 
@@ -523,4 +530,10 @@ if (allargi !== null) {
 }
 if (allargi2 !== null) {
     allargi2.innerHTML = allargiTab[språk];  
+}
+if (bestillOpphold3 !== null) {
+    bestillOpphold3.innerHTML = bestillOppholdTab[språk];
+    tidsperiode.innerHTML = tidsperiodeTab[språk];
+    fra.innerHTML = fraTab[språk];
+    til.innerHTML = tilTab[språk];
 }

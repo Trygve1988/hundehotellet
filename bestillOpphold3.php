@@ -46,22 +46,22 @@ $dblink = kobleOpp();
 				</a>
 				
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Bestill opphold</h2>	
-				<h2 class="overskrift2">Tidsperiode</h2>
+				<h2 id="bestillOpphold3" class="hovedOverskrift">Bestill opphold</h2>	
+				<h2 id="tidsperiode" class="overskrift2">Tidsperiode</h2>
 				
 				<div class="skjemaKolonner">
 					<div class="kolonne1">	
 						<!-- fra dato class="inputDato" -->
-                        <label for="startDato">Fra</label>
+                        <label id="fra" for="startDato">Fra</label>
                         <input type="date" id="startDato" class="inputDato" name="startDato" value="<?php echo date("Y-m-d");?>" readonly >
 					</div>	
 					<div class="kolonne2">	
 						<!-- til dato -->  
-						<label for="sluttDato">Til:</label>
+						<label id="til" for="sluttDato">Til:</label>
 						<input type="date" id="sluttDato" class="inputDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
 					</div>	
 				</div>
-
+			
 			<!-- Knapperad -->
 			<div class="knappeRad bunnKnapp">
 				<div class="knapp1IRad">
