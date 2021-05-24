@@ -40,20 +40,20 @@ $dblink = kobleOpp();
                         <p>Her kan du lese om det som skjer på Bø Hundehotell.</p>
                     </div>
                     <div class="mellomromMellomInnlegg">
-                    <h2 class="hovedOverskrift">COVID-19</h2> 
+                    <h2 class="overskrift2 ">COVID-19</h2> 
                         <p> Bø Hundehotell følger FHIs smittevernråd og derfor valgt å begrense antall besøkende på hotellet.
                             Det vil si at spørsmål om opphold o.l. må tas over telefon eller mail. God håndhygiene må følges når hunden leveres
                             eller hentes hos oss. Husk munnbind! NB! Personer som er smittet med COVID-19 kan ikke levere kjæledyret sitt til hotellet.</p>
                     </div>
                     <hr>
                     <div class="mellomromMellomInnlegg">
-                    <h2 class="hovedOverskrift">Bø Hundehotell er gjester på god morgen Norge! </h2>
+                    <h2 class="overskrift2">Bø Hundehotell er gjester på god morgen Norge! </h2>
                         <p>Vi ble invert på God morgen Norge for å snakke om hundehotellet og hva vi har å tilby. Se innslaget på tv2.no!
                         </p>
                     </div>
                     <hr>
                     <div class="mellomromMellomInnlegg">
-                    <h2 class="hovedOverskrift">Ledig stilling hos oss!</h2>
+                    <h2 class="overskrift2">Ledig stilling hos oss!</h2>
                         <p> Bø hundehotell trenger en ny ansatt som kan bade og føne hundene og massere dem etter turgåing. Er dette noe for deg send din søknad til
                             bohundehotell@outlook.com
                         </p>
