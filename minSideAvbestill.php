@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ************************** -->
     <main> 
 
-        <!-- 2a erLoggetInn sjekk -->
+        <!-- erLoggetInn sjekk -->
         <?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
         <!-- Hvit bakgrunn -->
@@ -33,14 +33,22 @@
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
 
-                <h2 class="hovedOverskrift">Avbestill</h2>
-                <!-- 2a) Velg Bestilling MÅ BARE VISE IKKE PÅBEGYNTE OPPHOLD!!!!! -->
-                <p>Opphold kan avbestilles intill 24 timer før oppholdet starter.</p>  
+                 <!-- Avbryt knapp -->
+				<a href = "minSide.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
+
+                <h2 class="hovedOverskrift">Avbestill opphold</h2>
+
+                <!-- Velg Bestilling MÅ BARE VISE IKKE PÅBEGYNTE OPPHOLD!!!!! -->
+                <p>Opphold kan avbestilles inntill 24 timer før oppholdet starter.</p>  
 
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
+                        
                         <!-- velgBestilling select --> 
-                        <select id="bestillinger" class="inputSelect" value="bestillinger" name="bestillinger">
+                        <label for="bestillinger">Velg opphold:</label>
+                        <select id="bestillinger" class="inputSelect minInput" value="bestillinger" name="bestillinger">
                             <?php $bestillingTab = lagIkkeBegyntBestillingTab($dblink);  
                             for ($i=0; $i<count($bestillingTab); $i++) {
                                 lagBestillingOption($bestillingTab[$i]);
@@ -48,21 +56,29 @@
                         </select>
                     </div>
                 </div> 
-
-                <!-- velgBestilling knapp --> 
-                <a href="minSide.php">
-					<input class="litenKnapp" type="button" value="Tilbake"> 
-				</a>
-                <input class="litenKnapp" type="submit" value="Avbestill" name="Avbestill">
-                            
-                <!-- 2b velgEndreBestilling -->
+            
+                <!--Knapperad-->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp-->
+						<a href="minSide.php">
+					        <input class="inputButton hovedKnapp" type="button" value="Avbryt"> 
+				        </a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Avbestill knapp-->
+						<input class="inputSubmit hovedKnapp" type="submit" value="Avbestill" name="Avbestill">	
+					</div>
+				</div>
+                
+                <!-- velgEndreBestilling -->
                 <?php avbestill($dblink); ?> 
 
             </form>
         </div> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    
