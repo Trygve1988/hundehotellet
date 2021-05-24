@@ -76,7 +76,7 @@ $dblink = kobleOpp();
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
 
-					<!-- Må være eller så kræsjer Vis passord og Passord krav ! --->
+					<!-- Må være eller så kræsjer Vis passord og Passord krav!, Funker ikke med padding--->
 						<break>
 							<p></p>
 						</break>
