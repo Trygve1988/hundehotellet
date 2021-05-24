@@ -48,7 +48,7 @@
                 <?php sjekkInn($dblink); ?>
 
                 <!-- test: nullstillKnapp --> 
-                <input class="litenKnapp" type="submit" value="Nullstill" name="nullstillInnsjekkingerKnapp">
+                <input class="litenKnapp" type="submit" value="Angre" name="nullstillInnsjekkingerKnapp">
                 <?php nullStillInnsjekkinger($dblink); ?>
 
 
@@ -68,7 +68,7 @@
                 <?php sjekkUt($dblink); ?>
 
                 <!-- test: nullstillKnapp --> 
-                <input class="litenKnapp" type="submit" value="Nullstill" name="nullStillUtsjekkingerKnapp">
+                <input class="litenKnapp" type="submit" value="Angre" name="nullStillUtsjekkingerKnapp">
                 <?php nullStillUtsjekkinger($dblink); ?>
 
             </form>
