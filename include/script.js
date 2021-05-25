@@ -459,7 +459,7 @@ function melding2(){
       return true;
     } else{
       status2.innerHTML="English: Between 8-15 characters.";
-      status3.innerHTML="Between 8-15 characters. At least one number, uppercase letter, lowercase letter, special characters (@%, etc.).";
+      status3.innerHTML="At least one number, uppercase letter, lowercase letter, special characters (@%, etc.).";
       return false;
     } 
 }
