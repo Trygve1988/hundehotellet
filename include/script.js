@@ -446,7 +446,7 @@ function melding(){
     return true;
   } else{
     status.innerHTML="Norsk: Mellom 8-15 tegn.";
-    status0.innerHTML="Minst ett tall, stor bokstav,liten bokstav, spesial tegn(@% osv).";
+    status0.innerHTML="Minst ett tall, stor bokstav, liten bokstav, spesial tegn(@% osv).";
     return false;
   } 
 }
@@ -458,8 +458,8 @@ function melding2(){
       status2.innerHTML="English: Password has been approved";
       return true;
     } else{
-      status2.innerHTML="English: Between 8-15 characters.";
-      status3.innerHTML="At least one number, uppercase letter, lowercase letter, special characters (@%, etc.).";
+      status2.innerHTML="English: Between 8-15 characters. At least one number, -";
+      status3.innerHTML="uppercase letter, lowercase letter, special characters (@%, etc.).";
       return false;
     } 
 }
@@ -493,7 +493,7 @@ function nyTTPasomelding(){
     nystatus.innerHTML="Passord er godkjent";
     return true;
   } else{
-    nystatus.innerHTML="Mellom 8-15 tegn. Minst ett tall, stor bokstav,liten bokstav, spesial tegn(@% osv).";
+    nystatus.innerHTML="Mellom 8-15 tegn. Minst ett tall, stor bokstav, liten bokstav, spesial tegn(@% osv).";
     return false;
   } 
 }
@@ -505,8 +505,8 @@ function nyTTPasomelding2(){
       nystatus2.innerHTML="Password has been approved";
       return true;
     } else{
-      nystatus2.innerHTML="Between 8-15 characters.";
-      nystatus3.innerHTML="At least one number, uppercase letter, lowercase letter, special characters (@%, etc.).";
+      nystatus2.innerHTML="Between 8-15 characters. At least one number, -";
+      nystatus3.innerHTML="uppercase letter, lowercase letter, special characters (@%, etc.).";
       return false;
     } 
 }
