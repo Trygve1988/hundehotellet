@@ -36,19 +36,19 @@
             <form class="skjemaBakgrunn" method="POST">
             <h1 class="hovedOverskrift">Endre bruker</h1>
 
-                <div class="skjemaKolonner">X
+                <div class="skjemaKolonner">
                     <div class="kolonne1">
-                        <label for="epost">Epost:</label>
+                        <label for="epost">epost:</label>
                         <input class="inputTekst" type="text" id="epost" name="epost" value= <?php echo $bruker->getEpost() ?>>
-                        <label for="tlf">Tlf:</label>   
+                        <label for="tlf">tlf:</label>   
                         <input class="inputTekst" type="text" id="tlf" name="tlf" value= <?php echo $bruker->getTlf() ?> >
-                        <label for="adresse">Adresse:</label>     
+                        <label for="adresse">adresse:</label>     
                         <input class="inputTekst" type="text" id="adresse" name="adresse" value= <?php echo $bruker->getAdresse() ?> > 
                     </div>
                     <div class="kolonne2">
-                        <label for="fornavn">Fornavn:</label>   
+                        <label for="fornavn">fornavn:</label>   
                         <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
-                        <label for="etternavn">Etternavn:</label>  
+                        <label for="etternavn">etternavn:</label>  
                         <input class="inputTekst" type="text" id="etternavn" name="etternavn" value= <?php echo $bruker->getEtternavn() ?> >
                     </div>
                 </div> 
