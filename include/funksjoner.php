@@ -457,11 +457,22 @@ function lagreInnlegg($dblink) {
 }
 
 function visAlleInnlegg($dblink) {
-    $sql = "SELECT * FROM innlegg ;";
+    $sql = "SELECT * FROM innlegg 
+    ORDER BY innleggID DESC ;";
     $resultat = mysqli_query($dblink, $sql); 
     while($rad = mysqli_fetch_assoc($resultat)) {
         echo $rad['tekst'];
     }
+}
+
+function slettInnlegg($dblink) {
+    if (isset($_POST['slettInnleggKnapp'])) { 
+        $sql = "DELETE FROM innlegg
+        ORDER BY innleggID DESC
+        LIMIT 1 ;";
+        $resultat = mysqli_query($dblink, $sql);
+        header("Refresh:0");
+    }  
 }
 
 // ********************* Gunni - Min side - Tabeller ********************* 

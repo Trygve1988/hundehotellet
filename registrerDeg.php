@@ -72,18 +72,17 @@ $dblink = kobleOpp();
 						<input class="inputPassord" type="password" name="passord" required 
 						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="123Ab%12">
 
-						
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
 							<label for="passordCheckbox">Vis Passord</label>
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
-
-					<!-- Må være eller så kræsjer Vis passord og Passord krav!, Funker ikke med CSS, eller endre JavaScript--->
+						
+						<!-- ************************ (Even) ************************** -->
+						<!-- Må være eller så kræsjer Vis passord og Passord krav! --->
 						<break>
 							<p></p>
 						</break>
-					<!-- ******* Slutt ******* -->
 
 						<!-- Passord tilbakemelding -->
 						<div class="passordKrav">
@@ -93,6 +92,7 @@ $dblink = kobleOpp();
 							<p id="status2" melding2()></p>
 						</div>
 						
+						<!-- ************************ (Gunni) ************************** -->
 						<div class="gjentaPKolonne">
 							<label for="passordSjekk">Gjenta passord:</label>
 							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	

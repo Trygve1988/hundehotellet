@@ -40,12 +40,10 @@
 			    </a>    
                 
                 <!-- Overskrift --> 
-                <h2 class="hovedOverskrift">Slett bruker</h2>
+                <h2 class="hovedOverskrift">Bekreft sletting av  bruker</h2>
 
-                <p>Du må avbestille eventuelle fremtidige opphold før du kan slette kontoen din.</p>  
-                <p>Det er mulig å gjenoprette kontoen innen 30 dager er gått. Etter dette blir kontoen slettet.</p>
-                <p>Er det noe du lurer på i forhold til sletting av konto, kontakt oss på epost: <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com.</p>
-                
+                <p>Er du sikker på at du vil slette brukeren din?</p>  
+              
                 <!--Knapperad-->
 				<div class="knappeRad bunnKnapp">
 
@@ -58,13 +56,15 @@
 
 					<div class="etterKolonnerKnapp">
 						<!-- Neste-knapp-->
-                        <a href = "minSideSlettBruker2.php">
-	                		<input class="inputButton hovedKnapp" type="button" value="Slett Bruker"> 
-	            		</a>
+						<input class="inputSubmit hovedKnapp" type="submit" name="slettBrukerKnapp" value="Slett konto">
 					</div>
 
                 </div>
 
+                <!-- Tilbakemelding -->
+                <div>
+                    <?php slettMinBruker($dblink) ?>
+                </div>
             </form>
         </div> 
     </main>
