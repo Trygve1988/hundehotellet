@@ -279,7 +279,6 @@ function tilBestillOpphold2() {
     }
 } 
 
-
 // ******************* 6) Bestill Opphold: d) lovligeDatoer *******************
 var startDato = document.getElementById("startDato");
 
@@ -358,8 +357,7 @@ function settInspiserHundSession() {
 }
 
 
-
-// ************************** test **************************
+// ************************** settMinSideHundSession **************************
 var velgMinSideHundSelect = document.getElementById("velgMinSideHundSelect");
 
 //er vi på Registrer deg siden ? 

@@ -9,7 +9,7 @@ body {
 	width: 100%;
     background-image: url("Bakgrunn.jpg");
     background-size: 100%;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
 }
 
 main {
