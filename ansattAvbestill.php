@@ -35,10 +35,11 @@
             <form class="skjemaBakgrunn" method="POST">
 
                  <!-- Avbryt knapp -->
-				<a href = "minSide.php">
+				<a href = "ansattAlleOpphold.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
 
+                 <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Avbestill opphold</h2>
 
                 <!-- Velg Bestilling MÅ BARE VISE IKKE PÅBEGYNTE OPPHOLD!!!!! -->
@@ -74,12 +75,11 @@
                 
                 <!-- velgEndreBestilling -->
                 <?php avbestill($dblink); ?> 
-
             </form>
         </div> 
     </main>
 
-    <!-- ************************** Felles bunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    
