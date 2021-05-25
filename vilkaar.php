@@ -20,12 +20,13 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** fellesTop ************************** -->
+	<!-- ************************** Felles topp ************************** -->
 	<?php visNav(); ?>
 
-	<!-- **************************   main    ************************** -->
+	<!-- **************************   Main    ************************** -->
 	<main>
 		<!-- ************************ (Gunni) ************************** -->
+		<!-- Disse vilkårene er inspirert fra: https://www.drobakhundehotell.no/vilkar/ -->
 		<!-- Hvit bakgrunn -->	
 		<div class="hvitBakgrunn">		
 			
@@ -33,14 +34,40 @@ $dblink = kobleOpp();
 			<form class="skjemaBakgrunn" method="POST"> 
 				
 				<!-- Avbryt knapp -->
-				<a href = "index.php">
+				<a href = "bestillOppphold.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
 
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Vilkår og betingelser</h2>
+				<h2 class="hovedOverskrift">Vilkår</h2>
+				<div class="fullKolonne">
+					<h3>Forbehold</h3>
+					<p>Vi tar forbehold om eventuelle trykkfeil når det gjelder pris og informasjon om varer/tjenestene på siden.</p>
+					<p>Ta kontakt med oss hvis du har spørsmål. Vi ønsker å gi deg en god opplevelse, for både hunden din og deg!</p>
 
-                <!--Tilbake til bestilling-->
+					<h3>Avbestillinger</h3>
+					<p>Bestilte opphold som avbestilles mindre enn 2 uker før oppholdets start avkreves fullt innbetalt beløp.</p>
+					For avbestilling av alle  bestilte opphold innenfor rammene av våre vilkår,
+					vil vi avkreve et gebyr på minimum kr 300,-+ 5% av det innbetalte totalbeløp.</p>
+
+					<h3>Personopplysninger</h3>
+					<p>Bø Hundehotell behandler persondata ifølge Lov om Personopplysninger.</p> 
+					<p>Opplysninger som kan knyttes til deg som person vil aldri bli gjort tilgjengelig for andre virksomheter eller bli koblet med andre eksterne register.</p>
+
+					<h3>Ditt ansvar</h3>
+					<p>Du står selv ansvarlig for at opplysningene du oppgir er korrekte. Ved misbruk av informasjon, brudd på regler,</p>
+					<p>vil du måtte stå til ansvar for dette, og vil da risikere å bli politianmeldt.</p>
+
+					
+					<h4>For flere tips og råd, se:</h4>
+					<ul>
+						<li>www.forbrukerombudet.no</li>
+						<li>www.forbrukerportalen.no</li>
+						<li>www.lovdata.no</li>
+					</ul>				
+				</div>
+
+                <!-- Tilbake til bestilling -->
                     <div class="etterKolonnerKnapp">
                             <a href="bestillOpphold4.php">
                                 <input class="inputButton hovedKnapp2" type="button" value="Tilbake til bekreftelse">
@@ -48,11 +75,10 @@ $dblink = kobleOpp();
                     </div>
             		
 			</form>	
-		</div>
-			
+		</div>	
 	</main>
 
-	<!-- ************************** fellesBunn ************************** -->
+	<!-- ************************** Felles bunn ************************** -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 
