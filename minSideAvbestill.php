@@ -38,16 +38,16 @@
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
 
-                <h2 class="hovedOverskrift">Avbestill opphold</h2>
+                <h2 id="avBestill" class="hovedOverskrift">Avbestill opphold</h2>
 
                 <!-- Velg Bestilling MÅ BARE VISE IKKE PÅBEGYNTE OPPHOLD!!!!! -->
-                <p>Opphold kan avbestilles inntill 24 timer før oppholdet starter.</p>  
+                <p id="avBestillText">Opphold kan avbestilles inntill 24 timer før oppholdet starter.</p>  
 
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
                         
                         <!-- velgBestilling select --> 
-                        <label for="bestillinger">Velg opphold:</label>
+                        <label id="velgOppholdAvbestill" for="bestillinger">Velg opphold:</label>
                         <select id="bestillinger" class="inputSelect minInput" value="bestillinger" name="bestillinger">
                             <?php $bestillingTab = lagIkkeBegyntBestillingTab($dblink);  
                             for ($i=0; $i<count($bestillingTab); $i++) {

@@ -50,31 +50,31 @@ $dblink = kobleOpp();
 						<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
 						
-						<label for="etternavn">Etternavn:</label>
+						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
 						<input class="inputTekst" type="text" name="etternavn" required value="griffin">	
 						
-						<label for="fDato">Fødselsdato:</label>
+						<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
-						<label for="tlf">Telefonnummer:</label>
+						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
 						<input class="inputTekst" type="text" name="tlf" required pattern="[0-9]{8}" value="77733111">	
 						
-						<label for="adresse">Adresse:</label>
+						<label id="adresseRegistrerDeg" for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" required value="Epleveien 5">	
 					</div>
 
 					<!-- Labels og input i kolonne 2 -->
 					<div>	
-						<label for="epost">E-post:</label>
+						<label id="epostReigsterDeg" for="epost">E-post:</label>
 						<input class="inputTekst" type="text" name="epost" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value="test@ha.no">	
 							
-						<label for="passord">Ønsket passord:</label>
+						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
 						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="123Ab%12">
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
-							<label for="passordCheckbox">Vis Passord</label>
+							<label id="visPassordRegisterDeg" for="passordCheckbox">Vis Passord</label>
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
 						
@@ -86,7 +86,7 @@ $dblink = kobleOpp();
 
 						<!-- Passord tilbakemelding -->
 						<div class="passordKrav">
-							<p>Passord krav:</p>
+							<p id="pasokravRegisterDeg">Passord krav:</p>
 							<p id="status" melding()></p>
 							<!-- Engelsk tilbakemelding --->
 							<p id="status2" melding2()></p>
@@ -94,7 +94,7 @@ $dblink = kobleOpp();
 						
 						<!-- ************************ (Gunni) ************************** -->
 						<div class="gjentaPKolonne">
-							<label for="passordSjekk">Gjenta passord:</label>
+							<label id="gjentaPasoRegisterDeg" for="passordSjekk">Gjenta passord:</label>
 							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
 						</div>	
 					</div>
@@ -108,7 +108,7 @@ $dblink = kobleOpp();
 						</a>
 
 					<!-- Logg inn link -->
-					<p class="ekstraLink"> <a class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
+					<p class="ekstraLink"> <a id="harDuKontoRegisterDeg" class="link" href="loggInn.php">Har du allerede en bruker? Logg inn her</a></p>
 				</div>
 
 			</form>	
