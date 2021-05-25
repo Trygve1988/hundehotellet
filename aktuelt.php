@@ -34,12 +34,14 @@ $dblink = kobleOpp();
                 <!--********************** Kristina ************************** -->
 
                 <div class="aktuelt">
+                    <h1 class="hovedOverskrift">Aktuelt</h2>
 
                    <!-- lagreInnlegg -->
                    <?php
                     if (erAnsatt()) { ?>
                         <div class="mellomromMellomInnlegg">
-                        <h2 class="hovedOverskrift">Skriv nytt innlegg</h2>
+                        
+                        <h3>Skriv nytt innlegg</h3>
                             <label for="overskrift">overskrift:</label>
                             <input class="inputTekst" type="text" name="innleggOverskrift" value="overskrift">
 
