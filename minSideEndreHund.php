@@ -50,10 +50,10 @@
 				</a>	
                 
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Endre Hund</h2>
+				<h2 id="endreHund" class="hovedOverskrift">Endre Hund</h2>
 
 				<div>
-					<label for="velgHundSelect">Velg hund:</label>
+					<label id="velgHundMin" for="velgHundSelect">Velg hund:</label>
 					<select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
 						<?php $hunder = lagHunderTab($dblink);
 							$minSideHund = $_SESSION['minSideHund']; 
@@ -68,15 +68,15 @@
 					<!-- Labels og input i kolonne 1 -->
                     <div class="kolonne1">
                         <!-- Navn --> 
-                        <label for="navn">Navn:</label>
+                        <label id="hundNavn" for="navn">Navn:</label>
 						<input class="inputTekst" type="text" name="navn" size="20" value= <?php echo $h1->getNavn() ?> required>
                         
 						<!-- Rase --> 
-						<label for="rase">Rase:</label>
+						<label id="rase" for="rase">Rase:</label>
 						<input class="inputTekst" type="text"  name="rase" size="20" value= <?php echo $h1->getRase() ?> >
                         
 						<!-- Fdato --> 
-                        <label for="fdato">Fødselsdato:</label>
+                        <label id="fdato" for="fdato">Fødselsdato:</label>
                         <input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 						
                         <!-- Kjønn --> 
@@ -89,8 +89,8 @@
 								?><option id="tispe" value="jente">Tispe</option><?php
 							} 
 							else { 
-								?><option id="hann2" value="gutt">Hann</option><?php
-								?><option id="tispe2" value="jente" selected>Tispe</option><?php
+								?><option id="hann" value="gutt">Hann</option><?php
+								?><option id="tispe" value="jente" selected>Tispe</option><?php
 							}
 							?>
 						<select> 
@@ -105,8 +105,8 @@
 								?><option id="nei" value="0">Nei</option><?php
 							} 
 							else { 
-								?><option  value="1">Ja</option><?php
-								?><option  value="0" selected>Nei</option><?php
+								?><option id="ja" value="1">Ja</option><?php
+								?><option id="nei" value="0" selected>Nei</option><?php
 							}
 							?>
 						<select> 
@@ -121,11 +121,11 @@
 							<?php
 							if ($løpeMedAndre == "1") { 
 								?><option id="ja2" value="1" selected >Ja</option><?php
-								?><option id="nei2"value="0">Nei</option><?php
+								?><option id="nei2" value="0">Nei</option><?php
 							} 
 							else { 
-								?><option value="1">Ja</option><?php
-								?><option value="0" selected>Nei</option><?php
+								?><option id="ja2" value="1">Ja</option><?php
+								?><option id="nei2" value="0" selected>Nei</option><?php
 							}
 							?>
 						<select> 
@@ -140,14 +140,14 @@
 								?><option id="allargi" value="0">Vom (allergi)</option><?php
 							} 
 							else { 
-								?><option id="vanlig2" value="1">Royal Canin (vanlig)</option><?php
-								?><option id="allergi2" value="0" selected>Vom (allergi)</option><?php
+								?><option id="vanlig" value="1">Royal Canin (vanlig)</option><?php
+								?><option id="allergi" value="0" selected>Vom (allergi)</option><?php
 							}
 							?>
 						<select>  
                        
                         <!-- info -->
-						<label for="info">Ekstra informasjon:</label>
+						<label id="ektraInfo" for="info">Ekstra informasjon:</label>
 						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
                     </div>
                 </div>

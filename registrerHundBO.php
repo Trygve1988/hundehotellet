@@ -43,55 +43,51 @@ $dblink = kobleOpp();
 				</a>	
 
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Registrer hund</h2>	
+				<h2 id="registerHund" class="hovedOverskrift">Registrer hund</h2>	
 
 				<div class="skjemaKolonner">
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->
-						<label for="hNavn">Hundens navn:</label>
+						<label id="hundNavn" for="hNavn">Hundens navn:</label>
 						<input  class="inputTekst" type="text" name="navn" value="Pluto" required>
 			
-						<label for="rase">Rase:</label>
+						<label id="rase" for="rase">Rase:</label>
 						<input class="inputTekst" type="text" name="rase" value="Labrador" required >	
 
-						<label for="fDato">Fødselsdato:</label>
+						<label id="fdato" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fdato" value="2010-01-01" required >	
 
-						<label for="kjonn">Kjønn:</label>
+						<label id="kjønn" for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn" required >
-							<option value="0">--Velg--</option>
-							<option value="1">Hann</option>
-							<option value="2">Tispe</option>
-						
+							<option id="velg" value="0">--Velg--</option>
+							<option id="hann" value="1">Hann</option>
+							<option id="tispe" value="2">Tispe</option>
 						</select>	
 					
-						<label for="sterilisert">Sterilisert:</label>
+						<label id="sterilisert" for="sterilisert">Sterilisert:</label>
 						<select class="inputSelect" name="sterilisert" required >
-							<option value="0">--Velg--</option>
-							<option value="1">Ja</option>
-							<option value="0">Nei</option>
-							
+							<option id="velg" value="0">--Velg--</option>
+							<option id="ja" value="1">Ja</option>
+							<option id="nei" value="0">Nei</option>	
 						</select>
 					</div>	
 					<!-- Labels og input i kolonne 2-->
 					<div class="kolonne2">
-						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
+						<label id="løpeMedAndre" for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select class="inputSelect" name="løpeMedAndre" required >
-							<option value="0">--Velg--</option>
-							<option value="1">Ja</option>
-							<option value="2">Nei</option>
-						
+							<option id="velg" value="0">--Velg--</option>
+							<option id="ja2" value="1">Ja</option>
+							<option id="nei2" value="2">Nei</option>
 						</select>
 
-						<label for="forID">Fôrtype:</label>
+						<label id="forType" for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID" required > 
-							<option value="0">--Velg--</option>
-							<option value="1">Royal Canin (vanlig)</option>
-							<option value="2">Vom (allergi)</option>
-						
+							<option id="velg" value="0">--Velg--</option>
+							<option id="vanlig" value="1">Royal Canin (vanlig)</option>
+							<option id="allargi" value="2">Vom (allergi)</option>
 						</select>
 
-						<label for="info">Ekstra informasjon:</label>
+						<label id="ektraInfo" for="info">Ekstra informasjon:</label>
 						<textarea class="tekstboks tekstfelt1" name="info"></textarea>					
 					</div>
 				</div>

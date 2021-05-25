@@ -112,7 +112,7 @@ var bestillOppholdTab = ['Bestill opphold','Book a stay'];
 var bestillOppholdTextTab = ['Bø Hundehotell har kapasitet til max 3 hunder i samme bur.','Bø Hundehotell has a capacity for a maximum of 3 dogs in the same cage.'];
 var bestillOppholdTextTab2 = ['Vennligst bestill flere ganger hvis du ønsker å bestille opphold til flere en 3 hunder.','Please book several times if you want to book stays for more than 3 dogs.'];
 var velgHunderTab = ['Velg hund(er):','Select dog (s):'];
-var registerHundTab = ['+ Registrer ny hund','+ Register new dog'];
+var registerHundTab = ['Registrer ny hund','Register new dog'];
 var bekreftTab = ['Kontroller at informasjon om hunden din er oppdatert:','Make sure your dogs information is up to date:'];
 var hundNavnTab = ['Hundens navn:','The Dogs name:'];
 var raseTab = ['Rase:','Race:'];
@@ -125,8 +125,8 @@ var jaTab = ['Ja','Yes'];
 var neiTab = ['Nei','No'];
 var løpeMedAndreTab = ['Løpe Med Andre:','Run With Others:'];
 var forTypeTab = ['For type:','Dog food type:'];
-var vanligTab = ['Vanlig','Normal'];
-var allargiTab = ['allergi','Allergy'];
+var vanligTab = ['Royal Canin (vanlig)','Royal Canin (normal)'];
+var allargiTab = ['Vom (allergi)','Vom (allergy)'];
 var tidsperiodeTab = ['Tidsperiode','Time period'];
 var fraTab = ['Fra','From'];
 var tilTab = ['Til','To'];
@@ -161,7 +161,9 @@ var velgOppholdAvbestillTab = ['Velg opphold:','Select stay:'];
 var skrivAnmeldelseTab = ['Skriv anmeldelse','Write a review'];
 var slettHundTab = ['Slett hund','Delete dog'];
 var slettHundTextTab = ['Denne siden er under arbeid. Du kan for øyeblikket bare slette hunder som ikke har opphold.','This page is under construction. You can currently only delete non-resident dogs.'];
-
+var endreHundTab = ['Endre hund:','Change dog:'];
+var velgHundMinTab = ['Velg hund:','Select dog:'];
+var ektraInfoTab = ['Ekstra info:','Additional info:'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -314,6 +316,9 @@ var velgOppholdAvbestill = document.getElementById("velgOppholdAvbestill");
 var skrivAnmeldelse = document.getElementById("skrivAnmeldelse");
 var slettHund = document.getElementById("slettHund");
 var slettHundText = document.getElementById("slettHundText");
+var endreHund = document.getElementById("endreHund");
+var velgHundMin = document.getElementById("velgHundMin");
+var ektraInfo = document.getElementById("ektraInfo");
 
 
 
@@ -601,12 +606,15 @@ if (allargi !== null) {
 if (allargi2 !== null) {
     allargi2.innerHTML = allargiTab[språk];  
 }
+if(ektraInfo !== null) {
+    ektraInfo.innerHTML = ektraInfoTab[språk];
+}
 if (bestillOpphold3 !== null) {
     bestillOpphold3.innerHTML = bestillOppholdTab[språk];
     tidsperiode.innerHTML = tidsperiodeTab[språk];
     fra.innerHTML = fraTab[språk];
     til.innerHTML = tilTab[språk];
-}epostLoggInn
+}
 if(bestillOpphold4 !== null) {
     bestillOpphold4.innerHTML = bestillOppholdTab[språk];
     oppSummering.innerHTML = oppSummeringTab[språk];
@@ -661,4 +669,8 @@ if(skrivAnmeldelse !== null) {
 if(slettHund !== null) {
     slettHund.innerHTML = slettHundTab[språk];
     slettHundText.innerHTML = slettHundTextTab[språk];
+}
+if(endreHund !== null) {
+    endreHund.innerHTML = endreHundTab[språk];
+    velgHundMin.innerHTML = velgHundMinTab[språk];
 }
