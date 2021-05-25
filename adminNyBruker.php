@@ -34,9 +34,9 @@
             <form class="skjemaBakgrunn" method="POST">
             
             <!-- Avbryt knapp -->
-				<a href = "admin.php">
-					<input class="avbrytKnapp" type="button" value="X">
-				</a>
+			<a href = "admin.php">
+				<input class="avbrytKnapp" type="button" value="X">
+			</a>
 
             <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Ny bruker</h3> 
