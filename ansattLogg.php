@@ -34,9 +34,9 @@
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
             <h1 class="hovedOverskrift">Logg</h1>
-                <p>Logg over avbestilte bestillinger fra brukere.</p>
 
-                <h2 class="overskrift2"> Avbestilte opphold</h2>
+              <h2 class="overskrift2"> Avbestilte opphold</h2>
+                <p>Logg over avbestilte bestillinger fra brukere.</p>       
                 <?php visAvbestilteOpphold($dblink); ?> 
             </form> 
 
