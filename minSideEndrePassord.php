@@ -21,9 +21,9 @@
     <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** Main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main> 
-
+        <!-- ************************ (Gunni) (Trygve) ******************* -->
         <!-- erLoggetInn sjekk -->
         <?php 
             if (!erLoggetInn()) {
@@ -43,30 +43,40 @@
 			    </a>    
                 
                 <h2 class="hovedOverskrift">Endre passord</h2>
+
 				<div class="skjemaKolonner">
 					<div class="soloKolonne">
                         <label for="gammeltPassord">Gammelt passord:</label>
-                        <input class="inputTekst" type="text" id="gammeltPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" name="gammeltPassord" >
-                        
-                        <label for="nyttPassord">Nytt passord:</label>   
-                        <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >  
-                        
-                        <!-- Passord rad -->
-						<div class="passordRad">
-							<!-- Vis passord checkbox -->
+                        <input class="inputTekst gjentaPKolonne" type="text" id="gammeltPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" name="gammeltPassord" >
+                        <!-- Vis passord checkbox -->
 							<div class="visPassord">
 								<label for="passordCheckbox">Vis Passord</label>
 								<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 							</div>
 
-							<!-- Passord tilbakemelding -->
-							<div class="passordKrav">
-								<p>Passord krav:</p>
-								<p id="status" melding()></p>
-								<!-- Engelsk tilbakemelding --->
-								<p id="status2" melding2()></p>
-							</div>
-						</div>	
+                        <label for="nyttPassord">Nytt passord:</label>   
+                        <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >  
+                       
+                       <!-- Vis passord checkbox -->
+						<div class="visPassord">
+							<label for="passordCheckbox">Vis Passord</label>
+							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
+						</div>
+						
+						<!-- ************************ (Even) ************************** -->
+						<!-- Må være eller så kræsjer Vis passord og Passord krav! --->
+						<break>
+							<p></p>
+						</break>
+
+						<!-- Passord tilbakemelding -->
+						<div class="passordKrav">
+							<p>Passord krav:</p>
+							<p id="status" melding()></p>
+							<!-- Engelsk tilbakemelding --->
+							<p id="status2" melding2()></p>
+						</div>
+
                         <div class="gjentaPKolonne">
                             <label for="bekreftNyttPassord">Bekreft nytt passord:</label>  
                             <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >

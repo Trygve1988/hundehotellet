@@ -96,7 +96,7 @@ $dblink = kobleOpp();
 						<div class="gjentaPKolonne">
 							<label for="passordSjekk">Gjenta passord:</label>
 							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
-						</div>		
+						</div>	
 					</div>
 				</div>
 

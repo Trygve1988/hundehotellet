@@ -59,15 +59,15 @@ $dblink = kobleOpp();
 
 						<label for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn" required >
-								<option value="velg">--Velg--</option>
-							<option value="gutt">Hann</option>
-							<option value="jente">Tispe</option>
+							<option value="0">--Velg--</option>
+							<option value="1">Hann</option>
+							<option value="2">Tispe</option>
 						
 						</select>	
 					
 						<label for="sterilisert">Sterilisert:</label>
 						<select class="inputSelect" name="sterilisert" required >
-							<option value="velg">--Velg--</option>
+							<option value="0">--Velg--</option>
 							<option value="1">Ja</option>
 							<option value="0">Nei</option>
 							
@@ -77,15 +77,15 @@ $dblink = kobleOpp();
 					<div class="kolonne2">
 						<label for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select class="inputSelect" name="løpeMedAndre" required >
-								<option value="velg">--Velg--</option>
+							<option value="0">--Velg--</option>
 							<option value="1">Ja</option>
-							<option value="0">Nei</option>
+							<option value="2">Nei</option>
 						
 						</select>
 
 						<label for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID" required > 
-								<option value="velg">--Velg--</option>
+							<option value="0">--Velg--</option>
 							<option value="1">Royal Canin (vanlig)</option>
 							<option value="2">Vom (allergi)</option>
 						
