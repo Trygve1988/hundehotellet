@@ -148,6 +148,20 @@ var minProfilTab = ['Min profil','My profile'];
 var minHunderTab = ['Mine hunder','My dogs'];
 var registerNyBrukerTab = ['Registrer ny bruker','Register a new user'];
 var forNavnRegisterDegTab = ['Fornavn:','First name:'];
+var etterNavnRegisterDegTab = ['Etternavn:','Surname:'];
+var fødselsdatoRegistrerDegTab = ['Fødselsdato:','Date of birth:'];
+var adresseRegistrerDegTab = ['Adresse:','Address:'];
+var passordRegisterDegTab = ['Ønsket passord:','Password:'];
+var pasokravRegisterDegTab = ['Passord krav:','Password requirements:'];
+var gjentaPasoRegisterDegTab = ['Gjenta passord:','Repeat Password:'];
+var tlfRegisterDegTab = ['Telefonnummer:','Phone number:'];
+var avBestillTab = ['Avbestill opphold','Cancel stay'];
+var avBestillTextTab = ['Opphold kan avbestilles inntill 24 timer før oppholdet starter.','Stays can be canceled up to 24 hours before the stay starts.'];
+var velgOppholdAvbestillTab = ['Velg opphold:','Select stay:'];
+var skrivAnmeldelseTab = ['Skriv anmeldelse','Write a review'];
+var slettHundTab = ['Slett hund','Delete dog'];
+var slettHundTextTab = ['Denne siden er under arbeid. Du kan for øyeblikket bare slette hunder som ikke har opphold.','This page is under construction. You can currently only delete non-resident dogs.'];
+
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -285,6 +299,21 @@ var velgHundMinSide = document.getElementById("velgHundMinSide");
 var påGåendeOpphold = document.getElementById("påGåendeOpphold");
 var registerNyBruker = document.getElementById("registerNyBruker");
 var forNavnRegisterDeg = document.getElementById("forNavnRegisterDeg");
+var etterNavnRegisterDeg = document.getElementById("etterNavnRegisterDeg");
+var fødselsdatoRegistrerDeg = document.getElementById("fødselsdatoRegistrerDeg");
+var adresseRegistrerDeg = document.getElementById("adresseRegistrerDeg");
+var epostReigsterDeg = document.getElementById("epostReigsterDeg");
+var passordRegisterDeg = document.getElementById("passordRegisterDeg");
+var visPassordRegisterDeg = document.getElementById("visPassordRegisterDeg");
+var pasokravRegisterDeg = document.getElementById("pasokravRegisterDeg");
+var gjentaPasoRegisterDeg = document.getElementById("gjentaPasoRegisterDeg");
+var tlfRegisterDeg = document.getElementById("tlfRegisterDeg");
+var avBestill = document.getElementById("avBestill");
+var avBestillText = document.getElementById("avBestillText");
+var velgOppholdAvbestill = document.getElementById("velgOppholdAvbestill");
+var skrivAnmeldelse = document.getElementById("skrivAnmeldelse");
+var slettHund = document.getElementById("slettHund");
+var slettHundText = document.getElementById("slettHundText");
 
 
 
@@ -611,4 +640,25 @@ if(minSide !== null) {
 if(registerNyBruker !== null){
     registerNyBruker.innerHTML = registerNyBrukerTab[språk];
     forNavnRegisterDeg.innerHTML = forNavnRegisterDegTab[språk];
+    etterNavnRegisterDeg.innerHTML = etterNavnRegisterDegTab[språk];
+    fødselsdatoRegistrerDeg.innerHTML = fødselsdatoRegistrerDegTab[språk];
+    adresseRegistrerDeg.innerHTML = adresseRegistrerDegTab[språk]; 
+    epostReigsterDeg.innerHTML = epostTab[språk];
+    passordRegisterDeg.innerHTML = passordRegisterDegTab[språk];
+    visPassordRegisterDeg.innerHTML = visPassordTab[språk];
+    pasokravRegisterDeg.innerHTML = pasokravRegisterDegTab[språk];
+    gjentaPasoRegisterDeg.innerHTML = gjentaPasoRegisterDegTab[språk];
+    tlfRegisterDeg.innerHTML = tlfRegisterDegTab[språk];
+}
+if(avBestill !== null){
+    avBestill.innerHTML = avBestillTab[språk];
+    avBestillText.innerHTML = avBestillTextTab[språk];
+    velgOppholdAvbestill.innerHTML = velgOppholdAvbestillTab[språk];
+}
+if(skrivAnmeldelse !== null) {
+    skrivAnmeldelse.innerHTML = skrivAnmeldelseTab[språk];
+}
+if(slettHund !== null) {
+    slettHund.innerHTML = slettHundTab[språk];
+    slettHundText.innerHTML = slettHundTextTab[språk];
 }

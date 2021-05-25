@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main>
 
-        <!-- 2a erAdmin sjekk -->
+        <!-- erAdmin sjekk -->
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
         <?php $bruker = $_SESSION['endreBruker'] ?>
@@ -34,39 +34,54 @@
 
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
+            
             <h1 class="hovedOverskrift">Endre bruker</h1>
 
                 <div class="skjemaKolonner">
-                    <div class="kolonne1">
-                        <label for="epost">Epost:</label>
-                        <input class="inputTekst" type="text" id="epost" name="epost" value= <?php echo $bruker->getEpost() ?>>
+                    
+                <label for="fornavn">Fornavn:</label>   
+                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
+
                         <label for="tlf">Tlf:</label>   
-                        <input class="inputTekst" type="text" id="tlf" name="tlf" value= <?php echo $bruker->getTlf() ?> >
+                        <input class="inputTekst" type="text" id="tlf" name="tlf" pattern="[0-9]{8}" value= <?php echo $bruker->getTlf() ?> >
+                        
                         <label for="adresse">Adresse:</label>     
                         <input class="inputTekst" type="text" id="adresse" name="adresse" value= <?php echo $bruker->getAdresse() ?> > 
+
                     </div>
                     <div class="kolonne2">
-                        <label for="fornavn">Fornavn:</label>   
-                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
                         <label for="etternavn">Etternavn:</label>  
                         <input class="inputTekst" type="text" id="etternavn" name="etternavn" value= <?php echo $bruker->getEtternavn() ?> >
-                    </div>
-                </div> 
 
-                <a href="admin.php">
-                    <input class="litenKnapp" type="button" value="Avbryt">  
-                <a>
-                <input class="litenKnapp" type="submit" value="Lagre">  
+                        <label for="epost">Epost:</label>
+                        <input class="inputTekst" type="text" id="epost" name="epost" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" 
+                        value= <?php echo $bruker->getEpost() ?>>
+
+                    </div>
+
+                 <!-- Knapperad -->
+                 <div class="knappeRad">
+                    <div class="knapp1IRad">
+                        <!-- Avbryt knapp -->
+                        <a href="admin.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Avbryt">  
+                        <a>
+                    </div>
+                    <div class="etterKolonnerKnapp">
+                        <!-- Velg bruker knapp -->
+                        <input class="inputSubmit hovedKnapp" type="submit" value="Lagre">  
+                    </div>
+                </div>      
             </div>
         </form>
 
-         <!-- 2b oppdaterBrukerInfo -->
+         <!-- oppdaterBrukerInfo -->
         <?php adminEndreBrukerInfo($dblink) ?> 
 
     </main>
 
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 

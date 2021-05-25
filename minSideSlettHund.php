@@ -36,8 +36,8 @@
 			
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
-                <h2>Slett Hund</h2>
-                <p>Denne siden er under arbied. Du kan for øyeblikket bare slette hunder som ikke har opphold. </p>
+                <h2 id="slettHund">Slett Hund</h2>
+                <p id="slettHundText">Denne siden er under arbied. Du kan for øyeblikket bare slette hunder som ikke har opphold. </p>
                 <div>
                     <select id="hund" class="litenSelect" value="hund" name="hund">
                         <?php $hunder = laghunderTab($dblink);

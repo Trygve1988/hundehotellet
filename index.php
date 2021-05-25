@@ -61,7 +61,7 @@ $dblink = kobleOpp();
                 <div class="velkommenText">
                     <p id="velkommenNoText1">Velkommen til Bø Hundehotell</p>
                     <p id="velkommenNoText2">Norges BESTE Hundehotell for dine firbente venner</p>
-                    <p id="velkommenNoText3">Åpningstider: Man-Fre 8-18, Lør-Søn: 10-16</p>
+                    <p id="velkommenNoText3">Åpningstider: Man-Fre: 8-18, Lør-Søn: 10-16</p>
                 </div>
                 
                 <div id="KontrollerBD">

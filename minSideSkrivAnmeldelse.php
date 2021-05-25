@@ -34,11 +34,11 @@
 				</a>
 
                 <!-- Overskrift -->
-                <h2 class="hovedOverskrift" >Skriv anmeldelse</h2>
+                <h2 id="skrivAnmeldelse" class="hovedOverskrift" >Skriv anmeldelse</h2>
 
                 <!-- Tekstområde -->
                 <div class="anmeldelseTilbakemelding">
-                    <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="121" rows="20"></textarea>
+                    <textarea name="anmeldelseKundeText" id="skrivAnmeldse" cols="110" rows="20"></textarea>
                 </div>
 
                 <!--Knapperad-->
