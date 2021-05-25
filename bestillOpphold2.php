@@ -140,17 +140,17 @@ $dblink = kobleOpp();
 
 					</div>
 				</div>	
-				<!--Knapperad-->
+				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
-						<!-- Tilbake knapp-->
+						<!-- Tilbake knapp -->
 						<a href = "bestillOpphold.php">
 	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
 	            		</a>
 					</div>
 					<div class="etterKolonnerKnapp">
 
-						<!-- Neste knapp-->
+						<!-- Neste knapp -->
 						<a href = "bestillOpphold2.php">
 	                		<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft" name="bekreftHundInfo"> 
 	            		</a>	
@@ -163,7 +163,7 @@ $dblink = kobleOpp();
 		</div>	
 	</main>
 
-	<!-- ************************** fellesBunn ************************************ -->
+	<!-- ************************** Felles bunn ************************************ -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 
