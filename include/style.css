@@ -407,8 +407,8 @@ div .gjentaPKolonne {
   	color: black;
 } 
 
-/* Felles elementer i forskjellige input-typer*/
-input[type=text].inputTekst, input[type=password].inputPassord,input[type=text].inputPassord, 
+/* Felles elementer i forskjellige input-typer*/ 
+input[type=text].inputTekst,input[type=email].inputMail, input[type=password].inputPassord,input[type=text].inputPassord, 
 input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder select {
 	display: inline-block;
 	box-sizing: border-box;
