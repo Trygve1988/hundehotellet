@@ -25,10 +25,10 @@ $dblink = kobleOpp();
 
 <body>
 
-	<!-- ************************** fellesTop ************************** -->
+	<!-- ************************** Felles topp ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** main ******************************* -->
+	<!-- ************************** Main ******************************* -->
 	<main>
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
@@ -61,26 +61,24 @@ $dblink = kobleOpp();
 						<input type="date" id="sluttDato" class="inputDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
 					</div>	
 				</div>
-			
-			<!-- Knapperad -->
-			<div class="knappeRad heltIBunnKnapp">
-				<div class="knapp1IRad">
-					<!-- Tilbake-knapp-->
-					<a href = "bestillOpphold2.php">
-		           		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
-		       		</a>
-				</div>
-				<div class="etterKolonnerKnapp">
-					<!-- Neste-knapp -->
-					<a href = "bestillOpphold3.php">
-		            	<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft datoer" name="bekreftDatoer">
-		            </a>
-				</div>
-			</div>	
-			
-			<!-- Bestill opphold -->
-			<?php bekreftDatoer($dblink); ?> 
-
+		
+				<!-- Knapperad -->
+				<div class="knappeRad heltIBunnKnapp">
+					<div class="knapp1IRad">
+						<!-- Tilbake-knapp-->
+						<a href = "bestillOpphold2.php">
+							<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
+						</a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Neste-knapp -->
+						<a href = "bestillOpphold3.php">
+							<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft datoer" name="bekreftDatoer">
+						</a>
+					</div>
+					<!-- Bestill opphold -->
+					<?php bekreftDatoer($dblink); ?> 
+				</div>	
 			</form>
 		</div>	
 	</main>
