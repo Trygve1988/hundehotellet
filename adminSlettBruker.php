@@ -36,7 +36,7 @@
             
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
-                    <label for="slettBruker">Velg bruker du vil slette.</label>
+                    <label for="slettBruker">Velg bruker du vil slette:</label>
                         <select name="velgSlettBrukerSelect" class="inputSelect">
                             <?php $brukere = lagBrukereTab($dblink);
                             for ($i=0; $i<count($brukere); $i++) {

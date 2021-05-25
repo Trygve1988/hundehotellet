@@ -34,7 +34,7 @@
 
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <h3>Endre Bruker</h3>  
+            <h1 class="hovedOverskrift">Endre bruker</h1>
 
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
@@ -54,7 +54,7 @@
                 </div> 
 
                 <a href="admin.php">
-                    <input class="litenKnapp" type="button" value="Tilbake">  
+                    <input class="litenKnapp" type="button" value="Avbryt">  
                 <a>
                 <input class="litenKnapp" type="submit" value="Lagre">  
             </div>
