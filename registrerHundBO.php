@@ -96,6 +96,9 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
+				<!-- registrerHund -->
+				<?php registrerHundBestillOpphold($dblink); ?>
+
 				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">	
@@ -112,8 +115,6 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
-				<!-- registrerHund -->
-				<?php registrerHund($dblink); ?>
 			</form>
 		</div>
 	</main>

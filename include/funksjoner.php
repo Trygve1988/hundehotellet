@@ -6,14 +6,14 @@ include_once "domeneklasser/Bestilling.php";
 include_once "domeneklasser/FerdigBestilling.php";
 
 /* ************************** 0) Alle: a) konstanter ************************** */
-// øverst i include/funksjoner.php
-//koble på itfag databasen
+// Konstanter som vi bruker til å koble på databasen på itfag.usn.no
 define("TJENER",  "itfag.usn.no");
 define("BRUKER",  "h20APP2000gr5");
 define("PASSORD", "pw5");
 define("DB",      "h20APP2000grdb5");
 
 /* ************************** 0) Alle: b) SESSIONS ************************** */
+// Oversikt over sessionsvariabler og hvor de opprettes
 // $bruker = $_SESSION['bruker'];               ( 10) Logg Inn)
 // $valgteHunder = $_SESSION['valgteHunder'];   ( 6) Bestill Opphold 2  oppdater Hunder)
 // $pos = $_SESSION['valgteHunderPos'];         ( 6) Bestill Opphold 2  oppdater Hunder)
@@ -23,6 +23,7 @@ define("DB",      "h20APP2000grdb5");
 // $_SESSION['adminSeBrukertype']               (  9) Admin 
 
 /* ************************** 0) Alle: c) database ************************** */ 
+// Funksjon for å koble på databasen
 function kobleOpp() {
     $dblink = mysqli_connect(TJENER, BRUKER, PASSORD, DB);
     if (!$dblink) {
@@ -32,17 +33,16 @@ function kobleOpp() {
     return $dblink;
 }
 
+// Funksjon for å koble fra databasen
 function lukk($dblink) {
     mysqli_close($dblink);
 }
 
 
 /* ************************** 0) Alle: d) topp ************************** */ 
-function visBildeBakgrunn() { 
-    ?> <div class="bildeBakgrunn">
-     </div><?php
-}
+// Inneholder funksjoner for å lage HTML elementer som skal brukes på mange sider.
 
+// Funksjon som lager standard navbar på alle sidene 
 function visNav() { 
     ?> <div class="navbar">
         <a href="index.php"> <img class="logo" src="bilder/logohvit.png"> <img class="logotext" src="bilder/teksthvit.png"></a>
@@ -83,6 +83,7 @@ function visNav() {
     </div><?php
 }
 
+// Funksjon som lager admin under-navbar på alle admin sidene 
 function visNav2() { 
     ?> <div class="navbar2">
 
@@ -95,6 +96,7 @@ function visNav2() {
         <?php
 }
 
+// Funksjon som lager ansatt under-navbar på alle ansatt sidene 
 function visNav3() { 
     ?> <div class="navbar2">
 
@@ -116,10 +118,12 @@ function visNav3() {
         <?php
 }
 
+// Funksjon for å sjekke om brukeren er logget inn
 function erLoggetInn() {
     return ( isset($_SESSION['bruker']) );
 }
 
+// Funksjon for å sjekke om brukeren er en ansatt
 function erAnsatt() {
     $erAnsatt = false;
     if (isset($_SESSION['bruker'])) {
@@ -132,6 +136,7 @@ function erAnsatt() {
     return $erAnsatt;
 }
 
+// Funksjon for å sjekke om brukeren er en admin
 function erAdmin() {
     $erAdmin = false;
     if (isset($_SESSION['bruker'])) {
@@ -145,6 +150,7 @@ function erAdmin() {
 }
 
 /* ************************** 0) Alle: e) bunn ************************** */ 
+// Funksjon som lager ToppKnapp på alle sidene. Toppknappen gjør at man lett kan navigere til Toppen av siden
 function visToppKnapp() { 
     ?> 
     <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
@@ -153,6 +159,7 @@ function visToppKnapp() {
     <?php 
 }
 
+// Funksjon som lager Footer på alle sidene.
 function visFooter() { 
     ?>
     <!--sett footeren din inn her kristina -->
@@ -195,10 +202,12 @@ function visFooter() {
 }
 
 // ************************** 0) alle **************************
+//  Funksjon som lager option elementer til valgbokser
 function lagOption($verdi) {
     ?> <option value= <?php echo $verdi?> > <?php echo $verdi?> </option><?php
 }
 
+//  Funksjon for å registrer en Hund. Brukes på bestillOpphold og minSide
 function registrerHund($dblink) {
     if (isset($_POST['registrer'])) { 
         $navn = $_POST['navn'];
@@ -228,16 +237,15 @@ function registrerHund($dblink) {
         }
 
         echo "<br>".'<i style="color:green";> Hund registrert! </i>'; 
-        //header('Location: bestillOpphold.php');
-
-        //viss ikke $_SESSION['minSideHund'] er satt så setter vi den nå
-        if ($_SESSION['minSideHund'] == null) {
-            $_SESSION['minSideHund'] = $hundID; 
-        }
+        header('Location: bestillOpphold.php');
     }
 }
 
-function setAktivHund($dblink,$hundID) {
+// Funksjon for å lage et hund-objekt og legge det til sessionen "aktivHund"
+// Når brukeren skal bestille opphold lagres alle hundene som er valgt i sessionen "valgteHunder"
+// alle hundene i "valgteHunder" blir satt som "aktivHund" en etter en når hunden skal oppdateres
+// Brukes også på min side når brukeren har valgt hund som skal endres
+function setAktivHund($dblink,$hundID) { 
     // setter valgt hund-objekt sesjonsvariabel
     $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
     $resultat = mysqli_query($dblink, $sql); 
@@ -261,60 +269,45 @@ function setAktivHund($dblink,$hundID) {
     $_SESSION['aktivHund'] = $hund;
 }
 
-function bestillOppholdendreHund($dblink) {
-    if (isset($_POST['bekreftHundInfo'])) {  
-        $hund = $_SESSION['aktivHund'];
-        $hundID = $hund->getHundID();
-        $navn = $_POST['navn'];
-        $rase = $_POST['rase'];
-        $fdato = $_POST['fdato'];
-        $kjønn = $_POST['kjønn'];
 
-        $sterilisert = $_POST['sterilisert'];
-        $løpeMedAndre = $_POST['løpeMedAndre'];
-        $info = $_POST['info'];
-        $bruker = $_SESSION['bruker'];
-        $brukerID = $bruker->getBrukerID();
-        $forID = $_POST['forID'];
-
-        $sql = "UPDATE hund SET navn = '$navn', rase = '$rase', 
-        fdato = '$fdato', kjønn = '$kjønn', 
-        sterilisert = '$sterilisert', løpeMedAndre = '$løpeMedAndre', info = '$info', 
-        brukerID = '$brukerID', forID = '$forID' 
-        WHERE hundID = $hundID;";
-        $resultat = mysqli_query($dblink, $sql);
-        echo "hund " . $hundID . " - ". $navn . " oppdatert" . "<br>";
-        setAktivHund($dblink,$hundID);
-        //header('Location: minSide.php');
-    }
-}
 // ************************** 1) Index **************************
 // ************************** 2) Aktuelt  **************************
-// ************************** 3) Om Oss  **************************
-// ************************** 4) Priser  **************************
-function visPriser($dblink) {
-    echo "<table>";
-
-    //overskrifter
-    echo "<tr>";
-    echo    "<th>prisID</th>";
-    echo    "<th>beskrivelse</th>";
-    echo    "<th>kr</th>";
-    echo "</tr>";
-
-    //rader
-    $sql = "SELECT * FROM pris;";
-    $resultat = mysqli_query($dblink, $sql); 
-    while($rad = mysqli_fetch_assoc($resultat)){
-        echo "<tr>";
-        echo "<td>" . $rad['prisID'] . "</td>"; 
-        echo "<td>" . $rad['beskrivelse'] . "</td>";
-        echo "<td>" . $rad['beløp'] . "</td>";
-        echo "</tr>";
+function lagreInnlegg($dblink) {
+    if (isset($_POST['lagreInnleggKnapp'])) { 
+        $navn = "aktuelt";
+        $innleggOverskrift = $_POST['innleggOverskrift'];
+        $innleggText = $_POST['innleggText'];
+        $tekst = "<div class=\"mellomromMellomInnlegg\">"."<h3>".$innleggOverskrift."</h3>".  
+        "<p>".$innleggText."</p>"."</div>"."<hr>";
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $sql = "INSERT INTO innlegg(navn,tekst,brukerID) VALUES ('$navn','$tekst','$brukerID') ;";
+        mysqli_query($dblink, $sql);
     }
-    echo "</table>" . "<br>";
 }
 
+function visAlleInnlegg($dblink) {
+    $sql = "SELECT * FROM innlegg 
+    ORDER BY innleggID DESC ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        echo $rad['tekst'];
+    }
+}
+
+function slettInnlegg($dblink) {
+    if (isset($_POST['slettInnleggKnapp'])) { 
+        $sql = "DELETE FROM innlegg
+        ORDER BY innleggID DESC
+        LIMIT 1 ;";
+        $resultat = mysqli_query($dblink, $sql);
+        header("Refresh:0");
+    }  
+}
+
+// ************************** 3) Om Oss  **************************
+// ************************** 4) Priser og Info **************************
+// Funksjon for å lage en tabell med alle prisene til å vise på "Priser og Info" siden
 function lagPrisTab($dblink) {
     $prisTab;
     $pos = 0;
@@ -326,37 +319,8 @@ function lagPrisTab($dblink) {
     return $prisTab;
 }
 
-function visDagPris($dblink) {
-    $beskrivelse = "dagPris";
-    $sql = "SELECT * FROM pris WHERE beskrivelse = '$beskrivelse' ;";
-    $resultat = mysqli_query($dblink, $sql); 
-    $rad = mysqli_fetch_assoc($resultat);
-    echo $rad['beløp']; 
-}
-
-
-// ************************** 5) Kontakt Oss  **************************
-function visKontaktOssInfo($dblink) {
-    $navn = "kontaktOss";
-    $sql = "SELECT * FROM innlegg WHERE navn = '$navn' ;" ;
-    $resultat = mysqli_query($dblink, $sql); 
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        $tekst = $rad['tekst'] . "<br>";
-        echo "<p class=\"endreKontaktOssTekst\">" . $tekst . "</p>" ;
-    }
-}
-
-function lagreKontaktOssInfo($dblink) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {  
-        $navn = "kontaktOss";    
-        $tekst = $_POST['endreKontaktOssTekstfelt'];
-        $sql = "UPDATE innlegg SET tekst = '$tekst' WHERE navn = '$navn' ;" ;
-        $resultat = mysqli_query($dblink, $sql);
-        header("Refresh:0");
-    }
-}
-
 // ************************** 11) Logg Inn **************************
+// Funksjon for å logge inn på nettsiden
 function loggInn($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $epost = $_POST['epost'];
@@ -401,6 +365,8 @@ function loggInn($dblink) {
     }     
 }
 
+// Hjelpefunksjon til loggInn.
+// Når en bruker logger inn blir det laget et brukerObjekt som inneholder brukerens info
 function opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
 $tlf, $adresse, $fødselsNr, $stilling, $postNr) {
     $bruker = new Bruker($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
@@ -409,6 +375,7 @@ $tlf, $adresse, $fødselsNr, $stilling, $postNr) {
 }
 
 // ************************** 12) Registrer deg **************************
+// Funksjon for registrere seg på nettsiden
 function registrerDeg($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $epost = $_POST['epost'];
@@ -440,218 +407,6 @@ function registrerDeg($dblink) {
         }
     }
 }
-
-//test
-function lagreInnlegg($dblink) {
-    if (isset($_POST['lagreInnleggKnapp'])) { 
-        $navn = "aktuelt";
-        $innleggOverskrift = $_POST['innleggOverskrift'];
-        $innleggText = $_POST['innleggText'];
-        $tekst = "<div class=\"mellomromMellomInnlegg\">"."<h3>".$innleggOverskrift."</h3>".  
-        "<p>".$innleggText."</p>"."</div>"."<hr>";
-        $bruker = $_SESSION['bruker'];
-        $brukerID = $bruker->getBrukerID();
-        $sql = "INSERT INTO innlegg(navn,tekst,brukerID) VALUES ('$navn','$tekst','$brukerID') ;";
-        mysqli_query($dblink, $sql);
-    }
-}
-
-function visAlleInnlegg($dblink) {
-    $sql = "SELECT * FROM innlegg 
-    ORDER BY innleggID DESC ;";
-    $resultat = mysqli_query($dblink, $sql); 
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        echo $rad['tekst'];
-    }
-}
-
-function slettInnlegg($dblink) {
-    if (isset($_POST['slettInnleggKnapp'])) { 
-        $sql = "DELETE FROM innlegg
-        ORDER BY innleggID DESC
-        LIMIT 1 ;";
-        $resultat = mysqli_query($dblink, $sql);
-        header("Refresh:0");
-    }  
-}
-
-// ********************* Gunni - Min side - Tabeller ********************* 
-
-// Min profil tabell 
-function minProfilTab($dblink) {
-    
-    // $brukerID
-    $bruker = $_SESSION['bruker'];
-    $brukerID = $bruker->getBrukerID();
-
-    // SQL-spørring
-    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
-
-    //SQL-resultat -> Tabellrader
-    $resultat = mysqli_query($dblink, $sql);
-    
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        echo "<table class=\"toKolTab  minSideToKolTab\">";	
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">BrukerID</th>";
-                echo "<td>". $rad['brukerID']. "</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<th class=\"thKolonne\">Navn</th>";
-                echo "<td>". $rad['fornavn'] ." ". $rad['etternavn']. "</td>";
-                echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Epost</th>";
-                echo "<td>". $rad['epost'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Tlf</th>";
-                echo "<td>". $rad['tlf'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Adresse</th>";
-                echo "<td>". $rad['adresse'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">BrukerType</th>";
-                echo "<td>". $rad['brukerType'] . "</td>";
-            echo "</tr>";
-        echo "</table>";
-    } 
-}
-
-//Mine hunder tabell
-function minHundTab($dblink) {
-    //if (isset($_POST['minSideHund'])) {     
-        // $brukerID
-        $hundID = $_SESSION['minSideHund'];
-
-        // SQL-spørring
-        $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
-
-        //SQL-resultat -> Tabellrader
-        $resultat = mysqli_query($dblink, $sql);
-        
-        while($rad = mysqli_fetch_assoc($resultat)) {
-            echo "<table class=\"toKolTab  minSideToKolTab\">";	
-                echo "<tr>";
-                echo "<th class=\"thKolonne\">Navn</th>";
-                    echo "<td>". $rad['navn'] ."</td>";
-                    echo "</tr>";
-                echo "<tr>";
-                    echo "<th class=\"thKolonne\">Rase</th>";
-                    echo "<td>". $rad['rase'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                    echo "<th class=\"thKolonne\">Fødselsdato</th>";
-                    echo "<td>". $rad['fdato'] . "</td>";
-                echo "</tr>";
-
-               //kjønn
-               $kjønn;
-               if ($rad['kjønn'] == "gutt") {
-                   $kjønn = "Hann"; 
-               }
-               else {
-                   $kjønn = "Tispe"; 
-               }
-                echo "<tr>";
-                    echo "<th class=\"thKolonne\">Kjønn</th>";
-                    echo "<td>". $kjønn . "</td>";
-                echo "</tr>";
-
-                //sterilisert
-                $sterilisert;
-                if ($rad['sterilisert'] == 1) {
-                    $sterilisert = "Ja"; 
-                }
-                else {
-                    $sterilisert = "Nei"; 
-                }
-                echo "<tr>";
-                    echo "<th class=\"thKolonne\">Sterilisert</th>";
-                    echo "<td>". $sterilisert . "</td>";
-                echo "</tr>";
-
-                //løpeMedAndre
-                $løpeMedAndre;
-                if ($rad['løpeMedAndre'] == 1) {
-                    $løpeMedAndre = "Ja"; 
-                }
-                else {
-                    $løpeMedAndre = "Nei"; 
-                }
-                echo "<tr>";
-                    echo "<th class=\"thKolonne\">Kan omgås andre hunder</th>";
-                    echo "<td>". $løpeMedAndre . "</td>";
-                echo "</tr>";
-
-                //løpeMedAndre
-                $forID;
-                if ($rad['forID'] == 1) {
-                    $forID = "Vanlig"; 
-                }
-                else {
-                    $forID = "Allergi"; 
-                }
-                echo "<tr>";
-                    echo "<th class=\"thKolonne\">Fòrtype</th>";
-                    echo "<td>". $forID . "</td>";    
-                echo "</tr>";
-
-                echo "<tr>";
-                    echo "<th class=\"thKolonne\">Ekstra informasjon</th>";
-                    echo "<td>". $rad['info'] . "</td>";
-                echo "</tr>";
-            echo "</table>";
-        } 
-    //}
-}
-
-// Mine opphold tabell
-function mineOppholdTab($dblink) {
-    
-    // $brukerID
-    $bruker = $_SESSION['bruker'];
-    $brukerID = $bruker->getBrukerID();
-
-    // SQL-spørring
-    $sql = "SELECT * FROM bruker WHERE brukerID = '$brukerID' ;";
-
-    //SQL-resultat -> Tabellrader
-    $resultat = mysqli_query($dblink, $sql);
-    
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        echo "<table class=\"toKolTab  minSideToKolTab\">";	
-            echo "<tr>";
-            echo "<th class=\"thKolonne\">Start</th>";
-                echo "<td>". $rad['startDato'] ."</td>";
-                echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Slutt</th>";
-                echo "<td>". $rad['sluttDato'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Bestilt</th>";
-                echo "<td>". $rad['bestiltDato'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Betalt</th>";
-                echo "<td>". $rad['betaltDato'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Totalpris</th>";
-                echo "<td>". $rad['totalPris']. "</td>";
-             echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Hund</th>";
-                echo "<td>". $rad['HundID'] . "</td>";
-            echo "</tr>";
-        echo "</table>";
-    } 
-}
-
-
 
 ob_end_flush();
 
