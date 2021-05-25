@@ -29,14 +29,20 @@
 
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
-	
+
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 
-            <div class="skjemaKolonner">
-			    <div class="kolonne1">
+                <!-- Avbryt knapp -->
+                <a href = "admin.php">
+                    <input class="avbrytKnapp" type="button" value="X">
+                </a>
+                
+                <!-- Overskudd -->	
                 <h1 class="hovedOverskrift">Endre bruker</h1>
-
+                
+                <div class="soloKolonne">
+                    
                     <!-- velgEndreBrukerSelect --> 
                     <label for="velgEndreBrukerselect">Velg bruker:</label>
                     <select name="velgEndreBrukerSelect" class="inputSelect">
@@ -44,26 +50,27 @@
                         for ($i=0; $i<count($brukere); $i++) {
                             lagOption($brukere[$i]);
                         } ?>
-                    </select>
+                    </select>      
+                </div>
 
-                    <!-- Knapperad -->
-                    <div class="knappeRad">
-                        <div class="knapp1IRad">
-                            <!-- Avbryt knapp -->
-                            <a href="admin.php">
-                                <input class="inputButton hovedKnapp" type="button" value="Avbryt">  
-                            <a>
-                        </div>
-                        <div class="etterKolonnerKnapp">
-                            <!-- Velg bruker knapp -->
-                            <input class="inputSubmit hovedKnapp" type="submit" value="Velg" name="velgEndreBrukerKnapp"> 	
-                        </div>
+                <!-- velgEndreBruker -->
+                <?php velgEndreBruker($dblink); ?>  
+
+                <!-- Knapperad -->
+                <div class="knappeRad heltIBunnKnapp">
+                    <div class="knapp1IRad">
+                        <!-- Avbryt knapp -->
+                        <a href="admin.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Avbryt">  
+                        <a>
                     </div>
-                    
-                    <?php velgEndreBruker($dblink); ?>  
-                </div> 
-            </div> 
-        </form> 
+                    <div class="etterKolonnerKnapp">
+                        <!-- Velg bruker knapp -->
+                        <input class="inputSubmit hovedKnapp" type="submit" value="Velg" name="velgEndreBrukerKnapp"> 	
+                    </div>
+                </div>          
+            </form> 
+        </div>
     </main>
 
     <!-- ************************** Felles bunn ************************** -->

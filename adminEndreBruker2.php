@@ -35,11 +35,12 @@
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
             
-            <h1 class="hovedOverskrift">Endre bruker</h1>
+                <!-- Overskrift -->
+                <h2 class="hovedOverskrift">Endre bruker</h2>
 
                 <div class="skjemaKolonner">
-                    
-                <label for="fornavn">Fornavn:</label>   
+                    <div class="kolonne1">
+                        <label for="fornavn">Fornavn:</label>   
                         <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
 
                         <label for="tlf">Tlf:</label>   
@@ -49,7 +50,7 @@
                         <input class="inputTekst" type="text" id="adresse" name="adresse" value= <?php echo $bruker->getAdresse() ?> > 
 
                     </div>
-                    <div class="kolonne2">
+                    <div>
                         <label for="etternavn">Etternavn:</label>  
                         <input class="inputTekst" type="text" id="etternavn" name="etternavn" value= <?php echo $bruker->getEtternavn() ?> >
 
@@ -58,9 +59,9 @@
                         value= <?php echo $bruker->getEpost() ?>>
 
                     </div>
-
-                 <!-- Knapperad -->
-                 <div class="knappeRad">
+                </div> 
+                <!-- Knapperad -->
+                <div class="knappeRad heltIBunnKnapp">
                     <div class="knapp1IRad">
                         <!-- Avbryt knapp -->
                         <a href="admin.php">
@@ -71,15 +72,13 @@
                         <!-- Velg bruker knapp -->
                         <input class="inputSubmit hovedKnapp" type="submit" value="Lagre">  
                     </div>
-                </div>      
+                </div>         
             </div>
         </form>
 
          <!-- oppdaterBrukerInfo -->
         <?php adminEndreBrukerInfo($dblink) ?> 
-
     </main>
-
 
     <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 

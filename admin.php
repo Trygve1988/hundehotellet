@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Fellestop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ******************************* -->
     <main>
 
-        <!-- 2a erAdmin sjekk -->
+        <!-- erAdmin sjekk -->
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
 		<!-- Hvit bakgrunn -->
@@ -33,58 +33,61 @@
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 
-            <h2 id="admininOverskrift">Administrer Brukere</h2>
+            <h2 id="admininOverskrift" class="hovedOverskrift">Administrer brukere</h2>
 
-            <!-- brukertype -->
+            <!-- Brukertype -->
             <?php $brukertype = $_SESSION['adminSeBrukertype']; ?>
-            Velg Brukertype <select id="adminSeBrukertypeSelect" class="litenSelect"><?php
-                // kunde
-                if ($brukertype == "kunde") { 
-                    ?><option value="kunde" selected>Kunde</option><?php
-                } 
-                else { 
-                    ?><option value="kunde">Kunde</option><?php
-                }
+            <div class="soloKolonne">
+                <label for="brukertype">Velg brukertype:</label>
 
-                // ansatt
-                if ($brukertype == "ansatt") { 
-                    ?><option value="ansatt" selected>Ansatt</option><?php
-                } 
-                else { 
-                    ?><option value="ansatt">Ansatt</option><?php
-                } 
+                <select id="adminSeBrukertypeSelect" class="litenSelect" name="brukertype"><?php
+                    // kunde
+                    if ($brukertype == "kunde") { 
+                        ?><option value="kunde" selected>Kunde</option><?php
+                    } 
+                    else { 
+                        ?><option value="kunde">Kunde</option><?php
+                    }
 
-                // admin
-                if ($brukertype == "admin") { 
-                    ?><option value="admin" selected>Admin</option><?php
-                } 
-                else { 
-                    ?><option value="admin">Admin</option><?php
-                } ?>
-            </select>
+                    // ansatt
+                    if ($brukertype == "ansatt") { 
+                        ?><option value="ansatt" selected>Ansatt</option><?php
+                    } 
+                    else { 
+                        ?><option value="ansatt">Ansatt</option><?php
+                    } 
 
+                    // admin
+                    if ($brukertype == "admin") { 
+                        ?><option value="admin" selected>Admin</option><?php
+                    } 
+                    else { 
+                        ?><option value="admin">Admin</option><?php
+                    } ?>
+               </select> 
+            </div>  
+           
             <?php visAlleBrukere($dblink) ?>
             <a href="adminNyBruker.php">
                 <?php $tekst = "Ny_" . $_SESSION['adminSeBrukertype']; ?>
-                <input class="litenKnapp" type="button" value= <?php echo $tekst ?> >
+                <input class="inputButton mediumKnapp bunnKnapp" type="button" value= <?php echo $tekst ?> >
             </a>
             <a href="adminEndreBruker1.php">
                 <?php $tekst = "Endre_" . $_SESSION['adminSeBrukertype']; ?>
-                <input class="litenKnapp" type="button" value= <?php echo $tekst ?> >
+                <input class="inputButton mediumKnapp bunnKnapp" type="button" value= <?php echo $tekst ?> >
             </a>
             <a href="adminSlettBruker.php">
                 <?php $tekst = "Slett_" . $_SESSION['adminSeBrukertype']; ?>
-                <input class="litenKnapp" type="button" value= <?php echo $tekst ?> >
+                <input class="inputButton mediumKnapp bunnKnapp" type="button" value= <?php echo $tekst ?> >
             </a>
             <a href="adminGjennoprettBruker.php">
                 <?php $tekst = "Gjennoprett_" . $_SESSION['adminSeBrukertype']; ?>
-                <input class="litenKnapp" type="button" value= <?php echo $tekst ?> >
+                <input class="inputButton mediumKnapp bunnKnapp" type="button" value= <?php echo $tekst ?> >
             </a>
         </form> 
-
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Fellesbunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 
