@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main>
 
-        <!-- 2a erAdmin sjekk -->
+        <!-- erAdmin sjekk -->
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
         <!-- Hvit bakgrunn -->
@@ -32,27 +32,47 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <h3>Gjennoprett Bruker</h3>  
+
+                <!-- Avbryt knapp -->
+                <a href = "admin.php">
+                    <input class="avbrytKnapp" type="button" value="X">
+                </a>
+
+                <!-- Overskrift -->
+                <h2 class="hovedOverskrift">Gjennoprett bruker</h2>  
+                
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
-                        <select name="velgGjennoprettBrukerSelect" class="inputSelect">
+                        <label for="velgGjennoprettBrukerSelect">Velg bruker:</label>
+                        <select name="velgGjennoprettBrukerSelect" class="inputSelect minInput">
                             <?php $brukere = lagSlettedeBrukereTab($dblink);
                             for ($i=0; $i<count($brukere); $i++) {
                                 lagOption($brukere[$i]);
                             } ?>
-                        </select>
-                        <a href="admin.php">
-                            <input class="litenKnapp" type="button" value="Tilbake">  
-                        <a>
-                        <input class="litenKnapp" type="submit" value="Gjennoprett" name="velgGjennoprettBrukerKnapp">
+                        </select>         
                     </div>
-                </div>
-                <?php gjennoprettBruker($dblink); ?>  
+                </div> 
+                
+                <!-- Knapperad -->
+				<div class="knappeRad bunnKnapp">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp -->
+						<a href="admin.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Tilbake">  
+                        <a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Gjenopprett bruker -->
+						<input class="inputSubmit hovedKnapp2" type="submit" value="Gjennoprett bruker" name="velgGjennoprettBrukerKnapp">
+					</div>
+				</div>
+                <?php gjennoprettBruker($dblink); ?>      
             </div>  
+           
         </form> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 
