@@ -32,8 +32,7 @@
         ?>
 
         <?php $bruker = $_SESSION['bruker'] ?>
-       
-        
+            
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
