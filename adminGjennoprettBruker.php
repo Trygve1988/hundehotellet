@@ -54,7 +54,7 @@
                 </div> 
                 
                 <!-- Knapperad -->
-				<div class="knappeRad bunnKnapp">
+				<div class="knappeRad heltIBunnKnapp">
 					<div class="knapp1IRad">
 						<!-- Tilbake knapp -->
 						<a href="admin.php">
@@ -68,7 +68,6 @@
 				</div>
                 <?php gjennoprettBruker($dblink); ?>      
             </div>  
-           
         </form> 
     </main>
 

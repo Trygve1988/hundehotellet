@@ -63,7 +63,7 @@ $dblink = kobleOpp();
 				</div>
 			
 			<!-- Knapperad -->
-			<div class="knappeRad bunnKnapp">
+			<div class="knappeRad heltIBunnKnapp">
 				<div class="knapp1IRad">
 					<!-- Tilbake-knapp-->
 					<a href = "bestillOpphold2.php">

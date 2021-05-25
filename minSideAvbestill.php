@@ -58,7 +58,7 @@
                 </div> 
             
                 <!--Knapperad-->
-				<div class="knappeRad">
+				<div class="knappeRad heltIBunnKnapp">
 					<div class="knapp1IRad">
 						<!-- Tilbake knapp-->
 						<a href="minSide.php">
@@ -73,7 +73,6 @@
                 
                 <!-- velgEndreBestilling -->
                 <?php avbestill($dblink); ?> 
-
             </form>
         </div> 
     </main>

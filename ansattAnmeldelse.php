@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp************************** -->
     <?php visNav(); ?>
     <?php visNav3() ?>
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ******************************** -->
     <main>
  
-        <!-- 2a Anmeldelser -->
+        <!-- Anmeldelser -->
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 	
@@ -35,22 +35,25 @@
                 <!-- visNesteIkkeGodkjenteAnmeldelse -->
                 <?php visNesteIkkeGodkjenteAnmeldelse($dblink); ?> 
 
-                <!-- knappePanel -->
-                <div id="knappePanel">
-                    <button class="litenKnapp" type="submit" name="slettAnmeldelseKnapp">Slett</button>
-                    <button class="litenKnapp" type="submit" name="godkjennAnmeldelseKnapp">Godkjenn</button>
-                <div>
+                <!-- Knapperad -->
+				<div class="knappeRad" id="knappePanel">
+					<div class="knapp1IRad">
+						<!-- Slett knapp -->			
+	                	<button class="inputSubmit hovedKnapp" type="submit" name="slettAnmeldelseKnapp">Slett</button>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Godkjenn knapp -->
+						<button class="inputSubmit hovedKnapp" type="submit" name="godkjennAnmeldelseKnapp">Godkjenn</button>	
+					</div>
+				</div>
 
                 <?php slettAnmeldelse($dblink); ?> 
                 <?php godkjennAnmeldelse($dblink); ?> 
-
             </form> 
-
         </div>
-
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 

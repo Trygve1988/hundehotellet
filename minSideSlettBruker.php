@@ -47,7 +47,7 @@
                 <p>Er det noe du lurer på i forhold til sletting av konto, kontakt oss på epost: <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com.</p>
                 
                 <!--Knapperad-->
-				<div class="knappeRad bunnKnapp">
+				<div class="knappeRad heltIBunnKnapp">
 
 					<div class="knapp1IRad">
 						<!-- Tilbake-knapp-->

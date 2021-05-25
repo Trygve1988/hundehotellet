@@ -45,7 +45,7 @@
                 <p>Er du sikker på at du vil slette brukeren din?</p>  
               
                 <!--Knapperad-->
-				<div class="knappeRad bunnKnapp">
+				<div class="knappeRad heltIBunnKnapp">
 
 					<div class="knapp1IRad">
 						<!-- Tilbake-knapp-->

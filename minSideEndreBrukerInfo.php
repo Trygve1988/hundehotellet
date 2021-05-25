@@ -43,9 +43,11 @@
 				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>	
-
-                <h2 class="hovedOversikt">Endre brukerinformasjon</h2>  
-				<div class="skjemaKolonner">
+                
+                <!-- Overskrift -->
+				<h2 class="hovedOversikt">Endre brukerinformasjon</h2>  
+				
+                <div class="skjemaKolonner">
 					<div class="kolonne1">   
                         <label for="fornavn">Fornavn:</label>   
                         <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >

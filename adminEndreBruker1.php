@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main>
 
-        <!-- 2a erAdmin sjekk -->
+        <!-- erAdmin sjekk -->
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
 		<!-- Hvit bakgrunn -->
@@ -46,18 +46,27 @@
                         } ?>
                     </select>
 
-                    <a href="admin.php">
-                        <input class="litenKnapp" type="button" value="Avbryt">  
-                     <a>
-                    <input class="litenKnapp" type="submit" value="Velg" name="velgEndreBrukerKnapp">
-        
+                    <!-- Knapperad -->
+                    <div class="knappeRad">
+                        <div class="knapp1IRad">
+                            <!-- Avbryt knapp -->
+                            <a href="admin.php">
+                                <input class="inputButton hovedKnapp" type="button" value="Avbryt">  
+                            <a>
+                        </div>
+                        <div class="etterKolonnerKnapp">
+                            <!-- Velg bruker knapp -->
+                            <input class="inputSubmit hovedKnapp" type="submit" value="Velg" name="velgEndreBrukerKnapp"> 	
+                        </div>
+                    </div>
+                    
                     <?php velgEndreBruker($dblink); ?>  
                 </div> 
             </div> 
         </form> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 
