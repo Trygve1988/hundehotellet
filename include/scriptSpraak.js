@@ -142,6 +142,12 @@ var vilkårTab = ['Kryss av for å godtavilkår:','Check to accept terms:'];
 var passordTab = ['Passord:','Password:'];
 var visPassordTab = ['Vis passord','Show password'];
 var glemtPassordTab = ['Glemt passord','Forgot your password']; 
+var aktueltTextTab = ['Her kan du lese om det som skjer på Bø Hundehotell.','Here you can read about what is happening at Bø Hundehotell.'];
+var minSideTab = ['Min side','My side'];
+var minProfilTab = ['Min profil','My profile'];
+var minHunderTab = ['Mine hunder','My dogs'];
+var registerNyBrukerTab = ['Registrer ny bruker','Register a new user'];
+var forNavnRegisterDegTab = ['Fornavn:','First name:'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -270,6 +276,15 @@ var passordloggInn = document.getElementById("passordloggInn");
 var visPassordLogInn = document.getElementById("visPassordLogInn");
 var glemtPassord = document.getElementById("glemtPassord");
 var registrerDeg = document.getElementById("registrerDeg");
+var aktuelt = document.getElementById("aktuelt");
+var aktueltText = document.getElementById("aktueltText");
+var minSide = document.getElementById("minSide");
+var minProfil = document.getElementById("minProfil");
+var minHunder = document.getElementById("minHunder");
+var velgHundMinSide = document.getElementById("velgHundMinSide");
+var påGåendeOpphold = document.getElementById("påGåendeOpphold");
+var registerNyBruker = document.getElementById("registerNyBruker");
+var forNavnRegisterDeg = document.getElementById("forNavnRegisterDeg");
 
 
 
@@ -582,4 +597,18 @@ if(loggInn !== null) {
     visPassordLogInn.innerHTML = visPassordTab[språk];
     glemtPassord.innerHTML = glemtPassordTab[språk];
     registrerDeg.innerHTML = registrerDegTab[språk];
+}
+if(aktuelt !== null){
+    aktuelt.innerHTML = aktueltTab[språk];
+    aktueltText.innerHTML = aktueltTextTab[språk];
+}
+if(minSide !== null) {
+    minSide.innerHTML = minSideTab[språk];
+    minProfil.innerHTML = minProfilTab[språk];
+    minHunder.innerHTML = minHunderTab[språk];
+    velgHundMinSide.innerHTML = velgHunderTab[språk];
+}
+if(registerNyBruker !== null){
+    registerNyBruker.innerHTML = registerNyBrukerTab[språk];
+    forNavnRegisterDeg.innerHTML = forNavnRegisterDegTab[språk];
 }

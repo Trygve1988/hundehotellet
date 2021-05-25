@@ -38,10 +38,10 @@
             <form class="skjemaBakgrunn" method="POST">
 
                 <!-- Overskrift -->
-                <h2 class="hovedOverskrift">Min side</h2>
+                <h2 id="minSide" class="hovedOverskrift">Min side</h2>
 
                 <!-- Min profil -->
-                <h2 class="overskrift2">Min profil</h2>
+                <h2 id="minProfil" class="overskrift2">Min profil</h2>
                 <?php minProfilTab($dblink); ?>
 
                 <div class="knapperad">
@@ -58,9 +58,9 @@
 
                 <!-- ************************** (Trygve) ************************** -->
                 <!-- Mine hunder -->
-                <h2 class="overskrift2">Mine Hunder</h2>
+                <h2 id="minHunder" class="overskrift2">Mine Hunder</h2>
                 <div>
-                    <label for="velgHundSelect">Velg hund:</label>
+                    <label id="velgHundMinSide" for="velgHundSelect">Velg hund:</label>
                     <select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
                         <?php $hunder = lagHunderTab($dblink);
                         $minSideHund = $_SESSION['minSideHund']; 
