@@ -105,7 +105,7 @@ var navSamerbeidTab = ['Samarbeidspartnere','Collaborators'];
 var kontaktOssTab2 = ['Kontakt oss','Contact us'];
 var kontaktInfoTekstTab = ['Er det noe du lurer på er det bare å kontakte oss enten på mail eller telefon.','If you have any questions, just contact us either by email or phone.'];
 var åpningstiderTab = ['Åpningstider:',"Opening hours:"];
-var åpningstider2Tab = ['08:00-18:00 Man-Tordag (10:00-16:00 Lør-Søndag)','08:00-18:00 Mon-Thuday (10:00-16:00 Sat-Sunda)'];
+var åpningstider2Tab = ['08:00-18:00 Man-Tordag (10:00-16:00 Lør-Søndag)','08:00-18:00 Mon-Thuday (10:00-16:00 Sat-Sunday)'];
 var epostTab = ['Epost:','Email:']; 
 var adresseKontkatossTab = ['Adresse:','Address:'];
 var bestillOppholdTab = ['Bestill opphold','Book a stay'];
@@ -117,7 +117,7 @@ var bekreftTab = ['Kontroller at informasjon om hunden din er oppdatert:','Make 
 var hundNavnTab = ['Hundens navn:','The Dogs name:'];
 var raseTab = ['Rase:','Race:'];
 var fdatoTab = [' Fødselsdato:','Date of birth:'];
-var kjønnTab = ['Kjønn:','Sex:'];
+var kjønnTab = ['Kjønn:','Gender:'];
 var hannTab = ['Hann','Male'];
 var tispeTab = ['Tispe','Bitch'];
 var sterilisertTab = ['Sterilisert:','Sterilized:'];
@@ -141,7 +141,7 @@ var finneCVCTab = ['Hvor finner jeg CVC koden?','Where can I find the CVC code?'
 var vilkårTab = ['Kryss av for å godtavilkår:','Check to accept terms:'];
 var passordTab = ['Passord:','Password:'];
 var visPassordTab = ['Vis passord','Show password'];
-var glemtPassordTab = ['Glemt passord ?','Forgot your password ?']; 
+var glemtPassordTab = ['Glemt passord','Forgot your password']; 
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk

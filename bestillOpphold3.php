@@ -66,7 +66,7 @@ $dblink = kobleOpp();
 			<div class="knappeRad bunnKnapp">
 				<div class="knapp1IRad">
 					<!-- Tilbake-knapp-->
-					<a href = "bestillOpphold.php">
+					<a href = "bestillOpphold2.php">
 		           		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
 		       		</a>
 				</div>

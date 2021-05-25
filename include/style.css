@@ -284,17 +284,15 @@ main {
 	text-decoration: underline;
 
 }
-/* Skriv anmeldse textArea CSS */ 
-.anmeldseTilbakemelding textarea{
+/* Skriv anmeldelse textArea CSS */ 
+.anmeldelseTilbakemelding textarea{
 	resize: none;
 	text-align: justify;
-    font-family: Arial;
 }
 
 .anmeldseGodkjenning textarea {
 	resize: none;
 	text-align: justify;
-    font-family: Arial;
 }
 
 /*Kontant oss CSS for å kjøre tekst bold*/
@@ -350,10 +348,16 @@ main {
 	margin-right: 5%;
 }
 
-/*Lite felt, for eksempel for "velg hund" eller velg år? */
+/*Lite felt, for eksempel for "velg hund" eller velg år */
 .litenInput {
 	width: 200px;
 }
+
+/* Felt med minstestørrelse 200px */
+.minInput {
+	min-width: 200px;
+}
+
 
 /*Gjenta passord- kolonne, gjør plass til passordtilbakemelding*/
 div .gjentaPKolonne { 
@@ -423,10 +427,19 @@ input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder sele
 	font-size: 19px;
 }
 
-/* Textarea, høyde lik tre input- felt*/
+/* Textarea i kolonne, høyde lik tre input- felt*/
 .tekstfelt1 {
 	height: 250px;
 }
+
+/* Stor tekstboks, f.eks i minSideSkrivAnmeldelse FJERNES?
+textarea.storTekstboks {
+	column-count: 1;
+	text-align: justify;
+	column-width: 750px;
+
+}
+*/
 
 /* KNAPPER*/
 
@@ -487,7 +500,6 @@ input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder sele
 /* EkstraKnapp, f.eks legg til hund */
 input[type=submit].ekstraKnapp, input[type=button].ekstraKnapp {
 	border-radius:25px;
-	padding: 20px; /*Gjør knappen større*/
 	margin: 5px 0;
 	background-color: #ffffff;
 }
@@ -912,7 +924,7 @@ footer a {
 .velgHundKnapp {
     display: block; 
     width: 140px;
-    padding: 10px;
+    padding: 20px; /*Gjør knappen større*/
     margin: 0px;
     border: none;
     border-radius: 4px;

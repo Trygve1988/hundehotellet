@@ -19,23 +19,23 @@ $dblink = kobleOpp();
 </head>
 
 <body>
-	<!-- ************************** fellesTop ************************** -->
+	<!-- ************************** Felles topp ************************** -->
 	<?php visNav(); ?>
 
-	<!-- ************************** main ******************************* -->
+	<!-- ************************** Main ********************************* -->
 	<main>
 
 		<!-- erLoggetInn sjekk -->
 		<?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
-		<!-- ************************ (Gunni) ****************************** -->
+		<!-- ************************ (Gunni) **************************** -->
 		<!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn"> 
 			
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 
-				<!-- test -->
+				<!-- test DETTE MÅ FJERNES -->
 				<?php oppdaterHunder($dblink); ?>
 				<?php $h1 = $_SESSION['aktivHund']; ?>
 				<?php echo $h1->toString(); ?>
@@ -108,28 +108,28 @@ $dblink = kobleOpp();
 						<select class="inputSelect" name="løpeMedAndre"> 
 							<?php
 							if ($løpeMedAndre == "1") { 
-								?><option id="ja2" value="1" selected >ja</option><?php
-								?><option id="nei2"value="0">nei</option><?php
+								?><option id="ja2" value="1" selected >Ja</option><?php
+								?><option id="nei2"value="0">Nei</option><?php
 							} 
 							else { 
-								?><option value="1">ja</option><?php
-								?><option value="0" selected>nei</option><?php
+								?><option value="1">Ja</option><?php
+								?><option value="0" selected>Nei</option><?php
 							}
 							?>
 						<select> 
 
-						<!-- forType --> 
+						<!-- Fôrtype --> 
 						<?php $forID = $h1->getForID(); ?>
-						<label id="forType" for="forID">forType:</label>
+						<label id="forType" for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID"> 
 							<?php
 							if ($forID == "1") { 
-								?><option id="vanlig" value="1" selected >vanlig</option><?php
-								?><option id="allargi" value="0">allergi</option><?php
+								?><option id="vanlig" value="1" selected >Royal Canin (vanlig)</option><?php
+								?><option id="allargi" value="0">Vom (allergi)</option><?php
 							} 
 							else { 
-								?><option id="vanlig2" value="1">vanlig</option><?php
-								?><option id="allergi2" value="0" selected>allergi</option><?php
+								?><option id="vanlig2" value="1">Royal Canin (vanlig)</option><?php
+								?><option id="allergi2" value="0" selected>Vom (allergi)</option><?php
 							}
 							?>
 						<select> 
@@ -140,30 +140,30 @@ $dblink = kobleOpp();
 
 					</div>
 				</div>	
-				<!--Knapperad-->
+				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">
-						<!-- Tilbake knapp-->
+						<!-- Tilbake knapp -->
 						<a href = "bestillOpphold.php">
 	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
 	            		</a>
 					</div>
 					<div class="etterKolonnerKnapp">
 
-						<!-- Neste knapp-->
-						<a href = "bestillOpphold3.php">
-	                		<input class="inputSubmit hovedKnapp" type="submit" value="bekreftHundInfo" name="bekreftHundInfo"> 
+						<!-- Neste knapp -->
+						<a href = "bestillOpphold2.php">
+	                		<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft" name="bekreftHundInfo"> 
 	            		</a>	
 					</div>
 				</div>
 				<!-- ************************** (Trygve) ************************** -->
-				<!-- Bestill Opphold -->
+				<!-- Bestill Opphold FJERNES??-->
 				<?php bekreftHundInfo($dblink); ?> 
 			</form>
 		</div>	
 	</main>
 
-	<!-- ************************** fellesBunn ************************************ -->
+	<!-- ************************** Felles bunn ************************************ -->
 	<?php visFooter(); ?>
 	<?php visToppKnapp(); ?>
 

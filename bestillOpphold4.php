@@ -112,7 +112,7 @@ $dblink = kobleOpp();
 					<div class="etterKolonnerKnapp">
                      	<a href="bestillingBekreftelse">
 						 	<!-- Bekreft bestilling --> 
-                     		<input class="inputSubmit hovedKnapp" type="submit" value="bestill" name="bestill">
+                     		<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft bestilling" name="bestill">
 						</a>
 					</div>
 				</div>			

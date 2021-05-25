@@ -18,14 +18,14 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
     <?php visNav3() ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main> 
 
-        <!-- 2a erAnsatt sjekk-->
+        <!-- erAnsatt sjekk-->
         <?php if (!erAnsatt()) { header('Location: loggInn.php'); } ?>
 
         <!-- Hvit bakgrunn -->
@@ -37,33 +37,32 @@
                 <?php registrerKommentar($dblink); ?>
                 <?php slettAlleKommentarer($dblink); ?>     
 
-                <h2>Kommentar</h2>
+                <h2 class="hovedOverskrift">Kommentarer</h2>
+
                 <?php //visAlleHunderPaaOppholdNaaKommentar($dblink); ?>
                 <?php visAlleRegistrerteKommentarIDag($dblink); ?>
 
-                <!-- skriv kommentar -->
-                <label for="kommentarText">kommentarText:</label>
+                <!-- Skriv kommentar -->
+                <label for="kommentarText">Skriv kommentaren i teksfeltet under:</label>
                 <textarea name="kommentarText" rows="10" cols="115"></textarea>
 
-                <!-- velg Hund -->
-                <select name="velgHundSelect" class="litenSelect" width="100px">
+                <!-- Velg Hund -->
+                <select name="velgHundSelect" class="litenSelect litenInput">
                     <?php $hunder = lagHunderPaaOppholdNaaTab($dblink);
                     for ($i=0; $i<count($hunder); $i++) {
                         lagOption($hunder[$i]);
                     } ?>
                 </select>
 
-                <!-- knapper-->
-                <input class="litenKnapp" type="submit" name="registrerKommentarKnapp" value="Lagre">
-                <input class="litenKnapp" type="submit" name="slettAlle" value="Slett Alle"> 
+                <!-- Knapper-->
+                <input class="inputSubmit mediumKnapp" type="submit" name="registrerKommentarKnapp" value="Lagre">
+                <input class="inputSubmit mediumKnapp" type="submit" name="slettAlle" value="Slett alle"> 
 
             </form>
-
-        </div>
-        
+        </div>  
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    

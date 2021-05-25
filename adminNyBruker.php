@@ -18,13 +18,13 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ********************************* -->
     <main>
 
-        <!-- 2a erAdmin sjekk -->
+        <!-- erAdmin sjekk -->
         <?php  if (!erAdmin()) { header('Location: loggInn.php'); } ?>
 
         <!-- Hvit bakgrunn -->
@@ -32,21 +32,40 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <h3>Ny Bruker</h3> 
+            
+            <!-- Avbryt knapp -->
+			<a href = "admin.php">
+				<input class="avbrytKnapp" type="button" value="X">
+			</a>
 
+            <!-- Overskrift -->
+                <h2 class="hovedOverskrift">Ny bruker</h3> 
+                
                 <div class="skjemaKolonner">
-                    <div class="kolonne1">
-                        <label for="epost">epost:</label>
-                        <input class="inputTekst" type="text" id="epost" name="epost" value="eks@gmail.com" required>
-                        <label for="passord">passord:</label>
-                        <input class="inputTekst" type="text" id="passord" name="passord" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" value="passord123" required >
-                        <p id="passordStatus" class="inndataStatus" ></p>
-                        <label for="tlf">tlf:</label>   
-                        <input class="inputTekst" type="text" id="tlf" name="tlf" value="11166222" required>
+                    <!-- Labels og input i kolonne 1 -->
+					<div class="kolonne1">
+						<label for="fornavn">Fornavn:</label>
+						<input  class="inputTekst" type="text" name="fornavn" value=""  required>
+						
+						<label for="etternavn">Etternavn:</label>
+						<input class="inputTekst" type="text" name="etternavn" value="" required>	
+						
+						<label for="fDato">Fødselsdato:</label>
+						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" value="" required>	
 
-                        <!-- brukertype -->
+						<label for="tlf">Tlf:</label>
+						<input class="inputTekst" type="text" name="tlf" pattern="[0-9]{8}" value="" required>	
+						
+						<label for="adresse">Adresse:</label>
+						<input class="inputTekst" type="text" name="adresse"  value="" required>	
+					</div>
+
+					<!-- Labels og input i kolonne 2 -->
+					<div>	
+                        <!-- Brukertype -->
                         <?php $brukertype = $_SESSION['adminSeBrukertype']; ?>
-                        <select name="brukertype" class="inputSelect" ><?php
+                        <label for="brukertype">Brukertype:</label>
+                        <select name="brukertype" class="inputSelect"><?php
                             // kunde
                             if ($brukertype == "kunde") { 
                                 ?><option value="kunde" selected>Kunde</option><?php
@@ -71,37 +90,60 @@
                                 ?><option value="admin">Admin</option><?php
                             } ?>
                         </select>
-                    </div>
-                    <div class="kolonne2">
-                        <label for="fornavn">fornavn:</label>   
-                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" value="ola" required >
-                        <label for="etternavn">etternavn:</label>  
-                        <input class="inputTekst" type="text" id="etternavn" name="etternavn" value="nordman" required>
-                        <label for="adresse">adresse:</label>     
-                        <input class="inputTekst" type="text" id="adresse" name="adresse" value="epleveien5" required>     
-                    </div> 
-                </div>
-            
-                <a href="admin.php">
-                    <input class="litenKnapp" type="button" value="Tilbake">  
-                <a>
-                <input class="litenKnapp" type="submit" value="Lagre" name="registrerNyBrukerKnapp">  
+                           
+                        <!-- Epost -->
+						<label for="epost">E-post:</label>
+						<input class="inputTekst" type="text" name="epost" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value="" required>	
+							
+						<label for="passord">Ønsket passord:</label>
+						<input class="inputPassord" type="password" name="passord" required 
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="" required>
+
+						
+						<!-- Passord rad -->
+						<div class="passordRad">
+							<!-- Vis passord checkbox -->
+							<div class="visPassord">
+								<label for="passordCheckbox">Vis Passord</label>
+								<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
+							</div>
+
+							<!-- Passord tilbakemelding -->
+							<div class="passordKrav">
+								<p>Passord krav:</p>
+								<p id="status" melding()></p>
+								<!-- Engelsk tilbakemelding --->
+								<p id="status2" melding2()></p>
+							</div>
+						</div>	
+						<div class="gjentaPKolonne">
+							<label for="passordSjekk">Gjenta passord:</label>
+							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" value="" required>	
+						</div>		
+					</div>
+				</div>    
+                
+                <!--Knapperad-->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp-->
+						<a href="admin.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Tilbake">  
+                        <a>
+					</div>
+					<div class="etterKolonnerKnapp">
+
+						<!-- Opprett ny bruker -->
+						<input class="inputSubmit hovedKnapp2" type="submit" value="Opprett ny bruker" name="registrerNyBrukerKnapp"> 	
+					</div>
+				</div>
 
                 <?php registrerNyBruker($dblink); ?> 
             </div> 
         </form>
     </main>
 
-
-
-
-
-
-
-
-
-
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 
