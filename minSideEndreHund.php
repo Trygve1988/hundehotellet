@@ -69,11 +69,11 @@
                     <div class="kolonne1">
                         <!-- Navn --> 
                         <label for="navn">Navn:</label>
-						<input class="inputTekst" type="text" name="navn" size="20" value= <?php echo $h1->getNavn() ?> required/>
+						<input class="inputTekst" type="text" name="navn" size="20" value= <?php echo $h1->getNavn() ?> required>
                         
 						<!-- Rase --> 
 						<label for="rase">Rase:</label>
-						<input class="inputTekst" type="text"  name="rase" size="20" value= <?php echo $h1->getRase() ?> />
+						<input class="inputTekst" type="text"  name="rase" size="20" value= <?php echo $h1->getRase() ?> >
                         
 						<!-- Fdato --> 
                         <label for="fdato">Fødselsdato:</label>

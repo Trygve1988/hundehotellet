@@ -34,6 +34,29 @@ $dblink = kobleOpp();
                 <!--********************** Kristina ************************** -->
 
                 <div class="aktuelt">
+
+                   <!-- lagreInnlegg -->
+                   <?php
+                    if (erAnsatt()) { ?>
+                        <div class="mellomromMellomInnlegg">
+                        <h2 class="hovedOverskrift">Skriv nytt innlegg</h2>
+                            <label for="overskrift">overskrift:</label>
+                            <input class="inputTekst" type="text" name="innleggOverskrift" value="overskrift">
+
+                            <label for="text">text:</label>
+                            <input class="inputTekst" type="text" name="innleggText" value="text">
+
+                            <input class="litenKnapp" type="submit" value="Lagre" name="lagreInnleggKnapp">
+                            <input class="litenKnapp" type="submit" value="Slett siste" name="slettInnleggKnapp">
+
+                            <?php lagreInnlegg($dblink); ?>
+                            <?php slettInnlegg($dblink); ?>
+                        </div><?php
+                    } ?>
+
+                    <!-- visAlleInnlegg -->
+                    <?php visAlleInnlegg($dblink); ?>
+
                     <div class="mellomromMellomInnlegg">
                         <!-- Margin-bottom funket ikke, derfor måtte det lages en div som lager luft mellom innleggene -->
                         <h1 class="hovedOverskrift">Aktuelt</h2>
@@ -59,26 +82,6 @@ $dblink = kobleOpp();
                         </p>
                     </div>
                     <hr>
-
-                    <!-- visAlleInnlegg -->
-                    <?php visAlleInnlegg($dblink); ?>
-
-                    <!-- lagreInnlegg -->
-                    <?php
-                    if (erAnsatt()) { ?>
-                        <div class="mellomromMellomInnlegg">
-                        <h2 class="hovedOverskrift">Skriv nytt innlegg</h2>
-                            <label for="overskrift">overskrift:</label>
-                            <input class="inputTekst" type="text" name="innleggOverskrift" value="overskrift">
-
-                            <label for="text">text:</label>
-                            <input class="inputTekst" type="text" name="innleggText" value="text">
-
-                            <input class="litenKnapp" type="submit" value="lagre" name="lagreInnleggKnapp">
-
-                            <?php lagreInnlegg($dblink); ?>
-                        </div><?php
-                            } ?>
 
                 </div>
             </form>

@@ -1,5 +1,6 @@
 <?php
     include_once "include/funksjoner.php";
+    //include_once "include/funksjonerMinSide.php";
     include_once "include/funksjonerAnsatt.php";
     session_start();
     $dblink = kobleOpp();
@@ -18,47 +19,67 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
-    <?php visNav2() ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main ************************** -->
     <main> 
 
-        <!-- 2a erLoggetInn sjekk -->
+        <!-- erLoggetInn sjekk -->
         <?php if (!erLoggetInn()) { header('Location: loggInn.php'); } ?>
 
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
+	
+            <!-- Skjema -->	
+            <form class="skjemaBakgrunn" method="POST">
 
-        <form class="skjema" method="POST"> 
-            <h1>Avbestill</h1>
+                 <!-- Avbryt knapp -->
+				<a href = "minSide.php">
+					<input class="avbrytKnapp" type="button" value="X">
+				</a>
 
-            <!-- 2a) Velg Bestilling MÅ BARE VISE IKKE PÅBEGYNTE OPPHOLD!!!!! -->
-            <p>Opphold kan avbestilles intill 24 timer før oppholdet starter.</p>  
-            <div class="skjemaFlexBox"> 
-                <div> 
-                    <!-- velgBestilling select --> 
-                    <select id="bestillinger" value="bestillinger" name="bestillinger">
-                        <?php //$bestillingTab = lagIkkeBegyntBestillingTabForAnsatt($dblink);  
-                        for ($i=0; $i<count($bestillingTab); $i++) {
-                            //lagBestillingOption($bestillingTab[$i]);
-                        } ?>
-                    </select>
-                    <!-- velgBestilling knapp --> 
-                    <input type="submit" value="Avbestill" name="Avbestill">
+                <h2 class="hovedOverskrift">Avbestill opphold</h2>
 
-                </div>
-            </div> 
+                <!-- Velg Bestilling MÅ BARE VISE IKKE PÅBEGYNTE OPPHOLD!!!!! -->
+                <p>Opphold kan avbestilles inntill 24 timer før oppholdet starter.</p>  
 
-            <!-- 2b velgEndreBestilling -->
-            <?php //avbestill($dblink); ?> 
+                <div class="skjemaKolonner">
+                    <div class="kolonne1">
+                        
+                        <!-- velgBestilling select --> 
+                        <label for="bestillinger">Velg opphold:</label>
+                        <select id="bestillinger" class="inputSelect minInput" value="bestillinger" name="bestillinger">
+                            <?php $bestillingTab = lagIkkeBegyntBestillingTabAnsatt($dblink);  
+                            for ($i=0; $i<count($bestillingTab); $i++) {
+                                lagBestillingOption($bestillingTab[$i]);
+                            } ?>
+                        </select>
+                    </div>
+                </div> 
+            
+                <!--Knapperad-->
+				<div class="knappeRad">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp-->
+						<a href="minSide.php">
+					        <input class="inputButton hovedKnapp" type="button" value="Avbryt"> 
+				        </a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Avbestill knapp-->
+						<input class="inputSubmit hovedKnapp" type="submit" value="Avbestill" name="Avbestill">	
+					</div>
+				</div>
+                
+                <!-- velgEndreBestilling -->
+                <?php avbestill($dblink); ?> 
 
-        </form> 
-    
+            </form>
+        </div> 
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    

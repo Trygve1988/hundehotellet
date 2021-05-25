@@ -127,7 +127,6 @@ function visAlleOpphold($dblink) {
     visOppholdTab($bestillingTab);
 }
 
-
 function lagOppholdOverskrifter($oppholdStatus) {
     echo "<h3>".$oppholdStatus." opphold"."</h3>";
     //overskrifter
@@ -231,6 +230,7 @@ function visOppholdTab($bestillingTab) {
     echo "</table>";
 } 
 
+
 // ********************************* 7b) Ansatt: Alle Opphold : Eldre ******************************************
 function visFerdigeOpphold($dblink) {
     lagOppholdOverskrifter("Alle Ferdige");
@@ -239,6 +239,72 @@ function visFerdigeOpphold($dblink) {
     visOppholdTab($bestillingTab);
 }
 
+// ********************************* 7b) Ansatt: Avbestill ******************************************
+function lagIkkeBegyntBestillingTabAnsatt($dblink) {
+    //Avbestilling Frist
+    $date = new DateTime();
+    $date->modify('-1 day');
+    $date = $date->format('Y-m-d');
+
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+    $bestillinger = array();
+    $pos = 0;
+    $sql = "SELECT DISTINCT B.* FROM bestilling AS B, opphold AS O, hund AS H
+    WHERE B.bestillingID = O.bestillingID
+    AND O.hundID = H.hundID
+    AND DAY(B.startDato) < DAY(CURRENT_TIMESTAMP) ;" ;
+    $resultat = mysqli_query($dblink, $sql);
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        $bestillingID = $rad['bestillingID'];
+        $startDato = $rad['startDato'];
+        $sluttDato = $rad['sluttDato'];
+        $bestillinger[$pos++] = $bestillingID . ", fra " . $startDato . " til " . $sluttDato;
+    }
+    return $bestillinger;
+}
+
+function lagBestillingOption($bestilling) {
+    ?> <option value= <?php echo $bestilling?> > <?php echo $bestilling?> </option><?php
+}
+
+function avbestill($dblink) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+        $bestillingID = $_POST['bestillinger'];
+
+        //henter ut bestilling info
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $startDato;
+        $sluttDato;
+        $bestiltDato;
+        $totalPris;
+        $sql = "SELECT * FROM bestilling WHERE bestillingID = '$bestillingID' ;";
+        $resultat = mysqli_query($dblink, $sql); 
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            $startDato = $rad['startDato'];
+            $sluttDato = $rad['sluttDato'];
+            $bestiltDato = $rad['bestiltDato'];
+            $totalPris  = $rad['totalPris'];
+        }
+
+        //slett opphold
+        $sql = "DELETE FROM opphold WHERE bestillingID = '$bestillingID' ;";
+        $resultat = mysqli_query($dblink, $sql); 
+
+        //slett bestilling
+        $sql = "DELETE FROM bestilling WHERE bestillingID = '$bestillingID' ;";
+        $resultat = mysqli_query($dblink, $sql); 
+
+        echo "bestillingID " . $bestillingID . " avbestil. <br>";
+
+        //setter inn en rad i slettetBestilling
+        $sql = "INSERT INTO slettetBestilling (startDato, sluttDato, bestiltDato, totalPris, brukerID)
+        VALUES ('$startDato','$sluttDato','$bestiltDato','$totalPris','$brukerID') ;";
+        $resultat = mysqli_query($dblink, $sql); 
+        header("Refresh:0");
+    }
+}
 
 // ************************** 7c) Ansatt: Inn/utsjekk ************************** 
 function visSkalSjekkeInnIDag($dblink) {

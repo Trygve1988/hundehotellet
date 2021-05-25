@@ -49,7 +49,6 @@ function bekreftHundInfo($dblink) {
         brukerID = '$brukerID', forID = '$forID' 
         WHERE hundID = $hundID;";
         $resultat = mysqli_query($dblink, $sql);
-        echo "hund " . $hundID . " - ". $navn . " oppdatert" . "<br>";
     }
 }
 

@@ -35,11 +35,10 @@ $dblink = kobleOpp();
 			<!-- Skjema -->	
 			<form class="skjemaBakgrunn" method="POST">
 
-				<!-- test DETTE MÅ FJERNES -->
+				<!-- oppdaterHunder -->
 				<?php oppdaterHunder($dblink); ?>
 				<?php $h1 = $_SESSION['aktivHund']; ?>
-				<?php echo $h1->toString(); ?>
-			
+
 				<!-- Avbryt knapp -->
 				<a href = "index.php">
 					<input class="avbrytKnapp" type="button" value="X">
@@ -54,10 +53,10 @@ $dblink = kobleOpp();
 			
 						<!-- Labels og input i kolonne 1 -->
 						<label id="hundNavn" for="hNavn">Hundens navn:</label>
-						<input class="inputTekst" type="text" name="navn" value= <?php echo $h1->getNavn() ?> required/>
+						<input class="inputTekst" type="text" name="navn" value= <?php echo $h1->getNavn() ?> required >
 				
 						<label id="rase" for="rase">Rase:</label>
-						<input class="inputTekst" type="text" name="rase" value= <?php echo $h1->getRase() ?> />
+						<input class="inputTekst" type="text" name="rase" value= <?php echo $h1->getRase() ?> >
 
 						<!-- Inputen for fødselsdato er date -->
 						<label id="fdato" for="fDato">Fødselsdato:</label>
@@ -134,8 +133,8 @@ $dblink = kobleOpp();
 							?>
 						<select> 
 
-						<!-- info 
-						<label for="info">Ekstra informasjon:</label>-->
+						<!-- info -->
+						<label for="info">Ekstra informasjon:</label>
 						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
 
 					</div>
@@ -157,7 +156,6 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 				<!-- ************************** (Trygve) ************************** -->
-				<!-- Bestill Opphold FJERNES??-->
 				<?php bekreftHundInfo($dblink); ?> 
 			</form>
 		</div>	
