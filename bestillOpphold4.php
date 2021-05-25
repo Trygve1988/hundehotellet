@@ -82,17 +82,11 @@ $dblink = kobleOpp();
 						<label for="ccv">CCV/CVC:</label>
 						<!-- ************************** CVC (Kristina) ************************* -->
 						<!--CVC modalen -->
-						<button id="cvcModalKnapp">?</button>
 						<input class="inputTekst" type="text" pattern="[0-9]{3}" name="cvv">
 						<!--CVC modalen -->
-						<div id="cvcModal" class="modal">
-							<!-- Modal innhold (dette hopper opp i modalen) -->
-							<div class="modal-innhold">
-								<span class="lukkModal">&times;</span>
-								<h1 id="finneCVC">Hvor finner jeg CVC koden?</h1>
-								<img class="cvvkode" src="/bilder/ccv.png" alt="Bilde av hvor du finner CVC koden på visakortet">
+						<div class="tooltip"><i class="fas fa-question-circle"></i>
+								<span class="tooltiptekst">De tre siste sifrene på nummeret / The last three digits of the number </span>
 							</div>
-						</div>
 						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
 						<a id="vilkår" class="blaaTekst" href="vilkaar.php"> Kryss av for å godta vilkår:</a></label> 

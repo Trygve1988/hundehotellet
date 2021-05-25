@@ -606,6 +606,34 @@ input[type=checkbox].storCheckbox {
 
 /* **************************** Kristina ***************************** */
 
+.tooltip {
+	position: relative;
+	display: inline-block;
+
+  }
+  
+  .tooltip .tooltiptekst {
+	visibility: hidden;
+	width: 500px; /*Størrelsen på boksen*/
+	background-color: #394f79;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 30px 10px;
+	
+	/* Posisjonen til tooltip */
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptekst {
+	visibility: visible;
+  }
+
+
  /*Felles hover effekt på alle submit/button knappene*/
  input[type=submit]:hover,  input[type=button]:hover {
 	background-color: #613f75; /*Eksempelfarge*/
