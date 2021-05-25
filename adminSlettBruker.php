@@ -21,7 +21,7 @@
     <!-- ************************** 1) fellesTop ************************** -->
     <?php visNav(); ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** 2) main ************************** -->
     <main>
 
         <!-- 2a erAdmin sjekk -->
@@ -32,29 +32,46 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-            <h1 class="hovedOverskrift">Slett Bruker</h1>
-            
+
+                <!-- Avbryt knapp -->
+			    <a href = "admin.php">
+				    <input class="avbrytKnapp" type="button" value="X">
+			    </a>
+
+                <!-- Overskrift -->	
+                <h2 class="hovedOverskrift">Slett Bruker</h2>
+                
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
-                    <label for="slettBruker">Velg bruker du vil slette:</label>
+                        <label for="slettBruker">Velg bruker du vil slette:</label>
                         <select name="velgSlettBrukerSelect" class="inputSelect">
                             <?php $brukere = lagBrukereTab($dblink);
                             for ($i=0; $i<count($brukere); $i++) {
                                 lagOption($brukere[$i]);
                             } ?>
-                        </select>
-                        <a href="admin.php">
-                            <input class="litenKnapp" type="button" value="Avbryt">  
-                        <a>
-                        <input class="litenKnapp" type="submit" value="Slett" name="velgSlettBrukerKnapp">
+                        </select>  
                     </div>
+                    <?php slettBruker($dblink); ?>  
                 </div>
-                <?php slettBruker($dblink); ?>  
-            </div>  
-        </form> 
+
+                <!--Knapperad-->
+				<div class="knappeRad heltIBunnKnapp">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp-->
+					    <a href="admin.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Avbryt">  
+                        <a>       
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Opprett ny bruker -->
+						 <input class="inputSubmit hovedKnapp" type="submit" value="Slett bruker" name="velgSlettBrukerKnapp">
+					</div>
+				</div>        
+            </form>
+        </div>  
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** 3) fellesBunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
 
