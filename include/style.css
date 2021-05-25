@@ -597,15 +597,22 @@ input[type=checkbox].storCheckbox {
 
 /* **************************** Kristina ***************************** */
 
+/*Tooltip til bestillOpphold4 (spørsmåltegnet)*/
 .tooltip {
 	position: relative;
 	display: inline-block;
 
   }
+
+/*Farge til spørsmåltegn fonten*/
+ .tooltip .fa-question-circle {
+color:#394f79;;
+     
+    }
   
   .tooltip .tooltiptekst {
 	visibility: hidden;
-	width: 500px; /*Størrelsen på boksen*/
+	width: 200px; /*Størrelsen på boksen*/
 	background-color: #394f79;
 	color: #fff;
 	text-align: center;
@@ -707,72 +714,6 @@ opphold, bur, mating, tur, luftegård, Innsjekk/utsjekk tabeller*/
 	border-bottom: 1px solid #ddd;
   }
 
-
-
-/*CVC modalen pop up*/
-body .modal {
-	overflow: hidden;
- }
-
-/* Modal (bakgrunn) */
-.modal { /*Brukes som felles element på flere plasser f.eks hund lagt til, bekreftet bestilling*/
-	display: none; 
-	position: fixed;
-	z-index: 1; 
-	padding-top: 100px; /* Her kan man midtstille modal-boksen */
-	left: 0; /*Skifter man til 50% flyttes den grå skjermen*/
-	top: 0; /*Samme skjer her*/ 
-	width: 100%; /* Full bredde  Samme skjer her med den grå skjermen*/ 
-	height: 100%; /* Full høyde */
-	background-color: rgb(0,0,0); /* svart bakgrunn*/
-	background-color: rgba(0,0,0,0.4); /* svart med opacity */
- }
-
-/* Modal innhold */
-.modal-innhold {
-	display: block;
-	background-color: #fefefe;
-	margin: auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 30%; /*Endrer størrelsen på modalen*/
- }
-
-/*Gjør cvc bilde responsiv */
-.cvvkode {
-	width: 100%;
-	max-width: 400px;
-	height: auto;
- }
-img .cvvkode {
-	width:auto;
-	height:auto;
-}
-
-
-.modal-innhold p{
-	padding: 20px;
-	margin: 0;
- }
-
-/* Lukke knappen til modal */
-.lukkModal { /*Test med Gunn Inger sin avbryt knapp / Går ikke, er input og dette her er span*/
-	width: 38px;
-	height: 38px;
-	margin: 0;
-	margin-left: 95.5%;
-	padding: 1px;
-	border-radius: 50%;
-	font-size: 27px;
-	background-color: #394f79;
-	color: #ffffff;
- }
-
-.lukkModal:hover,.lukkModal:focus {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
-  }
 
 /*Til topp knappen*/
 #tilToppKnapp { /*Endre til tilToppknapp*/

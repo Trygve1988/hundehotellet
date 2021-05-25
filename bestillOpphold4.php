@@ -82,8 +82,9 @@ $dblink = kobleOpp();
 						<label for="ccv">CCV/CVC:</label>
 						<!-- ************************** CVC (Kristina) ************************* -->
 						<!--CVC tooltip -->
+						    <!--Gratis - Henter opp ikonet fra fontawesome sitt bibliotek-->
 							<div class="tooltip"><i class="fas fa-question-circle"></i>
-								<span class="tooltiptekst">De tre siste sifrene på nummeret / The last three digits of the number </span>
+								<span class="tooltiptekst">De 3 siste sifrene bak kortet / The last 3 digits behind the card</span>
 							</div>
 						<!--CVC label -->	
 						<input class="inputTekst" type="text" pattern="[0-9]{3}" name="cvv">
