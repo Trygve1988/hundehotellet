@@ -78,7 +78,7 @@
         <?php endreBrukerInfo($dblink) ?> 
 
     </main>
-
+    
     <!-- ************************** Felles bunn ************************** -->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
