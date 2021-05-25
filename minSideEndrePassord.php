@@ -51,7 +51,7 @@
                         
                     <label for="gammeltPassord">Gammelt passord:</label>
 						<input class="inputPassord" type="password" name="gammeltPassord" required 
-						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="" required>
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" value="" required> <!--onChange="sjekkPassord()" --> 
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
@@ -61,12 +61,12 @@
 
                         <label id="passordRegisterDeg" for="passord">Nytt passord:</label>
 						<input class="inputPassord" type="password" name="passord" 
-						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="" required >
+						id="passord2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassordLike()" value="" required >
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
 							<label id="visPassordRegisterDeg" for="passordCheckbox">Vis passord</label>
-							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
+							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord2()">
 						</div>
 						
 						<!-- ************************ (Even) ************************** -->
@@ -78,15 +78,15 @@
 						<!-- Passord tilbakemelding -->
 						<div class="passordKrav">
 							<p id="pasokravRegisterDeg">Passord krav:</p>
-							<p id="status" melding()></p>
+							<p id="nystatus" nyTTPasomelding2()></p>
 							<!-- Engelsk tilbakemelding --->
-							<p id="status2" melding2()></p>
+							<p id="nystatus2" nyTTPasomelding()></p>
 						</div>
 						
 						<!-- ************************ (Gunni) ************************** -->
 						<div class="gjentaPKolonne">
 							<label id="gjentaPasoRegisterDeg" for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
+							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassordLike()" required value="123Ab%12">	
 						</div>	
 				
                         <!-- oppdaterBrukerInfo -->

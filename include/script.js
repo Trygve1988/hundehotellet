@@ -404,7 +404,7 @@ function settAdminSeBrukertypeSession() {
 }
 
 
-// ************************** Registrer deg: Hvis skjul passord funksjon (Even) **************************
+// ************************** Hvis skjul passord funksjon (Even) **************************
 const visPassordKnapp = document.querySelector("#visPassordKnapp");
 
 if (visPassordKnapp !== null) {
@@ -413,28 +413,33 @@ if (visPassordKnapp !== null) {
 
 function visPassord() {
   var x = document.getElementById("passord");
-  if (x.type === "password") {
+  if ( x.type === "password" ) {
     x.type = "text";
   } else {
     x.type = "password";
   }
 } 
 
-// ************************** Registrer deg: Passord validation (Even) **************************
+// ************************** Passord validation (Even) **************************
+
 //Passord validation (Even)
 const passord = document.querySelector("#passord");
+
+//Satus Norsk
 const status = document.querySelector("#status");
+//Status for engelsk tilbakemelding
 const status2 = document.querySelector("#status2");
 
-//Sjekker om man skriver inn passord
+//Sjekker om man skriver inn passord, og skriver ut melding
 if(passord !== null) {
   passord.addEventListener('keyup', melding, false);
   passord.addEventListener('keyup', melding2, false);
 } 
 
+// Norsk tilbamelding
 function melding(){
   var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
-  if(passord.value.match(paso)){
+  if( passord.value.match(paso) ){
     status.innerHTML="Passord er godkjent";
     return true;
   } else{
@@ -443,9 +448,10 @@ function melding(){
   } 
 }
 
+// Engelsk tilbakemelding 
 function melding2(){
     var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
-    if(passord.value.match(paso)){
+    if( passord.value.match(paso) ){
       status2.innerHTML="Password has been approved";
       return true;
     } else{
@@ -454,8 +460,66 @@ function melding2(){
     } 
 }
 
+
+// ********* Nytt passord  ******
+
+//Nytt passord validator
+const passord2 = document.querySelector("#passord2");
+
+
+//Satus Norsk, nytt passord
+const nystatus = document.querySelector("#nystatus");
+//Status for engelsk tilbakemelding, nytt passord
+const nystatus2 = document.querySelector("#nystatus2");
+
+//Sjekker om man skriver inn nytt passord, og skriver ut melding,
+if(passord2 !== null) {
+    passord2.addEventListener('keyup', nyTTPasomelding, false);
+    passord2.addEventListener('keyup', nyTTPasomelding2, false);
+} 
+
+// Norsk tilbamelding
+function nyTTPasomelding(){
+    var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+    if(passord2.value.match(paso) ){
+      nystatus.innerHTML="Passord er godkjent";
+      return true;
+    } else{
+      nystatus.innerHTML="Mellom 8-15 tegn, minst et stor bokstav, og  minst et speseielt tegn.";
+      return false;
+    } 
+  }
+  
+// Engelsk tilbakemelding 
+function nyTTPasomelding2(){
+    var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+    if( passord2.value.match(paso) ){
+      nystatus2.innerHTML="Password has been approved";
+      return true;
+    } else{
+      nystatus2.innerHTML="Between 8-15 characters, one uppercase letter, one special character.";
+      return false;
+    } 
+}
+
+// ***** Vis skjul nytt passord *******
+const visPassordKnapp2 = document.querySelector("#visPassordKnapp2");
+
+if (visPassordKnapp2 !== null) {
+    visPassordKnapp2.addEventListener('click', visPassord2, false);
+} 
+
+function visPassord2() {
+  var y = document.getElementById("passord2");
+  if (y.type === "password") {
+    y.type = "text";
+  } else {
+    y.type = "password";
+  }
+}
+
 // Sjekker om passord er like
-function sjekkPassord(){
+function sjekkPassordLike(){
     const passord = document.querySelector('input[name=passord]');
     const sjekkPaso = document.querySelector('input[name=passordSjekk]');
     if(sjekkPaso.value == passord.value){

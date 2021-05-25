@@ -70,7 +70,7 @@ $dblink = kobleOpp();
 							
 						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
-						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="123Ab%12">
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassordLike()" value="123Ab%12">
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
@@ -95,7 +95,7 @@ $dblink = kobleOpp();
 						<!-- ************************ (Gunni) ************************** -->
 						<div class="gjentaPKolonne">
 							<label id="gjentaPasoRegisterDeg" for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" required value="123Ab%12">	
+							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassordLike()" required value="123Ab%12">	
 						</div>	
 					</div>
 				</div>
