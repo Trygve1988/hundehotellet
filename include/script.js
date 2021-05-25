@@ -1,4 +1,4 @@
-
+// ************************** 0) Alle getCookcie  ************************** 
 //***** ikke lagd selv: https://www.w3schools.com/js/js_cookies.asp **** -->
 function getCookie(cname) {
     var name = cname + "=";
@@ -530,7 +530,7 @@ function visPassord2() {
 
 
 
-
+/*
 
 
 // ********** Skriver ut melding om passord er like eller ikke, og sjekker om passord er like ********** 
@@ -586,6 +586,8 @@ function sjekkPassordLike(){
         console.log("Ikke like passord");
     }
 }
+
+*/
 
 // ************************** Bildeslider (Even) **************************
 
