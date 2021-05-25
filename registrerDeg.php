@@ -79,7 +79,7 @@ $dblink = kobleOpp();
 						</div>
 						
 						<!-- ************************ (Even) ************************** -->
-						<!-- Må være eller så kræsjer Vis passord og Passord krav!, Funker ikke med padding--->
+						<!-- Må være eller så kræsjer Vis passord og Passord krav! --->
 						<break>
 							<p></p>
 						</break>
