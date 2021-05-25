@@ -34,6 +34,11 @@
 
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
+                
+                <!-- Avbryt knapp -->
+                <a href = "admin.php">
+                    <input class="avbrytKnapp" type="button" value="X">
+                </a>
             
                 <!-- Overskrift -->
                 <h2 class="hovedOverskrift">Endre bruker</h2>
@@ -57,15 +62,14 @@
                         <label for="epost">Epost:</label>
                         <input class="inputTekst" type="text" id="epost" name="epost" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" 
                         value= <?php echo $bruker->getEpost() ?>>
-
                     </div>
                 </div> 
                 <!-- Knapperad -->
-                <div class="knappeRad heltIBunnKnapp">
+                <div class="knappeRad bunnKnapp">
                     <div class="knapp1IRad">
                         <!-- Avbryt knapp -->
-                        <a href="admin.php">
-                            <input class="inputButton hovedKnapp" type="button" value="Avbryt">  
+                        <a href="adminEndreBruker1.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Tilbake">  
                         <a>
                     </div>
                     <div class="etterKolonnerKnapp">
