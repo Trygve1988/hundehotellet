@@ -446,9 +446,14 @@ textarea.storTekstboks {
 	margin-right: 6.1%;
 }
 
-/* Plasserer knappen(e) nederst i skjemaet */
+/* Plasserer knappen(e) nederst i skjemaet når teksten har medium mengde tekst */
 .bunnKnapp {
 	margin-top: 100px;
+}
+
+/* Plasserer knappen(e) nederst i skjemaet når teksten har lite mengde tekst og den ikke kan bruke bunnKnapp */
+.heltIBunnKnapp {
+	margin-top: 250px;
 }
 
 /* Knapperad*/
