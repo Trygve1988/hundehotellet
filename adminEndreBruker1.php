@@ -38,6 +38,7 @@
                 <h1 class="hovedOverskrift">Endre bruker</h1>
 
                     <!-- velgEndreBrukerSelect --> 
+                    <label for="velgEndreBrukerselect">Velg bruker:</label>
                     <select name="velgEndreBrukerSelect" class="inputSelect">
                         <?php $brukere = lagBrukereTab($dblink);
                         for ($i=0; $i<count($brukere); $i++) {
