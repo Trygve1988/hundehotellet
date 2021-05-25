@@ -447,7 +447,7 @@ function lagreInnlegg($dblink) {
         $navn = "aktuelt";
         $innleggOverskrift = $_POST['innleggOverskrift'];
         $innleggText = $_POST['innleggText'];
-        $tekst = "<div class=\"mellomromMellomInnlegg\">"."<h2>".$innleggOverskrift."</h2>".  
+        $tekst = "<div class=\"mellomromMellomInnlegg\">"."<h3>".$innleggOverskrift."</h3>".  
         "<p>".$innleggText."</p>"."</div>"."<hr>";
         $bruker = $_SESSION['bruker'];
         $brukerID = $bruker->getBrukerID();
