@@ -18,14 +18,14 @@
 </head>
 <body>
 
-    <!-- ************************** 1) fellesTop ************************** -->
+    <!-- ************************** Felles topp ************************** -->
     <?php visNav(); ?>
     <?php visNav3() ?>
 
-    <!-- ************************** 2) main **************************-->
+    <!-- ************************** Main **************************-->
     <main> 
 
-        <!-- 2a erAnsatt sjekk-->
+        <!-- erAnsatt sjekk-->
         <?php if (!erAnsatt()) { header('Location: loggInn.php'); } ?>
 
         <!-- Hvit bakgrunn -->
@@ -36,20 +36,19 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <h2>Mating</h2>
+
+                <h2 class="hovedOverskrift">Mating</h2>
                 <?php //visAlleHunderPaaOppholdNaa($dblink); ?>
                 <?php visAlleRegistrerteMatingerIDag($dblink); ?>
 
-                <input class="litenKnapp" type="submit" name="registrerMatingAlle" value="Registrer Mating (alle)">
-                <input class="litenKnapp" type="submit" name="slettAlle" value="Slett dagens mating"> 
+                <input class="inputSubmit mediumKnapp" type="submit" name="registrerMatingAlle" value="Registrer mating (alle)">
+                <input class="inputSubmit mediumKnapp" type="submit" name="slettAlle" value="Slett dagens mating"> 
 
             </form>
-
-        </div>
-        
+        </div>    
     </main>
 
-    <!-- ************************** 3) fellesBunn **************************-->
+    <!-- ************************** Felles bunn **************************-->
     <?php visFooter(); ?> 
     <?php visToppKnapp(); ?> 
    
