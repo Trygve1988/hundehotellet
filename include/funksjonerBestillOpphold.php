@@ -6,8 +6,46 @@ ob_start();
 // og velge hunder som skal være med i bestillingen
 //function registrerHund($dblink) {
 
+//  Funksjon for å registrer en Hund
+function registrerHundBestillOpphold($dblink) {
+    if (isset($_POST['registrer'])) { 
+        $navn = $_POST['navn'];
+        $rase = $_POST['rase'];
+        $fdato = $_POST['fdato'];
+        if ( empty($fdato )) {
+            $fdato = "2000-01-01";
+        }
+        $kjønn = $_POST['kjønn'];
+        $sterilisert = $_POST['sterilisert'];
+        $løpeMedAndre = $_POST['løpeMedAndre'];
+        $info = $_POST['info'];
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        $forID = $_POST['forID'];
+
+        $sql = "INSERT INTO hund(navn,rase,fdato,kjønn, sterilisert,løpeMedAndre,info,brukerID,forID)
+        VALUES ('$navn','$rase','$fdato','$kjønn','$sterilisert','$løpeMedAndre','$info','$brukerID','$forID');";
+        $resultat = mysqli_query($dblink, $sql);
+
+        //får tak i hundID
+        $hundID; 
+        $sql = "SELECT MAX(hundID) FROM hund;"; 
+        $resultat = mysqli_query($dblink, $sql); 
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            $hundID = implode($rad);
+        }
+
+        echo "<br>".'<i style="color:green";> Hund registrert! </i>'; 
+        header('Location: bestillOpphold.php');
+    }
+}
 
 // ********************* 6) Bestill Opphold 2  oppdater Hunder  ********************* 
+
+
+
+
+
 function oppdaterHunder($dblink) {
     //kjører gjennom alle valgte hunder
     $valgteHunder = $_SESSION['valgteHunder'];
@@ -51,6 +89,8 @@ function bekreftHundInfo($dblink) {
         $resultat = mysqli_query($dblink, $sql);
     }
 }
+
+
 
 // ************************** 6) Bestill Opphold 3 - velg Datoer og bading ************************** /**//
 function bekreftDatoer($dblink) {
