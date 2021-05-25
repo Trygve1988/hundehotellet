@@ -1,4 +1,4 @@
-// ************************** 0) Alle getCookcie  ************************** 
+
 //***** ikke lagd selv: https://www.w3schools.com/js/js_cookies.asp **** -->
 function getCookie(cname) {
     var name = cname + "=";
@@ -422,13 +422,15 @@ function visPassord() {
 
 // ************************** Passord validation (Even) **************************
 
-//Passord validation (Even)
+//**** Passord validation register deg (Even) ****
 const passord = document.querySelector("#passord");
 
 //Satus Norsk
 const status = document.querySelector("#status");
+const status0 = document.querySelector("#status0");
 //Status for engelsk tilbakemelding
 const status2 = document.querySelector("#status2");
+const status3 = document.querySelector("#status3");
 
 //Sjekker om man skriver inn passord, og skriver ut melding
 if(passord !== null) {
@@ -440,10 +442,11 @@ if(passord !== null) {
 function melding(){
   var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
   if( passord.value.match(paso) ){
-    status.innerHTML="Passord er godkjent";
+    status.innerHTML="Norsk: Passord er godkjent";
     return true;
   } else{
-    status.innerHTML="Mellom 8-15 tegn, minst et stor bokstav, og  minst et speseielt tegn.";
+    status.innerHTML="Norsk: Mellom 8-15 tegn.";
+    status0.innerHTML="Minst ett tall, stor bokstav,liten bokstav, spesial tegn(@% osv).";
     return false;
   } 
 }
@@ -452,25 +455,30 @@ function melding(){
 function melding2(){
     var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
     if( passord.value.match(paso) ){
-      status2.innerHTML="Password has been approved";
+      status2.innerHTML="English: Password has been approved";
       return true;
     } else{
-      status2.innerHTML="Between 8-15 characters, one uppercase letter, one special character.";
+      status2.innerHTML="English: Between 8-15 characters.";
+      status3.innerHTML="Between 8-15 characters. At least one number, uppercase letter, lowercase letter, special characters (@%, etc.).";
       return false;
     } 
 }
 
 
-// ********* Nytt passord  ******
+
+
+
+
+// ********* Nytt passord validering ******
 
 //Nytt passord validator
 const passord2 = document.querySelector("#passord2");
-
 
 //Satus Norsk, nytt passord
 const nystatus = document.querySelector("#nystatus");
 //Status for engelsk tilbakemelding, nytt passord
 const nystatus2 = document.querySelector("#nystatus2");
+const nystatus3 = document.querySelector("#nystatus3");
 
 //Sjekker om man skriver inn nytt passord, og skriver ut melding,
 if(passord2 !== null) {
@@ -480,15 +488,15 @@ if(passord2 !== null) {
 
 // Norsk tilbamelding
 function nyTTPasomelding(){
-    var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
-    if(passord2.value.match(paso) ){
-      nystatus.innerHTML="Passord er godkjent";
-      return true;
-    } else{
-      nystatus.innerHTML="Mellom 8-15 tegn, minst et stor bokstav, og  minst et speseielt tegn.";
-      return false;
-    } 
-  }
+  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  if(passord2.value.match(paso) ){
+    nystatus.innerHTML="Passord er godkjent";
+    return true;
+  } else{
+    nystatus.innerHTML="Mellom 8-15 tegn. Minst ett tall, stor bokstav,liten bokstav, spesial tegn(@% osv).";
+    return false;
+  } 
+}
   
 // Engelsk tilbakemelding 
 function nyTTPasomelding2(){
@@ -497,7 +505,8 @@ function nyTTPasomelding2(){
       nystatus2.innerHTML="Password has been approved";
       return true;
     } else{
-      nystatus2.innerHTML="Between 8-15 characters, one uppercase letter, one special character.";
+      nystatus2.innerHTML="Between 8-15 characters.";
+      nystatus3.innerHTML="At least one number, uppercase letter, lowercase letter, special characters (@%, etc.).";
       return false;
     } 
 }
@@ -518,17 +527,62 @@ function visPassord2() {
   }
 }
 
+
+
+
+
+
+
+// ********** Skriver ut melding om passord er like eller ikke, og sjekker om passord er like ********** 
+const visPassordRegisterDeg = document.querySelector("#visPassordRegisterDeg");
+const gjentaPasoRegisterDeg = document.querySelector("#gjentaPasoRegisterDeg");
+
+//Gjent satus på Norsk 
+const gjentaPasoRegisterDegSatus = document.querySelector("#gjentaPasoRegisterDegSatus");
+
+//Gjenta status på engelsk 
+const gjentaPasoRegisterDegSatus2 = document.querySelector("#gjentaPasoRegisterDegSatus2");
+
+//Sjekker om man skriver inn gjenta passord, og skriver ut melding,
+if(gjentaPasoRegisterDeg !== null) {
+    gjentaPasoRegisterDeg.addEventListener('keyup', gjentaPasoRegisterDegMelding, false);
+} 
+
+if(gjentaPasoRegisterDeg !== null) {
+    gjentaPasoRegisterDeg.addEventListener('keyup', gjentaPasoRegisterDegMelding2, false);
+} 
+
+// Norsk tilbakemelding 
+function gjentaPasoRegisterDegMelding(){
+    if( gjentaPasoRegisterDeg.value.match(visPassordRegisterDeg) ){
+        gjentaPasoRegisterDegSatus.innerHTML="Passordene er like";
+      return true;
+    } else{
+        gjentaPasoRegisterDegSatus.innerHTML="Passordene er ikke like";
+      return false;
+    } 
+}
+
+// Engelsk tilbakemelding 
+function gjentaPasoRegisterDegMelding2(){
+    if( gjentaPasoRegisterDeg.value.match(visPassordRegisterDeg) ){
+        gjentaPasoRegisterDegSatus2.innerHTML="The passwords are the same";
+      return true;
+    } else{
+        gjentaPasoRegisterDegSatus2.innerHTML="The passwords are not the same";
+      return false;
+    } 
+} 
+
 // Sjekker om passord er like
 function sjekkPassordLike(){
     const passord = document.querySelector('input[name=passord]');
     const sjekkPaso = document.querySelector('input[name=passordSjekk]');
     if(sjekkPaso.value == passord.value){
         document.getElementById('submit').disabled = false;
-        sjekkPaso.setCustomValidity('Like / Alike');
         console.log("like");
     } else{
         document.getElementById('submit').disabled = true;
-        sjekkPaso.setCustomValidity('Ikke like / Not alike');
         console.log("Ikke like passord");
     }
 }

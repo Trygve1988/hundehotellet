@@ -88,8 +88,10 @@ $dblink = kobleOpp();
 						<div class="passordKrav">
 							<p id="pasokravRegisterDeg">Passord krav:</p>
 							<p id="status" melding()></p>
+							<p id="status0" melding()></p>
 							<!-- Engelsk tilbakemelding --->
 							<p id="status2" melding2()></p>
+							<p id="status3" melding2()></p>
 						</div>
 						
 						<!-- ************************ (Gunni) ************************** -->
@@ -97,6 +99,15 @@ $dblink = kobleOpp();
 							<label id="gjentaPasoRegisterDeg" for="passordSjekk">Gjenta passord:</label>
 							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassordLike()" required value="123Ab%12">	
 						</div>	
+
+						<!-- Gjenta passord tilbakemelding -->
+						<div class="passordKrav">
+							<p id="pasokravRegisterDeg">Er passordene like tilbakemelding:</p>
+							<p id="gjentaPasoRegisterDegSatus" gjentaPasoRegisterDegMelding()></p>
+							<!-- Engelsk tilbakemelding --->
+							<p id="gjentaPasoRegisterDegSatus2" gjentaPasoRegisterDegMelding2()></p>
+						</div>						
+
 					</div>
 				</div>
 
@@ -104,7 +115,7 @@ $dblink = kobleOpp();
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
-							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" value="Registrer ny bruker">
+							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" disabled value="Registrer ny bruker">
 						</a>
 
 					<!-- Logg inn link -->

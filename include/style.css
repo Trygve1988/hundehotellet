@@ -362,7 +362,7 @@ main {
 /*Gjenta passord- kolonne, gjør plass til passordtilbakemelding*/
 div .gjentaPKolonne { 
 	max-width: 100%;
-	margin-top: 104px;
+	margin-top: 180px;
 }
 
 /*Hovedoverskrift*/

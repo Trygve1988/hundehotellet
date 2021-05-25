@@ -81,6 +81,7 @@
 							<p id="nystatus" nyTTPasomelding2()></p>
 							<!-- Engelsk tilbakemelding --->
 							<p id="nystatus2" nyTTPasomelding()></p>
+							<p id="nystatus3" nyTTPasomelding()></p>
 						</div>
 						
 						<!-- ************************ (Gunni) ************************** -->
