@@ -427,15 +427,6 @@ input[type=date].inputDato, textarea.tekstboks, select.inputSelect, .hunder sele
 	height: 250px;
 }
 
-/* Stor tekstboks, f.eks i minSideSkrivAnmeldelse FJERNES?
-textarea.storTekstboks {
-	column-count: 1;
-	text-align: justify;
-	column-width: 750px;
-
-}
-*/
-
 /* KNAPPER*/
 
 /* Knappeposisjoner:*/

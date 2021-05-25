@@ -47,7 +47,7 @@
 				<div class="skjemaKolonner">
 					<div class="soloKolonne">
                         <label for="gammeltPassord">Gammelt passord:</label>
-                        <input class="inputTekst gjentaPKolonne" type="text" id="gammeltPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" name="gammeltPassord" >
+                        <input class="inputPassword gjentaPKolonne" type="password" id="gammeltPassord" pattern="^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&*_=+-]).{8,15}$" name="gammeltPassord" >
                         <!-- Vis passord checkbox -->
 							<div class="visPassord">
 								<label for="passordCheckbox">Vis Passord</label>
@@ -55,7 +55,7 @@
 							</div>
 
                         <label for="nyttPassord">Nytt passord:</label>   
-                        <input class="inputTekst" type="text" id="nyttPassord" name="nyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >  
+                        <input class="inputPassword" type="password" id="nyttPassord" name="nyttPassord" pattern="^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&*_=+-]).{8,15}$" required >  
                        
                        <!-- Vis passord checkbox -->
 						<div class="visPassord">
@@ -79,7 +79,7 @@
 
                         <div class="gjentaPKolonne">
                             <label for="bekreftNyttPassord">Bekreft nytt passord:</label>  
-                            <input class="inputTekst" type="text" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15})" required >
+                            <input class="inputPassword" type="password" id="bekreftNyttPassord" name="bekreftNyttPassord" pattern="^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&*_=+-]).{8,15}$" required >
                         </div>
                     <!-- oppdaterBrukerInfo -->
                     <?php endrePassord($dblink) ?> 
