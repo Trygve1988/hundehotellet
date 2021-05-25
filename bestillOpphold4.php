@@ -81,12 +81,14 @@ $dblink = kobleOpp();
 
 						<label for="ccv">CCV/CVC:</label>
 						<!-- ************************** CVC (Kristina) ************************* -->
-						<!--CVC modalen -->
-						<input class="inputTekst" type="text" pattern="[0-9]{3}" name="cvv">
-						<!--CVC modalen -->
-						<div class="tooltip"><i class="fas fa-question-circle"></i>
+						<!--CVC tooltip -->
+							<div class="tooltip"><i class="fas fa-question-circle"></i>
 								<span class="tooltiptekst">De tre siste sifrene på nummeret / The last three digits of the number </span>
 							</div>
+						<!--CVC label -->	
+						<input class="inputTekst" type="text" pattern="[0-9]{3}" name="cvv">
+						
+					
 						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
 						<a id="vilkår" class="blaaTekst" href="vilkaar.php"> Kryss av for å godta vilkår:</a></label> 
