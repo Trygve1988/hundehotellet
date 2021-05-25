@@ -59,7 +59,7 @@
                 </div> 
             
                 <!--Knapperad-->
-				<div class="knappeRad">
+				<div class="knappeRad heltIBunnKnapp">
 					<div class="knapp1IRad">
 						<!-- Tilbake knapp-->
 						<a href="minSide.php">
