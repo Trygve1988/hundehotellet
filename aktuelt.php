@@ -35,7 +35,7 @@ $dblink = kobleOpp();
 
                 <div class="aktuelt">
                     <h1 class="hovedOverskrift">Aktuelt</h2>
-                    
+
                    <!-- lagreInnlegg -->
                    <?php
                     if (erAnsatt()) { ?>
@@ -61,7 +61,8 @@ $dblink = kobleOpp();
 
                     <div class="mellomromMellomInnlegg">
                         <!-- Margin-bottom funket ikke, derfor måtte det lages en div som lager luft mellom innleggene -->
-                        <p>Her kan du lese om det som skjer på Bø Hundehotell.</p>
+                        <h1 id="aktuelt" class="hovedOverskrift">Aktuelt</h2>
+                        <p id="aktueltText">Her kan du lese om det som skjer på Bø Hundehotell.</p>
                     </div>
                     <div class="mellomromMellomInnlegg">
                     <h2 class="overskrift2 ">COVID-19</h2> 

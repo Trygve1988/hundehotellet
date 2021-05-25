@@ -38,7 +38,7 @@ $dblink = kobleOpp();
 				</a>
 
 				<!-- Overskrift -->
-				<h2 class="hovedOverskrift">Registrer ny bruker</h2>
+				<h2 id="registerNyBruker" class="hovedOverskrift">Registrer ny bruker</h2>
 
 				<!-- registrerDeg (Trygve) -->
 				<?php registrerDeg($dblink); ?> 
@@ -47,7 +47,7 @@ $dblink = kobleOpp();
 					
 					<!-- Labels og input i kolonne 1 -->
 					<div class="kolonne1">
-						<label for="fornavn">Fornavn:</label>
+						<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" required  value="peter">
 						
 						<label for="etternavn">Etternavn:</label>
@@ -104,7 +104,7 @@ $dblink = kobleOpp();
 				<div class="etterKolonnerKnapp">
 					<!--Registrer knapp-->
 						<a href="index.php">
-							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" disabled value="Registrer ny bruker">
+							<input class="hovedKnapp2 inputSubmit" type="submit" name="registrerBruker" id="submit" value="Registrer ny bruker">
 						</a>
 
 					<!-- Logg inn link -->
