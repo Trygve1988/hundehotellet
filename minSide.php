@@ -92,7 +92,8 @@
                 <br><br><br>
 
 
-                <!-- Bestillinger --> 
+                <!-- Bestillinger -->
+                <h2 id="mineOpphold" class="overskrift2">Mine opphold</h2> 
                 <?php visMineOpphold($dblink); ?> 
                 
                 <?php if (harOpphold($dblink)) { ?>              
