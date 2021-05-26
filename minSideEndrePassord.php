@@ -91,7 +91,7 @@
                 </div> 
 
                 <!-- Knapperad -->
-				<div class="knappeRad">
+				<div class="knappeRad bunnTekst">
 					<div class="knapp1IRad">
 						<!-- Tilbakeknapp -->
 						<a href="minSide.php">

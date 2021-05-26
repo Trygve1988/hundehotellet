@@ -50,9 +50,6 @@ $dblink = kobleOpp();
 						<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" pattern="[A-Za-z]{1,63}" required  value="peter">
 						
-						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" pattern="[A-Za-z]{1,63}"required value="griffin">	
-						
 						<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
@@ -64,7 +61,10 @@ $dblink = kobleOpp();
 					</div>
 
 					<!-- Labels og input i kolonne 2 -->
-					<div>	
+					<div>
+						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
+						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" pattern="[A-Za-z]{1,63}"required value="griffin">		
+						
 						<label id="epostReigsterDeg" for="epost">E-post:</label>
 						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required value="test@ha.no">	 
 							

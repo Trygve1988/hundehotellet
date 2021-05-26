@@ -59,7 +59,7 @@
                         <input class="inputTekst" type="text" id="adresse" name="adresse" placeholder="Epleveien 5" pattern="[A-Za-z 0-9]{3,63}$" value= <?php echo $bruker->getAdresse() ?> > 
 
                     </div>
-                    <div class="kolonne2">
+                    <div>
                         <label id="minEtternavn" for="etternavn">Etternavn:</label>  
                         <input class="inputTekst" type="text" id="etternavn" name="etternavn" placeholder="Idasen" pattern="[A-Za-z]{1,63}"  value= <?php echo $bruker->getEtternavn() ?> >
 
@@ -69,11 +69,19 @@
                     </div>
                 </div> 
 
-                <a href="minSide.php">
-                    <input class="litenKnapp" type="button" value="Tilbake">  
-                 <a>
-                 <input class="litenKnapp" type="submit" value="Lagre"  name="lagre">
-
+                <!-- Knapperad -->
+				<div class="knappeRad bunnKnapp">
+					<div class="knapp1IRad">
+						<!-- Tilbake knapp -->
+						<a href="minSide.php">
+                            <input class="inputButton hovedKnapp" type="button" value="Tilbake">  
+                        <a>
+					</div>
+					<div class="etterKolonnerKnapp">
+						<!-- Lagre knapp -->
+                        <input class="inputSubmit hovedKnapp" type="submit" value="Lagre"  name="lagre">   	
+					</div>
+				</div>
             </form>
         </div> 
          <!-- oppdaterBrukerInfo -->
