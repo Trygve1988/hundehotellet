@@ -59,32 +59,32 @@ $dblink = kobleOpp();
 
 						<label id="kjønn" for="kjonn">Kjønn:</label>
 						<select class="inputSelect" name="kjønn" required >
+							<option id="velg" value="0">--Velg--</option>
 							<option id="hann" value="1">Hann</option>
 							<option id="tispe" value="2">Tispe</option>
-							<option id="velg" value="0">--Velg--</option>
 						</select>	
 					
 						<label id="sterilisert" for="sterilisert">Sterilisert:</label>
 						<select class="inputSelect" name="sterilisert" required >
+							<option id="velg" value="0">--Velg--</option>
 							<option id="ja" value="1">Ja</option>
 							<option id="nei" value="0">Nei</option>	
-							<option id="velg" value="0">--Velg--</option>
 						</select>
 					</div>	
 					<!-- Labels og input i kolonne 2-->
 					<div class="kolonne2">
 						<label id="løpeMedAndre" for="løpeMedAndre">Kan hunden omgås andre hunder:</label>
 						<select class="inputSelect" name="løpeMedAndre" required >
+						<option id="velg" value="0">--Velg--</option>
 							<option id="ja2" value="1">Ja</option>
 							<option id="nei2" value="2">Nei</option>
-							<option id="velg" value="0">--Velg--</option>
 						</select>
 
 						<label id="forType" for="forID">Fôrtype:</label>
 						<select class="inputSelect" name="forID" required > 
+							<option id="velg" value="0">--Velg--</option>
 							<option id="vanlig" value="1">Royal Canin (vanlig)</option>
 							<option id="allargi" value="2">Vom (allergi)</option>
-							<option id="velg" value="0">--Velg--</option>
 						</select>
 
 						<label id="ektraInfo" for="info">Ekstra informasjon:</label>
