@@ -326,7 +326,7 @@ var fødselsdatoRegistrerDeg = document.getElementById("fødselsdatoRegistrerDeg
 var adresseRegistrerDeg = document.getElementById("adresseRegistrerDeg");
 var epostReigsterDeg = document.getElementById("epostReigsterDeg");
 var passordRegisterDeg = document.getElementById("passordRegisterDeg");
-var visPassordRegisterDeg = document.getElementById("visPassordRegisterDeg");
+var visPassordRegisterDeg1 = document.getElementById("visPassordRegisterDeg1");
 var pasokravRegisterDeg = document.getElementById("pasokravRegisterDeg");
 var gjentaPasoRegisterDeg = document.getElementById("gjentaPasoRegisterDeg");
 var tlfRegisterDeg = document.getElementById("tlfRegisterDeg");
@@ -346,7 +346,6 @@ var minAdresse = document.getElementById("minAdresse");
 var mail = document.getElementById("mail");
 var endrePassord = document.getElementById("endrePassord");
 var gammeltPassord = document.getElementById("gammeltPassord");
-var visPassord = document.getElementById("visPassord");
 var nyttPassord = document.getElementById("nyttPassord");
 var passordKrav = document.getElementById("passordKrav");
 var visPassordRegisterDeg = document.getElementById("visPassordRegisterDeg");
@@ -725,7 +724,6 @@ if(minEndreBrukerInfo !== null){
 if(endrePassord !== null) {
     endrePassord.innerHTML = endrePassordTab[språk];
     gammeltPassord.innerHTML = gammeltPassordTab[språk];
-    visPassord.innerHTML = visPassordTab[språk];
     visPassordRegisterDeg.innerHTML = visPassordTab[språk];
     nyttPassord.innerHTML = nyttPassordTab[språk];
     passordKrav.innerHTML = pasokravRegisterDegTab[språk];

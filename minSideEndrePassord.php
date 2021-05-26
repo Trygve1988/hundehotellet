@@ -55,7 +55,7 @@
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
-							<label id="visPassord" id="visPassordRegisterDeg" for="passordCheckbox">Vis passord</label>
+							<label id="visPassordRegisterDeg1" for="passordCheckbox">Vis passord</label>
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
 
