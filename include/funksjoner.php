@@ -51,7 +51,6 @@ function visNav() {
         <a id="omOssLink" href="omOss.php">Om Oss</a>
         <a id="priserLink" href="priserOgInfo.php">Pris og info</a>
         <a id="kontaktOssLink" href="kontaktOss.php">Kontakt Oss</a>
-
         <?php
         // bestill Opphold
         if (erLoggetInn()) {
@@ -79,7 +78,8 @@ function visNav() {
             ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
         <!-- spraakKnapp--> 
-        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png" alt="Change language">
+        <a> <img id="spraakKnapp" src="bilder/FlaggNO.png" alt="Change language"> </a>
+
     </div><?php
 }
 
@@ -167,7 +167,7 @@ function visFooter() {
         <div class="venstre">
             <h1 id="navkontaktInformasjon">Kontakinformsjon</h1>
             <p>Bø Hundehotell</p>
-            <p><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
+            <p><strong>Tlf:</strong><a href="tel:+12345678"> +4712345678</a> </p>
             <p><strong id="navEpost" > Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com</a></p>
             <p> <strong id="navAdresse">Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
         </div>
