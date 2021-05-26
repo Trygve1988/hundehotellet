@@ -183,6 +183,7 @@ var bekreftBestillingTextTab = ['Du kan sjekke bestillingen på','You can check 
 var bekreftMinSideTab = ['Min Side','My side'];
 var bekreftBestillingText2Tab = ['Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf +4712345678','If you have any questions regarding the stay, you can contact us either on tel +4712345678'];
 var bekreftBestillingText3Tab = ['eller','or'];
+var harDuKontoRegisterDegTab = ['Har du allerede en bruker? Logg inn her','Do you already have a user? Log her in'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -696,6 +697,7 @@ if(registerNyBruker !== null){
     pasokravRegisterDeg.innerHTML = pasokravRegisterDegTab[språk];
     gjentaPasoRegisterDeg.innerHTML = gjentaPasoRegisterDegTab[språk];
     tlfRegisterDeg.innerHTML = tlfRegisterDegTab[språk];
+    harDuKontoRegisterDeg.innerHTML = harDuKontoRegisterDegTab[språk];
 }
 if(avBestill !== null){
     avBestill.innerHTML = avBestillTab[språk];

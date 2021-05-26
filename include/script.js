@@ -428,6 +428,7 @@ const passord = document.querySelector("#passord");
 //Satus Norsk
 const status = document.querySelector("#status");
 const status0 = document.querySelector("#status0");
+
 //Status for engelsk tilbakemelding
 const status2 = document.querySelector("#status2");
 const status3 = document.querySelector("#status3");

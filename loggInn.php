@@ -42,7 +42,7 @@ $dblink = kobleOpp();
 						<label id="epostLoggInn" for="epost">E-post:</label>
 						<input class="inputMail" type="email" name="epost" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="test@ha.no">
 
-						<label id="passordloggInn" for="passord">Passord:</label>
+						<label id="passordloggInn"  for="passord">Passord:</label>
 						<input class="inputPassord" type="password" name="passord" required id="passord" value="123Ab%12">
 
 						<!-- Vis passord checkbox  -->
