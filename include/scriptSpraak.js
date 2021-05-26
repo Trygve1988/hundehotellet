@@ -164,6 +164,14 @@ var slettHundTextTab = ['Denne siden er under arbeid. Du kan for øyeblikket bar
 var endreHundTab = ['Endre hund:','Change dog:'];
 var velgHundMinTab = ['Velg hund:','Select dog:'];
 var ektraInfoTab = ['Ekstra info:','Additional info:'];
+var minEndreBrukerInfoTab = ['Endre brukerinformasjon','Change user information'];
+var minFornavnTab = ['Fornavn:','First name:'];
+var minEtternavnTab = ['Etternavn:','Surname:'];
+var minAdresseTab = ['Adresse:','Address:'];
+var mailTab = ['Epost:','Email:'];
+var endrePassordTab = ['Endre passord','Change password'];
+var gammeltPassordTab = ['Gammelt passord:','Old password:'];
+var nyttPassordTab = ['Nytt passord:','New password:'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -319,8 +327,17 @@ var slettHundText = document.getElementById("slettHundText");
 var endreHund = document.getElementById("endreHund");
 var velgHundMin = document.getElementById("velgHundMin");
 var ektraInfo = document.getElementById("ektraInfo");
-
-
+var minEndreBrukerInfo = document.getElementById("minEndreBrukerInfo");
+var minFornavn = document.getElementById("minFornavn");
+var minEtternavn = document.getElementById("minEtternavn");
+var minAdresse = document.getElementById("minAdresse");
+var mail = document.getElementById("mail");
+var endrePassord = document.getElementById("endrePassord");
+var gammeltPassord = document.getElementById("gammeltPassord");
+var visPassord = document.getElementById("visPassord");
+var nyttPassord = document.getElementById("nyttPassord");
+var passordKrav = document.getElementById("passordKrav");
+var visPassordRegisterDeg = document.getElementById("visPassordRegisterDeg");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -673,4 +690,19 @@ if(slettHund !== null) {
 if(endreHund !== null) {
     endreHund.innerHTML = endreHundTab[språk];
     velgHundMin.innerHTML = velgHundMinTab[språk];
+}
+if(minEndreBrukerInfo !== null){
+    minEndreBrukerInfo.innerHTML = minEndreBrukerInfoTab[språk];
+    minFornavn.innerHTML = minFornavnTab[språk];
+    minEtternavn.innerHTML = minEtternavnTab[språk];
+    minAdresse.innerHTML = minAdresseTab[språk];
+    mail.innerHTML = mailTab[språk];
+}
+if(endrePassord !== null) {
+    endrePassord.innerHTML = endrePassordTab[språk];
+    gammeltPassord.innerHTML = gammeltPassordTab[språk];
+    visPassord.innerHTML = visPassordTab[språk];
+    visPassordRegisterDeg.innerHTML = visPassordTab[språk];
+    nyttPassord.innerHTML = nyttPassordTab[språk];
+    passordKrav.innerHTML = pasokravRegisterDegTab[språk];
 }

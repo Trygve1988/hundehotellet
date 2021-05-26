@@ -66,7 +66,7 @@ $dblink = kobleOpp();
 					<!-- Labels og input i kolonne 2 -->
 					<div>	
 						<label id="epostReigsterDeg" for="epost">E-post:</label>
-						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
+						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required value="test@ha.no">	 
 							
 						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 

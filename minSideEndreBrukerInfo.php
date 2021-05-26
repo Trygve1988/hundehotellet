@@ -45,26 +45,26 @@
 				</a>	
                 
                 <!-- Overskrift -->
-				<h2 class="hovedOversikt">Endre brukerinformasjon</h2>  
+				<h2 id="minEndreBrukerInfo" class="hovedOversikt">Endre brukerinformasjon</h2>  
 				
                 <div class="skjemaKolonner">
 					<div class="kolonne1">   
-                        <label for="fornavn">Fornavn:</label>   
-                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" value= <?php echo $bruker->getFornavn() ?> >
+                        <label id="minFornavn" for="fornavn">Fornavn:</label>   
+                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" placeholder="Ida" pattern="[A-Za-z]{1,63}" value= <?php echo $bruker->getFornavn() ?> >
 
                         <label for="tlf">Tlf:</label>   
-                        <input class="inputTekst" type="text" id="tlf" name="tlf" pattern="[0-9]{8}" value= <?php echo $bruker->getTlf() ?> >
+                        <input class="inputTekst" type="text" id="tlf" name="tlf" placeholder="4712456789" pattern="[+0-9]{10,14}" value= <?php echo $bruker->getTlf() ?> >
                         
-                        <label for="adresse">Adresse:</label>     
-                        <input class="inputTekst" type="text" id="adresse" name="adresse" value= <?php echo $bruker->getAdresse() ?> > 
+                        <label id="minAdresse" for="adresse">Adresse:</label>     
+                        <input class="inputTekst" type="text" id="adresse" name="adresse" placeholder="Epleveien 5" pattern="[A-Za-z 0-9]{3,63}$" value= <?php echo $bruker->getAdresse() ?> > 
 
                     </div>
                     <div class="kolonne2">
-                        <label for="etternavn">Etternavn:</label>  
-                        <input class="inputTekst" type="text" id="etternavn" name="etternavn" value= <?php echo $bruker->getEtternavn() ?> >
+                        <label id="minEtternavn" for="etternavn">Etternavn:</label>  
+                        <input class="inputTekst" type="text" id="etternavn" name="etternavn" placeholder="Idasen" pattern="[A-Za-z]{1,63}"  value= <?php echo $bruker->getEtternavn() ?> >
 
-                        <label for="epost">Epost:</label>
-                        <input class="inputTekst" type="text" id="epost" name="epost" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value= <?php echo $bruker->getEpost() ?>>
+                        <label id="mail" for="epost">Epost:</label>
+                        <input class="inputMail" type="email" name="epost" placeholder="test@test.com" id="epost" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value= <?php echo $bruker->getEpost() ?>>
 
                     </div>
                 </div> 

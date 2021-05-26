@@ -43,23 +43,23 @@
 			    </a>    
 
                 <!--Overskrift -->
-                <h2 class="hovedOverskrift">Endre passord</h2>
+                <h2 id="endrePassord" class="hovedOverskrift">Endre passord</h2>
 
 				<div class="skjemaKolonner">
 					
                     <div class="soloKolonne">
                         
-                    <label for="gammeltPassord">Gammelt passord:</label>
+                    <label id="gammeltPassord" for="gammeltPassord">Gammelt passord:</label>
 						<input class="inputPassord" type="password" name="gammeltPassord" required 
 						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" value="" required> <!--onChange="sjekkPassord()" --> 
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
-							<label id="visPassordRegisterDeg" for="passordCheckbox">Vis passord</label>
+							<label id="visPassord" id="visPassordRegisterDeg" for="passordCheckbox">Vis passord</label>
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
 
-                        <label id="passordRegisterDeg" for="passord">Nytt passord:</label>
+                        <label id="nyttPassord" id="passordRegisterDeg" for="passord">Nytt passord:</label>
 						<input class="inputPassord" type="password" name="passord" 
 						id="passord2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassordLike()" value="" required >
 
@@ -77,7 +77,7 @@
 
 						<!-- Passord tilbakemelding -->
 						<div class="passordKrav">
-							<p id="pasokravRegisterDeg">Passord krav:</p>
+							<p id="passordKrav" id="pasokravRegisterDeg">Passord krav:</p>
 							<p id="nystatus" nyTTPasomelding2()></p>
 							<!-- Engelsk tilbakemelding --->
 							<p id="nystatus2" nyTTPasomelding()></p>
