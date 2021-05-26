@@ -178,6 +178,11 @@ var slettBrukerText2Tab = ['Det er mulig å gjenopprette kontoen innen 30 dager 
 var slettBrukerText3Tab = ['Er det noe du lurer på i forhold til sletting av konto, kontakt oss på epost','If there is anything you are wondering about in relation to deleting an account, contact us by email'];
 var bekreftSlettingTab = ['Bekreft sletting av bruker','Confirm user deletion'];
 var bekreftSlettingTextTab = ['Er du sikker på at du vil slette brukeren din?','Are you sure you want to delete your user?'];
+var bekreftelseBestillingTab = ['Din bestilling er nå mottatt!','Your order has been received'];
+var bekreftBestillingTextTab = ['Du kan sjekke bestillingen på','You can check your order at'];
+var bekreftMinSideTab = ['Min Side','My side'];
+var bekreftBestillingText2Tab = ['Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf +4712345678','If you have any questions regarding the stay, you can contact us either on tel +4712345678'];
+var bekreftBestillingText3Tab = ['eller','or'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -350,6 +355,11 @@ var slettBrukerText2 = document.getElementById("slettBrukerText2");
 var slettBrukerText3 = document.getElementById("slettBrukerText3");
 var bekreftSletting = document.getElementById("bekreftSletting");
 var bekreftSlettingText = document.getElementById("bekreftSlettingText");
+var bekreftelseBestilling = document.getElementById("bekreftelseBestilling");
+var bekreftBestillingText = document.getElementById("bekreftBestillingText");
+var bekreftMinSide = document.getElementById("bekreftMinSide");''
+var bekreftBestillingText2 = document.getElementById("bekreftBestillingText2");
+var bekreftBestillingText3 = document.getElementById("bekreftBestillingText3");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -727,4 +737,11 @@ if(slettBruker !== null) {
 if(bekreftSletting !== null) {
     bekreftSletting.innerHTML = bekreftSlettingTab[språk];
     bekreftSlettingText.innerHTML = bekreftSlettingTextTab[språk];
+}
+if(bekreftelseBestilling !==null){
+    bekreftelseBestilling.innerHTML = bekreftelseBestillingTab[språk];
+    bekreftBestillingText.innerHTML = bekreftBestillingTextTab[språk];
+    bekreftMinSide.innerHTML = bekreftMinSideTab[språk];
+    bekreftBestillingText2.innerHTML = bekreftBestillingText2Tab[språk];
+    bekreftBestillingText3.innerHTML = bekreftBestillingText3Tab[språk];
 }

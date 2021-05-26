@@ -47,13 +47,11 @@ $dblink = kobleOpp();
 							<!-- gratis Opp ikon fra https://fontawesome.com/icons/check-circle?style=solid -->
 							<i class="fas fa-check-circle fa-2x"></i>
 							<!-- Overskrift -->
-							<h2 class="hovedOverskrift">Bekreftelse på bestilling</h2>
+							<h2 id="bekreftelseBestilling" class="hovedOverskrift">Din bestilling er nå mottatt!</h2>
 
-							<p>Din bestilling er nå mottatt!</p>
-							<p> Du kan sjekke bestillingen på <a class="link" href="minSide.php">Min Side.</a></p>
-								Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf 12345678
-								eller <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a> 
-							</p> 
+							 <p id="bekreftBestillingText">Du kan sjekke bestillingen på</p> <a id="bekreftMinSide" class="link" href="minSide.php">Min Side.</a>
+								<p id="bekreftBestillingText2" >Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf 12345678</p>
+								<p id="bekreftBestillingText3" >eller</p> <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com </a>  
 							
 							<!-- -->
 
