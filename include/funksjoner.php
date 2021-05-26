@@ -78,7 +78,7 @@ function visNav() {
             ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
         <!-- spraakKnapp--> 
-        <a> <img id="spraakKnapp" src="bilder/FlaggNO.png" alt="Change language"> </a>
+        <a> <img id="spraakKnapp" src="flaggNO.png" alt="Change language"> </a>
 
     </div><?php
 }

@@ -35,7 +35,7 @@ function endreSpraak() {
 }
 
 // ********************* 0) Alle: globale spraak variabler (Even) ********************* 
-var flaggTab        = ['bilder/FlaggNO.png', 'bilder/FlaggGB.png'];
+var flaggTab        = ['bilder/flaggNO.png', 'bilder/flaggGB.png'];
 var hjemTab         = ['Hjem', 'Home'];
 var aktueltTab      = ['Aktuelt', 'News'];
 var omOssTab        = ['Om Oss', 'About us'];
