@@ -49,6 +49,9 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="10" maxlength="50" required  value="peter">
+
+						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
+						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="10" maxlength="50" required value="griffin">		
 						
 						<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
@@ -61,10 +64,7 @@ $dblink = kobleOpp();
 					</div>
 
 					<!-- Labels og input i kolonne 2 -->
-					<div>
-						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="10" maxlength="50" required value="griffin">		
-						
+					<div>		
 						<label id="epostReigsterDeg" for="epost">E-post:</label>
 						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
 							
