@@ -48,7 +48,7 @@ $dblink = kobleOpp();
 					<!-- Labels og input i kolonne 1 -->
 					<div class="kolonne1">
 						<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
-						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" pattern="[A-Za-z]{1,63}" required  value="peter">
+						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="10" maxlength="50" required  value="peter">
 						
 						<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
@@ -57,16 +57,16 @@ $dblink = kobleOpp();
 						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
 						
 						<label id="adresseRegistrerDeg" for="adresse">Adresse:</label>
-						<input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required pattern="[A-Za-z 0-9]{3,63}$" value="Epleveien 5">	
+						<input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required value="Epleveien 5">	<!-- pattern="[A-Za-z 0-9]{3,63}$" -->
 					</div>
 
 					<!-- Labels og input i kolonne 2 -->
 					<div>
 						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" pattern="[A-Za-z]{1,63}"required value="griffin">		
+						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="10" maxlength="50"" required value="griffin">		
 						
 						<label id="epostReigsterDeg" for="epost">E-post:</label>
-						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required value="test@ha.no">	 
+						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
 							
 						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
