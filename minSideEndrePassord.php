@@ -85,11 +85,6 @@
 						</div>
 						
 						<!-- ************************ (Gunni) ************************** -->
-						<div class="gjentaPKolonne">
-							<label id="gjentaPasoRegisterDeg" for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassordLike()" required value="123Ab%12">	
-						</div>	
-				
                         <!-- oppdaterBrukerInfo -->
                         <?php endrePassord($dblink) ?> 
                     </div>

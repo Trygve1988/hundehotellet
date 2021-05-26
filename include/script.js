@@ -532,68 +532,6 @@ function visPassord2() {
   }
 }
 
-
-
-
-/*
-
-
-// ********** Skriver ut melding om passord er like eller ikke, og sjekker om passord er like ********** 
-const visPassordRegisterDeg = document.querySelector("#visPassordRegisterDeg");
-const gjentaPasoRegisterDeg = document.querySelector("#gjentaPasoRegisterDeg");
-
-//Gjent satus på Norsk 
-const gjentaPasoRegisterDegSatus = document.querySelector("#gjentaPasoRegisterDegSatus");
-
-//Gjenta status på engelsk 
-const gjentaPasoRegisterDegSatus2 = document.querySelector("#gjentaPasoRegisterDegSatus2");
-
-//Sjekker om man skriver inn gjenta passord, og skriver ut melding,
-if(gjentaPasoRegisterDeg !== null) {
-    gjentaPasoRegisterDeg.addEventListener('keyup', gjentaPasoRegisterDegMelding, false);
-} 
-
-if(gjentaPasoRegisterDeg !== null) {
-    gjentaPasoRegisterDeg.addEventListener('keyup', gjentaPasoRegisterDegMelding2, false);
-} 
-
-// Norsk tilbakemelding 
-function gjentaPasoRegisterDegMelding(){
-    if( gjentaPasoRegisterDeg.value.match(visPassordRegisterDeg) ){
-        gjentaPasoRegisterDegSatus.innerHTML="Passordene er like";
-      return true;
-    } else{
-        gjentaPasoRegisterDegSatus.innerHTML="Passordene er ikke like";
-      return false;
-    } 
-}
-
-// Engelsk tilbakemelding 
-function gjentaPasoRegisterDegMelding2(){
-    if( gjentaPasoRegisterDeg.value.match(visPassordRegisterDeg) ){
-        gjentaPasoRegisterDegSatus2.innerHTML="The passwords are the same";
-      return true;
-    } else{
-        gjentaPasoRegisterDegSatus2.innerHTML="The passwords are not the same";
-      return false;
-    } 
-} 
-
-// Sjekker om passord er like
-function sjekkPassordLike(){
-    const passord = document.querySelector('input[name=passord]');
-    const sjekkPaso = document.querySelector('input[name=passordSjekk]');
-    if(sjekkPaso.value == passord.value){
-        document.getElementById('submit').disabled = false;
-        console.log("like");
-    } else{
-        document.getElementById('submit').disabled = true;
-        console.log("Ikke like passord");
-    }
-}
-
-*/
-
 // ************************** Bildeslider (Even) **************************
 
 //Bildeslider hentet fra https://www.w3schools.com/howto/howto_js_slideshow.asp

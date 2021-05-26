@@ -94,20 +94,7 @@ $dblink = kobleOpp();
 							<p id="status3" melding2()></p>
 						</div>
 						
-						<!-- ************************ (Gunni) ************************** -->
-						<div class="gjentaPKolonne">
-							<label id="gjentaPasoRegisterDeg" for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassordLike()" required value="123Ab%12">	
-						</div>	
-
-						<!-- Gjenta passord tilbakemelding -->
-						<div class="passordKrav">
-							<p id="pasokravRegisterDeg">Er passordene like tilbakemelding:</p>
-							<p id="gjentaPasoRegisterDegSatus" gjentaPasoRegisterDegMelding()></p>
-							<!-- Engelsk tilbakemelding --->
-							<p id="gjentaPasoRegisterDegSatus2" gjentaPasoRegisterDegMelding2()></p>
-						</div>						
-
+						<!-- ************************ (Gunni) ************************** -->						
 					</div>
 				</div>
 
