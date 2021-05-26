@@ -725,7 +725,7 @@ if(minEndreBrukerInfo !== null){
 if(endrePassord !== null) {
     endrePassord.innerHTML = endrePassordTab[språk];
     gammeltPassord.innerHTML = gammeltPassordTab[språk];
-    gammeltPassord.innerHTML = visPassordTab[språk];
+    visPassord.innerHTML = visPassordTab[språk];
     visPassordRegisterDeg.innerHTML = visPassordTab[språk];
     nyttPassord.innerHTML = nyttPassordTab[språk];
     passordKrav.innerHTML = pasokravRegisterDegTab[språk];
