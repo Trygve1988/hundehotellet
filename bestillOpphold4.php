@@ -77,7 +77,7 @@ $dblink = kobleOpp();
 					<div>
 						<!-- Labels og input i kolonne 2 -->
 						<label id="kortNr" for="kortNr">Kortnummer:</label>
-						<input class="inputTekst" type="text" pattern="[0-9]{16}" name="til">			
+						<input class="inputTekst" type="text" placeholder="De 16 tallene på kortet ditt" pattern="[0-9]{16}" name="til">			
 
 						<label for="ccv">CCV/CVC:</label>
 						<!-- ************************** CVC (Kristina) ************************* -->
