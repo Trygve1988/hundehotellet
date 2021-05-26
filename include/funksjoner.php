@@ -167,7 +167,7 @@ function visFooter() {
         <div class="venstre">
             <h1 id="navkontaktInformasjon">Kontakinformsjon</h1>
             <p>Bø Hundehotell</p>
-            <p><strong>Tlf:</strong><a href="tel:+12345678"> 12345678</a> </p>
+            <p><strong>Tlf:</strong><a href="tel:+12345678"> +4712345678</a> </p>
             <p><strong id="navEpost" > Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com</a></p>
             <p> <strong id="navAdresse">Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
         </div>
