@@ -51,7 +51,6 @@ function visNav() {
         <a id="omOssLink" href="omOss.php">Om Oss</a>
         <a id="priserLink" href="priserOgInfo.php">Pris og info</a>
         <a id="kontaktOssLink" href="kontaktOss.php">Kontakt Oss</a>
-
         <?php
         // bestill Opphold
         if (erLoggetInn()) {
@@ -79,7 +78,8 @@ function visNav() {
             ?> <a id="registrerDegLink" class="right" href="registrerDeg.php">Registrer Deg</a> <?php
         } ?>
         <!-- spraakKnapp--> 
-        <img id="spraakKnapp" class="right" src="bilder/FlaggNO.png" alt="Change language">
+        <a> <img id="spraakKnapp" src="bilder/FlaggNO.png" alt="Change language"> </a>
+
     </div><?php
 }
 
