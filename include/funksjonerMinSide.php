@@ -342,17 +342,15 @@ function laghunderTab($dblink) {
 }
 
 function velgHundSomSkalEndres($dblink) {
-    if (isset($_POST['velgHund'])) { 
-        $navn = $_POST['hund']; 
-        $bruker = $_SESSION['bruker'];
-        $brukerID = $bruker->getBrukerID();
-        $sql = "SELECT * FROM hund WHERE navn = '$navn' AND brukerID = '$brukerID' ;"; 
-        $resultat = mysqli_query($dblink, $sql); 
-        $rad = mysqli_fetch_assoc($resultat);
-        $hundID = $rad['hundID'];
-        setAktivHund($dblink,$hundID);
-        header('Location: minSideEndreHund2.php');
-    }
+    $navn = $_POST['hund']; 
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+    $sql = "SELECT * FROM hund WHERE navn = '$navn' AND brukerID = '$brukerID' ;"; 
+    $resultat = mysqli_query($dblink, $sql); 
+    $rad = mysqli_fetch_assoc($resultat);
+    $hundID = $rad['hundID'];
+    setAktivHund($dblink,$hundID);
+    header('Location: minSideEndreHund2.php');
 }
 
 // ************************** 8) endre hund2 **************************
@@ -441,40 +439,42 @@ function lagBestillingOption($bestilling) {
 }
 
 function avbestill($dblink) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+    if (isset($_POST['Avbestill'])) { 
         $bestillingID = $_POST['bestillinger'];
 
-        //henter ut bestilling info
-        $bruker = $_SESSION['bruker'];
-        $brukerID = $bruker->getBrukerID();
-        $startDato;
-        $sluttDato;
-        $bestiltDato;
-        $totalPris;
-        $sql = "SELECT * FROM bestilling WHERE bestillingID = '$bestillingID' ;";
-        $resultat = mysqli_query($dblink, $sql); 
-        while($rad = mysqli_fetch_assoc($resultat)) {
-            $startDato = $rad['startDato'];
-            $sluttDato = $rad['sluttDato'];
-            $bestiltDato = $rad['bestiltDato'];
-            $totalPris  = $rad['totalPris'];
+        if ($bestillingID !== null) { 
+            //henter ut bestilling info
+            $bruker = $_SESSION['bruker'];
+            $brukerID = $bruker->getBrukerID();
+            $startDato;
+            $sluttDato;
+            $bestiltDato;
+            $totalPris;
+            $sql = "SELECT * FROM bestilling WHERE bestillingID = '$bestillingID' ;";
+            $resultat = mysqli_query($dblink, $sql); 
+            while($rad = mysqli_fetch_assoc($resultat)) {
+                $startDato = $rad['startDato'];
+                $sluttDato = $rad['sluttDato'];
+                $bestiltDato = $rad['bestiltDato'];
+                $totalPris  = $rad['totalPris'];
+            }
+
+            //slett opphold
+            $sql = "DELETE FROM opphold WHERE bestillingID = '$bestillingID' ;";
+            $resultat = mysqli_query($dblink, $sql); 
+
+            //slett bestilling
+            $sql = "DELETE FROM bestilling WHERE bestillingID = '$bestillingID' ;";
+            $resultat = mysqli_query($dblink, $sql); 
+
+            echo "bestillingID " . $bestillingID . " avbestil. <br>";
+
+            //setter inn en rad i slettetBestilling
+            $sql = "INSERT INTO slettetBestilling (startDato, sluttDato, bestiltDato, totalPris, brukerID)
+            VALUES ('$startDato','$sluttDato','$bestiltDato','$totalPris','$brukerID') ;";
+            $resultat = mysqli_query($dblink, $sql); 
+            header("Refresh:0");
         }
-
-        //slett opphold
-        $sql = "DELETE FROM opphold WHERE bestillingID = '$bestillingID' ;";
-        $resultat = mysqli_query($dblink, $sql); 
-
-        //slett bestilling
-        $sql = "DELETE FROM bestilling WHERE bestillingID = '$bestillingID' ;";
-        $resultat = mysqli_query($dblink, $sql); 
-
-        echo "bestillingID " . $bestillingID . " avbestil. <br>";
-
-        //setter inn en rad i slettetBestilling
-        $sql = "INSERT INTO slettetBestilling (startDato, sluttDato, bestiltDato, totalPris, brukerID)
-        VALUES ('$startDato','$sluttDato','$bestiltDato','$totalPris','$brukerID') ;";
-        $resultat = mysqli_query($dblink, $sql); 
-        header("Refresh:0");
     }
 }
 

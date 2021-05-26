@@ -41,11 +41,6 @@ function registrerHundBestillOpphold($dblink) {
 }
 
 // ********************* 6) Bestill Opphold 2  oppdater Hunder  ********************* 
-
-
-
-
-
 function oppdaterHunder($dblink) {
     //kjører gjennom alle valgte hunder
     $valgteHunder = $_SESSION['valgteHunder'];

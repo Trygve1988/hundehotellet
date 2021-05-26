@@ -64,6 +64,10 @@
                         value= <?php echo $bruker->getEpost() ?>>
                     </div>
                 </div> 
+
+                <!-- oppdaterBrukerInfo -->
+                <?php adminEndreBrukerInfo($dblink) ?> 
+
                 <!-- Knapperad -->
                 <div class="knappeRad bunnKnapp">
                     <div class="knapp1IRad">
@@ -80,8 +84,6 @@
             </div>
         </form>
 
-         <!-- oppdaterBrukerInfo -->
-        <?php adminEndreBrukerInfo($dblink) ?> 
     </main>
 
     <!-- ************************** Felles bunn ************************** -->

@@ -39,7 +39,9 @@
                 </a>
                 
                 <!-- Overskudd -->	
-                <h1 class="hovedOverskrift">Endre bruker</h1>
+                <?php $brukertype = $_SESSION['adminSeBrukertype']; ?>
+                
+                <h1 class="hovedOverskrift">Endre <?php echo $brukertype?> </h1>
                 
                 <div class="soloKolonne">
                     
