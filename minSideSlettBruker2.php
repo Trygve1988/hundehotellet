@@ -40,9 +40,9 @@
 			    </a>    
                 
                 <!-- Overskrift --> 
-                <h2 class="hovedOverskrift">Bekreft sletting av  bruker</h2>
+                <h2 id="bekreftSletting" class="hovedOverskrift">Bekreft sletting av  bruker</h2>
 
-                <p>Er du sikker på at du vil slette brukeren din?</p>  
+                <p id="bekreftSlettingText">Er du sikker på at du vil slette brukeren din?</p>  
               
                 <!--Knapperad-->
 				<div class="knappeRad heltIBunnKnapp">

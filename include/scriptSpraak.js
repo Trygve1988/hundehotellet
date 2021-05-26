@@ -172,6 +172,12 @@ var mailTab = ['Epost:','Email:'];
 var endrePassordTab = ['Endre passord','Change password'];
 var gammeltPassordTab = ['Gammelt passord:','Old password:'];
 var nyttPassordTab = ['Nytt passord:','New password:'];
+var slettBrukerTab = ['Slett bruker','Delete user'];
+var slettBrukerText1Tab = ['Du må avbestille eventuelle fremtidige opphold før du kan slette kontoen din.',"You must cancel any future stays before you can delete your account."];
+var slettBrukerText2Tab = ['Det er mulig å gjenopprette kontoen innen 30 dager er gått. Etter dette blir kontoen slettet.','It is possible to recover the account within 30 days. After this, the account will be deleted.'];
+var slettBrukerText3Tab = ['Er det noe du lurer på i forhold til sletting av konto, kontakt oss på epost','If there is anything you are wondering about in relation to deleting an account, contact us by email'];
+var bekreftSlettingTab = ['Bekreft sletting av bruker','Confirm user deletion'];
+var bekreftSlettingTextTab = ['Er du sikker på at du vil slette brukeren din?','Are you sure you want to delete your user?'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -338,6 +344,12 @@ var visPassord = document.getElementById("visPassord");
 var nyttPassord = document.getElementById("nyttPassord");
 var passordKrav = document.getElementById("passordKrav");
 var visPassordRegisterDeg = document.getElementById("visPassordRegisterDeg");
+var slettBruker = document.getElementById("slettBruker");
+var slettBrukerText1 = document.getElementById("slettBrukerText1");
+var slettBrukerText2 = document.getElementById("slettBrukerText2");
+var slettBrukerText3 = document.getElementById("slettBrukerText3");
+var bekreftSletting = document.getElementById("bekreftSletting");
+var bekreftSlettingText = document.getElementById("bekreftSlettingText");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -705,4 +717,14 @@ if(endrePassord !== null) {
     visPassordRegisterDeg.innerHTML = visPassordTab[språk];
     nyttPassord.innerHTML = nyttPassordTab[språk];
     passordKrav.innerHTML = pasokravRegisterDegTab[språk];
+}
+if(slettBruker !== null) {
+    slettBruker.innerHTML = slettBrukerTab[språk];
+    slettBrukerText1.innerHTML = slettBrukerText1Tab[språk];
+    slettBrukerText2.innerHTML = slettBrukerText2Tab[språk];
+    slettBrukerText3.innerHTML = slettBrukerText3Tab[språk];
+}
+if(bekreftSletting !== null) {
+    bekreftSletting.innerHTML = bekreftSlettingTab[språk];
+    bekreftSlettingText.innerHTML = bekreftSlettingTextTab[språk];
 }
