@@ -141,6 +141,7 @@ var finneCVCTab = ['Hvor finner jeg CVC koden?','Where can I find the CVC code?'
 var vilkårTab = ['Kryss av for å godtavilkår:','Check to accept terms:'];
 var passordTab = ['Passord:','Password:'];
 var visPassordTab = ['Vis passord','Show password'];
+var visPassordTab2 = ['Vis passord','Show password'];
 var glemtPassordTab = ['Glemt passord','Forgot your password']; 
 var aktueltTextTab = ['Her kan du lese om det som skjer på Bø Hundehotell.','Here you can read about what is happening at Bø Hundehotell.'];
 var minSideTab = ['Min side','My page'];
@@ -349,6 +350,7 @@ var gammeltPassord = document.getElementById("gammeltPassord");
 var nyttPassord = document.getElementById("nyttPassord");
 var passordKrav = document.getElementById("passordKrav");
 var visPassordRegisterDeg = document.getElementById("visPassordRegisterDeg");
+var visPassordRegisterDeg2 = document.getElementById("visPassordRegisterDeg2");
 var slettBruker = document.getElementById("slettBruker");
 var slettBrukerText1 = document.getElementById("slettBrukerText1");
 var slettBrukerText2 = document.getElementById("slettBrukerText2");
@@ -724,7 +726,8 @@ if(minEndreBrukerInfo !== null){
 if(endrePassord !== null) {
     endrePassord.innerHTML = endrePassordTab[språk];
     gammeltPassord.innerHTML = gammeltPassordTab[språk];
-    visPassordRegisterDeg.innerHTML = visPassordTab[språk];
+    visPassordRegisterDeg1.innerHTML = visPassordTab2[språk];
+    visPassordRegisterDeg2.innerHTML = visPassordTab2[språk];
     nyttPassord.innerHTML = nyttPassordTab[språk];
     passordKrav.innerHTML = pasokravRegisterDegTab[språk];
 }
