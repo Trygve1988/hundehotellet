@@ -39,11 +39,11 @@
 				<div class="knappeRad" id="knappePanel">
 					<div class="knapp1IRad">
 						<!-- Slett knapp -->			
-	                	<button class="inputSubmit hovedKnapp" type="submit" name="slettAnmeldelseKnapp">Slett</button>
+	                	<button class="inputSubmit hovedKnapp litenKnapp" type="submit" name="slettAnmeldelseKnapp">Slett</button>
 					</div>
 					<div class="etterKolonnerKnapp">
 						<!-- Godkjenn knapp -->
-						<button class="inputSubmit hovedKnapp" type="submit" name="godkjennAnmeldelseKnapp">Godkjenn</button>	
+						<button class="inputSubmit hovedKnapp litenKnapp" type="submit" name="godkjennAnmeldelseKnapp">Godkjenn</button>	
 					</div>
 				</div>
 
