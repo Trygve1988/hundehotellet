@@ -40,6 +40,7 @@
 
                 <!-- Overskrift -->	
                 <h2 class="hovedOverskrift">Slett Bruker</h2>
+                <p>Under arbeid. Du kan for øyeblikket bare slette brukere som ikke har hunder</p>
                 
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
@@ -51,8 +52,9 @@
                             } ?>
                         </select>  
                     </div>
-                    <?php slettBruker($dblink); ?>  
                 </div>
+
+                <br> <?php slettBruker($dblink); ?>  
 
                 <!--Knapperad-->
 				<div class="knappeRad heltIBunnKnapp">

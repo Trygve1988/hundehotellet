@@ -508,7 +508,7 @@ function slettHund($dblink) {
         $hundID = substr($hund,0,2);
         $sql = "DELETE FROM hund WHERE hundID = '$hundID' ;";
         $resultat = mysqli_query($dblink, $sql);
-        echo "<br>".'<i style="color:green; position:absolute";"> Hund slettet </i>';
+        echo "<br><br>".'<i style="color:green; position:absolute";"> Hund slettet </i>';
         header("Refresh:0");
     }
 }

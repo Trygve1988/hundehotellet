@@ -38,7 +38,6 @@
             <form class="skjemaBakgrunn" method="POST">
 
                 <h2 class="hovedOverskrift">Mating</h2>
-                <?php //visAlleHunderPaaOppholdNaa($dblink); ?>
                 <?php visAlleRegistrerteMatingerIDag($dblink); ?>
 
                 <input class="inputSubmit mediumKnapp" type="submit" name="registrerMatingAlle" value="Registrer mating (alle)">

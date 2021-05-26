@@ -565,9 +565,10 @@ function lagSkalSjekkesUtTab($dblink) {
 
 // Funksjon for å registrere en innsjekking i databasen
 function sjekkInn($dblink) {
-    if (isset($_POST['sjekkInnKnapp'])) { 
+    if (isset($_POST['sjekkInnKnapp'])) {  
         $bestillingID = $_POST['sjekkInnSelect'];
-        $bestillingID = substr($bestillingID,0,1);
+        $dataTab = explode(",",$bestillingID);
+        $bestillingID = $dataTab[0];
         $sql = "UPDATE bestilling SET sjekketInn = CURRENT_TIMESTAMP WHERE bestillingID = '$bestillingID' ;";
         mysqli_query($dblink,$sql);
         header("Refresh:0");
@@ -578,7 +579,8 @@ function sjekkInn($dblink) {
 function sjekkUt($dblink) {
     if (isset($_POST['sjekkUtKnapp'])) { 
         $bestillingID = $_POST['sjekkUtSelect'];
-        $bestillingID = substr($bestillingID,0,1);
+        $dataTab = explode(",",$bestillingID);
+        $bestillingID = $dataTab[0];
         $sql = "UPDATE bestilling SET sjekketUt = CURRENT_TIMESTAMP WHERE bestillingID = '$bestillingID' ;";
         mysqli_query($dblink,$sql);
         header("Refresh:0");
@@ -815,7 +817,8 @@ function visAlleRegistrerteMatingerIDag($dblink) {
     WHERE M.oppholdID = O.oppholdID
     AND O.hundID = H.hundID
     AND H.forID = F.forID
-    AND day(M.tidspunkt) = day(CURRENT_TIMESTAMP);";
+    AND day(M.tidspunkt) = day(CURRENT_TIMESTAMP)
+    ORDER BY M.tidspunkt ;";
     $resultat = mysqli_query($dblink, $sql); 
 
     //viss ingen treff

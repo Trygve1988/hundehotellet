@@ -46,18 +46,22 @@
                         } ?>
                     </select>
                 </div>
-                <div>
-                    <a href="minSide.php">
-                        <input class="litenKnapp" type="button" value="Tilbake">  
-                    <a>
-                    <input class="litenKnapp" type="submit" value="Slett" name="slettHund">
-                </div> 
+
+
+                <!-- Tilbake knapp -->
+                <a href="minSide.php">
+                    <input class="litenKnapp" type="button" value="Tilbake">  
+                <a>
+
+                <!-- slettHund knapp -->
+                <input class="litenKnapp" type="submit" value="Slett" name="slettHund"> 	
+
+                <!-- bestillOpphold -->
+                <?php slettHund($dblink); ?>  
+
             </form> 
         </div> 
                            
-        <!-- bestillOpphold -->
-        <?php slettHund($dblink); ?> 
-
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->

@@ -39,20 +39,23 @@
 
                 <h2 class="hovedOverskrift">Kommentarer</h2>
 
-                <?php //visAlleHunderPaaOppholdNaaKommentar($dblink); ?>
                 <?php visAlleRegistrerteKommentarIDag($dblink); ?>
 
-                <!-- Skriv kommentar -->
-                <label for="kommentarText">Skriv kommentaren i teksfeltet under:</label>
-                <textarea name="kommentarText" rows="10" cols="115"></textarea>
-
                 <!-- Velg Hund -->
+                <label for="velgHundSelect">Velg Hund:</label>
                 <select name="velgHundSelect" class="litenSelect litenInput">
                     <?php $hunder = lagHunderPaaOppholdNaaTab($dblink);
                     for ($i=0; $i<count($hunder); $i++) {
                         lagOption($hunder[$i]);
                     } ?>
                 </select>
+
+                <!-- Skriv kommentar -->
+                <br>
+                <label for="kommentarText">Skriv inn kommentar:</label>
+                <textarea name="kommentarText" rows="10" cols="115"></textarea>
+
+
 
                 <!-- Knapper-->
                 <input class="inputSubmit mediumKnapp" type="submit" name="registrerKommentarKnapp" value="Lagre">

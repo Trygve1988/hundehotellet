@@ -38,7 +38,7 @@
                 <?php sjekkUt($dblink); ?>
                 <?php nullStillInnsjekkinger($dblink); ?>
                 <?php nullStillUtsjekkinger($dblink); ?>
-
+                
                 <!-- 2a visSkalSjekkeInnIDag -->
                 <?php visSkalSjekkeInnIDag($dblink); ?>
 
@@ -71,7 +71,7 @@
                 
                 <!-- test: nullstillKnapp --> 
                 <input class="litenKnapp" type="submit" value="Nullstill" name="nullStillUtsjekkingerKnapp">
-                
+
             </form>
         </div>
     </main>

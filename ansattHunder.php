@@ -35,6 +35,14 @@
             <form class="skjemaBakgrunn" method="POST">
                 <h2>Hunder</h2> 
 
+                <!-- sjekk om bare en aktiv hund -->	
+                <?php 
+                    $hunder = lagHunderPaaOppholdNaaTab($dblink); 
+                    if (count($hunder) == 1) {
+                        $_SESSION['inspiserHund'] = $hunder[0];
+                    }
+                ?>
+
                 <!-- velg Hund-->
                 <label for="velgHundSelect">Velg Hund:</label>
                 <select id="velgInspiserHundSelect" class="litenSelect" name="velgHundSelect" width="100px">
@@ -45,23 +53,19 @@
                     } ?>
                 </select>
 
-                <?php if ( isset($_SESSION['inspiserHund']) ) {  ?>
-
-                    <div class="skjemaKolonner">
-                        <div class="kolonne1">
-                            <?php visInspiserHundInfo($dblink); ?>
-                        </div> 
-                        <div class="kolonne2"> 
-                            <?php visInspiserHundOppholdInfo($dblink); ?>
-                        </div> 
+                <div class="skjemaKolonner">
+                    <div class="kolonne1">
+                        <?php visInspiserHundInfo($dblink); ?>
                     </div> 
+                    <div class="kolonne2"> 
+                        <?php visInspiserHundOppholdInfo($dblink); ?>
+                    </div> 
+                </div> 
 
-                    <!-- aktivitet/komentar-->
-                    <?php visAlleRegistrerteMatingerDetteOppholdet($dblink); ?>
-                    <?php visAlleRegistrerteLuftingerDetteOppholdet($dblink); ?>
-                    <?php visAlleRegistrerteKommentarerDetteOppholdet($dblink); ?>  
-
-                <?php } ?>
+                <!-- aktivitet/komentar-->
+                <?php visAlleRegistrerteMatingerDetteOppholdet($dblink); ?>
+                <?php visAlleRegistrerteLuftingerDetteOppholdet($dblink); ?>
+                <?php visAlleRegistrerteKommentarerDetteOppholdet($dblink); ?>  
 
             </form>
 
