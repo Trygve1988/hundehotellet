@@ -494,6 +494,7 @@ function nyTTPasomelding(){
   var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
   if(passord2.value.match(paso) ){
     nystatus.innerHTML="Passord er godkjent";
+    nystatus.innerHTML=" ";
     return true;
   } else{
     nystatus.innerHTML="Mellom 8-15 tegn. Minst ett tall, stor bokstav, liten bokstav, spesial tegn(@% osv).";
@@ -506,6 +507,7 @@ function nyTTPasomelding2(){
     var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
     if( passord2.value.match(paso) ){
       nystatus2.innerHTML="Password has been approved";
+      nystatus3.innerHTML=" ";
       return true;
     } else{
       nystatus2.innerHTML="Between 8-15 characters. At least one number, -";
