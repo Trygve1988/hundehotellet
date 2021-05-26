@@ -253,7 +253,7 @@ function lagIkkeBegyntBestillingTabAnsatt($dblink) {
     $sql = "SELECT DISTINCT B.* FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
-    AND DAY(B.startDato) < DAY(CURRENT_TIMESTAMP) ;" ;
+    AND B.sjekketInn IS NULL;" ;
     $resultat = mysqli_query($dblink, $sql);
     while($rad = mysqli_fetch_assoc($resultat)) {
         $bestillingID = $rad['bestillingID'];
@@ -412,7 +412,8 @@ function lagSkalSjekkesUtTab($dblink) {
     WHERE B.bestillingID = O.bestillingID  
     AND O.hundID = H.hundID 
     AND H.brukerID = BR.brukerID
-    AND DAY(B.sluttDato) = DAY(CURRENT_TIMESTAMP) 
+    AND DAY(B.sluttDato) <= DAY(CURRENT_TIMESTAMP) 
+    AND B.sjekketInn IS NOT NULL  
     AND B.sjekketUt IS NULL ;";  
     $resultat = mysqli_query($dblink, $sql); 
 
@@ -733,8 +734,6 @@ function getAktiveOppholdIDer($dblink) {
     FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID 
     AND   O.hundID = H.hundID
-    AND day(B.startDato) <= day(CURRENT_TIMESTAMP) 
-    AND day(sluttDato) >= day(CURRENT_TIMESTAMP) 
     AND B.sjekketInn IS NOT NULL 
     AND B.sjekketUt IS NULL ;";
     $resultat = mysqli_query($dblink, $sql); 
@@ -1115,7 +1114,6 @@ function lagHunderPaaOppholdNaaTab($dblink) {
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
     AND H.forID = F.forID
-    AND day(B.startDato) <= day(CURRENT_TIMESTAMP) AND day(B.sluttDato) >= day(CURRENT_TIMESTAMP)
     AND B.sjekketInn IS NOT NULL
     AND B.sjekketUt IS NULL
     ORDER BY O.oppholdID ;";

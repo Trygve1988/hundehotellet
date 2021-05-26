@@ -63,7 +63,7 @@
 				<div class="knappeRad heltIBunnKnapp">
 					<div class="knapp1IRad">
 						<!-- Tilbake knapp-->
-						<a href="minSide.php">
+						<a href="ansattAlleOpphold.php">
 					        <input class="inputButton hovedKnapp" type="button" value="Avbryt"> 
 				        </a>
 					</div>

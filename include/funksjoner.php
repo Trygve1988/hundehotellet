@@ -274,11 +274,13 @@ function setAktivHund($dblink,$hundID) {
 // ************************** 2) Aktuelt  **************************
 function lagreInnlegg($dblink) {
     if (isset($_POST['lagreInnleggKnapp'])) { 
+        $dato = new DateTime();
+        $dato = $dato->format('Y-m-d');
         $navn = "aktuelt";
         $innleggOverskrift = $_POST['innleggOverskrift'];
         $innleggText = $_POST['innleggText'];
         $tekst = "<div class=\"mellomromMellomInnlegg\">"."<h3>".$innleggOverskrift."</h3>".  
-        "<p>".$innleggText."</p>"."</div>"."<hr>";
+        "<p>".$innleggText."</p>"."<p>".$dato."</p>"."</div>"."<hr>";
         $bruker = $_SESSION['bruker'];
         $brukerID = $bruker->getBrukerID();
         $sql = "INSERT INTO innlegg(navn,tekst,brukerID) VALUES ('$navn','$tekst','$brukerID') ;";
