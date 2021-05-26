@@ -5,14 +5,21 @@ include_once "domeneklasser/Hund.php";
 include_once "domeneklasser/Bestilling.php";
 include_once "domeneklasser/FerdigBestilling.php";
 
-/* ************************** 0) Alle: a) konstanter ************************** */
+/**
+ *  Denne klassen inneholder funksjoner som brukes på alle sidene, 
+ *  eks "visNavbar", "visFooter", "visTilToppenKnapp"
+ *  Inneholder også funksjoner til sidene Aktuelt, priser, loggInn og registrerDeg.
+ *  @author    Trygve Johannessen
+ */ 
+
+
 // Konstanter som vi bruker til å koble på databasen på itfag.usn.no
 define("TJENER",  "itfag.usn.no");
 define("BRUKER",  "h20APP2000gr5");
 define("PASSORD", "pw5");
 define("DB",      "h20APP2000grdb5");
 
-/* ************************** 0) Alle: b) SESSIONS ************************** */
+/* ************************** SESSIONS ************************** */
 // Oversikt over sessionsvariabler og hvor de opprettes
 // $bruker = $_SESSION['bruker'];               ( 10) Logg Inn)
 // $valgteHunder = $_SESSION['valgteHunder'];   ( 6) Bestill Opphold 2  oppdater Hunder)
@@ -22,8 +29,13 @@ define("DB",      "h20APP2000grdb5");
 // $_SESSION['endreBruker']                     (  9) Admin -> c) endre Bruker
 // $_SESSION['adminSeBrukertype']               (  9) Admin 
 
-/* ************************** 0) Alle: c) database ************************** */ 
-// Funksjon for å koble på databasen
+
+
+// ************************** database **************************
+/**
+ *  Funksjon for å koble på databasen
+ *  @return $dblink      
+ */ 
 function kobleOpp() {
     $dblink = mysqli_connect(TJENER, BRUKER, PASSORD, DB);
     if (!$dblink) {
@@ -39,9 +51,7 @@ function lukk($dblink) {
 }
 
 
-/* ************************** 0) Alle: d) topp ************************** */ 
-// Inneholder funksjoner for å lage HTML elementer som skal brukes på mange sider.
-
+// ************************** topp-elementer ************************** 
 // Funksjon som lager standard navbar på alle sidene 
 function visNav() { 
     ?> <div class="navbar">
@@ -118,12 +128,18 @@ function visNav3() {
         <?php
 }
 
-// Funksjon for å sjekke om brukeren er logget inn
+/**
+ *  Funksjon for å sjekke om brukeren er logget inn
+ *  @return boolean       
+ */ 
 function erLoggetInn() {
     return ( isset($_SESSION['bruker']) );
 }
 
-// Funksjon for å sjekke om brukeren er en ansatt
+/**
+ *  Funksjon for å sjekke om brukeren er en ansatt
+ *  @return boolean $erAnsatt   
+ */ 
 function erAnsatt() {
     $erAnsatt = false;
     if (isset($_SESSION['bruker'])) {
@@ -136,7 +152,10 @@ function erAnsatt() {
     return $erAnsatt;
 }
 
-// Funksjon for å sjekke om brukeren er en admin
+/**
+ *  Funksjon for å sjekke om brukeren er en admin
+ *  @return boolean $erAdmin   
+ */ 
 function erAdmin() {
     $erAdmin = false;
     if (isset($_SESSION['bruker'])) {
@@ -149,7 +168,7 @@ function erAdmin() {
     return $erAdmin;
 }
 
-/* ************************** 0) Alle: e) bunn ************************** */ 
+// ************************** bunn-elementer ************************** 
 // Funksjon som lager ToppKnapp på alle sidene. Toppknappen gjør at man lett kan navigere til Toppen av siden
 function visToppKnapp() { 
     ?> 
@@ -201,8 +220,12 @@ function visFooter() {
     <?php 
 }
 
-// ************************** 0) alle **************************
-//  Funksjon som lager option elementer til valgbokser
+// ************************** 0) Brukes på flere sider **************************
+
+/** 
+ *  Funksjon som lager option elementer til valgbokser
+ *  @param String $verdi
+ **/  
 function lagOption($verdi) {
     ?> <option value= <?php echo $verdi?> > <?php echo $verdi?> </option><?php
 }
@@ -241,10 +264,14 @@ function registrerHund($dblink) {
     }
 }
 
-// Funksjon for å lage et hund-objekt og legge det til sessionen "aktivHund"
-// Når brukeren skal bestille opphold lagres alle hundene som er valgt i sessionen "valgteHunder"
-// alle hundene i "valgteHunder" blir satt som "aktivHund" en etter en når hunden skal oppdateres
-// Brukes også på min side når brukeren har valgt hund som skal endres
+
+/** 
+ *  Funksjon for å lage et hund-objekt og legge det til sessionen "aktivHund"
+ *  Når brukeren skal bestille opphold lagres alle hundene som er valgt i sessionen "valgteHunder"
+ *  alle hundene i "valgteHunder" blir satt som "aktivHund" en etter en når hunden skal oppdateres
+ *  Brukes også på min side når brukeren har valgt hund som skal endres
+ *  @param int $hundID
+ **/  
 function setAktivHund($dblink,$hundID) { 
     // setter valgt hund-objekt sesjonsvariabel
     $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
@@ -270,7 +297,6 @@ function setAktivHund($dblink,$hundID) {
 }
 
 
-// ************************** 1) Index **************************
 // ************************** 2) Aktuelt  **************************
 function lagreInnlegg($dblink) {
     if (isset($_POST['lagreInnleggKnapp'])) { 
@@ -307,9 +333,14 @@ function slettInnlegg($dblink) {
     }  
 }
 
-// ************************** 3) Om Oss  **************************
+
+
+
 // ************************** 4) Priser og Info **************************
-// Funksjon for å lage en tabell med alle prisene til å vise på "Priser og Info" siden
+/** 
+ *  Funksjon for å lage en tabell med alle prisene til å vise på "Priser og Info" siden
+ *  @return String Array $prisTab  
+ **/ 
 function lagPrisTab($dblink) {
     $prisTab;
     $pos = 0;
@@ -367,8 +398,19 @@ function loggInn($dblink) {
     }     
 }
 
-// Hjelpefunksjon til loggInn.
-// Når en bruker logger inn blir det laget et brukerObjekt som inneholder brukerens info
+/**
+ *  Når en bruker logger inn blir det laget et brukerObjekt som inneholder brukerens info
+ *  @param int $hundID
+ *  @param int $epost
+ *  @param int $brukerType
+ *  @param int $fornavn
+ *  @param int $etternavn
+ *  @param int $tlf
+ *  @param int $adresse
+ *  @param int $fødselsNr
+ *  @param int $stilling
+ *  @param int $postNr
+**/
 function opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
 $tlf, $adresse, $fødselsNr, $stilling, $postNr) {
     $bruker = new Bruker($brukerID, $epost, $brukerType, $fornavn, $etternavn, 

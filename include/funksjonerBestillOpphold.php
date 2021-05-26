@@ -2,11 +2,9 @@
 ob_start();
 
 // ************************** 6) Bestill Opphold 1 - velg hund(er) ************************** 
-// denne siden lar brukeren registrere nye hunder 
-// og velge hunder som skal være med i bestillingen
-//function registrerHund($dblink) {
+// Denne siden lar brukeren registrere nye hunder og velge hunder som skal være med i bestillingen
 
-//  Funksjon for å registrer en Hund
+//  Funksjon for å registrer en Hund. Sender brukeren tilbake til bestillOpphold
 function registrerHundBestillOpphold($dblink) {
     if (isset($_POST['registrer'])) { 
         $navn = $_POST['navn'];
@@ -27,20 +25,23 @@ function registrerHundBestillOpphold($dblink) {
         VALUES ('$navn','$rase','$fdato','$kjønn','$sterilisert','$løpeMedAndre','$info','$brukerID','$forID');";
         $resultat = mysqli_query($dblink, $sql);
 
-        //får tak i hundID
-        $hundID; 
-        $sql = "SELECT MAX(hundID) FROM hund;"; 
-        $resultat = mysqli_query($dblink, $sql); 
-        while($rad = mysqli_fetch_assoc($resultat)) {
-            $hundID = implode($rad);
-        }
-
         echo "<br>".'<i style="color:green";> Hund registrert! </i>'; 
         header('Location: bestillOpphold.php');
     }
 }
 
+
+
 // ********************* 6) Bestill Opphold 2  oppdater Hunder  ********************* 
+// Denne siden lar brukeren kontrollere at informasjonen om hundene som skal være med på opphold er oppdatert
+
+
+
+/** 
+ *  Funksjon som kjører gjennom alle hundene som skal være med på oppholdet.
+ *  Hundnene settes en etter en som aktiv hund mens den blir oppdatert.
+ *  Når alle hunder er oppdatert så sendes brukeren viderer til bestillOpphold3
+ **/  
 function oppdaterHunder($dblink) {
     //kjører gjennom alle valgte hunder
     $valgteHunder = $_SESSION['valgteHunder'];
@@ -59,7 +60,10 @@ function oppdaterHunder($dblink) {
     }
 }
 
-// c) bekreftHundInfo
+/** 
+ *  Funksjon som kalles når brukeren godkjenner at en hund er "up to date"
+ *  Funksjonen oppdaterer hundens info
+ **/  
 function bekreftHundInfo($dblink) {
     if (isset($_POST['bekreftHundInfo'])) {  
         $hund = $_SESSION['aktivHund'];
@@ -82,12 +86,23 @@ function bekreftHundInfo($dblink) {
         brukerID = '$brukerID', forID = '$forID' 
         WHERE hundID = $hundID;";
         $resultat = mysqli_query($dblink, $sql);
+
+        echo $navn . " oppdatert";
     }
 }
 
 
 
-// ************************** 6) Bestill Opphold 3 - velg Datoer og bading ************************** /**//
+// ************************** 6) Bestill Opphold 3 - velg Datoer ************************** 
+// Denne siden lar brukeren velge startDato og sluttDato for oppholdet
+
+
+/** 
+ *  Funksjonen for å bekrefte startDato og sluttDato som brukeren har valgt
+ *  Denne funksjonen kaller på funksjonen "totalpris" for å regne ut oppholdets totalpris
+ *  startDato, sluttDato og totalpris lagres i en sesjonsvariabelen "bestillingSession"
+ *  Sender til slutt brukeren til bestillOpphold4
+ **/  
 function bekreftDatoer($dblink) {
     if (isset($_POST['bekreftDatoer'])) { 
         $startDato = $_POST['startDato']; 
@@ -103,11 +118,25 @@ function bekreftDatoer($dblink) {
     }
 }
 
+/**
+ *  Funksjonen for å lagre startDato, sluttDato og totalpris i sesjonsvariabelen "bestillingSession"
+ * 
+ *  @param String $startDato
+ *  @param String $sluttDato
+ *  @param double $totalPris
+ */ 
 function opprettBestillingSession($startDato, $sluttDato, $totalPris) { 
     $bestilling = new Bestilling($startDato, $sluttDato, $totalPris);
     $_SESSION['bestilling'] =  $bestilling;
 }
 
+/**
+ *  Funksjonen for å for å regne ut oppholdets totalpris
+ * 
+ *  @param String $startDato
+ *  @param String $sluttDato
+ *  @return double totalPris       
+ */ 
 function totalPris($dblink,$startDato,$sluttDato) {
     //finner antall hunder
     $valgteHunder = $_SESSION['valgteHunder'];
@@ -133,13 +162,28 @@ function totalPris($dblink,$startDato,$sluttDato) {
     return $dagPris * $antDager;
 }
 
+
+/** 
+ *  Funksjonen for å finne dato i morgen 
+ *  Brukes i bestill opphold4 for å sette default dato på tilDato
+ **/  
 function datoIMorgen() {
     $date = new DateTime();
     $date->modify('+1 day');
     echo $date->format('Y-m-d');
 }
 
-// ************************** 6) Bestill Opphold 4 - betalingsinfo ************************** /**//
+
+
+// ************************** 6) Bestill Opphold 4 - betalingsinfo **************************
+// Denne siden lar brukeren registrer betalingsinfo
+
+/** 
+ *  Funksjonen for lagre bestilling. Setter inn en ny rad i bestilling 
+ *  og en ny rad inn i opphold pr valgte hund
+ *  Kaller på funksjonene "finnLedigBur", "harNoenAvHundeneAlleredeOpphold" og "oppdaterLedigeBur"
+ *  Til slutt sendes brukeren til "bestillingBekreftelse"
+ **/  
 function bestilling($dblink) {
     if (isset($_POST['bestill'])) { 
         $bestilling = $_SESSION['bestilling'];
@@ -195,6 +239,13 @@ function bestilling($dblink) {
     }
 }
 
+
+/** 
+ *  Funksjonen for sjekke om noen av hundene allerede har opphold 
+ *  på minst en av dagene i det valgte tidsrommet
+ *  Kjører gjennom alle hundene og kaller "harHundenAlleredeOpphold" for å sjekke hver hund.
+ *  @return boolean $alleredeOpphold  
+ **/  
 function harNoenAvHundeneAlleredeOpphold($dblink) { 
     $alleredeOpphold = false;
     // valgteHunder
@@ -208,6 +259,11 @@ function harNoenAvHundeneAlleredeOpphold($dblink) {
     return $alleredeOpphold;
 }
 
+/** 
+ *  Funksjonen for sjekke denne hunden allerede har opphold på minst en av dagene i det valgte tidsrommet
+ *  @param int $hundID  
+ *  @return boolean $alleredeOpphold  
+ **/  
 function harHundenAlleredeOpphold($dblink,$hundID) { 
     $alleredeOpphold = false;
 
@@ -230,7 +286,14 @@ function harHundenAlleredeOpphold($dblink,$hundID) {
     return $alleredeOpphold; 
 }
 
-
+/** 
+ *  Funksjonen for å finne et bur som er ledig alle dagene i det aktuelle tidsrommet.  
+ *  Untatt den siste dagen for da må man sjekke ut før kl 12.
+ *  Kjører gjennom hvert bur og kaller "erBurLedigAlleDatoene" for å sjekke om dette buret er ledig.
+ *  @param String $startDato
+ *  @param String $sluttDato
+ *  @return int $burID  
+ **/  
 function finnLedigBur($dblink,$startDato,$sluttDato) { 
     // får tak i antall bur
     $sql = "SELECT COUNT(*) FROM bur;"; 
@@ -259,6 +322,14 @@ function finnLedigBur($dblink,$startDato,$sluttDato) {
     }
 }
 
+/** 
+ *  Funksjonen for å finne om dette buret er ledig alle dagene i det aktuelle tidsrommet. 
+ *  Kjører gjennom hver dato og kaller "erBurLedigDenneDatoen" for å sjekke om buret er ledig den datoen
+ *  @param String $startDato
+ *  @param String $sluttDato
+ *  @param int $burID
+ *  @return $burLedigAlleDatoene;
+ **/  
 function erBurLedigAlleDatoene($dblink,$startDato,$sluttDato,$burID) {
     $burLedigAlleDatoene = true;
 
@@ -283,6 +354,12 @@ function erBurLedigAlleDatoene($dblink,$startDato,$sluttDato,$burID) {
     return $burLedigAlleDatoene;
 }
 
+/** 
+ *  Funksjonen for å sjekke om dette buret er ledig denne datoen
+ *  @param String $dato
+ *  @param int $burID
+ *  @return boolean $burLedig;
+ **/ 
 function erBurLedigDenneDatoen($dblink,$dato,$burID) {  
     $burLedig = true;
     $sql = "SELECT B.* 
@@ -303,6 +380,11 @@ function erBurLedigDenneDatoen($dblink,$dato,$burID) {
     return $burLedig; 
 }
 
+/** 
+ *  Funksjonen for hente ut navnene til alle hundene som skal ha opphold.
+ *  Kalles i bestillOpphold4.php for å vise oppsumering av oppholdet til brukeren.
+ *  @return boolean $burLedig;
+ **/  
 function getValgteHunderNavn($dblink) {
     $valgteHunderNavn = "";
     $valgteHunder = $_SESSION['valgteHunder'];  
@@ -317,10 +399,7 @@ function getValgteHunderNavn($dblink) {
     return $valgteHunderNavn;
 }
 
-
-
-// ************************** 6) Bestill Opphold 5 - etter at oppholdet er bestilt ************************** /**//
-// oppdaterer ledigeBurPrDag tabellen i db
+// Funksjonen for oppdaterer "ledigeBurPrDag"-tabellen i databasen etter at et opphold er bestilt
 function oppdaterLedigeBur($dblink,$startDato,$sluttDato) {  
     $dato = $startDato;
     while ($dato < $sluttDato) {

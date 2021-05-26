@@ -52,17 +52,18 @@
 				<!-- Overskrift -->
 				<h2 id="endreHund" class="hovedOverskrift">Endre Hund</h2>
 
+				<!-- dette virker ikke!
 				<div>
 					<label id="velgHundMin" for="velgHundSelect">Velg hund:</label>
 					<select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
-						<?php $hunder = lagHunderTab($dblink);
-							$minSideHund = $_SESSION['minSideHund']; 
-							for ($i=0; $i<count($hunder); $i++) {
-								lagMinSideOption($hunder[$i],$minSideHund);
-							} ?>
+						<?php //$hunder = lagHunderTab($dblink);
+							//$minSideHund = $_SESSION['minSideHund']; 
+							//for ($i=0; $i<count($hunder); $i++) {
+							//	lagMinSideOption($hunder[$i],$minSideHund);
+							//} ?>
 					</select>
-				</div>
-		
+				</div> -->
+
                 <div class="skjemaKolonner">
 					
 					<!-- Labels og input i kolonne 1 -->

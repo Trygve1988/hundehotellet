@@ -1,7 +1,21 @@
 <?php
 ob_start();
 
-// ************************** 9) Admin -> a) Bruker admin ************************** 
+/**
+ *  Denne klassen inneholder funksjoner til admin.php siden og undersidene som hører til den
+ *  @author    Trygve Johannessen
+ */ 
+
+
+
+// ************************** 1) admin **************************
+// Denne siden lar admin-brukeren få en se,endre og slette brukerkontoer
+
+/** 
+ *  Funksjon for å vise alle brukere som valgt brukerType
+ *  Når brukeren velger brukertype i select boksen på admin siden blir kjøres et
+ *  ajax kall til databasen som setter sessionsvariabelen "adminSeBrukertype"n
+ **/ 
 function visAlleBrukere($dblink)  {     
     $brukertype = $_SESSION['adminSeBrukertype'];
     $sql = "SELECT * FROM bruker WHERE brukertype = '$brukertype' ;";
@@ -32,7 +46,12 @@ function visAlleBrukere($dblink)  {
     echo "</table>" . "<br>";
 } 
 
-// ************************** 9) Admin -> b) registrerNyBruker ************************** 
+
+
+// ************************** 2) adminNyBruker **************************
+// Denne siden lar admin-brukeren opprette en ny brukerkonto
+
+//Funksjon for å registrer en ny bruker
 function registrerNyBruker($dblink) {
     if (isset($_POST['registrerNyBrukerKnapp'])) {   
         $epost = $_POST['epost'];
@@ -63,7 +82,16 @@ function registrerNyBruker($dblink) {
     }
 }
 
-// ************************** 9) Admin -> c) endre Bruker ************************** 
+
+
+// ************************** 3) adminendreBruker **************************
+// Denne siden lar admin-brukeren endre en brukerkonto
+
+/** 
+ *  Funksjon for å lage en tabell med brukere som String objekter
+ *  Brukes får lage valg som admin-brukeren kan trykke på i select bokser for å velge en bruker
+ *  @return $brukereTab;
+ **/ 
 function lagBrukereTab($dblink) {
     $brukereTab = array();
     $pos = 0;
@@ -77,7 +105,10 @@ function lagBrukereTab($dblink) {
     return $brukereTab;
 }
 
-
+/** 
+ *  Funksjon for velge en bruker i en select boks
+ *  Den valgte brukeren lagres som et bruker-objekt i sessionsvariabelen "endreBruker"
+ **/ 
 function velgEndreBruker($dblink) {
     if (isset($_POST['velgEndreBrukerKnapp'])) { 
         $brukerID = $_POST['velgEndreBrukerSelect'];
@@ -101,6 +132,7 @@ function velgEndreBruker($dblink) {
     } 
 }
 
+// Funksjon for å endre en bruker i databasen
 function adminEndreBrukerInfo($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bruker = $_SESSION['endreBruker'];
@@ -122,7 +154,12 @@ function adminEndreBrukerInfo($dblink) {
     }
 }
 
-// ************************** 9) Admin -> d) slett Bruker ************************** 
+
+
+// ************************** 4) adminSlettBruker **************************
+// Denne siden lar admin-brukeren slette en brukerkonto
+
+// Funksjon for å slette en bruker fra databasen  
 function slettBruker($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $brukerID = $_POST['velgSlettBrukerSelect'];
@@ -143,7 +180,17 @@ function slettBruker($dblink) {
     }
 }
 
-// ************************** 9) Admin -> e) gjennoprett Bruker **************************
+
+
+// ************************** 5) adminGjennoprettBruker **************************
+// Brukere kan slette kontoen sin. Viss brukeren angrer innen 30 dager kan han be 
+// hundehotellet om å gjenopprette kontoen.
+// Denne siden lar admin-brukeren gjennoprette en konto.
+
+/** 
+ * Funksjon for å lage en tabell med slettede brukere som string objekter  
+ * @return String Array $brukereTab;
+**/
 function lagSlettedeBrukereTab($dblink) {
     $brukereTab = array();
     $pos = 0;
@@ -156,6 +203,11 @@ function lagSlettedeBrukereTab($dblink) {
     return $brukereTab;
 }
 
+
+/** 
+ * Funksjon for å gjennoprett en bruker i databasen
+ * Setter kolonen slettetDato i brukeren til null
+**/
 function gjennoprettBruker($dblink) {
     if (isset($_POST['velgGjennoprettBrukerKnapp'])) { 
         $brukerID = $_POST['velgGjennoprettBrukerSelect'];
@@ -164,34 +216,6 @@ function gjennoprettBruker($dblink) {
         echo "kontoen er gjennoprettet ";
         header("Refresh:0");
     }
-}
-
-// ************************** 9) Admin -> f) visPrisHistorikk**************************
-function visPrisHistorikk($dblink) {
-    echo "<h2> Pris-Historikk </h2>";
-
-    $sql = "SELECT P.beskrivelse, H.* FROM pris AS P, prisHistorikk AS H WHERE P.prisID = H.prisID;";
-    $resultat = mysqli_query($dblink, $sql); 
-
-    echo "<table>";
-    echo "<tr>";
-    echo    "<th>brukerID</th>";
-    echo    "<th>beskrivelse</th>";
-    echo    "<th>endretDato</th>";
-    echo    "<th>nyttbeløp</th>";
-    echo    "<th>gammeltbeløp</th>";
-    echo "</tr>";
-
-    while($rad = mysqli_fetch_assoc($resultat)){
-        echo "<tr>"; 
-        echo "<td>" . $rad['brukerID'] . "</td>";
-        echo "<td>" . $rad['beskrivelse'] . "</td>"; 
-        echo "<td>" . $rad['endretDato'] . "</td>"; 
-        echo "<td>" . $rad['nyttbeløp'] . "</td>"; 
-        echo "<td>" . $rad['gammeltbeløp'] . "</td>"; 
-        echo "</tr>";
-    }
-    echo "</table>" . "<br>";
 }
 
 ob_end_flush();

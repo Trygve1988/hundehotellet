@@ -1,7 +1,22 @@
 <?php
 ob_start();
 
-// ************************** 7a) Ansatt: Bur-Oversikt ************************** 
+
+/**
+ *  Denne klassen inneholder funksjoner til alle ansatt sider og undersidene som hører til dem
+ *  @author    Trygve Johannessen
+ */ 
+
+
+
+// ************************** 1) ansattBur **************************
+// Denne siden lar ansatt-brukeren få en se en oversikt 
+// over hvor mange bur som er ledige pr dato 1 år framover i tid
+
+/** 
+ *  Funksjon for å vise vis Ledige bur pr dato 1 år framover i tid
+ *  Kaller funksjonene "lagBurTab", "nesteMndSjekk", "skrivUkeTab" og "oppdaterAar"
+ **/ 
 function visLedigeBurPrDag($dblink) {
     // lager burTab med alle dagene
     $burTab = lagBurTab($dblink);
@@ -37,10 +52,15 @@ function visLedigeBurPrDag($dblink) {
             $ukeTab  = array();
             $ukeNr++;
         }
-        $aar = oppdaterAar($burTab[$i]);
+        $aar = getAar($burTab[$i]);
     }  
 } 
 
+/**
+ * "visLedigeBurPrDag" funksjonen kjører gjennom alle dagene er år fram i tid
+ *  Denne funsjonen kjøres en gang pr dag for å sjekke om vi har komt til en ny mnd
+ *  @return boolean
+ **/ 
 function nesteMndSjekk($dato) {
     $dato = substr($dato,8,2);
     if ($dato > 0 && $dato < 8) {  
@@ -51,10 +71,19 @@ function nesteMndSjekk($dato) {
     }
 } 
 
-function oppdaterAar($dato) {
+/**
+ *  Trekker ut år verdien fra en dato
+ *  @param String $dato
+ *  @return String $aar
+ **/ 
+function getAar($dato) {
     return substr($dato,0,4);
 } 
 
+/**
+ *  Lager en String tabell som inneholder ledige bur pr dag
+ *  @return String $burTab
+ **/ 
 function lagBurTab($dblink) {
     $burTab = null;
     //startDato (forige mandag )
@@ -78,6 +107,10 @@ function lagBurTab($dblink) {
     return $burTab;
 } 
 
+/**
+ *  Skriver en tabell som inneholder ledige pr bur pr dag for en uke
+ *  @param String $burTab
+ **/ 
 function skrivUkeTab($burTab) {
     $dagNavn = array("Man", "Tirs", "Ons", "Tors", "Fre", "Lør", "Søn");
     echo "<table class=\"burTab\">";
@@ -106,7 +139,17 @@ function skrivUkeTab($burTab) {
     echo "</table>";
 }
 
-// ********************************* 7b) Ansatt: Alle Opphold ******************************************
+
+
+// ********************************* 2) ansattAlleOpphold ******************************************
+// Denne siden lar ansatt-brukeren få en se en oversikt over 5 siste ferdige oppgold,
+// alle aktive opphold og alle fremtide opphold
+
+/**
+ *  Funksjon for å side alle opphold. Deler opp opphold i 3 kategorier: Ferdige, aktive og kommende
+ *  Skriver en tabell pr kategori.
+ *  @param String $burTab
+ **/ 
 function visAlleOpphold($dblink) {
     //3) ferdige Opphold
     lagOppholdOverskrifter("Ferdige");
@@ -127,6 +170,10 @@ function visAlleOpphold($dblink) {
     visOppholdTab($bestillingTab);
 }
 
+/**
+ *  Funksjon for å skrive overskrifter til hver opphold kategori
+ *  @param String $oppholdStatus  
+ **/ 
 function lagOppholdOverskrifter($oppholdStatus) {
     echo "<h3>".$oppholdStatus." opphold"."</h3>";
     //overskrifter
@@ -144,6 +191,10 @@ function lagOppholdOverskrifter($oppholdStatus) {
     echo "</tr>";
 }
 
+/**
+ *  Funksjon for å lage en SQL spørring for ikke-begynte opphold
+ *  @return String $sql
+ **/ 
 function lagIkkeBegynteOppholdSpørring($dblink) {
     return "SELECT B.*, O.*, H.* FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID 
@@ -152,6 +203,10 @@ function lagIkkeBegynteOppholdSpørring($dblink) {
     ORDER BY B.startDato ; ";
 }
 
+/**
+ *  Funksjon for å lage en SQL spørring for aktive opphold
+ *  @return String $sql
+ **/ 
 function lagAktiveOppholdSpørring($dblink) {
     return "SELECT B.*, O.*, H.* FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID 
@@ -161,6 +216,10 @@ function lagAktiveOppholdSpørring($dblink) {
     ORDER BY B.startDato ; ";
 }
 
+/**
+ *  Funksjon for å lage en SQL spørring for ferdige opphold (5 siste)
+ *  @return String $sql
+ **/ 
 function lagFerdigeOppholdSpørring5Siste($dblink) {
     return "SELECT B.*, O.*, H.* FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID 
@@ -171,6 +230,10 @@ function lagFerdigeOppholdSpørring5Siste($dblink) {
     ; ";
 }
 
+/**
+ *  Funksjon for å lage en SQL spørring for alle ferdige opphold
+ *  @return String $sql
+ **/ 
 function lagFerdigeOppholdSpørring($dblink) {
     return "SELECT B.*, O.*, H.* FROM bestilling AS B, opphold AS O, hund AS H
     WHERE B.bestillingID = O.bestillingID 
@@ -179,7 +242,13 @@ function lagFerdigeOppholdSpørring($dblink) {
     ORDER BY B.startDato ; ";
 }
 
-
+/**
+ *  Funksjon for å lage et tabell med "FerdigBestilling"-objekter
+ *  "FerdigBestilling"-objekter representerer en bestilling som er ferdig utfylt og registrert 
+ *  og må ikke forveksles med ferdige opphold (litt uheldig navngiving)
+ *  @param String $sql
+ *  @return String $bestillingTab
+ **/ 
 function lagOppholdTab($dblink,$sql) {
     // variabler
     $forigeBestillingID = "";
@@ -209,6 +278,11 @@ function lagOppholdTab($dblink,$sql) {
     return $bestillingTab;
 }
 
+/**
+ *  Funksjon som tar i mot en tabell med "FerdigBestilling"-objekter
+ *  @param String $sql
+ *  @return String $bestillingTab
+ **/ 
 function visOppholdTab($bestillingTab) {
     if ($bestillingTab!==null) {
         //kjører gjennom $bestillingTab
@@ -231,7 +305,11 @@ function visOppholdTab($bestillingTab) {
 } 
 
 
-// ********************************* 7b) Ansatt: Alle Opphold : Eldre ******************************************
+
+// ********************************* 3) ansattAlleOppholdEldre ******************************************
+// Side for å se alle ferdige opphold
+
+// Funksjon for å vise alle ferdige opphold. Kaller på funksjoner over.
 function visFerdigeOpphold($dblink) {
     lagOppholdOverskrifter("Alle Ferdige");
     $sql = lagFerdigeOppholdSpørring($dblink); //
@@ -239,7 +317,12 @@ function visFerdigeOpphold($dblink) {
     visOppholdTab($bestillingTab);
 }
 
-// ********************************* 7b) Ansatt: Avbestill ******************************************
+
+
+// ********************************* 4) ansattAvbestill ******************************************
+// Side som lar ansatt-brukere avbestille en bestilling for kunder
+
+// Funksjon for å lage en tabell med ikke-begynte bestillinger som String objekter
 function lagIkkeBegyntBestillingTabAnsatt($dblink) {
     //Avbestilling Frist
     $date = new DateTime();
@@ -264,10 +347,15 @@ function lagIkkeBegyntBestillingTabAnsatt($dblink) {
     return $bestillinger;
 }
 
+/**
+ *  Funksjon som lager en bestilling option til en select-boks
+ *  @param String $bestilling
+**/
 function lagBestillingOption($bestilling) {
     ?> <option value= <?php echo $bestilling?> > <?php echo $bestilling?> </option><?php
 }
 
+// Funksjon for å avbestille en bestilling for kunde
 function avbestill($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         $bestillingID = $_POST['bestillinger'];
@@ -306,7 +394,16 @@ function avbestill($dblink) {
     }
 }
 
-// ************************** 7c) Ansatt: Inn/utsjekk ************************** 
+
+
+// ********************************* 5) ansattSjekkInnUt ******************************************
+// Side som lar ansatt-brukere sjekke inn og ut hunder
+
+/**
+ *  Funksjon vis alle bestillinger som skal sjekke inn i dag
+ *  Kaller på funksjoner for å skriver overskrifter lage tabeller med bestillinger og skrive rader
+ *  @param String $bestilling
+**/
 function visSkalSjekkeInnIDag($dblink) {
     visSkalSjekkesOverskrifter($dblink,"Innsjekkinger");
     $sql = lagSkalSjekkesInnIDagOverskrifter($dblink);
