@@ -441,7 +441,7 @@ if(passord !== null) {
 
 // Norsk tilbamelding
 function melding(){
-  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
   if( passord.value.match(paso) ){
     status.innerHTML="Norsk: Passord er godkjent";
     status0.innerHTML=" ";
@@ -455,7 +455,7 @@ function melding(){
 
 // Engelsk tilbakemelding 
 function melding2(){
-    var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+    var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
     if( passord.value.match(paso) ){
       status2.innerHTML="English: Password has been approved";
       status3.innerHTML= " ";
@@ -491,7 +491,7 @@ if(passord2 !== null) {
 
 // Norsk tilbamelding
 function nyTTPasomelding(){
-  var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
   if(passord2.value.match(paso) ){
     nystatus.innerHTML="Passord er godkjent";
     nystatus.innerHTML=" ";
@@ -504,7 +504,7 @@ function nyTTPasomelding(){
   
 // Engelsk tilbakemelding 
 function nyTTPasomelding2(){
-    var paso = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+    var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
     if( passord2.value.match(paso) ){
       nystatus2.innerHTML="Password has been approved";
       nystatus3.innerHTML=" ";
