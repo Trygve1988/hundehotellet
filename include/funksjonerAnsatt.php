@@ -400,7 +400,7 @@ function avbestill($dblink) {
 // Side som lar ansatt-brukere sjekke inn og ut hunder
 
 /**
- *  Funksjon vis alle bestillinger som skal sjekke inn i dag
+ *  Funksjon vis alle bestillinger som skal sjekkes INN i dag
  *  Kaller på funksjoner for å skriver overskrifter lage tabeller med bestillinger og skrive rader
  *  @param String $bestilling
 **/
@@ -408,14 +408,23 @@ function visSkalSjekkeInnIDag($dblink) {
     visSkalSjekkesOverskrifter($dblink,"Innsjekkinger");
     $sql = lagSkalSjekkesInnIDagOverskrifter($dblink);
     visSkalSjekkesRader($dblink,$sql,"sjekketInn");
-} 
+}
 
+/**
+ *  Funksjon vis alle bestillinger som skal sjekkes UT i dag
+ *  Kaller på funksjoner for å skriver overskrifter lage tabeller med bestillinger og skrive rader
+ *  @param String $bestilling
+**/
 function visSkalSjekkeUtIDag($dblink) {
     visSkalSjekkesOverskrifter($dblink,"Utsjekkinger");
     $sql = lagSkalSjekkesUtIDagOverskrifter($dblink);
     visSkalSjekkesRader($dblink,$sql,"sjekketUt");
 } 
 
+/**
+ *  Funksjon for å skrive overskrifter i sjekk inn eller ut tabell
+ *  @param String $ord sjekketUt/ sjekketUt
+**/
 function visSkalSjekkesOverskrifter($dblink,$ord) {  
     $idag = new DateTime();
     echo "<h2>" . $ord . " i dag " . $idag->format('Y-m-d') . "</h2>";
@@ -429,6 +438,10 @@ function visSkalSjekkesOverskrifter($dblink,$ord) {
     echo "</tr>";
 } 
 
+/**
+ *  Funksjon for å lage en sql spørring som returnerer alle bestillinger som skal sjekkes INN idag
+ *  @return String $sql
+**/
 function lagSkalSjekkesInnIDagOverskrifter($dblink) {  
     return "SELECT B.bestillingID, H.navn, BR.fornavn, BR.etternavn, B.sjekketInn 
     FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR       
@@ -439,6 +452,10 @@ function lagSkalSjekkesInnIDagOverskrifter($dblink) {
     ORDER BY B.bestillingID ;"; 
 } 
 
+/**
+ *  Funksjon for å lage en sql spørring som returnerer alle bestillinger som skal sjekkes UT idag
+ *  @return String $sql
+**/
 function lagSkalSjekkesUtIDagOverskrifter($dblink) {  
     return "SELECT B.bestillingID, H.navn, BR.fornavn, BR.etternavn, B.sjekketUt 
     FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR       
@@ -449,6 +466,11 @@ function lagSkalSjekkesUtIDagOverskrifter($dblink) {
     ORDER BY B.bestillingID ;";
 } 
 
+/**
+ *  Funksjon for å lage en tabellrader med alle bestillinger som skal sjekkes inn eller ut idag
+ *  @param String $sql
+ *  @param String $kolonneNavn  sjekketUt/ sjekketUt
+**/
 function visSkalSjekkesRader($dblink,$sql,$kolonneNavn) {  
     $resultat = mysqli_query($dblink, $sql); 
     while($rad = mysqli_fetch_assoc($resultat)){
@@ -462,13 +484,16 @@ function visSkalSjekkesRader($dblink,$sql,$kolonneNavn) {
     echo "</table>" . "<br>";
 }
 
+/**
+ *  Funksjon for å lage en tabell med alle bestillinger som skal sjekkes INN idag
+ *  @return String $sql
+**/
 function lagSkalSjekkesInnTab($dblink) {
     // variabler
     $forigeBestillingID = "";
     $skalSjekkesInnTab = null;
     $pos = 0;
 
-    /*$sql = " SELECT H.navn, BR.fornavn, BR.etternavn    */
     $sql = " SELECT B.bestillingID, H.navn
     FROM opphold AS O, bestilling AS B, hund AS H, bruker AS BR 
     WHERE B.bestillingID = O.bestillingID  
@@ -498,6 +523,10 @@ function lagSkalSjekkesInnTab($dblink) {
     return $skalSjekkesInnTab;
 }
 
+/**
+ *  Funksjon for å lage en tabell med alle bestillinger som skal sjekkes UT idag
+ *  @return String $sql
+**/
 function lagSkalSjekkesUtTab($dblink) {
     // variabler
     $forigeBestillingID = "";
@@ -534,7 +563,7 @@ function lagSkalSjekkesUtTab($dblink) {
     return $skalSjekkesInnTab;
 }
 
-
+// Funksjon for å registrere en innsjekking i databasen
 function sjekkInn($dblink) {
     if (isset($_POST['sjekkInnKnapp'])) { 
         $bestillingID = $_POST['sjekkInnSelect'];
@@ -545,6 +574,7 @@ function sjekkInn($dblink) {
     }
 }
 
+// Funksjon for å registrere en utsjekking i databasen
 function sjekkUt($dblink) {
     if (isset($_POST['sjekkUtKnapp'])) { 
         $bestillingID = $_POST['sjekkUtSelect'];
@@ -555,6 +585,7 @@ function sjekkUt($dblink) {
     }
 }
 
+// Funksjon for å nullstille alle innsjekkinger i dag
 function nullStillInnsjekkinger($dblink) {
     if (isset($_POST['nullstillInnsjekkingerKnapp'])) { 
         ob_start();
@@ -565,6 +596,7 @@ function nullStillInnsjekkinger($dblink) {
     }
 }
 
+// Funksjon for å nullstille alle utsjekkinger i dag
 function nullStillUtsjekkinger($dblink) {
     if (isset($_POST['nullStillUtsjekkingerKnapp'])) { 
         ob_start();
@@ -575,7 +607,12 @@ function nullStillUtsjekkinger($dblink) {
     }
 }
 
-// ************************** 7d) Ansatt: Inspiser Hund **************************************************  
+
+
+// ********************************* 5) ansattInspiserHund ******************************************
+// Side som lar ansatt-brukere sjekke inn og ut hunder
+
+// Funksjon for å lage en option for å velge en av hundene som har aktivt opphold å inspisere dem
 function lagInspiserHundOption($hund,$inspiserHundID) {
     if ($inspiserHundID == substr($hund,0,1)) {
         ?> <option value= <?php echo $hund?> selected > <?php echo $hund ?> </option><?php
@@ -585,6 +622,11 @@ function lagInspiserHundOption($hund,$inspiserHundID) {
     }
 }
 
+/**
+ *  Funksjon for å vise fram info om hunden som skal inspiserers i tabellform
+ *  Bruker sessions-variabelen "inspiserHund" som blir laget med et ajax kall 
+ *  når brukeren velger en hund i select boksen på denne siden.
+ */
 function visInspiserHundInfo($dblink) {
     $inspiserHund = $_SESSION['inspiserHund']; 
     echo "<h3>Hund-Info</h3>";
@@ -608,6 +650,7 @@ function visInspiserHundInfo($dblink) {
     echo "</table>";
 }
 
+// Funksjon for å vise en rad i en av tabellene på ansatteHund siden
 function skrivRad($navn,$verdi) {
     echo "<tr>";
     echo    "<th>".$navn."</th>";   
@@ -615,6 +658,11 @@ function skrivRad($navn,$verdi) {
     echo "</tr>";
 }
 
+/**
+ *  Funksjon for å vise fram bestilling+opphold-info om hunden som skal inspiserers i tabellform
+ *  Bruker sessions-variabelen "inspiserHund" som blir laget med et ajax kall 
+ *  når brukeren velger en hund i select boksen på denne siden.
+ */
 function visInspiserHundOppholdInfo($dblink) {
     $inspiserHund = $_SESSION['inspiserHund']; 
     echo "<h3>Opphold-Info</h3>";
@@ -639,9 +687,9 @@ function visInspiserHundOppholdInfo($dblink) {
     echo "</table>";
 }
 
+// Funksjon for å vise fram alle matinger på dette oppholdet
 function visAlleRegistrerteMatingerDetteOppholdet($dblink) {
     $inspiserHund = $_SESSION['inspiserHund']; 
-
     $idag = new DateTime();
     echo "<h3>" . "Registrerte matinger på dette oppholdet " . "</h3>";
     // vis opphold Overskrifter
@@ -673,6 +721,7 @@ function visAlleRegistrerteMatingerDetteOppholdet($dblink) {
     echo "</table>" . "<br>";
 }
 
+// Funksjon for å vise fram alle luftinger på dette oppholdet
 function visAlleRegistrerteLuftingerDetteOppholdet($dblink) {  
     $inspiserHund = $_SESSION['inspiserHund']; 
 
@@ -708,6 +757,7 @@ function visAlleRegistrerteLuftingerDetteOppholdet($dblink) {
     echo "</table>" . "<br>";
 }
 
+// Funksjon for å vise fram alle kommentarer på dette oppholdet
 function visAlleRegistrerteKommentarerDetteOppholdet($dblink) { 
     $inspiserHund = $_SESSION['inspiserHund']; 
 
@@ -741,7 +791,12 @@ function visAlleRegistrerteKommentarerDetteOppholdet($dblink) {
     echo "</table>" . "<br>";
 }
 
-// ************************** 7e) Mating **************************************************** 
+
+
+// ********************************* 6) Mating ******************************************
+// Side som lar ansatt-brukere registrere når hundene har blitt matet
+
+// Funksjon for å vise alle registrerte matinger i dag
 function visAlleRegistrerteMatingerIDag($dblink) {
     // alle registrerte matinger i dag 
     $idag = new DateTime();
@@ -781,6 +836,10 @@ function visAlleRegistrerteMatingerIDag($dblink) {
     echo "</table>" . "<br>";
 }
 
+/**
+ *  Funksjon for å vise alle hunder som SKAL bli matet i dag
+ *  Kalles av funksjonen over viss det ikke er registrert noen matinger i dag
+ */
 function visAlleHunderPaaOppholdNaaMating($dblink) {
     $sql = " SELECT O.oppholdID, F.forType, H.navn FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
     WHERE B.bestillingID = O.bestillingID
@@ -803,9 +862,7 @@ function visAlleHunderPaaOppholdNaaMating($dblink) {
     echo "</table>" . "<br>";
 }
 
-
-
-
+// Funksjon for å registrere mating på alle aktive opphold
 function registrerMatingAlle($dblink) {
     if (isset($_POST['registrerMatingAlle'])) { 
         // brukerNavn
@@ -824,6 +881,7 @@ function registrerMatingAlle($dblink) {
     }   
 }
 
+// Funksjon for finne alle hundene som har aktive opphold nå
 function getAktiveOppholdIDer($dblink) {
     $oppholdIDTab;
     $pos = 0;
@@ -840,15 +898,20 @@ function getAktiveOppholdIDer($dblink) {
     return $oppholdIDTab;
 }
 
-// test !!!!!!!!!
-function slettAlleMatinger($dblink) {
+// Funksjon for å slett alle matinger
+function ($dblink) {
     if (isset($_POST['slettAlle'])) { 
         $sql = "DELETE FROM mating ;" ;
         mysqli_query($dblink,$sql);
     }  
 }
 
-// ************************** 7f) Ansatt Lufting **************************************************** 
+
+
+// ********************************* 7) Lufting ******************************************
+// Side som lar ansatt-brukere registrere når hundene har vert i luftegaard
+
+// Funksjon for å vise alle luftinger i dag
 function visAlleRegistrerteLuftingerIDag($dblink) {
     // alle registrerte matinger i dag 
     $idag = new DateTime();
@@ -899,8 +962,10 @@ function visAlleRegistrerteLuftingerIDag($dblink) {
     }
 }
 
-
-
+/**
+ *  Funksjon for å vise alle opphold som SKAL bli luftet i dag
+ *  Kalles av funksjonen over viss det ikke er registrert noen luftinger i dag
+ */
 function visAlleHunderPaaOppholdNaaLufting($dblink) {
     $sql = " SELECT O.oppholdID, F.forType, H.navn, H.løpeMedAndre FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
     WHERE B.bestillingID = O.bestillingID
@@ -931,7 +996,7 @@ function visAlleHunderPaaOppholdNaaLufting($dblink) {
     echo "</table>" . "<br>";
 }
 
-
+// Funksjon for å registrer lufting-start på alle aktive opphold
 function registrerLuftingStartAlle($dblink) {
     if (isset($_POST['registrerLuftingStartAlle'])) { 
         //har vi allerede registrert lufting start i dag?
@@ -960,6 +1025,7 @@ function registrerLuftingStartAlle($dblink) {
     }
 }
 
+// Funksjon for å registrer lufting-slutt på alle aktive opphold
 function registrerLuftingSluttAlle($dblink) {
     if (isset($_POST['registrerLuftingSluttAlle'])) { 
         // brukerID
@@ -983,6 +1049,10 @@ function registrerLuftingSluttAlle($dblink) {
     }
 }
 
+/**
+ *  Funksjon for å henter ut hundIDene til alle hunder som er i luftegaard nå
+ *  @return $oppholdIDTab;
+ */
 function getErILuftegaardIDer($dblink) {
     $oppholdIDTab = null; 
     $pos = 0;
@@ -1003,15 +1073,19 @@ function getErILuftegaardIDer($dblink) {
     return $oppholdIDTab;
 }
 
-// test !!!!!!!!!
+//  Funksjon for å slette alle luftinger
 function slettAlleLuftinger($dblink) {
     if (isset($_POST['slettAlle'])) { 
-        $sql = "DELETE FROM lufting ;" ;
+        $sql = "DELETE FROM lufting;" ;
         mysqli_query($dblink,$sql);
     }  
 }
 
-// ************************** 7g) Tur *********************************************** 
+
+// ********************************* 8) Tur ******************************************
+// Side som lar ansatt-brukere registrere når hundene har vert på tur
+
+// Funksjon for å vise alle opphold som har vert på tur idag
 function visAlleRegistrerteTurerIDag($dblink) {
     // alle registrerte matinger i dag 
     $idag = new DateTime();
@@ -1062,6 +1136,10 @@ function visAlleRegistrerteTurerIDag($dblink) {
     }
 }
 
+/**
+ *  Funksjon for å vise alle hunder på opphold nå som skal på tur i dag
+ *  Kalles bare av funksjonen over når det ikke er registrert noen turer i dag
+ */
 function visAlleHunderPaaOppholdNaaTur($dblink) {
     $sql = " SELECT O.oppholdID, F.forType, H.navn, H.løpeMedAndre 
     FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
@@ -1093,6 +1171,7 @@ function visAlleHunderPaaOppholdNaaTur($dblink) {
     echo "</table>" . "<br>";
 }
 
+// Funksjon for å registrere tur-start for alle hundene
 function registrerTurStartAlle($dblink) {
     if (isset($_POST['registrerTurStartAlle'])) { 
         //har vi allerede registrert lufting start i dag?
@@ -1121,6 +1200,7 @@ function registrerTurStartAlle($dblink) {
     }
 }
 
+// Funksjon for å registrere tur-slutt for alle hundene
 function registrerTurSluttAlle($dblink) {
     if (isset($_POST['registrerTurSluttAlle'])) { 
         // brukerID
@@ -1144,6 +1224,7 @@ function registrerTurSluttAlle($dblink) {
     }
 }
 
+// Funksjon for å hente ut oppholdIDene til alle hundene som er på tur nå
 function getErPaaTurIDer($dblink) {
     $oppholdIDTab = null; 
     $pos = 0;
@@ -1164,7 +1245,7 @@ function getErPaaTurIDer($dblink) {
     return $oppholdIDTab;
 }
 
-// test !!!!!!!!!
+// Funksjon for å slette alle hunder
 function slettAlleTurer($dblink) {
     if (isset($_POST['slettAlle'])) { 
         $sql = "DELETE FROM tur;" ;
@@ -1173,7 +1254,12 @@ function slettAlleTurer($dblink) {
     }  
 }
 
-// ************************** 7h) Kommentar *********************************************** 
+
+
+// ********************************* 9) Kommentar ******************************************
+// Side som lar ansatt-brukere kan registrere kommentarer på hunder på opphold
+
+// Funksjon for å vise alle registrerte kommentarer på aktive opphold
 function visAlleHunderPaaOppholdNaaKommentar($dblink) {
     echo "<h3>" . "Alle hunder som er på opphold nå" . "</h3>";
     // vis opphold Overskrifter
@@ -1201,11 +1287,10 @@ function visAlleHunderPaaOppholdNaaKommentar($dblink) {
     echo "</table>" . "<br>";
 }
 
-
+// Funksjon for å lage en tabell med aktive-opphold som String objekter
 function lagHunderPaaOppholdNaaTab($dblink) {
     $hunder;
     $pos = 0;
-
     $sql = " SELECT O.oppholdID, F.forType, H.navn 
     FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F 
     WHERE B.bestillingID = O.bestillingID
@@ -1221,6 +1306,7 @@ function lagHunderPaaOppholdNaaTab($dblink) {
     return $hunder;
 }
 
+// Funksjon for å registrer en kommentar på et aktivt opphold
 function registrerKommentar($dblink) {
     if (isset($_POST['registrerKommentarKnapp'])) { 
         $tekst = $_POST['kommentarText'];
@@ -1234,6 +1320,7 @@ function registrerKommentar($dblink) {
     }
 }
 
+// Funksjon for å slette alle komentarene som er registrert i dag
 function slettAlleKommentarer($dblink) {
     if (isset($_POST['slettAlle'])) { 
         $sql = "DELETE FROM kommentar WHERE day(tidspunkt) = day(CURRENT_TIMESTAMP) ;" ;
@@ -1241,6 +1328,7 @@ function slettAlleKommentarer($dblink) {
     }  
 }
 
+// Funksjon for å vis alle registrerte mommentarer i dag
 function visAlleRegistrerteKommentarIDag($dblink) {   
     $idag = new DateTime();
     echo "<h3>" . "Registrerte kommentarer i dag " . $idag->format('Y-m-d') . "</h3>";
@@ -1272,7 +1360,12 @@ function visAlleRegistrerteKommentarIDag($dblink) {
     echo "</table>" . "<br>";
 }
 
-// ************************** 7i) Ansatt Anmeldelser ************************** 
+
+
+// ********************************* 10) ansattAnmeldelser ******************************************
+// Side som lar ansatt-brukere godkjenne/slette anmeldelser
+
+// Funksjon for å viss neste ikke-godkjente anmeldelse
 function visNesteIkkeGodkjenteAnmeldelse($dblink) {
     // henter ut neste ikke godkjente anmeldelse
     $sql = "SELECT * FROM anmeldelse WHERE godkjent = 0";
@@ -1296,6 +1389,7 @@ function visNesteIkkeGodkjenteAnmeldelse($dblink) {
     }  
 }
 
+// Funksjon for å slette en anmeldelse
 function slettAnmeldelse($dblink) {
     if ( isset($_POST['slettAnmeldelseKnapp']) && $_SESSION['aktivAnmeldelseID'] !== null) { 
         $aktivAnmeldelseID = $_SESSION['aktivAnmeldelseID'];
@@ -1309,6 +1403,7 @@ function slettAnmeldelse($dblink) {
     }
 }
 
+// Funksjon for å godkjenn en anmeldelse
 function godkjennAnmeldelse($dblink) {
     if (isset($_POST['godkjennAnmeldelseKnapp']) && $_SESSION['aktivAnmeldelseID'] !== null) { 
         $aktivAnmeldelseID = $_SESSION['aktivAnmeldelseID'];
@@ -1322,7 +1417,12 @@ function godkjennAnmeldelse($dblink) {
     }
 }
 
-// ************************** 7i) Ansatt Logg ****************************************************  
+
+
+// ********************************* 10) ansattLogg ******************************************
+// Side som lar ansatt-brukere se logg over alle opphold som er blitt avbestilte
+
+// Funksjon for å vise avbestilte Opphold
 function visAvbestilteOpphold($dblink)  {  
     echo "<table class=\"blaaTab\">";
     echo "<tr>";
