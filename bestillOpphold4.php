@@ -87,7 +87,7 @@ $dblink = kobleOpp();
 								<span class="tooltiptekst">De 3 siste sifrene bak kortet / The last 3 digits behind the card</span>
 							</div>
 						<!--CVC label -->	
-						<input class="inputTekst" type="text" placeholder="De 3 tallene ved navnetditt bak kortet"  pattern="[0-9]{3}" name="cvv">
+						<input class="inputTekst" type="text" pattern="[0-9]{3}" name="cvv">
 						
 					
 						<!-- ************************ (Gunni) ********************************** -->
