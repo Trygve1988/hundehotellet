@@ -325,7 +325,7 @@ var etterNavnRegisterDeg = document.getElementById("etterNavnRegisterDeg");
 var fødselsdatoRegistrerDeg = document.getElementById("fødselsdatoRegistrerDeg");
 var adresseRegistrerDeg = document.getElementById("adresseRegistrerDeg");
 var epostReigsterDeg = document.getElementById("epostReigsterDeg");
-var passordRegisterDeg = document.getElementById("passordRegisterDeg");
+var nyttPassord = document.getElementById("nyttPassord");
 var visPassordRegisterDeg = document.getElementById("visPassordRegisterDeg");
 var pasokravRegisterDeg = document.getElementById("pasokravRegisterDeg");
 var gjentaPasoRegisterDeg = document.getElementById("gjentaPasoRegisterDeg");
@@ -692,7 +692,7 @@ if(registerNyBruker !== null){
     fødselsdatoRegistrerDeg.innerHTML = fødselsdatoRegistrerDegTab[språk];
     adresseRegistrerDeg.innerHTML = adresseRegistrerDegTab[språk]; 
     epostReigsterDeg.innerHTML = epostTab[språk];
-    passordRegisterDeg.innerHTML = passordRegisterDegTab[språk];
+    nyttPassord.innerHTML = nyttPassordTab[språk];
     visPassordRegisterDeg.innerHTML = visPassordTab[språk];
     pasokravRegisterDeg.innerHTML = pasokravRegisterDegTab[språk];
     gjentaPasoRegisterDeg.innerHTML = gjentaPasoRegisterDegTab[språk];

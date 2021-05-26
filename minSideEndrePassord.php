@@ -59,7 +59,7 @@
 							<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
 						</div>
 
-                        <label id="nyttPassord" id="passordRegisterDeg" for="passord">Nytt passord:</label>
+                        <label id="nyttPassord" for="passord">Nytt passord:</label>
 						<input class="inputPassord" type="password" name="passord" 
 						id="passord2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassordLike()" value="" required >
 
