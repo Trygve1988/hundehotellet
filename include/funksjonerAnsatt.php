@@ -899,9 +899,9 @@ function getAktiveOppholdIDer($dblink) {
 }
 
 // Funksjon for å slett alle matinger
-function ($dblink) {
+function slettAlleMatinger($dblink) {
     if (isset($_POST['slettAlle'])) { 
-        $sql = "DELETE FROM mating ;" ;
+        $sql = "DELETE FROM mating WHERE day(tidspunkt) = day(CURRENT_TIMESTAMP) ;";
         mysqli_query($dblink,$sql);
     }  
 }
@@ -1076,7 +1076,7 @@ function getErILuftegaardIDer($dblink) {
 //  Funksjon for å slette alle luftinger
 function slettAlleLuftinger($dblink) {
     if (isset($_POST['slettAlle'])) { 
-        $sql = "DELETE FROM lufting;" ;
+        $sql = "DELETE FROM lufting WHERE day(startTidspunkt) = day(CURRENT_TIMESTAMP) ;";
         mysqli_query($dblink,$sql);
     }  
 }
@@ -1248,7 +1248,7 @@ function getErPaaTurIDer($dblink) {
 // Funksjon for å slette alle hunder
 function slettAlleTurer($dblink) {
     if (isset($_POST['slettAlle'])) { 
-        $sql = "DELETE FROM tur;" ;
+        $sql = "DELETE FROM tur WHERE day(tidspunkt) = day(CURRENT_TIMESTAMP) ;";
         mysqli_query($dblink,$sql);
         header("Refresh:0");
     }  
