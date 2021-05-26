@@ -422,7 +422,7 @@ if (navn1 !== null) {
     navn1.innerHTML = navnTab1[språk]; 
 }
 if (navn2 !== null) {
-    navn2.innerHTML = navnTab3[språk]; 
+    navn2.innerHTML = navnTab2[språk]; 
 }
 if (navn3 !== null) {
     navn3.innerHTML = navnTab3[språk]; 
