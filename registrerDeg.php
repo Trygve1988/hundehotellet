@@ -63,7 +63,7 @@ $dblink = kobleOpp();
 					<!-- Labels og input i kolonne 2 -->
 					<div>
 						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="10" maxlength="50"" required value="griffin">		
+						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="10" maxlength="50" required value="griffin">		
 						
 						<label id="epostReigsterDeg" for="epost">E-post:</label>
 						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
