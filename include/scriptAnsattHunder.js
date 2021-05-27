@@ -1,8 +1,8 @@
 /**
  *  Denne siden har funksjonalitet for å la en ansatt velge en hund som er 
  *  på opphold og få opp info om hunden og om oppholdet
+ *  @author Trygve Johannessen
  */
-
  var velgInspiserHundSelect = document.getElementById("velgInspiserHundSelect");
 
  velgInspiserHundSelect.addEventListener('change', settInspiserHundSession, false);

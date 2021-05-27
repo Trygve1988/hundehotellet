@@ -1,8 +1,13 @@
 <?php
 ob_start();
 
-// ************************** 6) Bestill Opphold 1 - velg hund(er) ************************** 
-// Denne siden lar brukeren registrere nye hunder og velge hunder som skal være med i bestillingen
+/**
+ *  Denne klassen inneholder funksjoner til bestillOpphold siden.
+ *  Det er funksjoner som lar brukeren registrere nye hunder og 
+ *  velge hunder som skal være med i bestillingen
+ *  @author    Trygve Johannessen
+ */ 
+
 
 //  Funksjon for å registrer en Hund. Sender brukeren tilbake til bestillOpphold
 function registrerHundBestillOpphold($dblink) {

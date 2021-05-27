@@ -7,11 +7,12 @@ include_once "domeneklasser/FerdigBestilling.php";
 
 /**
  *  Denne klassen inneholder funksjoner som brukes på alle sidene, 
- *  eks "visNavbar", "visFooter", "visTilToppenKnapp"
- *  Inneholder også funksjoner til sidene Aktuelt, priser, loggInn og registrerDeg.
- *  @author    Trygve Johannessen
+ *  databasetilkobling, "visNavbar", "visFooter" og "visTilToppenKnapp"
+ *  @author    Trygve, Even, Kristina
  */ 
 
+
+// ************************** database **************************
 
 // Konstanter som vi bruker til å koble på databasen på itfag.usn.no
 define("TJENER",  "itfag.usn.no");
@@ -19,22 +20,10 @@ define("BRUKER",  "h20APP2000gr5");
 define("PASSORD", "pw5");
 define("DB",      "h20APP2000grdb5");
 
-/* ************************** SESSIONS ************************** */
-// Oversikt over sessionsvariabler og hvor de opprettes
-// $bruker = $_SESSION['bruker'];               ( 10) Logg Inn)
-// $valgteHunder = $_SESSION['valgteHunder'];   ( 6) Bestill Opphold 2  oppdater Hunder)
-// $pos = $_SESSION['valgteHunderPos'];         ( 6) Bestill Opphold 2  oppdater Hunder)
-// $_SESSION['aktivHund'] = $hund;              ( 6) Bestill Opphold 2  oppdater Hunder)
-// $_SESSION['bestilling'] =  $bestilling;      ( 6) Bestill Opphold 3 - velg Datoer)
-// $_SESSION['endreBruker']                     (  9) Admin -> c) endre Bruker
-// $_SESSION['adminSeBrukertype']               (  9) Admin 
-
-
-
-// ************************** database **************************
 /**
  *  Funksjon for å koble på databasen
- *  @return $dblink      
+ *  @return $dblink
+ *  @author Trygve Johannessen     
  */ 
 function kobleOpp() {
     $dblink = mysqli_connect(TJENER, BRUKER, PASSORD, DB);
@@ -45,14 +34,17 @@ function kobleOpp() {
     return $dblink;
 }
 
-// Funksjon for å koble fra databasen
+/**
+ *  Funksjon for å koble fra databasen
+ *  @return $dblink
+ *  @author Trygve Johannessen     
+ */ 
 function lukk($dblink) {
     mysqli_close($dblink);
 }
 
-
 // ************************** topp-elementer ************************** 
-// Funksjon som lager standard navbar på alle sidene 
+// Funksjon som lager standard navbar på alle sidene (Even)
 function visNav() { 
     ?> <div class="navbar">
         <a href="index.php"> <img class="logo" src="bilder/logohvit.png"> <img class="logotext" src="bilder/teksthvit.png"></a>
@@ -93,7 +85,7 @@ function visNav() {
     </div><?php
 }
 
-// Funksjon som lager admin under-navbar på alle admin sidene 
+// Funksjon som lager admin under-navbar på alle admin sidene (Even) 
 function visNav2() { 
     ?> <div class="navbar2">
 
@@ -106,7 +98,7 @@ function visNav2() {
         <?php
 }
 
-// Funksjon som lager ansatt under-navbar på alle ansatt sidene 
+// Funksjon som lager ansatt under-navbar på alle ansatt sidene (Even)
 function visNav3() { 
     ?> <div class="navbar2">
 
@@ -128,17 +120,20 @@ function visNav3() {
         <?php
 }
 
+
 /**
- *  Funksjon for å sjekke om brukeren er logget inn
- *  @return boolean       
+ *  Funksjon for å sjekke om brukeren er logget inn (Trygve)
+ *  @return boolean   
+ *  @author Trygve Johannessen         
  */ 
 function erLoggetInn() {
     return ( isset($_SESSION['bruker']) );
 }
 
 /**
- *  Funksjon for å sjekke om brukeren er en ansatt
+ *  Funksjon for å sjekke om brukeren er en ansatt (Trygve)
  *  @return boolean $erAnsatt   
+ *  @author Trygve Johannessen    
  */ 
 function erAnsatt() {
     $erAnsatt = false;
@@ -153,8 +148,9 @@ function erAnsatt() {
 }
 
 /**
- *  Funksjon for å sjekke om brukeren er en admin
- *  @return boolean $erAdmin   
+ *  Funksjon for å sjekke om brukeren er en admin (Trygve)
+ *  @return boolean $erAdmin 
+ *  @author Trygve Johannessen      
  */ 
 function erAdmin() {
     $erAdmin = false;
@@ -169,7 +165,8 @@ function erAdmin() {
 }
 
 // ************************** bunn-elementer ************************** 
-// Funksjon som lager ToppKnapp på alle sidene. Toppknappen gjør at man lett kan navigere til Toppen av siden
+// Funksjon som lager ToppKnapp på alle sidene. (Kristina)
+// Toppknappen gjør at man lett kan navigere til Toppen av siden
 function visToppKnapp() { 
     ?> 
     <!-- gratis Opp ikon fra https://fontawesome.com/icons/chevron-up?style=solid-->
@@ -178,10 +175,9 @@ function visToppKnapp() {
     <?php 
 }
 
-// Funksjon som lager Footer på alle sidene.
+// Funksjon som lager Footer på alle sidene. (Kristina)
 function visFooter() { 
     ?>
-    <!--sett footeren din inn her kristina -->
     <footer class="main-footer">
         <div class="venstre">
             <h1 id="navkontaktInformasjon">Kontakinformsjon</h1>
@@ -223,14 +219,19 @@ function visFooter() {
 // ************************** 0) Brukes på flere sider **************************
 
 /** 
- *  Funksjon som lager option elementer til valgbokser
+ *  Funksjon som lager option elementer til valgbokser 
  *  @param String $verdi
+ *  @author Trygve Johannessen   
  **/  
 function lagOption($verdi) {
     ?> <option value= <?php echo $verdi?> > <?php echo $verdi?> </option><?php
 }
 
-//  Funksjon for å registrer en Hund. Brukes på bestillOpphold og minSide
+/** 
+ *  Funksjon for å registrer en Hund. Brukes på bestillOpphold og minSide
+ *  @param String $verdi
+ *  @author Trygve Johannessen   
+ **/  
 function registrerHund($dblink) {
     if (isset($_POST['registrer'])) { 
         $navn = $_POST['navn'];
@@ -271,6 +272,7 @@ function registrerHund($dblink) {
  *  alle hundene i "valgteHunder" blir satt som "aktivHund" en etter en når hunden skal oppdateres
  *  Brukes også på min side når brukeren har valgt hund som skal endres
  *  @param int $hundID
+ *  @author Trygve Johannessen  
  **/  
 function setAktivHund($dblink,$hundID) { 
     // setter valgt hund-objekt sesjonsvariabel
@@ -294,162 +296,6 @@ function setAktivHund($dblink,$hundID) {
     $sterilisert,$løpeMedAndre,$info,$brukerID,$forID);
 
     $_SESSION['aktivHund'] = $hund;
-}
-
-
-// ************************** 2) Aktuelt  **************************
-function lagreInnlegg($dblink) {
-    if (isset($_POST['lagreInnleggKnapp'])) { 
-        $dato = new DateTime();
-        $dato = $dato->format('Y-m-d');
-        $navn = "aktuelt";
-        $innleggOverskrift = $_POST['innleggOverskrift'];
-        $innleggText = $_POST['innleggText'];
-        $tekst = "<div class=\"mellomromMellomInnlegg\">"."<h3>".$innleggOverskrift."</h3>".  
-        "<p>".$innleggText."</p>"."<p>".$dato."</p>"."</div>"."<hr>";
-        $bruker = $_SESSION['bruker'];
-        $brukerID = $bruker->getBrukerID();
-        $sql = "INSERT INTO innlegg(navn,tekst,brukerID) VALUES ('$navn','$tekst','$brukerID') ;";
-        mysqli_query($dblink, $sql);
-    }
-}
-
-function visAlleInnlegg($dblink) {
-    $sql = "SELECT * FROM innlegg 
-    ORDER BY innleggID DESC ;";
-    $resultat = mysqli_query($dblink, $sql); 
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        echo $rad['tekst'];
-    }
-}
-
-function slettInnlegg($dblink) {
-    if (isset($_POST['slettInnleggKnapp'])) { 
-        $sql = "DELETE FROM innlegg
-        ORDER BY innleggID DESC
-        LIMIT 1 ;";
-        $resultat = mysqli_query($dblink, $sql);
-        header("Refresh:0");
-    }  
-}
-
-
-
-
-// ************************** 4) Priser og Info **************************
-/** 
- *  Funksjon for å lage en tabell med alle prisene til å vise på "Priser og Info" siden
- *  @return String Array $prisTab  
- **/ 
-function lagPrisTab($dblink) {
-    $prisTab;
-    $pos = 0;
-    $sql = "SELECT * FROM pris;";
-    $resultat = mysqli_query($dblink, $sql); 
-    while($rad = mysqli_fetch_assoc($resultat)){
-        $prisTab[$pos++] = $rad['beløp'] . "kr";
-    }
-    return $prisTab;
-}
-
-// ************************** 11) Logg Inn **************************
-// Funksjon for å logge inn på nettsiden
-function loggInn($dblink) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $epost = $_POST['epost'];
-        $passord = $_POST['passord'];
-        //sjekker at bruker ikke er slettet
-        $sql = "SELECT * FROM bruker WHERE epost = '$epost' AND slettetDato IS NOT NULL; ";   
-        $resultat = mysqli_query($dblink, $sql); 
-        $antall = mysqli_num_rows($resultat);
-        if ($antall > 0) {  
-            echo "<br>".'<i position:absolute";"> Vi har mottat din forespørsel 
-            om å slette denne kontoen. Du kan kontakte oss på bohundehotell@outlook.com 
-            viss du vil at vi skal gjennopprette kontoen din! </i>'; 
-        }
-        else {
-            //bruker er ikke slettet
-            $innloggingOk = false;
-            $stmt = $dblink->prepare("SELECT brukerID,epost,passord,brukerType,fornavn,etternavn,tlf,adresse 
-            FROM bruker WHERE (epost) = (?)");
-            $stmt->bind_param("s", $_POST['epost']);
-            $stmt->execute();
-            $stmt->store_result();
-            $stmt->bind_result($brukerID, $epost, $hashPw, $brukerType, $fornavn, $etternavn, $tlf, $adresse);
-
-            if ($stmt->num_rows == 1) {
-                $stmt->fetch();
-                if (password_verify($passord, $hashPw))   {
-                    $fødselsNr = "";
-                    $stilling = "";
-                    $postNr = 0;
-                    opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
-                    $tlf, $adresse, $fødselsNr, $stilling, $postNr);
-
-                    header('Location: minSide.php');
-                    $innloggingOk = true;
-                }
-            }
-            if($innloggingOk == false) {
-                echo "<br>".'<i style="color:red; position:absolute";"> Du har skrivd inn feil epost og/eller passord! </i>'; 
-            }
-            $_SESSION['adminSeBrukertype'] = "kunde";
-        }        
-    }     
-}
-
-/**
- *  Når en bruker logger inn blir det laget et brukerObjekt som inneholder brukerens info
- *  @param int $hundID
- *  @param int $epost
- *  @param int $brukerType
- *  @param int $fornavn
- *  @param int $etternavn
- *  @param int $tlf
- *  @param int $adresse
- *  @param int $fødselsNr
- *  @param int $stilling
- *  @param int $postNr
-**/
-function opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
-$tlf, $adresse, $fødselsNr, $stilling, $postNr) {
-    $bruker = new Bruker($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
-    $tlf, $adresse, $fødselsNr, $stilling, $postNr);
-    $_SESSION['bruker'] = $bruker;
-}
-
-// ************************** 12) Registrer deg **************************
-// Funksjon for registrere seg på nettsiden
-function registrerDeg($dblink) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $epost = $_POST['epost'];
-        $passord = $_POST['passord'];
-        $passord = password_hash($passord, PASSWORD_DEFAULT);
-
-        // velg brukertype (bare for testing) 
-        $brukerType = $_POST['brukertype'];
-        $fornavn = $_POST['fornavn'];
-        $etternavn = $_POST['etternavn'];
-        $tlf = $_POST['tlf'];
-        $adresse = $_POST['adresse'];
-
-        //sjekker at epost ikke finnes fra før
-        $sql = "SELECT * FROM bruker WHERE epost = '$epost'";
-        $resultat = mysqli_query($dblink, $sql);
-        $antall = mysqli_num_rows($resultat);
-        if ($antall > 0) { // epost finnes fra før!
-            echo "<br>".'<i style="color:red; position:absolute";"> epost er allerede registrert! </i>'; 
-        }
-
-        //registrerer ny bruker
-        else {
-            $sql = "INSERT INTO bruker(epost,passord,brukerType,fornavn,etternavn,tlf,adresse) 
-                    VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse');";
-            $resultat = mysqli_query($dblink, $sql);
-            loggInn($dblink);
-            echo "<br>".'<i style="color:green; position:absolute";"> Du er nå registrert! </i>'; 
-        }
-    }
 }
 
 ob_end_flush();

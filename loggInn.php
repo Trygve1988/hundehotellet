@@ -1,5 +1,6 @@
 <?php
 include_once "include/funksjoner.php";
+include_once "include/funksjonerLoggInn.php";
 session_start();
 $dblink = kobleOpp();
 ?>

@@ -1,12 +1,10 @@
 <?php
 ob_start();
 
-
 /**
  *  Denne klassen inneholder funksjoner til alle ansatt sider og undersidene som hører til dem
  *  @author    Trygve Johannessen
  */ 
-
 
 
 // ************************** 1) ansattBur **************************

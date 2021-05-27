@@ -3,13 +3,10 @@ ob_start();
 
 /**
  *  Denne klassen inneholder funksjoner til admin.php siden og undersidene som hører til den
+ *  Det er funksjoner som lar admin-brukeren få en se,endre og slette brukerkontoer
  *  @author    Trygve Johannessen
  */ 
 
-
-
-// ************************** 1) admin **************************
-// Denne siden lar admin-brukeren få en se,endre og slette brukerkontoer
 
 /** 
  *  Funksjon for å vise alle brukere som valgt brukerType

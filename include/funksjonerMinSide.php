@@ -3,16 +3,14 @@ ob_start();
 
 /**
  *  Denne klassen inneholder funksjoner til Minside og undersidene som hører til minSide
- *  @author    Trygve Johannessen og Gunn Inger Bleikalia
+ *  Det er funksjoner som lar brukeren få en se,endre og slette brukerinfo, hunder og opphold 
+ *  @author Trygve Johannessen og Gunn Inger Bleikalia
  */ 
 
 
-
-// ************************** 1) minSide **************************
-// Denne siden lar brukeren få en se,endre og slette brukerinfo, hunder og opphold 
-
 /** 
  *  Funksjon for å vise brukerens brukerInfo til brukeren (Gunni)
+ *  @author Gunn Inger Bleikalia
  **/ 
 function minProfilTab($dblink) {
     // $brukerID
@@ -58,6 +56,7 @@ function minProfilTab($dblink) {
 /** 
  *  Funksjon for å vise brukerens hunder til brukeren
  *  Oversetter fra database verdier som eks: 0,1 til JA/NEI
+ *  @author Trygve Johannessen og Gunn Inger Bleikalia
  **/ 
 function minHundTab($dblink) { 
     // $brukerID
@@ -148,6 +147,7 @@ function minHundTab($dblink) {
  *  Funksjon for å vise brukerens opphold til brukeren
  *  Kaller funksjonenene "harOpphold" for å sjekke om brukeren har opphold
  *  Så kalles "lagOppholdOverskrifter", "lagOppholdTab" og "visOppholdTab" for å vise oppholdene
+ *  @author Trygve Johannessen
  **/ 
 function visMineOpphold($dblink) {
     if (harOpphold($dblink)) {
@@ -163,7 +163,10 @@ function visMineOpphold($dblink) {
     }
 }
 
-// Funksjon for å lage Opphold-Overskrifter
+/**
+ *  Funksjon for å lage Opphold-Overskrifter
+ *  @author Trygve Johannessen
+ */
 function lagOppholdOverskrifter() {
     //overskrifter
     echo "<table class=\"blaaTab\">";
@@ -182,6 +185,7 @@ function lagOppholdOverskrifter() {
  *  Funksjon for å lage en tabell med "FerdigBestilling"-objekter
  *  Kaller funksjonenene "harOpphold" for å sjekke om brukeren har opphold
  *  @return String Array $bestillingTab
+ *  @author Trygve Johannessen
  **/ 
 function lagOppholdTab($dblink) {
     // variabler
@@ -224,6 +228,7 @@ function lagOppholdTab($dblink) {
 /** 
  *  Funksjon for å vise alle brukeren sine opphold.
  *  @param String Array $bestillingTab
+ *  @author Trygve Johannessen
  **/ 
 function visOppholdTab($bestillingTab) {
     if ($bestillingTab!==null) {
@@ -248,6 +253,7 @@ function visOppholdTab($bestillingTab) {
  *  Funksjon for å sjekke om brukeren har minst 1 hund
  *  Kalles på minSide.php for å sjekke om hunder skal vises
  *  @return boolean $harHund
+ *  @author Trygve Johannessen
  **/
 function harHund($dblink) {
     $harHund = false;
@@ -266,6 +272,7 @@ function harHund($dblink) {
  *  Funksjon for å sjekke om brukeren har minst 1 Opphold
  *  Kalles på flere steder for å sjekke om opphold skal vises
  *  @return boolean $harOpphold
+ *  @author Trygve Johannessen
  **/
 function harOpphold($dblink) {
     $harOpphold = false;
@@ -287,7 +294,10 @@ function harOpphold($dblink) {
 // ************************** 2) minSideEndreBrukerInfo **************************
 // Denne siden lar brukeren få en endre brukerinfo
 
-// Funksjon for å endre brukerens info
+/** 
+ *  Funksjon for å endre brukerens info
+ *  @author Trygve Johannessen
+ **/
 function endreBrukerInfo($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bruker = $_SESSION['bruker'];
@@ -314,7 +324,10 @@ function endreBrukerInfo($dblink) {
 // ************************** 3) minSideEndrePassord **************************
 // Denne siden lar brukeren få en endre passord
 
-// Funksjon for å endre brukerens passord
+/** 
+ *  Funksjon for å endre brukerens passord
+ *  @author Trygve Johannessen
+ **/
 function endrePassord($dblink) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bruker = $_SESSION['bruker'];
@@ -361,7 +374,10 @@ function endrePassord($dblink) {
 // ************************** 4) minSideslettKonto **************************
 // Denne siden lar brukeren slette kontoen sin
 
-// Funksjon for å slette konto
+/** 
+ *  Funksjon for å slette konto
+ *  @author Trygve Johannessen
+ **/
 function slettMinBruker($dblink) {
     if (isset($_POST['slettBrukerKnapp'])) {
         //sjekker at denne brukeren ikke har noen fremtidige eller aktive opphold
@@ -394,7 +410,10 @@ function slettMinBruker($dblink) {
 // ************************** 5) minSideRegistrerHund **************************
 // Denne siden lar brukeren registrere en ny hund
 
-// Funksjon for å registrere hund
+/** 
+ *  Funksjon for å registrere hund
+ *  @author Trygve Johannessen
+ **/
 function minSideRegistrerHund($dblink) {
     if (isset($_POST['registrer'])) { 
         $navn = $_POST['navn'];
@@ -430,7 +449,10 @@ function minSideRegistrerHund($dblink) {
     }
 }
 
-
+/** 
+ *  Funksjon for å lage en option verdi til min side select boksen der brukeren kan velge en hund
+ *  @author Trygve Johannessen
+ **/
 function lagMinSideOption($hund,$hundID) {
     if ($hundID == substr($hund,0,2)) {  
         ?> <option value= <?php echo $hund?> selected > <?php echo $hund ?> </option><?php
@@ -449,6 +471,7 @@ function lagMinSideOption($hund,$hundID) {
  *  Funksjon for å lag en tabell med brukerens hunder
  *  Brukes for å lage options i select bokser
  *  @return int Array $hundTab
+ *  @author Trygve Johannessen
  */ 
 function laghunderTab($dblink) {
     //lager tabell med brukeren sine hundIDer
@@ -465,7 +488,10 @@ function laghunderTab($dblink) {
     return $hundTab;
 }
 
-// Funksjon for å endre en hund
+/** 
+ *  Funksjon for å endre en hund
+ *  @author Trygve Johannessen
+ */ 
 function endreHund($dblink) {
     if (isset($_POST['bekreftHundInfo'])) {  
         $hund = $_SESSION['aktivHund'];
@@ -499,7 +525,10 @@ function endreHund($dblink) {
 // ************************** 7) minSideSlettHund **************************
 // Denne siden lar brukeren slette en hund
 
-// Funksjon for å slette en hund
+/** 
+ *  Funksjon for å slette en hund
+ *  @author Trygve Johannessen
+ */ 
 function slettHund($dblink) {
     if (isset($_POST['slettHund'])) {  
         $brukerID = $_SESSION['bruker']->getBrukerID();
@@ -519,7 +548,8 @@ function slettHund($dblink) {
 
 /** 
  *  Funksjon for å lage en tabell med brukerens ikke-begynte bestillinger
- *  @return String Array $bestillinger;
+ *  @return String Array $bestillinger
+ *  @author Trygve Johannessen
  */ 
 function lagIkkeBegyntBestillingTab($dblink) {
     //Avbestilling Frist
@@ -548,7 +578,8 @@ function lagIkkeBegyntBestillingTab($dblink) {
 
 /** 
  *  Funksjon for å lage en option til avbestill opphold select boksen i minsSideAvbestill.php
- *  @param String Array $bestillinger;
+ *  @param String Array $bestillinger
+ *  @author Trygve Johannessen
  */ 
 function lagBestillingOption($bestilling) {
     ?> <option value= <?php echo $bestilling?> > <?php echo $bestilling?> </option><?php
@@ -557,6 +588,7 @@ function lagBestillingOption($bestilling) {
 /** 
  *  Funksjon for å avbestille et opphold. 
  *  Sletter alle rader i databasen fra bestilling og opphold som matcher valgt bestillingID
+ *  @author Trygve Johannessen
  */ 
 function avbestill($dblink) {
     if (isset($_POST['Avbestill']) && isset($_POST['bestillinger'])) { 
@@ -603,7 +635,10 @@ function avbestill($dblink) {
 // ************************** 9) minSideSkrivAnmeldelse **************************
 // Denne siden lar brukeren skrive en anmeldelse
 
-// Funksjon for å lagre en Anmeldelse
+/** 
+ *  Funksjon for å lagre en Anmeldelse
+ *  @author Trygve Johannessen
+ */ 
 function lagreAnmeldelse($dblink) {
     if (isset($_POST['sendAnmeldelseKnapp'])) { 
 

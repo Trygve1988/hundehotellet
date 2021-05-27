@@ -1,7 +1,8 @@
 /**
  *  Denne klassen har funksjonalitet for å la en bruker velge 
  *  en av sine hunder og få opp info om hunden
- */ 
+ *  @author Trygve Johannessen
+ */
 
 var velgMinSideHundSelect = document.getElementById("velgMinSideHundSelect");
 

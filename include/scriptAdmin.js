@@ -1,6 +1,6 @@
 /**
- *  Denne siden har funksjonalitet for å la en admin-bruker 
- *  velge brukertype som skal administreres
+ *  Denne klassen har funksjonalitet for å la en admin-bruker velge brukertype som skal administreres
+ *  @author Trygve Johannessen
  */
 
 // variabel med referanse til select boksen

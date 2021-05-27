@@ -41,7 +41,6 @@ if (bestillOpphold1Skjema == null) {
 }
 
 function deleteHundCoockies() {
-    console.log("deleteHundCoockies");
     var cookies = document.cookie.split(";");
 
     for (var i = 0; i < cookies.length; i++) {
