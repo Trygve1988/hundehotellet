@@ -1,13 +1,18 @@
 <?php
+
+/**
+ *  Denne klassen henter ut alle fullbookede datoer framover i tid
+ *  Klassen kalles med Ajax av scriptBestillOpphold.js. 
+ *  @author    Trygve Johannessen
+ */ 
+
 include_once "funksjoner.php";
 session_start();
 $dblink = kobleOpp();
 
-
-$opptattTab=array();
+$opptattTab = array();
 $opptattTab = getFullbookedeDatoer($dblink);
 echo json_encode($opptattTab);
-
 
 function getFullbookedeDatoer($dblink) { 
     //finner datoer som er vi er forbi eller er foolbooket

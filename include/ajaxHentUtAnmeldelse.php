@@ -1,4 +1,11 @@
 <?php
+
+/**
+ *  Denne klassen henter ut alle godkjente anmeldelser fra databsen.
+ *  Klassen kalles med Ajax av script.js. 
+ *  @author    Trygve Johannessen
+ */ 
+
 include_once "funksjoner.php";
 session_start();
 $dblink = kobleOpp();
@@ -12,28 +19,4 @@ while($rad = mysqli_fetch_assoc($resultat)) {
 
 echo $anmeldelseStr;
 
-?>
-
-
-
-
-
-
-<?php/*
-include_once "funksjoner.php";
-session_start();
-$dblink = kobleOpp();
-
-$anmeldelseTab = array();
-$pos = 0;
-
-$sql = "SELECT * FROM anmeldelse;"; 
-$resultat = mysqli_query($dblink,$sql);
-while($rad = mysqli_fetch_assoc($resultat)) {
-    $anmeldelseTab[$pos] = $rad['tekst'];
-    $pos++;
-}
-
-echo json_encode($anmeldelseTab);
-*/
 ?>

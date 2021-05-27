@@ -1,4 +1,11 @@
 <?php
+
+/**
+ *  Denne klassen henter ut alle hunder som tilhører den aktuelle brukeren.
+ *  Klassen kalles med Ajax av scriptBestillOpphold.js. 
+ *  @author    Trygve Johannessen
+ */ 
+
 include_once "funksjoner.php";
 session_start();
 $dblink = kobleOpp();

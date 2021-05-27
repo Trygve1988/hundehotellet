@@ -1,6 +1,6 @@
 /**
  *  Denne klassen inneholder forsjellige javasrict funksjoner 
- *  Skrevet av Trygve, Gunn Inger, Even, Kristina med untak av der vi har oppgitt andre kilder
+ *  Skrevet av Trygve og Even med untak av der vi har oppgitt andre kilder
  */ 
 
 
