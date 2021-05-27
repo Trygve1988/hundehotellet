@@ -8,14 +8,11 @@ var nesteAnmeldelseKnapp = document.getElementById("nesteAnmeldelseKnapp");
 var tilbakeAnmeldelseKnapp = document.getElementById("tilbakeAnmeldelseKnapp");
 var anmeldelsePos = 0;
 
-//er vi på index siden ? 
-if (anmeldelseTekst !== null) {
-    var anmeldelseTab = null;
-    hentUtAnmeldelser(); // setter anmeldelsene inne i anmeldelseTab
-    oppdaterAnmeldelseSlider();
-    nesteAnmeldelseKnapp.addEventListener('click',neste,false);
-    tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
-}
+var anmeldelseTab = null;
+hentUtAnmeldelser(); // setter anmeldelsene inne i anmeldelseTab
+oppdaterAnmeldelseSlider();
+nesteAnmeldelseKnapp.addEventListener('click',neste,false);
+tilbakeAnmeldelseKnapp.addEventListener('click',tilbake,false);
 
 /**
  *  Denne funksjonen kalles når brukeren navigerer til index siden. 

@@ -17,6 +17,7 @@ $dblink = kobleOpp();
     <script src="include/script.js" defer> </script>
     <script src="include/scriptSpraak.js" defer> </script>
     <script src="include/scriptIndexAnmeldelseSlider.js" defer> </script> 
+    <script src="include/scriptIndexBildeSlider.js" defer> </script> 
 </head>
 
 <body>

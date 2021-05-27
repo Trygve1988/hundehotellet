@@ -8,11 +8,8 @@
 var startDato = document.getElementById("startDato");
 var sluttDato = document.querySelector("#sluttDato");
 
-// er vi på bestillOpphold3 siden?
-if (startDato !== null) {
-    hentUtFullbookedeDatoer();
-    startDato.addEventListener('click', oppdaterSluttDato, false);
-}
+hentUtFullbookedeDatoer();
+startDato.addEventListener('click', oppdaterSluttDato, false);
 
 /**
  *  Denne funksjonen bruker et ajax kall for å hente ut alle fullbookede datoer fra databasen

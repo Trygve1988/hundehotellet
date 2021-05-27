@@ -6,12 +6,9 @@
 var bestillOpphold1Mld = document.getElementById("bestillOpphold1Mld");
 var tilBestillOpphold2Knapp = document.getElementById("tilBestillOpphold2Knapp");
 
-//er vi på bestillOpphold1 siden ? 
-if (bestillOpphold1Skjema !== null) {
-    hentUtBrukerSineHunder();   // 1)
-    lagVelgHundKnapper();       // 2)
-    tilBestillOpphold2Knapp.addEventListener('click',tilBestillOpphold2,false);
-} 
+hentUtBrukerSineHunder();   
+lagVelgHundKnapper();       
+tilBestillOpphold2Knapp.addEventListener('click',tilBestillOpphold2,false);
 
 /**
  *  Denne funksjonen kjører et ajax kall databasen for å hente ut hundID til alle brukeren sine hunder.
