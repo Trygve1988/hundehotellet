@@ -15,6 +15,7 @@ $dblink = kobleOpp();
 	<link href="include/style.css" rel="stylesheet" type="text/css">
 	<script src="include/script.js" defer> </script>
 	<script src="include/scriptSpraak.js" defer> </script>
+	<script src="include/scriptBestillOpphold3.js" defer> </script>
     <!-- **** ikke lagd selv,gratis å bruke: https://cdnjs.com/libraries/jquery/3.3.1  **** -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

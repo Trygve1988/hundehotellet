@@ -53,9 +53,9 @@ $dblink = kobleOpp();
 						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
 						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="10" maxlength="50" required value="griffin">		
 						
-						<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
+						<!--<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
-
+						-->
 						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
 						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
 						

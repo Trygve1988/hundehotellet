@@ -1,7 +1,6 @@
 <?php
 ob_start();
 
-
 /**
  *  Denne klassen inneholder funksjoner til Minside og undersidene som hører til minSide
  *  @author    Trygve Johannessen og Gunn Inger Bleikalia
@@ -536,7 +535,7 @@ function lagIkkeBegyntBestillingTab($dblink) {
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
     AND H.brukerID = $brukerID 
-    AND DAY(B.startDato) < DAY(CURRENT_TIMESTAMP) ;" ;
+    AND B.sjekketInn IS NULL ;" ;
     $resultat = mysqli_query($dblink, $sql);
     while($rad = mysqli_fetch_assoc($resultat)) {
         $bestillingID = $rad['bestillingID'];
@@ -560,7 +559,7 @@ function lagBestillingOption($bestilling) {
  *  Sletter alle rader i databasen fra bestilling og opphold som matcher valgt bestillingID
  */ 
 function avbestill($dblink) {
-    if (isset($_POST['Avbestill'])) { 
+    if (isset($_POST['Avbestill']) && isset($_POST['bestillinger'])) { 
         $bestillingID = $_POST['bestillinger'];
 
         if ($bestillingID !== null) { 
