@@ -185,6 +185,17 @@ function test($dblink) {
         $resultat = mysqli_query($dblink, $sql);
     }
 
+    // endrer Ledigebur pr dag 2021-05-20 og 2021-06-21
+    $sql = "UPDATE ledigeBurPrDag SET antallLedigeBur = 2
+    WHERE dato = '2021-05-20' OR dato = '2021-06-21' ;";
+    $resultat = mysqli_query($dblink, $sql);
+
+    // endrer Ledigebur pr dag 2021-05-20
+    $sql = "UPDATE ledigeBurPrDag SET antallLedigeBur = 1
+    WHERE dato > '2021-05-21' AND dato < '2021-06-21' ;" ;
+    $resultat = mysqli_query($dblink, $sql);
+    
+
 }
 
 //echo $fornavn . " ";
