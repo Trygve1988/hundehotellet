@@ -51,7 +51,7 @@ $dblink = kobleOpp();
                             <label for="text">text:</label>
                             <input class="inputTekst" type="text" name="innleggText" value="text">
 
-                            <input class="litenKnapp" type="submit" value="Lagre" name="lagreInnleggKnapp">
+                            <input class="litenKnapp" type="submit" value="Publiser" name="lagreInnleggKnapp">
                             <input class="litenKnapp" type="submit" value="Slett siste" name="slettInnleggKnapp">
 
                             <?php lagreInnlegg($dblink); ?>

@@ -27,11 +27,25 @@ function getCookie(cname) {
     }
     return "";
 }
+/**
+ *  Denne funksjonen tar i mot navnet på en coockie og sletter den
+ *  @param      String      cname       navnet på en coockie
+ *  @return     String      cvalue      verdien til coockien
+ *  @author     w3schools 
+ */ 
+function deleteCoockie(cookie) {
+    var eqPos = cookie.indexOf("=");
+    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+}
+
 // ************* ikke lagd selv slutt ************* -->
+
 
 /**
 /*  Denne funksjonen sletter cookies som blir brukt på bestillOpphold.php siden
- *  når brukeren IKKE er på denne siden
+ *  når brukeren IKKE er på denne siden.
+ *  @author     Trygve Johannessen
  */ 
 var bestillOpphold1Skjema = document.getElementById("bestillOpphold1Skjema");
 
@@ -53,12 +67,13 @@ function deleteHundCoockies() {
 
         if (sjekkCookie=="brukerHunder" || sjekkCookie==" brukerHunder" || 
         sjekkCookie=="valgteHunder"|| sjekkCookie==" valgteHunder") {
-            var eqPos = cookie.indexOf("=");
-            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          deleteCoockie(cookie)
         }
-    }
+    } 
 }
+
+
+
 
 // ************************** Hvis skjul passord funksjon (Even) **************************
 const visPassordKnapp = document.querySelector("#visPassordKnapp");

@@ -15,11 +15,13 @@ function registrerDeg($dblink) {
         $passord = password_hash($passord, PASSWORD_DEFAULT);
 
         // velg brukertype (bare for testing) 
-        $brukerType = $_POST['brukertype'];
+        $brukerType = "kunde";
         $fornavn = $_POST['fornavn'];
         $etternavn = $_POST['etternavn'];
         $tlf = $_POST['tlf'];
         $adresse = $_POST['adresse'];
+        $postnummer = $_POST['postnummer'];
+        $poststed = $_POST['poststed'];
 
         //sjekker at epost ikke finnes fra før
         $sql = "SELECT * FROM bruker WHERE epost = '$epost'";
@@ -31,9 +33,10 @@ function registrerDeg($dblink) {
 
         //registrerer ny bruker
         else {
-            $sql = "INSERT INTO bruker(epost,passord,brukerType,fornavn,etternavn,tlf,adresse) 
-                    VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse');";
+            $sql = "INSERT INTO bruker(epost,passord,brukerType,fornavn,etternavn,tlf,adresse,postnummer,poststed) 
+            VALUES ('$epost','$passord','$brukerType','$fornavn','$etternavn','$tlf','$adresse','$postnummer','$poststed');";
             $resultat = mysqli_query($dblink, $sql);
+            
             loggInn($dblink);
             echo "<br>".'<i style="color:green; position:absolute";"> Du er nå registrert! </i>'; 
         }

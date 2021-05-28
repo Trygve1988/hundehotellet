@@ -55,34 +55,23 @@
                     <a href="minSideSlettBruker.php"> 
                         <input class="inputButton  mediumKnapp" type="button" value="Slett bruker">
                     </a>
-                </div>
+                </div><br>
 
                 <!-- ************************** (Trygve) ************************** -->
                 <!-- Mine hunder -->
                 <h2 id="minHunder" class="overskrift2">Mine Hunder</h2>
-                <div>
-                    <label id="velgHundMinSide" for="velgHundSelect">Velg hund:</label>
-                    <select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
-                        <?php $hunder = lagHunderTab($dblink);
-                        $minSideHund = $_SESSION['minSideHund']; 
-                        for ($i=0; $i<count($hunder); $i++) {
-                            lagMinSideOption($hunder[$i],$minSideHund);
-                        } ?>
-                    </select>
-                </div>
-                <?php 
-                if ( isset($_SESSION['minSideHund']) ) {  
-                    minHundTab($dblink); 
-                }
-                ?>
+              
+                <?php visMineHunder($dblink); ?> 
+
                 <!-- Registrer hund knapp -->    
                 <a href="registrerHundMS.php">
                     <input class="inputButton mediumKnapp" type="button" value="Registrer hund">
                 </a>
                 
                 <?php if (harHund($dblink)) { ?>
+
                     <!-- Endre hund knapp -->  
-                    <a href="minSideEndreHund.php">
+                    <a href="minSideEndreHund1.php">
                         <input class="inputButton mediumKnapp" type="button" value="Endre hund">  
                     </a>
                     <!-- Slett hund knapp -->  
@@ -91,7 +80,6 @@
                     </a>               
                 <?php } ?>
                 <br><br><br>
-
 
                 <!-- Bestillinger -->
                 <h2 id="mineOpphold" class="overskrift2">Mine opphold</h2> 

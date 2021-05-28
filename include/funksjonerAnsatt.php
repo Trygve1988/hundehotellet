@@ -415,11 +415,28 @@ function avbestill($dblink) {
         $sql = "INSERT INTO slettetBestilling (startDato, sluttDato, bestiltDato, totalPris, brukerID)
         VALUES ('$startDato','$sluttDato','$bestiltDato','$totalPris','$brukerID') ;";
         $resultat = mysqli_query($dblink, $sql); 
+
+        //oppdaterer ledige bur
+        oppdaterLedigeBur($dblink,$startDato,$sluttDato);
+
         header("Refresh:0");
     }
 }
 
-
+/** 
+ *  Funksjonen for oppdaterer "ledigeBurPrDag"-tabellen i databasen etter at et opphold er avbestilt
+ *  @author Trygve Johannessen
+ */ 
+function oppdaterLedigeBur($dblink,$startDato,$sluttDato) {  
+    $dato = $startDato;
+    while ($dato < $sluttDato) {
+        $sql = "UPDATE ledigeBurPrDag SET antallLedigeBur = antallLedigeBur+1 WHERE dato = '$dato';";
+        $resultat = mysqli_query($dblink, $sql); 
+        $dato = new DateTime($dato);    // til Date obj
+        $dato->modify('+1 day');
+        $dato = $dato->format('Y-m-d'); // til string igjen
+    }
+}
 
 // ********************************* 5) ansattSjekkInnUt ******************************************
 // Side som lar ansatt-brukere sjekke inn og ut hunder

@@ -59,7 +59,6 @@ function tilbake() {
     anmeldelsePos--;
     //er vi gått for langt mot venstre?
     if(anmeldelseTab !== null && anmeldelsePos < 0) {
-        console.log("godzilla");
         anmeldelsePos = anmeldelseTab.length-3;
     }
     oppdaterAnmeldelseSlider();

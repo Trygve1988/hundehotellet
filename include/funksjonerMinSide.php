@@ -56,91 +56,76 @@ function minProfilTab($dblink) {
 /** 
  *  Funksjon for å vise brukerens hunder til brukeren
  *  Oversetter fra database verdier som eks: 0,1 til JA/NEI
- *  @author Trygve Johannessen og Gunn Inger Bleikalia
+ *  @author Trygve Johannessen
  **/ 
-function minHundTab($dblink) { 
-    // $brukerID
-    $hundID = $_SESSION['minSideHund'];
+function visMineHunder($dblink) {
+    $bruker = $_SESSION['bruker'];
+    $brukerID = $bruker->getBrukerID();
+    $sql = "SELECT * FROM hund WHERE brukerID = '$brukerID';";
+    $resultat = mysqli_query($dblink, $sql); 
+    echo "<table class=\"blaaTabSmal\">";
+    echo "<tr>";
+    echo    "<th>hundID</th>";
+    echo    "<th>navn</th>";
+    echo    "<th>rase</th>";
+    echo    "<th>fdato</th>";
+    echo    "<th>kjønn</th>";
+    echo    "<th>steril</th>";
+    echo    "<th>løpeM<br>Andre</th>";
+    echo    "<th>info</th>";
+    echo    "<th>For</th>";
+    echo "</tr>";
+    while($rad = mysqli_fetch_assoc($resultat)){
+        echo "<tr>";
+        echo "<td>" . $rad['hundID'] . "</td>"; 
+        echo "<td>" . $rad['navn'] . "</td>"; 
+        echo "<td>" . $rad['rase'] . "</td>";
+        echo "<td>" . $rad['fdato'] . "</td>";  
 
-    // SQL-spørring
-    $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
+        //kjønn
+        $kjønn;
+        if ($rad['kjønn'] == "gutt") {
+            $kjønn = "Hann"; 
+        }
+        else {
+            $kjønn = "Tispe"; 
+        }
+        echo "<td>". $kjønn . "</td>";
 
-    //SQL-resultat -> Tabellrader
-    $resultat = mysqli_query($dblink, $sql);
-    
-    while($rad = mysqli_fetch_assoc($resultat)) {
-        echo "<table class=\"toKolTab  minSideToKolTab\">";	
-            echo "<tr>";
-            echo "<th class=\"thKolonne\">Navn</th>";
-                echo "<td>". $rad['navn'] ."</td>";
-                echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Rase</th>";
-                echo "<td>". $rad['rase'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Fødselsdato</th>";
-                echo "<td>". $rad['fdato'] . "</td>";
-            echo "</tr>";
+        //sterilisert
+        $sterilisert;
+        if ($rad['sterilisert'] == 1) {
+            $sterilisert = "Ja"; 
+        }
+        else {
+            $sterilisert = "Nei"; 
+        }
+        echo "<td>". $sterilisert . "</td>";
 
-            //kjønn
-            $kjønn;
-            if ($rad['kjønn'] == "gutt") {
-                $kjønn = "Hann"; 
-            }
-            else {
-                $kjønn = "Tispe"; 
-            }
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Kjønn</th>";
-                echo "<td>". $kjønn . "</td>";
-            echo "</tr>";
+        //løpeMedAndre
+        $løpeMedAndre;
+        if ($rad['løpeMedAndre'] == 1) {
+            $løpeMedAndre = "Ja"; 
+        }
+        else {
+            $løpeMedAndre = "Nei"; 
+        }
+        echo "<td>". $løpeMedAndre . "</td>";
 
-            //sterilisert
-            $sterilisert;
-            if ($rad['sterilisert'] == 1) {
-                $sterilisert = "Ja"; 
-            }
-            else {
-                $sterilisert = "Nei"; 
-            }
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Sterilisert</th>";
-                echo "<td>". $sterilisert . "</td>";
-            echo "</tr>";
+        echo "<td>" . $rad['info'] . "</td>";
 
-            //løpeMedAndre
-            $løpeMedAndre;
-            if ($rad['løpeMedAndre'] == 1) {
-                $løpeMedAndre = "Ja"; 
-            }
-            else {
-                $løpeMedAndre = "Nei"; 
-            }
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Kan omgås andre hunder</th>";
-                echo "<td>". $løpeMedAndre . "</td>";
-            echo "</tr>";
-
-            //løpeMedAndre
-            $forID;
-            if ($rad['forID'] == 1) {
-                $forID = "Vanlig"; 
-            }
-            else {
-                $forID = "Allergi"; 
-            }
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Fòrtype</th>";
-                echo "<td>". $forID . "</td>";    
-            echo "</tr>";
-
-            echo "<tr>";
-                echo "<th class=\"thKolonne\">Ekstra informasjon</th>";
-                echo "<td>". $rad['info'] . "</td>";
-            echo "</tr>";
-        echo "</table>";
-    } 
+        //forID
+        $forID;
+        if ($rad['forID'] == 1) {
+            $forID = "Vanlig"; 
+        }
+        else {
+            $forID = "Allergi"; 
+        }
+        echo "<td>". $forID . "</td>";    
+        echo "</tr>";
+    }
+    echo "</table>";
 }
 
 /** 
@@ -442,8 +427,6 @@ function minSideRegistrerHund($dblink) {
             $hundID = implode($rad);
         }
 
-        $_SESSION['minSideHund'] = $hundID; 
-
         echo "<br>".'<i style="color:green";> Hund registrert! </i>'; 
         header('Location: minSide.php');
     }
@@ -461,8 +444,6 @@ function lagMinSideOption($hund,$hundID) {
         ?> <option value= <?php echo $hund?> > <?php echo $hund ?> </option><?php
     }
 }
-
-
 
 // ************************** 6) minSideEndreHund **************************
 // Denne siden lar brukeren endre en hund
@@ -489,38 +470,49 @@ function laghunderTab($dblink) {
 }
 
 /** 
+ *  Funksjon for å velge en hund som skal endres
+ *  @author Trygve Johannessen
+ */ 
+function velgHundSomSkalEndres($dblink) {
+    if (isset($_POST['velgHund'])) { 
+        $hundID = $_POST['hund']; 
+        $bruker = $_SESSION['bruker'];
+        $brukerID = $bruker->getBrukerID();
+        setAktivHund($dblink,$hundID);
+        header('Location: minSideEndreHund2.php');
+    }
+}
+
+/** 
  *  Funksjon for å endre en hund
  *  @author Trygve Johannessen
  */ 
 function endreHund($dblink) {
     if (isset($_POST['bekreftHundInfo'])) {  
+       
         $hund = $_SESSION['aktivHund'];
         $hundID = $hund->getHundID();
         $navn = $_POST['navn'];
         $rase = $_POST['rase'];
         $fdato = $_POST['fdato'];
         $kjønn = $_POST['kjønn'];
-
         $sterilisert = $_POST['sterilisert'];
         $løpeMedAndre = $_POST['løpeMedAndre'];
         $info = $_POST['info'];
-        $bruker = $_SESSION['bruker'];
-        $brukerID = $bruker->getBrukerID();
         $forID = $_POST['forID'];
 
+        echo "info:  " . $info  . "<br>";
+        echo "forID: " . $forID . "<br>";
+
         $sql = "UPDATE hund SET navn = '$navn', rase = '$rase', 
-        fdato = '$fdato', kjønn = '$kjønn', 
-        sterilisert = '$sterilisert', løpeMedAndre = '$løpeMedAndre', info = '$info', 
-        brukerID = '$brukerID', forID = '$forID' 
-        WHERE hundID = $hundID;";
+        fdato = '$fdato', kjønn = '$kjønn', sterilisert = '$sterilisert', løpeMedAndre = '$løpeMedAndre',
+        info = '$info', forID = '$forID' WHERE hundID = $hundID;";
         $resultat = mysqli_query($dblink, $sql);
         echo "hund " . $hundID . " - ". $navn . " oppdatert" . "<br>";
         setAktivHund($dblink,$hundID);
         header('Location: minSide.php');
     }
 }
-
-
 
 // ************************** 7) minSideSlettHund **************************
 // Denne siden lar brukeren slette en hund
@@ -625,12 +617,29 @@ function avbestill($dblink) {
             $sql = "INSERT INTO slettetBestilling (startDato, sluttDato, bestiltDato, totalPris, brukerID)
             VALUES ('$startDato','$sluttDato','$bestiltDato','$totalPris','$brukerID') ;";
             $resultat = mysqli_query($dblink, $sql); 
+
+            // oppdater LedigeBur
+            oppdaterLedigeBur($dblink,$startDato,$sluttDato);
+
             header("Refresh:0");
         }
     }
 }
 
-
+/** 
+ *  Funksjonen for oppdaterer "ledigeBurPrDag"-tabellen i databasen etter at et opphold er avbestilt
+ *  @author Trygve Johannessen
+ */ 
+function oppdaterLedigeBur($dblink,$startDato,$sluttDato) {  
+    $dato = $startDato;
+    while ($dato < $sluttDato) {
+        $sql = "UPDATE ledigeBurPrDag SET antallLedigeBur = antallLedigeBur+1 WHERE dato = '$dato';";
+        $resultat = mysqli_query($dblink, $sql); 
+        $dato = new DateTime($dato);    // til Date obj
+        $dato->modify('+1 day');
+        $dato = $dato->format('Y-m-d'); // til string igjen
+    }
+}
 
 // ************************** 9) minSideSkrivAnmeldelse **************************
 // Denne siden lar brukeren skrive en anmeldelse

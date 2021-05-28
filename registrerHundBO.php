@@ -36,6 +36,9 @@ $dblink = kobleOpp();
 
 			<!-- Skjema -->		
 			<form class="skjemaBakgrunn" method="POST">
+
+				<!-- registrerHund -->
+				<?php registrerHundBestillOpphold($dblink); ?>
 			
 				<!-- Avbryt knapp -->
 				<a href = "bestillOpphold.php">
@@ -92,8 +95,7 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 
-				<!-- registrerHund -->
-				<?php registrerHundBestillOpphold($dblink); ?>
+
 
 				<!-- Knapperad -->
 				<div class="knappeRad">

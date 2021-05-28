@@ -1003,3 +1003,14 @@ footer a {
 	font-size: 18px;
 }
 
+
+
+.test {
+	display:flex;
+	width: 45%;
+	margin: 10px;
+	margin-left: 0;
+	border: 1px;
+	padding: 5px;
+	padding-left: 0; 
+}

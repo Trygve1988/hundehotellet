@@ -24,13 +24,6 @@
     <!-- ************************** Main ********************************* -->
     <main> 
 
-        <!-- erLoggetInn -->
-        <?php 
-            if (!erLoggetInn()) {
-                header('Location: loggInn.php');
-            } 
-        ?>
-
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
 	

@@ -299,10 +299,3 @@ function setAktivHund($dblink,$hundID) {
 }
 
 ob_end_flush();
-
-/*
-Kilder
-password hashing: https://www.w3schools.com
-password hashing: https://www.youtube.com/watch?v=Q-fBhFTe2H8
-password hashing: https://www.w3schools.com
-*/

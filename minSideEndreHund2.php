@@ -31,12 +31,7 @@
             } 
         ?>
 
-        <!-- Hund info -->
-		<?php 
-        $minSideHund = $_SESSION['minSideHund']; 
-        setAktivHund($dblink,$minSideHund);
-        $h1 = $_SESSION['aktivHund']; 
-        ?>
+		<?php $h1 = $_SESSION['aktivHund']; ?>
 
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
@@ -52,29 +47,19 @@
 				<!-- Overskrift -->
 				<h2 id="endreHund" class="hovedOverskrift">Endre Hund</h2>
 
-				<!-- dette virker ikke!
-				<div>
-					<label id="velgHundMin" for="velgHundSelect">Velg hund:</label>
-					<select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
-						<?php //$hunder = lagHunderTab($dblink);
-							//$minSideHund = $_SESSION['minSideHund']; 
-							//for ($i=0; $i<count($hunder); $i++) {
-							//	lagMinSideOption($hunder[$i],$minSideHund);
-							//} ?>
-					</select>
-				</div> -->
-
                 <div class="skjemaKolonner">
 					
 					<!-- Labels og input i kolonne 1 -->
                     <div class="kolonne1">
                         <!-- Navn --> 
                         <label id="hundNavn" for="navn">Navn:</label>
-						<input class="inputTekst" type="text" name="navn" size="20" value= <?php echo $h1->getNavn() ?> required>
+                        <?php $navn = $h1->getNavn() ?>
+						<input class="inputTekst" type="text" name="navn" size="20" value="<?php echo $navn?>" required>
                         
 						<!-- Rase --> 
 						<label id="rase" for="rase">Rase:</label>
-						<input class="inputTekst" type="text"  name="rase" size="20" value= <?php echo $h1->getRase() ?> >
+                        <?php $rase = $h1->getRase() ?>
+						<input class="inputTekst" type="text"  name="rase" size="20" value="<?php echo $rase?>" >
                         
 						<!-- Fdato --> 
                         <label id="fdato" for="fdato">Fødselsdato:</label>
@@ -138,18 +123,22 @@
 							<?php
 							if ($forID == "1") { 
 								?><option id="vanlig" value="1" selected >Royal Canin (vanlig)</option><?php
-								?><option id="allargi" value="0">Vom (allergi)</option><?php
+								?><option id="allargi" value="2">Vom (allergi)</option><?php
 							} 
 							else { 
 								?><option id="vanlig" value="1">Royal Canin (vanlig)</option><?php
-								?><option id="allergi" value="0" selected>Vom (allergi)</option><?php
+								?><option id="allergi" value="2" selected>Vom (allergi)</option><?php
 							}
 							?>
 						<select>  
                        
                         <!-- info -->
 						<label id="ektraInfo" for="info">Ekstra informasjon:</label>
-						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
+                        <?php $info = $h1->getInfo() ?>
+                        <?php echo $info . "<br>" ?>
+						<textarea class=" tekstboks tekstfelt1" name="info"> 
+                            <?php echo $info?> 
+                        </textarea>	
                     </div>
                 </div>
 

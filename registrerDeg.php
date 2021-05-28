@@ -61,8 +61,14 @@ $dblink = kobleOpp();
 						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
 						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
 						
+						<label for="postnummer">Postnummer:</label>
+						<input class="inputTekst" type="text" name="postnummer" required value="4265">
+
+						<label for="poststed">Poststed:</label>
+						<input class="inputTekst" type="text" name="poststed" required value="Håvik">
+
 						<label id="adresseRegistrerDeg" for="adresse">Adresse:</label>
-						<input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required value="Epleveien 5">	<!-- pattern="[A-Za-z 0-9]{3,63}$" -->
+						<input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required value="Epleveien 5">
 					</div>
 
 					<!-- Labels og input i kolonne 2 -->

@@ -37,6 +37,9 @@ $dblink = kobleOpp();
 			<!-- Skjema -->		
 			<form class="skjemaBakgrunn" method="POST">
 			
+				<!-- registrerHund -->
+				<?php minSideRegistrerHund($dblink); ?>
+			
 				<!-- Avbryt knapp -->
 				<a href = "minSide.php">
 					<input class="avbrytKnapp" type="button" value="X">
@@ -91,9 +94,6 @@ $dblink = kobleOpp();
 					</div>
 				</div>
 				
-				<!-- registrerHund -->
-				<?php minSideRegistrerHund($dblink); ?>
-
 				<!-- Knapperad -->
 				<div class="knappeRad">
 					<div class="knapp1IRad">		

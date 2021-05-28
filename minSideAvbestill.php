@@ -46,14 +46,21 @@
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
                         
-                        <!-- velgBestilling select --> 
-                        <label id="velgOppholdAvbestill" for="bestillinger">Velg opphold:</label>
-                        <select id="bestillinger" class="inputSelect minInput" value="bestillinger" name="bestillinger">
-                            <?php $bestillingTab = lagIkkeBegyntBestillingTab($dblink);  
-                            for ($i=0; $i<count($bestillingTab); $i++) {
-                                lagBestillingOption($bestillingTab[$i]);
-                            } ?>
-                        </select>
+                        <!-- er det noen bestillinger? --> 
+                        <?php 
+                        $bestillingTab = lagIkkeBegyntBestillingTab($dblink);  
+                        if (empty($bestillingTab)) {
+                            echo "<br>"."Du har ingen bestillinger som kan avbestilles";
+                        } 
+                        else { ?>
+                                <label id="velgOppholdAvbestill" for="bestillinger">Velg opphold:</label>
+                                <select id="bestillinger" class="inputSelect minInput" value="bestillinger" name="bestillinger">
+                                <?php $bestillingTab = lagIkkeBegyntBestillingTab($dblink);  
+                                for ($i=0; $i<count($bestillingTab); $i++) {
+                                    lagBestillingOption($bestillingTab[$i]);
+                                } ?>
+                            </select> <?php 
+                        }  ?>
                     </div>
                 </div> 
             

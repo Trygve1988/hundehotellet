@@ -2,6 +2,24 @@
 
 function test($dblink) {
 
+    //finner max brukerID
+    $maxBrukerID = 0;
+    $sql = "SELECT MAX(brukerID) FROM bruker ;" ;
+    $resultat = mysqli_query($dblink, $sql);
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        $maxBrukerID = implode($rad);
+    }
+
+    //test registrerer 20 brukere
+    if ($maxBrukerID < 20) {
+        $brukerID = $maxBrukerID;
+        while ($brukerID < 20) {
+            $epost = $brukerID . "test@ha.no";
+            registrerTestBruker($dblink,$epost,"123Ab%12");
+            $brukerID++;
+        }
+    }
+
     $fornavnTab = array("Liam", "Olivia", "Emma", "Noah","Ava","Elijah","Oliver","Sophia","Amelia","Lucas",
         "Isabella","Mason","Ethan","Mia","Charlotte","Mateo","James","Luna","Harper","Logan","Benjamin","Ella",
         "Aiden","Mila","Gianna","Sebastian","Camila","Leo","Ellie","Jackson","Aria","Levi","Daniel","Evelyn",
@@ -18,12 +36,12 @@ function test($dblink) {
     $resultat = mysqli_query($dblink, $sql);
 
     //oppdaterer ansatt 1
-    $sql = "UPDATE bruker SET epost = 'Jon@ha.no', brukerType = 'ansatt' , fornavn = 'Jon', 
+    $sql = "UPDATE bruker SET epost = 'jonsnow@ha.no', brukerType = 'ansatt' , fornavn = 'Jon', 
     etternavn = 'Snow', tlf = '+4712345678', adresse = 'Epleveien 5' WHERE brukerID = 2 ;" ;
     $resultat = mysqli_query($dblink, $sql);
 
     //oppdaterer ansatt 2
-    $sql = "UPDATE bruker SET epost = 'Daenerys@ha.no', brukerType = 'ansatt' , fornavn = 'Daenerys', 
+    $sql = "UPDATE bruker SET epost = 'daenerystargaryen@ha.no', brukerType = 'ansatt' , fornavn = 'Daenerys', 
     etternavn = 'Targaryen', tlf = '+4712345678', adresse = 'Epleveien 5' WHERE brukerID = 3 ;" ;
     $resultat = mysqli_query($dblink, $sql);
 
@@ -43,7 +61,7 @@ function test($dblink) {
         $fornavn = $fornavnTab[$n];
         $n = rand(0,count($etternavnTab)-1);
         $etternavn = $etternavnTab[$n];
-        $epost = $fornavn."@ha.no";
+        $epost = strtolower($fornavn).strtolower($etternavn)."@ha.no";
 
         //sql
         $sql = "UPDATE bruker SET epost = '$epost', brukerType = 'kunde', fornavn = '$fornavn', 
@@ -51,9 +69,7 @@ function test($dblink) {
         $resultat = mysqli_query($dblink, $sql);
     }
 
-
     // opretter 60 hunder
-
     $sql = "DELETE FROM hund ;" ;
     $resultat = mysqli_query($dblink, $sql);
 
@@ -205,3 +221,22 @@ function test($dblink) {
 //$n = rand(0,count($hundTab)-1);
 //$hund = $hundTab[$n];
 
+function registrerTestBruker($dblink,$epost,$passord) {
+    $passord = password_hash($passord, PASSWORD_DEFAULT);
+
+    //sjekker at epost ikke finnes fra før
+    $sql = "SELECT * FROM bruker WHERE epost = '$epost'";
+    $resultat = mysqli_query($dblink, $sql);
+    $antall = mysqli_num_rows($resultat);
+    if ($antall > 0) { // epost finnes fra før!
+        echo "<br>".'<i style="color:red; position:absolute";"> epost er allerede registrert! </i>'; 
+    }
+
+    //registrerer ny bruker
+    else {
+        $sql = "INSERT INTO bruker(epost,passord) 
+        VALUES ('$epost','$passord');";
+        $resultat = mysqli_query($dblink, $sql);
+    }
+    
+}
