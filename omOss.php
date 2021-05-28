@@ -42,19 +42,19 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD2">
 
                     <div class="bildeKontroller2">
-                        <img src="bilder/Ansatt/ans1.jfif" class="bilder2" alt="">
+                        <img src="bilder/Ansatt/ans1.jpg" class="bilder2" alt="">
                         <p id="navn1">Navn: Sansa Stark</p>
                         <p id="stilling1">Stiling: Daglig leder</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <img src="bilder/Ansatt/ans2.jfif" class="bilder2" alt="">
+                        <img src="bilder/Ansatt/ans2.jpg" class="bilder2" alt="">
                         <p id="navn2">Navn: Jon Snow</p>
                         <p id="stilling2">Stiling: Nestleder</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <img src="bilder/Ansatt/ans3.jfif" class="bilder2" alt="">
+                        <img src="bilder/Ansatt/ans3.jpg" class="bilder2" alt="">
                         <p id="navn3">Navn: Daenerys Targaryen</p>
                         <p id="stilling3">Stiling: Kontor-ansatt</p>
                     </div>
@@ -63,19 +63,19 @@ $dblink = kobleOpp();
                 <div id="KontrollerBD2">
 
                     <div class="bildeKontroller2">
-                        <img src="bilder/Ansatt/ans4.jfif" class="bilder2" alt="">
+                        <img src="bilder/Ansatt/ans4.jpg" class="bilder2" alt="">
                         <p id="navn4">Navn: Eddard Stark</p>
                         <p id="stilling4">Stiling: Hundetrener</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <img src="bilder/Ansatt/ans5.jfif" class="bilder2" alt="">
+                        <img src="bilder/Ansatt/ans5.jpg" class="bilder2" alt="">
                         <p id="navn5">Navn: Tyrion Lannister</p>
                         <p id="stilling5">Stiling: Ansatt</p>
                     </div>
 
                     <div class="bildeKontroller2">
-                        <img src="bilder/Ansatt/ans6.jfif" class="bilder2" alt="">
+                        <img src="bilder/Ansatt/ans6.jpg" class="bilder2" alt="">
                         <p id="navn5">Navn: Aerys Targaryen</p>
                         <p id="stilling6">Navn: Ansatt</p>
                     </div>
