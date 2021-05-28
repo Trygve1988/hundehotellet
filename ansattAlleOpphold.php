@@ -38,7 +38,7 @@
                 <?php visAlleOpphold($dblink); ?>
 
                 <a href="ansattAlleOppholdEldre.php"> 
-                    <input class="litenKnapp" type="button" value="Se Eldre"> 
+                    <input class="litenKnapp" type="button" value="Se Alle Ferdige"> 
                 </a> 
             
                 <a href="ansattAvbestill.php">

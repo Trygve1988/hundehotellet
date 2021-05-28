@@ -36,11 +36,16 @@
             <form class="skjemaBakgrunn" method="POST">
                 <h2>Hunder</h2> 
 
-                <!-- sjekk om bare en aktiv hund -->	
+                <!-- sjekk om det er noen hunder på opphold nå -->	
                 <?php 
                     $hunder = lagHunderPaaOppholdNaaTab($dblink); 
-                    if (count($hunder) == 1) {
-                        $_SESSION['inspiserHund'] = $hunder[0];
+                    if ( !empty($hunder) ) {
+                        if (count($hunder) == 1) {
+                            $_SESSION['inspiserHund'] = $hunder[0];
+                        }
+                    }
+                    else {
+                        $_SESSION['inspiserHund'] = null;
                     }
                 ?>
 

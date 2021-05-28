@@ -15,7 +15,6 @@ adminSeBrukertypeSelect.addEventListener('change', settAdminSeBrukertypeSession,
  */
 function settAdminSeBrukertypeSession() {
     var brukertype = document.getElementById("adminSeBrukertypeSelect").value;
-    console.log(brukertype);
     var ajaxRequest = new XMLHttpRequest();  
     ajaxRequest.open("GET", "include/ajaxSettAdminSeBrukertypeSession.php?q="+brukertype, true);
     ajaxRequest.send(null);
