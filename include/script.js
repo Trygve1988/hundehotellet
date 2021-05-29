@@ -112,21 +112,20 @@ if(passord !== null) {
 
 // Norsk tilbamelding
 function melding(){
-  var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  var paso = /"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"/; //Hentet fra https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
   if( passord.value.match(paso) ){
     status.innerHTML="Norsk: Passord er godkjent";
-    status0.innerHTML=" ";
     return true;
   } else{
     status.innerHTML="Norsk: Mellom 8-15 tegn.";
-    status0.innerHTML="Minst ett tall, stor bokstav, liten bokstav, spesial tegn(@% osv).";
+    status.innerHTML="Minst ett tall, stor bokstav, liten bokstav, spesial tegn(@% osv).";
     return false;
   } 
 }
 
 // Engelsk tilbakemelding 
 function melding2(){
-    var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+    var paso = /"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"/; //Hentet fra https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
     if( passord.value.match(paso) ){
       status2.innerHTML="English: Password has been approved";
       status3.innerHTML= " ";
@@ -159,7 +158,7 @@ if(passord2 !== null) {
 
 // Norsk tilbamelding
 function nyTTPasomelding(){
-  var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+  var paso = /"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"/; //Hentet fra https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
   if(passord2.value.match(paso) ){
     nystatus.innerHTML="Passord er godkjent";
     nystatus.innerHTML=" ";
@@ -172,7 +171,7 @@ function nyTTPasomelding(){
   
 // Engelsk tilbakemelding 
 function nyTTPasomelding2(){
-    var paso = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$/; //Denne linja er tatt fra https://www.w3resource.com/javascript/form/password-validation.php alt annet er mitt
+    var paso = /"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"/;//Hentet fra https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a 
     if( passord2.value.match(paso) ){
       nystatus2.innerHTML="Password has been approved";
       nystatus3.innerHTML=" ";
@@ -184,7 +183,7 @@ function nyTTPasomelding2(){
     } 
 }
 
-// ***** Vis skjul nytt passord *******
+// ***** Vis skjul nytt passord2, NyttPassord på minSideEndrePassord *******
 const visPassordKnapp2 = document.querySelector("#visPassordKnapp2");
 
 if (visPassordKnapp2 !== null) {
