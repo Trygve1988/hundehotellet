@@ -30,36 +30,28 @@
 
         <!-- Hvit bakgrunn -->
 		<div class="hvitBakgrunn">
-	
+
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <h2 class="hovedOverskrift">Alle opphold</h2>
+                <!-- Avbryt knapp -->
+			    <a href = "ansattAlleOpphold.php">
+				    <input class="avbrytKnapp" type="button" value="X">
+			    </a>    
 
-                <!-- Ferdige -->
-                <?php visFerdigeOpphold5Siste($dblink); ?>
+                <!-- 2a alleOpphold -->
+                <h2>Alle kommende Opphold</h2>
+                <?php visIkkeBegynteOpphold($dblink); ?>
 
-                <!-- Se Alle Ferdige Knapp -->
-                <a href="ansattAlleFerdigeOpphold.php"> 
-                    <input class="litenKnapp" type="button" value="Se Alle Ferdige"> 
-                </a> 
+                <div class="knappeRad">
+                    <a href="ansattAlleOpphold.php">
+                        <input class="litenKnapp" type="button" value="Tilbake">  
+                    <a>
+                </div>
 
-                <!-- Aktive -->
-                <?php visAktiveOpphold($dblink); ?>
-
-                <!-- IkkeBegynte-->
-                <?php visIkkeBegynteOpphold5første($dblink); ?>
-
-                <!-- Se Alle Ferdige Knapp -->
-                <a href="ansattAlleKommendeOpphold.php"> 
-                    <input class="litenKnapp" type="button" value="Se Alle Kommende"> 
-                </a> 
-
-                <!-- Se Avbestill knapp -->
-                <a href="ansattAvbestill.php">
-                    <input id="avbestillKnapp" class="litenKnapp" type="button" value="Avbestill" name="Avbestill">
-                </a>
             </form>
+
         </div>
+        
     </main>
 
     <!-- ************************** 3) fellesBunn **************************-->

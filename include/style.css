@@ -835,6 +835,7 @@ footer a {
     border: none;
     border-radius: 4px;
 	margin-right: 10px;
+	margin-bottom: 20px;
     cursor: pointer;
 	font-size: 16px;
     /* Color */
@@ -930,7 +931,7 @@ footer a {
 
 /* blaaTabSmal (Trygve og Kristina) */
 .blaaTabSmal {
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 }
 
 

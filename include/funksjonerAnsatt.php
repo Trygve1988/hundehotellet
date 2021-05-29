@@ -143,30 +143,42 @@ function skrivUkeTab($burTab) {
 // Denne siden lar ansatt-brukeren få en se en oversikt over 5 siste ferdige oppgold,
 // alle aktive opphold og alle fremtide opphold
 
-/**
- *  Funksjon for å side alle opphold. Deler opp opphold i 3 kategorier: Ferdige, aktive og kommende
- *  Skriver en tabell pr kategori.
- *  @param String $burTab
- **/ 
-function visAlleOpphold($dblink) {
-    //3) ferdige Opphold
-    lagOppholdOverskrifter("Ferdige");
+function visFerdigeOpphold($dblink) {
+    lagOppholdOverskrifter("Alle Ferdige");
     $sql = lagFerdigeOppholdSpørring($dblink); //
     $bestillingTab = lagOppholdTab($dblink,$sql);
-    visOppholdTab5Siste($bestillingTab);
+    visOppholdTab($bestillingTab);
+}
 
-    //2) aktive Opphold
+function visFerdigeOpphold5Siste($dblink) {
+    lagOppholdOverskrifter("Ferdige");
+    $sql = lagFerdigeOppholdSpørring($dblink);
+    $bestillingTab = lagOppholdTab($dblink,$sql);
+    visOppholdTab5Siste($bestillingTab);
+}
+
+function visAktiveOpphold($dblink) {
     lagOppholdOverskrifter("Aktive");
     $sql = lagAktiveOppholdSpørring($dblink); //
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
+}
 
-    //1) IkkeBegynte Opphold
+function visIkkeBegynteOpphold5første($dblink) {
     lagOppholdOverskrifter("Kommende");
     $sql = lagIkkeBegynteOppholdSpørring($dblink); //
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab5første($bestillingTab);
 }
+
+function visIkkeBegynteOpphold($dblink) {
+    lagOppholdOverskrifter("Kommende");
+    $sql = lagIkkeBegynteOppholdSpørring($dblink); //
+    $bestillingTab = lagOppholdTab($dblink,$sql);
+    visOppholdTab($bestillingTab);
+}
+
+
 
 /**
  *  Funksjon for å skrive overskrifter til hver opphold kategori
@@ -329,19 +341,6 @@ function visOppholdTab5Siste($bestillingTab) {
     } 
     echo "</table>";
 } 
-
-
-// ********************************* 3) ansattAlleOppholdEldre ******************************************
-// Side for å se alle ferdige opphold
-
-// Funksjon for å vise alle ferdige opphold. Kaller på funksjoner over.
-function visFerdigeOpphold($dblink) {
-    lagOppholdOverskrifter("Alle Ferdige");
-    $sql = lagFerdigeOppholdSpørring($dblink); //
-    $bestillingTab = lagOppholdTab($dblink,$sql);
-    visOppholdTab($bestillingTab);
-}
-
 
 
 // ********************************* 4) ansattAvbestill ******************************************
