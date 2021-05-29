@@ -49,17 +49,17 @@ $dblink = kobleOpp();
 				<!-- Overskrift -->
 				<h2 id="bestillOpphold3" class="hovedOverskrift">Bestill opphold</h2>	
 				<h2 id="tidsperiode" class="overskrift2">Tidsperiode</h2>
-				
+
 				<div class="skjemaKolonner">
 					<div class="kolonne1">	
 						<!-- fra dato class="inputDato" -->
                         <label id="fra" for="startDato">Fra</label>
-                        <input type="date" id="startDato" class="inputDato" name="startDato" value="<?php echo date("Y-m-d");?>" readonly >
+                        <input type="date" id="startDato" class="inputDato" name="startDato" value="<?php echo førsteLedigeDato($dblink); ?>" readonly >
 					</div>	
 					<div class="kolonne2">	
 						<!-- til dato -->  
 						<label id="til" for="sluttDato">Til:</label>
-						<input type="date" id="sluttDato" class="inputDato" name="sluttDato" value="<?php echo datoIMorgen(); ?>" readonly >
+						<input type="date" id="sluttDato" class="inputDato" name="sluttDato" value="<?php echo andreLedigeDato($dblink); ?>" readonly >
 					</div>	
 				</div>
 		

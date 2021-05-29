@@ -27,6 +27,7 @@ function visAlleBrukere($dblink)  {
     echo    "<th>Etternavn</th>";
     echo    "<th>Tlf</th>";
     echo    "<th>Adresse</th>";
+    echo    "<th>PostNr</th>";
     echo "</tr>";
 
     while($rad = mysqli_fetch_assoc($resultat)){
@@ -38,6 +39,7 @@ function visAlleBrukere($dblink)  {
         echo "<td>" . $rad['etternavn'] . "</td>"; 
         echo "<td>" . $rad['tlf'] . "</td>"; 
         echo "<td>" . $rad['adresse'] . "</td>"; 
+        echo "<td>" . $rad['postnummer'] . "</td>"; 
         echo "</tr>";
     }
     echo "</table>" . "<br>";
