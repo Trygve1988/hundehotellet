@@ -99,23 +99,20 @@
 						<input class="inputPassord" type="password" name="passord" required 
 						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" value="123Ab%12">
 
-						
-						<!-- Passord rad -->
-						<div class="passordRad">
-							<!-- Vis passord checkbox -->
-							<div class="visPassord">
-								<label for="passordCheckbox">Vis Passord</label>
-								<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
-							</div>
-
-							<!-- Passord tilbakemelding -->
-							<div class="passordKrav">
-								<p>Passord krav:</p>
-								<p id="status" melding()></p>
-								<!-- Engelsk tilbakemelding --->
-								<p id="status2" melding2()></p>
-							</div>
-						</div>		
+						    <!-- Vis passord checkbox -->
+						    <div class="visPassord">
+						    	<label id="visPassordRegisterDeg" for="passordCheckbox">Vis Passord</label>
+						    	<input class="inputCheckbox" type="checkbox" name="passordCheckbox" onclick="visPassord()">
+						    </div>
+					
+						    	<!-- Passord tilbakemelding -->
+						    <div class="passordKrav">
+						    	<p id="pasokravRegisterDeg">Passord krav:</p>
+						    	<p id="status" melding()></p>
+						    	<!-- Engelsk tilbakemelding --->
+						    	<p id="status2" melding2()></p>
+						    	<p id="status3" melding2()></p>
+						    </div>		
 					</div>
 				</div>    
                 
