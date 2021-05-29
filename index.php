@@ -102,7 +102,7 @@ $dblink = kobleOpp();
                             } 
                         } ?> 
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a> 
-                </div> 
+                </div>  
         </div>
     </main>
 
