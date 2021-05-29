@@ -107,7 +107,7 @@ main {
 	margin: 30px;
 }
 
-  #KontrollerBD{
+  .KontrollerBD{
     display:flex;
 	flex-direction: row;
   }
@@ -133,7 +133,7 @@ main {
   }
 
   /**********Om oss bilder*********/
-  #KontrollerBD2{
+  .KontrollerBD2{
     display:flex;
 	flex-direction: row;
   }
@@ -239,7 +239,7 @@ main {
 	to {opacity: 1}
   }
 
-/*****Stop på hentet kode*****/
+/*************** Stop på hentet kode *************** /
 
 /* Pris og Info CSS tabell */
 .info {
@@ -645,7 +645,7 @@ color:#394f79;;
    
 
 }
-#KontrollerBD .bildeKontroller img{
+.KontrollerBD .bildeKontroller img{
 	-webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
@@ -653,12 +653,11 @@ color:#394f79;;
 
 }
 
-#KontrollerBD .bildeKontroller:hover img{
+.KontrollerBD .bildeKontroller:hover img{
 	-webkit-transform: scale(1.3);
     transform: scale(1.3);
 
 }
-/*Slutt på bildeeffekten*/
 
 /*Aktuelt siden*/
 .mellomromMellomInnlegg { /*Lager mellomrom mellom innleggene*/
@@ -861,6 +860,12 @@ footer a {
 #anmeldelseBoks a {
     cursor: pointer;
     padding: 18px 15px 18px 15px; 
+	
+}
+
+.anmeldelseBoksKnapp{
+	justify-content: center;
+  	align-items: center;
 }
 
 #anmeldelseTekstBoks{
