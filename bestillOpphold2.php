@@ -72,8 +72,8 @@ $dblink = kobleOpp();
 								?><option id="tispe" value="jente">Tispe</option><?php
 							} 
 							else { 
-								?><option id="hann2" value="gutt">Hann</option><?php
-								?><option id="tispe2" value="jente" selected>Tispe</option><?php
+								?><option id="hann" value="gutt">Hann</option><?php
+								?><option id="tispe" value="jente" selected>Tispe</option><?php
 							}
 							?>
 						<select> 
@@ -88,8 +88,8 @@ $dblink = kobleOpp();
 								?><option id="nei" value="0">Nei</option><?php
 							} 
 							else { 
-								?><option  value="1">Ja</option><?php
-								?><option  value="0" selected>Nei</option><?php
+								?><option id="ja"  value="1">Ja</option><?php
+								?><option id="nei" value="0" selected>Nei</option><?php
 							}
 							?>
 						<select> 
@@ -108,11 +108,11 @@ $dblink = kobleOpp();
 							<?php
 							if ($løpeMedAndre == "1") { 
 								?><option id="ja2" value="1" selected >Ja</option><?php
-								?><option id="nei2"value="0">Nei</option><?php
+								?><option id="nei2" value="0">Nei</option><?php
 							} 
 							else { 
-								?><option value="1">Ja</option><?php
-								?><option value="0" selected>Nei</option><?php
+								?><option id="ja2" value="1">Ja</option><?php
+								?><option id="nei2" value="0" selected>Nei</option><?php
 							}
 							?>
 						<select> 
@@ -127,14 +127,14 @@ $dblink = kobleOpp();
 								?><option id="allargi" value="0">Vom (allergi)</option><?php
 							} 
 							else { 
-								?><option id="vanlig2" value="1">Royal Canin (vanlig)</option><?php
-								?><option id="allergi2" value="0" selected>Vom (allergi)</option><?php
+								?><option id="vanlig" value="1">Royal Canin (vanlig)</option><?php
+								?><option id="allargi" value="0" selected>Vom (allergi)</option><?php
 							}
 							?>
 						<select> 
 
 						<!-- info -->
-						<label for="info">Ekstra informasjon:</label>
+						<label id="ektraInfo" for="info">Ekstra informasjon:</label>
 						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
 
 					</div>

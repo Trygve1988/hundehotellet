@@ -62,7 +62,7 @@ $dblink = kobleOpp();
 						<input class="inputTekst" type="text" name="postnummer" placeholder="4300" pattern="[0-9]{4}" required value="4265">
 
 						<label for="poststed">Poststed:</label>
-						<input class="inputTekst" type="text" name="poststed" required value="Håvik">
+						<input class="inputTekst" type="text" name="poststed" placeholder="Stavanger required value="Håvik">
 
 						<label id="adresseRegistrerDeg" for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required value="Epleveien 5">
