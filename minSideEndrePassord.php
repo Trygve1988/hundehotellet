@@ -49,9 +49,9 @@
 					
                     <div class="soloKolonne">
                         
-                    <label id="gammeltPassord" for="gammeltPassord">Gammelt passord:</label>
+                    	<label id="gammeltPassord" for="gammeltPassord">Gammelt passord:</label>
 						<input class="inputPassord" type="password" name="gammeltPassord" required 
-						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" value="" required> <!--onChange="sjekkPassord()" --> 
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" value="" required> <!--onChange="sjekkPassord()" --> 
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
@@ -61,7 +61,7 @@
 
                         <label id="nyttPassord" for="passord">Nytt passord:</label>
 						<input class="inputPassord" type="password" name="passord" 
-						id="passord2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassordLike()" value="" required >
+						id="passord2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" onChange="sjekkPassordLike()" value="" required >
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">

@@ -52,12 +52,9 @@ $dblink = kobleOpp();
 						<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
 						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" required  value="peter">
 
-						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="2" maxlength="50" required value="griffin">		
-						
-						<!--<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
+						<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
-						-->
+						
 						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
 						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
 						
@@ -75,7 +72,13 @@ $dblink = kobleOpp();
 					<div>		
 						<label id="epostReigsterDeg" for="epost">E-post:</label>
 						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
-							
+
+						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
+						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="2" maxlength="50" required value="griffin">		
+						
+						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
+						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
+						
 						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
 						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" onChange="sjekkPassordLike()" value="123Ab%12">
@@ -96,7 +99,6 @@ $dblink = kobleOpp();
 						<div class="passordKrav">
 							<p id="pasokravRegisterDeg">Passord krav:</p>
 							<p id="status" melding()></p>
-							<p id="status0" melding()></p>
 							<!-- Engelsk tilbakemelding --->
 							<p id="status2" melding2()></p>
 							<p id="status3" melding2()></p>
