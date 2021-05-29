@@ -416,4 +416,40 @@ function oppdaterLedigeBur($dblink,$startDato,$sluttDato) {
     }
 }
 
+function førsteLedigeDato($dblink) {  
+    $førsteLedigeDato = null;
+    $sql = "SELECT * FROM ledigeBurPrDag 
+    WHERE antallLedigeBur > 0 AND dato >= CURRENT_TIMESTAMP 
+    ORDER BY dato 
+    LIMIT 1 ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        $førsteLedigeDato = $rad['dato'] . "<br>";
+    }
+    $date = $førsteLedigeDato;
+    $date = substr($date,0,10);
+
+    $date = new DateTime($date);
+    $date = $date->format('Y-m-d');
+    echo $date;
+}
+
+function andreLedigeDato($dblink) {  
+    $førsteLedigeDato = null;
+    $sql = "SELECT * FROM ledigeBurPrDag 
+    WHERE antallLedigeBur > 0 AND dato > CURRENT_TIMESTAMP 
+    ORDER BY dato 
+    LIMIT 2 ;";
+    $resultat = mysqli_query($dblink, $sql); 
+    while($rad = mysqli_fetch_assoc($resultat)) {
+        $førsteLedigeDato = $rad['dato'] . "<br>";
+    }
+    $date = $førsteLedigeDato;
+    $date = substr($date,0,10);
+
+    $date = new DateTime($date);
+    $date = $date->format('Y-m-d');
+    echo $date;
+}
+
 ob_end_flush();

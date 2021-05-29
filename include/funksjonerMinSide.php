@@ -46,6 +46,14 @@ function minProfilTab($dblink) {
                 echo "<td>". $rad['adresse'] . "</td>";
             echo "</tr>";
             echo "<tr>";
+                echo "<th class=\"thKolonne\">Postnummer</th>";
+                echo "<td>". $rad['postnummer'] . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+            echo "<th class=\"thKolonne\">Poststed</th>";
+            echo "<td>". $rad['poststed'] . "</td>";
+        echo "</tr>";
+            echo "<tr>";
                 echo "<th class=\"thKolonne\">BrukerType</th>";
                 echo "<td>". $rad['brukerType'] . "</td>";
             echo "</tr>";
@@ -65,14 +73,14 @@ function visMineHunder($dblink) {
     $resultat = mysqli_query($dblink, $sql); 
     echo "<table class=\"blaaTabSmal\">";
     echo "<tr>";
-    echo    "<th>hundID</th>";
-    echo    "<th>navn</th>";
-    echo    "<th>rase</th>";
-    echo    "<th>fdato</th>";
-    echo    "<th>kjønn</th>";
-    echo    "<th>steril</th>";
-    echo    "<th>løpeM<br>Andre</th>";
-    echo    "<th>info</th>";
+    echo    "<th>HundID</th>";
+    echo    "<th>Navn</th>";
+    echo    "<th>Rase</th>";
+    echo    "<th>Fdato</th>";
+    echo    "<th>Kjønn</th>";
+    echo    "<th>Steril</th>";
+    echo    "<th>LøpeM<br>Andre</th>";
+    echo    "<th>Info</th>";
     echo    "<th>For</th>";
     echo "</tr>";
     while($rad = mysqli_fetch_assoc($resultat)){
@@ -298,13 +306,31 @@ function endreBrukerInfo($dblink) {
         tlf = '$tlf', adresse = '$adresse' WHERE brukerID = '$brukerID' ;";
         $resultat = mysqli_query($dblink, $sql);
 
-        opprettBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
-        $tlf, $adresse, $fødselsNr, $stilling, $postNr);
+        oppdaterBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, $tlf, $adresse);
         header("Refresh:0");
     }
 }
 
+/**
+ *  oppdaterer brukerSession som tar vare på burkerens info
+ *  @param int $hundID
+ *  @param int $epost
+ *  @param int $brukerType
+ *  @param int $fornavn
+ *  @param int $etternavn
+ *  @param int $tlf
+ *  @param int $adresse
+ *  @param int $fødselsNr
+ *  @param int $stilling
+ *  @param int $postNr
+**/
+function oppdaterBrukerSession($brukerID, $epost, $brukerType, $fornavn, $etternavn, $tlf, $adresse) {
+    $bruker = new Bruker($brukerID, $epost, $brukerType, $fornavn, $etternavn, 
+    $tlf, $adresse,null,null,null);
+    $_SESSION['bruker'] = $bruker;
+}
 
+ob_end_flush();
 
 // ************************** 3) minSideEndrePassord **************************
 // Denne siden lar brukeren få en endre passord
@@ -673,5 +699,3 @@ function lagreAnmeldelse($dblink) {
         echo "<br>".'<i style="color:green; position:absolute";"> Takk for din tilbakemelding </i>'; 
     }
 }
-
-ob_end_flush();

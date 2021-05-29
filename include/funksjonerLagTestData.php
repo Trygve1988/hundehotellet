@@ -32,17 +32,17 @@ function test($dblink) {
 
     //oppdaterer admin
     $sql = "UPDATE bruker SET brukerType = 'admin' , fornavn = 'Sansa', 
-    etternavn = 'Stark', tlf = '+4712345678', adresse = 'Epleveien 5' WHERE brukerID = 1 ;" ;
+    etternavn = 'Stark', tlf = '+4712345678', adresse = 'Epleveien 5', postnummer = '3800', poststed = 'Bø i Telemark' WHERE brukerID = 1 ;" ;
     $resultat = mysqli_query($dblink, $sql);
 
     //oppdaterer ansatt 1
     $sql = "UPDATE bruker SET epost = 'jonsnow@ha.no', brukerType = 'ansatt' , fornavn = 'Jon', 
-    etternavn = 'Snow', tlf = '+4712345678', adresse = 'Epleveien 5' WHERE brukerID = 2 ;" ;
+    etternavn = 'Snow', tlf = '+4712345678', adresse = 'Epleveien 5', postnummer = '3800', poststed = 'Bø i Telemark' WHERE brukerID = 2 ;" ;
     $resultat = mysqli_query($dblink, $sql);
 
     //oppdaterer ansatt 2
     $sql = "UPDATE bruker SET epost = 'daenerystargaryen@ha.no', brukerType = 'ansatt' , fornavn = 'Daenerys', 
-    etternavn = 'Targaryen', tlf = '+4712345678', adresse = 'Epleveien 5' WHERE brukerID = 3 ;" ;
+    etternavn = 'Targaryen', tlf = '+4712345678', adresse = 'Epleveien 5', postnummer = '3800', poststed = 'Bø i Telemark' WHERE brukerID = 3 ;" ;
     $resultat = mysqli_query($dblink, $sql);
 
     //finner max brukerID
@@ -65,7 +65,8 @@ function test($dblink) {
 
         //sql
         $sql = "UPDATE bruker SET epost = '$epost', brukerType = 'kunde', fornavn = '$fornavn', 
-        etternavn = '$etternavn', tlf = '+4712345678', adresse = 'Epleveien 5' WHERE brukerID = '$i' ;" ;
+        etternavn = '$etternavn', tlf = '+4712345678', adresse = 'Epleveien 5', 
+        postnummer = '3800', poststed = 'Bø i Telemark' WHERE brukerID = '$i' ;" ;
         $resultat = mysqli_query($dblink, $sql);
     }
 

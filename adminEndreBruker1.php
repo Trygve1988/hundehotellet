@@ -42,6 +42,9 @@
                 <?php $brukertype = $_SESSION['adminSeBrukertype']; ?>
                 
                 <h1 class="hovedOverskrift">Endre <?php echo $brukertype?> </h1>
+
+                <!-- velgEndreBruker -->
+                <?php velgEndreBruker($dblink); ?>  
                 
                 <div class="soloKolonne">
                     
@@ -54,9 +57,6 @@
                         } ?>
                     </select>      
                 </div>
-
-                <!-- velgEndreBruker -->
-                <?php velgEndreBruker($dblink); ?>  
 
                 <!-- Knapperad -->
                 <div class="knappeRad heltIBunnKnapp">

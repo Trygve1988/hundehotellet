@@ -45,7 +45,10 @@
 				</a>	
                 
                 <!-- Overskrift -->
-				<h2 id="minEndreBrukerInfo" class="hovedOversikt">Endre brukerinformasjon</h2>  
+				<h2 id="minEndreBrukerInfo" class="hovedOversikt">Endre brukerinformasjon</h2> 
+
+                <!-- oppdaterBrukerInfo -->
+                <?php endreBrukerInfo($dblink) ?>  
 				
                 <div class="skjemaKolonner">
 					<div class="kolonne1">   
@@ -53,7 +56,7 @@
                         <input class="inputTekst" type="text" id="fornavn" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" value= <?php echo $bruker->getFornavn() ?> >
 
                         <label for="tlf">Tlf:</label>   
-                        <input class="inputTekst" type="text" id="tlf" name="tlf" placeholder="4712456789" pattern="[+0-9]{10,14}" value= <?php echo $bruker->getTlf() ?> >
+                        <input class="inputTekst" type="text" id="tlf" name="tlf" placeholder="4712456789" value= <?php echo $bruker->getTlf() ?> >
                         
                         <label id="minAdresse" for="adresse">Adresse:</label>     
                         <input class="inputTekst" type="text" id="adresse" name="adresse" placeholder="Epleveien 5" value= <?php echo $bruker->getAdresse() ?> > 
@@ -90,8 +93,6 @@
 				</div>
             </form>
         </div> 
-         <!-- oppdaterBrukerInfo -->
-        <?php endreBrukerInfo($dblink) ?> 
 
     </main>
     
