@@ -66,7 +66,7 @@ $dblink = kobleOpp();
                     <p id="velkommenNoText3">Åpningstider: Man-Fre: 8-18, Lør-Søn: 10-16</p>
                 </div>
                 
-                <div id="KontrollerBD">
+                <div class="KontrollerBD">
 
                     <div class="bildeKontroller">
                         <a href="bestillOpphold.php"> <img src="bilder/hunder1.jpg" class="bilder" alt="Bilde av hund, dette bilde fører deg til bestill opphold"></a>

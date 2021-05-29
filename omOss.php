@@ -16,6 +16,7 @@ $dblink = kobleOpp();
     <script src="https://kit.fontawesome.com/f4f0ae0c65.js" crossorigin="anonymous"></script>
     <script src="include/script.js" defer> </script>
     <script src="include/scriptSpraak.js" defer> </script>
+    <script src="include/scriptIndexAnmeldelseSlider.js" defer> </script> 
 </head>
 
 <body>
@@ -39,9 +40,20 @@ $dblink = kobleOpp();
                 jeg og mannen min. Vi er alle hunde elskere på her på Bø Hundehotell, og eier eller er vant med hund fra før av. Din hund vil være trygg i våre hender. 
                 Vi håper vi ser deg og din hund her. Åpningstider: Man-Fre: 8-18, Lør-Søn: 10-16</p>
 
+                <!-- Trygve anmeldelseslider -->
+                <h2 class="overskrift2">Anmeldelse slider</h2>
+
+                <div id="anmeldelseBoks">
+                    <div id="anmeldelseTekstBoks">
+                        <p id="anmeldelseTekst"></p>
+                    </div>
+                    <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
+                    <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a> 
+                </div>
+
                 <h2 class="overskrift2">Ansatte</h2>
 
-                <div id="KontrollerBD2">
+                <div class="KontrollerBD2">
 
                     <div class="bildeKontroller2">
                         <img src="bilder/Ansatt/ans1.jpg" class="bilder2" alt="">
@@ -62,7 +74,7 @@ $dblink = kobleOpp();
                     </div>
                 </div>
                 
-                <div id="KontrollerBD2">
+                <div class="KontrollerBD2">
 
                     <div class="bildeKontroller2">
                         <img src="bilder/Ansatt/ans4.jpg" class="bilder2" alt="">
