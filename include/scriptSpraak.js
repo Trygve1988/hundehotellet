@@ -174,6 +174,7 @@ var infomasjonText14Tab = ['- Vi holde til Lektorvegen 91, 3802 Bø i Telemark '
 var sumÅbetaleTab = ['Sum å betale:','Amount to pay:'];
 var postNrTab = ['Postnummer:','Zip code:'];
 var postStedTab = ['Poststed:','City:'];
+var skrivAnmeldseTab = ['Skriv anmeldelse','Write a review'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -356,6 +357,7 @@ var anmeldseSlider = document.getElementById("anmeldseSlider");
 var sumÅbetale = document.getElementById("sumÅbetale");
 var postNr = document.getElementById("postNr");
 var postSted = document.getElementById("postSted");
+var skrivAnmeldse2 = document.getElementById("skrivAnmeldse2");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -653,6 +655,9 @@ if(postNr !== null){
 if(postSted !== null){
     postSted.innerHTML = postStedTab[språk];
 }
+if(skrivAnmeldse2 !==null){
+    skrivAnmeldse2.innerHTML = skrivAnmeldseTab[språk];
+}
 if (bestillOpphold3 !== null) {
     bestillOpphold3.innerHTML = bestillOppholdTab[språk];
     tidsperiode.innerHTML = tidsperiodeTab[språk];
@@ -672,6 +677,10 @@ if(bestillOpphold4 !== null) {
     vilkår.innerHTML = vilkårTab[språk];
     sumÅbetale.innerHTML = sumÅbetaleTab[språk];
 }
+if(vilkår !==null) {
+    vilkår.innerHTML = vilkårTab[språk];
+}
+
 if(loggInn !== null) {
     loggInn.innerHTML = loggInnTab[språk];
     epostLoggInn.innerHTML = epostTab[språk];
