@@ -48,6 +48,7 @@ $dblink = kobleOpp();
                         <p id="anmeldelseTekst"></p>
                     </div>
                     <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
+                    <?php if (harOpphold($dblink)) { ?> <a class="blaaTekst" href="minSideSkrivAnmeldelse.php."> Skriv anmeldse</a> <?php } ?>
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a> 
                 </div>
 
