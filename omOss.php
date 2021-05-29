@@ -42,15 +42,20 @@ $dblink = kobleOpp();
 
                 <!-- Trygve anmeldelseslider -->
                 <h2 id="anmeldseSlider" class="overskrift2">Anmeldelse slider</h2>
-
+                
                 <div id="anmeldelseBoks">
                     <div id="anmeldelseTekstBoks">
                         <p id="anmeldelseTekst"></p>
                     </div>
                     <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
+                    <?php 
+                        if (erLoggetInn($dblink)) { 
+                            if (harOpphold($dblink)) { 
+                                ?> <a class="blaaTekst" href="minSideSkrivAnmeldelse.php"> Skriv anmeldse</a> <?php 
+                            } 
+                        } ?> 
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a> 
-                    <?php if (harOpphold($dblink)) { ?> <a class="blaaTekst" href="minSideSkrivAnmeldelse.php."> Skriv anmeldse</a> <?php } ?>
-                </div>
+                </div> 
 
                 <h2 class="overskrift2">Ansatte</h2>
 
