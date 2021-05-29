@@ -50,10 +50,10 @@ $dblink = kobleOpp();
 					<!-- Labels og input i kolonne 1 -->
 					<div class="kolonne1">
 						<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
-						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="3" maxlength="50" required  value="peter">
+						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" required  value="peter">
 
 						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="3" maxlength="50" required value="griffin">		
+						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="2" maxlength="50" required value="griffin">		
 						
 						<!--<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
