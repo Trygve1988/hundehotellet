@@ -261,29 +261,6 @@ function harHund($dblink) {
     return $harHund; 
 }
 
-/** 
- *  Funksjon for å sjekke om brukeren har minst 1 Opphold
- *  Kalles på flere steder for å sjekke om opphold skal vises
- *  @return boolean $harOpphold
- *  @author Trygve Johannessen
- **/
-function harOpphold($dblink) {
-    $harOpphold = false;
-    $bruker = $_SESSION['bruker'];
-    $brukerID = $bruker->getBrukerID();
-    $sql = "SELECT * FROM bruker AS B, hund AS H, opphold AS O WHERE B.brukerID = H.brukerID  
-    AND H.hundID = O.hundID AND B.brukerID = '$brukerID';";  // 
-
-    $resultat = mysqli_query($dblink, $sql); 
-    $antall = mysqli_num_rows($resultat);
-    if ($antall > 0) {  
-        $harOpphold = true;
-    }
-    return $harOpphold; 
-}
-
-
-
 // ************************** 2) minSideEndreBrukerInfo **************************
 // Denne siden lar brukeren få en endre brukerinfo
 
