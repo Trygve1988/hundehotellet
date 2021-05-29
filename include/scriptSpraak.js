@@ -169,6 +169,8 @@ var bekreftMinSideTab = ['Min side','My page'];
 var bekreftBestillingText2Tab = ['Har du noe spørsmål angående oppholdet kan du ta kontakt med oss enten på tlf +4712345678','If you have any questions regarding the stay, you can contact us either on tel +4712345678'];
 var bekreftBestillingText3Tab = ['eller','or'];
 var harDuKontoRegisterDegTab = ['Har du allerede en bruker? Logg inn her','Do you already have a user? Log her in'];
+var anmeldseSliderTab = ['Anmeldelse slider','Review slider'];
+var infomasjonText14Tab = ['- Vi holde til Lektorvegen 91, 3802 Bø i Telemark ','- We keep to Lektorvegen 91, 3802 Bø in Telemark'];
 
 //får tak i valgt språk fra spraak cookien (Trygve)
 var språk = getCookie('spraak'); // 0 Norsk, 1 engelsk
@@ -238,6 +240,7 @@ var infomasjonText10 = document.getElementById("infomasjonText10");
 var infomasjonText11 = document.getElementById("infomasjonText11");
 var infomasjonText12 = document.getElementById("infomasjonText12");
 var infomasjonText13 = document.getElementById("infomasjonText13");
+var infomasjonText14 = document.getElementById("infomasjonText14");
 var navkontaktInformasjon = document.getElementById("navkontaktInformasjon");
 var navEpost = document.getElementById("navEpost");
 var navAdresse = document.getElementById("navAdresse");
@@ -346,6 +349,7 @@ var bekreftBestillingText = document.getElementById("bekreftBestillingText");
 var bekreftMinSide = document.getElementById("bekreftMinSide");''
 var bekreftBestillingText2 = document.getElementById("bekreftBestillingText2");
 var bekreftBestillingText3 = document.getElementById("bekreftBestillingText3");
+var anmeldseSlider = document.getElementById("anmeldseSlider");
 
 spraakKnapp.src = flaggTab[språk];
 hjemLink.innerHTML = hjemTab[språk];
@@ -513,6 +517,9 @@ if (infomasjonText12 !== null) {
 }
 if (infomasjonText13 !== null) {
     infomasjonText13.innerHTML = infomasjonTab13[språk]; 
+}
+if (infomasjonText14 !== null) {
+    infomasjonText14.innerHTML = infomasjonText14Tab[språk]; 
 } 
 if (navkontaktInformasjon !== null) {
     navkontaktInformasjon.innerHTML = navkontaktInformasjonTab[språk]; 
@@ -731,4 +738,8 @@ if(bekreftelseBestilling !==null){
     bekreftMinSide.innerHTML = bekreftMinSideTab[språk];
     bekreftBestillingText2.innerHTML = bekreftBestillingText2Tab[språk];
     bekreftBestillingText3.innerHTML = bekreftBestillingText3Tab[språk];
+}
+
+if(anmeldseSlider !==null){
+    anmeldseSlider.innerHTML = anmeldseSliderTab[språk];
 }

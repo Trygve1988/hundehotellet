@@ -88,7 +88,7 @@ $dblink = kobleOpp();
                 </div>
 
                 <!-- Trygve anmeldelseslider -->
-                <h2 class="overskrift2">Anmeldelse slider</h2>
+                <h2 id="anmeldseSlider" class="overskrift2">Anmeldelse slider</h2>
                 
                 <div id="anmeldelseBoks">
                     <div id="anmeldelseTekstBoks">

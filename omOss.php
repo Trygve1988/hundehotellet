@@ -41,7 +41,7 @@ $dblink = kobleOpp();
                 Vi håper vi ser deg og din hund her. Åpningstider: Man-Fre: 8-18, Lør-Søn: 10-16</p>
 
                 <!-- Trygve anmeldelseslider -->
-                <h2 class="overskrift2">Anmeldelse slider</h2>
+                <h2 id="anmeldseSlider" class="overskrift2">Anmeldelse slider</h2>
 
                 <div id="anmeldelseBoks">
                     <div id="anmeldelseTekstBoks">
