@@ -53,7 +53,7 @@
                 <div class="skjemaKolonner">
 					<div class="kolonne1">   
                         <label id="minFornavn" for="fornavn">Fornavn:</label>   
-                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" placeholder="Ida" value= <?php echo $bruker->getFornavn() ?> >
+                        <input class="inputTekst" type="text" id="fornavn" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" value= <?php echo $bruker->getFornavn() ?> >
 
                         <label for="tlf">Tlf:</label>   
                         <input class="inputTekst" type="text" id="tlf" name="tlf" placeholder="4712456789" value= <?php echo $bruker->getTlf() ?> >
@@ -61,14 +61,20 @@
                         <label id="minAdresse" for="adresse">Adresse:</label>     
                         <input class="inputTekst" type="text" id="adresse" name="adresse" placeholder="Epleveien 5" value= <?php echo $bruker->getAdresse() ?> > 
 
+                        <label for="postnummer">Postnummer:</label>
+						<input class="inputTekst" type="text" name="postnummer" placeholder="4300" pattern="[0-9]{4}" required value="4265">
+
+
                     </div>
                     <div>
                         <label id="minEtternavn" for="etternavn">Etternavn:</label>  
-                        <input class="inputTekst" type="text" id="etternavn" name="etternavn" placeholder="Idasen" value= <?php echo $bruker->getEtternavn() ?> >
+                        <input class="inputTekst" type="text" id="etternavn" name="etternavn" placeholder="Idasen" minlength="2" maxlength="50"  value= <?php echo $bruker->getEtternavn() ?> >
 
                         <label id="mail" for="epost">Epost:</label>
-                        <input class="inputMail" type="email" name="epost" placeholder="test@test.com" id="epost" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value= <?php echo $bruker->getEpost() ?>>
+                        <input class="inputMail" type="email" name="epost" placeholder="test@test.com" id="epost" value= <?php echo $bruker->getEpost() ?>>
 
+                        <label for="poststed">Poststed:</label>
+						<input class="inputTekst" type="text" name="poststed" required value="Håvik">
                     </div>
                 </div> 
 

@@ -46,21 +46,21 @@
                 <div class="skjemaKolonner">
                     <div class="kolonne1">
                         <label for="fornavn">Fornavn:</label>   
-                        <input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" pattern="[A-Za-z]{1,63}" required value= <?php echo $bruker->getFornavn() ?> >
+                        <input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" required value= <?php echo $bruker->getFornavn() ?> >
 
                         <label for="tlf">Tlf:</label>   
                         <input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value= <?php echo $bruker->getTlf() ?> >
                         
                         <label for="adresse">Adresse:</label>     
-                        <input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required pattern="[A-Za-z 0-9]{3,63}$" value= <?php echo $bruker->getAdresse() ?> > 
+                        <input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required value= <?php echo $bruker->getAdresse() ?> > 
 
                     </div>
                     <div>
                         <label for="etternavn">Etternavn:</label>  
-                        <input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" pattern="[A-Za-z]{1,63}"required value= <?php echo $bruker->getEtternavn() ?> >
+                        <input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="2" maxlength="50" required value= <?php echo $bruker->getEtternavn() ?> >
 
                         <label for="epost">Epost:</label>
-                        <input class="inputMail" type="email" name="epost" placeholder="test@test.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" 
+                        <input class="inputMail" type="email" name="epost" placeholder="test@test.com"
                         value= <?php echo $bruker->getEpost() ?>>
                     </div>
                 </div> 
