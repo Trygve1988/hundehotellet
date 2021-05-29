@@ -44,20 +44,20 @@
                 <div class="skjemaKolonner">
                     <!-- Labels og input i kolonne 1 -->
 					<div class="kolonne1">
-						<label for="fornavn">Fornavn:</label>
-						<input  class="inputTekst" type="text" name="fornavn" value=""  required>
+                        <label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
+						<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" required  value="peter">
 						
-						<label for="etternavn">Etternavn:</label>
-						<input class="inputTekst" type="text" name="etternavn" value="" required>	
+                        <label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
+						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="2" maxlength="50" required value="griffin">		
 						
-						<label for="fDato">Fødselsdato:</label>
-						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" value="" required>	
+                        <label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
+						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 
-						<label for="tlf">Tlf:</label>
-						<input class="inputTekst" type="text" name="tlf" pattern="[0-9]{8}" value="" required>	
+                        <label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
+						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
 						
-						<label for="adresse">Adresse:</label>
-						<input class="inputTekst" type="text" name="adresse"  value="" required>	
+						<label id="adresseRegistrerDeg" for="adresse">Adresse:</label>
+						<input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required value="Epleveien 5">
 					</div>
 
 					<!-- Labels og input i kolonne 2 -->
@@ -92,12 +92,12 @@
                         </select>
                            
                         <!-- Epost -->
-						<label for="epost">E-post:</label>
-						<input class="inputTekst" type="text" name="epost" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" value="" required>	
-							
-						<label for="passord">Ønsket passord:</label>
+						<label id="epostReigsterDeg" for="epost">E-post:</label>
+						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
+						
+						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
-						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" onChange="sjekkPassord()" value="" required>
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" value="123Ab%12">
 
 						
 						<!-- Passord rad -->
@@ -115,10 +115,6 @@
 								<!-- Engelsk tilbakemelding --->
 								<p id="status2" melding2()></p>
 							</div>
-						</div>	
-						<div class="gjentaPKolonne">
-							<label for="passordSjekk">Gjenta passord:</label>
-							<input class="inputPassord" type="password" name="passordSjekk" id="gjentaPassord" onChange="sjekkPassord()" value="" required>	
 						</div>		
 					</div>
 				</div>    

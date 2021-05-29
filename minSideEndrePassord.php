@@ -61,7 +61,7 @@
 
                         <label id="nyttPassord" for="passord">Nytt passord:</label>
 						<input class="inputPassord" type="password" name="passord" 
-						id="passord2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" onChange="sjekkPassordLike()" value="" required >
+						id="passord2" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" value="" required >
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">

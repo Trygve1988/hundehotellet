@@ -82,7 +82,7 @@ $dblink = kobleOpp();
 						
 						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
 						<input class="inputPassord" type="password" name="passord" required 
-						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" onChange="sjekkPassordLike()" value="123Ab%12">
+						id="passord" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$" value="123Ab%12">
 
 						<!-- Vis passord checkbox -->
 						<div class="visPassord">
