@@ -60,7 +60,7 @@ $dblink = kobleOpp();
 				<div class="mindreTekst">
 					<p><b id="hund">Hund(er):</b> <?php echo getValgteHunderNavn($dblink); ?> </p> 
 					<p><b id="dato">Dato:</b> <span>(<?php echo $startDato ?>)</span> - <span>(<?php echo $sluttDato ?>)</span> 
-					<p><b><u id="sumÅbetale">Sum å betale: <span> <?php echo $totalPris ?> </span>kr</u></b></p>
+					<p><b id="sumÅbetale"><u>Sum å betale: <span> <?php echo $totalPris ?> </span>kr</u></b></p>
 				</div>
 
 				<h2 id="bestling" class="overskrift2" >Betaling</h2>
@@ -69,7 +69,7 @@ $dblink = kobleOpp();
 					<div class="kolonne1">
 						<!-- Labels og input i kolonne 1 -->			
 						<label id="kortholder" for="kortholder">Kortholder:</label>
-						<input class="inputTekst" type="text" name="kortholder">		
+						<input class="inputTekst" type="text" placeholder="Ida Idasen" name="kortholder">		
 
 						<label id="utløpsdato" for="utlopsdato">Utløpsdato:</label>
 						<input class="inputDato" type="date" name="utlopsdato">
@@ -87,12 +87,12 @@ $dblink = kobleOpp();
 								<span class="tooltiptekst">De 3 siste sifrene bak kortet ved navnet ditt / The last 3 digits behind the card by your name</span>
 							</div>
 						<!--CVC label -->	
-						<input class="inputTekst" type="text" pattern="[0-9]{3}" name="cvv">
+						<input class="inputTekst" type="text" placeholder="123" pattern="[0-9]{3}" name="cvv">
 						
 					
 						<!-- ************************ (Gunni) ********************************** -->
 						<!-- Godta vilkår -->
-						<a id="vilkår" class="blaaTekst" href="vilkaar.php"> Kryss av for å godta vilkår:</a></label> 
+						<a id="vilkår" class="blaaTekst" href="vilkaar.php"> Kryss av for å godta vilkår:</a>
 						<input class="litenCheckbox" type="checkbox" name="til" required checked>		
 						
 					</div>

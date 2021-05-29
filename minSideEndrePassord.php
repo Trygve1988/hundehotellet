@@ -89,9 +89,9 @@
                         <?php endrePassord($dblink) ?> 
                     </div>
                 </div> 
-
+				
                 <!-- Knapperad -->
-				<div class="knappeRad bunnTekst">
+				<div class="knappeRad bunnTekst minSideLengreNed">
 					<div class="knapp1IRad">
 						<!-- Tilbakeknapp -->
 						<a href="minSide.php">

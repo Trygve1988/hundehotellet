@@ -98,7 +98,7 @@ $dblink = kobleOpp();
                     <?php 
                         if (erLoggetInn($dblink)) { 
                             if (harOpphold($dblink)) { 
-                                ?> <a class="blaaTekst" href="minSideSkrivAnmeldelse.php"> Skriv anmeldse</a> <?php 
+                                ?> <a class="blaaTekst" id="skrivAnmeldse2" href="minSideSkrivAnmeldelse.php"> Skriv anmeldse</a> <?php 
                             } 
                         } ?> 
                     <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a> 

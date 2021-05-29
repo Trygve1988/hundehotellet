@@ -61,7 +61,7 @@
                         <label id="minAdresse" for="adresse">Adresse:</label>     
                         <input class="inputTekst" type="text" id="adresse" name="adresse" placeholder="Epleveien 5" value= <?php echo $bruker->getAdresse() ?> > 
 
-                        <label for="postnummer">Postnummer:</label>
+                        <label id="postNr" for="postnummer">Postnummer:</label>
 						<input class="inputTekst" type="text" name="postnummer" placeholder="4300" pattern="[0-9]{4}" required value="4265">
 
 
@@ -73,8 +73,8 @@
                         <label id="mail" for="epost">Epost:</label>
                         <input class="inputMail" type="email" name="epost" placeholder="test@test.com" id="epost" value= <?php echo $bruker->getEpost() ?>>
 
-                        <label for="poststed">Poststed:</label>
-						<input class="inputTekst" type="text" name="poststed" required value="Håvik">
+                        <label id="postSted" for="poststed">Poststed:</label>
+						<input class="inputTekst" type="text" name="poststed" placeholder="Stavanger" required value="Håvik">
                     </div>
                 </div> 
 
