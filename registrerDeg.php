@@ -69,13 +69,14 @@ $dblink = kobleOpp();
 					</div>
 
 					<!-- Labels og input i kolonne 2 -->
-					<div>		
-						<label id="epostReigsterDeg" for="epost">E-post:</label>
-						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
+					<div>	
 
 						<label id="etterNavnRegisterDeg" for="etternavn">Etternavn:</label>
 						<input class="inputTekst" type="text" name="etternavn" placeholder="Idasen" minlength="2" maxlength="50" required value="griffin">		
-						
+
+						<label id="epostReigsterDeg" for="epost">E-post:</label>
+						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
+
 						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
 						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
 						
