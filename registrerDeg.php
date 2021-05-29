@@ -55,14 +55,11 @@ $dblink = kobleOpp();
 						<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 						
-						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
-						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
-						
-						<label for="postnummer">Postnummer:</label>
+						<label id="postNr" for="postnummer">Postnummer:</label>
 						<input class="inputTekst" type="text" name="postnummer" placeholder="4300" pattern="[0-9]{4}" required value="4265">
 
-						<label for="poststed">Poststed:</label>
-						<input class="inputTekst" type="text" name="poststed" placeholder="Stavanger required value="Håvik">
+						<label id="postSted" for="poststed">Poststed:</label>
+						<input class="inputTekst" type="text" name="poststed" placeholder="Stavanger" required value="Håvik">
 
 						<label id="adresseRegistrerDeg" for="adresse">Adresse:</label>
 						<input class="inputTekst" type="text" name="adresse" placeholder="Epleveien 5" required value="Epleveien 5">
@@ -77,7 +74,7 @@ $dblink = kobleOpp();
 						<label id="epostReigsterDeg" for="epost">E-post:</label>
 						<input class="inputMail" type="email" name="epost" placeholder="test@test.com" required value="test@ha.no">	 
 
-						<label id="tlfRegisterDeg" for="tlf">Telefonnummer:</label>
+						<label id="tlfRegisterDeg" for="tlf">Tlf:</label>
 						<input class="inputTekst" type="text" name="tlf" placeholder="+4712345678" required pattern="[+0-9]{10,14}" value="+4712345678">	
 						
 						<label id="passordRegisterDeg" for="passord">Ønsket passord:</label>
