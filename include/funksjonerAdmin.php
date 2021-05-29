@@ -123,7 +123,7 @@ function velgEndreBruker($dblink) {
             $adresse        = $rad['adresse'];
             $fødselsNr      = $rad['fødselsNr'];
             $stilling       = $rad['stilling'];
-            $postNr         = $rad['postNr'];
+            //$postNr         = $rad['postNr'];
         }
         $b = new Bruker($brukerID,$epost,$brukerType,$fornavn,$etternavn,$tlf, $adresse, $fødselsNr, $stilling, $postNr);
         $_SESSION['endreBruker'] = $b;
