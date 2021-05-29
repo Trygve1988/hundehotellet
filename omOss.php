@@ -37,7 +37,9 @@ $dblink = kobleOpp();
                 <p id="omOssText" class="omOssText">Bø Hundehotell holder til på Lektorvegen 91, i Bø i Telemark. Det er landelige omgivelser med store luftegårder, og fine turområder.
                 Vi seks ansatt som jobber her på Bø Hundehotell, vi har vært i Hundehotell businessen i 6år, vi startet opp for først gang den 12.04.2010. Den gang var det bare
                 jeg og mannen min. Vi er alle hunde elskere på her på Bø Hundehotell, og eier eller er vant med hund fra før av. Din hund vil være trygg i våre hender. 
-                Vi håper vi ser deg og din hund her.</p>
+                Vi håper vi ser deg og din hund her. Åpningstider: Man-Fre: 8-18, Lør-Søn: 10-16</p>
+
+                <h2 class="overskrift2">Ansatte</h2>
 
                 <div id="KontrollerBD2">
 

@@ -86,6 +86,7 @@ $dblink = kobleOpp();
                             <p id="overSkrift6" class="overskrift" >Annet:</p>
                             <p id="infomasjonText12">- Vi står ikke økomomisk ansvarlig for personlige eiendler hunden har med seg hit.</p>
                             <p id="infomasjonText13">- Vennligst ikke ta med ting du er redd for at kan bli ødelagt under oppholdet.</p>
+                            <p>- Vi holde til Lektorvegen 91, 3802 Bø i Telemark </p>
                         </div>
                     </div>  
             </form>
