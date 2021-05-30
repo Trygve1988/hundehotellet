@@ -48,7 +48,7 @@ $dblink = kobleOpp();
 			placeholder og required. Gunn inger utsene.-->
 				<div class="kolonne1">
 					<label id="forNavnRegisterDeg" for="fornavn">Fornavn:</label>
-					<input  class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" required  value="peter">
+					<input class="inputTekst" type="text" name="fornavn" placeholder="Ida" minlength="2" maxlength="50" required  value="peter">
 					<label id="fødselsdatoRegistrerDeg" for="fDato">Fødselsdato:</label>
 					<input class="inputDato" type="date" name="fDato" placeholder="YYYY-MM-DD" required value="2000-01-01">	
 					
