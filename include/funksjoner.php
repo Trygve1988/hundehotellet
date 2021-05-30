@@ -186,7 +186,7 @@ function visFooter() {
             <p><strong id="navEpost" > Epost:</strong> <a href="mailto:bohundehotell@outlook.com">bohundehotell@outlook.com</a></p>
             <p> <strong id="navAdresse">Adresse:</strong>Lektorvegen 91 <br> 3802 Bø i Telemark</p>
         </div>
-
+<!--Gratis sosiale medieikoner fra https://www.flaticon.com/packs/social-media-87 -->
         <div class="midten sosiale-medier">
             <h1 id="navSosialMedier">Sosiale medier</h1>
             <a href="https://www.instagram.com" target="_blank">
