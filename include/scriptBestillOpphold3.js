@@ -22,6 +22,7 @@ function hentUtFullbookedeDatoer() {
     ajaxRequest.onreadystatechange = function() {
         var opptattTab = ajaxRequest.responseText;
         if(opptattTab) {
+            console.log(opptattTab);
             taVekkDatoer(opptattTab);
         }
     } 

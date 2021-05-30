@@ -57,19 +57,42 @@
                     </a>
                 </div><br>
 
-                <!-- ************************** (Trygve) ************************** -->
-                <!-- Mine hunder -->
+                <!-- ******************** Mine hunder (Trygve) ******************** -->
                 <h2 id="minHunder" class="overskrift2">Mine Hunder</h2>
-              
-                <?php visMineHunder($dblink); ?> 
+
+                <!-- setter minSideHund viss brukeren har hund og minSidehund er tom -->
+                <?php if (harHund($dblink)) { 
+                    if (isset($_SESSION['minSideHund'])) { 
+                        $hunder = lagHunderTab($dblink);
+                        $_SESSION['minSideHund'] = $hunder[0];
+                    }
+                } ?> 
+                
+                <!-- lager valgboks viss brukeren har hunder -->
+                <?php if (harHund($dblink)) { ?>
+                    <div>
+                        <label id="velgHundMinSide" for="velgHundSelect">Velg hund:</label>
+                        <select id="velgMinSideHundSelect" class="litenSelect" name="velgHundSelect">
+                            <option>Velg</option>
+                            <?php $hunder = lagHunderTab($dblink);
+                            for ($i=0; $i<count($hunder); $i++) {
+                                lagMinSideOption($hunder[$i],$minSideHund); 
+                            } ?>
+                        </select>
+                    </div>
+                    <?php 
+                    if ( isset($_SESSION['minSideHund']) ) {  
+                        minHundTab($dblink); 
+                    } 
+                } ?>
 
                 <!-- Registrer hund knapp -->    
                 <a href="registrerHundMS.php">
                     <input class="inputButton mediumKnapp" type="button" value="Registrer hund">
                 </a>
-                
-                <?php if (harHund($dblink)) { ?>
 
+                <!-- Lager "Endre hund" knapp og "Slett hund" knapp viss brukeren har hunder -->
+                <?php if (harHund($dblink)) { ?>
                     <!-- Endre hund knapp -->  
                     <a href="minSideEndreHund1.php">
                         <input class="inputButton mediumKnapp" type="button" value="Endre hund">  
@@ -77,9 +100,8 @@
                     <!-- Slett hund knapp -->  
                     <a href="minSideSlettHund.php">
                         <input class="inputButton mediumKnapp" type="button" value="Slett hund">  
-                    </a>               
-                <?php } ?>
-                <br><br><br>
+                    </a> <?php            
+                } ?>
 
                 <!-- Bestillinger -->
                 <h2 id="mineOpphold" class="overskrift2">Mine opphold</h2> 

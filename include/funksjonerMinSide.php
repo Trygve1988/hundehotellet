@@ -435,6 +435,95 @@ function minSideRegistrerHund($dblink) {
     }
 }
 
+
+//Mine hunder tabell
+function minHundTab($dblink) {
+    //if (isset($_POST['minSideHund'])) {     
+        // $brukerID
+        $hundID = $_SESSION['minSideHund'];
+
+        // SQL-spørring
+        $sql = "SELECT * FROM hund WHERE hundID = '$hundID' ;"; 
+
+        //SQL-resultat -> Tabellrader
+        $resultat = mysqli_query($dblink, $sql);
+        
+        while($rad = mysqli_fetch_assoc($resultat)) {
+            echo "<table class=\"toKolTab  minSideToKolTab\">";	
+                echo "<tr>";
+                echo "<th class=\"thKolonne\">Navn</th>";
+                    echo "<td>". $rad['navn'] ."</td>";
+                    echo "</tr>";
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Rase</th>";
+                    echo "<td>". $rad['rase'] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Fødselsdato</th>";
+                    echo "<td>". $rad['fdato'] . "</td>";
+                echo "</tr>";
+
+               //kjønn
+               $kjønn;
+               if ($rad['kjønn'] == "gutt") {
+                   $kjønn = "Hann"; 
+               }
+               else {
+                   $kjønn = "Tispe"; 
+               }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Kjønn</th>";
+                    echo "<td>". $kjønn . "</td>";
+                echo "</tr>";
+
+                //sterilisert
+                $sterilisert;
+                if ($rad['sterilisert'] == 1) {
+                    $sterilisert = "Ja"; 
+                }
+                else {
+                    $sterilisert = "Nei"; 
+                }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Sterilisert</th>";
+                    echo "<td>". $sterilisert . "</td>";
+                echo "</tr>";
+
+                //løpeMedAndre
+                $løpeMedAndre;
+                if ($rad['løpeMedAndre'] == 1) {
+                    $løpeMedAndre = "Ja"; 
+                }
+                else {
+                    $løpeMedAndre = "Nei"; 
+                }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Kan omgås andre hunder</th>";
+                    echo "<td>". $løpeMedAndre . "</td>";
+                echo "</tr>";
+
+                //løpeMedAndre
+                $forID;
+                if ($rad['forID'] == 1) {
+                    $forID = "Vanlig"; 
+                }
+                else {
+                    $forID = "Allergi"; 
+                }
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Fòrtype</th>";
+                    echo "<td>". $forID . "</td>";    
+                echo "</tr>";
+
+                echo "<tr>";
+                    echo "<th class=\"thKolonne\">Ekstra informasjon</th>";
+                    echo "<td>". $rad['info'] . "</td>";
+                echo "</tr>";
+            echo "</table>";
+        } 
+    //}
+}
+
 /** 
  *  Funksjon for å lage en option verdi til min side select boksen der brukeren kan velge en hund
  *  @author Trygve Johannessen

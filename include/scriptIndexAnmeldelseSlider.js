@@ -35,7 +35,10 @@ function hentUtAnmeldelser() {
  *  @param  String  anmeldelseStr
  */ 
 function lagAnmeldelseTab(anmeldelseStr) { 
-    anmeldelseTab = anmeldelseStr.split(",")  // lager tabell
+    anmeldelseTab = anmeldelseStr.split(",¤&%#")  // lager tabell
+    for (var i=0; i<anmeldelseTab.length; i++) {
+        anmeldelseTab[i] = anmeldelseTab[i].split(0,anmeldelseTab.length-3);
+    }
 }
 
 /**
@@ -45,7 +48,7 @@ function lagAnmeldelseTab(anmeldelseStr) {
 function neste() {
     anmeldelsePos++;
     //er vi gått for langt mot høyre?
-    if (anmeldelseTab !== null && anmeldelsePos > anmeldelseTab.length-3) {
+    if (anmeldelseTab !== null && anmeldelsePos > anmeldelseTab.length-2) {
         anmeldelsePos = 0;
     }
     oppdaterAnmeldelseSlider();
