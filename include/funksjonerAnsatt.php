@@ -991,7 +991,6 @@ function visAlleRegistrerteLuftingerIDag($dblink) {
     echo    "<th>Slutt</th>";    
     echo "</tr>";
 
-    // SQLSpørring for å finne alle registrerte matinger i dag    
     $sql = " SELECT L.*, H.navn, H.løpeMedAndre
     FROM lufting AS L, opphold AS O, hund AS H
     WHERE L.oppholdID = O.oppholdID
@@ -1029,14 +1028,13 @@ function visAlleRegistrerteLuftingerIDag($dblink) {
 
 /**
  *  Funksjon for å vise alle opphold som SKAL bli luftet i dag
- *  Kalles av funksjonen over viss det ikke er registrert noen luftinger i dag
+ *  Kalles av funksjonen over viss det IKKE er registrert noen luftinger i dag
  */
 function visAlleHunderPaaOppholdNaaLufting($dblink) {
     $sql = " SELECT O.oppholdID, F.forType, H.navn, H.løpeMedAndre FROM bestilling AS B, opphold AS O, hund AS H, hundefor AS F
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
     AND H.forID = F.forID
-    AND day(B.startDato) <= day(CURRENT_TIMESTAMP) AND day(B.sluttDato) >= day(CURRENT_TIMESTAMP)
     AND B.sjekketInn IS NOT NULL
     AND B.sjekketUt IS NULL
     ORDER BY O.oppholdID  ;";
@@ -1129,8 +1127,6 @@ function getErILuftegaardIDer($dblink) {
     WHERE B.bestillingID = O.bestillingID 
     AND   O.hundID = H.hundID
     AND   O.oppholdID = L.oppholdID
-    AND day(B.startDato) <= day(CURRENT_TIMESTAMP) 
-    AND day(B.sluttDato) >= day(CURRENT_TIMESTAMP) 
     AND B.sjekketInn IS NOT NULL 
     AND B.sjekketUt IS NULL 
     AND day(L.startTidspunkt) = day(CURRENT_TIMESTAMP) ;";
@@ -1214,7 +1210,6 @@ function visAlleHunderPaaOppholdNaaTur($dblink) {
     WHERE B.bestillingID = O.bestillingID
     AND O.hundID = H.hundID
     AND H.forID = F.forID
-    AND day(B.startDato) <= day(CURRENT_TIMESTAMP) AND day(B.sluttDato) >= day(CURRENT_TIMESTAMP)
     AND B.sjekketInn IS NOT NULL
     AND B.sjekketUt IS NULL
     ORDER BY O.oppholdID  ;";
@@ -1316,7 +1311,7 @@ function getErPaaTurIDer($dblink) {
 // Funksjon for å slette alle hunder
 function slettAlleTurer($dblink) {
     if (isset($_POST['slettAlle'])) { 
-        $sql = "DELETE FROM tur WHERE day(tidspunkt) = day(CURRENT_TIMESTAMP) ;";
+        $sql = "DELETE FROM tur ;";
         mysqli_query($dblink,$sql);
         header("Refresh:0");
     }  
