@@ -62,7 +62,7 @@ $dblink = kobleOpp();
 						<label id="fdato" for="fDato">Fødselsdato:</label>
 						<input class="inputDato" type="date" name="fdato" value= <?php echo $h1->getFdato() ?> > 
 
-						<!-- kjønn --> 
+						<!-- Kjønn --> 
 						<?php $kjonn = $h1->getKjønn(); ?>
 						<label id="kjønn" for="kjønn">kjønn:</label>
 						<select class="inputSelect" name="kjønn"> 
@@ -78,7 +78,7 @@ $dblink = kobleOpp();
 							?>
 						<select> 
 
-						<!-- sterilisert --> 
+						<!-- Sterilisert --> 
 						<?php $sterilisert = $h1->getSterilisert(); ?>
 						<label id="sterilisert" for="sterilisert">sterilisert:</label>
 						<select class="inputSelect" name="sterilisert"> 
@@ -133,7 +133,7 @@ $dblink = kobleOpp();
 							?>
 						<select> 
 
-						<!-- info -->
+						<!-- Ekstra informasjon -->
 						<label id="ektraInfo" for="info">Ekstra informasjon:</label>
 						<textarea class=" tekstboks tekstfelt1" name="info"> <?php echo $h1->getInfo() ?> </textarea>	
 
