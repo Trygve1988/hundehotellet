@@ -62,6 +62,9 @@ $dblink = kobleOpp();
 						<input type="date" id="sluttDato" class="inputDato" name="sluttDato" value="<?php echo andreLedigeDato($dblink); ?>" readonly >
 					</div>	
 				</div>
+
+				<!-- Bestill opphold -->
+				<?php bekreftDatoer($dblink); ?> 
 		
 				<!-- Knapperad -->
 				<div class="knappeRad heltIBunnKnapp">
@@ -77,8 +80,6 @@ $dblink = kobleOpp();
 							<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft datoer" name="bekreftDatoer">
 						</a>
 					</div>
-					<!-- Bestill opphold -->
-					<?php bekreftDatoer($dblink); ?> 
 				</div>	
 			</form>
 		</div>	

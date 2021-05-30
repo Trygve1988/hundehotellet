@@ -14,7 +14,7 @@ $anmeldelseStr = "";
 $sql = "SELECT * FROM anmeldelse WHERE godkjent = 1;"; 
 $resultat = mysqli_query($dblink,$sql);
 while($rad = mysqli_fetch_assoc($resultat)) {
-    $anmeldelseStr =  $anmeldelseStr.$rad['tekst'] . ",";
+    $anmeldelseStr =  $anmeldelseStr.$rad['tekst'] . ",¤&%#";
 }
 
 echo $anmeldelseStr;

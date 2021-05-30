@@ -5,10 +5,11 @@ class Bestilling {
     private $sluttDato;
     private $totalPris;
 
-    function __construct($startDato,$sluttDato,$totalPris) {
+    function __construct($startDato,$sluttDato,$totalPris,$burID) {
         $this->startDato = $startDato;
         $this->sluttDato = $sluttDato;
         $this->totalPris = $totalPris;
+        $this->burID = $burID;
     }
 
     function getStartDato() {
@@ -23,8 +24,12 @@ class Bestilling {
         return $this->totalPris;
     }
 
+    function getBurID() {
+        return $this->burID;
+    }
+
     function toString() {
-        return $this->startDato . ", " . $this->sluttDato . ", ".$this->totalPris.", ";
+        return $this->startDato . ", " . $this->sluttDato . ", ".$this->totalPris.", ".$this->burID;
     }
 }
 ?>

@@ -143,6 +143,7 @@ function skrivUkeTab($burTab) {
 // Denne siden lar ansatt-brukeren få en se en oversikt over 5 siste ferdige oppgold,
 // alle aktive opphold og alle fremtide opphold
 
+// Funksjon for å vise alle ferdige opphold
 function visFerdigeOpphold($dblink) {
     lagOppholdOverskrifter("Alle Ferdige");
     $sql = lagFerdigeOppholdSpørring($dblink); //
@@ -150,6 +151,7 @@ function visFerdigeOpphold($dblink) {
     visOppholdTab($bestillingTab);
 }
 
+// Funksjon for å vise de 5 siste ferdige oppholdene
 function visFerdigeOpphold5Siste($dblink) {
     lagOppholdOverskrifter("Ferdige");
     $sql = lagFerdigeOppholdSpørring($dblink);
@@ -157,6 +159,7 @@ function visFerdigeOpphold5Siste($dblink) {
     visOppholdTab5Siste($bestillingTab);
 }
 
+// Funksjon for å vise alle aktive opphold
 function visAktiveOpphold($dblink) {
     lagOppholdOverskrifter("Aktive");
     $sql = lagAktiveOppholdSpørring($dblink); //
@@ -164,6 +167,7 @@ function visAktiveOpphold($dblink) {
     visOppholdTab($bestillingTab);
 }
 
+// Funksjon for å vise de 5 siste ferdige oppholdene
 function visIkkeBegynteOpphold5første($dblink) {
     lagOppholdOverskrifter("Kommende");
     $sql = lagIkkeBegynteOppholdSpørring($dblink); //
@@ -171,14 +175,13 @@ function visIkkeBegynteOpphold5første($dblink) {
     visOppholdTab5første($bestillingTab);
 }
 
+// Funksjon for å vise alle kommende opphold
 function visIkkeBegynteOpphold($dblink) {
     lagOppholdOverskrifter("Kommende");
     $sql = lagIkkeBegynteOppholdSpørring($dblink); //
     $bestillingTab = lagOppholdTab($dblink,$sql);
     visOppholdTab($bestillingTab);
 }
-
-
 
 /**
  *  Funksjon for å skrive overskrifter til hver opphold kategori
@@ -276,8 +279,8 @@ function lagOppholdTab($dblink,$sql) {
 
 /**
  *  Funksjon som tar i mot en tabell med "FerdigBestilling"-objekter
- *  @param String $sql
- *  @return String $bestillingTab
+ *  of lager en tabell over oppholdene
+ *  @param String $bestillingTab
  **/ 
 function visOppholdTab($bestillingTab) {
     if ($bestillingTab!==null) {
@@ -300,6 +303,11 @@ function visOppholdTab($bestillingTab) {
     echo "</table>";
 } 
 
+/**
+ *  Funksjon som tar i mot en tabell med "FerdigBestilling"-objekter
+ *  of lager en tabell med de 5 første oppholdene
+ *  @param String $bestillingTab
+ **/ 
 function visOppholdTab5første($bestillingTab) {
     if ($bestillingTab!==null) {
         //kjører gjennom $bestillingTab
@@ -321,6 +329,11 @@ function visOppholdTab5første($bestillingTab) {
     echo "</table>";
 } 
 
+/**
+ *  Funksjon som tar i mot en tabell med "FerdigBestilling"-objekter
+ *  of lager en tabell med de 5 siste oppholdene
+ *  @param String $bestillingTab
+ **/ 
 function visOppholdTab5Siste($bestillingTab) {
     if ($bestillingTab!==null) {
         //kjører gjennom $bestillingTab

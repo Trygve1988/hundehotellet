@@ -52,6 +52,7 @@
                 <!-- velg Hund-->
                 <label for="velgHundSelect">Velg Hund:</label>
                 <select id="velgInspiserHundSelect" class="litenSelect" name="velgHundSelect" width="100px">
+                    <option>Velg</option>
                     <?php $hunder = lagHunderPaaOppholdNaaTab($dblink);
                     $inspiserHund = $_SESSION['inspiserHund']; 
                     for ($i=0; $i<count($hunder); $i++) {
