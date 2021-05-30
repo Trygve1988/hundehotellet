@@ -40,7 +40,7 @@ $dblink = kobleOpp();
 				<?php $h1 = $_SESSION['aktivHund']; ?>
 
 				<!-- Avbryt knapp -->
-				<a href = "index.php">
+				<a href ="index.php">
 					<input class="avbrytKnapp" type="button" value="X">
 				</a>
 
@@ -143,14 +143,14 @@ $dblink = kobleOpp();
 				<div class="knappeRad">
 					<div class="knapp1IRad">
 						<!-- Tilbake knapp -->
-						<a href = "bestillOpphold.php">
+						<a href ="bestillOpphold.php">
 	                		<input class="inputButton hovedKnapp" type="button" value="Tilbake"> 
 	            		</a>
 					</div>
 					<div class="etterKolonnerKnapp">
 
 						<!-- Neste knapp -->
-						<a href = "bestillOpphold2.php">
+						<a href ="bestillOpphold2.php">
 	                		<input class="inputSubmit hovedKnapp" type="submit" value="Bekreft" name="bekreftHundInfo"> 
 	            		</a>	
 					</div>
