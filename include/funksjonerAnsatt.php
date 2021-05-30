@@ -670,7 +670,7 @@ function nullStillUtsjekkinger($dblink) {
 }
 
 
-
+ 
 // ********************************* 5) ansattInspiserHund ******************************************
 // Side som lar ansatt-brukere sjekke inn og ut hunder
 

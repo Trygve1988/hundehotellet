@@ -1,15 +1,14 @@
+SET FOREIGN_KEY_CHECKS = 0;
+SET UNIQUE_CHECKS = 0;
 SET SQL_SAFE_UPDATES = 0;
 
 DROP TABLE IF EXISTS slettetBestilling;
 DROP TABLE IF EXISTS anmeldelse;
 DROP TABLE IF EXISTS innlegg;
-DROP TABLE IF EXISTS bading;
+DROP TABLE IF EXISTS kommentar;
+DROP TABLE IF EXISTS tur;
 DROP TABLE IF EXISTS lufting;
 DROP TABLE IF EXISTS mating;
-DROP TABLE IF EXISTS bestillingHarRabatt;
-DROP TABLE IF EXISTS rabatt;
-DROP TABLE IF EXISTS delsum;
-DROP TABLE IF EXISTS prisHistorikk;
 DROP TABLE IF EXISTS pris;
 DROP TABLE IF EXISTS opphold;
 DROP TABLE IF EXISTS bestilling;
@@ -20,12 +19,6 @@ DROP TABLE IF EXISTS bruker;
 DROP TABLE IF EXISTS postSted;
 DROP TABLE IF EXISTS ledigeBurPrDag;
 
-CREATE TABLE postSted (
-	postNr 		char(4),
-  	postSted 	varchar(70),
-	PRIMARY KEY (postNr)
-);
-
 CREATE TABLE bruker (
   	brukerID 	smallint AUTO_INCREMENT,
   	epost 		varchar (50),
@@ -35,12 +28,12 @@ CREATE TABLE bruker (
   	etternavn 	varchar(30),
   	tlf 		varchar (12),
   	adresse 	varchar (50),
+  	postnummer	char(4),
+  	poststed 	varchar(50),
   	fødselsNr 	char(11),
   	stilling 	varchar(30),
-    postNr 		char(4),
     slettetDato date,
-    PRIMARY KEY (brukerID),
-    FOREIGN KEY (postNr) REFERENCES postSted (postNr)
+    PRIMARY KEY (brukerID)
 );
 
 CREATE TABLE hundefor (
@@ -100,18 +93,6 @@ CREATE TABLE pris (
   	PRIMARY KEY (prisID)
 );
 
-CREATE TABLE prisHistorikk (
-  	prisHistorikkID smallInt AUTO_INCREMENT,
-  	endretDato 		date,
-  	nyttbeløp		smallInt,
-  	gammeltbeløp	smallInt,
-  	brukerID        smallInt,
-  	prisID 			smallInt,
-  	PRIMARY KEY (prisHistorikkID),
-  	FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID),
-  	FOREIGN KEY (prisID) 	REFERENCES pris (prisID)
-);
-
 CREATE TABLE mating (
   	matingID 		smallint AUTO_INCREMENT,
   	tidspunkt 		datetime,
@@ -131,6 +112,28 @@ CREATE TABLE lufting (
   	oppholdID 		smallint,
   	brukerID 		smallint,
     PRIMARY KEY (luftingID),
+    FOREIGN KEY (oppholdID) REFERENCES opphold (oppholdID),
+    FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID)
+);
+
+CREATE TABLE tur (
+  	turID 			smallint AUTO_INCREMENT,
+  	startTidspunkt 	datetime,
+  	sluttTidspunkt 	datetime,
+  	oppholdID 		smallint,
+  	brukerID 		smallint,
+    PRIMARY KEY (turID),
+    FOREIGN KEY (oppholdID) REFERENCES opphold (oppholdID),
+    FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID)
+);
+
+CREATE TABLE kommentar (
+  	kommentarID 	smallint AUTO_INCREMENT,
+  	tekst 			varchar(500),
+  	tidspunkt 		datetime,
+  	oppholdID 		smallint,
+  	brukerID 		smallint,
+    PRIMARY KEY (kommentarID),
     FOREIGN KEY (oppholdID) REFERENCES opphold (oppholdID),
     FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID)
 );
@@ -165,10 +168,6 @@ CREATE TABLE slettetBestilling (
     FOREIGN KEY (brukerID) 	REFERENCES bruker (brukerID)
 );
 
-INSERT INTO bruker(brukerID,epost,passord,brukerType)
-VALUES
-(1,"admin","passord123","admin");
-
 INSERT INTO hundefor(forID, fortype)
 VALUES
 (1, "Normal-for"),
@@ -192,7 +191,6 @@ VALUES
 ("<p>Takk til alle på Bø Hundekennel for nok et koselig opphold for hunden min. Selv om Pluto var litt redd i starten har han begynt å loggre når han forstår at han skal på hundehotellet'</p><p>- Sofie Pedersen</p>","2020-02-02" , 1, 1),
 ("<p>Bra hundehotell. Profesjonelle folk som vet hva de driver med og er optatte av at hundene skal ha det godt.'</p><p>- Ole Monsen</p>","2020-03-03", 1, 1);
 
-
 -- ledigeBurPrDag
 DROP TABLE IF EXISTS ledigeBurPrDag;
 CREATE TABLE ledigeBurPrDag (
@@ -215,3 +213,7 @@ DELIMITER ;
 CALL filldates( DATE_SUB(curdate(), INTERVAL 1 MONTH) , DATE_ADD(CURDATE(), INTERVAL 10 YEAR) );
 
 UPDATE ledigeBurPrDag SET antallLedigeBur = 3;
+
+
+SET FOREIGN_KEY_CHECKS = 1;
+SET UNIQUE_CHECKS = 1;
