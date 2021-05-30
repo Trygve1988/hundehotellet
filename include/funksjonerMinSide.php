@@ -10,7 +10,7 @@ ob_start();
 
 /** 
  *  Funksjon for å vise brukerens brukerInfo til brukeren (Gunni)
- *  @author Gunn Inger Bleikalia
+ *  @author Gunn Inger Bleikelia
  **/ 
 function minProfilTab($dblink) {
     // $brukerID
