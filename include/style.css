@@ -73,7 +73,7 @@ main {
   }
 
 
-/* Navbor for Admin */
+/***************************** Navbor for Admin og ansatt *****************************/
 .navbar2 {
     overflow: hidden; 
     background-color: #333; 
@@ -132,7 +132,7 @@ main {
 	height: 250px;
   }
 
-  /**********Om oss bilder*********/
+/**************************** Om oss bilder ****************************/
   .KontrollerBD2{
     display:flex;
 	flex-direction: row;
@@ -241,7 +241,7 @@ main {
 
 /*************** Stop på hentet kode *************** /
 
-/* Pris og Info CSS tabell */
+/***************************** Pris og Info CSS tabell *****************************/
 .info {
 	display: flex;
 	flex-direction: row;
