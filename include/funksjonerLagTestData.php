@@ -239,5 +239,6 @@ function registrerTestBruker($dblink,$epost,$passord) {
         VALUES ('$epost','$passord');";
         $resultat = mysqli_query($dblink, $sql);
     }
+    echo "Ferdig med å lage testdata";
     
 }

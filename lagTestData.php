@@ -29,7 +29,7 @@
 	
             <!-- Skjema -->	
             <form class="skjemaBakgrunn" method="POST">
-                <p>Test ass</p>
+                <p>Side for å generere test-data</p>
                 <?php test($dblink) ?> 
             </form> 
 
