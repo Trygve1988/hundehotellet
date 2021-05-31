@@ -40,23 +40,6 @@ $dblink = kobleOpp();
                 jeg og mannen min. Vi er alle hunde elskere på her på Bø Hundehotell, og eier eller er vant med hund fra før av. Din hund vil være trygg i våre hender. 
                 Vi håper vi ser deg og din hund her. Åpningstider: Man-Fre: 8-18, Lør-Søn: 10-16</p>
 
-                <!-- Trygve anmeldelseslider -->
-                <h2 id="anmeldseSlider" class="overskrift2">Anmeldelse slider</h2>
-                
-                <div id="anmeldelseBoks">
-                    <div id="anmeldelseTekstBoks">
-                        <p id="anmeldelseTekst"></p>
-                    </div>
-                    <a id="tilbakeAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10094;</a>
-                    <?php 
-                        if (erLoggetInn($dblink)) { 
-                            if (harOpphold($dblink)) { 
-                                ?> <a class="blaaTekst" id="skrivAnmeldse2" href="minSideSkrivAnmeldelse.php"> Skriv anmeldse</a> <?php 
-                            } 
-                        } ?> 
-                    <a id="nesteAnmeldelseKnapp" class="anmeldelseBoksKnapp">&#10095;</a> 
-                </div> 
-
                 <h2 class="overskrift2">Ansatte</h2>
 
                 <div class="KontrollerBD2">
